@@ -1543,6 +1543,38 @@
       <aspectratio>stretch</aspectratio>
       <visible>Container.Content(movies)</visible>
     </control>
+    <control type="group">
+      <description>Trakt integration</description>
+      <visible>Skin.HasSetting(TraktUtilities)</visible>
+      <control type="image">
+        <description>Trakt love/hate</description>
+        <posx>438</posx>
+        <posy>0</posy>
+        <width>52</width>
+        <height>51</height>
+        <texture background="true">$INFO[Window(Home).Property(TraktUtilities.Movie.Recent.Rating),trakt/,.png]</texture>
+        <aspectratio>stretch</aspectratio>
+      </control>
+      <control type="image">
+        <description>Trakt watchlist</description>
+        <posx>401</posx>
+        <posy>0</posy>
+        <width>85</width>
+        <height>85</height>
+        <texture background="true">trakt/watchlist.png</texture>
+        <aspectratio>stretch</aspectratio>
+        <visible>substring(Window(Home).Property(TraktUtilities.Movie.Recent.WatchlistStatus),true)</visible>
+      </control>
+      <control type="image">
+        <description>Overlay</description>
+        <posx>401</posx>
+        <posy>0</posy>
+        <width>85</width>
+        <height>85</height>
+        <texture background="true">$INFO[ListItem.Overlay,trakt/]</texture>
+        <aspectratio>stretch</aspectratio>
+      </control>
+    </control>
   </include>
   <include name="infonativebanners">
     <control type="image">
@@ -1596,6 +1628,38 @@
       <texture background="true">$INFO[listitem.Path,,folder.jpg]</texture>
       <aspectratio>stretch</aspectratio>
       <visible>Container.Content(movies)</visible>
+    </control>
+    <control type="group">
+      <description>Trakt integration</description>
+      <visible>Skin.HasSetting(TraktUtilities)</visible>
+      <control type="image">
+        <description>Trakt love/hate</description>
+        <posx>438</posx>
+        <posy>0</posy>
+        <width>52</width>
+        <height>51</height>
+        <texture background="true">$INFO[Window(Home).Property(TraktUtilities.Movie.Recent.Rating),trakt/,.png]</texture>
+        <aspectratio>stretch</aspectratio>
+      </control>
+      <control type="image">
+        <description>Trakt watchlist</description>
+        <posx>401</posx>
+        <posy>0</posy>
+        <width>85</width>
+        <height>85</height>
+        <texture background="true">trakt/watchlist.png</texture>
+        <aspectratio>stretch</aspectratio>
+        <visible>substring(Window(Home).Property(TraktUtilities.Movie.Recent.WatchlistStatus),true)</visible>
+      </control>
+      <control type="image">
+        <description>Overlay</description>
+        <posx>401</posx>
+        <posy>0</posy>
+        <width>85</width>
+        <height>85</height>
+        <texture background="true">$INFO[ListItem.Overlay,trakt/]</texture>
+        <aspectratio>stretch</aspectratio>
+      </control>
     </control>
   </include>
   <include name="SecondLabelFloor">

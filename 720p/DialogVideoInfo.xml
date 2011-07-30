@@ -1,5 +1,5 @@
 <window id="2003">
-  <defaultcontrol always="true">5000</defaultcontrol>
+  <defaultcontrol always="true">4999</defaultcontrol>
   <allowoverlay>no</allowoverlay>
   <controls>
     <!--<control type="image">
@@ -8,6 +8,20 @@
       <texture>common/darkgrey.png</texture>
       <animation effect="fade" delay="500" time="500">WindowOpen</animation>
     </control>-->
+    <control type="button" id="4999">
+      <description>TraktUtil Script</description>
+      <include>HiddenObject</include>
+      <onfocus>XBMC.RunScript(script.TraktUtilities,movie,summary, ,$INFO[ListItem.Title],$INFO[ListItem.Year])</onfocus>
+      <onfocus>SetFocus(5000)</onfocus>
+      <visible>Skin.HasSetting(TraktUtilities)</visible>
+    </control>
+    <control type="button" id="4999">
+      <description>TraktUtil Script</description>
+      <include>HiddenObject</include>
+      <onfocus>SetFocus(5000)</onfocus>
+      <visible>Skin.HasSetting(TraktUtilities)</visible>
+    </control>
+
     <control type="group">
       <animation effect="slide" start="-486,0" end="0,0" time="400" easing="out" tween="quadratic">WindowOpen</animation>
       <animation effect="slide" start="0,0" end="-486,0" time="400" easing="out" tween="quadratic">WindowClose</animation>

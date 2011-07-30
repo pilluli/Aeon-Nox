@@ -533,6 +533,12 @@
             <selected>Skin.HasSetting(tv_theme)</selected>
             <enable>system.hasaddon(script.tvtunes)</enable>
           </control>
+          <control type="radiobutton" id="291">
+            <label>31389</label>
+            <include>Default_SettingRadioButton</include>
+            <onclick>Skin.ToggleSetting(TraktUtilities)</onclick>
+            <selected>Skin.HasSetting(TraktUtilities)</selected>
+          </control>
           <control type="label" id="294">
             <textoffsetx>50</textoffsetx>
             <width>936</width>
