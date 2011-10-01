@@ -485,6 +485,16 @@
           <label>$INFO[VideoPlayer.Duration]</label>
         </control>
         <control type="label">
+          <posx>600</posx>
+          <posy>35</posy>
+          <width>760</width>
+          <height>25</height>
+          <font>Font_Info</font>
+          <align>left</align>
+          <textcolor>60FFFFFF</textcolor>
+          <label>[COLOR d0ffffff]-$INFO[Player.TimeRemaining][/COLOR]</label>
+        </control>
+        <control type="label">
           <posx>1020</posx>
           <posy>35</posy>
           <width>760</width>

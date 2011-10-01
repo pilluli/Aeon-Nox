@@ -199,7 +199,7 @@
           <height>28</height>
           <font>Font_Reg18</font>
           <textcolor>osdseek</textcolor>
-          <label>$INFO[Player.Duration]</label>
+          <label>-$INFO[Player.TimeRemaining]</label>
           <align>left</align>
           <aligny>center</aligny>
         </control>
@@ -406,7 +406,7 @@
               <height>28</height>
               <font>Font_Reg18</font>
               <textcolor>osdseek</textcolor>
-              <label>$INFO[Player.Duration]</label>
+              <label>-$INFO[Player.TimeRemaining]</label>
               <align>left</align>
               <aligny>center</aligny>
             </control>
@@ -1123,7 +1123,7 @@
               <height>25</height>
               <font>Font_Info</font>
               <align>right</align>
-              <label>$INFO[VideoPlayer.Duration]</label>
+              <label>-$INFO[VideoPlayer.TimeRemaining]</label>
             </control>
             <control type="label">
               <posx>1020</posx>
