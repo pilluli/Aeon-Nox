@@ -37,7 +37,7 @@
   <include file="Includes_MainMenu.xml" />
   <include file="Includes_MainMenu.xml" />
   <include file="Includes_CDWall.xml" />
-  
+	<include file="Includes_VideoBookmarks.xml"/>
 	<constant name="FanartCrossfadeTime">500</constant>
 	<constant name="IconCrossfadeTime">400</constant>
   <constant name="IconCrossfadeTime2">250</constant>

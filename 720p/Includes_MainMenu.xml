@@ -3,6 +3,46 @@
 		<control type="button" id="10">
 			<description>Power push button</description>
 			<include>HiddenObject</include>
+			<onfocus>SetFocus(8011)</onfocus>
+			<onleft>21</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<visible>Skin.HasSetting(HomeVideoBookmarks) + !IsEmpty(Window.Property(VideoBookmark.1.Type)) + IsEmpty(Window.Property(VideoBookmark.2.Type)) + IsEmpty(Window.Property(VideoBookmark.3.Type)) + IsEmpty(Window.Property(VideoBookmark.4.Type)) + [Container(9000).Hasfocus(2) | Container(9000).Hasfocus(10) | Container(9000).Hasfocus(11)] + !Control.Hasfocus(8000) + !Control.Hasfocus(8001) + !Control.Hasfocus(8011)</visible>
+		</control>
+		<control type="button" id="10">
+			<description>Power push button</description>
+			<include>HiddenObject</include>
+			<onfocus>SetFocus(8012)</onfocus>
+			<onleft>21</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<visible>Skin.HasSetting(HomeVideoBookmarks) + !IsEmpty(Window.Property(VideoBookmark.1.Type)) + !IsEmpty(Window.Property(VideoBookmark.2.Type)) + IsEmpty(Window.Property(VideoBookmark.3.Type)) + IsEmpty(Window.Property(VideoBookmark.4.Type)) + [Container(9000).Hasfocus(2) | Container(9000).Hasfocus(10) | Container(9000).Hasfocus(11)] + !Control.Hasfocus(8000) + !Control.Hasfocus(8001) + !Control.Hasfocus(8012)</visible>
+		</control>
+		<control type="button" id="10">
+			<description>Power push button</description>
+			<include>HiddenObject</include>
+			<onfocus>SetFocus(8013)</onfocus>
+			<onleft>21</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<visible>Skin.HasSetting(HomeVideoBookmarks) + !IsEmpty(Window.Property(VideoBookmark.1.Type)) + !IsEmpty(Window.Property(VideoBookmark.2.Type)) + !IsEmpty(Window.Property(VideoBookmark.3.Type)) + IsEmpty(Window.Property(VideoBookmark.4.Type)) + [Container(9000).Hasfocus(2) | Container(9000).Hasfocus(10) | Container(9000).Hasfocus(11)] + !Control.Hasfocus(8000) + !Control.Hasfocus(8001) + !Control.Hasfocus(8013)</visible>
+		</control>
+		<control type="button" id="10">
+			<description>Power push button</description>
+			<include>HiddenObject</include>
+			<onfocus>SetFocus(8014)</onfocus>
+			<onleft>21</onleft>
+			<onright>9000</onright>
+			<onup>9000</onup>
+			<ondown>9000</ondown>
+			<visible>Skin.HasSetting(HomeVideoBookmarks) + !IsEmpty(Window.Property(VideoBookmark.1.Type)) + !IsEmpty(Window.Property(VideoBookmark.2.Type)) + !IsEmpty(Window.Property(VideoBookmark.3.Type)) + !IsEmpty(Window.Property(VideoBookmark.4.Type)) + [Container(9000).Hasfocus(2) | Container(9000).Hasfocus(10) | Container(9000).Hasfocus(11)] + !Control.Hasfocus(8000) + !Control.Hasfocus(8001) + !Control.Hasfocus(8014)</visible>
+		</control>
+		<control type="button" id="10">
+			<description>Power push button</description>
+			<include>HiddenObject</include>
 			<onfocus>SetFocus(8001)</onfocus>
 			<onleft>21</onleft>
 			<onright>9000</onright>

@@ -39,6 +39,26 @@
 			<texture background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
 			<visible>Player.HasAudio+Skin.HasSetting(musicfanarthome)</visible>
 		</control>
+		<control type="image">
+			<include>CommonFanartVarsSingle</include>
+			<texture background="true">$INFO[Container(8011).ListItem.Property(Fanart)]</texture>
+			<visible>Control.HasFocus(8011)</visible>
+		</control>
+		<control type="image">
+			<include>CommonFanartVarsSingle</include>
+			<texture background="true">$INFO[Container(8012).ListItem.Property(Fanart)]</texture>
+			<visible>Control.HasFocus(8012)</visible>
+		</control>
+		<control type="image">
+			<include>CommonFanartVarsSingle</include>
+			<texture background="true">$INFO[Container(8013).ListItem.Property(Fanart)]</texture>
+			<visible>Control.HasFocus(8013)</visible>
+		</control>
+		<control type="image">
+			<include>CommonFanartVarsSingle</include>
+			<texture background="true">$INFO[Container(8014).ListItem.Property(Fanart)]</texture>
+			<visible>Control.HasFocus(8014)</visible>
+		</control>
     <control type="multiimage">
       <description>extrafanart</description>
       <randomize>false</randomize>
@@ -70,7 +90,7 @@
 			<include condition="Skin.HasSetting(HomeRandomMusic)">RandomMusic</include>
 			<include condition="Skin.HasSetting(HomeLatestAlbums)">LatestAlbums</include>
 			<include condition="Skin.HasSetting(HomeRandomAddons)">RandomAddons</include>
-			<include condition="Skin.HasSetting(HomeVideoBookmarks)">MovieBookmarkWidget</include>
+			<include condition="Skin.HasSetting(HomeVideoBookmarks)">VideoBookmarks</include>
 			<include condition="Skin.HasSetting(HomeRandomAlbums)">RandomAlbums</include>
 		</control>
 		<control type="group">
