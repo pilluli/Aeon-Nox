@@ -382,7 +382,7 @@
             <posy>-34</posy>
             <width>230</width>
             <height>156</height>
-            <texture background="true">$INFO[Player.FolderPath,,/../clearart.png]</texture>
+            <texture background="true">$INFO[Player.FolderPath,,clearart.png]</texture>
             <aspectratio>keep</aspectratio>
             <visible>IsEmpty(Control.GetLabel(1000))</visible>
             <animation type="WindowOpen">
@@ -419,7 +419,7 @@
             <width>230</width>
             <height>156</height>
             <visible>IsEmpty(Control.GetLabel(1000)) + IsEmpty(Control.GetLabel(1001)) + IsEmpty(Control.GetLabel(1002))</visible>
-            <texture background="true">$INFO[Player.FolderPath,,/../logo.png]</texture>
+            <texture background="true">$INFO[Player.FolderPath,,logo.png]</texture>
             <aspectratio>keep</aspectratio>
             <animation type="WindowOpen">
               <effect type="slide" start="-300,0" end="0,0" time="600" tween="cubic" easing="out"/>
@@ -536,7 +536,7 @@
         <posy>0</posy>
         <width>486</width>
         <height>720</height>
-        <texture background="true">$INFO[Player.FolderPath,,/../poster.jpg]</texture>
+        <texture background="true">$INFO[Player.FolderPath,,poster.jpg]</texture>
         <aspectratio>stretch</aspectratio>
         <visible>VideoPlayer.Content(episodes)</visible>
       </control>

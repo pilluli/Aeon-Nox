@@ -190,7 +190,7 @@
   </variable>
   <variable name="PosterVar">
     <value condition="!Skin.HasSetting(TVShowsUsePosters)+Container.Content(tvshows)">$INFO[ListItem.FileNameAndPath,,poster.jpg]</value>
-    <value condition="Container.Content(episodes)+[[!Skin.HasSetting(TVShowsUsePosters)+IsEmpty(Container.SeasonThumb)]|SubString(Container.FolderPath,videodb://5/)]">$INFO[ListItem.Path,,../poster.jpg]</value>
+    <value condition="Container.Content(episodes)+[[!Skin.HasSetting(TVShowsUsePosters)+IsEmpty(Container.SeasonThumb)]|SubString(Container.FolderPath,videodb://5/)]">$INFO[ListItem.Path,,poster.jpg]</value>
     <value condition="Container.Content(episodes)+Skin.HasSetting(TVShowsUsePosters)+IsEmpty(Container.SeasonThumb)">$INFO[Container.TvshowThumb]</value>
     <value condition="Container.Content(episodes)+!IsEmpty(Container.SeasonThumb)">$INFO[Container.SeasonThumb]</value>
     <value>$INFO[ListItem.Icon]</value>
@@ -249,7 +249,7 @@
     <value condition="Container.Content(episodes)+!Skin.HasSetting(extrafanartepisodes)">$INFO[ListItem.Path,,fanart.jpg]</value>
     <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>
     <value condition="[Container.Content(movies)+Skin.HasSetting(extrafanartmovies)]|[Container.Content(tvshows)+Skin.HasSetting(extrafanartseries)]|[Container.Content(seasons)+Skin.HasSetting(extrafanartseasons)]">$INFO[ListItem.Path,,extrafanart]</value>
-    <value condition="Container.Content(episodes)+Skin.HasSetting(extrafanartepisodes)">$INFO[ListItem.Path,,../extrafanart]</value>
+    <value condition="Container.Content(episodes)+Skin.HasSetting(extrafanartepisodes)">$INFO[ListItem.Path,,extrafanart]</value>
     <value>-</value>
   </variable>
   <variable name="HomeFanartVar">
@@ -329,7 +329,7 @@
   </variable>
   <variable name="TVShowLogoVar">
     <value condition="Container.Content(tvshows)|Container.Content(seasons)">$INFO[ListItem.path,,logo.png]</value>
-    <value condition="Container.Content(episodes)">$INFO[ListItem.path,,../logo.png]</value>
+    <value condition="Container.Content(episodes)">$INFO[ListItem.path,,logo.png]</value>
   </variable>
   <variable name="TVGuideInfoFanart">
     <value condition="Control.HasFocus(200) | stringcompare(Window(home).Property(TVGuide.MondayList),1)">$INFO[Container(200).ListItem.Property(Fanart)]</value>
