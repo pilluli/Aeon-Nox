@@ -341,6 +341,7 @@
     <value condition="Control.HasFocus(205)">$INFO[Container(205).ListItem.Property(Fanart)]</value>
     <value condition="Control.HasFocus(206)">$INFO[Container(206).ListItem.Property(Fanart)]</value>
   </variable>
+
   <variable name="HomeMenuBackVar">
     <value condition="Skin.HasSetting(glasshome)+[![Player.HasMedia + System.IdleTime(8)]|Control.HasFocus(8003)]">home/homemenu_back_glass.png</value>
     <value condition="Skin.HasSetting(classichome)+[![Player.HasMedia + System.IdleTime(8)]|Control.HasFocus(8003)]">home/homemenu_back.png</value>
@@ -427,3 +428,4 @@
   </variable>
 
 </includes>
+
