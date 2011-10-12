@@ -147,30 +147,13 @@
 							<posy>-13</posy>
 							<width>840</width>
 							<height>472</height>
-							<control type="image">
-								<posx>0</posx>
-								<posy>237</posy>
-								<width>840</width>
-								<height>42</height>
-								<texture background="true">osd/osd_back.png</texture>
-                <visible>!Skin.HasSetting(glasshome)+!Skin.HasSetting(classichome)</visible>
-							</control>
-              <control type="image">
-                <posx>0</posx>
-                <posy>225</posy>
-                <width>840</width>
-                <height>66</height>
-                <texture background="true">home/glass_bar.png</texture>
-                <visible>Skin.HasSetting(glasshome)</visible>
-                <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
-              </control>
-              <control type="image">
+	            <control type="image">
                 <posx>0</posx>
                 <posy>211</posy>
                 <width>840</width>
                 <height>97</height>
-                <texture background="true">home/homemenu_back.png</texture>
-                <visible>Skin.HasSetting(classichome)</visible>
+                <texture background="true">$VAR[HomeMenuBackVar]</texture>
+                <animation effect="fade" start="100" end="80" time="50" condition="Skin.HasSetting(glasshome)">Conditional</animation>
               </control>
             </control>
 						<control type="group">
@@ -216,115 +199,6 @@
 						<texture>settings/settings_intframe_top.png</texture>
 						<include>Animation_SettingsInternalPanel</include>
 					</control>
-				</control>
-				<control type="button" id="31">
-					<description>Time panel furniture select button - Normal version</description>
-					<posx>863</posx>
-					<posy>257</posy>
-					<width>334</width>
-					<height>37</height>
-					<onclick>Skin.ToggleSetting(timehomehigh)</onclick>
-					<onup>9000</onup>
-					<ondown>9005</ondown>
-					<onleft>33</onleft>
-					<onright>32</onright>
-					<texturefocus>settings/settings_furniture_timepanel.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<pulseonselect>true</pulseonselect>
-					<visible>![Skin.HasSetting(lowermainmenu)|Skin.HasSetting(Lockhomemenulow)]</visible>
-					<animation effect="slide" start="0,0" end="0,-210" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
-					<include>Animation_CommonFade</include>
-				</control>
-				<control type="button" id="31">
-					<description>Time panel furniture select button - Lower version</description>
-					<posx>863</posx>
-					<posy>407</posy>
-					<width>334</width>
-					<height>37</height>
-					<onclick>Skin.ToggleSetting(timehomehigh)</onclick>
-					<onup>9000</onup>
-					<ondown>9005</ondown>
-					<onleft>33</onleft>
-					<onright>32</onright>
-					<texturefocus>settings/settings_furniture_timepanel.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<pulseonselect>true</pulseonselect>
-					<visible>[Skin.HasSetting(lowermainmenu)|Skin.HasSetting(Lockhomemenulow)]</visible>
-					<animation effect="slide" start="0,0" end="0,-362" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
-					<include>Animation_CommonFade</include>
-				</control>
-				<control type="button" id="32">
-					<description>RSS furniture select button - Normal version</description>
-					<posx>357</posx>
-					<posy>316</posy>
-					<width>840</width>
-					<height>35</height>
-					<onclick>Skin.ToggleSetting(rsshomelow)</onclick>
-					<onup>9005</onup>
-					<ondown>300</ondown>
-					<onleft>9000</onleft>
-					<onright>31</onright>
-					<texturefocus>settings/settings_furniture_rss.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<pulseonselect>true</pulseonselect>
-					<visible>![Skin.HasSetting(lowermainmenu)|Skin.HasSetting(Lockhomemenulow)]</visible>
-					<animation effect="slide" start="0,0" end="0,188" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-					<include>Animation_CommonFade</include>
-				</control>
-				<control type="button" id="32">
-					<description>RSS furniture select button - Lower version</description>
-					<posx>357</posx>
-					<posy>468</posy>
-					<width>840</width>
-					<height>35</height>
-					<onclick>Skin.ToggleSetting(rsshomelow)</onclick>
-					<onup>9005</onup>
-					<ondown>300</ondown>
-					<onleft>9000</onleft>
-					<onright>31</onright>
-					<texturefocus>settings/settings_furniture_rss.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<pulseonselect>true</pulseonselect>
-					<visible>[Skin.HasSetting(lowermainmenu)|Skin.HasSetting(Lockhomemenulow)]</visible>
-					<animation effect="slide" start="0,0" end="0,36" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-					<include>Animation_CommonFade</include>
-				</control>
-				<control type="button" id="33">
-					<!-- Totals Buttons-->
-					<description>Totals panel furniture select button - Normal version</description>
-					<posx>318</posx>
-					<posy>257</posy>
-					<width>334</width>
-					<height>37</height>
-					<onclick>Skin.ToggleSetting(totalshomehigh)</onclick>
-					<onup>9000</onup>
-					<ondown>9005</ondown>
-					<onleft>9000</onleft>
-					<onright>32</onright>
-					<texturefocus>settings/settings_furniture_timepanel.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<pulseonselect>true</pulseonselect>
-					<visible>![Skin.HasSetting(lowermainmenu)|Skin.HasSetting(Lockhomemenulow)]</visible>
-					<animation effect="slide" start="0,0" end="0,-210" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-					<include>Animation_CommonFade</include>
-				</control>
-				<control type="button" id="33">
-					<description>Totals panel furniture select button - Lower version</description>
-					<posx>318</posx>
-					<posy>407</posy>
-					<width>334</width>
-					<height>37</height>
-					<onclick>Skin.ToggleSetting(totalshomehigh)</onclick>
-					<onup>9000</onup>
-					<ondown>9005</ondown>
-					<onleft>9000</onleft>
-					<onright>32</onright>
-					<texturefocus>settings/settings_furniture_timepanel.png</texturefocus>
-					<texturenofocus>-</texturenofocus>
-					<pulseonselect>true</pulseonselect>
-					<visible>[Skin.HasSetting(lowermainmenu)|Skin.HasSetting(Lockhomemenulow)]</visible>
-					<animation effect="slide" start="0,0" end="0,-362" time="200" easing="inout" tween="circle" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
-					<include>Animation_CommonFade</include>
 				</control>
 			</control>
 			<control type="list" id="9000">
@@ -415,7 +289,7 @@
 						<onclick>-</onclick>
 					</item>
 					<item id="5">
-						<label>513</label>
+						<label>33068</label>
 						<label2>31115</label2>
 						<onclick>-</onclick>
 					</item>
@@ -489,23 +363,11 @@
 						<onclick>Skin.ToggleSetting(AutoScroll)</onclick>
 						<selected>Skin.HasSetting(AutoScroll)</selected>
 					</control>
-					<control type="radiobutton" id="102">
-						<label>31103</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(Show_SlideShow_Paused)</onclick>
-						<selected>!Skin.HasSetting(Show_SlideShow_Paused)</selected>
-					</control>
 					<control type="radiobutton" id="298">
 						<label>31279</label>
 						<include>Default_SettingRadioButton</include>
 						<onclick>Skin.ToggleSetting(fstrailer)</onclick>
 						<selected>Skin.HasSetting(fstrailer)</selected>
-					</control>
-					<control type="radiobutton" id="299">
-						<label>31281</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(Show_Info_Paused)</onclick>
-						<selected>Skin.HasSetting(Show_Info_Paused)</selected>
 					</control>
 					<control type="radiobutton" id="292">
 						<label>31268</label>
@@ -522,19 +384,6 @@
 						<onclick>Skin.Reset(breadcrumb)</onclick>
 						<selected>Skin.HasSetting(globaltime)</selected>
 						<enable>!Skin.HasSetting(breadcrumb)</enable>
-					</control>
-					<control type="radiobutton" id="288">
-						<label>31263</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(animatedbg)</onclick>
-						<selected>Skin.HasSetting(animatedbg)</selected>
-					</control>
-					<control type="radiobutton" id="307">
-						<label>31379</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(animatedbghome)</onclick>
-						<selected>Skin.HasSetting(animatedbghome)</selected>
-						<visible>Skin.HasSetting(animatedbg)</visible>
 					</control>
 					<control type="radiobutton" id="290">
 						<label>31265</label>
@@ -569,23 +418,8 @@
 					<control type="button" id="296">
 						<label>- $LOCALIZE[573]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(WeatherFanartDir)][/COLOR]</label2>
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>936</width>
-						<height>49</height>
-						<font>Font_Reg20</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>settings/settings_radiobuttonofffocus.png</texturefocus>
-						<texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
-						<radiowidth>94</radiowidth>
-						<radioposx>850</radioposx>
-						<radioheight>65</radioheight>
-						<textoffsetx>50</textoffsetx>
-						<aligny>center</aligny>
-						<textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
-						<textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
-						<onclick>Skin.SetPath(WeatherFanartDir)</onclick>
+            <include>Default_SettingButton</include>
+            <onclick>Skin.SetPath(WeatherFanartDir)</onclick>
 						<visible>Skin.HasSetting(ShowWeatherFanart)</visible>
 						<enable>Skin.HasSetting(ShowWeatherFanart)</enable>
 					</control>
@@ -598,23 +432,8 @@
 					<control type="button" id="502">
 						<label>- $LOCALIZE[573]</label>
 						<label2>[COLOR=selected]$INFO[Skin.String(AnimatedWeatherIconsDir)][/COLOR]</label2>
-						<posx>0</posx>
-						<posy>0</posy>
-						<width>936</width>
-						<height>49</height>
-						<font>Font_Reg20</font>
-						<textcolor>grey2</textcolor>
-						<focusedcolor>white</focusedcolor>
-						<texturefocus>settings/settings_radiobuttonofffocus.png</texturefocus>
-						<texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
-						<radiowidth>94</radiowidth>
-						<radioposx>850</radioposx>
-						<radioheight>65</radioheight>
-						<textoffsetx>50</textoffsetx>
-						<aligny>center</aligny>
-						<textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
-						<textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
-						<onclick>Skin.SetPath(AnimatedWeatherIconsDir)</onclick>
+            <include>Default_SettingButton</include>
+            <onclick>Skin.SetPath(AnimatedWeatherIconsDir)</onclick>
 						<visible>Skin.HasSetting(AnimatedWeatherIcons)</visible>
 						<enable>Skin.HasSetting(AnimatedWeatherIcons)</enable>
 					</control>
@@ -689,7 +508,7 @@
 					<onright>60</onright>
 					<onup>9002</onup>
 					<ondown>9002</ondown>
-					<control type="label" id="200">
+					<!--<control type="label" id="200">
 						<textoffsetx>50</textoffsetx>
 						<width>936</width>
 						<height>49</height>
@@ -699,66 +518,14 @@
 						<shadowcolor>black</shadowcolor>
 						<align>left</align>
 						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="103">
-						<label>31105</label>
+					</control>-->
+					<control type="button" id="293">
+						<label>31101</label>
 						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(Lockhomemenu)</onclick>
-						<onclick>Skin.Reset(Lockhomemenulow)</onclick>
-						<onclick>Skin.Reset(lowermainmenu)</onclick>
-						<selected>Skin.HasSetting(Lockhomemenu)</selected>
-					</control>
-					<control type="radiobutton" id="114">
-						<label>31131</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(Lockhomemenulow)</onclick>
-						<selected>Skin.HasSetting(Lockhomemenulow)</selected>
-						<enable>Skin.HasSetting(Lockhomemenu)</enable>
-					</control>
-					<control type="radiobutton" id="279">
-						<label>31242</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(cinemaexpdefault)</onclick>
-						<selected>Skin.HasSetting(cinemaexpdefault)</selected>
-						<enable>System.HasAddon(script.cinema.experience)</enable>
-					</control>
-					<control type="radiobutton" id="293">
-						<label>31269</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(effect_bg_home)</onclick>
-						<selected>Skin.HasSetting(effect_bg_home)</selected>
-					</control>
-					<control type="radiobutton" id="268">
-						<label>31199</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(customstartupfocus)</onclick>
-						<selected>Skin.HasSetting(customstartupfocus)</selected>
-					</control>
-					<control type="button" id="269">
-						<label> - $LOCALIZE[31194]</label>
-						<label2>[COLOR=selected]$INFO[Skin.String(CustomFocusOffset)][/COLOR]</label2>
-						<include>Default_SettingButton</include>
-						<onclick>Skin.SetString(CustomFocusOffset)</onclick>
-						<visible>Skin.HasSetting(customstartupfocus)</visible>
-					</control>
-					<control type="radiobutton" id="264">
-						<description>enable video info</description>
-						<include>Default_SettingRadioButton</include>
-						<label>31183</label>
-						<onclick>Skin.ToggleSetting(shutdownwarning)</onclick>
-						<selected>Skin.HasSetting(shutdownwarning)</selected>
-					</control>
-					<control type="radiobutton" id="219">
-						<label>31125</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(ShowBackgroundVis)</onclick>
-						<selected>!Skin.HasSetting(ShowBackgroundVis)</selected>
-					</control>
-					<control type="radiobutton" id="221">
-						<label>31144</label>
-						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(musicfanarthome)</onclick>
-						<selected>Skin.HasSetting(musicfanarthome)</selected>
+            <onclick>SetProperty(Settings.Shortcut,1,home)</onclick>
+            <onclick>ActivateWindow(home)</onclick>
+            <onclick>ReloadSkin()</onclick>
+            <onclick>ActivateWindow(1129)</onclick>
 					</control>
 					<control type="label" id="206">
 						<textoffsetx>50</textoffsetx>
@@ -1197,24 +964,6 @@
 						<selected>Skin.HasSetting(HomeRandomAddons)</selected>
 						<visible>Skin.HasSetting(homepageHideRecentlyAdded)+!Skin.HasSetting(HomeMenuNoAddonsButton)+System.HasAddon(script.randomitems)</visible>
 					</control>
-					<control type="label" id="507">
-						<textoffsetx>50</textoffsetx>
-						<width>936</width>
-						<height>49</height>
-						<font>Font_Bold20</font>
-						<label>$LOCALIZE[31040] [LOWERCASE]$LOCALIZE[31295][/LOWERCASE]</label>
-						<textcolor>white</textcolor>
-						<shadowcolor>black</shadowcolor>
-						<align>left</align>
-						<aligny>center</aligny>
-					</control>
-					<control type="radiobutton" id="508">
-						<description>Show Recently added info</description>
-						<include>Default_SettingRadioButton</include>
-						<label>31363</label>
-						<onclick>Skin.ToggleSetting(disablecovers)</onclick>
-						<selected>!Skin.HasSetting(disablecovers)</selected>
-					</control>
 					<control type="label" id="420">
 						<textoffsetx>50</textoffsetx>
 						<width>936</width>
@@ -1296,17 +1045,23 @@
 						<selected>Skin.HasSetting(notrailerlabel)</selected>
             <enable>!Skin.HasSetting(breadcrumb)</enable>
 					</control>
-					<control type="radiobutton" id="289">
+          <control type="radiobutton" id="288">
+            <label>31263</label>
+            <include>Default_SettingRadioButton</include>
+            <onclick>Skin.ToggleSetting(animatedbg)</onclick>
+            <selected>Skin.HasSetting(animatedbg)</selected>
+          </control>
+          <control type="radiobutton" id="289">
 						<label>31264</label>
 						<include>Default_SettingRadioButton</include>
 						<onclick>Skin.ToggleSetting(effect_bg)</onclick>
 						<selected>Skin.HasSetting(effect_bg)</selected>
 					</control>
 					<control type="radiobutton" id="284">
-						<label>31256</label>
+						<label>31620</label>
 						<include>Default_SettingRadioButton</include>
-						<onclick>Skin.ToggleSetting(showcasewrap)</onclick>
-						<selected>Skin.HasSetting(showcasewrap)</selected>
+						<onclick>Skin.ToggleSetting(AltNewOverlay)</onclick>
+						<selected>Skin.HasSetting(AltNewOverlay)</selected>
 					</control>
 					<control type="radiobutton" id="285">
 						<label>31393</label>
@@ -1363,8 +1118,8 @@
 						<height>40</height>
 						<onleft>9005</onleft>
 						<onright>9005</onright>
-						<onup>31</onup>
-						<ondown>32</ondown>
+						<onup>9000</onup>
+						<ondown>8700</ondown>
 						<orientation>horizontal</orientation>
 						<pagecontrol>-</pagecontrol>
 						<scrolltime>300</scrolltime>
@@ -1531,6 +1286,14 @@
               </control>
             </focusedlayout>
             <content>
+              <item id="3">
+                <label>31500</label>
+                <label2>Home_Custom_Back_Pictures_Folder</label2>
+                <onclick>Skin.ToggleSetting(lowermainmenu)</onclick>
+                <icon>special://skin/backgrounds/pictures.jpg</icon>
+                <thumb>$INFO[Skin.String(Home_Custom_Back_Pictures_Folder)]</thumb>
+                <visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
+              </item>
               <item id="2">
 								<label>31501</label>
 								<label2>Home_Custom_Back_Music_Folder</label2>
@@ -1539,13 +1302,6 @@
 								<thumb>$INFO[Skin.String(Home_Custom_Back_Music_Folder)]</thumb>
 								<visible>!Skin.HasSetting(HomeMenuNoMusicButton)</visible>
 							</item>
-              <item id="24">
-                <label>31398</label>
-                <label2>$INFO[Skin.String(Current_Main_Menu)]</label2>
-                <onclick>Skin.ToggleSetting(lowermainmenu)</onclick>
-                <icon>special://skin/backgrounds/curtains.jpg</icon>
-                <thumb>-</thumb>
-              </item>
               <item id="10">
 								<label>31502</label>
 								<label2>Home_Custom_Back_Movies_Folder</label2>
@@ -1714,14 +1470,6 @@
                 <thumb>$INFO[Skin.String(Home_Custom_Back_Comics_Folder)]</thumb>
                 <visible>Skin.HasSetting(HomeMenuNoComicsButton)</visible>
               </item>
-              <item id="3">
-                <label>31500</label>
-                <label2>Home_Custom_Back_Pictures_Folder</label2>
-                <onclick>Skin.ToggleSetting(lowermainmenu)</onclick>
-                <icon>special://skin/backgrounds/pictures.jpg</icon>
-                <thumb>$INFO[Skin.String(Home_Custom_Back_Pictures_Folder)]</thumb>
-                <visible>!Skin.HasSetting(HomeMenuNoPicturesButton)</visible>
-              </item>
             </content>
 					</control>
           <control type="image">
@@ -1735,9 +1483,8 @@
           <control type="group">
 						<posx>210</posx>
 						<posy>430</posy>
-						<control type="group">
+						<control type="group" id="8700">
 							<animation effect="slide" start="0" end="-90" reversible="false" condition="Container(9005).HasFocus(1)|Container(9005).HasFocus(2)|Container(9005).HasFocus(15)|Container(9005).HasFocus(16)|Container(9005).HasFocus(17)|Container(9005).HasFocus(25)">Conditional</animation>
-              <visible>!Container(9005).HasFocus(24)</visible>
               <control type="button" id="300">
 								<description>Single Image button</description>
 								<posx>5</posx>
@@ -1811,74 +1558,6 @@
 								<visible>Container(9005).HasFocus(2)</visible>
 							</control>
 						</control>
-            <control type="group">
-              <visible>Container(9005).HasFocus(24)</visible>
-              <animation effect="slide" start="0" end="-90" reversible="false" condition="true">Conditional</animation>
-              <control type="button" id="300">
-                <description>Single Image button</description>
-                <posx>5</posx>
-                <posy>0</posy>
-                <width>180</width>
-                <height>40</height>
-                <align>center</align>
-                <label>Nox</label>
-                <onclick>Skin.Reset(classichome)</onclick>
-                <onclick>Skin.Reset(glasshome)</onclick>
-                <onclick>Skin.SetString(Current_Main_Menu,Nox)</onclick>
-                <onleft>9000</onleft>
-                <onright>301</onright>
-                <onup>9005</onup>
-                <ondown>9005</ondown>
-              </control>
-              <control type="button" id="301">
-                <description>Multi Image button</description>
-                <posx>190</posx>
-                <posy>0</posy>
-                <width>180</width>
-                <height>40</height>
-                <align>center</align>
-                <label>31249</label>
-                <onclick>Skin.SetBool(classichome)</onclick>
-                <onclick>Skin.Reset(glasshome)</onclick>
-                <onclick>Skin.SetString(Current_Main_Menu,$LOCALIZE[31249])</onclick>
-                <onleft>300</onleft>
-                <onright>302</onright>
-                <onup>9005</onup>
-                <ondown>9005</ondown>
-              </control>
-              <control type="button" id="302">
-                <description>Default Image button</description>
-                <posx>375</posx>
-                <posy>0</posy>
-                <width>180</width>
-                <height>40</height>
-                <align>center</align>
-                <label>31251</label>
-                <onclick>Skin.SetBool(glasshome)</onclick>
-                <onclick>Skin.Reset(classichome)</onclick>
-                <onclick>Skin.SetString(Current_Main_Menu,$LOCALIZE[31251])</onclick>
-                <onleft>301</onleft>
-                <onright>303</onright>
-                <onup>9005</onup>
-                <ondown>9005</ondown>
-              </control>
-              <control type="togglebutton" id="303">
-                <description>Wider menu button</description>
-                <posx>560</posx>
-                <posy>0</posy>
-                <width>180</width>
-                <height>40</height>
-                <align>center</align>
-                <label>$LOCALIZE[31399]: $LOCALIZE[571]</label>
-                <altlabel>$LOCALIZE[31399]: $LOCALIZE[31289]</altlabel>
-                <onclick>Skin.ToggleSetting(biggergap)</onclick>
-                <onleft>302</onleft>
-                <onright>300</onright>
-                <onup>9005</onup>
-                <ondown>9005</ondown>
-                <usealttexture>Skin.HasSetting(biggergap)</usealttexture>
-              </control>
-            </control>
           </control>
 					<control type="label">
 						<posx>74</posx>
@@ -1891,7 +1570,7 @@
 						<haspath>yes</haspath>
 						<label fallback="571">$INFO[Container(9005).ListItem.Thumb,$LOCALIZE[143] ]</label>
 						<textcolor>white</textcolor>
-						<visible>!IsEmpty(Container(9005).ListItem.Thumb)+!Container(9005).HasFocus(24)</visible>
+						<visible>!IsEmpty(Container(9005).ListItem.Thumb)</visible>
 					</control>
 					<control type="label">
 						<posx>74</posx>
@@ -1904,21 +1583,8 @@
 						<haspath>yes</haspath>
 						<label>$LOCALIZE[143] $LOCALIZE[571]</label>
 						<textcolor>white</textcolor>
-						<visible>IsEmpty(Container(9005).ListItem.Thumb)+!Container(9005).HasFocus(24)</visible>
+						<visible>IsEmpty(Container(9005).ListItem.Thumb)</visible>
 					</control>
-          <control type="label">
-            <posx>74</posx>
-            <posy>505</posy>
-            <width>840</width>
-            <height>20</height>
-            <align>center</align>
-            <aligny>center</aligny>
-            <font>Font_Reg14</font>
-            <haspath>yes</haspath>
-            <label fallback="571">$INFO[Container(9005).ListItem.Label2,$LOCALIZE[143] ]$INFO[Control.GetLabel(303), - ]</label>
-            <textcolor>white</textcolor>
-            <visible>Container(9005).HasFocus(24)</visible>
-          </control>
         </control>
 				<control type="grouplist" id="9006">
 					<visible>Container(9000).Hasfocus(6)</visible>
