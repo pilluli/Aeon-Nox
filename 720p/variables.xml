@@ -425,4 +425,5 @@
     <value condition="Container.Content(songs)|Window.IsActive(pictures)">[COLOR abFFFFFF]$LOCALIZE[569]: [/COLOR]$INFO[ListItem.Comment]</value>
     <value>$INFO[ListItem.Plot]</value>
   </variable>
+
 </includes>
