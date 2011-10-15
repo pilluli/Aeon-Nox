@@ -88,7 +88,7 @@
   </variable>
  
   <variable name="NextEpisodeVar">
-    <value condition="!IsEmpty(Window(Home).Property(NextAired.Label))">$INFO[Window(Home).Property(NextAired.NextDate)]</value>
+    <value condition="!IsEmpty(Window(Home).Property(NextAired.Label))+!IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.NextDate)]</value>
     <value>$LOCALIZE[312581]</value>
   </variable>
  
@@ -181,13 +181,9 @@
   </variable>
  
   <variable name="HomeFanartVar">
-    <value condition="Control.HasFocus(8000)+!IsEmpty(Container(8000).ListItem.Property(Fanart))">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
-    <value condition="Control.HasFocus(8001)+!IsEmpty(Container(8001).ListItem.Property(Fanart))">$INFO[Container(8001).ListItem.Property(Fanart)]</value>
-    <value condition="Control.HasFocus(8002)+!IsEmpty(Container(8002).ListItem.Property(Fanart))">$INFO[Container(8002).ListItem.Property(Fanart)]</value>
-    <value condition="Control.HasFocus(8003)+!IsEmpty(Container(8003).ListItem.Property(Fanart))">$INFO[Container(8003).ListItem.Property(Fanart)]</value>
-    <value condition="Control.HasFocus(8004)+!IsEmpty(Container(8004).ListItem.Property(Fanart))">$INFO[Container(8003).ListItem.Property(Fanart)]</value>
-    <value condition="Player.HasAudio+Skin.HasSetting(musicfanarthome)+![Control.HasFocus(8000)|Control.HasFocus(8001)|Control.HasFocus(8002)|Control.HasFocus(8003)|Control.HasFocus(8004)]+!IsEmpty(MusicPlayer.Property(Fanart_Image))">$INFO[MusicPlayer.Property(Fanart_Image)]</value>
-    <value>$INFO[Container(9000).ListItem.Icon]</value>
+    <value condition="Control.HasFocus(8000)">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
+    <value condition="Control.HasFocus(8003)">$INFO[Container(8003).ListItem.Property(Fanart)]</value>
+    <value condition="Player.HasAudio+Skin.HasSetting(musicfanarthome)+![Control.HasFocus(8000)|Control.HasFocus(8003)]+!IsEmpty(MusicPlayer.Property(Fanart_Image))">$INFO[MusicPlayer.Property(Fanart_Image)]</value>
   </variable>
   
   <!--Infopanel variables-->
@@ -228,8 +224,8 @@
   <variable name="FanartPanelDetail4Var">
     <value condition="Container.Content(movies)">$LOCALIZE[368]:</value>
     <value condition="Container.Content(episodes)">$LOCALIZE[563]:</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+Skin.HasSetting(wallgenretv)">$LOCALIZE[20360]:</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+!Skin.HasSetting(wallgenretv)">$LOCALIZE[515]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+[Skin.HasSetting(wallgenretv)|Control.IsVisible(503)]">$LOCALIZE[20360]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+!Skin.HasSetting(wallgenretv)+!Control.IsVisible(503)">$LOCALIZE[515]:</value>
   </variable>
   <variable name="FanartPanelValue4Var">
     <value condition="Container.Content(movies)|Container.Content(episodes)">$INFO[ListItem.RatingAndVotes]</value>
@@ -274,57 +270,39 @@
     <value>$INFO[ListItem.property(fanart_image)]</value>
   </variable>
 
-  <variable name="PosterPanelDetail1Var">
-    <value condition="Container.Content(movies)">$LOCALIZE[20339]:</value>
-  </variable>
-  <variable name="PosterPanelValue1Var">
-    <value condition="Container.Content(movies)">$INFO[ListItem.Director]</value>
-  </variable>
-
-  <variable name="PosterPanelDetail2Var">
-    <value condition="Container.Content(movies)">$LOCALIZE[20417]:</value>
-  </variable>
-  <variable name="PosterPanelValue2Var">
-    <value condition="Container.Content(movies)">$INFO[ListItem.Writer]</value>
-  </variable>
-
-  <variable name="PosterPanelDetail3Var">
-    <value condition="Container.Content(movies)">$LOCALIZE[345]:</value>
-  </variable>
-  <variable name="PosterPanelValue3Var">
-    <value condition="Container.Content(movies)">$INFO[ListItem.Year]</value>
-  </variable>
-
-  <variable name="PosterPanelDetail4Var">
-    <value condition="Container.Content(movies)">$LOCALIZE[368]:</value>
-  </variable>
   <variable name="PosterPanelValue4Var">
     <value condition="Container.Content(movies)">$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Top250, / $LOCALIZE[13409] #]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+[Skin.HasSetting(wallgenretv)|Control.IsVisible(503)]">$INFO[ListItem.Property(TotalEpisodes)]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+!Skin.HasSetting(wallgenretv)+!Control.IsVisible(503)">$INFO[ListItem.Genre]</value>
   </variable>
 
   <variable name="PosterPanelDetail5Var">
     <value condition="Container.Content(movies)">$LOCALIZE[2050]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$LOCALIZE[31190]:</value>
   </variable>
   <variable name="PosterPanelValue5Var">
     <value condition="Container.Content(movies)+!Container.ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
     <value condition="Container.Content(movies)+Container.ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]][COLOR abFFFFFF]$INFO[ListItem.PercentPlayed, (,%)][/COLOR]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$VAR[NextEpisodeVar]</value>
   </variable>
 
   <variable name="PosterPanelDetail6Var">
     <value condition="Container.Content(movies)">$LOCALIZE[21875]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$LOCALIZE[31189]:</value>
   </variable>
   <variable name="PosterPanelValue6Var">
     <value condition="Container.Content(movies)">$INFO[ListItem.Country]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$VAR[LastEpisodeVar]</value>
   </variable>
 
   <variable name="PosterPanelDetail7Var">
-    <value condition="Container.Content(movies)+Skin.HasSetting(wallgenre)+!Control.IsVisible(503)">$LOCALIZE[20074]:</value>
-    <value condition="Container.Content(movies)+[!Skin.HasSetting(wallgenre)|Control.IsVisible(503)]">$LOCALIZE[515]:</value>
+    <value condition="[Container.Content(movies)+Skin.HasSetting(wallgenre)+!Control.IsVisible(503)]|[Container.Content(tvshows)+!Control.IsVisible(503)]">$LOCALIZE[20074]:</value>
+    <value condition="[Container.Content(movies)+[!Skin.HasSetting(wallgenre)|Control.IsVisible(503)]]|[Container.Content(tvshows)+Control.isVisible(503)]">$LOCALIZE[515]:</value>
   </variable>
   <variable name="PosterPanelValue7Var">
     <value condition="Container.Content(movies)+Skin.HasSetting(wallgenre)+!Control.IsVisible(503)+IsEmpty(ListItem.Mpaa)">$LOCALIZE[31452]</value>
-    <value condition="Container.Content(movies)+Skin.HasSetting(wallgenre)+!Control.IsVisible(503)+!IsEmpty(ListItem.Mpaa)">$INFO[ListItem.Mpaa]</value>
-    <value condition="Container.Content(movies)+[!Skin.HasSetting(wallgenre)|Control.IsVisible(503)]">$INFO[ListItem.Genre]</value>
+    <value condition="[Container.Content(movies)+Skin.HasSetting(wallgenre)+!Control.IsVisible(503)+!IsEmpty(ListItem.Mpaa)]|[Container.Content(tvshows)+!Control.isVisible(503)]">$INFO[ListItem.Mpaa]</value>
+    <value condition="[Container.Content(movies)+[!Skin.HasSetting(wallgenre)|Control.IsVisible(503)]]|[Container.Content(tvshows)+Control.isVisible(503)]">$INFO[ListItem.Genre]</value>
   </variable>
 
   <variable name="TVShowLogoVar">
@@ -384,8 +362,8 @@
 
   <!--InfoWall variables-->
   <variable name="InfoWallSubTitleVar">
-    <value condition="!IsEmpty(ListItem.Tagline)+Container.Content(movies)">$INFO[ListItem.Tagline]</value>
-    <value condition="IsEmpty(ListItem.Tagline)+Container.Content(movies)">$INFO[ListItem.Genre]</value>
+    <value condition="!Skin.HasSetting(InfoWallTagLine)+Container.Content(movies)">$INFO[ListItem.Tagline]</value>
+    <value condition="Skin.HasSetting(InfoWallTagLine)+Container.Content(movies)">$INFO[ListItem.Genre]</value>
     <value condition="Container.Content(albums)">$INFO[ListItem.Artist]</value>
     <value condition="Container.Content(artists)">$INFO[ListItem.Property(Artist_Genre)]</value>
     <value condition="[Window.IsActive(programs)+Substring(Container.FolderPath,advanced.launcher)]">$INFO[ListItem.Studio]</value>
@@ -425,6 +403,37 @@
     <value condition="Container.Content(artists)+IsEmpty(ListItem.Property(Artist_Description))">$LOCALIZE[547]</value>
     <value condition="Container.Content(songs)|Window.IsActive(pictures)">[COLOR abFFFFFF]$LOCALIZE[569]: [/COLOR]$INFO[ListItem.Comment]</value>
     <value>$INFO[ListItem.Plot]</value>
+  </variable>
+
+  <variable name="WidgetTrailerLabelVar">
+    <value condition="Control.HasFocus(8000)+!IsEmpty(Container(8000).ListItem.Property(Trailer))+Skin.HasSetting(HomeRandomMovies)">$LOCALIZE[31237]</value>
+    <value condition="Control.HasFocus(8000)+!IsEmpty(Container(8000).ListItem.Property(Trailer))+Skin.HasSetting(HomeLatestMovies)">$LOCALIZE[31259]</value>
+    <value condition="Control.HasFocus(8003)+!IsEmpty(Container(8003).ListItem.Property(Trailer))+Skin.HasSetting(lowermainmenu)">$LOCALIZE[312573]</value>
+    <value condition="Control.HasFocus(8003)+!IsEmpty(Container(8003).ListItem.Property(Trailer))+!Skin.HasSetting(lowermainmenu)">$LOCALIZE[31394]</value>
+  </variable>
+
+  <variable name="RecentAddedWidgetLabel1Var">
+    <value condition="Skin.HasSetting(HomeLatestMovies)+Container(9000).HasFocus(10)">$LOCALIZE[31331]</value>
+    <value condition="Skin.HasSetting(HomeRandomMovies)+Container(9000).HasFocus(10)">$LOCALIZE[31221]</value>
+    <value condition="Skin.HasSetting(HomeLatestTV)+Container(9000).HasFocus(11)">$LOCALIZE[31332]</value>
+    <value condition="Skin.HasSetting(HomeRandomTV)+Container(9000).HasFocus(11)">$LOCALIZE[31219]</value>
+    <value condition="Skin.HasSetting(HomeLatestMusic)+Container(9000).HasFocus(3)">$LOCALIZE[31217]</value>
+    <value condition="Skin.HasSetting(HomeRandomMusic)+Container(9000).HasFocus(3)">$LOCALIZE[31163] $LOCALIZE[179]</value>
+    <value condition="Skin.HasSetting(HomeLatestAlbums)+Container(9000).HasFocus(3)">$LOCALIZE[31358]</value>
+    <value condition="Skin.HasSetting(HomeRandomAlbums)+Container(9000).HasFocus(3)">$LOCALIZE[31163] $LOCALIZE[558]</value>
+    <value condition="Skin.HasSetting(HomeRandomAddons)+Container(9000).HasFocus(8)">$LOCALIZE[31163] $LOCALIZE[24000]</value>
+  </variable>
+
+  <variable name="RecentAddedWidgetLabel2Var">
+    <value condition="Skin.HasSetting(HomeLatestMovies)+Container(9000).HasFocus(10)">$LOCALIZE[31323]</value>
+    <value condition="Skin.HasSetting(HomeRandomMovies)+Container(9000).HasFocus(10)">$LOCALIZE[31222]</value>
+    <value condition="Skin.HasSetting(HomeLatestTV)+Container(9000).HasFocus(11)">$LOCALIZE[31324]</value>
+    <value condition="Skin.HasSetting(HomeRandomTV)+Container(9000).HasFocus(11)">$LOCALIZE[31220]</value>
+    <value condition="Skin.HasSetting(HomeLatestMusic)+Container(9000).HasFocus(3)">$LOCALIZE[31218]</value>
+    <value condition="Skin.HasSetting(HomeRandomMusic)+Container(9000).HasFocus(3)">$LOCALIZE[31163] $LOCALIZE[134]</value>
+    <value condition="Skin.HasSetting(HomeLatestAlbums)+Container(9000).HasFocus(3)">$LOCALIZE[31359]</value>
+    <value condition="Skin.HasSetting(HomeRandomAlbums)+Container(9000).HasFocus(3)">$LOCALIZE[31163] $LOCALIZE[132]</value>
+    <value condition="Skin.HasSetting(HomeRandomAddons)+Container(9000).HasFocus(8)">$LOCALIZE[31163] $LOCALIZE[24001]</value>
   </variable>
 
 </includes>

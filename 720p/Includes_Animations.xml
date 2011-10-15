@@ -240,14 +240,10 @@
   <include name="Animation_HomeWidget">
     <animation effect="fade" start="0" end="100" delay="1000" time="500">WindowOpen</animation>
     <animation effect="fade" start="100" end="0" time="200">WindowClose</animation>
-    <animation effect="fade" start="0" end="100" delay="500" time="800">Visible</animation>
-    <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+    <animation effect="fade" start="0" end="100" time="300">Visible</animation>
+    <animation effect="fade" start="100" end="0" time="300">Hidden</animation>
   </include>
   <include name="Animation_MediaWidget">
-    <animation effect="slide" start="400,0" end="0,0" easing="inout" tween="cubic" time="500" delay="100">VisibleChange</animation>
-    <animation effect="slide" start="0,0" end="400,0" easing="inout" tween="cubic" time="500">WindowClose</animation>
-    <animation effect="slide" time="200" start="0,0" end="0,-25" condition="!Skin.HasSetting(lowermainmenu)+Skin.HasSetting(rsshomelow)">Conditional</animation>
-    <animation effect="slide" time="200" start="0,0" end="0,30" condition="Skin.HasSetting(lowermainmenu)+Skin.HasSetting(timehomehigh)">Conditional</animation>
     <animation effect="slide" start="0" end="300" time="400" tween="cubic" easing="inout" condition="Player.HasAudio+Skin.HasSetting(itemsplaylist)+!Skin.HasSetting(homepageMusicinfo)+!Skin.HasSetting(smallmusichome)">Conditional</animation>
   </include>
   <include name="TopbarPulseAnimationLeft">
@@ -257,10 +253,11 @@
     <animation effect="fade" start="20" end="100" time="2000" pulse="true" condition="true">Conditional</animation>
   </include>
   <include name="Animation_OpenCloseZoom_New">
-    <animation type="WindowOpen" reversible="false">
+    <animation type="WindowOpen" reversible="false" conditon="!Window.Previous(fullscreenvideo)">
       <effect type="zoom" start="150" end="100" center="640,360" time="300" tween="cubic" easing="out"/>
       <effect type="fade" start="0" end="100" time="300"/>
     </animation>
+    <animation effect="fade" time="250" condition="Window.Previous(fullscreenvideo)">WindowOpen</animation>
     <animation type="WindowClose" reversible="false" condition="Control.IsVisible(510)+!Skin.HasSetting(posterslide)">
       <effect type="fade" start="100" end="0" time="300" delay="1400"/>
       <effect type="zoom" start="100" end="130" center="640,360" time="300" tween="cubic" easing="in" delay="1400"/>
