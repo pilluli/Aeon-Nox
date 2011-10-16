@@ -89,7 +89,7 @@
           <height>100</height>
           <aspectratio>stretch</aspectratio>
           <fadetime>400</fadetime>
-          <texture background="true">$INFO[ListItem.Path,,../logo.png]</texture>
+          <texture background="true">$INFO[ListItem.Path,,/logo.png]</texture>
           <visible>Container.Content(episodes)</visible>
         </control>
         <control type="image">
@@ -945,7 +945,7 @@
           <width>266</width>
           <height>400</height>
           <aspectratio scalediffuse="false">stretch</aspectratio>
-          <texture background="true" fallback="DefaultVideoBigPoster.png" diffuse="thumbs/movieposter_mask.png">$INFO[ListItem.Path,,../poster.jpg]</texture>
+          <texture background="true" fallback="DefaultVideoBigPoster.png" diffuse="thumbs/movieposter_mask.png">$INFO[ListItem.Path,,/poster.jpg]</texture>
           <fadetime>400</fadetime>
           <visible>!Skin.HasSetting(TVShowsUsePosters)+IsEmpty(Container.SeasonThumb)</visible>
         </control>
@@ -988,7 +988,7 @@
           <width>266</width>
           <height>400</height>
           <aspectratio scalediffuse="false">stretch</aspectratio>
-          <texture background="true" flipy="true" fallback="DefaultVideoBigPoster.png" diffuse="thumbs/movieposter_mask_reflect.png">$INFO[ListItem.Path,,../poster.jpg]</texture>
+          <texture background="true" flipy="true" fallback="DefaultVideoBigPoster.png" diffuse="thumbs/movieposter_mask_reflect.png">$INFO[ListItem.Path,,/poster.jpg]</texture>
           <fadetime>400</fadetime>
           <visible>!Skin.HasSetting(TVShowsUsePosters)+IsEmpty(Container.SeasonThumb)</visible>
         </control>
@@ -1036,7 +1036,7 @@
           <width>270</width>
           <height>383</height>
           <aspectratio scalediffuse="false">stretch</aspectratio>
-          <texture background="true" fallback="DefaultVideoBigPoster.png" diffuse="thumbs/boxes/case_mask.png">$INFO[ListItem.Path,,../poster.jpg]</texture>
+          <texture background="true" fallback="DefaultVideoBigPoster.png" diffuse="thumbs/boxes/case_mask.png">$INFO[ListItem.Path,,/poster.jpg]</texture>
           <fadetime>400</fadetime>
           <visible>!Skin.HasSetting(TVShowsUsePosters)+IsEmpty(Container.SeasonThumb)</visible>
         </control>
@@ -1111,7 +1111,7 @@
           <height>60</height>
           <aspectratio scalediffuse="true">keep</aspectratio>
           <fadetime>400</fadetime>
-          <texture diffuse="thumbs/banner_mask.png" background="true">$INFO[ListItem.Path,,../banner.jpg]</texture>
+          <texture diffuse="thumbs/banner_mask.png" background="true">$INFO[ListItem.Path,,/banner.jpg]</texture>
           <visible>!Skin.HasSetting(highlist)</visible>
         </control>
 
