@@ -75,7 +75,9 @@
 		<fadetime>900</fadetime>
     <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
     <animation effect="slide" start="-10,-10" end="10,10" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-		<aspectratio align="center">scale</aspectratio>
+    <animation effect="fade" time="250">WindowOpen</animation>
+    <animation effect="fade" time="250">WindowClose</animation>
+    <aspectratio align="center">scale</aspectratio>
 	</include>
 	<include name="CommonFanartVarsSingle">
 		<posx>0</posx>
@@ -86,7 +88,9 @@
     <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
     <animation effect="slide" start="-10,-10" end="10,10" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
 		<aspectratio align="center">scale</aspectratio>
-	</include>
+    <animation effect="fade" time="250">WindowOpen</animation>
+    <animation effect="fade" time="250">WindowClose</animation>
+  </include>
 	<include name="CommonCurtainBackdrop">
 		<control type="image">
 			<include>CommonFanartVarsSingle</include>
@@ -98,8 +102,8 @@
     <control type="multiimage">
       <include condition="Skin.HasSetting(animatedbg)">Animation_CommonFade</include>
       <include>CommonFanartVars</include>
-      <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Video_Folder)]</imagepath>
-      <visible>Skin.HasSetting(VideoLibraryMusicVideoFanart)+[Container.Content(MusicVideos) | Container.Content(Artists) | Container.Content(Albums)]</visible>
+      <imagepath fallback="special://skin/backgrounds/videos.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Video_Folder)]</imagepath>
+      <visible>[Skin.HasSetting(VideoLibraryMusicVideoFanart)+[Container.Content(MusicVideos) | Container.Content(Artists) | Container.Content(Albums)]]|[[Container.Content(addons)|Container.Content(files)]+!Skin.HasSetting(VideoFilesFanart)]</visible>
     </control>
     <control type="multiimage">
       <include condition="Skin.HasSetting(animatedbg)">Animation_CommonFade</include>
