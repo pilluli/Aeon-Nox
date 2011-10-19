@@ -502,10 +502,13 @@
 			<posx>0</posx>
 			<posy>0</posy>
       <control type="image">
-        <posx>-170</posx>
-        <width>680</width>
-        <height>58</height>
-        <texture flipy="true" flipx="true">osd/osd_progress_bar_back.png</texture>
+        <description>time background</description>
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>499</width>
+        <height>27</height>
+        <texture flipy="true" flipx="true">home/timepanel_mid.png</texture>
+        <include>Animation_VisibleChange400</include>
         <visible>!Skin.HasSetting(breadcrumb)</visible>
       </control>
       <control type="progress">
@@ -703,30 +706,62 @@
 		<include>Objects_KeyOnVars</include>
 	</include>
 	<include name="Furniture_Clock">
-		<control type="group">
-			<visible>!Control.HasFocus(109)+!Skin.HasSetting(breadcrumb)</visible>
-			<include>Animation_WidgetZoom</include>
+    <control type="group">
+      <posx>499r</posx>
+      <posy>0</posy>
+      <visible>!Control.HasFocus(109)+!Skin.HasSetting(breadcrumb)</visible>
+      <animation effect="slide" start="0,0" end="500,0" time="300">WindowClose</animation>
+      <animation effect="slide" start="500,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
+      <animation effect="slide" start="500" end="0" time="300">VisibleChange</animation>
       <control type="image">
-        <posx>499r</posx>
+        <description>time background</description>
+        <posx>0</posx>
         <posy>0</posy>
-        <width>680</width>
-        <height>58</height>
-        <texture flipy="true">osd/osd_progress_bar_back.png</texture>
+        <width>499</width>
+        <height>27</height>
+        <texture flipy="true">home/timepanel_mid.png</texture>
+        <include>Animation_VisibleChange400</include>
       </control>
       <control type="label">
-				<description>time label</description>
-				<posx>1270</posx>
-				<posy>-2</posy>
-				<width>400</width>
-				<height>27</height>
-				<align>right</align>
-				<aligny>center</aligny>
-				<font>Font_Reg17</font>
-				<textcolor>white2</textcolor>
-				<shadowcolor>-</shadowcolor>
-				<label>[COLOR white2]$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(MMM)] $INFO[System.Date(yyyy)]  |  [/COLOR][COLOR ffaaaaaa]$INFO[System.Time][/COLOR]</label>
-			</control>
-		</control>
+        <description>time label</description>
+        <posx>489</posx>
+        <posy>-1</posy>
+        <width>400</width>
+        <height>27</height>
+        <align>right</align>
+        <aligny>center</aligny>
+        <font>Font_Reg17</font>
+        <textcolor>white2</textcolor>
+        <shadowcolor>-</shadowcolor>
+        <label>[COLOR white2]$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  |  [/COLOR][COLOR ffaaaaaa]$INFO[System.Time][/COLOR]</label>
+      </control>
+      <control type="group">
+        <posx>0</posx>
+        <visible>Weather.IsFetched</visible>
+        <control type="image">
+          <description>Weather image</description>
+          <posx>21</posx>
+          <posy>2</posy>
+          <width>25</width>
+          <height>25</height>
+          <aspectratio>keep</aspectratio>
+          <texture>$INFO[Window(weather).Property(Current.ConditionIcon)]</texture>
+        </control>
+        <control type="label">
+          <description>time label</description>
+          <posx>60</posx>
+          <posy>-1</posy>
+          <width>200</width>
+          <height>27</height>
+          <align>left</align>
+          <aligny>center</aligny>
+          <font>Font_Reg17_Caps</font>
+          <textcolor>white2</textcolor>
+          <shadowcolor>-</shadowcolor>
+          <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits,,  |  ][COLOR ffaaaaaa]$INFO[Window(Weather).Property(Current.Humidity)][/COLOR]</label>
+        </control>
+      </control>
+    </control>
 	</include>
 	<include name="Furniture_SettingsBackPanel">
 		<control type="image">
@@ -1021,8 +1056,8 @@
     <aspectratio align="center">stretch</aspectratio>
   </include>
   <include name="NextAiredLogoVars">
-    <posx>15</posx>
-    <posy>10</posy>
+    <posx>7.5</posx>
+    <posy>20</posy>
     <width>100</width>
     <height>39</height>
     <aspectratio>keep</aspectratio>
@@ -1030,22 +1065,39 @@
     <visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),2)</visible>
   </include>
   <include name="NextAiredThumbVars">
-    <posx>27.5</posx>
-    <posy>7.5</posy>
-    <width>75</width>
-    <height>50</height>
+    <posx>5</posx>
+    <posy>5</posy>
+    <width>105</width>
+    <height>70</height>
     <aspectratio>keep</aspectratio>
     <texture background="true">$INFO[ListItem.Thumb]</texture>
     <visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),0)</visible>
   </include>
   <include name="NextAiredBannerVars">
-    <posx>15</posx>
+    <posx>7.5</posx>
     <posy>10</posy>
     <width>100</width>
     <height>39</height>
     <aspectratio>keep</aspectratio>
     <texture background="true">$INFO[ListItem.Property(Path),,banner.jpg]</texture>
     <visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),1)</visible>
+  </include>
+  <include name="NextAiredLabelVars">
+    <posx>57</posx>
+    <posy>80</posy>
+    <width>114</width>
+    <height>20</height>
+    <label>$INFO[ListItem.Property(ShortTime)]</label>
+    <textcolor>grey2</textcolor>
+    <font>Font_Info</font>
+    <align>center</align>
+  </include>
+  <include name="NextAiredListpanel">
+    <posx>0</posx>
+    <posy>-5</posy>
+    <width>115</width>
+    <height>125</height>
+    <texture>views/listpanel_selectbar.png</texture>
   </include>
   <include name="Objects_CommonSettingsButton">
     <posx>0</posx>
