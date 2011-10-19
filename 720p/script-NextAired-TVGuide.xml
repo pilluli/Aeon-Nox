@@ -250,10 +250,10 @@
         <control type="group" id="9002">
           <control type="list" id="200">
             <description>Monday list</description>
-            <posx>88</posx>
+            <posx>84</posx>
             <posy>91</posy>
 
-            <width>115</width>
+            <width>119</width>
             <height>550</height>
             <orientation>vertical</orientation>
             <scrolltime>0</scrolltime>
@@ -264,55 +264,56 @@
             <onright>201</onright>
             <itemgap>5</itemgap>
             <itemlayout height="108" width="115">
-              <control type="label">
-                <include>NextAiredLabelVars</include>
-              </control>
-              <control type="image">
-                <description>Thumb</description>
-                <include>NextAiredThumbVars</include>
-              </control>
-              <control type="image">
-                <description>Banner</description>
-                <include>NextAiredBannerVars</include>
-              </control>
-              <control type="image">
-                <description>Logo</description>
-                <include>NextAiredLogoVars</include>
+              <control type="group">
+                <posx>4</posx>
+                <control type="label">
+                  <include>NextAiredLabelVars</include>
+                </control>
+                <control type="image">
+                  <description>Thumb</description>
+                  <include>NextAiredThumbVars</include>
+                </control>
+                <control type="image">
+                  <description>Banner</description>
+                  <include>NextAiredBannerVars</include>
+                </control>
+                <control type="image">
+                  <description>Logo</description>
+                  <include>NextAiredLogoVars</include>
+                </control>
               </control>
             </itemlayout>
             <focusedlayout height="108" width="115">
-              <control type="image">
-                <include>NextAiredListpanel</include>
-                <visible>Control.HasFocus(200)</visible>
+              <control type="group">
+                <posx>4</posx>
+                <control type="image">
+                  <posx>-4</posx>
+                  <width>119</width>
+                  <include>NextAiredListpanel</include>
+                  <visible>Control.HasFocus(200)</visible>
+                </control>
+                <control type="label">
+                  <include>NextAiredLabelVars</include>
+                  <visible>!Control.HasFocus(200)</visible>
+                </control>
+                <control type="label">
+                  <textcolor>ff2e2e2e</textcolor>
+                  <include>NextAiredLabelVars</include>
+                  <visible>Control.HasFocus(200)</visible>
+                </control>
+                <control type="image">
+                  <description>Thumb</description>
+                  <include>NextAiredThumbVars</include>
+                </control>
+                <control type="image">
+                  <description>Banner</description>
+                  <include>NextAiredBannerVars</include>
+                </control>
+                <control type="image">
+                  <description>Logo</description>
+                  <include>NextAiredLogoVars</include>
+                </control>
               </control>
-              <control type="label">
-                <include>NextAiredLabelVars</include>
-                <visible>!Control.HasFocus(200)</visible>
-              </control>
-              <control type="label">
-                <textcolor>ff2e2e2e</textcolor>
-                <include>NextAiredLabelVars</include>
-                <visible>Control.HasFocus(200)</visible>
-              </control>
-              <control type="image">
-                <description>Thumb</description>
-                <include>NextAiredThumbVars</include>
-              </control>
-              <control type="image">
-                <description>Banner</description>
-                <include>NextAiredBannerVars</include>
-              </control>
-              <control type="image">
-                <description>Logo</description>
-                <include>NextAiredLogoVars</include>
-              </control>
-              <!--<control type="image">
-                <posx>10</posx>
-                <posy>0</posy>
-                <width>110</width>
-                <height>110</height>
-                <texture>common/black.png</texture>
-              </control>-->
             </focusedlayout>
           </control>
           <control type="list" id="201">
@@ -395,7 +396,7 @@
             <onleft>201</onleft>
             <onright>203</onright>
             <itemgap>5</itemgap>
-            <itemlayout height="110" width="120">
+            <itemlayout height="108" width="120">
               <control type="label">
                 <include>NextAiredLabelVars</include>
               </control>
@@ -412,7 +413,7 @@
                 <include>NextAiredLogoVars</include>
               </control>
             </itemlayout>
-            <focusedlayout height="110" width="120">
+            <focusedlayout height="108" width="120">
               <control type="image">
                 <include>NextAiredListpanel</include>
                 <visible>Control.HasFocus(202)</visible>
@@ -461,7 +462,7 @@
             <onleft>202</onleft>
             <onright>204</onright>
             <itemgap>5</itemgap>
-            <itemlayout height="110" width="120">
+            <itemlayout height="108" width="120">
               <control type="label">
                 <include>NextAiredLabelVars</include>
               </control>
@@ -478,7 +479,7 @@
                 <include>NextAiredLogoVars</include>
               </control>
             </itemlayout>
-            <focusedlayout height="110" width="120">
+            <focusedlayout height="108" width="120">
               <control type="image">
                 <include>NextAiredListpanel</include>
                 <visible>Control.HasFocus(203)</visible>
@@ -527,7 +528,7 @@
             <onleft>203</onleft>
             <onright>205</onright>
             <itemgap>5</itemgap>
-            <itemlayout height="110" width="120">
+            <itemlayout height="108" width="120">
               <control type="label">
                 <include>NextAiredLabelVars</include>
               </control>
@@ -544,7 +545,7 @@
                 <include>NextAiredLogoVars</include>
               </control>
             </itemlayout>
-            <focusedlayout height="110" width="120">
+            <focusedlayout height="108" width="120">
               <control type="image">
                 <include>NextAiredListpanel</include>
                 <visible>Control.HasFocus(204)</visible>
@@ -593,7 +594,7 @@
             <onleft>204</onleft>
             <onright>206</onright>
             <itemgap>5</itemgap>
-            <itemlayout height="110" width="120">
+            <itemlayout height="108" width="120">
               <control type="label">
                 <include>NextAiredLabelVars</include>
               </control>
@@ -610,7 +611,7 @@
                 <include>NextAiredLogoVars</include>
               </control>
             </itemlayout>
-            <focusedlayout height="110" width="120">
+            <focusedlayout height="108" width="120">
               <control type="image">
                 <include>NextAiredListpanel</include>
                 <visible>Control.HasFocus(205)</visible>
@@ -659,7 +660,7 @@
             <onleft>205</onleft>
             <onright>200</onright>
             <itemgap>5</itemgap>
-            <itemlayout height="110" width="120">
+            <itemlayout height="108" width="120">
               <control type="label">
                 <include>NextAiredLabelVars</include>
               </control>
@@ -676,7 +677,7 @@
                 <include>NextAiredLogoVars</include>
               </control>
             </itemlayout>
-            <focusedlayout height="110" width="120">
+            <focusedlayout height="108" width="120">
               <control type="image">
                 <include>NextAiredListpanel</include>
                 <visible>Control.HasFocus(206)</visible>
