@@ -21,7 +21,8 @@
 	<include file="Viewtype_BigFan.xml" />
 	<include file="Viewtype_Episode.xml" />
 	<include file="Viewtype_Carousel.xml" />
-	<include file="Viewtype_Stripshow.xml" />
+  <include file="Viewtype_Stripshow.xml" />
+  <include file="Viewtype_Thumbnail.xml" />
 	<include file="IncludesHomeRecentlyAdded.xml" />
 	<include file="Includes_MediaFlags.xml" />
 	<include file="Includes_Animations.xml" />
@@ -431,7 +432,7 @@
 		<posy>0</posy>
 		<height>39</height>
 		<width>308</width>
-		<textcolor>abFFFFFF</textcolor>
+		<textcolor>context</textcolor>
 		<focusedcolor>FFdfdfdf</focusedcolor>
 		<texturenofocus>dialogs/shutdown_nofocus.png</texturenofocus>
 		<texturefocus>dialogs/shutdown_focus.png</texturefocus>
@@ -711,7 +712,7 @@
       <posy>0</posy>
       <visible>!Control.HasFocus(109)+!Skin.HasSetting(breadcrumb)</visible>
       <animation effect="slide" start="0,0" end="500,0" time="300">WindowClose</animation>
-      <animation effect="slide" start="500,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
+      <animation effect="slide" start="500,0" end="0,0" delay="WidgetSlideDelay" time="300">WindowOpen</animation>
       <animation effect="slide" start="500" end="0" time="300">VisibleChange</animation>
       <control type="image">
         <description>time background</description>
@@ -734,6 +735,7 @@
         <textcolor>white2</textcolor>
         <shadowcolor>-</shadowcolor>
         <label>[COLOR white2]$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  |  [/COLOR][COLOR ffaaaaaa]$INFO[System.Time][/COLOR]</label>
+        <animation effect="slide" start="0" end="-40" time="200" tween="quadratic" easing="out" condition="Window.IsActive(mutebug)">Conditional</animation>
       </control>
       <control type="group">
         <posx>0</posx>

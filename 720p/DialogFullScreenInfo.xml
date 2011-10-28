@@ -101,7 +101,7 @@
       <control type="label">
         <posx>340</posx>
         <posy>12</posy>
-        <width>610</width>
+        <width>600</width>
         <height>45</height>
         <align>center</align>
         <aligny>bottom</aligny>
@@ -114,7 +114,7 @@
       <control type="label">
         <posx>340</posx>
         <posy>52</posy>
-        <width>610</width>
+        <width>600</width>
         <height>45</height>
         <align>center</align>
         <aligny>top</aligny>
@@ -259,9 +259,7 @@
         <posy>400</posy>
         <width>207</width>
         <height>310</height>
-        <texture diffuse="thumbs/movieposter_mask.png">common/blank.png</texture>
-        <bordertexture border="-25">thumbs/poster_shadow.png</bordertexture>
-        <aspectratio aligny="bottom">stretch</aspectratio>
+        <texture border="-25">thumbs/poster_shadow.png</texture>
         <animation type="WindowOpen">
           <effect type="slide" start="300,0" end="0,0" time="600" tween="cubic" easing="out"/>
         </animation>
@@ -333,7 +331,7 @@
         <label>$INFO[VideoPlayer.PlotOutline]</label>
         <scroll>true</scroll>
         <scrollout>false</scrollout>
-        <scrollspeed>100</scrollspeed>
+        <scrollspeed>70</scrollspeed>
         <pauseatend>5000</pauseatend>
         <visible>VideoPlayer.Content(movies)</visible>
       </control>
@@ -350,7 +348,7 @@
         <label>$INFO[VideoPlayer.Plot]</label>
         <scroll>true</scroll>
         <scrollout>false</scrollout>
-        <scrollspeed>100</scrollspeed>
+        <scrollspeed>70</scrollspeed>
         <pauseatend>5000</pauseatend>
         <visible>VideoPlayer.Content(episodes)</visible>
       </control>

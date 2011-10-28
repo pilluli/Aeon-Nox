@@ -118,7 +118,14 @@
     <value condition="Container.Content(episodes)+!IsEmpty(Container.SeasonThumb)">$INFO[Container.SeasonThumb]</value>
     <value>$INFO[ListItem.Icon]</value>
   </variable>
- 
+  <variable name="PosterVar2">
+    <value condition="!Skin.HasSetting(TVShowsUsePosters)+Container.Content(tvshows)">$INFO[ListItem.Path,,poster.jpg]</value>
+    <value condition="Container.Content(episodes)+[[!Skin.HasSetting(TVShowsUsePosters)+IsEmpty(Container.SeasonThumb)]|SubString(Container.FolderPath,videodb://5/)]">$INFO[ListItem.Path,,../poster.jpg]</value>
+    <value condition="Container.Content(episodes)+Skin.HasSetting(TVShowsUsePosters)+IsEmpty(Container.SeasonThumb)">$INFO[Container.TvshowThumb]</value>
+    <value condition="Container.Content(episodes)+!IsEmpty(Container.SeasonThumb)">$INFO[Container.SeasonThumb]</value>
+    <value>$INFO[ListItem.Icon]</value>
+  </variable>
+
   <variable name="InfoWallPreviewTextureVar">
     <value condition="Container.Content(artists)+IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/music.jpg</value>
     <value condition="Container.Content(addons)+IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/addons.jpg</value>
@@ -425,6 +432,7 @@
     <value condition="Skin.HasSetting(HomeLatestAlbums)+Container(9000).HasFocus(3)">$LOCALIZE[31358]</value>
     <value condition="Skin.HasSetting(HomeRandomAlbums)+Container(9000).HasFocus(3)">$LOCALIZE[31163] $LOCALIZE[558]</value>
     <value condition="Skin.HasSetting(HomeRandomAddons)+Container(9000).HasFocus(8)">$LOCALIZE[31163] $LOCALIZE[24000]</value>
+    <value condition="Skin.HasSetting(HomeSystemInfo)+Container(9000).HasFocus(5)">$LOCALIZE[138]</value>
   </variable>
 
   <variable name="RecentAddedWidgetLabel2Var">
@@ -448,4 +456,33 @@
     <value condition="Container(9000).HasFocus(11)">$INFO[Container(8000).ListItem.Thumb]</value>
     <value>$INFO[Container(8000).ListItem.ActualIcon]</value>
   </variable>
+  
+  <variable name="EpisodeViewPosterVar">
+    <value condition="!Skin.HasSetting(TVShowsUsePosters)">$INFO[ListItem.Path,,../poster.jpg]</value>
+    <value condition="Skin.HasSetting(TVShowsUsePosters)">$INFO[Container.TvShowThumb]</value>
+  </variable>
+
+  <variable name="MusicOSDRepeatButtonVar">
+    <value condition="[!Playlist.IsRepeat + !Playlist.IsRepeatOne]+!Control.HasFocus(704)">osd/buttons/OSDRepeatNF.png</value>
+    <value condition="Playlist.IsRepeatOne+!Control.HasFocus(704)">osd/buttons/OSDRepeatOneNF.png</value>
+    <value condition="Playlist.IsRepeat+!Control.HasFocus(704)">osd/buttons/OSDRepeatAllNF.png</value>
+    <value condition="[!Playlist.IsRepeat + !Playlist.IsRepeatOne]+Control.HasFocus(704)">osd/buttons/OSDRepeatFO.png</value>
+    <value condition="Playlist.IsRepeatOne+Control.HasFocus(704)">osd/buttons/OSDRepeatOneFO.png</value>
+    <value condition="Playlist.IsRepeat+Control.HasFocus(704)">osd/buttons/OSDRepeatAllFO.png</value>
+  </variable>
+
+  <variable name="BannerVar">
+    <value condition="Skin.HasSetting(TVShowsUsePosters)">$INFO[ListItem.Path,,banner.jpg]</value>
+    <value>$INFO[ListItem.Icon]</value>
+  </variable>
+
+  <variable name="OneOrMoreSeasonsVar">
+    <value condition="IntegerGreaterThan(ListItem.Property(TotalSeasons),1)">$LOCALIZE[33054]</value>
+    <value>$LOCALIZE[20373]</value>
+  </variable>
+  <variable name="OneOrMoreEpisodesVar">
+    <value condition="IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)">$LOCALIZE[20360]</value>
+    <value>$LOCALIZE[20359]</value>
+  </variable>
+
 </includes>

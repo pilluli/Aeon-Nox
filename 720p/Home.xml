@@ -3,7 +3,7 @@
   <onload condition="Skin.HasSetting(HomeVideoBookmarks)">XBMC.RunScript(script.video.bookmarks.browser,limit=5)</onload>
   <onload condition="Window.Previous(startup)+Skin.HasSetting(customstartupfocus)">Control.Move(9000,$INFO[Skin.String(CustomFocusOffset)])</onload>
   <onload condition="Window.Previous(startup)+[Skin.HasSetting(HomeRandomMovies)|Skin.HasSetting(HomeRandomTV)|Skin.HasSetting(HomeRandomMusic)|Skin.HasSetting(HomeRandomAddons)|Skin.HasSetting(HomeRandomAlbums)|Skin.HasSetting(HomeRandomPoster)]">XBMC.RunScript(script.randomitems,limit=8&amp;unplayed=True)</onload>
-	<allowoverlay>yes</allowoverlay>
+  <allowoverlay>yes</allowoverlay>
 	<controls>
     <!-- Fanart -->
     <control type="multiimage">
@@ -18,7 +18,7 @@
       <include>CommonFanartVars</include>
       <include>VisibleFadeEffect</include>
       <imagepath background="true">$VAR[HomeFanartVar]</imagepath>
-      <visible>Control.HasFocus(8000)|Control.HasFocus(8003)</visible>
+      <visible>Control.HasFocus(8000)|Control.HasFocus(8003)|Player.HasAudio</visible>
       <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
       <animation effect="slide" start="-10,-10" end="10,10" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
     </control>
@@ -40,7 +40,6 @@
       <include>BackgroundEffect</include>
       <visible>Skin.HasSetting(effect_bg_home)</visible>
     </control>
-
     <!-- Home Fullscreen Video -->
 		<include>CommonMediaPlayingBackground</include>
 		<control type="image">
@@ -56,7 +55,7 @@
 		<!-- Latest/Random Items -->
 		<control type="group">
 			<include>Animation_OpenCloseZoom</include>
-			<include condition="Skin.HasSetting(homepageHideRecentlyAdded)">RecentWidget</include>
+			<include condition="Skin.HasSetting(homepageHideRecentlyAdded)|Skin.HasSetting(HomeSystemInfo)">RecentWidget</include>
 			<include condition="Skin.HasSetting(HomeVideoBookmarks)">MovieBookmarkWidget</include>
 		</control>
     <!-- Library Totals -->
@@ -84,11 +83,12 @@
 					<width>800</width>
 					<height>33</height>
 					<texture>home/submenubar.png</texture>
-				</control>
+          <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
+        </control>
 				<control type="wraplist" id="9010">
-					<posx>122</posx>
+					<posx>105</posx>
 					<height>33</height>
-					<width>725</width>
+					<width>750</width>
 					<onleft>9010</onleft>
 					<onright>9010</onright>
 					<viewtype>list</viewtype>
@@ -98,9 +98,9 @@
           <onup>9000</onup>
           <ondown condition="Skin.HasSetting(HomeVideoBookmarks)+Container(9000).HasFocus(2)">8005</ondown>
           <ondown condition="![Skin.HasSetting(HomeVideoBookmarks)+Container(9000).HasFocus(2)]">8000</ondown>
-          <itemlayout width="145" height="33">
+          <itemlayout width="150" height="33">
 						<control type="label">
-							<posx>72.5</posx>
+							<posx>75</posx>
 							<posy>0</posy>
 							<height>33</height>
 							<width>145</width>
@@ -111,9 +111,9 @@
 							<textcolor>5fFFFFFF</textcolor>
 						</control>
 					</itemlayout>
-					<focusedlayout width="145" height="33">
+					<focusedlayout width="150" height="33">
 						<control type="label">
-							<posx>72.5</posx>
+							<posx>75</posx>
 							<posy>0</posy>
 							<height>33</height>
 							<width>145</width>
@@ -203,6 +203,7 @@
         <width>1280</width>
         <height>150</height>
         <texture>$VAR[HomeMenuBackVar]</texture>
+        <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <animation effect="fade" start="100" end="80" time="50" condition="Skin.HasSetting(glasshome)+![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
       </control>
       <!-- Home OSD -->

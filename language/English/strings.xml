@@ -38,7 +38,7 @@
   <string id="31049">End Time</string>
   <string id="31050">Previous</string>
   <string id="31051">Next</string>
-  <string id="31052">REMAINING</string>
+  <string id="31052">Remaining</string>
 
   <!-- Playlist Editor labels -->
   <string id="31055">Open playlist</string>
@@ -217,7 +217,7 @@
   <string id="31169">Thin Panel</string>
   <string id="31170">Lower List</string>
   <string id="31171">Run TV logo script</string>
-  <string id="31318">Small</string>
+  <string id="31318">Small Wall</string>
   <string id="31172">Extra Info</string>
   <string id="31173">Get Logo</string>
   <string id="31174">Enable TvTunes</string>
@@ -390,6 +390,8 @@
   <string id="31459">Icon: [B]Fanart[/B]</string>
   <string id="31460">TV show logo</string>
   <string id="31461">Media</string>
+  <string id="31462">Icon: [B]Season thumb[/B]</string>
+  <string id="31463">Icon: [B]TV show thumb[/B]</string>
 
   <!-- Home Menu -->
   <string id="31500">PICTURES</string>
@@ -431,6 +433,10 @@
   <string id="31622">Hide the tooltip that indicates the Media Menu on the left side of the screen</string>
   <string id="31623">Choose which media widgets to show on Home window</string>
   <string id="31624">Configure "Now Playing" widget</string>
+  <string id="31625">Select custom color for Home window furniture</string>
+  <string id="31626">Enable artist clearLOGO</string>
+  <string id="31627">Deactivate player controls on OSD</string>
+  <string id="31628">Show system information widget</string>
 
 
   <!-- Weather plugin -->

@@ -8,7 +8,7 @@
 					<texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/$VAR[CaseLabelVar]/$INFO[ListItem.VideoResolution]p.png</texture>
 				</control>
 				<control type="image">
-					<include>MovieShowcaseThumbMainCases</include>
+					<include>MovieShowcaseThumbCases</include>
 					<info>ListItem.Thumb</info>
 				</control>
 				<include>MovieShowcaseGlassOverlayCases</include>
@@ -33,7 +33,7 @@
           <texture background="true" fallback="thumbs/boxes/default_case.png">thumbs/boxes/$VAR[CaseLabelVar]/$INFO[ListItem.VideoResolution]p.png</texture>
         </control>
         <control type="image">
-					<include>MovieShowcaseThumbMainCases</include>
+					<include>MovieShowcaseThumbCases</include>
 					<info>ListItem.Thumb</info>
 				</control>
 				<control type="group">

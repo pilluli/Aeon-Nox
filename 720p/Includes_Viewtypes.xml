@@ -157,6 +157,7 @@
         <font>Font_Reg17</font>
         <label>$VAR[FanartPanelPlotVar]</label>
         <textcolor>d0FFFFFF</textcolor>
+        <align>justify</align>
         <autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
         <animation effect="slide" start="0,0" end="0,-15" time="400" easing="inout" tween="cubic" condition="[Control.IsVisible(510)+Skin.HasSetting(posterslide)]">Conditional</animation>
       </control>
@@ -263,7 +264,7 @@
         <width>214</width>
         <height>314</height>
         <fadetime>200</fadetime>
-        <texture background="true">$VAR[PosterVar]</texture>
+        <texture background="true">$VAR[PosterVar2]</texture>
         <aspectratio align="center">keep</aspectratio>
         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
         <bordersize>7</bordersize>
@@ -409,6 +410,7 @@
           <height>312</height>
           <font>Font_Reg17</font>
           <label fallback="312577">$VAR[FanartPanelPlotVar]</label>
+          <align>justify</align>
           <textcolor>d0FFFFFF</textcolor>
           <animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo">Conditional</animation>
           <autoscroll delay="8000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -437,7 +439,7 @@
         <width>993</width>
         <height>137</height>
         <texture>views/showcase_spot.png</texture>
-        <visible>!Control.IsVisible(505)</visible>
+        <visible>![Control.IsVisible(505)|Control.IsVisible(500)|Control.IsVisible(560)|Control.IsVisible(51)|Control.IsVisible(551)]</visible>
         <animation effect="slide" time="200" start="0,0" end="384,20" tween="cubic" easing="out" condition="Control.IsVisible(50)">Conditional</animation>
         <animation effect="slide" time="1000" start="800,0" end="0,0" tween="cubic" easing="out">Visible</animation>
         <colordiffuse>$INFO[Skin.String(diffuse)]</colordiffuse>
@@ -719,23 +721,13 @@
       <visible>Control.IsVisible(512)|Control.IsVisible(514)</visible>
     </control>
   </include>
-  <include name="Furniture_WallBackground">
+  <include name="WallPanel">
     <control type="image">
-      <width>1280</width>
-      <height>720</height>
-      <texture>common/black.png</texture>
-      <colordiffuse>FFffffff</colordiffuse>
-      <visible>!Control.HasFocus(109)+[!Skin.HasSetting(bannerwalldark)+Control.IsVisible(51)]</visible>
-      <include>Animation_WindowFade200</include>
-      <animation effect="fade" start="0" end="100" time="400">VisibleChange</animation>
-    </control>
-    <control type="image">
-      <width>1280</width>
-      <height>720</height>
+      <posx>75</posx>
+      <posy>45</posy>
+      <width>1130</width>
+      <height>692</height>
       <texture>wall/wall_bg.png</texture>
-      <include>Animation_WindowFade200</include>
-      <animation effect="fade" start="100" end="80" time="400" condition="[Control.IsVisible(51)+Skin.HasSetting(bannerwalldark)]">Conditional</animation>
-      <visible>Control.IsVisible(51)</visible>
     </control>
   </include>
   <include name="InfoWallTVLogo">
@@ -798,18 +790,19 @@
   <!--Includes for Wall viewtypes-->
   <include name="Furniture_Wall_Movies_Small">
     <control type="image">
-      <posx>94</posx>
-      <posy>61</posy>
-      <width>1093</width>
-      <height>565</height>
+      <posx>100</posx>
+      <posy>92</posy>
+      <width>1080</width>
+      <height>520</height>
       <texture background="true">wall/wall_movie_squares_small.png</texture>
+      <aspectratio>keep</aspectratio>
       <include>Animation_CommonFade</include>
     </control>
   </include>
   <include name="Furniture_Wall_Music_Small">
     <control type="image">
       <posx>118</posx>
-      <posy>102</posy>
+      <posy>94</posy>
       <width>1044</width>
       <height>515</height>
       <texture background="true">wall/wall_squares_small.png</texture>
@@ -819,7 +812,7 @@
   <include name="Furniture_Wall_Movies">
     <control type="image">
       <posx>98</posx>
-      <posy>106</posy>
+      <posy>98</posy>
       <width>1085</width>
       <height>509</height>
       <texture background="true">wall/wall_movie_squares.png</texture>
@@ -829,7 +822,7 @@
   <include name="Furniture_Wall_Music">
     <control type="image">
       <posx>115</posx>
-      <posy>102</posy>
+      <posy>92</posy>
       <width>1051</width>
       <height>516</height>
       <texture background="true">wall/wall_squares.png</texture>
@@ -840,16 +833,6 @@
     <textcolor>FF868686</textcolor>
     <focusedcolor>FFececec</focusedcolor>
     <disabledcolor>d0202020</disabledcolor>
-  </include>
-  <include name="Furniture_WallVignette">
-    <control type="image">
-      <posx>0</posx>
-      <posy>0</posy>
-      <width>1280</width>
-      <height>720</height>
-      <texture>wall/wall_vignette.png</texture>
-      <colordiffuse>vignette</colordiffuse>
-    </control>
   </include>
   <include name="WallIconDimensions">
     <posx>3</posx>
@@ -870,10 +853,10 @@
     <height>174</height>
   </include>
   <include name="WallIconMovieDimensionsSmall">
-    <posx>3</posx>
-    <posy>3</posy>
-    <width>97</width>
-    <height>142</height>
+    <posx>2</posx>
+    <posy>2</posy>
+    <width>87</width>
+    <height>130.5</height>
   </include>
   <include name="WallIconMovieDimensionsDVD">
     <posx>-3</posx>
@@ -882,10 +865,10 @@
     <height>185</height>
   </include>
   <include name="WallIconMovieDimensionsDVDSmall">
-    <posx>-2</posx>
-    <posy>0</posy>
-    <width>107</width>
-    <height>151</height>
+    <posx>-3</posx>
+    <posy>-1</posy>
+    <width>97</width>
+    <height>139</height>
   </include>
   <include name="WallLabelVars">
     <posx>0</posx>
@@ -904,27 +887,27 @@
     <width>1060</width>
   </include>
   <include name="MovieWallBig">
-    <posx>85</posx>
-    <posy>91</posy>
+    <posx>86.5</posx>
+    <posy>83</posy>
     <width>1108</width>
     <height>545</height>
   </include>
   <include name="MovieWallBigVert">
-    <posx>85</posx>
-    <posy>91</posy>
+    <posx>86.5</posx>
+    <posy>83</posy>
     <width>1108</width>
     <height>538</height>
   </include>
   <include name="MovieWallSmall">
-    <posx>83</posx>
-    <posy>50</posy>
-    <width>1113</width>
-    <height>590</height>
+    <posx>93</posx>
+    <posy>83</posy>
+    <width>1093</width>
+    <height>538</height>
   </include>
   <include name="WallArrows">
     <control type="image">
       <posx>57</posx>
-      <posy>98</posy>
+      <posy>100</posy>
       <width>20</width>
       <height>524</height>
       <texture>wall/wall_arrow.png</texture>
@@ -934,7 +917,7 @@
     </control>
     <control type="image">
       <posx>1203</posx>
-      <posy>98</posy>
+      <posy>100</posy>
       <width>20</width>
       <height>524</height>
       <texture flipx="true">wall/wall_arrow.png</texture>
