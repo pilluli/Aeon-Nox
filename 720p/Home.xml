@@ -1,5 +1,6 @@
 <window id="0">
 	<defaultcontrol always="true">9000</defaultcontrol>
+  <onload>XBMC.RunScript(script.video.bookmarks.browser,limit=5)</onload>
   <onload condition="Skin.HasSetting(HomeWatchList)|Skin.HasSetting(HomeInProgress)|Skin.HasSetting(HomeInProgressPoster)">XBMC.RunScript(script.watchlist)</onload>
   <onload condition="Window.Previous(startup)+Skin.HasSetting(customstartupfocus)">Control.Move(9000,$INFO[Skin.String(CustomFocusOffset)])</onload>
   <onload condition="Window.Previous(startup)+[Skin.HasSetting(HomeRandomMovies)|Skin.HasSetting(HomeRandomTV)|Skin.HasSetting(HomeRandomMusic)|Skin.HasSetting(HomeRandomAddons)|Skin.HasSetting(HomeRandomAlbums)|Skin.HasSetting(HomeRandomPoster)]">XBMC.RunScript(script.randomitems,limit=8&amp;unplayed=True)</onload>
@@ -56,6 +57,7 @@
 		<control type="group">
 			<include>Animation_OpenCloseZoom</include>
 			<include condition="Skin.HasSetting(homepageHideRecentlyAdded)|Skin.HasSetting(HomeSystemInfo)">RecentWidget</include>
+                        <include>MovieBookmarkWidget</include>
 		</control>
     <!-- Library Totals -->
     <include>LibraryStats</include>
@@ -106,7 +108,8 @@
 					<focusposition>2</focusposition>
           <scrolltime tween="quadratic" easing="out">300</scrolltime>
           <onup>9000</onup>
-          <ondown>8000</ondown>
+          <ondown condition="Container(9000).HasFocus(2)">8005</ondown>
+          <ondown condition="![Container(9000).HasFocus(2)]">8000</ondown>
           <itemlayout width="150" height="33">
 						<control type="label">
 							<posx>75</posx>
@@ -309,6 +312,7 @@
 				<height>150</height>
 				<onleft>9000</onleft>
 				<onright>9000</onright>
+        <onup condition="Control.isVisible(8996)+Skin.HasSetting(lowermainmenu)">8005</onup>
         <onup condition="Control.isVisible(8997)">8003</onup>
         <onup condition="Control.IsVisible(8998)+Skin.HasSetting(lowermainmenu)">8000</onup>
         <onup condition="!Skin.HasSetting(lockmainmenu)+[![Control.isVisible(8997)|Control.isVisible(8998)]|[!Skin.HasSetting(lowermainmenu)+!Control.isVisible(8997)]]">Skin.ToggleSetting(lowermainmenu)</onup>
