@@ -1476,8 +1476,7 @@
 
         <onright condition="Control.isVisible(8997)">8003</onright>
         <onright condition="Control.IsVisible(8998)">8000</onright>
-        <onright condition="Control.IsVisible(9001)">9010</onright>
-        <onright condition="!Control.IsVisible(8997) + !Control.IsVisible(8998) + !Control.IsVisible(9001)">9000</onright>
+        <onright condition="!Control.IsVisible(8997) + !Control.IsVisible(8998)">9000</onright>
 
         <viewtype label="535">list</viewtype>
         <pagecontrol>-</pagecontrol>
