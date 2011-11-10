@@ -348,9 +348,9 @@
   </variable>
   
   <variable name="LibraryStatsVar">
-    <value condition="Container(9000).HasFocus(3)">$LOCALIZE[132]: $INFO[Window.Property(Music.AlbumsCount)]   |   $LOCALIZE[134]: $INFO[Window.Property(Music.SongsCount)]   |   $LOCALIZE[133]: $INFO[Window.Property(Music.ArtistsCount)]</value>
-    <value condition="Container(9000).HasFocus(10)">$LOCALIZE[20342]: $INFO[Window.Property(Movies.Count)]   |   $LOCALIZE[16102]: $INFO[Window.Property(Movies.Watched)]   |   $LOCALIZE[16101]: $INFO[Window.Property(Movies.UnWatched)]</value>
-    <value condition="Container(9000).HasFocus(11)">$LOCALIZE[20343]: $INFO[Window.Property(TVShows.Count)]   |   $LOCALIZE[20360]: $INFO[Window.Property(Episodes.Count)]   |   $LOCALIZE[16101]: $INFO[Window.Property(Episodes.UnWatched)]</value>
+    <value condition="Container(9000).HasFocus(3)">$LOCALIZE[132]: $INFO[Window(Home).Property(Music.AlbumsCount)]   |   $LOCALIZE[134]: $INFO[Window(Home).Property(Music.SongsCount)]   |   $LOCALIZE[133]: $INFO[Window(Home).Property(Music.ArtistsCount)]</value>
+    <value condition="Container(9000).HasFocus(10)">$LOCALIZE[20342]: $INFO[Window(Home).Property(Movies.Count)]   |   $LOCALIZE[16102]: $INFO[Window(Home).Property(Movies.Watched)]   |   $LOCALIZE[16101]: $INFO[Window(Home).Property(Movies.UnWatched)]</value>
+    <value condition="Container(9000).HasFocus(11)">$LOCALIZE[20343]: $INFO[Window(Home).Property(TVShows.Count)]   |   $LOCALIZE[20360]: $INFO[Window(Home).Property(Episodes.Count)]   |   $LOCALIZE[16101]: $INFO[Window(Home).Property(Episodes.UnWatched)]</value>
   </variable>
 
   <variable name="RSSFeedVar">
@@ -425,8 +425,10 @@
   <variable name="RecentAddedWidgetLabel1Var">
     <value condition="Skin.HasSetting(HomeLatestMovies)+Container(9000).HasFocus(10)">$LOCALIZE[31331]</value>
     <value condition="Skin.HasSetting(HomeRandomMovies)+Container(9000).HasFocus(10)">$LOCALIZE[31221]</value>
+    <value condition="Skin.HasSetting(HomeInProgress)+Container(9000).HasFocus(10)">$LOCALIZE[31335]</value>
     <value condition="Skin.HasSetting(HomeLatestTV)+Container(9000).HasFocus(11)">$LOCALIZE[31332]</value>
     <value condition="Skin.HasSetting(HomeRandomTV)+Container(9000).HasFocus(11)">$LOCALIZE[31219]</value>
+    <value condition="Skin.HasSetting(HomeWatchList)+Container(9000).HasFocus(11)">$LOCALIZE[31464]</value>
     <value condition="Skin.HasSetting(HomeLatestMusic)+Container(9000).HasFocus(3)">$LOCALIZE[31217]</value>
     <value condition="Skin.HasSetting(HomeRandomMusic)+Container(9000).HasFocus(3)">$LOCALIZE[31163] $LOCALIZE[179]</value>
     <value condition="Skin.HasSetting(HomeLatestAlbums)+Container(9000).HasFocus(3)">$LOCALIZE[31358]</value>
@@ -438,8 +440,10 @@
   <variable name="RecentAddedWidgetLabel2Var">
     <value condition="Skin.HasSetting(HomeLatestMovies)+Container(9000).HasFocus(10)">$LOCALIZE[31323]</value>
     <value condition="Skin.HasSetting(HomeRandomMovies)+Container(9000).HasFocus(10)">$LOCALIZE[31222]</value>
+    <value condition="Skin.HasSetting(HomeInProgress)+Container(9000).HasFocus(10)">$LOCALIZE[31335]</value>
     <value condition="Skin.HasSetting(HomeLatestTV)+Container(9000).HasFocus(11)">$LOCALIZE[31324]</value>
     <value condition="Skin.HasSetting(HomeRandomTV)+Container(9000).HasFocus(11)">$LOCALIZE[31220]</value>
+    <value condition="Skin.HasSetting(HomeWatchList)+Container(9000).HasFocus(11)">$LOCALIZE[31464]</value>
     <value condition="Skin.HasSetting(HomeLatestMusic)+Container(9000).HasFocus(3)">$LOCALIZE[31218]</value>
     <value condition="Skin.HasSetting(HomeRandomMusic)+Container(9000).HasFocus(3)">$LOCALIZE[31163] $LOCALIZE[134]</value>
     <value condition="Skin.HasSetting(HomeLatestAlbums)+Container(9000).HasFocus(3)">$LOCALIZE[31359]</value>
@@ -485,4 +489,20 @@
     <value>$LOCALIZE[20359]</value>
   </variable>
 
+  <variable name="HomeMainFanartVar">
+    <value condition="Container(9000).HasFocus(10)+Skin.HasSetting(HomeMoviesRecentAddedFanart)">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</value>
+    <value condition="Container(9000).HasFocus(11)+Skin.HasSetting(HomeSeriesRecentAddedFanart)">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</value>
+    <value>$INFO[Container(9000).ListItem.Icon]</value>
+  </variable>
+  <variable name="SettingsMainFanartVar">
+    <value condition="Container(9005).HasFocus(10)+Skin.HasSetting(HomeMoviesRecentAddedFanart)">$INFO[Window(Home).Property(LatestMovie.1.Fanart)]</value>
+    <value condition="Container(9005).HasFocus(11)+Skin.HasSetting(HomeSeriesRecentAddedFanart)">$INFO[Window(Home).Property(LatestEpisode.1.Fanart)]</value>
+    <value>$INFO[Container(9005).ListItem.Icon]</value>
+  </variable>
+  <variable name="SettingsMainFanartLabelVar">
+    <value condition="Container(9005).HasFocus(10)+Skin.HasSetting(HomeMoviesRecentAddedFanart)">$LOCALIZE[143] $LOCALIZE[31331] $LOCALIZE[20445]</value>
+    <value condition="Container(9005).HasFocus(11)+Skin.HasSetting(HomeSeriesRecentAddedFanart)">$LOCALIZE[143] $LOCALIZE[31332] $LOCALIZE[20445]</value>
+    <value condition="IsEmpty(Container(9005).ListItem.Thumb)">$LOCALIZE[143] $LOCALIZE[571]</value>
+    <value>$INFO[Container(9005).ListItem.Thumb,$LOCALIZE[143] ]</value>
+  </variable>
 </includes>
