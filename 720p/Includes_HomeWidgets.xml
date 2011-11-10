@@ -1456,7 +1456,9 @@
   </include>
   <include name="MovieBookmarkWidget">
     <control type="group" id="8996">
-      <visible>Container(9000).HasFocus(2)</visible>
+      <!-- <visible>Container(9000).HasFocus(2)</visible> -->
+      <visible>[Container(9000).Hasfocus(2) | Container(9000).Hasfocus(10) | Container(9000).Hasfocus(11)] + !Control.Hasfocus(8000) + !Control.Hasfocus(8001\
+) + !Control.Hasfocus(8011)</visible>
       <animation effect="slide" start="-400" end="0" time="300" tween="quadratic" easing="out">VisibleChange</animation>
       <posx>15</posx>
       <posy>452</posy>
