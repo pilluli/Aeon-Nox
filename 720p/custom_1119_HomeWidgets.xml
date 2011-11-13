@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <window type="dialog" id="1119">
   <defaultcontrol always="true">450</defaultcontrol>
+  <onunload>XBMC.RunScript(script.video.bookmarks.browser)</onunload>
   <onunload condition="Skin.HasSetting(HomeWatchList)">XBMC.RunScript(script.watchlist)</onunload>
   <coordinates>
     <system>1</system>
