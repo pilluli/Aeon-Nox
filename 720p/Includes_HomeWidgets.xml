@@ -1597,13 +1597,11 @@
           <item id="1">
             <label>$INFO[Window.Property(VideoBookmark.1.Title)]</label>
             <label2>$INFO[Window.Property(VideoBookmark.1.Extra)]</label2>
-            <property name="RunningTime">$INFO[Window.Property(VideoBookmark.1.RunningTime)]</property>
             <property name="TimeRemaining">$INFO[Window.Property(VideoBookmark.1.RemainingTime)]</property>
-            <property name="Year">$INFO[Window.Property(VideoBookmark.1.Year)]</property>
-            <property name="Trailer">$INFO[Window.Property(VideoBookmark.1.Trailer)]</property>
-            <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.1.EpisodeNo)]</property>
+            <property name="Date">$INFO[Window.Property(VideoBookmark.1.Date)]</property>
             <property name="Fanart">$INFO[Window.Property(VideoBookmark.1.Fanart)]</property>
             <property name="Type">$INFO[Window.Property(VideoBookmark.1.Type)]</property>
+	    <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.1.EpisodeNo)]</property>
             <thumb>$INFO[Window.Property(VideoBookmark.1.Thumb)]</thumb>
             <onclick>PlayMedia($INFO[Window.Property(VideoBookmark.1.Path)],resume)</onclick>
             <visible>!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
@@ -1611,13 +1609,11 @@
           <item id="2">
             <label>$INFO[Window.Property(VideoBookmark.2.Title)]</label>
             <label2>$INFO[Window.Property(VideoBookmark.2.Extra)]</label2>
-            <property name="RunningTime">$INFO[Window.Property(VideoBookmark.2.RunningTime)]</property>
             <property name="TimeRemaining">$INFO[Window.Property(VideoBookmark.2.RemainingTime)]</property>
-            <property name="Year">$INFO[Window.Property(VideoBookmark.2.Year)]</property>
-            <property name="Trailer">$INFO[Window.Property(VideoBookmark.2.Trailer)]</property>
-            <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.2.EpisodeNo)]</property>
+            <property name="Date">$INFO[Window.Property(VideoBookmark.2.Date)]</property>
             <property name="Fanart">$INFO[Window.Property(VideoBookmark.2.Fanart)]</property>
             <property name="Type">$INFO[Window.Property(VideoBookmark.2.Type)]</property>
+	    <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.2.EpisodeNo)]</property>
             <thumb>$INFO[Window.Property(VideoBookmark.2.Thumb)]</thumb>
             <onclick>PlayMedia($INFO[Window.Property(VideoBookmark.2.Path)],resume)</onclick>
             <visible>!IsEmpty(Window.Property(VideoBookmark.2.Type))</visible>
@@ -1625,13 +1621,11 @@
           <item id="3">
             <label>$INFO[Window.Property(VideoBookmark.3.Title)]</label>
             <label2>$INFO[Window.Property(VideoBookmark.3.Extra)]</label2>
-            <property name="RunningTime">$INFO[Window.Property(VideoBookmark.3.RunningTime)]</property>
             <property name="TimeRemaining">$INFO[Window.Property(VideoBookmark.3.RemainingTime)]</property>
-            <property name="Year">$INFO[Window.Property(VideoBookmark.3.Year)]</property>
-            <property name="Trailer">$INFO[Window.Property(VideoBookmark.3.Trailer)]</property>
-            <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.3.EpisodeNo)]</property>
+            <property name="Date">$INFO[Window.Property(VideoBookmark.3.Date)]</property>
             <property name="Fanart">$INFO[Window.Property(VideoBookmark.3.Fanart)]</property>
             <property name="Type">$INFO[Window.Property(VideoBookmark.3.Type)]</property>
+	    <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.3.EpisodeNo)]</property>
             <thumb>$INFO[Window.Property(VideoBookmark.3.Thumb)]</thumb>
             <onclick>PlayMedia($INFO[Window.Property(VideoBookmark.3.Path)],resume)</onclick>
             <visible>!IsEmpty(Window.Property(VideoBookmark.3.Type))</visible>
@@ -1639,13 +1633,11 @@
           <item id="4">
             <label>$INFO[Window.Property(VideoBookmark.4.Title)]</label>
             <label2>$INFO[Window.Property(VideoBookmark.4.Extra)]</label2>
-            <property name="RunningTime">$INFO[Window.Property(VideoBookmark.4.RunningTime)]</property>
             <property name="TimeRemaining">$INFO[Window.Property(VideoBookmark.4.RemainingTime)]</property>
-            <property name="Year">$INFO[Window.Property(VideoBookmark.4.Year)]</property>
-            <property name="Trailer">$INFO[Window.Property(VideoBookmark.4.Trailer)]</property>
-            <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.4.EpisodeNo)]</property>
+            <property name="Date">$INFO[Window.Property(VideoBookmark.4.Date)]</property>
             <property name="Fanart">$INFO[Window.Property(VideoBookmark.4.Fanart)]</property>
             <property name="Type">$INFO[Window.Property(VideoBookmark.4.Type)]</property>
+	    <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.4.EpisodeNo)]</property>
             <thumb>$INFO[Window.Property(VideoBookmark.4.Thumb)]</thumb>
             <onclick>PlayMedia($INFO[Window.Property(VideoBookmark.4.Path)],resume)</onclick>
             <visible>!IsEmpty(Window.Property(VideoBookmark.4.Type))</visible>
@@ -1653,13 +1645,11 @@
           <item id="5">
             <label>$INFO[Window.Property(VideoBookmark.5.Title)]</label>
             <label2>$INFO[Window.Property(VideoBookmark.5.Extra)]</label2>
-            <property name="RunningTime">$INFO[Window.Property(VideoBookmark.5.RunningTime)]</property>
             <property name="TimeRemaining">$INFO[Window.Property(VideoBookmark.5.RemainingTime)]</property>
-            <property name="Year">$INFO[Window.Property(VideoBookmark.5.Year)]</property>
-            <property name="Trailer">$INFO[Window.Property(VideoBookmark.5.Trailer)]</property>
-            <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.5.EpisodeNo)]</property>
+            <property name="Date">$INFO[Window.Property(VideoBookmark.5.Date)]</property>
             <property name="Fanart">$INFO[Window.Property(VideoBookmark.5.Fanart)]</property>
             <property name="Type">$INFO[Window.Property(VideoBookmark.5.Type)]</property>
+	    <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.5.EpisodeNo)]</property>
             <thumb>$INFO[Window.Property(VideoBookmark.5.Thumb)]</thumb>
             <onclick>PlayMedia($INFO[Window.Property(VideoBookmark.5.Path)],resume)</onclick>
             <visible>!IsEmpty(Window.Property(VideoBookmark.5.Type))</visible>
