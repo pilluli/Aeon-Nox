@@ -498,6 +498,10 @@
 		<selectedcolor>selected</selectedcolor>
 		<textcolor>dcffffff</textcolor>
 	</include>
+	<include name="listcolornofocus_unavailable">
+		<selectedcolor>selected</selectedcolor>
+		<textcolor>55ffffff</textcolor>
+	</include>
 	<include name="subcolorfocus">
 		<textcolor>ff2e2e2e</textcolor>
 		<selectedcolor>FFEB9E17</selectedcolor>

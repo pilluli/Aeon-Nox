@@ -647,6 +647,21 @@
                 <include>listcolornofocus</include>
                 <font>Font_Bold20_Caps</font>
                 <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+		<visible>!ListItem.Property(unavailable)</visible>
+              </control>
+              <control type="label">
+                <posx>20</posx>
+                <posy>5</posy>
+                <width>430</width>
+                <height>30</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <include>listcolornofocus_unavailable</include>
+		<selectedcolor>selected</selectedcolor>
+		<textcolor>55ffffff</textcolor>		
+                <font>Font_Bold20_Caps</font>
+                <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+		<visible>ListItem.Property(unavailable)</visible>
               </control>
               <control type="label">
                 <posx>20</posx>
@@ -659,7 +674,20 @@
                 <font>Font_Reg15</font>
                 <!--<label>[LOWERCASE]$INFO[ListItem.Label2]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)][/LOWERCASE]</label>-->
                 <label>[LOWERCASE]$INFO[ListItem.Label2][/LOWERCASE]</label>
-                <visible>!IsEmpty(ListItem.Title)</visible>
+                <visible>!IsEmpty(ListItem.Title) + !ListItem.Property(unavailable)</visible>
+              </control>
+              <control type="label">
+                <posx>20</posx>
+                <posy>25</posy>
+                <width>490</width>
+                <height>30</height>
+                <align>left</align>
+                <aligny>center</aligny>
+                <include>listcolornofocus_unavailable</include>
+                <font>Font_Reg15</font>
+                <!--<label>[LOWERCASE]$INFO[ListItem.Label2]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)][/LOWERCASE]</label>-->
+                <label>[LOWERCASE]$INFO[ListItem.Label2][/LOWERCASE]</label>
+                <visible>!IsEmpty(ListItem.Title) + ListItem.Property(unavailable)</visible>
               </control>
             </control>
             <control type="image">
