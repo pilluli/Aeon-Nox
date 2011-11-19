@@ -79,6 +79,14 @@
         <selected>Skin.HasSetting(HomeInProgressPoster)</selected>
         <visible>Skin.HasSetting(homepageHideRecentlyAdded)+System.HasAddon(script.watchlist)</visible>
       </control>
+      <control type="radiobutton" id="467">
+        <description>Show video info</description>
+        <include>Objects_CommonSettingsButton</include>
+        <label>31637</label>
+        <onclick>Skin.ToggleSetting(HomeInProgressTVPoster)</onclick>
+        <selected>Skin.HasSetting(HomeInProgressTVPoster)</selected>
+        <visible>Skin.HasSetting(homepageHideRecentlyAdded)+System.HasAddon(script.watchlist)</visible>
+      </control>
       <control type="radiobutton" id="454">
         <description>Show video info</description>
         <include>Objects_CommonSettingsButton</include>

@@ -5,8 +5,8 @@
   <constant name="WidgetSlideDelay">300</constant>
 
   <variable name="SourceFlagVar">
-    <value condition="Skin.HasSetting(sourceflags)+[SubString(ListItem.filename,PDTV) | SubString(ListItem.filename,sdtv)]">sdtv</value>
-    <value condition="Skin.HasSetting(sourceflags)+SubString(ListItem.Filename,hdtv)">hdtv</value>
+    <value condition="Skin.HasSetting(sourceflags)+[SubString(ListItem.filename,PDTV) | SubString(ListItem.filename,sdtv)|SubString(ListItem.filename,sd tv)]">sdtv</value>
+    <value condition="Skin.HasSetting(sourceflags)+[SubString(ListItem.Filename,hdtv)|SubString(ListItem.Filename,hd tv)]">hdtv</value>
     <value condition="Skin.HasSetting(sourceflags)+[SubString(ListItem.Filename,hddvd) | SubString(ListItem.Filename,hd-dvd)]">hddvd</value>
     <value condition="Skin.HasSetting(sourceflags)+[SubString(ListItem.Filename,bluray) | SubString(ListItem.Filename,blu-ray) | SubString(ListItem.Filename,bdrip) | SubString(ListItem.Filename,brrip)]">bluray</value>
     <value condition="Skin.HasSetting(sourceflags)+SubString(ListItem.Filename,dvb)">dvb</value>
@@ -179,12 +179,12 @@
   </variable>
  
   <variable name="VideoExtraFanartVar">
-    <value condition="Container.Content(seasons)+!Skin.HasSetting(extrafanartseasons)">$INFO[ListItem.Path]$INFO[ListItem.Label,,/fanart.jpg]</value>
-    <value condition="Container.Content(episodes)+!Skin.HasSetting(extrafanartepisodes)">$INFO[ListItem.Path,,fanart.jpg]</value>
-    <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>
-    <value condition="[Container.Content(movies)+Skin.HasSetting(extrafanartmovies)]|[Container.Content(tvshows)+Skin.HasSetting(extrafanartseries)]|[Container.Content(seasons)+Skin.HasSetting(extrafanartseasons)]">$INFO[ListItem.Path,,extrafanart]</value>
-    <value condition="Container.Content(episodes)+Skin.HasSetting(extrafanartepisodes)">$INFO[ListItem.Path,,../extrafanart]</value>
-    <value>-</value>
+    <value condition="Container.Content(seasons)+!Skin.HasSetting(extrafanartseasons)+System.IdleTime(10)">$INFO[ListItem.Path]$INFO[ListItem.Label,,/fanart.jpg]</value>
+    <value condition="Container.Content(episodes)+!Skin.HasSetting(extrafanartepisodes)+System.IdleTime(10)">$INFO[ListItem.Path,,fanart.jpg]</value>
+    <value condition="Container.Content(genres)+System.IdleTime(10)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>
+    <value condition="System.IdleTime(10)+[[Container.Content(movies)+Skin.HasSetting(extrafanartmovies)]|[Container.Content(tvshows)+Skin.HasSetting(extrafanartseries)]|[Container.Content(seasons)+Skin.HasSetting(extrafanartseasons)]]">$INFO[ListItem.Path,,extrafanart]</value>
+    <value condition="Container.Content(episodes)+Skin.HasSetting(extrafanartepisodes)+System.IdleTime(10)">$INFO[ListItem.Path,,../extrafanart]</value>
+    <value>$INFO[Listitem.Property(Fanart_Image)]</value>
   </variable>
  
   <variable name="HomeFanartVar">
@@ -207,11 +207,13 @@
 
   <variable name="FanartPanelDetail2Var">
     <value condition="Container.Content(movies)|Container.Content(episodes)">$LOCALIZE[20417]:</value>
-    <value condition="Container.Content(tvshows)|Container.Content(seasons)">$LOCALIZE[31188]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+ !Skin.HasSetting(NextAiredInfo)">$LOCALIZE[31188]:</value>
+    <value condition="Container.Content(tvshows)|Container.Content(seasons)">$LOCALIZE[13279]:</value>
   </variable>
   <variable name="FanartPanelValue2Var">
     <value condition="Container.Content(movies)|Container.Content(episodes)">$INFO[ListItem.Writer]</value>
-    <value condition="Container.Content(tvshows)|Container.Content(seasons)">$VAR[ShowStatusVar]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+ !Skin.HasSetting(NextAiredInfo)">$VAR[ShowStatusVar]</value>
+    <value condition="Container.Content(tvshows)|Container.Content(seasons)">$INFO[ListItem.Studio]</value>
   </variable>
  
   <variable name="FanartPanelDetail3Var">
@@ -231,35 +233,39 @@
   <variable name="FanartPanelDetail4Var">
     <value condition="Container.Content(movies)">$LOCALIZE[368]:</value>
     <value condition="Container.Content(episodes)">$LOCALIZE[563]:</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+[Skin.HasSetting(wallgenretv)|Control.IsVisible(503)]">$LOCALIZE[20360]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+[Skin.HasSetting(wallgenretv)|Control.IsVisible(503)|Skin.HasSetting(NextAiredInfo)]">$LOCALIZE[20360]:</value>
     <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+!Skin.HasSetting(wallgenretv)+!Control.IsVisible(503)">$LOCALIZE[515]:</value>
   </variable>
   <variable name="FanartPanelValue4Var">
     <value condition="Container.Content(movies)|Container.Content(episodes)">$INFO[ListItem.RatingAndVotes]</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+Skin.HasSetting(wallgenretv)">$INFO[ListItem.Property(TotalEpisodes)]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+[Skin.HasSetting(wallgenretv)|Control.IsVisible(503)|Skin.HasSetting(NextAiredInfo)]">$INFO[ListItem.Property(TotalEpisodes)]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)]</value>
     <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+!Skin.HasSetting(wallgenretv)">$INFO[ListItem.Genre]</value>
   </variable>
 
   <variable name="FanartPanelDetail5Var">
     <value condition="Container.Content(movies)|Container.Content(episodes)">$LOCALIZE[2050]:</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$LOCALIZE[31189]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo)">$LOCALIZE[31189]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$LOCALIZE[20074]:</value>
   </variable> 
   <variable name="FanartPanelValue5Var">
     <value condition="[Container.Content(movies)|Container.Content(episodes)]+!Container.ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
     <value condition="[Container.Content(movies)|Container.Content(episodes)]+Container.ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]][COLOR abFFFFFF]$INFO[ListItem.PercentPlayed, (,%)][/COLOR]</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$VAR[LastEpisodeVar]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo)">$VAR[LastEpisodeVar]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$INFO[ListItem.Mpaa]</value>
   </variable>
  
   <variable name="FanartPanelDetail6Var">
     <value condition="Container.Content(movies)">$LOCALIZE[21875]:</value>
     <value condition="Container.Content(episodes)">$LOCALIZE[20352]:</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$LOCALIZE[31190]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo)">$LOCALIZE[31190]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$LOCALIZE[515]:</value>
   </variable>
   <variable name="FanartPanelValue6Var">
     <value condition="Container.Content(movies)">$INFO[ListItem.Country]</value>
     <value condition="Container.Content(episodes)+!SubString(ListItem.Episode,S)">$INFO[ListItem.Season,$LOCALIZE[20373] ], $INFO[ListItem.Episode,$LOCALIZE[20359] ]</value>
     <value condition="Container.Content(episodes)+SubString(ListItem.Episode,S)">$LOCALIZE[20381],$INFO[ListItem.Episode, $LOCALIZE[20359] ]</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$VAR[NextEpisodeVar]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo)">$VAR[NextEpisodeVar]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$INFO[Listitem.Genre]</value>
   </variable>
 
   <variable name="FanartPanelPlotVar">
@@ -279,39 +285,45 @@
 
   <variable name="PosterPanelValue4Var">
     <value condition="Container.Content(movies)">$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Top250, / $LOCALIZE[13409] #]</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+[Skin.HasSetting(wallgenretv)|Control.IsVisible(503)]">$INFO[ListItem.Property(TotalEpisodes)]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)]</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+!Skin.HasSetting(wallgenretv)+!Control.IsVisible(503)">$INFO[ListItem.Genre]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+[Skin.HasSetting(wallgenretv)|Control.IsVisible(503)|Skin.HasSetting(NextAiredInfo)]">$INFO[ListItem.Property(TotalEpisodes)]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]+!Skin.HasSetting(wallgenretv)">$INFO[ListItem.Genre]</value>
   </variable>
 
   <variable name="PosterPanelDetail5Var">
     <value condition="Container.Content(movies)">$LOCALIZE[2050]:</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$LOCALIZE[31190]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo)">$LOCALIZE[31190]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$LOCALIZE[515]:</value>
   </variable>
   <variable name="PosterPanelValue5Var">
     <value condition="Container.Content(movies)+!Container.ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</value>
     <value condition="Container.Content(movies)+Container.ListItem.IsResumable">$INFO[ListItem.Duration,, $LOCALIZE[12391]][COLOR abFFFFFF]$INFO[ListItem.PercentPlayed, (,%)][/COLOR]</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$VAR[NextEpisodeVar]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo)">$VAR[NextEpisodeVar]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$INFO[Listitem.Genre]</value>
   </variable>
 
   <variable name="PosterPanelDetail6Var">
     <value condition="Container.Content(movies)">$LOCALIZE[21875]:</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$LOCALIZE[31189]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo)">$LOCALIZE[31189]:</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$LOCALIZE[20074]:</value>
   </variable>
   <variable name="PosterPanelValue6Var">
     <value condition="Container.Content(movies)">$INFO[ListItem.Country]</value>
-    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$VAR[LastEpisodeVar]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo)">$VAR[LastEpisodeVar]</value>
+    <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$INFO[ListItem.Mpaa]</value>
   </variable>
 
   <variable name="PosterPanelDetail7Var">
     <value condition="[Container.Content(movies)+Skin.HasSetting(wallgenre)+!Control.IsVisible(503)]">$LOCALIZE[20074]:</value>
     <value condition="[Container.Content(movies)+[!Skin.HasSetting(wallgenre)|Control.IsVisible(503)]]|[Container.Content(tvshows)+Control.isVisible(503)]">$LOCALIZE[515]:</value>
-    <value condition="[Container.Content(tvshows)+!Control.IsVisible(503)]">$LOCALIZE[2050]:</value>
+    <value condition="[Container.Content(tvshows)+!Control.IsVisible(503) + !Skin.HasSetting(NextAiredInfo)]">$LOCALIZE[2050]:</value>
+    <value condition="[Container.Content(tvshows)+!Control.IsVisible(503)]">$LOCALIZE[33054]:</value>
   </variable>
   <variable name="PosterPanelValue7Var">
     <value condition="Container.Content(movies)+Skin.HasSetting(wallgenre)+!Control.IsVisible(503)+IsEmpty(ListItem.Mpaa)">$LOCALIZE[31452]</value>|
     <value condition="[Container.Content(movies)+Skin.HasSetting(wallgenre)+!Control.IsVisible(503)+!IsEmpty(ListItem.Mpaa)]">$INFO[ListItem.Mpaa]</value>
     <value condition="[Container.Content(movies)+[!Skin.HasSetting(wallgenre)|Control.IsVisible(503)]]|[Container.Content(tvshows)+Control.isVisible(503)]">$INFO[ListItem.Genre]</value>
-    <value condition="[Container.Content(tvshows)+!Control.isVisible(503)]">$INFO[Window(Home).Property(NextAired.Runtime),, $LOCALIZE[12391]]</value>
+    <value condition="[Container.Content(tvshows)+!Control.isVisible(503) + !Skin.HasSetting(NextAiredInfo)]">$INFO[Window(Home).Property(NextAired.Runtime),, $LOCALIZE[12391]]</value>
+    <value condition="[Container.Content(tvshows)+!Control.isVisible(503)]">$INFO[ListItem.Property(TotalSeasons)]</value>
   </variable>
 
   <variable name="TVShowLogoVar">
@@ -330,8 +342,9 @@
   </variable>
  
   <variable name="HomeMenuBackVar">
-    <value condition="Skin.HasSetting(glasshome)+[![Player.HasMedia + System.IdleTime(8)]|Control.HasFocus(8003)]">home/homemenu_back_glass.png</value>
-    <value condition="Skin.HasSetting(classichome)+[![Player.HasMedia + System.IdleTime(8)]|Control.HasFocus(8003)]">home/homemenu_back.png</value>
+    <value condition="Skin.HasSetting(glasshome)+[![Player.HasMedia + System.IdleTime(8)]|Control.HasFocus(8003)]]">home/homemenu_back_glass.png</value>
+    <value condition="Skin.HasSetting(classichome)+[![Player.HasMedia + System.IdleTime(8)]|Control.HasFocus(8003)]]">home/homemenu_back.png</value>
+    <value condition="Skin.HasSetting(aurahome)">home/homemenu_back_aura.png</value>
     <value condition="[Skin.HasSetting(classichome)|Skin.HasSetting(glasshome)]+[Player.HasMedia + System.IdleTime(8)+!Control.HasFocus(8003)]">home/homemenu_back_osd.png</value>
     <value>home/homemenu_back_nox.png</value>
   </variable>
@@ -344,6 +357,7 @@
   <variable name="StyleLabelVar">
     <value condition="Skin.HasSetting(glasshome)">Glass</value>
     <value condition="Skin.HasSetting(classichome)">Classic</value>
+    <value condition="Skin.HasSetting(aurahome)">Aura</value>
     <value>Nox</value>
   </variable>
   
@@ -504,5 +518,59 @@
     <value condition="Container(9005).HasFocus(11)+Skin.HasSetting(HomeSeriesRecentAddedFanart)">$LOCALIZE[143] $LOCALIZE[31332] $LOCALIZE[20445]</value>
     <value condition="IsEmpty(Container(9005).ListItem.Thumb)">$LOCALIZE[143] $LOCALIZE[571]</value>
     <value>$INFO[Container(9005).ListItem.Thumb,$LOCALIZE[143] ]</value>
+  </variable>
+  <variable name="HomeMenuWidgetTextVar">
+    <value condition="Skin.HasSetting(aurahome)">ff2e2e2e</value>
+    <value>white2</value>
+  </variable>
+  <variable name="HomeMenuTextUnFocusVar">
+    <value condition="Skin.HasSetting(aurahome)">DD2e2e2e</value>
+    <value>white5</value>
+  </variable>
+  <variable name="HomeMenuTextFocusVar">
+    <value condition="Skin.HasSetting(aurahome)">ff2e2e2e</value>
+    <value>white</value>
+  </variable>
+  <variable name="WeatherWidgetTextVar">
+    <value condition="Skin.HasSetting(aurahome)">DD2e2e2e</value>
+    <value>grey2</value>
+  </variable>
+  <variable name="HomeMenuShadowVar">
+    <value condition="Skin.HasSetting(aurahome)">22FFFFFF</value>
+    <value>-</value>
+  </variable>
+  <variable name="SubmenuBarVar">
+    <value condition="Skin.HasSetting(aurahome)">home/submenubar_aura.png</value>
+    <value>home/submenubar.png</value>
+  </variable>
+  <variable name="TimepanelVar">
+    <value condition="Skin.HasSetting(aurahome)">home/timepanel_mid_aura.png</value>
+    <value>home/timepanel_mid.png</value>
+  </variable>
+  <variable name="TimepanelTextVar">
+    <value condition="Skin.HasSetting(aurahome)">$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  |  [COLOR DD2e2e2e]$INFO[System.Time][/COLOR]</value>
+    <value>$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  |  [COLOR ffaaaaaa]$INFO[System.Time][/COLOR]</value>
+  </variable>
+  <variable name="WeatherTextVar">
+    <value condition="Skin.HasSetting(aurahome)">$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits,,  |  ][COLOR DD2e2e2e]$INFO[Window(Weather).Property(Current.Humidity)][/COLOR]</value>
+    <value>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits,,  |  ][COLOR ffaaaaaa]$INFO[Window(Weather).Property(Current.Humidity)][/COLOR]</value>
+  </variable>
+  <variable name="WidgetBackVar">
+    <value condition="Skin.HasSetting(aurahome)">keyboard/keyboard_back_aura.png</value>
+    <value>keyboard/keyboard_back.png</value>
+  </variable>
+  <variable name="WeatherWidgetBackVar">
+    <value condition="Skin.HasSetting(aurahome)">keyboard/numeric_back_aura.png</value>
+    <value>keyboard/numeric_back.png</value>
+  </variable>
+
+  <variable name="PosterWidgetDurationVar">
+    <value condition="Container(9000).HasFocus(11)">$INFO[Container(8003).ListItem.Property(Duration)]</value>
+    <value>$INFO[Container(8003).ListItem.Property(Duration),, $LOCALIZE[12391]]</value>
+  </variable>
+
+  <variable name="MusicExtraFanartVar">
+    <value condition="System.IdleTime(10)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart]</value>
+    <value>$INFO[ListItem.Property(Fanart_Image)]</value>
   </variable>
 </includes>
