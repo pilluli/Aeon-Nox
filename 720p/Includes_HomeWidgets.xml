@@ -34,8 +34,8 @@
     <control type="group" id="8997">
       <posx>0</posx>
       <posy>0</posy>
-      <visible>Library.HasContent(Movies)+[Skin.HasSetting(HomeRandomPoster)|Skin.HasSetting(HomeLatestPoster)|Skin.HasSetting(HomeInProgressPoster)]</visible>
-      <visible>Container(9000).Hasfocus(10)|[Container(9000).HasFocus(2)+Skin.HasSetting(HomeMenuNoMovieButton)]</visible>
+      <visible>[Skin.HasSetting(HomeRandomPoster)|Skin.HasSetting(HomeLatestPoster)|Skin.HasSetting(HomeInProgressPoster)|Skin.HasSetting(HomeInProgressTVPoster)]</visible>
+      <visible>Container(9000).Hasfocus(10)|[Container(9000).HasFocus(2)+Skin.HasSetting(HomeMenuNoMovieButton)]|Container(9000).Hasfocus(11)</visible>
       <include>Animation_HomeWidgetZoom</include>
       <control type="group">
         <description>Random Movies Poster Widget</description>
@@ -51,12 +51,12 @@
           <textcolor>white</textcolor>
           <label>[UPPERCASE]$INFO[Container(8003).ListItem.Label][/UPPERCASE]</label>
           <label>[UPPERCASE]$INFO[Container(8003).ListItem.Label2][/UPPERCASE]</label>
-          <label>[UPPERCASE]$INFO[Container(8003).ListItem.Property(Duration),, $LOCALIZE[12391]][/UPPERCASE]</label>
+          <label>[UPPERCASE]$VAR[PosterWidgetDurationVar][/UPPERCASE]</label>
           <scroll>true</scroll>
           <scrollout>false</scrollout>
           <scrollspeed>50</scrollspeed>
           <pauseatend>5000</pauseatend>
-          <visible>Control.HasFocus(8003)+!Skin.HasSetting(classichome)</visible>
+          <visible>Control.HasFocus(8003)+![Skin.HasSetting(classichome)|Skin.HasSetting(aurahome)]</visible>
           <include>Animation_CommonFade</include>
         </control>
         <control type="fadelabel">
@@ -67,19 +67,20 @@
           <align>center</align>
           <aligny>center</aligny>
           <font>Font_MainClassic</font>
-          <textcolor>white</textcolor>
+          <textcolor>$VAR[HomeMenuTextUnFocusVar]</textcolor>
+          <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
           <label>[UPPERCASE]$INFO[Container(8003).ListItem.Label][/UPPERCASE]</label>
           <label>[UPPERCASE]$INFO[Container(8003).ListItem.Label2][/UPPERCASE]</label>
-          <label>[UPPERCASE]$INFO[Container(8003).ListItem.Property(Duration),, $LOCALIZE[12391]][/UPPERCASE]</label>
+          <label>[UPPERCASE]$VAR[PosterWidgetDurationVar][/UPPERCASE]</label>
           <scroll>true</scroll>
           <scrollout>false</scrollout>
           <scrollspeed>50</scrollspeed>
           <pauseatend>5000</pauseatend>
-          <visible>Control.HasFocus(8003)+Skin.HasSetting(classichome)</visible>
+          <visible>Control.HasFocus(8003)+[Skin.HasSetting(classichome)|Skin.HasSetting(aurahome)]</visible>
           <include>Animation_CommonFade</include>
         </control>
       </control>
-      <control type="fixedlist" id="8003">
+      <control type="wraplist" id="8003">
         <posx>294</posx>
         <posy>5</posy>
         <width>691</width>
@@ -109,7 +110,7 @@
             <width>100</width>
             <height>150</height>
             <fadetime>IconCrossfadeTime</fadetime>
-            <texture diffuse="thumbs/movieposter_mask.png" background="true">DefaultVideo.png</texture>
+            <texture diffuse="thumbs/movieposter_mask.png" background="true">DefaultVideoBigPoster.png</texture>
             <aspectratio scalediffuse="false">stretch</aspectratio>
             <info>ListItem.Icon</info>
           </control>
@@ -119,7 +120,7 @@
             <posy>75</posy>
             <width>100</width>
             <height>150</height>
-            <texture diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass_noreflect.png</texture>
+            <texture diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass.png</texture>
             <bordertexture border="-7">thumbs/poster_shadow.png</bordertexture>
             <aspectratio scalediffuse="false">scale</aspectratio>
           </control>
@@ -135,7 +136,7 @@
               <width>100</width>
               <height>150</height>
               <fadetime>IconCrossfadeTime</fadetime>
-              <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
+              <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
               <aspectratio scalediffuse="false">stretch</aspectratio>
             </control>
             <control type="image">
@@ -144,7 +145,7 @@
               <width>100</width>
               <height>150</height>
               <description>Main Icon Glass overlay</description>
-              <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass_noreflect.png</texture>
+              <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass.png</texture>
               <bordertexture border="-7">thumbs/poster_shadow.png</bordertexture>
               <aspectratio scalediffuse="false">stretch</aspectratio>
             </control>
@@ -161,7 +162,7 @@
             <property name="Duration">$INFO[Window.Property(RandomMovie.1.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(RandomMovie.1.Trailer)]</property>
             <onclick>$INFO[Window.Property(RandomMovie.1.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeRandomPoster)</visible>
+            <visible>Skin.HasSetting(HomeRandomPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="2">
             <icon>$INFO[Window.Property(RandomMovie.2.Thumb)]</icon>
@@ -173,7 +174,7 @@
             <property name="Duration">$INFO[Window.Property(RandomMovie.2.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(RandomMovie.2.Trailer)]</property>
             <onclick>$INFO[Window.Property(RandomMovie.2.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeRandomPoster)</visible>
+            <visible>Skin.HasSetting(HomeRandomPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="3">
             <icon>$INFO[Window.Property(RandomMovie.3.Thumb)]</icon>
@@ -185,7 +186,7 @@
             <property name="Duration">$INFO[Window.Property(RandomMovie.3.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(RandomMovie.3.Trailer)]</property>
             <onclick>$INFO[Window.Property(RandomMovie.3.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeRandomPoster)</visible>
+            <visible>Skin.HasSetting(HomeRandomPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="4">
             <icon>$INFO[Window.Property(RandomMovie.4.Thumb)]</icon>
@@ -197,7 +198,7 @@
             <property name="Duration">$INFO[Window.Property(RandomMovie.4.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(RandomMovie.4.Trailer)]</property>
             <onclick>$INFO[Window.Property(RandomMovie.4.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeRandomPoster)</visible>
+            <visible>Skin.HasSetting(HomeRandomPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="5">
             <icon>$INFO[Window.Property(RandomMovie.5.Thumb)]</icon>
@@ -209,7 +210,7 @@
             <property name="Duration">$INFO[Window.Property(RandomMovie.5.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(RandomMovie.5.Trailer)]</property>
             <onclick>$INFO[Window.Property(RandomMovie.5.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeRandomPoster)</visible>
+            <visible>Skin.HasSetting(HomeRandomPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="6">
             <icon>$INFO[Window.Property(RandomMovie.6.Thumb)]</icon>
@@ -221,7 +222,7 @@
             <property name="Duration">$INFO[Window.Property(RandomMovie.6.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(RandomMovie.6.Trailer)]</property>
             <onclick>$INFO[Window.Property(RandomMovie.6.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeRandomPoster)</visible>
+            <visible>Skin.HasSetting(HomeRandomPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="7">
             <icon>$INFO[Window.Property(RandomMovie.7.Thumb)]</icon>
@@ -233,7 +234,7 @@
             <property name="Duration">$INFO[Window.Property(RandomMovie.7.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(RandomMovie.7.Trailer)]</property>
             <onclick>$INFO[Window.Property(RandomMovie.7.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeRandomPoster)</visible>
+            <visible>Skin.HasSetting(HomeRandomPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="8">
             <icon>$INFO[Window.Property(RandomMovie.8.Thumb)]</icon>
@@ -245,7 +246,7 @@
             <property name="Duration">$INFO[Window.Property(RandomMovie.8.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(RandomMovie.8.Trailer)]</property>
             <onclick>$INFO[Window.Property(RandomMovie.8.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeRandomPoster)</visible>
+            <visible>Skin.HasSetting(HomeRandomPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="9">
             <icon>$INFO[Window.Property(LatestMovie.1.Thumb)]</icon>
@@ -257,7 +258,7 @@
             <property name="Duration">$INFO[Window.Property(LatestMovie.1.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(LatestMovie.1.Trailer)]</property>
             <onclick>$INFO[Window.Property(LatestMovie.1.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeLatestPoster)</visible>
+            <visible>Skin.HasSetting(HomeLatestPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="10">
             <icon>$INFO[Window.Property(LatestMovie.2.Thumb)]</icon>
@@ -269,7 +270,7 @@
             <property name="Duration">$INFO[Window.Property(LatestMovie.2.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(LatestMovie.2.Trailer)]</property>
             <onclick>$INFO[Window.Property(LatestMovie.2.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeLatestPoster)</visible>
+            <visible>Skin.HasSetting(HomeLatestPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="11">
             <icon>$INFO[Window.Property(LatestMovie.3.Thumb)]</icon>
@@ -281,7 +282,7 @@
             <property name="Duration">$INFO[Window.Property(LatestMovie.3.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(LatestMovie.3.Trailer)]</property>
             <onclick>$INFO[Window.Property(LatestMovie.3.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeLatestPoster)</visible>
+            <visible>Skin.HasSetting(HomeLatestPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="12">
             <icon>$INFO[Window.Property(LatestMovie.4.Thumb)]</icon>
@@ -293,7 +294,7 @@
             <property name="Duration">$INFO[Window.Property(LatestMovie.4.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(LatestMovie.4.Trailer)]</property>
             <onclick>$INFO[Window.Property(LatestMovie.4.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeLatestPoster)</visible>
+            <visible>Skin.HasSetting(HomeLatestPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="13">
             <icon>$INFO[Window.Property(LatestMovie.5.Thumb)]</icon>
@@ -305,7 +306,7 @@
             <property name="Duration">$INFO[Window.Property(LatestMovie.5.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(LatestMovie.5.Trailer)]</property>
             <onclick>$INFO[Window.Property(LatestMovie.5.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeLatestPoster)</visible>
+            <visible>Skin.HasSetting(HomeLatestPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="14">
             <icon>$INFO[Window.Property(LatestMovie.6.Thumb)]</icon>
@@ -317,7 +318,7 @@
             <property name="Duration">$INFO[Window.Property(LatestMovie.6.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(LatestMovie.6.Trailer)]</property>
             <onclick>$INFO[Window.Property(LatestMovie.6.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeLatestPoster)</visible>
+            <visible>Skin.HasSetting(HomeLatestPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="15">
             <icon>$INFO[Window.Property(LatestMovie.7.Thumb)]</icon>
@@ -329,7 +330,7 @@
             <property name="Duration">$INFO[Window.Property(LatestMovie.7.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(LatestMovie.7.Trailer)]</property>
             <onclick>$INFO[Window.Property(LatestMovie.7.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeLatestPoster)</visible>
+            <visible>Skin.HasSetting(HomeLatestPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="16">
             <icon>$INFO[Window.Property(LatestMovie.8.Thumb)]</icon>
@@ -341,7 +342,7 @@
             <property name="Duration">$INFO[Window.Property(LatestMovie.8.RunningTime)]</property>
             <property name="Trailer">$INFO[Window.Property(LatestMovie.8.Trailer)]</property>
             <onclick>$INFO[Window.Property(LatestMovie.8.Path),PlayMedia(,)]</onclick>
-            <visible>Skin.HasSetting(HomeLatestPoster)</visible>
+            <visible>Skin.HasSetting(HomeLatestPoster)+Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="17">
             <icon>$INFO[Window.Property(WatchList_Movie.1.Thumb)]</icon>
@@ -354,7 +355,7 @@
             <property name="Trailer">$INFO[Window.Property(WatchList_Movie.1.Trailer)]</property>
             <onclick>$INFO[Window.Property(WatchList_Movie.1.Path),PlayMedia(,)]</onclick>
             <visible>Skin.HasSetting(HomeInProgressPoster)</visible>
-            <visible>!IsEmpty(Window.Property(WatchList_Movie.1.Label))</visible>
+            <visible>Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="18">
             <icon>$INFO[Window.Property(WatchList_Movie.2.Thumb)]</icon>
@@ -367,7 +368,7 @@
             <property name="Trailer">$INFO[Window.Property(WatchList_Movie.2.Trailer)]</property>
             <onclick>$INFO[Window.Property(WatchList_Movie.2.Path),PlayMedia(,)]</onclick>
             <visible>Skin.HasSetting(HomeInProgressPoster)</visible>
-            <visible>!IsEmpty(Window.Property(WatchList_Movie.2.Label))</visible>
+            <visible>Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="19">
             <icon>$INFO[Window.Property(WatchList_Movie.3.Thumb)]</icon>
@@ -380,7 +381,7 @@
             <property name="Trailer">$INFO[Window.Property(WatchList_Movie.3.Trailer)]</property>
             <onclick>$INFO[Window.Property(WatchList_Movie.3.Path),PlayMedia(,)]</onclick>
             <visible>Skin.HasSetting(HomeInProgressPoster)</visible>
-            <visible>!IsEmpty(Window.Property(WatchList_Movie.3.Label))</visible>
+            <visible>Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="20">
             <icon>$INFO[Window.Property(WatchList_Movie.4.Thumb)]</icon>
@@ -393,7 +394,7 @@
             <property name="Trailer">$INFO[Window.Property(WatchList_Movie.4.Trailer)]</property>
             <onclick>$INFO[Window.Property(WatchList_Movie.4.Path),PlayMedia(,)]</onclick>
             <visible>Skin.HasSetting(HomeInProgressPoster)</visible>
-            <visible>!IsEmpty(Window.Property(WatchList_Movie.4.Label))</visible>
+            <visible>Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="21">
             <icon>$INFO[Window.Property(WatchList_Movie.5.Thumb)]</icon>
@@ -406,7 +407,7 @@
             <property name="Trailer">$INFO[Window.Property(WatchList_Movie.5.Trailer)]</property>
             <onclick>$INFO[Window.Property(WatchList_Movie.5.Path),PlayMedia(,)]</onclick>
             <visible>Skin.HasSetting(HomeInProgressPoster)</visible>
-            <visible>!IsEmpty(Window.Property(WatchList_Movie.5.Label))</visible>
+            <visible>Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="22">
             <icon>$INFO[Window.Property(WatchList_Movie.6.Thumb)]</icon>
@@ -419,7 +420,7 @@
             <property name="Trailer">$INFO[Window.Property(WatchList_Movie.6.Trailer)]</property>
             <onclick>$INFO[Window.Property(WatchList_Movie.6.Path),PlayMedia(,)]</onclick>
             <visible>Skin.HasSetting(HomeInProgressPoster)</visible>
-            <visible>!IsEmpty(Window.Property(WatchList_Movie.6.Label))</visible>
+            <visible>Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="23">
             <icon>$INFO[Window.Property(WatchList_Movie.7.Thumb)]</icon>
@@ -432,7 +433,7 @@
             <property name="Trailer">$INFO[Window.Property(WatchList_Movie.7.Trailer)]</property>
             <onclick>$INFO[Window.Property(WatchList_Movie.7.Path),PlayMedia(,)]</onclick>
             <visible>Skin.HasSetting(HomeInProgressPoster)</visible>
-            <visible>!IsEmpty(Window.Property(WatchList_Movie.7.Label))</visible>
+            <visible>Container(9000).Hasfocus(10)</visible>
           </item>
           <item id="24">
             <icon>$INFO[Window.Property(WatchList_Movie.8.Thumb)]</icon>
@@ -445,7 +446,111 @@
             <property name="Trailer">$INFO[Window.Property(WatchList_Movie.8.Trailer)]</property>
             <onclick>$INFO[Window.Property(WatchList_Movie.8.Path),PlayMedia(,)]</onclick>
             <visible>Skin.HasSetting(HomeInProgressPoster)</visible>
-            <visible>!IsEmpty(Window.Property(WatchList_Movie.8.Label))</visible>
+            <visible>Container(9000).Hasfocus(10)</visible>
+          </item>
+          <item id="25">
+            <icon>$INFO[Window.Property(WatchList_Episode.1.SeasonThumb)]</icon>
+            <label>$INFO[Window.Property(WatchList_Episode.1.Label)]</label>
+            <label2>$INFO[Window.Property(WatchList_Episode.1.EpisodeNo)]</label2>
+            <property name="Rating">$INFO[Window.Property(WatchList_Episode.1.Rating)]</property>
+            <property name="Plot">$INFO[Window.Property(WatchList_Episode.1.Plot)]</property>
+            <property name="Fanart">$INFO[Window.Property(WatchList_Episode.1.Fanart)]</property>
+            <property name="Duration">$INFO[Window.Property(WatchList_Episode.1.TVShowTitle)]</property>
+            <property name="TvshowThumb">$INFO[Window.Property(WatchList_Episode.1.TvshowThumb)]</property>
+            <onclick>$INFO[Window.Property(WatchList_Episode.1.Path),PlayMedia(,)]</onclick>
+            <visible>Skin.HasSetting(HomeInProgressTVPoster)</visible>
+            <visible>Container(9000).Hasfocus(11)</visible>
+          </item>
+          <item id="26">
+            <icon>$INFO[Window.Property(WatchList_Episode.2.SeasonThumb)]</icon>
+            <label>$INFO[Window.Property(WatchList_Episode.2.Label)]</label>
+            <label2>$INFO[Window.Property(WatchList_Episode.2.EpisodeNo)]</label2>
+            <property name="Rating">$INFO[Window.Property(WatchList_Episode.2.Rating)]</property>
+            <property name="Plot">$INFO[Window.Property(WatchList_Episode.2.Plot)]</property>
+            <property name="Fanart">$INFO[Window.Property(WatchList_Episode.2.Fanart)]</property>
+            <property name="Duration">$INFO[Window.Property(WatchList_Episode.2.TVShowTitle)]</property>
+            <property name="TvshowThumb">$INFO[Window.Property(WatchList_Episode.2.TvshowThumb)]</property>
+            <onclick>$INFO[Window.Property(WatchList_Episode.2.Path),PlayMedia(,)]</onclick>
+            <visible>Skin.HasSetting(HomeInProgressTVPoster)</visible>
+            <visible>Container(9000).Hasfocus(11)</visible>
+          </item>
+          <item id="27">
+            <icon>$INFO[Window.Property(WatchList_Episode.3.SeasonThumb)]</icon>
+            <label>$INFO[Window.Property(WatchList_Episode.3.Label)]</label>
+            <label2>$INFO[Window.Property(WatchList_Episode.3.EpisodeNo)]</label2>
+            <property name="Rating">$INFO[Window.Property(WatchList_Episode.3.Rating)]</property>
+            <property name="Plot">$INFO[Window.Property(WatchList_Episode.3.Plot)]</property>
+            <property name="Fanart">$INFO[Window.Property(WatchList_Episode.3.Fanart)]</property>
+            <property name="Duration">$INFO[Window.Property(WatchList_Episode.3.TVShowTitle)]</property>
+            <property name="TvshowThumb">$INFO[Window.Property(WatchList_Episode.3.TvshowThumb)]</property>
+            <onclick>$INFO[Window.Property(WatchList_Episode.3.Path),PlayMedia(,)]</onclick>
+            <visible>Skin.HasSetting(HomeInProgressTVPoster)</visible>
+            <visible>Container(9000).Hasfocus(11)</visible>
+          </item>
+          <item id="28">
+            <icon>$INFO[Window.Property(WatchList_Episode.4.SeasonThumb)]</icon>
+            <label>$INFO[Window.Property(WatchList_Episode.4.Label)]</label>
+            <label2>$INFO[Window.Property(WatchList_Episode.4.EpisodeNo)]</label2>
+            <property name="Rating">$INFO[Window.Property(WatchList_Episode.4.Rating)]</property>
+            <property name="Plot">$INFO[Window.Property(WatchList_Episode.4.Plot)]</property>
+            <property name="Fanart">$INFO[Window.Property(WatchList_Episode.4.Fanart)]</property>
+            <property name="Duration">$INFO[Window.Property(WatchList_Episode.4.TVShowTitle)]</property>
+            <property name="TvshowThumb">$INFO[Window.Property(WatchList_Episode.4.TvshowThumb)]</property>
+            <onclick>$INFO[Window.Property(WatchList_Episode.4.Path),PlayMedia(,)]</onclick>
+            <visible>Skin.HasSetting(HomeInProgressTVPoster)</visible>
+            <visible>Container(9000).Hasfocus(11)</visible>
+          </item>
+          <item id="29">
+            <icon>$INFO[Window.Property(WatchList_Episode.5.SeasonThumb)]</icon>
+            <label>$INFO[Window.Property(WatchList_Episode.5.Label)]</label>
+            <label2>$INFO[Window.Property(WatchList_Episode.5.EpisodeNo)]</label2>
+            <property name="Rating">$INFO[Window.Property(WatchList_Episode.5.Rating)]</property>
+            <property name="Plot">$INFO[Window.Property(WatchList_Episode.5.Plot)]</property>
+            <property name="Fanart">$INFO[Window.Property(WatchList_Episode.5.Fanart)]</property>
+            <property name="Duration">$INFO[Window.Property(WatchList_Episode.5.TVShowTitle)]</property>
+            <property name="TvshowThumb">$INFO[Window.Property(WatchList_Episode.5.TvshowThumb)]</property>
+            <onclick>$INFO[Window.Property(WatchList_Episode.5.Path),PlayMedia(,)]</onclick>
+            <visible>Skin.HasSetting(HomeInProgressTVPoster)</visible>
+            <visible>Container(9000).Hasfocus(11)</visible>
+          </item>
+          <item id="30">
+            <icon>$INFO[Window.Property(WatchList_Episode.6.SeasonThumb)]</icon>
+            <label>$INFO[Window.Property(WatchList_Episode.6.Label)]</label>
+            <label2>$INFO[Window.Property(WatchList_Episode.6.EpisodeNo)]</label2>
+            <property name="Rating">$INFO[Window.Property(WatchList_Episode.6.Rating)]</property>
+            <property name="Plot">$INFO[Window.Property(WatchList_Episode.6.Plot)]</property>
+            <property name="Fanart">$INFO[Window.Property(WatchList_Episode.6.Fanart)]</property>
+            <property name="Duration">$INFO[Window.Property(WatchList_Episode.6.TVShowTitle)]</property>
+            <property name="TvshowThumb">$INFO[Window.Property(WatchList_Episode.6.TvshowThumb)]</property>
+            <onclick>$INFO[Window.Property(WatchList_Episode.6.Path),PlayMedia(,)]</onclick>
+            <visible>Skin.HasSetting(HomeInProgressTVPoster)</visible>
+            <visible>Container(9000).Hasfocus(11)</visible>
+          </item>
+          <item id="31">
+            <icon>$INFO[Window.Property(WatchList_Episode.7.SeasonThumb)]</icon>
+            <label>$INFO[Window.Property(WatchList_Episode.7.Label)]</label>
+            <label2>$INFO[Window.Property(WatchList_Episode.7.EpisodeNo)]</label2>
+            <property name="Rating">$INFO[Window.Property(WatchList_Episode.7.Rating)]</property>
+            <property name="Plot">$INFO[Window.Property(WatchList_Episode.7.Plot)]</property>
+            <property name="Fanart">$INFO[Window.Property(WatchList_Episode.7.Fanart)]</property>
+            <property name="Duration">$INFO[Window.Property(WatchList_Episode.7.TVShowTitle)]</property>
+            <property name="TvshowThumb">$INFO[Window.Property(WatchList_Episode.7.TvshowThumb)]</property>
+            <onclick>$INFO[Window.Property(WatchList_Episode.7.Path),PlayMedia(,)]</onclick>
+            <visible>Skin.HasSetting(HomeInProgressTVPoster)</visible>
+            <visible>Container(9000).Hasfocus(11)</visible>
+          </item>
+          <item id="32">
+            <icon>$INFO[Window.Property(WatchList_Episode.8.SeasonThumb)]</icon>
+            <label>$INFO[Window.Property(WatchList_Episode.8.Label)]</label>
+            <label2>$INFO[Window.Property(WatchList_Episode.8.EpisodeNo)]</label2>
+            <property name="Rating">$INFO[Window.Property(WatchList_Episode.8.Rating)]</property>
+            <property name="Plot">$INFO[Window.Property(WatchList_Episode.8.Plot)]</property>
+            <property name="Fanart">$INFO[Window.Property(WatchList_Episode.8.Fanart)]</property>
+            <property name="Duration">$INFO[Window.Property(WatchList_Episode.8.TVShowTitle)]</property>
+            <property name="TvshowThumb">$INFO[Window.Property(WatchList_Episode.8.TvshowThumb)]</property>
+            <onclick>$INFO[Window.Property(WatchList_Episode.8.Path),PlayMedia(,)]</onclick>
+            <visible>Skin.HasSetting(HomeInProgressTVPoster)</visible>
+            <visible>Container(9000).Hasfocus(11)</visible>
           </item>
         </content>
       </control>
@@ -466,7 +571,7 @@
         <posx>0</posx>
         <width>499</width>
         <height>27</height>
-        <texture flipx="true">home/timepanel_mid.png</texture>
+        <texture flipx="true">$VAR[TimepanelVar]</texture>
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>!Skin.HasSetting(totalshomehigh)</visible>
@@ -478,7 +583,7 @@
         <posy>-316</posy>
         <width>499</width>
         <height>27</height>
-        <texture flipy="true" flipx="true">home/timepanel_mid.png</texture>
+        <texture flipy="true" flipx="true">$VAR[TimepanelVar]</texture>
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>Skin.HasSetting(totalshomehigh)</visible>
@@ -491,7 +596,8 @@
         <height>27</height>
         <aligny>center</aligny>
         <font>Font_Reg17_Caps</font>
-        <textcolor>white2</textcolor>
+        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+        <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
         <scroll>true</scroll>
         <label>$VAR[LibraryStatsVar]</label>
         <animation effect="slide" start="0,0" end="0,-316" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
@@ -515,7 +621,7 @@
         <posy>0</posy>
         <width>499</width>
         <height>27</height>
-        <texture>home/timepanel_mid.png</texture>
+        <texture>$VAR[TimepanelVar]</texture>
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>!Skin.HasSetting(timehomehigh)</visible>
@@ -527,7 +633,7 @@
         <posy>-316</posy>
         <width>499</width>
         <height>27</height>
-        <texture flipy="true">home/timepanel_mid.png</texture>
+        <texture flipy="true">$VAR[TimepanelVar]</texture>
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>Skin.HasSetting(timehomehigh)</visible>
@@ -542,15 +648,15 @@
         <align>right</align>
         <aligny>center</aligny>
         <font>Font_Reg17_Caps</font>
-        <textcolor>white2</textcolor>
-        <shadowcolor>-</shadowcolor>
-        <label>[COLOR white2]$INFO[System.Date(DDD)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  |  [/COLOR][COLOR ffaaaaaa]$INFO[System.Time][/COLOR]</label>
+        <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+        <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
+        <label>$VAR[TimepanelTextVar]</label>
         <animation effect="slide" start="0,0" end="0,-316" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
         <animation effect="slide" start="0" end="-40" time="200" tween="quadratic" easing="out" condition="Window.IsActive(mutebug)+Skin.HasSetting(timehomehigh)">Conditional</animation>
       </control>
       <control type="group">
         <posx>0</posx>
-        <visible>Weather.IsFetched|!IsEmpty(Window(Weather).Property(36Hour.IsFetched))</visible>
+        <visible>[Weather.IsFetched|!IsEmpty(Window(Weather).Property(36Hour.IsFetched))]+!Skin.HasSetting(homepageWeatherinfo)+!IsEmpty(Weather.Plugin)</visible>
         <animation effect="slide" start="0,0" end="0,-316" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
         <control type="image">
           <description>Weather image</description>
@@ -570,9 +676,9 @@
           <align>left</align>
           <aligny>center</aligny>
           <font>Font_Reg17_Caps</font>
-          <textcolor>white2</textcolor>
-          <shadowcolor>-</shadowcolor>
-          <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits,,  |  ][COLOR ffaaaaaa]$INFO[Window(Weather).Property(Current.Humidity)][/COLOR]</label>
+          <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+          <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
+          <label>$VAR[WeatherTextVar]</label>
         </control>
       </control>
     </control>
@@ -629,6 +735,7 @@
         <font>Font_Reg17</font>
         <urlset>1</urlset>
         <textcolor>$INFO[Skin.String(diffuse_homerss)]</textcolor>
+        <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
         <headlinecolor>$INFO[Skin.String(diffuse_homerss)]</headlinecolor>
         <highlightcolor>$INFO[Skin.String(diffuse_homerss)]</highlightcolor>
         <titlecolor>$INFO[Skin.String(diffuse_homersshead)]</titlecolor>
@@ -644,6 +751,7 @@
         <font>Font_Reg17</font>
         <align>left</align>
         <textcolor>$INFO[Skin.String(diffuse_homerss)]</textcolor>
+        <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
         <textoffsetx>0</textoffsetx>
         <label>$VAR[RSSFeedVar]</label>
         <scroll>true</scroll>
@@ -669,6 +777,28 @@
         <width>133</width>
         <height>27</height>
         <texture flipy="true">home/rssbar_mid_fade.png</texture>
+        <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
+        <include>Animation_VisibleChange400</include>
+        <visible>Skin.HasSetting(rsshomelow)</visible>
+        <animation effect="slide" start="0,0" end="0,-257" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
+      </control>
+      <control type="image">
+        <posx>1190</posx>
+        <posy>0</posy>
+        <width>110</width>
+        <height>27</height>
+        <texture>home/rssbar_begin_fade.png</texture>
+        <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
+        <include>Animation_VisibleChange400</include>
+        <visible>!Skin.HasSetting(rsshomelow)</visible>
+        <animation effect="slide" start="0,0" end="0,257" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+      </control>
+      <control type="image">
+        <posx>1190</posx>
+        <posy>287</posy>
+        <width>110</width>
+        <height>27</height>
+        <texture flipy="true">home/rssbar_begin_fade.png</texture>
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>Skin.HasSetting(rsshomelow)</visible>
@@ -1355,6 +1485,40 @@
       <include>Furniture_HomeNowPlayingObjects</include>
       <include>Furniture_HomeNowPlayingInfo</include>
       <include>HomeNowPlayingPlaylist</include>
+    </control>
+  </include>
+  <include name="Weather_Widget_Standard">
+    <control type="group">
+      <visible>Container(9000).HasFocus(6)</visible>
+      <posy>20</posy>
+      <include>Animation_HomeWidgetZoom</include>
+      <animation effect="slide" start="0,0" end="0,225" time="400" tween="cubic" easing="inout" condition="[Skin.HasSetting(lowermainmenu)|Skin.HasSetting(Lockhomemenulow)]+![Player.HasAudio+!Skin.HasSetting(homepageMusicinfo)]">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,425" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowerweatherwidget)+!Skin.HasSetting(lowermainmenu)+!Skin.HasSetting(Lockhomemenulow)+![Player.HasAudio+!Skin.HasSetting(homepageMusicinfo)]">Conditional</animation>
+      <control type="group">
+        <description>current</description>
+        <posx>50</posx>
+        <include>Standard_WeatherWidgetCurrent</include>
+      </control>
+      <control type="group">
+        <description>day 0</description>
+        <posx>300</posx>
+        <include>Standard_WeatherWidgetDay0</include>
+      </control>
+      <control type="group">
+        <description>day 1</description>
+        <posx>550</posx>
+        <include>Standard_WeatherWidgetDay1</include>
+      </control>
+      <control type="group">
+        <description>day 2</description>
+        <posx>800</posx>
+        <include>Standard_WeatherWidgetDay2</include>
+      </control>
+      <control type="group">
+        <description>day 3</description>
+        <posx>1050</posx>
+        <include>Standard_WeatherWidgetDay3</include>
+      </control>
     </control>
   </include>
   <include name="Weather_Widget_Plus">

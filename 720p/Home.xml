@@ -1,6 +1,6 @@
 <window id="0">
 	<defaultcontrol always="true">9000</defaultcontrol>
-  <onload condition="Skin.HasSetting(HomeWatchList)|Skin.HasSetting(HomeInProgress)|Skin.HasSetting(HomeInProgressPoster)">XBMC.RunScript(script.watchlist)</onload>
+  <onload condition="Skin.HasSetting(HomeWatchList)|Skin.HasSetting(HomeInProgress)|Skin.HasSetting(HomeInProgressPoster)|Skin.HasSetting(HomeInProgressTVPoster)">XBMC.RunScript(script.watchlist,movies=true&amp;episodes=true&amp;limit=8)</onload>
   <onload condition="Window.Previous(startup)+Skin.HasSetting(customstartupfocus)">Control.Move(9000,$INFO[Skin.String(CustomFocusOffset)])</onload>
   <onload condition="Window.Previous(startup)+[Skin.HasSetting(HomeRandomMovies)|Skin.HasSetting(HomeRandomTV)|Skin.HasSetting(HomeRandomMusic)|Skin.HasSetting(HomeRandomAddons)|Skin.HasSetting(HomeRandomAlbums)|Skin.HasSetting(HomeRandomPoster)]">XBMC.RunScript(script.randomitems,limit=8&amp;unplayed=True)</onload>
   <onload>ClearProperty(DontRunTVShowScripts,Home)</onload>
@@ -93,7 +93,7 @@
 					<posx>80</posx>
 					<width>800</width>
 					<height>33</height>
-					<texture>home/submenubar.png</texture>
+					<texture>$VAR[SubmenuBarVar]</texture>
           <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         </control>
 				<control type="wraplist" id="9010">
@@ -118,8 +118,9 @@
 							<aligny>center</aligny>
 							<font>Font_Reg20_Caps</font>
 							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-							<textcolor>5fFFFFFF</textcolor>
-						</control>
+              <textcolor>$VAR[HomeMenuTextUnFocusVar]</textcolor>
+              <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
+            </control>
 					</itemlayout>
 					<focusedlayout width="150" height="33">
 						<control type="label">
@@ -132,9 +133,9 @@
 							<font>Font_Reg20_Caps</font>
 							<scroll>true</scroll>
 							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-							<textcolor>D0FFFFFF</textcolor>
-							<shadowcolor>-</shadowcolor>
-						</control>
+              <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+              <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
+            </control>
 					</focusedlayout>
 					<content>
 						<!--Videos-->
@@ -178,7 +179,7 @@
             <!--Shutdown-->
             <include condition="!Skin.HasSetting(HomeMenuNoShutdownButton)">DefaultShutdownSubMenu</include>
 						<!-- Weather -->
-            <include condition="!Skin.HasSetting(HomeMenuNoWeatherButton)">DefaultWeatherSubMenu</include>
+            <include condition="!Skin.HasSetting(HomeMenuNoWeatherButton)+!IsEmpty(Weather.Plugin)">DefaultWeatherSubMenu</include>
             <!--CustomSubPL1-->
             <include condition="Skin.HasSetting(CustomSubPL1_1)">CustomSubPL1_1</include>
             <include condition="Skin.HasSetting(CustomSubPL1_2)">CustomSubPL1_2</include>
@@ -284,7 +285,7 @@
           <textcolor>48FFFFFF</textcolor>
           <label>$VAR[HomeOSDLabelVar]</label>
           <animation effect="fade" start="0" end="100" time="1050" condition="Player.HasAudio + System.IdleTime(8)">Conditional</animation>
-          <visible>!Skin.HasSetting(classichome)</visible>
+          <visible>![Skin.HasSetting(classichome)|Skin.HasSetting(aurahome)]</visible>
         </control>
         <control type="label">
           <posx>0</posx>
@@ -294,10 +295,11 @@
           <align>center</align>
           <aligny>center</aligny>
           <font>Font_MainClassic</font>
-          <textcolor>48FFFFFF</textcolor>
+          <textcolor>$VAR[HomeMenuTextUnFocusVar]</textcolor>
+          <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
           <label>$VAR[HomeOSDLabelVar]</label>
           <animation effect="fade" start="0" end="100" time="1050" condition="Player.HasAudio + System.IdleTime(8)">Conditional</animation>
-          <visible>Skin.HasSetting(classichome)</visible>
+          <visible>Skin.HasSetting(classichome)|Skin.HasSetting(aurahome)</visible>
         </control>
       </control>
 
@@ -330,10 +332,11 @@
             <posx>173</posx>
             <posy>-1</posy>
             <width>346</width>
-            <textcolor>white5</textcolor>
+            <textcolor>$VAR[HomeMenuTextUnFocusVar]</textcolor>
+            <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
             <include>MainMenuLabels</include>
             <font>Font_MainClassic</font>
-            <visible>Skin.HasSetting(classichome)</visible>
+            <visible>Skin.HasSetting(classichome)|Skin.HasSetting(aurahome)</visible>
           </control>
           <control type="label">
             <posx>173</posx>
@@ -352,7 +355,7 @@
             <textcolor>white5</textcolor>
             <include>MainMenuLabels</include>
             <font>Font_MainMenu</font>
-            <visible>!Skin.HasSetting(glasshome)+!Skin.HasSetting(classichome)</visible>
+            <visible>!Skin.HasSetting(glasshome)+!Skin.HasSetting(classichome)+!Skin.HasSetting(aurahome)</visible>
           </control>
         </itemlayout>
         <focusedlayout height="150" width="346" condition="!Skin.HasSetting(biggergap)">
@@ -360,11 +363,12 @@
             <posx>173</posx>
             <posy>-1</posy>
             <width>346</width>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
+            <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
             <include>MainMenuLabels</include>
             <font>Font_MainClassic</font>
             <animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(9000)">conditional</animation>
-            <visible>Skin.HasSetting(classichome)</visible>
+            <visible>Skin.HasSetting(classichome)|Skin.HasSetting(aurahome)</visible>
           </control>
           <control type="label">
             <posx>173</posx>
@@ -385,7 +389,7 @@
             <include>MainMenuLabels</include>
             <animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(9000)">conditional</animation>
             <font>Font_MainMenu</font>
-            <visible>!Skin.HasSetting(glasshome)+!Skin.HasSetting(classichome)</visible>
+            <visible>!Skin.HasSetting(glasshome)+!Skin.HasSetting(classichome)+!Skin.HasSetting(aurahome)</visible>
           </control>
         </focusedlayout>
         <itemlayout height="150" width="426" condition="Skin.HasSetting(biggergap)">
@@ -393,10 +397,11 @@
             <posx>213</posx>
             <posy>-1</posy>
             <width>426</width>
-            <textcolor>white5</textcolor>
+            <textcolor>$VAR[HomeMenuTextUnFocusVar]</textcolor>
+            <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
             <include>MainMenuLabels</include>
             <font>Font_MainClassic</font>
-            <visible>Skin.HasSetting(classichome)</visible>
+            <visible>Skin.HasSetting(classichome)|Skin.HasSetting(aurahome)</visible>
           </control>
           <control type="label">
             <posx>213</posx>
@@ -415,7 +420,7 @@
             <textcolor>white5</textcolor>
             <include>MainMenuLabels</include>
             <font>Font_MainMenu</font>
-            <visible>!Skin.HasSetting(glasshome)+!Skin.HasSetting(classichome)</visible>
+            <visible>!Skin.HasSetting(glasshome)+!Skin.HasSetting(classichome)+!Skin.HasSetting(aurahome)</visible>
           </control>
         </itemlayout>
         <focusedlayout height="150" width="426" condition="Skin.HasSetting(biggergap)">
@@ -423,11 +428,12 @@
             <posx>213</posx>
             <posy>-1</posy>
             <width>426</width>
-            <textcolor>white</textcolor>
+            <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
+            <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
             <include>MainMenuLabels</include>
             <font>Font_MainClassic</font>
             <animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(9000)">conditional</animation>
-            <visible>Skin.HasSetting(classichome)</visible>
+            <visible>Skin.HasSetting(classichome)|Skin.HasSetting(aurahome)</visible>
           </control>
           <control type="label">
             <posx>213</posx>
@@ -448,7 +454,7 @@
             <include>MainMenuLabels</include>
             <font>Font_MainMenu</font>
             <animation effect="fade" start="100" end="50" time="200" condition="!Control.HasFocus(9000)">conditional</animation>
-            <visible>!Skin.HasSetting(glasshome)+!Skin.HasSetting(classichome)</visible>
+            <visible>!Skin.HasSetting(glasshome)+!Skin.HasSetting(classichome)+!Skin.HasSetting(aurahome)</visible>
           </control>
         </focusedlayout>
         <content>
@@ -473,14 +479,15 @@
           <include condition="!Skin.HasSetting(HomeMenuNoShutdownButton)">ShutdownMainMenu</include>
           <include condition="!Skin.HasSetting(HomeMenuNoFavouritesButton)">FavoritesMainMenu</include>
           <include condition="!Skin.HasSetting(HomeMenuNoDiscButton)">PlayDiscMainMenu</include>
-          <include condition="!Skin.HasSetting(HomeMenuNoWeatherButton)">WeatherMainMenu</include>
+          <include condition="!Skin.HasSetting(HomeMenuNoWeatherButton)+!IsEmpty(Weather.Plugin)">WeatherMainMenu</include>
           <include condition="Skin.HasSetting(HomeMenuNoComicsButton)">ComicsMainMenu</include>
 				</content>
 			</control>
     </control>
-		<!--Weather info-->
-		<include condition="!Skin.HasSetting(homepageWeatherinfo)+StringCompare(Weather.Plugin,weather.weatherplus)">Weather_Widget_Plus</include>
-		<!-- Music Info -->
+    <!--Weather info-->
+    <include condition="!Skin.HasSetting(homepageWeatherinfo)+!SubString(Weather.Plugin,weather.weatherplus)+!IsEmpty(Weather.Plugin)">Weather_Widget_Standard</include>
+    <include condition="!Skin.HasSetting(homepageWeatherinfo)+SubString(Weather.Plugin,weather.weatherplus)+!IsEmpty(Weather.Plugin)">Weather_Widget_Plus</include>
+    <!-- Music Info -->
 		<include condition="!Skin.HasSetting(homepageMusicinfo)+!Skin.HasSetting(smallmusichome)">Furniture_HomeNowPlaying</include>
 		<include condition="!Skin.HasSetting(homepageMusicinfo)+Skin.HasSetting(smallmusichome)">SmallMusicInfo</include>
 		<!-- Video Info -->
