@@ -724,7 +724,7 @@
             <height>60</height>
             <aspectratio scalediffuse="true">keep</aspectratio>
             <fadetime>400</fadetime>
-            <texture diffuse="thumbs/banner_mask.png" background="true">$INFO[ListItem.Path,,../banner.jpg]</texture>
+            <texture diffuse="thumbs/banner_mask.png" background="true">$INFO[ListItem.Path,,/banner.jpg]</texture>
             <visible>!Skin.HasSetting(highlist)</visible>
           </control>
 
@@ -935,4 +935,3 @@
     </control>
   </include>
 </includes>
-

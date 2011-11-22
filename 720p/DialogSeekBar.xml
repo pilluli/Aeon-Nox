@@ -1020,7 +1020,7 @@
                 <posy>-34</posy>
                 <width>230</width>
                 <height>156</height>
-                <texture background="true">$INFO[Player.FolderPath,,/../clearart.png]</texture>
+                <texture background="true">$INFO[Player.FolderPath,,/clearart.png]</texture>
                 <aspectratio>keep</aspectratio>
                 <visible>IsEmpty(Control.GetLabel(1000))</visible>
                 <animation type="WindowOpen">
