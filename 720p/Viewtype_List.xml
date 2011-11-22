@@ -240,6 +240,19 @@
 				<include>listcolornofocus</include>
 				<info>ListItem.Label</info>
 				<animation effect="slide" start="0" end="-60" reversible="true" condition="Container.Content(seasons)+!IsEmpty(ListItem.TVShowTitle)">Conditional</animation>
+				<visible>!ListItem.Property(unavailable)</visible>
+			</control>
+			<control type="label">
+				<posx>105</posx>
+				<posy>1</posy>
+				<width>480</width>
+				<height>41</height>
+				<font>Font_Reg22</font>
+				<aligny>center</aligny>
+				<include>listcolornofocus_unavailable</include>
+				<info>ListItem.Label</info>
+				<animation effect="slide" start="0" end="-60" reversible="true" condition="Container.Content(seasons)+!IsEmpty(ListItem.TVShowTitle)">Conditional</animation>
+				<visible>ListItem.Property(unavailable)</visible>
 			</control>
 			<control type="label">
 				<posx>105</posx>
@@ -264,32 +277,76 @@
 				<include>subcolornofocus</include>
 				<label>[LOWERCASE]$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[16101]][/LOWERCASE]</label>
 				<visible>Container.Content(seasons)</visible>
+				<visible>!ListItem.Property(unavailable)</visible>
 			</control>
 			<control type="label">
-        <posx>657</posx>
-        <posy>12</posy>
-        <width>96</width>
-        <height>41</height>
-				<font>Font_Reg15</font>
-				<align>center</align>
-				<aligny>center</aligny>
-				<include>detailcolornofocus</include>
-				<label>[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]][/LOWERCASE]</label>
-				<visible>!IsEmpty(ListItem.Title)+IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
-				<visible>Container.Content(seasons)</visible>
-			</control>
-			<control type="label">
-				<posx>657</posx>
-				<posy>12</posy>
-				<width>96</width>
+				<posx>45</posx>
+				<posy>23</posy>
+				<width>470</width>
 				<height>41</height>
-				<font>Font_Reg15</font>
-				<align>center</align>
+				<font>Font_Reg17</font>
+				<align>left</align>
 				<aligny>center</aligny>
-				<include>detailcolornofocus</include>
-				<label>[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]][/LOWERCASE]</label>
-				<visible>!IsEmpty(ListItem.Title)+!IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
+				<include>subcolornofocus_unavailable</include>
+				<label>[LOWERCASE]$INFO[ListItem.Property(UnWatchedEpisodes),, $LOCALIZE[16101]][/LOWERCASE]</label>
 				<visible>Container.Content(seasons)</visible>
+				<visible>ListItem.Property(unavailable)</visible>
+			</control>
+			<control type="label">
+			  <posx>657</posx>
+			  <posy>12</posy>
+			  <width>96</width>
+			  <height>41</height>
+			  <font>Font_Reg15</font>
+			  <align>center</align>
+			  <aligny>center</aligny>
+			  <include>detailcolornofocus</include>
+			  <label>[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]][/LOWERCASE]</label>
+			  <visible>!IsEmpty(ListItem.Title)+IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
+			  <visible>Container.Content(seasons)</visible>
+			  <visible>!ListItem.Property(unavailable)</visible>
+			</control>
+			<control type="label">
+			  <posx>657</posx>
+			  <posy>12</posy>
+			  <width>96</width>
+			  <height>41</height>
+			  <font>Font_Reg15</font>
+			  <align>center</align>
+			  <aligny>center</aligny>
+			  <include>detailcolornofocus_unavailable</include>
+			  <label>[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]][/LOWERCASE]</label>
+			  <visible>!IsEmpty(ListItem.Title)+IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
+			  <visible>Container.Content(seasons)</visible>
+			  <visible>ListItem.Property(unavailable)</visible>
+			</control>
+			<control type="label">
+			  <posx>657</posx>
+			  <posy>12</posy>
+			  <width>96</width>
+			  <height>41</height>
+			  <font>Font_Reg15</font>
+			  <align>center</align>
+			  <aligny>center</aligny>
+			  <include>detailcolornofocus</include>
+			  <label>[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]][/LOWERCASE]</label>
+			  <visible>!IsEmpty(ListItem.Title)+!IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
+			  <visible>Container.Content(seasons)</visible>
+			  <visible>!ListItem.Property(unavailable)</visible>
+			</control>
+			<control type="label">
+			  <posx>657</posx>
+			  <posy>12</posy>
+			  <width>96</width>
+			  <height>41</height>
+			  <font>Font_Reg15</font>
+			  <align>center</align>
+			  <aligny>center</aligny>
+			  <include>detailcolornofocus_unavailable</include>
+			  <label>[LOWERCASE]$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20359]][/LOWERCASE]</label>
+			  <visible>!IsEmpty(ListItem.Title)+!IntegerGreaterThan(ListItem.Property(TotalEpisodes),1)</visible>
+			  <visible>Container.Content(seasons)</visible>
+			  <visible>ListItem.Property(unavailable)</visible>
 			</control>
 			<control type="label">
 				<posx>656</posx>
@@ -1253,6 +1310,18 @@
 							<aligny>center</aligny>
 							<include>listcolornofocus</include>
 							<info>ListItem.Label</info>
+							<visible>!ListItem.Property(unavailable)</visible>
+						</control>
+						<control type="label">
+							<posx>45</posx>
+							<posy>0</posy>
+							<width>540</width>
+							<height>40</height>
+							<font>Font_Reg17</font>
+							<aligny>center</aligny>
+							<include>listcolornofocus_unavailable</include>
+							<info>ListItem.Label</info>
+							<visible>ListItem.Property(unavailable)</visible>
 						</control>
 						<control type="label">
 							<posx>694</posx>
