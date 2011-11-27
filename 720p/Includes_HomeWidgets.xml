@@ -1712,7 +1712,7 @@
             <posy>5</posy>
             <width>130</width>
             <height>70</height>
-            <texture diffuse="thumbs/multiplex_tvmask.png" background="true">$INFO[ListItem.Thumb]</texture>
+            <texture diffuse="thumbs/multiplex_tvmask.png" background="true">$INFO[ListItem.Property(Fanart)]</texture>
             <fadetime>200</fadetime>
             <aspectratio scalediffuse="false">scale</aspectratio>
           </control>
