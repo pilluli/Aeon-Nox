@@ -38,6 +38,19 @@
             <label>$INFO[ListItem.Episode]</label>
             <font>Font_OSDTitle2</font>
             <include>listcolornofocus</include>
+	    <visible>!ListItem.Property(unavailable)</visible>
+          </control>
+          <control type="label">
+            <posx>104</posx>
+            <posy>0</posy>
+            <width>84</width>
+            <height>60</height>
+            <align>right</align>
+            <aligny>center</aligny>
+            <label>$INFO[ListItem.Episode]</label>
+            <font>Font_OSDTitle2</font>
+            <include>listcolornofocus_unavailable</include>
+	    <visible>ListItem.Property(unavailable)</visible>
           </control>
           <control type="label">
             <posx>125</posx>
@@ -48,6 +61,18 @@
             <label>$VAR[EpisodeTitleVar]</label>
             <font>Font_Bold24</font>
             <include>listcolornofocus</include>
+	    <visible>!ListItem.Property(unavailable)</visible>
+          </control>
+          <control type="label">
+            <posx>125</posx>
+            <posy>0</posy>
+            <width>633</width>
+            <height>30</height>
+            <align>left</align>
+            <label>$VAR[EpisodeTitleVar]</label>
+            <font>Font_Bold24</font>
+            <include>listcolornofocus_unavailable</include>
+	    <visible>ListItem.Property(unavailable)</visible>
           </control>
           <control type="label">
             <posx>125</posx>
@@ -57,7 +82,19 @@
             <align>left</align>
             <label>$VAR[EpisodeSubTitleVar]</label>
             <font>Font_Reg18</font>
-            <textcolor>ffaaaaaa</textcolor>
+            <include>listcolornofocus</include>
+	    <visible>!ListItem.Property(unavailable)</visible>
+          </control>
+          <control type="label">
+            <posx>125</posx>
+            <posy>33</posy>
+            <width>633</width>
+            <height>30</height>
+            <align>left</align>
+            <label>$VAR[EpisodeSubTitleVar]</label>
+            <font>Font_Reg18</font>
+            <include>listcolornofocus_unavailable</include>
+	    <visible>ListItem.Property(unavailable)</visible>
           </control>
           <control type="image">
             <posx>280</posx>
