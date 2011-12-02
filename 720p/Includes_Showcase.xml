@@ -270,6 +270,7 @@
     <control type="image">
       <include>MovieShowcaseThumb</include>
       <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+      <colordiffuse>44ffffff</colordiffuse>
     </control>
     <include>MovieShowcaseGlassOverlayAngled</include>
     <control type="image">
