@@ -21,13 +21,21 @@
 			<control type="group">
 				<visible>[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)]]] +!Control.IsVisible(6000)</visible>
         <posy>11</posy>
+        <include>MovieShowCaseItem0</include>
+      </control>
+		</itemlayout>
+		<focusedlayout height="350" width="196">
+			<control type="group">
+				<visible>[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)]]] +!Control.IsVisible(6000)</visible>
+        <animation effect="zoom" start="100" end="120" center="135,230" time="300" easing="out" reversible="false" tween="cubic">Focus</animation>
+        <posy>11</posy>
         <control type="image">
           <include>MovieShowcaseThumb</include>
           <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
         </control>
-        <include>MovieShowcaseGlassOverlayAngled</include>
+        <include>MovieShowcaseGlassOverlay</include>
         <control type="image">
-          <include>MovieShowcaseThumbReflection</include>
+          <include>MovieShowcaseThumbReflectionMain</include>
           <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
         </control>
         <control type="image">
@@ -39,14 +47,6 @@
 	  <include>UnavailableOverlayShowCase</include>
 	  <visible>ListItem.Property(unavailable)</visible>
 	</control>
-      </control>
-		</itemlayout>
-		<focusedlayout height="350" width="196">
-			<control type="group">
-				<visible>[[Skin.HasSetting(noflow)+![Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)]]|[Skin.HasSetting(noflowtv)+[Container.Content(tvshows)|Container.Content(seasons)|Container.Content(episodes)]]] +!Control.IsVisible(6000)</visible>
-        <animation effect="zoom" start="100" end="120" center="135,230" time="300" easing="out" reversible="false" tween="cubic">Focus</animation>
-        <posy>11</posy>
-        <include>MovieShowCaseItem0</include>
       </control>
 		</focusedlayout>
 	</include>
