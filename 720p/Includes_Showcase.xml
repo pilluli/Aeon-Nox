@@ -154,6 +154,13 @@
 		<width>60</width>
     <height>60</height>
 	</include>
+	<include name="UnavailableOverlayShowCase">
+		<posx>48</posx>
+		<posy>7</posy>
+		<width>60</width>
+    <height>60</height>
+    <texture>thumbs/OverlayUnavailable.png</texture>
+	</include>
   <include name="MovieShowCaseItem-7">
     <control type="image">
       <include>MovieShowcaseThumb</include>
@@ -270,7 +277,6 @@
     <control type="image">
       <include>MovieShowcaseThumb</include>
       <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
-      <colordiffuse>44ffffff</colordiffuse>
     </control>
     <include>MovieShowcaseGlassOverlayAngled</include>
     <control type="image">
@@ -281,6 +287,10 @@
       <include>WatchedOverlayShowCase</include>
       <include condition="!Skin.HasSetting(AltNewOverlay)">OverlayVisibility0</include>
       <include condition="Skin.HasSetting(AltNewOverlay)">AltOverlayVisibility0</include>
+    </control>
+    <control type="image">
+      <include>UnavailableOverlayShowCase</include>
+      <visible>ListItem(0).Property(unavailable)</visible>
     </control>
   </include>
   <include name="MovieShowCaseItem1">

@@ -118,22 +118,6 @@
             <animation type="Focus" reversible="false">
               <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
             </animation>
-	    <visible>!ListItem.Property(unavailable)</visible>
-          </control>
-          <control type="image">
-            <posx>4</posx>
-            <posy>4</posy>
-            <width>271</width>
-            <height>157</height>
-            <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
-                        <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
-						<bordersize>9</bordersize>
-<aspectratio scalediffuse="false">scale</aspectratio>
-            <animation type="Focus" reversible="false">
-              <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
-            </animation>
-	    <colordiffuse>55ffffff</colordiffuse>
-	    <visible>ListItem.Property(unavailable)</visible>
           </control>
           <control type="image">
             <posx>216</posx>
@@ -146,6 +130,18 @@
               <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
               <effect type="fade" start="0" end="100" time="200" />
             </animation>
+          </control>
+          <control type="image">
+            <posx>13</posx>
+            <posy>13</posy>
+            <width>50</width>
+            <height>50</height>
+	    <texture background="true">thumbs/OverlayUnavailable.png</texture>
+            <animation type="Focus" reversible="false">
+              <effect type="zoom" center="127,70" start="50" end="100" time="200" tween="cubic" easing="out" />
+              <effect type="fade" start="0" end="100" time="200" />
+            </animation>
+	    <visible>ListItem.Property(unavailable)</visible>
           </control>
 
           <control type="label">
@@ -162,23 +158,6 @@
               <effect type="fade" start="0" end="100" time="200" />
             </animation>
             <visible>!IsEmpty(ListItem.Title)</visible>
-	    <visible>!ListItem.Property(unavailable)</visible>
-          </control>
-          <control type="label">
-            <posx>292</posx>
-            <posy>15</posy>
-            <width>550</width>
-            <scrollout>false</scrollout>
-            <pauseatend>1800</pauseatend>
-            <scrollspeed>40</scrollspeed>
-            <label>[UPPERCASE]$INFO[ListItem.Episode,,. ]$INFO[ListItem.Title][/UPPERCASE]</label>
-            <font>Font_ShowcaseMainLabel2_Caps</font>
-            <include>listcolornofocus_unavailable</include>
-            <animation type="Focus" reversible="false">
-              <effect type="fade" start="0" end="100" time="200" />
-            </animation>
-            <visible>!IsEmpty(ListItem.Title)</visible>
-	    <visible>ListItem.Property(unavailable)</visible>
           </control>
           <control type="label">
             <posx>292</posx>
@@ -190,19 +169,6 @@
             <font>Font_Reg18</font>
             <textcolor>ffaaaaaa</textcolor>
             <visible>!IsEmpty(ListItem.Title)</visible>
-	    <visible>!ListItem.Property(unavailable)</visible>
-          </control>
-          <control type="label">
-            <posx>292</posx>
-            <posy>130</posy>
-            <width>633</width>
-            <height>60</height>
-            <align>left</align>
-            <label>$INFO[ListItem.Date]$INFO[ListItem.Rating, • ]</label>
-            <font>Font_Reg18</font>
-            <textcolor>55aaaaaa</textcolor>
-            <visible>!IsEmpty(ListItem.Title)</visible>
-	    <visible>ListItem.Property(unavailable)</visible>
           </control>
         </focusedlayout>
       </control>
@@ -231,34 +197,6 @@
           <effect type="fade" start="0" end="100" time="200" />
         </animation>
         <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-	<visible>!Container(514).ListItem.Property(unavailable)</visible>
-      </control>
-      <control type="textbox">
-        <posx>794</posx>
-        <posy>188</posy>
-        <width>486</width>
-        <height>66</height>
-        <align>left</align>
-        <info>Container(514).ListItem.Plot</info>
-        <font>Font_Reg18</font>
-        <include>listcolornofocus_unavailable</include>
-        <animation effect="slide" end="0,60" time="0" condition="Container(514).Row(1)">Conditional</animation>
-        <animation effect="slide" end="0,120" time="0" condition="Container(514).Row(2)">Conditional</animation>
-        <animation effect="slide" end="0,180" time="0" condition="Container(514).Row(3)">Conditional</animation>
-        <animation effect="slide" end="0,240" time="0" condition="Container(514).Row(4)">Conditional</animation>
-        <animation effect="slide" end="0,300" time="0" condition="Container(514).Row(5)">Conditional</animation>
-        <animation effect="slide" end="0,10" time="200" condition="Container(514).Row(0)">Conditional</animation>
-        <animation effect="slide" end="0,5" time="200" condition="Container(514).Row(1)">Conditional</animation>
-        <animation effect="slide" end="0,0" time="200" condition="Container(514).Row(2)">Conditional</animation>
-        <animation effect="slide" end="0,-5" time="200" condition="Container(514).Row(3)">Conditional</animation>
-        <animation effect="slide" end="0,-10" time="200" condition="Container(514).Row(4)">Conditional</animation>
-        <animation effect="slide" end="0,-15" time="200" condition="Container(514).Row(5)">Conditional</animation>
-        <animation effect="slide" end="-100,0" delay="1200" condition="true">Conditional</animation>
-        <animation type="Conditional" reversible="false" condition="Control.HasFocus(514) + [!Container(514).OnNext + !Container(514).OnPrevious]">
-          <effect type="fade" start="0" end="100" time="200" />
-        </animation>
-        <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-	<visible>Container(514).ListItem.Property(unavailable)</visible>
       </control>
       <control type="scrollbar" id="61">
         <posx>1227</posx>
