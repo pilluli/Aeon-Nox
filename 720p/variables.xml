@@ -842,7 +842,7 @@
   
   <!--Thumbs -->
   <variable name="EpisodeViewPosterVar">
-    <value condition="!Skin.HasSetting(TVShowsUsePosters)">$INFO[ListItem.Path,,../poster.jpg]</value>
+    <value condition="!Skin.HasSetting(TVShowsUsePosters)">$INFO[ListItem.Path,,/poster.jpg]</value>
     <value condition="Skin.HasSetting(TVShowsUsePosters)">$INFO[Container.TvShowThumb]</value>
   </variable>
   <variable name="BannerVar">
