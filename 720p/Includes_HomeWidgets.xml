@@ -1548,13 +1548,13 @@
             <label>$INFO[ListItem.Label2]</label>
           </control>
           <control type="label">
-            <posx>420</posx>
+            <posx>425</posx>
             <posy>54</posy>
             <width>300</width>
             <height>20</height>
             <align>right</align>
             <aligny>top</aligny>
-            <font>Font_Info</font>
+            <font>Font_Reg15</font>
             <textcolor>c0FFFFFF</textcolor>
             <selectedcolor>selected</selectedcolor>
             <label>$INFO[ListItem.Property(TimeRemaining)]</label>
