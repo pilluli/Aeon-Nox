@@ -21,7 +21,7 @@
   <color name="orange">FFFEAF33</color>
   <color name="default">FFFFFFFF</color>
   <color name="rss_headline">FF0055be</color>
-  <color name="floorshadow">FF000000</color>
+  <color name="floorshadow">00000000</color>
   <color name="vignette">FFFFFFFF</color>
   <color name="osdseek">FFececec</color>  
     <color name="context">abFFFFFF</color>
@@ -33,4 +33,5 @@
   <color name="panelinfo">abFFFFFF</color>
   <color name="panellabel">FFFFFFFF</color>
   <color name="panelplot">d0FFFFFF</color>
+  <color name="floorlabel">abFFFFFF</color>
 </colors>
