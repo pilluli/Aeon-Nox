@@ -18,7 +18,7 @@
         <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         <animation effect="slide" start="-10,-10" end="10,10" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         <imagepath background="true">$VAR[VideoExtraFanartVar]</imagepath>
-        <visible>!Skin.HasSetting(VideoLibraryFanart)+!Window.isVisible(movieinformation)+[Container.Content(genres)|[Container.Content(episodes)+Skin.HasSetting(extrafanartepisodes)]|[Container.Content(movies)+Skin.HasSetting(extrafanartmovies)]|[Container.Content(tvshows)+Skin.HasSetting(extrafanartseries)]|[Container.Content(seasons)+Skin.HasSetting(extrafanartseasons)]]</visible>
+        <visible>!Skin.HasSetting(VideoLibraryFanart)+!Window.isVisible(movieinformation)</visible>
       </control>
       <include>CommonCurtainBackdrop</include>
     </control>
@@ -78,28 +78,19 @@
       <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Skin.HasSetting(4sec)">Visible</animation>
       <animation effect="fade" start="0" end="100" time="150" delay="5000" condition="Skin.HasSetting(5sec)">Visible</animation>
     </control>
-  <control type="group">
-      <visible>[[Control.IsVisible(512)|Control.IsVisible(514)]+Skin.HasSetting(altoverlayinfowall)]</visible>
-      <include condition="!Skin.HasSetting(DisableInfoWallVL)|!Skin.HasSetting(DisableEpisodeVL)">Furniture_WallBackground_Small</include>
-    </control>
     <control type="group">
-      <visible>[Control.IsVisible(512)|Control.IsVisible(514)]+!Skin.HasSetting(altoverlayinfowall)</visible>
-      <include condition="!Skin.HasSetting(DisableInfoWallVL)|!Skin.HasSetting(DisableEpisodeVL)">Common_Fanartoverlay</include>
-    </control>
-    <control type="group">
-      <visible>Control.IsVisible(551)|Control.IsVisible(51)|Control.IsVisible(508)|Control.IsVisible(560)|Control.IsVisible(503)|Control.IsVisible(509)|Control.IsVisible(504)|Control.IsVisible(501)|Control.IsVisible(510)|Control.IsVisible(50)|Control.IsVisible(505)|Control.IsVisible(55)</visible>
+      <visible>![Control.IsVisible(516|Control.IsVisible(514)|Control.IsVisible(517)|Control.IsVisible(550)|Control.IsVisible(511)]</visible>
       <include>Furniture_Showcase</include>
     </control>
     <control type="group">
       <include>Animation_OpenCloseZoom_New</include>
-      <include condition="!Skin.HasSetting(DisableWallVL)|!Skin.HasSetting(DisableBannerWallVL)|!Skin.HasSetting(DisableThumbnailVL)">WallPanel</include>
-      <visible>Control.IsVisible(551)|Control.IsVisible(560)|Control.IsVisible(51)</visible>
+      <include condition="!Skin.HasSetting(DisableInfoWallVL)|!Skin.HasSetting(DisableWallVL)|!Skin.HasSetting(DisableBannerWallVL)|!Skin.HasSetting(DisableThumbnailVL)">WallPanel</include>
+      <visible>Control.IsVisible(551)|Control.IsVisible(560)|Control.IsVisible(51)|Control.IsVisible(512)</visible>
     </control>
     <control type="group">
-      <visible>Control.IsVisible(508)|Control.IsVisible(503)|Control.IsVisible(509)|Control.IsVisible(504)|Control.IsVisible(501)|[Control.IsVisible(510)+Skin.HasSetting(posterslide)]</visible>
+      <visible>Control.IsVisible(508)|Control.IsVisible(503)|Control.IsVisible(509)|Control.IsVisible(504)|Control.IsVisible(501)</visible>
       <include condition="!Skin.HasSetting(DisableBannersVL)|!Skin.HasSetting(DisableLandscapeVL)|!Skin.HasSetting(DisableShowCaseVL)|!Skin.HasSetting(DisableDVDCaseVL)|!Skin.HasSetting(DisablePostersVL)">ShowcaseInfoPaneMovies</include>
       <animation effect="slide" end="0,30"  time="400" easing="inout" tween="cubic" condition="Control.IsVisible(503)|Control.IsVisible(508)">Conditional</animation>
-      <animation effect="slide" end="0,68"  time="400" easing="inout" tween="cubic" condition="[Control.IsVisible(510)+Skin.HasSetting(posterslide)]">Conditional</animation>
     </control>
     <control type="group">
       <!--view id = 517-->
@@ -147,7 +138,7 @@
       <include condition="!Skin.HasSetting(DisableCarouselVL)">Carousel</include>
     </control>
     <control type="group">
-      <visible>[Control.IsVisible(510)+!Skin.HasSetting(posterslide)]|Control.IsVisible(512)|Control.IsVisible(50)</visible>
+      <visible>Control.IsVisible(512)|Control.IsVisible(50)</visible>
       <include>VideoWindowPosters</include>
     </control>
     <include>ScrollOffsetLabel</include>
@@ -155,17 +146,15 @@
       <description>Invisible buttons for trailer</description>
       <control type="button" id="7000">
         <include>HiddenObject</include>
-        <onfocus condition="[[Skin.HasSetting(showcaseinfoon)+Container.Content(movies)+IsEmpty(ListItem.Trailer)]|[Skin.HasSetting(showcaseinfoonep)+Container.Content(episodes)]|[Skin.HasSetting(showcaseinfoontv)+[Container.Content(tvshows)|Container.Content(seasons)]]]+[Control.IsVisible(501)|Control.IsVisible(504)|Control.IsVisible(503)|Control.IsVisible(508)|[Control.IsVisible(510)+Skin.HasSetting(posterslide)]]">SetFocus(9000)</onfocus>
-        <onfocus condition="[Skin.HasSetting(showcaseinfoon)+Container.Content(movies)+!IsEmpty(ListItem.Trailer)]+[Control.IsVisible(501)|Control.IsVisible(504)|Control.IsVisible(503)|[Control.IsVisible(510)+Skin.HasSetting(posterslide)]]">SetFocus(7001)</onfocus>
+        <onfocus condition="[[Skin.HasSetting(showcaseinfoon)+Container.Content(movies)+IsEmpty(ListItem.Trailer)]|[Skin.HasSetting(showcaseinfoonep)+Container.Content(episodes)]|[Skin.HasSetting(showcaseinfoontv)+[Container.Content(tvshows)|Container.Content(seasons)]]]+[Control.IsVisible(501)|Control.IsVisible(504)|Control.IsVisible(503)|Control.IsVisible(508)]">SetFocus(9000)</onfocus>
+        <onfocus condition="[Skin.HasSetting(showcaseinfoon)+Container.Content(movies)+!IsEmpty(ListItem.Trailer)]+[Control.IsVisible(501)|Control.IsVisible(504)|Control.IsVisible(503)]">SetFocus(7001)</onfocus>
         <onup condition="IsEmpty(ListItem.Trailer)">9000</onup>
         <onup condition="!IsEmpty(ListItem.Trailer)">7001</onup>
         <onleft condition="Control.IsVisible(501)">Control.Move(501,-1)</onleft>
-        <onleft condition="Control.IsVisible(510)">Control.Move(510,-1)</onleft>
         <onleft condition="Control.IsVisible(504)">Control.Move(504,-1)</onleft>
         <onleft condition="Control.IsVisible(503)">Control.Move(503,-1)</onleft>
         <onleft condition="Control.IsVisible(508)">Control.Move(508,-1)</onleft>
         <onright condition="Control.IsVisible(501)">Control.Move(501,1)</onright>
-        <onright condition="Control.IsVisible(510)">Control.Move(510,1)</onright>
         <onright condition="Control.IsVisible(504)">Control.Move(504,1)</onright>
         <onright condition="Control.IsVisible(503)">Control.Move(503,1)</onright>
         <onright condition="Control.IsVisible(508)">Control.Move(508,1)</onright>
@@ -203,14 +192,14 @@
       </control>
     </control>
     <control type="group">
-      <visible>Control.IsVisible(508)|Control.IsVisible(503)|Control.IsVisible(509)|Control.IsVisible(504)|Control.IsVisible(501)|Control.IsVisible(51)|Control.IsVisible(551)|Control.IsVisible(560)|[Control.IsVisible(510)+Skin.HasSetting(posterslide)]|[Control.IsVisible(512)+!Skin.HasSetting(infowallflags)]|Control.IsVisible(516)|Control.IsVisible(514)|Control.IsVisible(55)|Control.IsVisible(517)</visible>
+      <visible>Control.IsVisible(508)|Control.IsVisible(503)|Control.IsVisible(509)|Control.IsVisible(504)|Control.IsVisible(501)|Control.IsVisible(51)|Control.IsVisible(551)|Control.IsVisible(560)|[Control.IsVisible(512)+!Skin.HasSetting(infowallflags)]|Control.IsVisible(516)|Control.IsVisible(514)|Control.IsVisible(55)|Control.IsVisible(517)</visible>
       <animation effect="slide" start="0" end="470"  time="0" easing="inout" tween="cubic" condition="Control.IsVisible(514)">Conditional</animation>
       <include condition="!Skin.HasSetting(DisableBannersVL)|!Skin.HasSetting(DisableLandscapeVL)|!Skin.HasSetting(DisableShowCaseVL)|!Skin.HasSetting(DisableDVDCaseVL)|!Skin.HasSetting(DisablePostersVL)|!Skin.HasSetting(DisableCarouselVL)|!Skin.HasSetting(DisableWallVL)">FloorFlags</include>
     </control>
     <include>FloorLabels</include>
     <control type="group">
-      <visible>Control.IsVisible(508)|Control.IsVisible(503)|Control.IsVisible(509)|Control.IsVisible(504)|Control.IsVisible(501)|Control.IsVisible(510)|Control.IsVisible(55)|Control.IsVisible(560)</visible>
-      <include condition="!Skin.HasSetting(DisableBannersVL)|!Skin.HasSetting(DisableLandscapeVL)|!Skin.HasSetting(DisableShowCaseVL)|!Skin.HasSetting(DisableDVDCaseVL)|!Skin.HasSetting(DisablePostersVL)|!Skin.HasSetting(DisableCarouselVL)|!Skin.HasSetting(DisableBannerWallVL)">Furniture_DarkGradient</include>
+      <visible>Control.IsVisible(551)|Control.IsVisible(508)|Control.IsVisible(503)|Control.IsVisible(509)|Control.IsVisible(504)|Control.IsVisible(501)|Control.IsVisible(55)|Control.IsVisible(560)|[Control.isVisible(510)+!Skin.HasSetting(posterslide)]</visible>
+      <include condition="!Skin.HasSetting(DisableInfoWallVL)|!Skin.HasSetting(DisableBannersVL)|!Skin.HasSetting(DisableLandscapeVL)|!Skin.HasSetting(DisableShowCaseVL)|!Skin.HasSetting(DisableDVDCaseVL)|!Skin.HasSetting(DisablePostersVL)|!Skin.HasSetting(DisableCarouselVL)|!Skin.HasSetting(DisableBannerWallVL)">Furniture_DarkGradient</include>
     </control>
     <include condition="!Skin.HasSetting(kioskmode)">Media_Menu</include>
     <include condition="Skin.HasSetting(breadcrumb)">Breadcrumbs</include>

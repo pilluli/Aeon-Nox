@@ -58,19 +58,9 @@
           <control type="image">
             <description>Low List Background Panel</description>
             <posx>0</posx>
-            <posy>475</posy>
+            <posy>473</posy>
             <width>1280</width>
-            <height>404</height>
-            <aspectratio scalediffuse="false">stretch</aspectratio>
-            <texture>views/lowlist_panelback_shadow.png</texture>
-            <include>Animation_CommonFade</include>
-          </control>
-          <control type="image">
-            <description>Low List Background Panel</description>
-            <posx>0</posx>
-            <posy>503</posy>
-            <width>1280</width>
-            <height>404</height>
+            <height>434</height>
             <aspectratio scalediffuse="false">stretch</aspectratio>
             <texture>views/lowlist_panelback.png</texture>
             <include>Animation_CommonFade</include>
@@ -582,7 +572,6 @@
           <include condition="!Skin.HasSetting(vinylart)+!Skin.HasSetting(blurayart)">cdartlibrary</include>
           <include condition="Skin.HasSetting(vinylart)">vinylartlibrary</include>
           <include condition="Skin.HasSetting(blurayart)">blurayartlibrary</include>
-          <bordertexture border="-20">common/cdart/cdartborder.png</bordertexture>
           <animation effect="rotate" end="-360" center="auto" time="5000" loop="true" reversible="false" condition="StringCompare(ListItem.Album,MusicPlayer.Album)+!IsEmpty(ListItem.Thumb)+Player.HasAudio">Conditional</animation>
         </control>
       </control>
