@@ -92,7 +92,7 @@
           <icon>-</icon>
           <thumb>-</thumb>
           <onclick>Container.SetViewMode(505)</onclick>
-          <visible>Container.Content(seasons)|Container.Content(episodes)|Container.Content(tvshows)|SubString(Container.FolderPath,addons://)</visible>
+          <visible>Container.Content(seasons)|Container.Content(episodes)|Container.Content(tvshows)|SubString(Container.FolderPath,addons://)|SubString(Container.FolderPath,plugin.video)</visible>
           <visible>![Window.IsActive(videolibrary)+Skin.HasSetting(DisableInfoListVL)]</visible>
         </item>
         <item id="3">
@@ -169,7 +169,7 @@
           <icon>-</icon>
           <thumb>-</thumb>
           <onclick>Container.SetViewMode(55)</onclick>
-          <visible>Container.Content(movies)|Container.Content(tvshows)|Container.Content(seasons)|[Window.IsActive(programs)+Substring(Container.FolderPath,advanced.launcher)]</visible>
+          <visible>Container.Content(movies)|Container.Content(tvshows)|Container.Content(seasons)|Substring(Container.FolderPath,advanced.launcher)|SubString(Container.FolderPath,videodb://5/)|Container.Content(genres)|Container.Content(MusicVideos)</visible>
           <visible>![Window.IsActive(videolibrary)+Skin.HasSetting(DisableCarouselVL)]</visible>
         </item>
         <item id="21">
@@ -209,22 +209,29 @@
           <icon>-</icon>
           <thumb>-</thumb>
           <onclick>Container.SetViewMode(510)</onclick>
-          <visible>Window.IsActive(videolibrary)+!Container.Content(episodes)+!Container.Content(genres)</visible>
+          <visible>Window.IsActive(videolibrary) + ![[Container.Content(episodes) + !Skin.HasSetting(posterslide)]|[Container.Content(genres) + !Skin.HasSetting(posterslide)]|Container.Content(addons)]</visible>
           <visible>![Window.IsActive(videolibrary)+Skin.HasSetting(DisablePostersVL)]</visible>
+        </item>
+        <item id="21">
+          <label>$LOCALIZE[132]</label>
+          <icon>-</icon>
+          <thumb>-</thumb>
+          <onclick>Container.SetViewMode(57)</onclick>
+          <visible>Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(musicplaylist)</visible>
         </item>
         <item id="15">
           <label>$LOCALIZE[31152]</label>
           <icon>-</icon>
           <thumb>-</thumb>
           <onclick>Container.SetViewMode(513)</onclick>
-          <visible>[Window.IsActive(501)|Window.IsActive(musiclibrary)|Window.IsActive(programs)|Window.IsActive(pictures)]+!Container.Content(genres)</visible>
+          <visible>[Window.IsActive(501)|Window.IsActive(musiclibrary)|Window.IsActive(programs)]+!Container.Content(genres) | Window.IsActive(musicplaylist)</visible>
         </item>
         <item id="16">
           <label>$LOCALIZE[31151]</label>
           <icon>-</icon>
           <thumb>-</thumb>
           <onclick>Container.SetViewMode(504)</onclick>
-          <visible>Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(files)| Window.IsActive(programs) | SubString(Container.FolderPath,videodb://5/) | Container.Content(genres)</visible>
+          <visible>[!Container.Content(episodes)|SubString(Container.FolderPath,videodb://5/)] + ![Container.Content(addons)|[Window.IsActive(pictures) + Skin.HasSetting(pictures)]]</visible>
           <visible>![Window.IsActive(videolibrary)+Skin.HasSetting(DisableDVDCaseVL)]</visible>
         </item>
         <item id="17">
@@ -232,7 +239,7 @@
           <icon>-</icon>
           <thumb>-</thumb>
           <onclick>Container.SetViewMode(501)</onclick>
-          <visible>[Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(files) | Window.IsActive(programs) | Container.Content(genres) | Window.IsActive(pictures) | SubString(Container.FolderPath,videodb://5/)]+!Container.Content(addons)</visible>
+          <visible>[!Container.Content(episodes)|SubString(Container.FolderPath,videodb://5/)] + ![Container.Content(addons)|[Window.IsActive(pictures) + Skin.HasSetting(pictures)]]</visible>
           <visible>![Window.IsActive(videolibrary)+Skin.HasSetting(DisableShowCaseVL)]</visible>
         </item>
         <item id="18">
@@ -240,7 +247,7 @@
           <icon>-</icon>
           <thumb>-</thumb>
           <onclick>Container.SetViewMode(509)</onclick>
-          <visible>Window.IsActive(501)|Window.IsActive(musiclibrary)|Window.IsActive(programs)|Window.IsActive(pictures) | Container.Content(addons) | Window.IsActive(addonbrowser)</visible>
+          <visible>Window.IsActive(501)|Window.IsActive(musiclibrary)|Window.IsActive(programs)|Window.IsActive(pictures) | Container.Content(addons) | Window.IsActive(addonbrowser) | Window.IsActive(musicplaylist)</visible>
         </item>
       </content>
     </control>

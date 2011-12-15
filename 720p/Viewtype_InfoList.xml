@@ -239,7 +239,7 @@
       <label fallback="312577">$VAR[FanartPanelPlotVar]</label>
       <autoscroll delay="5000" time="2000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
       <textcolor>FFececec</textcolor>
-      <visible>Skin.HasSetting(infolistplotonly) + [Container.Content(tvshows)|Container.Content(episodes)|Container.Content(seasons)]</visible>
+      <visible>[Skin.HasSetting(infolistplotonly) + [Container.Content(tvshows)|Container.Content(episodes)|Container.Content(seasons)]]|SubString(Container.FolderPath,plugin.video)</visible>
     </control>
     <control type="image">
       <posx>789</posx>
@@ -261,7 +261,7 @@
       <aligny>center</aligny>
       <textcolor>ff969696</textcolor>
       <label>[UPPERCASE]$INFO[ListItem.TVShowTitle]$INFO[ListItem.Season, • $LOCALIZE[20373] ][/UPPERCASE]</label>
-      <visible>Container.Content(episodes)+!SubString(ListItem.Episode,S)</visible>
+      <visible>Container.Content(episodes)+!ListItem.Property(IsSpecial)</visible>
       <visible>!Skin.HasSetting(breadcrumb)</visible>
     </control>
     <control type="label" id="161">
@@ -274,7 +274,7 @@
       <aligny>center</aligny>
       <textcolor>ff969696</textcolor>
       <label>[UPPERCASE]$INFO[ListItem.TVShowTitle,, • $LOCALIZE[20381]][/UPPERCASE]</label>
-      <visible>Container.Content(episodes)+SubString(ListItem.Episode,S)</visible>
+      <visible>Container.Content(episodes)+ListItem.Property(IsSpecial)</visible>
       <visible>!Skin.HasSetting(breadcrumb)</visible>
     </control>
   </include>
@@ -287,7 +287,6 @@
         <description>Right Panel</description>
         <include>Animation_ListSlideRight</include>
         <control type="image">
-          <include>Animation_CommonFade</include>
           <posx>710</posx>
           <posy>150</posy>
           <width>482</width>
@@ -296,12 +295,19 @@
           <visible>!Skin.HasSetting(listpanelthin)</visible>
         </control>
         <control type="image">
-          <include>Animation_CommonFade</include>
           <posx>710</posx>
           <posy>150</posy>
           <width>482</width>
           <height>530</height>
           <texture>views/listpanel_back.png</texture>
+        </control>
+        <control type="image">
+          <posx>710</posx>
+          <posy>150</posy>
+          <width>482</width>
+          <height>530</height>
+          <texture>views/listpanel_back_reflection.png</texture>
+          <colordiffuse>panelreflect</colordiffuse>
         </control>
         <include condition="Skin.HasSetting(effect_bg)">BG_Effect_InfoList_Panel_Right</include>
         <control type="group">
@@ -316,7 +322,7 @@
             <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
             <bordersize>7</bordersize>
             <aspectratio align="center">keep</aspectratio>
-            <visible>Container.Content(episodes)|Container.Content(addons)</visible>
+            <visible>Container.Content(episodes)|Container.Content(addons)|SubString(Container.FolderPath,plugin.video)</visible>
           </control>
           <control type="image">
             <posx>775</posx>
@@ -445,7 +451,6 @@
       <control type="group">
         <include>Animation_ListSlideLeft</include>
         <control type="image">
-          <include>Animation_CommonFade</include>
           <posx>60</posx>
           <posy>112</posy>
           <width>553</width>
@@ -454,16 +459,23 @@
           <visible>!Skin.HasSetting(listpanelthin)</visible>
         </control>
         <control type="image">
-          <include>Animation_CommonFade</include>
           <posx>60</posx>
           <posy>112</posy>
           <width>553</width>
           <height>608</height>
           <texture>views/listpanel_back.png</texture>
         </control>
+        <control type="image">
+          <posx>60</posx>
+          <posy>112</posy>
+          <width>553</width>
+          <height>608</height>
+          <texture>views/listpanel_back_reflection.png</texture>
+          <colordiffuse>panelreflect</colordiffuse>
+        </control>
         <include condition="Skin.HasSetting(effect_bg)">BG_Effect_InfoList_Panel_Left</include>
         <control type="list" id="505">
-          <visible>Container.Content(seasons)|Container.Content(episodes)|Container.Content(tvshows)|SubString(Container.FolderPath,addons://)</visible>
+          <visible>Container.Content(seasons)|Container.Content(episodes)|Container.Content(tvshows)|SubString(Container.FolderPath,addons://)|SubString(Container.FolderPath,plugin.video)</visible>
           <posx>60</posx>
           <posy>142</posy>
           <width>771</width>
@@ -477,7 +489,7 @@
           <pagecontrol>68</pagecontrol>
           <scrolltime>200</scrolltime>
           <preloaditems>2</preloaditems>
-          <itemlayout height="44" width="550" condition="[Skin.HasSetting(sliminfolist)+![Container.Content(tvshows)+Skin.HasSetting(bannerinfolist)]]|Container.Content(addons)|Container.Content(seasons)">
+          <itemlayout height="44" width="550" condition="Skin.HasSetting(sliminfolist)+![Container.Content(tvshows)+Skin.HasSetting(bannerinfolist)]">
             <control type="image">
               <posx>1</posx>
               <posy>43</posy>
@@ -524,11 +536,10 @@
               <posy>14</posy>
               <width>20</width>
               <height>20</height>
-              <visible>!IsEmpty(ListItem.Overlay)</visible>
               <info>ListItem.Overlay</info>
             </control>
           </itemlayout>
-          <focusedlayout height="44" width="550" condition="[Skin.HasSetting(sliminfolist)+![Container.Content(tvshows)+Skin.HasSetting(bannerinfolist)]]|Container.Content(addons)|Container.Content(seasons)">
+          <focusedlayout height="44" width="550" condition="Skin.HasSetting(sliminfolist)+![Container.Content(tvshows)+Skin.HasSetting(bannerinfolist)]">
             <control type="image">
               <posx>1</posx>
               <posy>43</posy>
@@ -583,7 +594,6 @@
               <posy>14</posy>
               <width>20</width>
               <height>20</height>
-              <visible>!IsEmpty(ListItem.Overlay)</visible>
               <info>ListItem.Overlay</info>
             </control>
           </focusedlayout>
@@ -633,11 +643,11 @@
               </control>
             </control>
             <control type="group">
-              <visible>Container.Content(tvshows)</visible>
+              <visible>!Container.Content(episodes)</visible>
               <control type="label">
                 <posx>20</posx>
                 <posy>5</posy>
-                <width>430</width>
+                <width>480</width>
                 <height>30</height>
                 <align>left</align>
                 <aligny>center</aligny>
@@ -662,7 +672,6 @@
               <posy>15</posy>
               <width>30</width>
               <height>30</height>
-              <visible>!IsEmpty(ListItem.Overlay)</visible>
               <info>ListItem.Overlay</info>
             </control>
 
@@ -721,15 +730,16 @@
                </control>
              </control>
             <control type="group">
-              <visible>Container.Content(tvshows)</visible>
+              <visible>!Container.Content(episodes)</visible>
               <control type="label">
                 <posx>20</posx>
                 <posy>5</posy>
-                <width>430</width>
+                <width>480</width>
                 <height>30</height>
                 <align>left</align>
                 <aligny>center</aligny>
                 <include>listcolorfocus</include>
+                <scroll>true</scroll>
                 <font>Font_Bold20_Caps</font>
                 <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
               </control>
@@ -750,7 +760,6 @@
               <posy>15</posy>
               <width>30</width>
               <height>30</height>
-              <visible>!IsEmpty(ListItem.Overlay)</visible>
               <info>ListItem.Overlay</info>
             </control>
 
@@ -781,7 +790,7 @@
               <width>541</width>
               <height>99</height>
               <aspectratio>stretch</aspectratio>
-              <texture background="true">$INFO[BannerVar]</texture>
+              <texture background="true">$VAR[BannerVar]</texture>
             </control>
             <control type="image">
               <posx>5</posx>
@@ -818,7 +827,7 @@
               <width>541</width>
               <height>100</height>
               <aspectratio>stretch</aspectratio>
-              <texture background="true">$INFO[BannerVar]</texture>
+              <texture background="true">$VAR[BannerVar]</texture>
             </control>
           </focusedlayout>
         </control>

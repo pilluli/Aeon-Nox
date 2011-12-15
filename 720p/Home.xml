@@ -1,6 +1,5 @@
 <window id="0">
 	<defaultcontrol always="true">9000</defaultcontrol>
-  <onload condition="Skin.HasSetting(HomeWatchList)|Skin.HasSetting(HomeInProgress)|Skin.HasSetting(HomeInProgressPoster)|Skin.HasSetting(HomeInProgressTVPoster)">XBMC.RunScript(script.watchlist,movies=true&amp;episodes=true&amp;limit=8)</onload>
   <onload condition="Window.Previous(startup)+Skin.HasSetting(customstartupfocus)">Control.Move(9000,$INFO[Skin.String(CustomFocusOffset)])</onload>
   <onload condition="Window.Previous(startup)+[Skin.HasSetting(HomeRandomMovies)|Skin.HasSetting(HomeRandomTV)|Skin.HasSetting(HomeRandomMusic)|Skin.HasSetting(HomeRandomAddons)|Skin.HasSetting(HomeRandomAlbums)|Skin.HasSetting(HomeRandomPoster)]">XBMC.RunScript(script.randomitems,limit=8&amp;unplayed=True)</onload>
   <onload>ClearProperty(DontRunTVShowScripts,Home)</onload>
@@ -319,7 +318,7 @@
 				<orientation>horizontal</orientation>
 				<animation effect="slide" start="0,0" end="-201,0" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(biggergap)">Conditional</animation>
 				<animation effect="fade" start="0" end="100" time="200">Visible</animation>
-				<animation effect="fade" start="100" end="30" time="200" condition="Window.IsVisible(1113) | ControlGroup(9001).HasFocus | Control.HasFocus(8000)">conditional</animation>
+				<animation effect="fade" start="100" end="30" time="200" condition="[Window.IsVisible(1113) | ControlGroup(9001).HasFocus | Control.HasFocus(8000)] + !Skin.HasSetting(aurahome)">conditional</animation>
 				<animation effect="fade" start="100" end="0" time="200" condition="Control.HasFocus(8003)">conditional</animation>
         <itemlayout height="150" width="346" condition="!Skin.HasSetting(biggergap)">
           <control type="label">
@@ -451,6 +450,7 @@
           <include condition="!Skin.HasSetting(HomeMenuNoMovieButton)">MoviesMainMenu</include>
           <include condition="!Skin.HasSetting(HomeMenuNoTVShowButton)">TVShowsMainMenu</include>
           <include condition="!Skin.HasSetting(HomeMenuNoTVGuideButton)+System.HasAddon(script.tv.show.next.aired)">TVGuideMainMenu</include>
+          <include condition="!Skin.HasSetting(HomeMenuNoFeaturedButton)">FeaturedMainMenu</include>
           <include condition="Skin.HasSetting(HomeMenuVideoPlaylist1)">CustomMainSPL1</include>
 					<include condition="Skin.HasSetting(HomeMenuVideoPlaylist2)">CustomMainSPL2</include>
 					<include condition="Skin.HasSetting(HomeMenuVideoPlaylist3)">CustomMainSPL3</include>
