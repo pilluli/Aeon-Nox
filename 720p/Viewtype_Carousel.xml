@@ -15,17 +15,15 @@
   <include name="CarouselThumb">
     <include>CarouselThumbDimensions</include>
     <align>center</align>
-    <texture background="true" diffuse="thumbs/thumb_mask.png">DefaultVideoBigPoster.png</texture>
     <bordertexture border="16">thumbs/poster_shadow.png</bordertexture>
     <bordersize>16</bordersize>
     <aspectratio scalediffuse="false">stretch</aspectratio>
   </include>
   <include name="CarouselThumbReflection">
     <posx>0</posx>
-    <posy>310</posy>
+    <posy>309.5</posy>
     <width>240</width>
-    <height>360</height>
-    <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">DefaultVideoBigPoster.png</texture>
+    <height>342</height>
     <bordersize>16</bordersize>
     <aspectratio scalediffuse="false">stretch</aspectratio>
   </include>
@@ -39,11 +37,11 @@
   <include name="CarouselItem-4">
     <control type="image">
       <include>CarouselThumb</include>
-      <info>Container(55).ListItem(-4).Thumb</info>
+      <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-4Var]</texture>
     </control>
     <control type="image">
       <include>CarouselThumbReflection</include>
-      <info>Container(55).ListItem(-4).Thumb</info>
+      <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-4Var]</texture>
     </control>
     <include>CarouselGlassOverlay</include>
     <control type="image">
@@ -55,11 +53,11 @@
   <include name="CarouselItem-3">
     <control type="image">
       <include>CarouselThumb</include>
-      <info>Container(55).ListItem(-3).Thumb</info>
+      <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-3Var]</texture>
     </control>
     <control type="image">
       <include>CarouselThumbReflection</include>
-      <info>Container(55).ListItem(-3).Thumb</info>
+      <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-3Var]</texture>
     </control>
     <include>CarouselGlassOverlay</include>
     <control type="image">
@@ -71,11 +69,11 @@
   <include name="CarouselItem-2">
     <control type="image">
       <include>CarouselThumb</include>
-      <info>Container(55).ListItem(-2).Thumb</info>
+      <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-2Var]</texture>
     </control>
     <control type="image">
       <include>CarouselThumbReflection</include>
-      <info>Container(55).ListItem(-2).Thumb</info>
+      <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-2Var]</texture>
     </control>
     <include>CarouselGlassOverlay</include>
     <control type="image">
@@ -87,11 +85,11 @@
   <include name="CarouselItem-1">
     <control type="image">
       <include>CarouselThumb</include>
-      <info>Container(55).ListItem(-1).Thumb</info>
+      <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-1Var]</texture>
     </control>
     <control type="image">
       <include>CarouselThumbReflection</include>
-      <info>Container(55).ListItem(-1).Thumb</info>
+      <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem-1Var]</texture>
     </control>
     <include>CarouselGlassOverlay</include>
     <control type="image">
@@ -103,11 +101,11 @@
   <include name="CarouselItem0">
     <control type="image">
       <include>CarouselThumb</include>
-      <info>Container(55).ListItem(0).Thumb</info>
+      <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
     </control>
     <control type="image">
       <include>CarouselThumbReflection</include>
-      <info>Container(55).ListItem(0).Thumb</info>
+      <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
     </control>
     <include>CarouselGlassOverlay</include>
     <control type="image">
@@ -119,11 +117,11 @@
   <include name="CarouselItem1">
     <control type="image">
       <include>CarouselThumb</include>
-      <info>Container(55).ListItem(1).Thumb</info>
+      <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
     </control>
     <control type="image">
       <include>CarouselThumbReflection</include>
-      <info>Container(55).ListItem(1).Thumb</info>
+      <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem1Var]</texture>
     </control>
     <include>CarouselGlassOverlay</include>
     <control type="image">
@@ -135,11 +133,11 @@
   <include name="CarouselItem2">
     <control type="image">
       <include>CarouselThumb</include>
-      <info>Container(55).ListItem(2).Thumb</info>
+      <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
     </control>
     <control type="image">
       <include>CarouselThumbReflection</include>
-      <info>Container(55).ListItem(2).Thumb</info>
+      <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem2Var]</texture>
     </control>
     <include>CarouselGlassOverlay</include>
     <control type="image">
@@ -151,11 +149,11 @@
   <include name="CarouselItem3">
     <control type="image">
       <include>CarouselThumb</include>
-      <info>Container(55).ListItem(3).Thumb</info>
+      <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
     </control>
     <control type="image">
       <include>CarouselThumbReflection</include>
-      <info>Container(55).ListItem(3).Thumb</info>
+      <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem3Var]</texture>
     </control>
     <include>CarouselGlassOverlay</include>
     <control type="image">
@@ -167,11 +165,11 @@
   <include name="CarouselItem4">
     <control type="image">
       <include>CarouselThumb</include>
-      <info>Container(55).ListItem(4).Thumb</info>
+      <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
     </control>
     <control type="image">
       <include>CarouselThumbReflection</include>
-      <info>Container(55).ListItem(4).Thumb</info>
+      <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem4Var]</texture>
     </control>
     <include>CarouselGlassOverlay</include>
     <control type="image">
@@ -195,8 +193,8 @@
         <control type="group">
           <posx>-80</posx>
           <animation type="Conditional" condition="true">
-            <effect type="rotatey" center="60,190" start="0" end="-45" time="250" tween="cubic" easing="inout" delay="250" />
-            <effect type="slide" start="0" end="-167,0" time="250" tween="cubic" easing="inout" delay="250"/>
+            <effect type="rotatey" center="60,190" start="0" end="-45" time="300" tween="cubic" easing="inout" delay="0" />
+            <effect type="slide" start="0" end="-167,0" time="300" tween="cubic" easing="inout" delay="0"/>
           </animation>
           <include>CarouselItem0</include>
         </control>
@@ -251,8 +249,8 @@
         <control type="group">
           <posx>350</posx>
           <animation type="Conditional" condition="true">
-            <effect type="rotatey" center="440,190" start="0" end="45" time="250" tween="cubic" easing="inout" delay="250" />
-            <effect type="slide" start="0" end="167" time="250" tween="cubic" easing="inout" delay="250"/>
+            <effect type="rotatey" center="440,190" start="0" end="45" time="300" tween="cubic" easing="inout" delay="300" />
+            <effect type="slide" start="0" end="167" time="300" tween="cubic" easing="inout" delay="300"/>
           </animation>
           <include>CarouselItem0</include>
         </control>
@@ -292,10 +290,6 @@
         </control>
         <control type="group">
           <posx>570</posx>
-          <animation type="Conditional" condition="true">
-            <effect type="rotatey" center="550,190" start="45" end="0" time="250" tween="cubic" easing="inout" delay="250" />
-            <effect type="slide" start="200" end="0" time="250" tween="cubic" easing="inout" delay="250"/>
-          </animation>
           <include>CarouselItem-1</include>
         </control>
       </control>
@@ -310,10 +304,7 @@
 
       <control type="group">
         <animation effect="fade" time="250">WindowOpen</animation>
-        <animation type="WindowClose" reversible="false">
-          <effect type="fade" start="100" end="0" time="300" delay="300"/>
-          <effect type="zoom" start="100" end="130" center="640,360" time="300" delay="300" tween="cubic" easing="in"/>
-        </animation>
+        <animation effect="fade" time="250">WindowClose</animation>
         <control type="group" id="6024">
           <posx>-400</posx>
           <posy>293</posy>
@@ -321,12 +312,9 @@
           <visible>!Control.isVisible(6022)+!Control.IsVisible(6023)+!Control.isVisible(6021)+!Control.IsVisible(6020)+Control.IsVisible(801)</visible>
           <camera x="540" y="540" />
           <animation effect="rotatey" center="140,540" start="-90" end="-45" tween="cubic" easing="inout" time="0" condition="true">Conditional</animation>
+          <!--<animation effect="fade" start="100" end="0" time="800" delay="800" condition="Skin.HasSetting(carouselflow)">Conditional</animation>-->
           <control type="group">
             <posx>350</posx>
-            <animation type="WindowClose">
-              <effect type="rotatey" center="650,190" start="0" end="45" time="300" tween="cubic" easing="in" />
-              <effect type="slide" start="0" end="380" time="300" tween="cubic" easing="in" />
-            </animation>
             <animation type="Conditional" condition="Skin.HasSetting(carouselflow)">
               <effect type="rotatey" center="650,190" start="0" end="45" time="800" tween="cubic" easing="inout" />
               <effect type="slide" start="0" end="380" time="800" tween="cubic" easing="inout" />
@@ -336,10 +324,6 @@
           </control>
           <control type="group">
             <posx>130</posx>
-            <animation type="WindowClose">
-              <effect type="rotatey" center="650,190" start="0" end="45" time="300" tween="cubic" easing="in" />
-              <effect type="slide" start="0" end="600" time="300" tween="cubic" easing="in" />
-            </animation>
             <animation type="Conditional" condition="Skin.HasSetting(carouselflow)">
               <effect type="rotatey" center="650,190" start="0" end="45" time="800" tween="cubic" easing="inout" />
               <effect type="slide" start="0" end="600" time="800" tween="cubic" easing="inout" />
@@ -349,10 +333,6 @@
           </control>
           <control type="group">
             <posx>-90</posx>
-            <animation type="WindowClose">
-              <effect type="rotatey" center="650,190" start="0" end="45" time="300" tween="cubic" easing="in" />
-              <effect type="slide" start="0" end="820" time="300" tween="cubic" easing="in" />
-            </animation>
             <animation type="Conditional" condition="Skin.HasSetting(carouselflow)">
               <effect type="rotatey" center="650,190" start="0" end="45" time="800" tween="cubic" easing="inout" />
               <effect type="slide" start="0" end="820" time="800" tween="cubic" easing="inout" />
@@ -369,12 +349,9 @@
           <camera x="740" y="540" />
           <visible>!Control.isVisible(6022)+!Control.IsVisible(6023)+!Control.isVisible(6021)+!Control.IsVisible(6020)+Control.IsVisible(801)</visible>
           <animation effect="rotatey" center="1140,540" start="90" end="45" tween="cubic" easing="inout" time="0" condition="true">Conditional</animation>
+          <!--<animation effect="fade" start="100" end="0" time="800" delay="800" condition="Skin.HasSetting(carouselflow)">Conditional</animation>-->
           <control type="group">
             <posx>-80</posx>
-            <animation type="WindowClose">
-              <effect type="rotatey" center="-150,194" start="0" end="-45" time="300" tween="cubic" easing="in" />
-              <effect type="slide" start="0" end="-388" time="300" tween="cubic" easing="in" />
-            </animation>
             <animation type="Conditional" condition="Skin.HasSetting(carouselflow)">
               <effect type="rotatey" center="-150,194" start="0" end="-45" time="800" tween="cubic" easing="inout" />
               <effect type="slide" start="0" end="-388" time="800" tween="cubic" easing="inout" />
@@ -384,10 +361,6 @@
           </control>
           <control type="group">
             <posx>140</posx>
-            <animation type="WindowClose">
-              <effect type="rotatey" center="-150,194" start="0" end="-45" time="300" tween="cubic" easing="in" />
-              <effect type="slide" start="0" end="-608" time="300" tween="cubic" easing="in" />
-            </animation>
             <animation type="Conditional" condition="Skin.HasSetting(carouselflow)">
               <effect type="rotatey" center="-150,194" start="0" end="-45" time="800" tween="cubic" easing="inout" />
               <effect type="slide" start="0" end="-608" time="800" tween="cubic" easing="inout" />
@@ -397,10 +370,6 @@
           </control>
           <control type="group">
             <posx>360</posx>
-            <animation type="WindowClose">
-              <effect type="rotatey" center="-150,194" start="0" end="-45" time="300" tween="cubic" easing="in" />
-              <effect type="slide" start="0" end="-828" time="300" tween="cubic" easing="in" />
-            </animation>
             <animation type="Conditional" condition="Skin.HasSetting(carouselflow)">
               <effect type="rotatey" center="-150,194" start="0" end="-45" time="800" tween="cubic" easing="inout" />
               <effect type="slide" start="0" end="-828" time="800" tween="cubic" easing="inout" />
@@ -411,99 +380,117 @@
           <control type="group">
             <posx>-300</posx>
             <animation type="Conditional" condition="true">
-              <effect type="rotatey" center="-160,190" start="0" end="-45" time="250" tween="cubic" easing="inout" delay="250" />
-              <effect type="slide" start="0" end="-167,0" time="250" tween="cubic" easing="inout" delay="250"/>
+              <effect type="rotatey" center="-160,190" start="0" end="-45" time="300" tween="cubic" easing="inout" delay="300" />
+              <effect type="slide" start="0" end="-167,0" time="300" tween="cubic" easing="inout" delay="300"/>
             </animation>
             <include>CarouselItem0</include>
           </control>
         </control>
       </control>
 
-      <control type="fixedlist" id="55">
-        <posx>0</posx>
+      <control type="wraplist" id="55">
+        <posx>-10</posx>
         <posy>342</posy>
         <height>615</height>
-        <width>1280</width>
+        <width>1290</width>
         <onleft>55</onleft>
         <onright>55</onright>
         <onup condition="!IsEmpty(ListItem.Trailer)">7001</onup>
         <onup condition="IsEmpty(ListItem.Trailer)">9000</onup>
         <ondown>73</ondown>
-        <scrolltime>250</scrolltime>
+        <scrolltime tween="quadratic" easing="out">300</scrolltime>
         <preloaditems>2</preloaditems>
         <pagecontrol>73</pagecontrol>
         <orientation>horizontal</orientation>
         <focusposition>3</focusposition>
         <include>Animation_OpenCloseZoom_New</include>
         <viewtype label="$LOCALIZE[31376]">list</viewtype>
-        <visible>Container.Content(movies)|Container.Content(tvshows)|Container.Content(seasons)|[Window.IsActive(programs)+Substring(Container.FolderPath,advanced.launcher)]</visible>
-        <itemlayout width="180" height="245">
+        <visible>Container.Content(movies)|Container.Content(tvshows)|Container.Content(seasons)|Substring(Container.FolderPath,advanced.launcher)|SubString(Container.FolderPath,videodb://5/)|Container.Content(genres)|Container.Content(MusicVideos)</visible>
+        <itemlayout width="180" height="300">
           <control type="group">
             <visible>Skin.HasSetting(carouselflow)+!Control.IsVisible(6025)+!Control.IsVisible(6024)</visible>
-            <control type="image">
-              <posx>-9</posx>
-              <posy>-3</posy>
-              <width>198</width>
-              <height>280</height>
-              <texture background="true" diffuse="thumbs/movieposter_mask.png">DefaultVideoBigPoster.png</texture>
-              <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
-              <bordersize>18</bordersize>
-              <aspectratio scalediffuse="false">stretch</aspectratio>
-              <info>ListItem.Thumb</info>
-            </control>
-            <control type="image">
-              <posx>-5</posx>
-              <posy>247</posy>
-              <width>190</width>
-              <height>272</height>
-              <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">DefaultVideoBigPoster.png</texture>
-              <bordersize>14</bordersize>
-              <aspectratio scalediffuse="false">stretch</aspectratio>
-              <info>ListItem.Thumb</info>
-            </control>
-            <control type="image">
-              <posx>124</posx>
-              <posy>15</posy>
-              <width>47</width>
-              <height>47</height>
-              <include condition="!Skin.HasSetting(AltNewOverlay)">OverlayVisibility0</include>
-              <include condition="Skin.HasSetting(AltNewOverlay)">AltOverlayVisibility0</include>
-            </control>
-          </control>
-        </itemlayout>
-        <focusedlayout width="200" height="515">
-          <control type="group">
-            <visible>Skin.HasSetting(carouselflow)+!Control.IsVisible(6025)+!Control.IsVisible(6024)</visible>
-            <animation effect="zoom" center="97,70" start="100" end="115" time="250" tween="cubic" easing="inout" condition="[Skin.HasSetting(InfoPopUp)+Container.Content(movies)]|[Skin.HasSetting(InfoPopUpTV)+[Container.Content(tvshows)|Container.Content(seasons)]]|Player.HasVideo">Focus</animation>
-            <animation effect="zoom" center="97,70" start="115" end="100" time="250" tween="cubic" easing="inout" condition="[Skin.HasSetting(InfoPopUp)+Container.Content(movies)]|[Skin.HasSetting(InfoPopUpTV)+[Container.Content(tvshows)|Container.Content(seasons)]]|Player.HasVideo">Unfocus</animation>
-            <animation effect="zoom" start="100" end="150" center="97,176" time="250" easing="out" reversible="false" tween="back" condition="![[Skin.HasSetting(InfoPopUp)+Container.Content(movies)]|[Skin.HasSetting(InfoPopUpTV)+[Container.Content(tvshows)|Container.Content(seasons)]]|Player.HasVideo]">Focus</animation>
-            <animation effect="zoom" start="150" end="100" center="97,176" time="250" easing="out" reversible="false" tween="back" condition="![[Skin.HasSetting(InfoPopUp)+Container.Content(movies)]|[Skin.HasSetting(InfoPopUpTV)+[Container.Content(tvshows)|Container.Content(seasons)]]|Player.HasVideo]">Focus</animation>
             <control type="image">
               <posx>2</posx>
               <posy>0</posy>
               <width>196</width>
               <height>276</height>
-              <texture background="true" diffuse="thumbs/movieposter_mask.png">DefaultVideoBigPoster.png</texture>
-              <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
-              <bordersize>18</bordersize>
+              <bordertexture border="16">thumbs/poster_shadow.png</bordertexture>
+              <bordersize>16</bordersize>
               <aspectratio scalediffuse="false">stretch</aspectratio>
-              <info>ListItem.Thumb</info>
+              <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
             </control>
             <control type="image">
-              <posx>6</posx>
-              <posy>246</posy>
-              <width>188</width>
-              <height>269</height>
-              <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png">DefaultVideoBigPoster.png</texture>
-              <bordersize>14</bordersize>
+              <posx>2</posx>
+              <posy>244.5</posy>
+              <width>196</width>
+              <height>276</height>
+              <bordersize>16</bordersize>
               <aspectratio scalediffuse="false">stretch</aspectratio>
-              <info>ListItem.Thumb</info>
+              <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+              <animation effect="fade" start="100" end="60" time="300" reversible="true">Focus</animation>
+              <animation effect="fade" start="60" end="100" time="300" reversible="true">UnFocus</animation>
             </control>
             <control type="image">
-              <posx>133</posx>
-              <posy>18</posy>
-              <width>47</width>
-              <height>47</height>
+              <posx>2</posx>
+              <posy>0</posy>
+              <width>196</width>
+              <height>276</height>
+              <texture diffuse="thumbs/thumb_mask.png">thumbs/poster_glass.png</texture>
+              <bordersize>16</bordersize>
+            </control>
+            <control type="image">
+              <posx>134</posx>
+              <posy>16</posy>
+              <width>48</width>
+              <height>48</height>
+              <include condition="!Skin.HasSetting(AltNewOverlay)">OverlayVisibility0</include>
+              <include condition="Skin.HasSetting(AltNewOverlay)">AltOverlayVisibility0</include>
+            </control>
+          </control>
+        </itemlayout>
+        <focusedlayout width="200" height="300">
+          <control type="group">
+            <visible>Skin.HasSetting(carouselflow)+!Control.IsVisible(6025)+!Control.IsVisible(6024)</visible>
+            <posx>10</posx>
+            <animation effect="zoom" center="110,150" start="100" end="125" time="300" tween="quadratic" easing="out">Focus</animation>
+            <animation type="UnFocus" condition="Control.HasFocus(55)">
+              <effect type="slide" start="0" end="-10" time="0" tween="quadratic" easing="out"/>
+              <effect type="zoom" center="110,150" start="125" end="100" time="300" tween="quadratic" easing="out"/>
+            </animation>
+            <control type="image">
+              <posx>2</posx>
+              <posy>0</posy>
+              <width>196</width>
+              <height>276</height>
+              <bordertexture border="16">thumbs/poster_shadow.png</bordertexture>
+              <bordersize>16</bordersize>
+              <aspectratio scalediffuse="false">stretch</aspectratio>
+              <texture background="true" diffuse="thumbs/thumb_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+            </control>
+            <control type="image">
+              <posx>2</posx>
+              <posy>244.5</posy>
+              <width>196</width>
+              <height>276</height>
+              <bordersize>16</bordersize>
+              <aspectratio scalediffuse="false">stretch</aspectratio>
+              <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
+              <animation effect="fade" start="100" end="60" time="300" reversible="true">Focus</animation>
+              <animation effect="fade" start="60" end="100" time="300" reversible="true">UnFocus</animation>
+            </control>
+            <control type="image">
+              <posx>2</posx>
+              <posy>0</posy>
+              <width>196</width>
+              <height>276</height>
+              <texture diffuse="thumbs/thumb_mask.png">thumbs/poster_glass.png</texture>
+              <bordersize>16</bordersize>
+            </control>
+            <control type="image">
+              <posx>134</posx>
+              <posy>16</posy>
+              <width>48</width>
+              <height>48</height>
               <include condition="!Skin.HasSetting(AltNewOverlay)">OverlayVisibility0</include>
               <include condition="Skin.HasSetting(AltNewOverlay)">AltOverlayVisibility0</include>
             </control>

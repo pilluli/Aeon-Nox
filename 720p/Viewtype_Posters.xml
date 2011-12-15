@@ -3058,7 +3058,7 @@
     <pagecontrol>70</pagecontrol>
     <scrolltime tween="quadratic" easing="out">200</scrolltime>
     <focusposition>1</focusposition>
-    <visible>!Container.Content(episodes)+!Container.Content(genres)</visible>
+    <visible>![[Container.Content(episodes) + !Skin.HasSetting(posterslide)]|[Container.Content(genres) + !Skin.HasSetting(posterslide)]|Container.Content(addons)]</visible>
     <include>Animation_OpenCloseZoom_New</include>
     <animation effect="fade" start="100" end="0" time="400" condition="Control.HasFocus(109)">Conditional</animation>
     <itemlayout width="210" height="500">
@@ -3086,7 +3086,7 @@
         <font>Font_Info_Caps</font>
         <textcolor>floor</textcolor>
         <shadowcolor>floorshadow</shadowcolor>
-        <label>[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+        <label>[UPPERCASE]$VAR[SecondLabelVar][/UPPERCASE]</label>
       </control>
       <control type="label">
         <posx>130</posx>
@@ -3099,7 +3099,7 @@
         <scrollspeed>50</scrollspeed>
         <textcolor>floor</textcolor>
         <shadowcolor>floorshadow</shadowcolor>
-        <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+        <label>[UPPERCASE]$VAR[FirstLabelVar][/UPPERCASE]</label>
       </control>
       <control type="image">
         <posx>0</posx>
@@ -3107,6 +3107,7 @@
         <width>1280</width>
         <height>130</height>
         <texture>home/homemenu_gradient.png</texture>
+		<visible>!Skin.HasTheme(Lite_Floor)</visible>
       </control>
     </control>
   </include>
