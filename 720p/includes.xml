@@ -23,6 +23,7 @@
   <include file="Viewtype_Carousel.xml" />
   <include file="Viewtype_Stripshow.xml" />
   <include file="Viewtype_Thumbnail.xml" />
+  <include file="Viewtype_Albums.xml" />
   <include file="IncludesHomeRecentlyAdded.xml" />
   <include file="Includes_MediaFlags.xml" />
   <include file="Includes_Animations.xml" />
@@ -41,7 +42,7 @@
 
   <include name="VideoBackground">
     <control type="group">
-      <visible>Player.HasVideo+[Control.IsVisible(500)|Control.IsVisible(514)|Control.IsVisible(516)|Control.IsVisible(551)|Control.IsVisible(560)|Control.IsVisible(510)]</visible>
+      <visible>Player.HasVideo+[Control.IsVisible(506)|Control.IsVisible(511)|Control.IsVisible(50)|Control.IsVisible(500)|Control.IsVisible(514)|Control.IsVisible(516)|Control.IsVisible(551)|Control.IsVisible(560)|Control.IsVisible(510)]</visible>
       <include>Animation_VisibleChange200</include>
       <control type="image">
         <posx>0</posx>
@@ -119,7 +120,7 @@
       <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
       <animation effect="slide" start="-10,-10" end="10,10" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
       <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$INFO[Skin.String(Home_Custom_Back_Music_Folder)]</imagepath>
-      <visible>Skin.HasSetting(MusicLibraryFanart)|Window.IsActive(musicfiles)</visible>
+      <visible>Skin.HasSetting(MusicLibraryFanart)|Window.IsActive(musicfiles)|Window.IsActive(musicplaylist)</visible>
       <animation effect="fade" start="0" end="100" time="1000">Visible</animation>
     </control>
   </include>
@@ -688,12 +689,32 @@
     </control>
     <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Settings_Panel</include>
   </include>
+  <include name="Furniture_SettingsFrontPanel">
+    <control type="image">
+      <!-- background-->
+      <description>background image</description>
+      <posx>42</posx>
+      <posy>28</posy>
+      <width>1196</width>
+      <height>651</height>
+      <texture>settings/settings_panelfront.png</texture>
+    </control>
+  </include>
   <include name="Furniture_SettingsInternalBackPanel">
     <posx>234</posx>
     <posy>40</posy>
     <width>1035</width>
     <height>638</height>
     <texture background="true">settings/settings_intframe_bottom.png</texture>
+  </include>
+  <include name="Furniture_SettingsLogo">
+    <control type="image">
+      <posx>70</posx>
+      <posy>44</posy>
+      <width>180</width>
+      <height>72</height>
+      <texture>XBMC_Logo.png</texture>
+    </control>
   </include>
   <include name="cdart">
     <texture background="true" fallback="common/cdart/default.png">$INFO[Player.FolderPath]cdart.png</texture>
@@ -725,7 +746,7 @@
   <include name="SmallMusicInfoSlideAnimation">
     <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-175" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
     <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-280" condition="Skin.HasSetting(lowermainmenu)+Control.HasFocus(8000)">Conditional</animation>
-    <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-400" condition="![Skin.HasSetting(lowermainmenu)+Control.HasFocus(8000)]">Conditional</animation>
+    <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-400" condition="!Skin.HasSetting(lowermainmenu)+[Control.HasFocus(8000)|Control.HasFocus(8003)]">Conditional</animation>
   </include>
   <include name="SmallMusicInfo">
     <control type="group">
@@ -747,7 +768,6 @@
         <height>80</height>
         <width>220</width>
         <texture>home/nowplaying_info.png</texture>
-        <visible>Skin.HasSetting(disablecdart)</visible>
       </control>
       <control type="image">
         <description>Cover image</description>
@@ -755,7 +775,7 @@
         <posy>550</posy>
         <width>130</width>
         <height>130</height>
-        <aspectratio scaledifuuse="false">stretch</aspectratio>
+        <aspectratio scalediffuse="false">stretch</aspectratio>
         <texture background="true" diffuse="thumbs/cdcover_mask.png">common/black.png</texture>
         <info>MusicPlayer.Cover</info>
       </control>
@@ -765,8 +785,8 @@
         <posy>550</posy>
         <width>130</width>
         <height>130</height>
-        <aspectratio scaledifuuse="false">stretch</aspectratio>
-        <texture background="true" diffuse="thumbs/cdcover_mask.png">thumbs/cd_glass_noedge.png</texture>
+        <aspectratio scalediffuse="false" align="right">scale</aspectratio>
+        <texture diffuse="thumbs/cdcover_mask.png">thumbs/poster_glass.png</texture>
         <bordertexture border="-7">thumbs/cd_shadow.png</bordertexture>
       </control>
       <control type="label">
@@ -886,14 +906,7 @@
       <height>492</height>
     </control>
   </include>
-  <include name="RecentVisibiltyEpisodes">
-    <texture background="true">$INFO[ListItem(0).Overlay,thumbs/]</texture>
-    <visible>[Skin.HasSetting(watchedoverlay)+SubString(ListItem(0).Overlay,OverlayWatched.png)]|[Skin.HasSetting(newstatus)+SubString(ListItem(0).Overlay,OverlayUnWatched.png)+[[Container.Content(movies)+[StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]]|[Container.Content(tvshows)+[StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).Label)]]|[Container.Content(episodes)+[StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]]</visible>
-  </include>
-  <include name="AltRecentVisibiltyEpisodes">
-    <texture background="true">$INFO[ListItem(0).Overlay,thumbs/]</texture>
-    <visible>[Skin.HasSetting(watchedoverlay)+SubString(ListItem(0).Overlay,OverlayWatched.png)]|[Skin.HasSetting(newstatus)+SubString(ListItem(0).Overlay,OverlayUnWatched.png)]</visible>
-  </include>
+
   <include name="Default_SettingRadioButton">
     <description>Default Action</description>
     <posx>0</posx>
@@ -908,7 +921,7 @@
     <radiowidth>94</radiowidth>
     <radioposx>850</radioposx>
     <radioheight>65</radioheight>
-    <textoffsetx>50</textoffsetx>
+    <textoffsetx>20</textoffsetx>
     <aligny>center</aligny>
     <textureradiofocus>settings/settings_radiobuttononfocus.png</textureradiofocus>
     <textureradionofocus>settings/settings_radiobuttonon.png</textureradionofocus>
@@ -925,7 +938,7 @@
     <textcolor>grey2</textcolor>
     <focusedcolor>white</focusedcolor>
     <pulseonselect>false</pulseonselect>
-    <textoffsetx>50</textoffsetx>
+    <textoffsetx>20</textoffsetx>
     <aligny>center</aligny>
   </include>
   <include name="FullscreenDimensions">

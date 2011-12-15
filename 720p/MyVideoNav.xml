@@ -18,7 +18,7 @@
         <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         <animation effect="slide" start="-10,-10" end="10,10" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         <imagepath background="true">$VAR[VideoExtraFanartVar]</imagepath>
-        <visible>!Skin.HasSetting(VideoLibraryFanart)+!Window.isVisible(movieinformation)</visible>
+        <visible>!Skin.HasSetting(VideoLibraryFanart)+!Window.isVisible(movieinformation) + [!IsEmpty(Listitem.Property(Fanart_Image))|Container.Content(genres]</visible>
       </control>
       <include>CommonCurtainBackdrop</include>
     </control>
@@ -78,15 +78,8 @@
       <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Skin.HasSetting(4sec)">Visible</animation>
       <animation effect="fade" start="0" end="100" time="150" delay="5000" condition="Skin.HasSetting(5sec)">Visible</animation>
     </control>
-    <control type="group">
-      <visible>![Control.IsVisible(516|Control.IsVisible(514)|Control.IsVisible(517)|Control.IsVisible(550)|Control.IsVisible(511)]</visible>
       <include>Furniture_Showcase</include>
-    </control>
-    <control type="group">
-      <include>Animation_OpenCloseZoom_New</include>
       <include condition="!Skin.HasSetting(DisableInfoWallVL)|!Skin.HasSetting(DisableWallVL)|!Skin.HasSetting(DisableBannerWallVL)|!Skin.HasSetting(DisableThumbnailVL)">WallPanel</include>
-      <visible>Control.IsVisible(551)|Control.IsVisible(560)|Control.IsVisible(51)|Control.IsVisible(512)</visible>
-    </control>
     <control type="group">
       <visible>Control.IsVisible(508)|Control.IsVisible(503)|Control.IsVisible(509)|Control.IsVisible(504)|Control.IsVisible(501)</visible>
       <include condition="!Skin.HasSetting(DisableBannersVL)|!Skin.HasSetting(DisableLandscapeVL)|!Skin.HasSetting(DisableShowCaseVL)|!Skin.HasSetting(DisableDVDCaseVL)|!Skin.HasSetting(DisablePostersVL)">ShowcaseInfoPaneMovies</include>
@@ -137,10 +130,6 @@
       <!--view id = 55-->
       <include condition="!Skin.HasSetting(DisableCarouselVL)">Carousel</include>
     </control>
-    <control type="group">
-      <visible>Control.IsVisible(512)|Control.IsVisible(50)</visible>
-      <include>VideoWindowPosters</include>
-    </control>
     <include>ScrollOffsetLabel</include>
     <control type="group">
       <description>Invisible buttons for trailer</description>
@@ -162,7 +151,6 @@
         <onback>50</onback>
         <onclick>PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
         <visible>true</visible>
-        <!--<visible>[!Skin.HasSetting(showcaseinfoon)+Container.Content(movies)]|[!Skin.HasSetting(showcaseinfoonep)+Container.Content(episodes)]|[!Skin.HasSetting(showcaseinfoontv)+Container.Content(tvshows)]</visible>-->
       </control>
       <control type="button" id="7002">
         <include>HiddenObject</include>
@@ -197,12 +185,49 @@
       <include condition="!Skin.HasSetting(DisableBannersVL)|!Skin.HasSetting(DisableLandscapeVL)|!Skin.HasSetting(DisableShowCaseVL)|!Skin.HasSetting(DisableDVDCaseVL)|!Skin.HasSetting(DisablePostersVL)|!Skin.HasSetting(DisableCarouselVL)|!Skin.HasSetting(DisableWallVL)">FloorFlags</include>
     </control>
     <include>FloorLabels</include>
-    <control type="group">
-      <visible>Control.IsVisible(551)|Control.IsVisible(508)|Control.IsVisible(503)|Control.IsVisible(509)|Control.IsVisible(504)|Control.IsVisible(501)|Control.IsVisible(55)|Control.IsVisible(560)|[Control.isVisible(510)+!Skin.HasSetting(posterslide)]</visible>
       <include condition="!Skin.HasSetting(DisableInfoWallVL)|!Skin.HasSetting(DisableBannersVL)|!Skin.HasSetting(DisableLandscapeVL)|!Skin.HasSetting(DisableShowCaseVL)|!Skin.HasSetting(DisableDVDCaseVL)|!Skin.HasSetting(DisablePostersVL)|!Skin.HasSetting(DisableCarouselVL)|!Skin.HasSetting(DisableBannerWallVL)">Furniture_DarkGradient</include>
-    </control>
     <include condition="!Skin.HasSetting(kioskmode)">Media_Menu</include>
-    <include condition="Skin.HasSetting(breadcrumb)">Breadcrumbs</include>
+
+    <control type="group">
+      <description>Breadcrumbs</description>
+      <visible>Skin.HasSetting(breadcrumb)</visible>
+      <include>Animation_HideBreadCrumbs</include>
+      <include>Breadcrumbs_BackBar</include>
+      <control type="group">
+        <visible>!Player.HasMedia|!IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))</visible>
+        <control type="grouplist">
+          <posx>15</posx>
+          <posy>0</posy>
+          <width>500</width>
+          <align>left</align>
+          <visible></visible>
+          <itemgap>0</itemgap>
+          <orientation>horizontal</orientation>
+          <control type="image">
+            <description>Items Icon</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>36</width>
+            <height>25</height>
+            <aspectratio>stretch</aspectratio>
+            <texture>common/logo_movies.png</texture>
+            <colordiffuse>bclabel</colordiffuse>
+            <animation effect="slide" start="0,0" end="-6,0" time="0" condition="true">Conditional</animation>
+          </control>
+          <control type="label">
+            <include>BreadcrumbsLabel</include>
+            <label>$VAR[BreadcrumbsVideoVar]</label>
+          </control>
+          <control type="label">
+            <include>BreadcrumbsLabel</include>
+            <label>$INFO[Container.FolderName, / ]</label>
+            <include>BreadcrumbsLabel</include>
+          </control>
+        </control>
+      </control>
+      <include>Breadcrumbs_Furniture</include>
+    </control>
+
     <include>Furniture_NowPlayingWidget</include>
     <include condition="Skin.HasSetting(globaltime)">Furniture_Clock</include>
   </controls>

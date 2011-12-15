@@ -10,15 +10,8 @@
 		</control>
     <include>CommonCurtainBackdrop</include>
     <include>VideoBackground</include>
-    <control type="group">
-      <include>Animation_OpenCloseZoom</include>
-      <visible>Control.IsVisible(509)|Control.IsVisible(50)|Control.isVisible(500)|Control.IsVisible(505)|Control.IsVisible(551)|Control.IsVisible(512)</visible>
-      <include>Furniture_Showcase</include>
-    </control>
-    <control type="group">
-      <visible>Control.isVisible(500)|Control.isVisible(551)|Control.IsVisible(512)</visible>
-      <include>WallPanel</include>
-    </control>
+    <include>Furniture_Showcase</include>
+    <include>WallPanel</include>
     <control type="group">
       <include>Animation_OpenCloseZoom</include>
       <include>InfoList</include>
@@ -29,16 +22,8 @@
       <!--view id = 551-->
       <include>ThumbnailView</include>
     </control>
-    <include>FloorLabels</include>    
-    <control type="group">
-      <include>Animation_OpenCloseZoom</include>
-      <visible>Control.IsVisible(509)|Control.IsVisible(500)|Control.IsVisible(512)|Control.IsVisible(551)</visible>
-      <include>Furniture_DarkGradient</include>
-    </control>
-    <control type="group">
-      <visible>Control.IsVisible(512)|Control.IsVisible(50)</visible>
-      <include>VideoWindowPosters</include>
-    </control>
+    <include>FloorLabels</include>
+    <include>Furniture_DarkGradient</include>
     <control type="button" id="7000">
       <include>HiddenObject</include>
       <onfocus>SetFocus(9000)</onfocus>
@@ -46,7 +31,47 @@
     </control>
     <include>ScrollOffsetLabel</include>
     <include condition="!Skin.HasSetting(kioskmode)">Media_Menu</include>
-    <include condition="Skin.HasSetting(breadcrumb)">Breadcrumbs</include>
+
+    <control type="group">
+      <description>Breadcrumbs</description>
+      <visible>Skin.HasSetting(breadcrumb)</visible>
+      <include>Animation_HideBreadCrumbs</include>
+      <include>Breadcrumbs_BackBar</include>
+      <control type="group">
+        <visible>!Player.HasMedia|!IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))</visible>
+        <control type="grouplist">
+          <posx>15</posx>
+          <posy>0</posy>
+          <width>500</width>
+          <align>left</align>
+          <visible></visible>
+          <itemgap>0</itemgap>
+          <orientation>horizontal</orientation>
+          <control type="image">
+            <description>Items Icon</description>
+            <posx>0</posx>
+            <posy>0</posy>
+            <width>36</width>
+            <height>25</height>
+            <aspectratio>keep</aspectratio>
+            <texture>common/puzzle_icon.png</texture>
+            <colordiffuse>bclabel</colordiffuse>
+            <animation effect="slide" start="0" end="-6" time="0" condition="true">Conditional</animation>
+          </control>
+          <control type="label">
+            <include>BreadcrumbsLabel</include>
+            <label>$LOCALIZE[24001]</label>
+          </control>
+          <control type="label">
+            <include>BreadcrumbsLabel</include>
+            <label>$INFO[Container.FolderName, / ]</label>
+            <include>BreadcrumbsLabel</include>
+          </control>
+        </control>
+      </control>
+      <include>Breadcrumbs_Furniture</include>
+    </control>
+
     <include>Furniture_NowPlayingWidget</include>
     <include condition="Skin.HasSetting(globaltime)">Furniture_Clock</include>
   </controls>
