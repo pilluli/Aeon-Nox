@@ -23,7 +23,7 @@
   <include file="Viewtype_Carousel.xml" />
   <include file="Viewtype_Stripshow.xml" />
   <include file="Viewtype_Thumbnail.xml" />
-  <include file="Viewtype_Albums.xml" />
+  <include file="Viewtype_Shift.xml" />
   <include file="IncludesHomeRecentlyAdded.xml" />
   <include file="Includes_MediaFlags.xml" />
   <include file="Includes_Animations.xml" />
@@ -42,7 +42,7 @@
 
   <include name="VideoBackground">
     <control type="group">
-      <visible>Player.HasVideo+[Control.IsVisible(506)|Control.IsVisible(511)|Control.IsVisible(50)|Control.IsVisible(500)|Control.IsVisible(514)|Control.IsVisible(516)|Control.IsVisible(551)|Control.IsVisible(560)|Control.IsVisible(510)]</visible>
+      <visible>Player.HasVideo+[Control.IsVisible(506)|Control.IsVisible(511)|Control.IsVisible(50)|Control.IsVisible(500)|Control.IsVisible(514)|Control.IsVisible(516)|Control.IsVisible(551)|Control.IsVisible(560)|Control.IsVisible(510)|Control.IsVisible(57)]</visible>
       <include>Animation_VisibleChange200</include>
       <control type="image">
         <posx>0</posx>
@@ -786,7 +786,7 @@
         <width>130</width>
         <height>130</height>
         <aspectratio scalediffuse="false" align="right">scale</aspectratio>
-        <texture diffuse="thumbs/cdcover_mask.png">thumbs/poster_glass.png</texture>
+        <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_aa.png</texture>
         <bordertexture border="-7">thumbs/cd_shadow.png</bordertexture>
       </control>
       <control type="label">
@@ -1064,5 +1064,15 @@
         <textcolor>44ffffff</textcolor>
       </control>
     </control>
+  </include>
+
+  <include name="CommonVerticalScrollbar">
+    <texturesliderbackground border="0,4,0,4">views/texturesliderbackground.png</texturesliderbackground>
+    <texturesliderbar border="0,4,0,4">views/texturesliderbar.png</texturesliderbar>
+    <texturesliderbarfocus border="0,4,0,4">views/texturesliderbarfocus.png</texturesliderbarfocus>
+    <textureslidernib>views/ScrollBarNib.png</textureslidernib>
+    <textureslidernibfocus>views/ScrollBarNib.png</textureslidernibfocus>
+    <showonepage>true</showonepage>
+    <orientation>vertical</orientation>
   </include>
 </includes>
