@@ -50,13 +50,14 @@
         <label>$LOCALIZE[13016]</label>
         <include>Objects_ContextMenuButton</include>
         <onclick>XBMC.Powerdown()</onclick>
+        <visible>System.CanPowerDown</visible>
       </control>
       <control type="button" id="3">
         <description>Shutdown Timer</description>
         <label>$LOCALIZE[20150]</label>
         <include>Objects_ContextMenuButton</include>
         <onclick>XBMC.AlarmClock(shutdowntimer,XBMC.Powerdown())</onclick>
-        <visible>!System.HasAlarm(shutdowntimer)</visible>
+        <visible>!System.HasAlarm(shutdowntimer) + System.CanPowerDown</visible>
       </control>
       <control type="button" id="4">
         <description>Shutdown Timer</description>
@@ -70,12 +71,21 @@
         <label>$LOCALIZE[13011]</label>
         <include>Objects_ContextMenuButton</include>
         <onclick>XBMC.Suspend()</onclick>
+        <visible>System.CanSuspend</visible>
+      </control>
+      <control type="button" id="10">
+        <description>Hibernate</description>
+        <label>$LOCALIZE[13010]</label>
+        <include>Objects_ContextMenuButton</include>
+        <onclick>XBMC.Hibernate()</onclick>
+        <visible>System.CanHibernate</visible>
       </control>
       <control type="button" id="6">
         <description>Reboot</description>
         <label>$LOCALIZE[13013]</label>
         <include>Objects_ContextMenuButton</include>
         <onclick>XBMC.Reset()</onclick>
+        <visible>System.CanReboot</visible>
       </control>
       <control type="button" id="7">
         <description>Log Out</description>
@@ -100,20 +110,6 @@
         <label>312578</label>
         <include>Objects_ContextMenuButton</include>
         <onclick>ActivateWindow(Settings)</onclick>
-      </control>
-      <control type="button" id="10">
-        <description>Now Playing - Audio</description>
-        <label>$LOCALIZE[10517]</label>
-        <include>Objects_ContextMenuButton</include>
-        <onclick>ActivateWindow(musicplaylist)</onclick>
-        <visible>Player.HasAudio|Window.IsActive(musiclibrary)|Window.IsActive(musicfiles)</visible>
-      </control>
-      <control type="button" id="21">
-        <description>Now Playing - Video</description>
-        <label>$LOCALIZE[10522]</label>
-        <include>Objects_ContextMenuButton</include>
-        <onclick>ActivateWindow(videoplaylist)</onclick>
-        <visible>Player.HasVideo|Window.IsActive(videos)</visible>
       </control>
       <control type="button" id="11">
         <description>Eject Tray</description>

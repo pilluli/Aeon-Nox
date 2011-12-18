@@ -245,9 +245,9 @@
 				<control type="progress">
 					<description>Progressbar</description>
 					<posx>0</posx>
-					<posy>303</posy>
+					<posy>301</posy>
 					<width>1280</width>
-					<height>62</height>
+					<height>64</height>
 					<info>Player.Progress</info>
 					<texturebg>osd/osd_progress_clear.png</texturebg>
 					<lefttexture>-</lefttexture>
@@ -265,7 +265,7 @@
         <height>150</height>
         <texture>$VAR[HomeMenuBackVar]</texture>
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
-        <animation effect="fade" start="100" end="80" time="50" condition="Skin.HasSetting(glasshome)+![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
+        <animation effect="fade" start="100" end="90" time="50" condition="Skin.HasSetting(glasshome)+![Player.HasMedia + System.IdleTime(8)]">Conditional</animation>
       </control>
       <!-- Home OSD -->
       <control type="group">

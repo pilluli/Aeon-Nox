@@ -2,7 +2,7 @@
 <window id="502">
   <defaultcontrol always="true">50</defaultcontrol>
   <allowoverlay>yes</allowoverlay>
-  <views>50,57,500,550,509,506,511,512,513,505,551</views>
+  <views>50,57,500,509,506,512,513,505,551</views>
   <controls>
     <include>CommonMusicBackground</include>
     <control type="group">
@@ -61,13 +61,14 @@
       <include>AddonWall</include>
       <!--view id = 551-->
       <include>ThumbnailView</include>
-	        <include>AlbumsView</include> <!-- view id=57 -->
+      <!-- view id=57 -->
+      <include>ShiftView</include>
     </control>
     <control type="button" id="7002">
       <include>HiddenObject</include>
       <onup>Control.Move(506,-1)</onup>
       <onleft>506</onleft>
-      <onright>SetFocus(9000)</onright>
+      <onright>60</onright>
       <ondown>Control.Move(506,1)</ondown>
       <onback>50</onback>
       <onclick>PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>

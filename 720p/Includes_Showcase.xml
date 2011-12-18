@@ -43,13 +43,13 @@
 	<include name="MovieShowcaseGlassOverlay">
     <control type="image">
       <include>MovieShowcaseThumbDimensions</include>
-		<texture diffuse="thumbs/thumb_mask.png">thumbs/poster_glass_noreflect.png</texture>
+		<texture diffuse="thumbs/thumb_mask.png">thumbs/thumb_glass.png</texture>
     </control>
   </include>
 	<include name="MovieShowcaseGlassOverlayAngled">
 		<control type="image">
 			<include>MovieShowcaseThumbDimensions</include>
-			<texture diffuse="thumbs/thumb_mask.png">thumbs/poster_glass_noreflect.png</texture>
+			<texture diffuse="thumbs/thumb_mask.png">thumbs/thumb_glass.png</texture>
 		</control>
 	</include>
 
@@ -109,7 +109,7 @@
       <width>234</width>
       <height>234</height>
       <aspectratio scalediffuse="false" align="right">scale</aspectratio>
-      <texture diffuse="thumbs/cdcover_mask_aa.png">thumbs/poster_glass.png</texture>
+      <texture diffuse="thumbs/cdcover_mask_aa.png">thumbs/cdcover_glass_aa.png</texture>
     </control>
   </include>
 	<include name="MusicShowcaseGlassOverlayMain">
@@ -120,7 +120,7 @@
       <width>234</width>
       <height>234</height>
       <aspectratio scalediffuse="false" align="right">scale</aspectratio>
-      <texture diffuse="thumbs/cdcover_mask_aa.png">thumbs/poster_glass.png</texture>
+      <texture diffuse="thumbs/cdcover_mask_aa.png">thumbs/cdcover_glass_aa.png</texture>
     </control>
   </include>
  
@@ -629,7 +629,7 @@
 			<texturenofocus>-</texturenofocus>
 			<texturefocus>-</texturefocus>
 		</control>
-		<control type="group" id="7001">
+		<control type="group" id="7007">
 			<posy>387</posy>
 			<camera x="640" y="540" />
 			<visible>Control.IsVisible(509) + Container.OnNext + !Skin.HasSetting(noflowalbum)+!Control.HasFocus(110)</visible>
@@ -800,7 +800,7 @@
         <effect type="fade" start="100" end="0" time="300" delay="300"/>
         <effect type="zoom" start="100" end="130" center="640,360" time="300" delay="300" tween="cubic" easing="in"/>
       </animation>
-      <visible>Control.IsVisible(509) + !Control.IsVisible(7001) + !Control.IsVisible(7002) + Control.IsVisible(970)+!Control.HasFocus(110)</visible>
+      <visible>Control.IsVisible(509) + !Control.IsVisible(7007) + !Control.IsVisible(7002) + Control.IsVisible(970)+!Control.HasFocus(110)</visible>
 			<control type="group">
 				<posx>50</posx>
         <animation effect="slide" time="300" start="0" end="545" tween="cubic" easing="in">WindowClose</animation>
