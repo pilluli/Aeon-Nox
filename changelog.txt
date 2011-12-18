@@ -10,6 +10,7 @@
 - Added Korean fontset - thx francisx.
 - Added Hungarian rating flags - thx Attila.
 - Added Greek language - thx CutSickAss.
+- Added Italian language - thx liltee89.
 - Updated Spanish language strings - thx tocinillo.
 - Updated French language strings - thx Rififi77.
 - Added German language support - thx alexr.
@@ -28,14 +29,16 @@
 - Disabled busy dialog when Cinema Experience is running.
 - Added TV show logo and posterlayout for TV show infopanel.
 - Weather window redesigned.
+- Next Aired window redesigned.
 - Added new viewtype Thumbnail.
-- Added new viewtype Albums.
+- Added new viewtype Shift.
+- Removed "Poster Slide" option; Posters view is now only Poster slide.
+- "Watched" and "New" overlays redesigned.
 - Updated Panel viewtype which removes detail info option.
 - Unified look of all Wall views.
 - Slim list has different selectbar.
 - Added option to show remaining time in Video Info/Seekbar.
 - Added option to remove playercontrols in Music and Video OSD.
-- Disabling 'Poster Slide' in Posters view now gives a different Poster view layout.
 - Added Korean and French rating flags - thx francisx and Rififi77/Maxoo
 - Added Flip CD Cover option in Music Visualization. (needs artist slideshow script).
 - Videolibrary now has one global option to disable fanart instead of separate options for movies/tvshows/other.
@@ -46,6 +49,11 @@
 - Added "Featured items" window + Featured main menu item (Enabled by default, can be disabled in main menu customizer).
 - More views available in poster format for Music Videos.
 - Replaced video window in List and LowList view with fullscreen background video.
+- New InfoList layout: fewer options, also selectable for add-ons.
+- Showcase, Posters and DVDCase view can now also be selected in recently added episodes (needs poster.jpg in root of tvshow).
+- Replaced option "Use Posters instead of banners for TV Shows" with "use poster.jpg" and "use banner.jpg"; 
+  Poster.jpg will try to load poster.jpg from the root of your tv show in (most) poster shaped views, banner.jpg will try to load banner.jpg from the root of your tv show in banner shaped views.
+- Genre icons are now available in Showcase(2)/DVD Case/List/Shift/Thumbnail/Wall view.
 
 [B]1.7.0[/B]
 - Hungarian language updated - thx frodo19

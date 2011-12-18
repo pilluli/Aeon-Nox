@@ -119,7 +119,7 @@
             <posy>75</posy>
             <width>100</width>
             <height>150</height>
-            <texture diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass.png</texture>
+            <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
             <bordertexture border="-7">thumbs/poster_shadow.png</bordertexture>
             <aspectratio scalediffuse="false">scale</aspectratio>
           </control>
@@ -144,7 +144,7 @@
               <width>100</width>
               <height>150</height>
               <description>Main Icon Glass overlay</description>
-              <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass.png</texture>
+              <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
               <bordertexture border="-7">thumbs/poster_shadow.png</bordertexture>
               <aspectratio scalediffuse="false">stretch</aspectratio>
             </control>
@@ -564,7 +564,7 @@
   </include>
   <include name="LibraryStats">
     <control type="group">
-      <posy>316</posy>
+      <posy>315</posy>
       <visible>!Skin.HasSetting(DisableLibraryStats)</visible>
       <visible>[Container(9000).HasFocus(3)+Library.HasContent(music)]|[Container(9000).HasFocus(10)+Library.HasContent(movies)]|[Container(9000).HasFocus(11)+Library.HasContent(tvshows)]</visible>
       <animation effect="slide" start="0,0" end="-500,0" time="300">WindowClose</animation>
@@ -582,19 +582,19 @@
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>!Skin.HasSetting(totalshomehigh)</visible>
-        <animation effect="slide" start="0,0" end="0,-316" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-315" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
       </control>
       <control type="image">
         <description>time background</description>
         <posx>0</posx>
-        <posy>-316</posy>
+        <posy>-315</posy>
         <width>529</width>
         <height>58</height>
         <texture flipy="true" flipx="true">$VAR[TimepanelVar]</texture>
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>Skin.HasSetting(totalshomehigh)</visible>
-        <animation effect="slide" start="0,0" end="0,316" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,315" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(totalshomehigh)">Conditional</animation>
       </control>
       <control type="label">
         <posx>10</posx>
@@ -607,7 +607,7 @@
         <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
         <scroll>true</scroll>
         <label>$VAR[LibraryStatsVar]</label>
-        <animation effect="slide" start="0,0" end="0,-316" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-315" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(totalshomehigh)">Conditional</animation>
       </control>
     </control>
   </include>
@@ -615,7 +615,7 @@
   <include name="TimePanel">
     <control type="group">
       <posx>499r</posx>
-      <posy>316</posy>
+      <posy>315</posy>
       <visible>!Skin.HasSetting(DisableTimePanel)</visible>
       <animation effect="slide" start="0,0" end="500,0" time="300">WindowClose</animation>
       <animation effect="slide" start="500,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
@@ -632,19 +632,19 @@
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>!Skin.HasSetting(timehomehigh)</visible>
-        <animation effect="slide" start="0,0" end="0,-316" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-315" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
       </control>
       <control type="image">
         <description>time background</description>
         <posx>-30</posx>
-        <posy>-316</posy>
+        <posy>-315</posy>
         <width>529</width>
         <height>58</height>
         <texture flipy="true">$VAR[TimepanelVar]</texture>
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>Skin.HasSetting(timehomehigh)</visible>
-        <animation effect="slide" start="0,0" end="0,316" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(timehomehigh)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,315" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(timehomehigh)">Conditional</animation>
       </control>
       <control type="label">
         <description>time label</description>
@@ -658,13 +658,13 @@
         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
         <shadowcolor>$VAR[HomeMenuShadowVar]</shadowcolor>
         <label>$VAR[TimepanelTextVar]</label>
-        <animation effect="slide" start="0,0" end="0,-316" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-315" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
         <animation effect="slide" start="0" end="-40" time="200" tween="quadratic" easing="out" condition="Window.IsActive(mutebug)+Skin.HasSetting(timehomehigh)">Conditional</animation>
       </control>
       <control type="group">
         <posx>0</posx>
         <visible>!IsEmpty(Weather.Plugin)</visible>
-        <animation effect="slide" start="0,0" end="0,-316" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-315" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(timehomehigh)">Conditional</animation>
         <control type="image">
           <description>Weather image</description>
           <posx>21</posx>
@@ -695,7 +695,7 @@
     <control type="group">
       <visible>system.getbool(lookandfeel.enablerssfeeds)+!Skin.HasSetting(DisableRSS)</visible>
       <posx>0</posx>
-      <posy>406</posy>
+      <posy>407</posy>
       <animation effect="slide" start="0,0" end="1253,0" time="300">WindowClose</animation>
       <animation effect="slide" start="1253,0" end="0,0" delay="WidgetSlideDelay" time="300" condition="!Window.Previous(startup)">WindowOpen</animation>
       <animation effect="slide" start="1253,0" end="0,0" delay="2500" time="600" condition="Window.Previous(startup)">WindowOpen</animation>
@@ -719,7 +719,7 @@
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>!Skin.HasSetting(rsshomelow)</visible>
-        <animation effect="slide" start="0,0" end="0,257" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,256" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
       </control>
       <control type="image">
         <description>RSS background</description>
@@ -731,7 +731,7 @@
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>Skin.HasSetting(rsshomelow)</visible>
-        <animation effect="slide" start="0,0" end="0,-257" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-256" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
       </control>
       <control type="rss">
         <description>RSS feed</description>
@@ -748,7 +748,7 @@
         <titlecolor>$INFO[Skin.String(diffuse_homersshead)]</titlecolor>
         <scrollspeed>50</scrollspeed>
         <animation effect="fade" start="100" end="0" time="400" condition="Control.IsVisible(815)+!IsEmpty(Control.GetLabel(815))">Conditional</animation>
-        <animation effect="slide" start="0,0" end="0,287" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,286" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
       </control>
       <control type="label" id="815">
         <posx>110</posx>
@@ -765,7 +765,7 @@
         <wrapmultiline>false</wrapmultiline>
         <scrollspeed>50</scrollspeed>
         <visible>[!Skin.HasSetting(homepageMusicinfo)+Player.HasAudio]|[!Skin.HasSetting(homepageVideoinfo)+Player.HasVideo]|Control.HasFocus(8003)</visible>
-        <animation effect="slide" start="0,0" end="0,287" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,286" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
       </control>
       <control type="image">
         <posx>77</posx>
@@ -776,7 +776,7 @@
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>!Skin.HasSetting(rsshomelow)</visible>
-        <animation effect="slide" start="0,0" end="0,257" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,256" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
       </control>
       <control type="image">
         <posx>77</posx>
@@ -787,7 +787,7 @@
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>Skin.HasSetting(rsshomelow)</visible>
-        <animation effect="slide" start="0,0" end="0,-257" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-256" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
       </control>
       <control type="image">
         <posx>1190</posx>
@@ -798,7 +798,7 @@
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>!Skin.HasSetting(rsshomelow)</visible>
-        <animation effect="slide" start="0,0" end="0,257" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,256" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
       </control>
       <control type="image">
         <posx>1190</posx>
@@ -809,7 +809,7 @@
         <colordiffuse>$INFO[Skin.String(diffuse_home)]</colordiffuse>
         <include>Animation_VisibleChange400</include>
         <visible>Skin.HasSetting(rsshomelow)</visible>
-        <animation effect="slide" start="0,0" end="0,-257" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
+        <animation effect="slide" start="0,0" end="0,-256" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
       </control>
     </control>
   </include>
@@ -867,7 +867,7 @@
             </control>
             <control type="image">
               <description>Main Icon Glass overlay</description>
-              <texture diffuse="thumbs/movieposter_mask.png">thumbs/poster_glass.png</texture>
+              <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
               <bordertexture border="-18">thumbs/poster_shadow.png</bordertexture>
               <aspectratio scalediffuse="false">stretch</aspectratio>
               <posx>20</posx>
@@ -897,7 +897,7 @@
               <height>198</height>
               <fadetime>IconCrossfadeTime2</fadetime>
               <aspectratio scalediffuse="false">scale</aspectratio>
-              <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tvglass.png</texture>
+              <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
               <bordersize>9</bordersize>
             </control>
           </control>
@@ -1159,7 +1159,7 @@
         <height>242</height>
         <width>242</width>
         <aspectratio scalediffuse="false" align="right">scale</aspectratio>
-        <texture diffuse="thumbs/cdcover_mask2.png">thumbs/poster_glass.png</texture>
+        <texture diffuse="thumbs/cdcover_mask2.png">thumbs/cdcover_glass_noreflect.png</texture>
       </control>
     </control>
     <control type="group">
@@ -1192,7 +1192,7 @@
         <height>242</height>
         <width>242</width>
         <aspectratio scalediffuse="false" align="right">scale</aspectratio>
-        <texture diffuse="thumbs/cdcover_mask.png">thumbs/poster_glass.png</texture>
+        <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
         <bordertexture border="-20">thumbs/cd_shadow.png</bordertexture>
       </control>
     </control>

@@ -562,7 +562,7 @@
             <width>266</width>
             <height>400</height>
             <aspectratio scalediffuse="false">stretch</aspectratio>
-            <texture>thumbs/poster_glass.png</texture>
+            <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
             <bordertexture border="-56">thumbs/poster_shadow.png</bordertexture>
             <fadetime>400</fadetime>
           </control>
@@ -657,7 +657,7 @@
             <posy>0</posy>
             <width>280</width>
             <height>158</height>
-            <texture diffuse="thumbs/multiplex_tvmask.png" background="true">thumbs/multiplex_tvglass.png</texture>
+            <texture diffuse="thumbs/multiplex_tvmask.png" background="true">thumbs/multiplex_tv_glass.png</texture>
             <aspectratio scalediffuse="false">scale</aspectratio>
           </control>
           <control type="image">
@@ -666,15 +666,6 @@
             <width>280</width>
             <height>158</height>
             <texture background="true" flipy="true" diffuse="thumbs/multiplex_tvmaskreflect.png">$INFO[ListItem.Icon]</texture>
-            <aspectratio scalediffuse="false">scale</aspectratio>
-          </control>
-          <control type="image">
-            <posx>0</posx>
-            <posy>0</posy>
-            <width>280</width>
-            <height>158</height>
-            <bordertexture border="-26">thumbs/multiplex_tvborder.png</bordertexture>
-            <texture diffuse="thumbs/multiplex_tvmask.png" background="true">thumbs/multiplex_tvglass.png</texture>
             <aspectratio scalediffuse="false">scale</aspectratio>
           </control>
           <control type="image">
@@ -851,44 +842,32 @@
         </focusedlayout>
       </control>
       <control type="scrollbar" id="69">
-        <posx>265</posx>
-        <posy>394</posy>
-        <width>27</width>
-        <height>327</height>
+        <posx>270</posx>
+        <posy>404</posy>
+        <width>6</width>
+        <height>307</height>
         <animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(69)">Conditional</animation>
         <visible>Control.IsVisible(511)</visible>
         <visible>!Skin.HasSetting(highlist)</visible>
-        <texturesliderbackground border="0,14,0,14">views/scrollBarV.png</texturesliderbackground>
-        <texturesliderbar border="2,16,2,16">views/scrollBarV_bar.png</texturesliderbar>
-        <texturesliderbarfocus border="2,16,2,16">views/scrollBarV_bar_focus.png</texturesliderbarfocus>
-        <textureslidernib>-</textureslidernib>
-        <textureslidernibfocus>-</textureslidernibfocus>
+        <include>CommonVerticalScrollbar</include>
         <onleft condition="!IsEmpty(ListItem.Trailer)">7001</onleft>
         <onleft condition="IsEmpty(ListItem.Trailer)">9000</onleft>
         <onright>511</onright>
-        <showonepage>true</showonepage>
-        <orientation>vertical</orientation>
         <animation effect="fade" start="0" end="70" time="400">Focus</animation>
         <enable>!Skin.HasSetting(highlist)</enable>
       </control>
       <control type="scrollbar" id="69">
-        <posx>265</posx>
-        <posy>504</posy>
-        <width>27</width>
-        <height>220</height>
+        <posx>270</posx>
+        <posy>514</posy>
+        <width>6</width>
+        <height>200</height>
         <animation effect="fade" start="100" end="0" time="200" condition="!Control.HasFocus(69)">Conditional</animation>
         <visible>Control.IsVisible(511)</visible>
         <visible>Skin.HasSetting(highlist)</visible>
-        <texturesliderbackground border="0,14,0,14">views/scrollBarV.png</texturesliderbackground>
-        <texturesliderbar border="2,16,2,16">views/scrollBarV_bar.png</texturesliderbar>
-        <texturesliderbarfocus border="2,16,2,16">views/scrollBarV_bar_focus.png</texturesliderbarfocus>
-        <textureslidernib>-</textureslidernib>
-        <textureslidernibfocus>-</textureslidernibfocus>
+        <include>CommonVerticalScrollbar</include>
         <onleft condition="!IsEmpty(ListItem.Trailer)">7001</onleft>
         <onleft condition="IsEmpty(ListItem.Trailer)">9000</onleft>
         <onright>511</onright>
-        <showonepage>true</showonepage>
-        <orientation>vertical</orientation>
         <animation effect="fade" start="0" end="70" time="400">Focus</animation>
         <enable>Skin.HasSetting(highlist)</enable>
       </control>
