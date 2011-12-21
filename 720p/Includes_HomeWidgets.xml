@@ -1438,7 +1438,7 @@
         <width>465</width>
         <height>175</height>
         <onleft>9000</onleft>
-
+        <onback>9000</onback>
         <onright condition="Control.isVisible(8997)">8003</onright>
         <onright condition="Control.IsVisible(8998)">8000</onright>
         <onright condition="!Control.IsVisible(8997) + !Control.IsVisible(8998)">9000</onright>
