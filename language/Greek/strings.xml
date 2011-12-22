@@ -58,7 +58,7 @@
   <string id="31106">Διάφορες επιλογές</string>
   <string id="31108">Κουμπιά κεντρικού μενού</string>
   <string id="31109">Υπόβαθρα Πολυμέσων</string>
-  <string id="31110">Αλλαγή Υποβάθρου για Τύπο Πολυμέσου</string>
+  <string id="31110">Αλλαγή υποβάθρου για τύπο πολυμέσου</string>
   <string id="31111">Απόκρυψη</string>
   <string id="31112">Επιλογές</string>
   <string id="31113">Μία εικόνα</string>
@@ -67,7 +67,7 @@
   <string id="31116"></string>
   <string id="31117">Εμφάνιση widget πρόσφατων/τυχαίων πολυμέσων</string>
   <string id="31118">Υπομενού Εφαρμογών Κεντρικού Μενού</string>
-  <string id="31119">Κουμπί δικού σας πρόσθετου</string>
+  <string id="31119">Κουμπί προσωπικού πρόσθετου</string>
   <string id="31120">Ετικέτα Κουμπιού</string>
   <string id="31121">Διαδρομή πρόσθετου</string>
   <string id="31122">Σελίδα Καιρού</string>
@@ -165,7 +165,7 @@
   <string id="312575">Πιέστε ΕΠΙΛΟΓΗ για διαφημιστικό</string>
   <string id="312576">Πρεμιέρα</string>
   <string id="312577">Μη διαθέσιμο</string>
-  <string id="312581">N/A</string>
+  <string id="312581">Άγνωστο</string>
   <string id="312578">Ρυθμίσεις</string>
   <string id="312579">Εφέ Αρχικής Οθόνης (Βίντεο): ΟΧΙ</string>
   <string id="312580">Εφέ Αρχικής Οθόνης (Βίντεο): ΝΑΙ</string>
@@ -423,7 +423,7 @@
   <string id="31508">Τερματισμός</string>
   <string id="31509">Αγαπημένα</string>
   <string id="31510">Καιρός</string>
-  <string id="31511">Έναρξη Δίσκου</string>
+  <string id="31511">Δίσκος</string>
 
   <!--Skin Settings-->
   <string id="31600">Προσαρμογή Αρχικής Οθόνης</string>
