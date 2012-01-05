@@ -38,11 +38,7 @@
         <posy>534</posy>
         <width>330</width>
         <height>185</height>
-<<<<<<< HEAD
-        <texture background="true">$INFO[Player.FolderPath]/clearart.png</texture>
-=======
         <texture background="true">$INFO[Player.FolderPath]/logo.png</texture>
->>>>>>> master
         <aspectratio>keep</aspectratio>
         <visible>VideoPlayer.Content(movies)</visible>
         <visible>Player.Paused</visible>
