@@ -1,3 +1,18 @@
+[B]2.1.0[/B]
+- New panel textures. Design based in part on the panels found in the excellent Xperience1080 skin by `Black.
+- Added theme 'Classic'. A theme with the old style panels.
+- Added 'Power off system' button to shutdown submenu.
+- More conventional progress bar on volume bar and music/video scan.
+- Added new fontset: Condensed (Ubuntu Condensed font).
+- 'Featured' item redesigned based on the Metro homestyle of Xperience1080.
+- Added Chinese language - thx taxigps.
+- Updated German language - thx Alex.
+- Added Icelandic language - thx Mbee.
+- Added Russian language - thx Roman_V_M.
+- New Fast Forward / Rewind design + updated seekbar graphics.
+- Added automatic rotation of list content on the Home widgets. (enabled by default, can be turned off in the widget options).
+- New PlayerControl window: removed osd buttons and added more now playing info and shortcuts to favorites/playlists/system info.
+
 [B]2.0.1[/B]
 - Changed: Second label in Songs list view now shows artist instead of album.
 - Fixed: Settings separator caused scrollbar to show when there was only one page.
@@ -7,6 +22,13 @@
 - Corrected Spanish summary - thx PatOso
 - Fixed: The Lite_Floor themed scrollbar was white instead of dark.
 - Added: "Show Info" toggle for TV Shows in LowList view.
+- Fixed: Changing "Featured" menu item background would change TV Guide background.
+- Fixed: Weather information on the home timepanel only showed the temperature symbol if weather menu item was disabled.
+- Fixed: Fixed codec flags that were not showing or had wrong icon (avc/vc-1).
+- Fixed: "Schedule" item could not be disabled in TV shows section.
+- Fixed: PseudoTV EPG on Linux did not show the focus and unfocus buttons.
+- Fixed: Incorrect rating stars on Music widgets.
+- Fixed: Songs with spaces in the path did not play from the latest/random songs widget.
 
 [B]2.0.0[/B]
 [B]*This update will make you lose all your custom favorites assigned in the main menu due to changes in the favourites script*[/B]

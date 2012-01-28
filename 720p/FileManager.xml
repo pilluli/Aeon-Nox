@@ -14,7 +14,7 @@
         <texture>views/showcase_floor.png</texture>
       </control>
         <control type="image">
-          <posx>0</posx>
+          <posx>-70</posx>
           <posy>0</posy>
           <width>464</width>
           <height>720</height>
@@ -39,7 +39,7 @@
           </animation>
         </control>
         <control type="image">
-          <posx>816</posx>
+          <posx>886</posx>
           <posy>0</posy>
           <width>464</width>
           <height>720</height>
@@ -122,41 +122,40 @@
 			</control>
 		
 			<control type="scrollbar" id="30">
-        <posx>25</posx>
+        <posx>554</posx>
         <posy>93</posy>
-        <width>65</width>
+        <width>6</width>
         <height>351</height>
-        <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
-        <texturesliderbar>-</texturesliderbar>
-        <texturesliderbarfocus>-</texturesliderbarfocus>
-        <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-        <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
-        <pulseonselect>no</pulseonselect>
-        <orientation>vertical</orientation>
         <showonepage>false</showonepage>
-        <onleft>31</onleft>
-				<onright>20</onright>
+        <texturesliderbackground border="0,4,0,4">-</texturesliderbackground>
+        <texturesliderbar border="0,4,0,4">views/texturesliderbar.png</texturesliderbar>
+        <texturesliderbarfocus border="0,4,0,4">views/texturesliderbarfocus.png</texturesliderbarfocus>
+        <textureslidernib>views/ScrollBarNib.png</textureslidernib>
+        <textureslidernibfocus>views/ScrollBarNib.png</textureslidernibfocus>
+        <orientation>vertical</orientation>
+        <onleft>20</onleft>
+				<onright>21</onright>
 				<ondown>30</ondown>
 				<onup>30</onup>
 			</control>
 			<control type="list" id="20">
         <posx>70</posx>
         <posy>93</posy>
-        <width>620</width>
+        <width>500</width>
         <height>351</height>
-        <onleft>30</onleft>
-				<onright>21</onright>
+        <onleft>31</onleft>
+				<onright>30</onright>
 				<onup>20</onup>
 				<ondown>20</ondown>
 				<pagecontrol>30</pagecontrol>
 				<scrolltime>200</scrolltime>
         <itemlayout height="39">
           <control type="image">
-            <posx>12</posx>
-            <posy>39</posy>
-            <height>1</height>
-            <width>480</width>
-            <texture>views/listpanel_line.png</texture>
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>40</height>
+            <width>500</width>
+            <texture>osd/osd_settings_buttonnf.png</texture>
           </control>
           <control type="label">
             <posx>20</posx>
@@ -184,11 +183,11 @@
         </itemlayout>
         <focusedlayout height="39">
           <control type="image">
-            <posx>12</posx>
-            <posy>39</posy>
-            <height>1</height>
-            <width>480</width>
-            <texture>views/listpanel_line.png</texture>
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>40</height>
+            <width>500</width>
+            <texture>osd/osd_settings_buttonnf.png</texture>
           </control>
           <control type="image">
             <posx>6</posx>
@@ -280,29 +279,28 @@
       </control>
 		
 			<control type="scrollbar" id="31">
-        <posx>550</posx>
+        <posx>554</posx>
         <posy>93</posy>
-        <width>65</width>
-        <height>350</height>
-        <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
-        <texturesliderbar>-</texturesliderbar>
-        <texturesliderbarfocus>-</texturesliderbarfocus>
-        <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-        <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
-        <pulseonselect>no</pulseonselect>
-        <orientation>vertical</orientation>
+        <width>6</width>
+        <height>351</height>
         <showonepage>false</showonepage>
+        <texturesliderbackground border="0,4,0,4">-</texturesliderbackground>
+        <texturesliderbar border="0,4,0,4">views/texturesliderbar.png</texturesliderbar>
+        <texturesliderbarfocus border="0,4,0,4">views/texturesliderbarfocus.png</texturesliderbarfocus>
+        <textureslidernib>views/ScrollBarNib.png</textureslidernib>
+        <textureslidernibfocus>views/ScrollBarNib.png</textureslidernibfocus>
+        <orientation>vertical</orientation>
         <onleft>21</onleft>
-				<onright>30</onright>
+				<onright>20</onright>
 				<ondown>31</ondown>
 				<onup>31</onup>
 			</control>
 			<control type="list" id="21">
         <posx>70</posx>
         <posy>93</posy>
-        <width>620</width>
+        <width>500</width>
         <height>351</height>
-        <onleft>20</onleft>
+        <onleft>30</onleft>
 				<onright>31</onright>
 				<onup>21</onup>
 				<ondown>21</ondown>
@@ -310,11 +308,11 @@
 				<scrolltime>200</scrolltime>
         <itemlayout height="39">
           <control type="image">
-            <posx>12</posx>
-            <posy>39</posy>
-            <height>1</height>
-            <width>480</width>
-            <texture>views/listpanel_line.png</texture>
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>40</height>
+            <width>500</width>
+            <texture>osd/osd_settings_buttonnf.png</texture>
           </control>
           <control type="label">
             <posx>20</posx>
@@ -342,11 +340,11 @@
         </itemlayout>
         <focusedlayout height="39">
           <control type="image">
-            <posx>12</posx>
-            <posy>39</posy>
-            <height>1</height>
-            <width>480</width>
-            <texture>views/listpanel_line.png</texture>
+            <posx>0</posx>
+            <posy>0</posy>
+            <height>40</height>
+            <width>500</width>
+            <texture>osd/osd_settings_buttonnf.png</texture>
           </control>
           <control type="image">
             <posx>6</posx>
@@ -416,7 +414,7 @@
             <height>15</height>
             <aspectratio>keep</aspectratio>
             <texture>breadcrumbs/items.png</texture>
-            <colordiffuse>bclabel</colordiffuse>
+            <colordiffuse>bcicon</colordiffuse>
             <animation effect="slide" start="0,0" end="-6,6" time="0" condition="true">Conditional</animation>
           </control>
           <control type="label">
