@@ -2,7 +2,8 @@
 	<defaultcontrol>61</defaultcontrol>
 	<controls>
 			<control type="group">
-        <include>Furniture_SettingsBackPanel</include>
+             <include>DialogFade</include>
+ <include>Furniture_SettingsBackPanel</include>
         <include>Furniture_SettingsLogo</include>
         <control type="label" id="1">
           <description>header label</description>
@@ -19,7 +20,7 @@
 					<description>textarea</description>
 					<posx>288</posx>
 					<posy>120</posy>
-					<width>1080</width>
+					<width>896</width>
 					<height>526</height>
 					<label>-</label>
 					<font>Font_Reg20</font>

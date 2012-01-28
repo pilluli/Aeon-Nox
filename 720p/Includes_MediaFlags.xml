@@ -60,7 +60,7 @@
 	<include name="FloorFlags">
 		<control type="group">
 			<include>Animation_HideMultiplex</include>
-			<include>Animation_OpenClose_Furniture</include>
+			<include>Animation_CommonFade</include>
 			<visible>![SubString(Container.FolderPath,addons://)|SubString(Container.FolderPath,plugin.video)]</visible>
 			<control type="image">
 				<posx>10</posx>
@@ -92,14 +92,13 @@
 					<include>AudioFlagsVars</include>
 					<texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
 					<animation effect="slide" start="0" end="-45" reversible="true" condition="Control.IsVisible(512)|Control.IsVisible(514)">Conditional</animation>
-					<animation effect="slide" start="0" end="830" reversible="true" condition="Control.IsVisible(516)">Conditional</animation>
+					<animation effect="slide" start="0" end="930" reversible="true" condition="Control.IsVisible(516)">Conditional</animation>
 				</control>
 				<control type="image">
 					<description>Rating Flags</description>
 					<posx>1110</posx>
 					<posy>658</posy>
 					<include>AudioFlagsVars</include>
-					<animation effect="slide" start="0" end="-100" reversible="true" condition="Control.IsVisible(516)">Conditional</animation>
 					<animation effect="slide" start="0" end="-427" reversible="true" condition="Control.IsVisible(514)">Conditional</animation>
 					<texture fallback="flags/rating/MPAA_NR_Certificate_US.png">$VAR[RatingFlagVar,flags/rating/,.png]</texture>
 					<visible>!Control.IsVisible(512)</visible>
@@ -498,7 +497,7 @@
         </control>
       </control>
 			<control type="image">
-				<posx>1080</posx>
+				<posx>1180</posx>
 				<include>AudioFlagsVars</include>
 				<texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
 				<visible>Container.Content(tvshows)</visible>
