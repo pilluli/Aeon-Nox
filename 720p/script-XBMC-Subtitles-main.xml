@@ -265,13 +265,13 @@
           <ondown>150</ondown>
           <viewtype label="535">list</viewtype>
           <scrolltime>200</scrolltime>
-          <itemlayout width="400" height="36">
+          <itemlayout width="250" height="36">
             <control type="image">
-              <posx>0</posx>
-              <posy>35</posy>
-              <width>230</width>
-              <height>1</height>
-              <texture>views/listpanel_line.png</texture>
+              <posx>-4</posx>
+              <posy>0</posy>
+              <height>40</height>
+              <width>250</width>
+              <texture>osd/osd_settings_buttonnf.png</texture>
             </control>
             <control type="label">
               <posx>20</posx>
@@ -300,13 +300,13 @@
               <visible>ListItem.property(man)</visible>
             </control>
           </itemlayout>
-          <focusedlayout width="400" height="36">
+          <focusedlayout width="250" height="36">
             <control type="image">
-              <posx>0</posx>
-              <posy>35</posy>
-              <width>230</width>
-              <height>1</height>
-              <texture>views/listpanel_line.png</texture>
+              <posx>-4</posx>
+              <posy>0</posy>
+              <height>40</height>
+              <width>250</width>
+              <texture>osd/osd_settings_buttonnf.png</texture>
             </control>
             <control type="image">
               <posx>1</posx>
@@ -345,21 +345,11 @@
       </control>
       <control type="scrollbar" id="121">
         <description>Scrollbar</description>
-        <posx>230</posx>
-        <posy>190</posy>
-        <width>28</width>
-        <height>360</height>
-        <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
-        <texturesliderbar>-</texturesliderbar>
-        <texturesliderbarfocus>-</texturesliderbarfocus>
-        <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-        <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
+        <include>Objects_CommonSettingsScrollbar</include>
         <onleft>150</onleft>
         <onright>120</onright>
-        <ondown>120</ondown>
-        <onup>120</onup>
-        <showonepage>false</showonepage>
-        <orientation>vertical</orientation>
+        <ondown>121</ondown>
+        <onup>121</onup>
         <animation type="Conditional" condition="Control.HasFocus(150)" reversible="true">
           <effect type="slide" end="-60,0" time="400" />
         </animation>
