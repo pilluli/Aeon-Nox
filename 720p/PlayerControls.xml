@@ -70,6 +70,71 @@
         <scrollspeed>50</scrollspeed>
       </control>
 
+      <control type="grouplist">
+        <posx>280</posx>
+        <posy>150</posy>
+        <width>730</width>
+        <height>100</height>
+        <align>left</align>
+        <itemgap>40</itemgap>
+        <orientation>horizontal</orientation>
+
+        <control type="label">
+          <posx>0</posx>
+          <posy>0</posy>
+          <height>40</height>
+          <width min="10" max="200">auto</width>
+          <font>Font_Bold19</font>
+          <textcolor>white</textcolor>
+          <shadowcolor>-</shadowcolor>
+          <align>left</align>
+          <aligny>center</aligny>
+          <label>$LOCALIZE[13350]</label>
+          <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!Container(300).HasFocus(1)">Conditional</animation>
+          <visible>Player.HasMedia</visible>
+        </control>
+        <control type="label">
+          <posx>0</posx>
+          <posy>0</posy>
+          <height>40</height>
+          <width min="10" max="200">auto</width>
+          <font>Font_Bold19</font>
+          <textcolor>white</textcolor>
+          <shadowcolor>-</shadowcolor>
+          <align>left</align>
+          <aligny>center</aligny>
+          <label>$LOCALIZE[1036]</label>
+          <animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="inout" condition="!Container(300).HasFocus(2)">Conditional</animation>
+        </control>
+        <control type="label">
+          <posx>0</posx>
+          <posy>0</posy>
+          <height>40</height>
+          <width min="10" max="200">auto</width>
+          <font>Font_Bold19</font>
+          <textcolor>white</textcolor>
+          <shadowcolor>-</shadowcolor>
+          <align>left</align>
+          <aligny>center</aligny>
+          <label>$LOCALIZE[136]</label>
+          <animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="inout" condition="!Container(300).HasFocus(3)">Conditional</animation>
+        </control>
+        <control type="label">
+          <posx>0</posx>
+          <posy>0</posy>
+          <height>40</height>
+          <width min="10" max="200">auto</width>
+          <font>Font_Bold19</font>
+          <textcolor>white</textcolor>
+          <shadowcolor>-</shadowcolor>
+          <align>left</align>
+          <aligny>center</aligny>
+          <label>$LOCALIZE[10511]</label>
+          <animation effect="fade" start="100" end="50" time="200" tween="cubic" easing="inout" condition="!Container(300).HasFocus(4)">Conditional</animation>
+        </control>
+      </control>
+
+
       <control type="list" id="300">
         <description>Quickmenu</description>
         <posx>280</posx>
@@ -83,48 +148,8 @@
         <focusposition>0</focusposition>
         <scrolltime tween="quadratic" easing="out">200</scrolltime>
         <orientation>horizontal</orientation>
-        <itemlayout width="181" height="100">
-          <control type="label">
-            <posx>0</posx>
-            <posy>0</posy>
-            <height>40</height>
-            <width>181</width>
-            <font>Font_Bold19</font>
-            <label>$INFO[ListItem.Label]</label>
-            <textcolor>grey2</textcolor>
-            <shadowcolor>-</shadowcolor>
-            <align>left</align>
-            <aligny>center</aligny>
-          </control>
-        </itemlayout>
-        <focusedlayout width="181" height="100">
-          <control type="label">
-            <posx>0</posx>
-            <posy>0</posy>
-            <height>40</height>
-            <width>181</width>
-            <font>Font_Bold19</font>
-            <label>$INFO[ListItem.Label]</label>
-            <textcolor>white</textcolor>
-            <shadowcolor>-</shadowcolor>
-            <align>left</align>
-            <aligny>center</aligny>
-            <visible>Control.hasFocus(300)</visible>
-          </control>
-          <control type="label">
-            <posx>0</posx>
-            <posy>0</posy>
-            <height>40</height>
-            <width>181</width>
-            <font>Font_Bold19</font>
-            <label>$INFO[ListItem.Label]</label>
-            <textcolor>selected</textcolor>
-            <shadowcolor>-</shadowcolor>
-            <align>left</align>
-            <aligny>center</aligny>
-            <visible>!Control.hasFocus(300)</visible>
-          </control>
-        </focusedlayout>
+        <itemlayout width="181" height="100"/>
+        <focusedlayout width="181" height="100"/>
         <content>
           <item id="1">
             <description>Now Playing</description>
@@ -162,6 +187,7 @@
         <posx>220</posx>
         <posy>220</posy>
         <visible>Container(300).HasFocus(1)</visible>
+        <include>Animation_VisibleChange200</include>
         <control type="group">
           <visible>Player.HasVideo</visible>
           <control type="group">
@@ -292,7 +318,7 @@
                 <posy>38</posy>
                 <width>370</width>
                 <height>13</height>
-                <texturebg>osd/seek/progress_back_long.png</texturebg>
+                <texturebg>dialogs/progress/progress_back.png</texturebg>
                 <lefttexture>osd/seek/progresscache_left.png</lefttexture>
                 <midtexture>osd/seek/progresscache_mid.png</midtexture>
                 <righttexture>osd/seek/progresscache_right.png</righttexture>
@@ -306,9 +332,9 @@
                 <width>370</width>
                 <height>13</height>
                 <texturebg>osd/seek/progresscache_back_long.png</texturebg>
-                <lefttexture>osd/seek/progress_left.png</lefttexture>
-                <midtexture>osd/seek/progress_mid.png</midtexture>
-                <righttexture>osd/seek/progress_right.png</righttexture>
+                <lefttexture>dialogs/progress/progress_left.png</lefttexture>
+                <midtexture>dialogs/progress/progress_mid.png</midtexture>
+                <righttexture>dialogs/progress/progress_right.png</righttexture>
                 <overlaytexture>-</overlaytexture>
                 <info>Player.Progress</info>
               </control>
@@ -737,6 +763,7 @@
 
       <control type="group">
         <visible>Container(300).HasFocus(2)</visible>
+        <include>Animation_VisibleChange200</include>
         <control type="list" id="450">
           <posx>250</posx>
           <posy>195</posy>
@@ -1125,6 +1152,7 @@
 
       <control type="group">
         <visible>Container(300).HasFocus(3)</visible>
+        <include>Animation_VisibleChange200</include>
         <control type="list" id="450">
           <posx>250</posx>
           <posy>195</posy>
@@ -1562,6 +1590,7 @@
 
       <control type="group">
         <visible>Container(300).HasFocus(4)</visible>
+        <include>Animation_VisibleChange200</include>
         <description>System Info</description>
         <control type="list" id="450">
           <posx>250</posx>
@@ -1747,13 +1776,13 @@
           <control type="progress">
             <description>CPU BAR</description>
             <posx>280</posx>
-            <posy>25</posy>
+            <posy>27</posy>
             <width>320</width>
-            <height>18</height>
-            <texturebg>osd/seek/progress_back.png</texturebg>
-            <lefttexture>osd/seek/progress_left.png</lefttexture>
-            <midtexture>osd/seek/progress_mid.png</midtexture>
-            <righttexture>osd/seek/progress_right.png</righttexture>
+            <height>14</height>
+            <texturebg>dialogs/progress/progress_back.png</texturebg>
+            <lefttexture>dialogs/progress/progress_left.png</lefttexture>
+            <midtexture>dialogs/progress/progress_mid.png</midtexture>
+            <righttexture>dialogs/progress/progress_right.png</righttexture>
             <info>System.CPUUsage</info>
           </control>
           <control type="label">
@@ -1770,13 +1799,13 @@
           <control type="progress">
             <description>Memory BAR</description>
             <posx>680</posx>
-            <posy>25</posy>
+            <posy>27</posy>
             <width>320</width>
-            <height>18</height>
-            <texturebg>osd/seek/progress_back.png</texturebg>
-            <lefttexture>osd/seek/progress_left.png</lefttexture>
-            <midtexture>osd/seek/progress_mid.png</midtexture>
-            <righttexture>osd/seek/progress_right.png</righttexture>
+            <height>14</height>
+            <texturebg>dialogs/progress/progress_back.png</texturebg>
+            <lefttexture>dialogs/progress/progress_left.png</lefttexture>
+            <midtexture>dialogs/progress/progress_mid.png</midtexture>
+            <righttexture>dialogs/progress/progress_right.png</righttexture>
             <info>system.memory(used)</info>
           </control>
         </control>
