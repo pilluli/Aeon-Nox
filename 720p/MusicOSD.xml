@@ -4,7 +4,7 @@
 		<control type="group">
 			<animation effect="slide" start="0,-145" end="0,0" time="300" tween="quadratic" easing="out">WindowOpen</animation>
 			<animation effect="slide" start="0,0" end="0,-145" time="300" delay="150" tween="quadratic" easing="out">WindowClose</animation>
-			<animation effect="slide" start="0,0" end="0,-145" time="300" tween="quadratic" easing="out" condition="Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList) |Window.IsVisible(1117)">Conditional</animation>
+			<animation effect="slide" start="0,0" end="0,-145" time="300" tween="quadratic" easing="out" condition="Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(1117) | Window.IsVisible(1112)">Conditional</animation>
       <control type="image">
         <description>media info background image</description>
         <posx>0</posx>
@@ -28,7 +28,7 @@
         <usecontrolcoords>false</usecontrolcoords>
         <onup>707</onup>
         <ondown>500</ondown>
-        <onleft>707</onleft>
+        <onleft>709</onleft>
         <onright>600</onright>
         <animation effect="slide" start="0" end="175" time="200" condition="!Skin.HasSetting(RemovePlayerControls)">Conditional</animation>
         <control type="button" id="700">
@@ -191,7 +191,7 @@
         <ondown condition="!System.Hasaddon(script.artistslideshow)">700</ondown>
         <onleft>605</onleft>
         <onright>700</onright>
-        <animation effect="slide" start="0" end="-225" time="200" condition="!Skin.HasSetting(RemovePlayerControls)">Conditional</animation>
+        <animation effect="slide" start="0" end="-150" time="200" condition="!Skin.HasSetting(RemovePlayerControls)">Conditional</animation>
         <control type="togglebutton" id="703">
           <width>75</width>
           <height>75</height>
@@ -254,6 +254,15 @@
           <texturefocus>osd/buttons/OSDSkinFO.png</texturefocus>
           <texturenofocus>osd/buttons/OSDSkinNF.png</texturenofocus>
           <onclick>ActivateWindow(1117)</onclick>
+        </control>
+        <control type="button" id="709">
+          <width>75</width>
+          <height>75</height>
+          <label>21891</label>
+          <font>-</font>
+          <texturefocus>osd/buttons/OSDInfoFO.png</texturefocus>
+          <texturenofocus>osd/buttons/OSDInfoNF.png</texturenofocus>
+          <onclick>ActivateWindow(1112)</onclick>        
         </control>
       </control>
 

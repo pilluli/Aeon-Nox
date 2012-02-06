@@ -20,17 +20,17 @@
     <align>center</align>
     <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
     <bordersize>18</bordersize>
-    <aspectratio scalediffuse="false">stretch</aspectratio>
+    <aspectratio scalediffuse="false">scale</aspectratio>
 	</include>
 	<include name="MovieShowcaseThumbReflectionMain">
 		<include>MovieShowcaseThumbReflectionDimensions</include>
 		<colordiffuse>52FFFFFF</colordiffuse>
-		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<aspectratio scalediffuse="false">scale</aspectratio>
 	</include>
 	<include name="MovieShowcaseThumbReflection">
 		<include>MovieShowcaseThumbReflectionDimensions</include>
 		<colordiffuse>white6</colordiffuse>
-		<aspectratio scalediffuse="false">stretch</aspectratio>
+		<aspectratio scalediffuse="false">scale</aspectratio>
 		<animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
 	</include>
   <include name="WatchedOverlayShowCase">
@@ -1391,7 +1391,7 @@
 					<aligny>center</aligny>
 					<align>center</align>
 					<label>$INFO[ListItem.Tagline]</label>
-          <textcolor>panelinfo</textcolor>
+          <textcolor>white3</textcolor>
 					<visible>Container.Content(movies)+!Skin.HasSetting(infopaneltagline)</visible>
 				</control>
 				<control type="label">
@@ -1404,7 +1404,7 @@
 					<aligny>center</aligny>
 					<align>center</align>
 					<label>[UPPERCASE]$INFO[ListItem.TVShowTitle][/UPPERCASE]</label>
-					<textcolor>panelinfo</textcolor>
+					<textcolor>white3</textcolor>
 					<visible>Container.Content(episodes)+!Skin.HasSetting(breadcrumb)</visible>
 				</control>
 				<control type="group">

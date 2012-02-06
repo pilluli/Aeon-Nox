@@ -134,6 +134,7 @@
   </variable>
 
   <variable name="SecondLabelVar">
+    <value condition="SubString(ListItem.Path,videodb://1/7)">$LOCALIZE[20457]</value>
     <value condition="[Container.Content(movies)+!Skin.HasSetting(wallgenre)+!ListItem.IsFolder]|[Container.Content(seasons)+IsEmpty(ListItem.TVShowTitle)]">$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.RatingAndVotes, • ]</value>
     <value condition="!Skin.HasSetting(wallgenretv)+Container.Content(tvshows)">$INFO[ListItem.Label2]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)]</value>
     <value condition="!Skin.HasSetting(wallgenretv)+Container.Content(seasons)+!IsEmpty(ListItem.TVShowTitle)">$INFO[ListItem.Property(TotalEpisodes),, $LOCALIZE[20360]]$INFO[ListItem.Property(UnWatchedEpisodes), ($LOCALIZE[16101]: ,)]</value>
@@ -207,8 +208,8 @@
   </variable>
  
   <variable name="VideoExtraFanartVar">
-    <value condition="Container.Content(seasons)+!Skin.HasSetting(extrafanartseasons)">$INFO[ListItem.Path]$INFO[ListItem.Label,,/fanart.jpg]</value>
-    <value condition="Container.Content(episodes)+!Skin.HasSetting(extrafanartepisodes)">$INFO[ListItem.Path,,fanart.jpg]</value>
+    <value condition="Container.Content(seasons)+!Skin.HasSetting(extrafanartseasons)+!SubString(ListItem.Label,*,left)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-fanart.jpg]</value>
+    <value condition="Container.Content(episodes)+!Skin.HasSetting(extrafanartepisodes)">$INFO[ListItem.Path]$INFO[ListItem.Season,../season,-fanart.jpg]</value>
     <!--<value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>-->
     <value condition="System.IdleTime(10)+[[Container.Content(movies)+Skin.HasSetting(extrafanartmovies)]|[Container.Content(tvshows)+Skin.HasSetting(extrafanartseries)]|[Container.Content(seasons)+Skin.HasSetting(extrafanartseasons)]]">$INFO[ListItem.Path,,extrafanart]</value>
     <value condition="Container.Content(episodes)+Skin.HasSetting(extrafanartepisodes)+System.IdleTime(10)">$INFO[ListItem.Path,,../extrafanart]</value>
@@ -217,6 +218,7 @@
 
   <variable name="BigFanListVar">
     <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>
+    <value condition="Container.Content(seasons) + !SubString(ListItem.Label,*,left)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-fanart.jpg]</value>
     <value>$INFO[Listitem.Property(Fanart_Image)]</value>
   </variable>
   
@@ -667,6 +669,7 @@
   <variable name="EpisodeSubTitleVar">
     <value condition="SubString(Container.FolderPath,videodb://5/)+!SubString(ListItem.Episode,S)">$INFO[ListItem.TVShowTitle]$INFO[ListItem.Season, • $LOCALIZE[20373] ]</value>
     <value condition="SubString(Container.FolderPath,videodb://5/)+SubString(ListItem.Episode,S)">$INFO[ListItem.TVShowTitle,, • $LOCALIZE[20381]]</value>
+    <value condition="Container.Content(movies)">$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.Rating, • ]</value>
     <value>$INFO[ListItem.Date]$INFO[ListItem.Rating, • ]</value>
   </variable>
 
@@ -975,6 +978,12 @@
     <value condition="[Container.Content(tvshows)|Container.Content(seasons)] + !Skin.HasSetting(NextAiredInfo) + IsEmpty(Window(Home).Property(NextAired.NextDate))">$VAR[LastEpisodeVar]</value>
     <value condition="[Container.Content(tvshows)|Container.Content(seasons)]">$INFO[ListItem.Mpaa]</value>
   </variable>
+  <variable name="LowListSubTitleVar">
+    <value condition="SubString(ListItem.Path,videodb://1/7)">$LOCALIZE[20457]</value>
+    <value condition="Container.Content(movies)|Container.Content(tvshows)">$INFO[ListItem.Genre]</value>
+    <value condition="Container.Content(episodes)">$INFO[ListItem.Premiered,$LOCALIZE[20416] ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</value>
+    <value condition="Container.Content(seasons)">$INFO[ListItem.Episode,, [LOWERCASE]$LOCALIZE[20360] [/LOWERCASE]]$INFO[ListItem.Property(WatchedEpisodes), (,]$INFO[ListItem.Property(TotalEpisodes),/,)]</value>
+  </variable>
   
   <!-- Stripshow/Carousel InfoPanel -->
   <variable name="InfoPanelLabel1">
@@ -1028,9 +1037,9 @@
     <value condition="Control.HasFocus(9001)">$INFO[Container(9001).ListItem.Property(Fanart)]</value>
     <value condition="Control.HasFocus(9010)|Control.HasFocus(9012)">$INFO[Container(9002).ListItem.Property(Fanart)]</value>
     <value condition="Control.HasFocus(9003)">$INFO[Container(9003).ListItem.Property(Fanart)]</value>
-    <value condition="Control.HasFocus(10001)">$INFO[Container(10001).ListItem.Property(Fanart)]</value>
-    <value condition="Control.HasFocus(10010)|Control.HasFocus(10012)">$INFO[Container(10002).ListItem.Property(Fanart)]</value>
-    <value condition="Control.HasFocus(10003)">$INFO[Container(10003).ListItem.Property(Fanart)]</value>
+    <value condition="Control.HasFocus(3001)">$INFO[Container(3001).ListItem.Property(Fanart)]</value>
+    <value condition="Control.HasFocus(3010)|Control.HasFocus(3012)">$INFO[Container(3002).ListItem.Property(Fanart)]</value>
+    <value condition="Control.HasFocus(3003)">$INFO[Container(3003).ListItem.Property(Fanart)]</value>
   </variable>
 
   <!-- Global Search -->
@@ -1044,4 +1053,5 @@
     <value condition="Control.HasFocus(171)">$INFO[Container(171).ListItem.Property(Fanart_Image)]</value>
     <value condition="Control.HasFocus(181)">$INFO[Container(181).ListItem.Property(Fanart_Image)]</value>
   </variable>
+  
 </includes>
