@@ -315,18 +315,8 @@
                 <label>[UPPERCASE]$INFO[ListItem.Episode][/UPPERCASE]</label>
                 <visible>Container.Content(episodes)</visible>
               </control>
-              <control type="image">
-                <posx>17</posx>
-                <posy>0</posy>
-                <width>65</width>
-                <height>56</height>
-                <aspectratio>keep</aspectratio>
-                <colordiffuse>dcffffff</colordiffuse>
-                <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
-                <visible>!Container.Content(episodes)</visible>
-              </control>
               <control type="label">
-                <posx>82</posx>
+                <posx>20</posx>
                 <posy>5</posy>
                 <width>458</width>
                 <height>28</height>
@@ -338,9 +328,9 @@
                 <textoffsetx>15</textoffsetx>
               </control>
               <control type="label">
-                <posx>82</posx>
+                <posx>20</posx>
                 <posy>25</posy>
-                <width>458</width>
+                <width>258</width>
                 <height>28</height>
                 <align>left</align>
                 <aligny>center</aligny>
@@ -349,6 +339,18 @@
                 <label>$VAR[EpisodeSubTitleVar]</label>
                 <visible>!IsEmpty(ListItem.Title)</visible>
                 <textoffsetx>15</textoffsetx>
+              </control>
+              <control type="label">
+                <posx>540</posx>
+                <posy>25</posy>
+                <width>150</width>
+                <height>28</height>
+                <align>right</align>
+                <aligny>center</aligny>
+                <include>subcolornofocus</include>
+                <font>Font_Info</font>
+                <label>$INFO[ListItem.Label2]</label>
+                <visible>!IsEmpty(ListItem.Title)</visible>
               </control>
             </control>
             <control type="group">
@@ -452,6 +454,18 @@
                  <visible>!IsEmpty(ListItem.Title)</visible>
                  <textoffsetx>15</textoffsetx>
                </control>
+              <control type="label">
+                <posx>540</posx>
+                <posy>25</posy>
+                <width>150</width>
+                <height>28</height>
+                <align>right</align>
+                <aligny>center</aligny>
+                <include>subcolorfocus</include>
+                <font>Font_Info</font>
+                <label>$INFO[ListItem.Label2]</label>
+                <visible>!IsEmpty(ListItem.Title)</visible>
+              </control>
              </control>
             <control type="group">
               <visible>![Container.Content(episodes) | Container.Content(movies) | Container.Content(tvshows)]</visible>
@@ -557,6 +571,29 @@
             </control>
           </focusedlayout>
         </control>
+
+        <control type="label">
+          <posx>70</posx>
+          <posy>610</posy>
+          <width>150</width>
+          <height>41</height>
+          <font>Font_Reg12</font>
+          <align>left</align>
+          <aligny>center</aligny>
+          <textcolor>ff969696</textcolor>
+          <label>$INFO[Container(505).NumItems] $VAR[ItemLabelVar]</label>
+        </control>
+        <control type="label">
+	  <posx>475</posx>
+	  <posy>610</posy>
+	  <width>85</width>
+	  <height>41</height>
+	  <font>Font_Reg12</font>
+	  <align>center</align>
+	  <aligny>center</aligny>
+	  <textcolor>ff969696</textcolor>
+	  <label>$INFO[Container(505).CurrentPage,$LOCALIZE[31024] ]/$INFO[Container(505).NumPages]</label>
+	</control>
 
       </control>
     </control>
