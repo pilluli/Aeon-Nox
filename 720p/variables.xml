@@ -191,28 +191,28 @@
     <value>$LOCALIZE[31025]</value>
   </variable>
 
-  <variable name="VideoLibraryBackground">
-    <value condition="Container.Content(movies)+!IsEmpty(Skin.String(Home_Custom_Back_Movies_Folder))">$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</value>
-    <value condition="Container.Content(movies)+IsEmpty(Skin.String(Home_Custom_Back_Movies_Folder))">special://skin/backgrounds/movies.jpg</value>
-    <value condition="[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]+!IsEmpty(Skin.String(Home_Custom_Back_TVShow_Folder))">$INFO[Skin.String(Home_Custom_Back_TVShow_Folder)]</value>
-    <value condition="[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)]+!IsEmpty(Skin.String(Home_Custom_Back_TVShow_Folder))">special://skin/backgrounds/tvshows.jpg</value>
-    <value>$INFO[Skin.String(Home_Custom_Back_Video_Folder)]</value>
+  <variable name="VideoExtraFanartVar">
+    <value condition="Skin.HasSetting(SeasonFanart)+ Container.Content(seasons) + !SubString(ListItem.Label,*,left)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-fanart.jpg]</value>
+    <value condition="Skin.HasSetting(SeasonFanart) + Container.Content(episodes)">$INFO[ListItem.Path]$INFO[ListItem.Season,../season,-fanart.jpg]</value>
+    <value condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)">$INFO[ListItem.Path,,extrafanart]</value>
+    <value condition="Container.Content(episodes)">$INFO[ListItem.Path,,../extrafanart]</value>
   </variable>
   <variable name="VideoFanartVar">
+    <value condition="Skin.HasSetting(VideoLibraryFanart) + Container.Content(movies) + !IsEmpty(Skin.String(Home_Custom_Back_Movies_Folder))">$INFO[Skin.String(Home_Custom_Back_Movies_Folder)]</value>
+    <value condition="Skin.HasSetting(VideoLibraryFanart) + Container.Content(movies) + IsEmpty(Skin.String(Home_Custom_Back_Movies_Folder))">special://skin/backgrounds/movies.jpg</value>
+    <value condition="Skin.HasSetting(VideoLibraryFanart)  + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + !IsEmpty(Skin.String(Home_Custom_Back_TVShow_Folder))">$INFO[Skin.String(Home_Custom_Back_TVShow_Folder)]</value>
+    <value condition="Skin.HasSetting(VideoLibraryFanart) + [Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes)] + IsEmpty(Skin.String(Home_Custom_Back_TVShow_Folder))">special://skin/backgrounds/tvshows.jpg</value>
+    <value condition="Skin.HasSetting(VideoLibraryFanart)">$INFO[Skin.String(Home_Custom_Back_Video_Folder)]</value>
+    <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>
+    <value condition="Skin.HasSetting(SeasonFanart) + !SubString(Control.GetLabel(8861),empty) + Container.Content(seasons) + !SubString(ListItem.Label,*,left)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-fanart.jpg]</value>
+    <value condition="Skin.HasSetting(SeasonFanart) + !SubString(Control.GetLabel(8861),empty) + Container.Content(episodes)">$INFO[ListItem.Path]$INFO[ListItem.Season,../season,-fanart.jpg]</value>
+    <value condition="SubString(Control.GetLabel(8861),extrafanart) + [[Container.Content(movies) + Skin.HasSetting(extrafanartmovies)]|[Container.Content(tvshows) + Skin.HasSetting(extrafanartseries)]|[Container.Content(seasons) + Skin.HasSetting(extrafanartseasons)]]">$INFO[ListItem.Path,,extrafanart]</value>
+    <value condition="SubString(Control.GetLabel(8861),extrafanart) + Container.Content(episodes) + Skin.HasSetting(extrafanartepisodes)">$INFO[ListItem.Path,,../extrafanart]</value>
     <value condition="Container.Content(movies)]+IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/fallback_movies.jpg</value>
     <value condition="[Container.Content(Seasons)|Container.Content(TVShows) | Container.Content(Episodes)]+IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/fallback_tvshows.jpg</value>
     <value condition="[Container.Content(MusicVideos) | Container.Content(Artists) | Container.Content(Albums)]+IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/music.jpg</value>
     <value condition="Container.Content(addons)+IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/addons.jpg</value>
     <value condition="IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/videos.jpg</value>
-    <value>$INFO[Listitem.Property(Fanart_Image)]</value>
-  </variable>
- 
-  <variable name="VideoExtraFanartVar">
-    <value condition="Container.Content(seasons)+!Skin.HasSetting(extrafanartseasons)+!SubString(ListItem.Label,*,left)">$INFO[ListItem.Path]$INFO[ListItem.Season,season,-fanart.jpg]</value>
-    <value condition="Container.Content(episodes)+!Skin.HasSetting(extrafanartepisodes)">$INFO[ListItem.Path]$INFO[ListItem.Season,../season,-fanart.jpg]</value>
-    <!--<value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/fanart/,.jpg]</value>-->
-    <value condition="System.IdleTime(10)+[[Container.Content(movies)+Skin.HasSetting(extrafanartmovies)]|[Container.Content(tvshows)+Skin.HasSetting(extrafanartseries)]|[Container.Content(seasons)+Skin.HasSetting(extrafanartseasons)]]">$INFO[ListItem.Path,,extrafanart]</value>
-    <value condition="Container.Content(episodes)+Skin.HasSetting(extrafanartepisodes)+System.IdleTime(10)">$INFO[ListItem.Path,,../extrafanart]</value>
     <value>$INFO[Listitem.Property(Fanart_Image)]</value>
   </variable>
 
@@ -618,7 +618,9 @@
   </variable>
 
   <variable name="MusicExtraFanartVar">
-    <value condition="System.IdleTime(10)+!Skin.HasSetting(musicextrafanart)+!IsEmpty(Skin.String(ArtistsLogosPath))">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart]</value>
+    <value condition="Skin.HasSetting(MusicLibraryFanart)">$INFO[Skin.String(Home_Custom_Back_Music_Folder)]</value>
+    <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/music/fanart/,.jpg]</value>
+    <value condition="SubString(Control.GetLabel(8862),extrafanart) + !Skin.HasSetting(musicextrafanart) + !IsEmpty(Skin.String(ArtistsLogosPath))">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart]</value>
     <value>$INFO[ListItem.Property(Fanart_Image)]</value>
   </variable>
 
@@ -883,8 +885,8 @@
   
   <!--Thumbs -->
   <variable name="EpisodeViewPosterVar">
-    <value condition="!Skin.HasSetting(TVShowsUsePosters)">$INFO[ListItem.Path,,../poster.jpg]</value>
-    <value condition="Skin.HasSetting(TVShowsUsePosters)">$INFO[Container.TvShowThumb]</value>
+    <value condition="!Skin.HasSetting(TVShowsUsePosters) | SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem.Path,,../poster.jpg]</value>
+    <value>$INFO[Container.TvShowThumb]</value>
   </variable>
   <variable name="BannerVar">
     <value condition="Skin.HasSetting(TVShowsUseBanners)">$INFO[ListItem.Path,,banner.jpg]</value>
@@ -1038,7 +1040,8 @@
     <value condition="Control.HasFocus(9010)|Control.HasFocus(9012)">$INFO[Container(9002).ListItem.Property(Fanart)]</value>
     <value condition="Control.HasFocus(9003)">$INFO[Container(9003).ListItem.Property(Fanart)]</value>
     <value condition="Control.HasFocus(3001)">$INFO[Container(3001).ListItem.Property(Fanart)]</value>
-    <value condition="Control.HasFocus(3010)|Control.HasFocus(3012)">$INFO[Container(3002).ListItem.Property(Fanart)]</value>
+    <value condition="ControlGroup(4000).HasFocus + Skin.HasSetting(ShowWeatherFanart) + !IsEmpty(Skin.String(WeatherFanartDir))">$INFO[Skin.String(WeatherFanartDir)]$INFO[Weather.FanartCode]</value>
+    <value condition="ControlGroup(4000).HasFocus + [!Skin.HasSetting(ShowWeatherFanart) | IsEmpty(Skin.String(WeatherFanartDir))]">$INFO[Skin.String(Home_Custom_Back_Weather_Folder)]</value>
     <value condition="Control.HasFocus(3003)">$INFO[Container(3003).ListItem.Property(Fanart)]</value>
   </variable>
 
