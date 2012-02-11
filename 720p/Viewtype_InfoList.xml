@@ -563,7 +563,7 @@
         </control>
 
         <control type="label">
-          <posx>70</posx>
+          <posx>40</posx>
           <posy>610</posy>
           <width>150</width>
           <height>41</height>
