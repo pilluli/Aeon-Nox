@@ -418,18 +418,8 @@
                  <label>[UPPERCASE]$INFO[ListItem.Episode][/UPPERCASE]</label>
                  <visible>Container.Content(episodes)</visible>
                </control>
-               <control type="image">
-                 <posx>17</posx>
-                 <posy>0</posy>
-                 <width>65</width>
-                 <height>56</height>
-                 <aspectratio>keep</aspectratio>
-                 <colordiffuse>ff2e2e2e</colordiffuse>
-                 <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
-                 <visible>!Container.Content(episodes)</visible>
-               </control>
                <control type="label">
-                 <posx>82</posx>
+                 <posx>20</posx>
                  <posy>5</posy>
                  <width>458</width>
                  <height>28</height>
@@ -442,7 +432,7 @@
                  <textoffsetx>15</textoffsetx>
                </control>
                <control type="label">
-                 <posx>82</posx>
+                 <posx>20</posx>
                  <posy>25</posy>
                  <width>458</width>
                  <height>28</height>
