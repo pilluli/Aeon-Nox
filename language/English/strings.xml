@@ -479,6 +479,7 @@
   <string id="31670">Show latest added custom movie playlist poster widget for</string>
   <string id="31671">Show random custom movie playlist poster widget for</string>
   <string id="31672">Include watched items in the custom playlist widgets</string>
+  <string id="31673">Enable autoscroll pop-up letter</string>
 
 
   <!-- Weather plugin -->
@@ -503,6 +504,7 @@
   <string id="31926">Record Low</string>
   <string id="31927">Observed High</string>
   <string id="31928">Observed Low</string>
+  <string id="31929">Moon phase</string>
 
   <string id="31930">Default View</string>
   <string id="31931">Default Map</string>
