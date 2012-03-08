@@ -20,7 +20,6 @@
         <animation effect="fade" start="100" end="50" time="800">Hidden</animation>
         <visible>!Window.IsActive(musicinformation)</visible>
       </control>
-      <include>CommonCurtainBackdrop</include>
       <include>VideoBackground</include>
     </control>
     <control type="image" id="199">
@@ -67,7 +66,7 @@
       <onright>60</onright>
       <ondown>Control.Move(506,1)</ondown>
       <onback>50</onback>
-      <onclick>PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
+      <onclick>PlayMedia($ESCINFO[ListItem.FileNameAndPath])</onclick>
       <visible>Control.IsVisible(506)</visible>
     </control>
     <control type="button" id="7000">
@@ -79,12 +78,12 @@
       <onright condition="Control.IsVisible(509)">Control.Move(509,1)</onright>
       <onright condition="Control.IsVisible(513)">Control.Move(513,1)</onright>
       <ondown>50</ondown>
-      <onclick>PlayMedia($INFO[ListItem.FileNameAndPath])</onclick>
+      <onclick>PlayMedia($ESCINFO[ListItem.FileNameAndPath])</onclick>
     </control>
       <include>MusicMediaFlags</include>
     <include>FloorLabels</include>
     <include>Furniture_DarkGradient</include>
-    <include>ScrollOffsetLabel</include>
+    <include condition="Skin.HasSetting(ScrollLabel)">ScrollOffsetLabel</include>
 
     <control type="group">
       <description>Breadcrumbs</description>
@@ -92,7 +91,6 @@
       <include>Animation_HideBreadCrumbs</include>
       <include>Breadcrumbs_BackBar</include>
       <control type="group">
-        <visible>!Player.HasMedia|!IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))</visible>
         <control type="grouplist">
           <posx>15</posx>
           <posy>0</posy>
@@ -123,7 +121,9 @@
       <include>Breadcrumbs_Furniture</include>
     </control>
 
-    <include>Furniture_NowPlayingWidget</include>
+    <include condition="!Skin.HasSetting(GlobalNowPlaying)|Skin.HasSetting(GlobalRSS)">Furniture_NowPlayingWidget</include>
+
+
     <include condition="Skin.HasSetting(globaltime)">Furniture_Clock</include>
     <include condition="!Skin.HasSetting(kioskmode)">Media_Menu</include>
   </controls>

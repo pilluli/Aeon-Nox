@@ -270,7 +270,7 @@
 						<onclick>-</onclick>
 					</item>
 					<item id="2">
-						<label>31414</label>
+						<label>513</label>
 						<label2>31112</label2>
 						<onclick>-</onclick>
 					</item>
@@ -366,7 +366,21 @@
 						<onclick>Skin.Reset(breadcrumb)</onclick>
 						<selected>Skin.HasSetting(globaltime)</selected>
 					</control>
-					<control type="radiobutton" id="290">
+          <control type="radiobutton" id="230">
+            <label>$LOCALIZE[24022] $LOCALIZE[20304]</label>
+            <include>Default_SettingRadioButton</include>
+            <onclick>Skin.ToggleSetting(GlobalRSS)</onclick>
+            <onclick>Skin.SetBool(GlobalNowPlaying)</onclick>
+            <selected>Skin.HasSetting(GlobalRSS)</selected>
+          </control>
+          <control type="radiobutton" id="231">
+            <label>$LOCALIZE[24022] '$LOCALIZE[31040]' [LOWERCASE]$LOCALIZE[31295][/LOWERCASE]</label>
+            <include>Default_SettingRadioButton</include>
+            <onclick>Skin.ToggleSetting(GlobalNowPlaying)</onclick>
+            <onclick>Skin.Reset(GlobalRSS)</onclick>
+            <selected>!Skin.HasSetting(GlobalNowPlaying)</selected>
+          </control>
+          <control type="radiobutton" id="290">
 						<label>31265</label>
 						<include>Default_SettingRadioButton</include>
 						<onclick>Skin.ToggleSetting(smallerdialogs)</onclick>
@@ -608,6 +622,12 @@
             <include>Default_SettingRadioButton</include>
             <onclick>Skin.ToggleSetting(TVShowsUseBanners)</onclick>
             <selected>Skin.HasSetting(TVShowsUseBanners)</selected>
+          </control>
+          <control type="radiobutton" id="264">
+            <label>31673</label>
+            <include>Default_SettingRadioButton</include>
+            <onclick>Skin.ToggleSetting(ScrollLabel)</onclick>
+            <selected>Skin.HasSetting(ScrollLabel)</selected>
           </control>
           <control type="radiobutton" id="265">
 						<label>31184</label>
@@ -1459,7 +1479,6 @@
       <include>Animation_HideBreadCrumbs</include>
       <include>Breadcrumbs_BackBar</include>
       <control type="group">
-        <visible>!Player.HasMedia|!IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))</visible>
         <control type="grouplist">
           <posx>15</posx>
           <posy>0</posy>
@@ -1489,7 +1508,9 @@
       <include>Breadcrumbs_Furniture</include>
     </control>
 
-    <include>Furniture_NowPlayingWidget</include>
+    <include condition="!Skin.HasSetting(GlobalNowPlaying)|Skin.HasSetting(GlobalRSS)">Furniture_NowPlayingWidget</include>
+
+
 		<include condition="Skin.HasSetting(globaltime)">Furniture_Clock</include>
 	</controls>
 </window>
