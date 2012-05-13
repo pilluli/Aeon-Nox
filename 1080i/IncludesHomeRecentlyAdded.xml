@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="HomeSystemWidget">
         <control type="group">
@@ -821,8 +821,9 @@
                     <onright condition="SubString(Control.GetLabel(4321),random) + IsEmpty(Container(8000).ListItem.Property(Trailer))">XBMC.RunScript(script.randomitems,limit=8&amp;unplayed=True)</onright>
                     <onright condition="!IsEmpty(Container(8000).ListItem.Property(Trailer))">PlayMedia($ESCINFO[Container(8000).ListItem.Property(Trailer)])</onright>
                     <onup>8000</onup>
-                    <ondown>8000</ondown>
-                    <onback>8993</onback>
+		    <ondown condition="Container(9000).HasFocus(2)">8005</ondown>
+		    <ondown condition="![Container(9000).HasFocus(2)]">8000</ondown>
+		    <onback>8993</onback>
                     <viewtype label="535">list</viewtype>
                     <preloaditems>2</preloaditems>
                     <pagecontrol>-</pagecontrol>
