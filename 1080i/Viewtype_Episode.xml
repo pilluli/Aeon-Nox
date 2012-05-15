@@ -274,7 +274,7 @@
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
 		    <control type="image">
-		      <posx>1157</posx>
+		      <posx>1158</posx>
 		      <posy>20</posy>
 		      <width>80</width>
 		      <height>80</height>
