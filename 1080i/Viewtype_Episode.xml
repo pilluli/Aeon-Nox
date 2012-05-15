@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="Viewtype_Episode">
         <control type="group">
@@ -273,6 +273,22 @@
                         <visible>Container.Content(episodes)</visible>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
+		    <control type="image">
+		      <posx>1158</posx>
+		      <posy>20</posy>
+		      <width>80</width>
+		      <height>80</height>
+		      <texture background="true">thumbs/OverlayWatched.png</texture>
+		      <visible>SubString(ListItem.Overlay,OverlayWatched.png)</visible>
+		    </control>
+		    <control type="image">
+		      <posx>860</posx>
+		      <posy>20</posy>
+		      <width>80</width>
+		      <height>80</height>
+		      <texture background="true">thumbs/OverlayUnavailable.png</texture>
+		      <visible>ListItem.Property(unavailable)</visible>
+		    </control>
                     <control type="image">
                         <posx>1287</posx>
                         <posy>106</posy>
