@@ -334,11 +334,21 @@
                 <posy>0</posy>
                 <width>395</width>
                 <height>900</height>
-                <onleft>50</onleft>
                 <onright>50</onright>
                 <onup>9000</onup>
                 <ondown>9000</ondown>
                 <itemgap>0</itemgap>
+                <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119) | Window.IsActive(1126)">
+                    <effect type="fade" start="100" end="0" time="500" reversible="true" />
+                </animation>
+                <animation type="Conditional" condition="Window.IsActive(1126)">
+                    <effect type="zoom" end="150,100" time="400" easing="in" tween="cubic" />
+                </animation>
+                <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119)">
+                    <effect type="zoom" end="66,100" time="400" easing="in" tween="cubic" />
+                    <effect type="slide" end="-49" time="400" easing="in" tween="cubic" />
+                </animation>
+                <include>Animation_VisibleChange200</include>
                 <control type="button" id="320">
                     <description>TV Channels</description>
                     <posx>0</posx>
@@ -357,7 +367,6 @@
                     <label>19024</label>
                     <onclick>SetFocus(33)</onclick>
                     <onclick>SetFocus(12)</onclick>
-                    <onleft>12</onleft>
                     <onright>12</onright>
                 </control>
                 <control type="radiobutton" id="322">

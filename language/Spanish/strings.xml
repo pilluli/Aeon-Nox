@@ -4,7 +4,7 @@
     <string id="31001">Me Gusta</string>
     <string id="31002">No me gusta</string>
     <string id="31004">Cargando...</string>
-    <string id="31021">Buscar XBMC para</string>
+    <string id="31021">Buscar en XBMC para</string>
     <string id="31022">Música - Archivos</string>
     <string id="31024">Página</string>
     <string id="31025">Elementos</string>
@@ -23,16 +23,14 @@
     <string id="31316">Artwork</string>
     <string id="31321">Selector de Canciones Karaoke</string>
     <string id="31322">Emitido</string>
-    <string id="31323">Ultimas Peliculas</string>
-    <string id="31324">Ultimos Episodios</string>
+    <string id="31323">Ultimas peliculas</string>
+    <string id="31324">Ultimos episodios</string>
     <string id="31325">Opciones de Reproducción</string>
-    <string id="31326">Albumes Mas Oidos</string>
-    <string id="31328">Ultimo Añadido</string>
-    <string id="31331">Ultima Pelicula</string>
-    <string id="31332">Ultimo Episodio</string>
+    <string id="31326">Albumes mas oidos</string>
+    <string id="31328">Ultimo añadido</string>
     <string id="31333">Reciente</string>
     <string id="31334">Nuevo</string>
-    <string id="31335">En Progreso</string>
+    <string id="31335">En progreso</string>
     <string id="31336">Noticias Actores</string>
     <string id="312576">Estrenado</string>
     <string id="312577">Info no disponible</string>
@@ -46,15 +44,10 @@
     <string id="31162">Trailers</string>
     <string id="31163">Destacados</string>
     <string id="31164">Ordenar</string>
-    <string id="31217">Ultima cancion</string>
     <string id="31218">Ultimas canciones</string>
-    <string id="31219">Episodio destacado</string>
     <string id="31220">Episodios destacados</string>
-    <string id="31221">Pelicula destacada</string>
     <string id="31222">Peliculas destacadas</string>
-    <string id="31358">Ultimo album</string>
     <string id="31359">Ultimos albumes</string>
-    <string id="31475">ALBUMES MAS OIDOS</string>
     <string id="31027">Restablecer item</string>
     <string id="31030">PANTALLA CLIMA</string>
     <string id="31031">NAVEGADOR</string>
@@ -84,14 +77,11 @@
     <string id="31071">Clima por defecto</string>
     <string id="31072">Sistema info</string>
     <string id="31073">Información de actor</string>
-    <string id="31074">Filmografía</string>
-    <string id="31075">Cancion descatada</string>
-    <string id="31076">Album destacado</string>
-    <string id="31077">Add-on destacado</string>
+	<string id="31074">Filmografía</string>
     <string id="31078">Trailer</string>
     <string id="31079">Refrescar</string>
     <string id="31080">Información del director</string>
-    <string id="31081">Ultimos Videoclips</string>
+    <string id="31081">Ultimos videoclips</string>
     <string id="31082">Ampliado</string>
     <string id="31083">Etiquetas</string>
     <string id="31084">Paneles</string>
@@ -133,22 +123,22 @@
     <string id="31356">Descargar Subtítulos</string>
     <string id="31043">PAUSADO</string>
     <string id="31143">Animar fanart en visualización de Música</string>
-    <string id="31144">Fanart de música</string>
+    <string id="31144">Fanart de artista</string>
     <string id="31148">Mostrar panel de hora</string>
-    <string id="31142">Mostrar fanart de Album en visualización</string>
+    <string id="31142">Mostrar fanart a nivel de Album en visualización</string>
     <string id="31227">Disco de Vinilo</string>
     <string id="31255">Disco Blu-ray</string>
-    <string id="31244">Activar Widget CDArt al 'Reproducir'</string>
+    <string id="31244">Activar widget CDArt al 'Reproducir'</string>
     <string id="31456">- Ruta al Directorio de Carátulas de CD</string>
     <string id="31267">Activar CDArt en visualización de Música</string>
     <string id="31276">Usar Panel de información al reproducir</string>
-    <string id="31281">Mostrar Información de video al pausar</string>
+    <string id="31281">Mostrar información de video al pausar</string>
     <string id="31371">Activar fanart add-on 'Artist Slideshow'</string>
     <string id="31425">Activar folder.jpg para portada de álbum</string>
-    <string id="31039">CD-Wall</string>
+    <string id="31039">Muro de CDs</string>
     <string id="31041">Videofanart Slideshow</string>
     <string id="31042">Músicafanart SlideShow</string>
-    <string id="31632">Activar widget de Información ampliada</string>
+    <string id="31632">Activar widget de información ampliada</string>
     <string id="31635">Artistas similares</string>
     <string id="31636">Rotativo</string>
   
@@ -231,11 +221,11 @@
     <string id="31257">Detalles</string>
     <string id="31258">Info General</string>
     <string id="31265">Ventanas Pop-up reducidas</string>
-    <string id="31269">Activar Humo en Fondo [I](Puede aumentar el uso de CPU!)   [/I]</string>
+    <string id="31269">Activar Humo en fondo [I](Puede aumentar el uso de CPU!)   [/I]</string>
     <string id="31272">Diseño</string>
     <string id="31277">Navegación: [B]Wrap List[/B]</string>
     <string id="31278">Navegación: [B]Fixed List[/B]</string>
-    <string id="31279">Reproducir Trailers a Pantalla Completa</string>
+    <string id="31279">Reproducir Trailers a pantalla completa</string>
     <string id="31282">Cajas Transparentes</string>
     <string id="31285">Episodio No.</string>
     <string id="31287">4 Miniaturas</string>
@@ -308,9 +298,9 @@
     <string id="31243">Guía TV</string>
 
     <!--Skin Settings-->
-    <string id="31600">Personalizar ventana principal (fondos,widgets)</string>
-    <string id="31602">Establecer estilo del menú</string>
-    <string id="31610">Establecer color para ventana 'Inicio'</string>
+    <string id="31600">Personalizar elementos del menú principal (fondos, widgets)</string>
+    <string id="31602">Establecer estilo del menú principal</string>
+    <string id="31610">Establecer color del menú principal</string>
     <string id="31611">Video a pantalla completa</string>
     <string id="31613">Habilitar la posición de enfoque personalizado del menú</string>
     <string id="31615">Audio visualización</string>
@@ -318,14 +308,14 @@
     <string id="31617">Alto</string>
     <string id="31618">Activar información de video a pantalla completa</string>
     <string id="31619">Opciones de video a pantalla completa</string>
-    <string id="31621">Usar Pausa grande para OSD de películas</string>
+    <string id="31621">Usar pausa grande para OSD de películas</string>
     <string id="31634">Menú principal</string>
     <string id="31638">Mostrar información 'Next Aired' en biblioteca</string>
     <string id="31639">Ocultar imagen en pantalla de información</string>
     <string id="31640">Mostrar tiempo restante en pantalla de información.</string>
     <string id="31641">Girar la cubierta del CD para add-on 'Artist Slideshow'</string>
     <string id="31642">'PDA Weather'</string>
-    <string id="31643">Personalizar la posición de elementos de inicio</string>
+    <string id="31643">Personalizar la posición de los objetos de la ventana inicial</string>
     <string id="31646">¿Quieres descargar todos los artwork [CR]disponibles sin la intervención del usuario?</string>
     <string id="31672">Incluir elementos vistos en widgets de lista personalizada</string>
     <string id="31674">Cambiar diseño del panel</string>
@@ -357,7 +347,7 @@
     <string id="31696">Diseño alternativo</string>
     <string id="31697">Desactivar marcas de navegación</string>
     <string id="31698">Mostrar lista actores/cumpleaños artistas</string>
-    <string id="31699">Menú inicio más pequeño</string>
+    <string id="31699">Menú principal más pequeño</string>
     <string id="31700">Panel</string>
 	<string id="31701">Ajustar visualización de música</string>
 	<string id="31702">Ajustar OSD de video</string>
@@ -383,7 +373,7 @@
     <string id="52019">Agregar Grupo</string>
     <string id="52020">Renombrar Grupo</string>
     <string id="52021">Borrar Grupo</string>
-    <string id="52022">Cronómetro</string>
+    <string id="52022">Temporizador</string>
 
     <!-- Weather plugin -->
     <string id="31900">Mapas</string>
@@ -435,7 +425,7 @@
     <string id="42015">Reproduce algun tema para obtener una vista previa de los ajustes</string>
     <string id="42016">"Info Adicional de Artista" necesario activar en Artistslideshow Plugin</string>
     <string id="42017">Bienvenido a Aeon Nox 3.0</string>
-    <string id="42018">Visita XBMC.org Forums para obtener soporte</string>
+    <string id="42018">Visita el foro en XBMC.org para obtener soporte</string>
 
   
     <string id="42100">Establecer color para ventana 'Destacados'</string>

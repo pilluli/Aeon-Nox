@@ -146,6 +146,16 @@
                 <description>First Panel</description>
                 <include>Media_Menu_Furniture</include>
                 <control type="grouplist" id="9003">
+                <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119) | Window.IsActive(1126)">
+                    <effect type="fade" start="100" end="0" time="500" reversible="true" />
+                </animation>
+                <animation type="Conditional" condition="Window.IsActive(1126)">
+                    <effect type="zoom" end="150,100" time="400" easing="in" tween="cubic" />
+                </animation>
+                <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119)">
+                    <effect type="zoom" end="66,100" time="400" easing="in" tween="cubic" />
+                    <effect type="slide" end="-49" time="400" easing="in" tween="cubic" />
+                </animation>
                     <posx>0</posx>
                     <posy>0</posy>
                     <width>450</width>
@@ -159,6 +169,33 @@
                     <ondown>9003</ondown>
                     <onback>7510</onback>
                     <include>Animation_MediaMenuSlide2</include>
+                    <control type="radiobutton" id="99999">
+                        <description>Sort by button</description>
+                        <enable>false</enable>
+                        <radiowidth>30</radiowidth>
+                        <radioheight>30</radioheight>
+                        <radioposx>18</radioposx>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <label>[UPPERCASE]$LOCALIZE[31633][/UPPERCASE]</label>
+                        <textureradiofocus>common/arrowleft.png</textureradiofocus>
+                        <textureradionofocus>common/arrowleft.png</textureradionofocus> 
+                        <description>Trailer button</description>
+                        <height>60</height>
+                        <width>420</width>
+                        <texturenofocus>settings/listselect_nf.png</texturenofocus>
+                        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
+                        <alttexturenofocus>settings/listselect_nf.png</alttexturenofocus>
+                        <alttexturefocus>views/tripanel/listselect_fo.png</alttexturefocus>
+                        <textcolor>77ffffff</textcolor>
+                        <focusedcolor>white6</focusedcolor>
+                        <disabledcolor>$VAR[TitleColorVar]</disabledcolor>
+                        <textoffsetx>70</textoffsetx>
+                        <textoffsety>2</textoffsety>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Condensed22_Caps</font>
+                        <include>Animation_CommonFade</include>          
+                    </control>
                     <control type="button" id="1600">
                         <description>General options label</description>
                         <textcolor>$VAR[SelectedColorVar]</textcolor>

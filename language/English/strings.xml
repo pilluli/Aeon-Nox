@@ -28,8 +28,6 @@
     <string id="31325">Playlist Options</string>
     <string id="31326">Most Played Albums</string>
     <string id="31328">Recently Added</string>
-    <string id="31331">Latest Movie</string>
-    <string id="31332">Latest Episode</string>
     <string id="31333">Recent</string>
     <string id="31334">Latest</string>
     <string id="31335">In Progress</string>
@@ -46,15 +44,10 @@
     <string id="31162">Trailers</string>
     <string id="31163">Featured</string>
     <string id="31164">Sort</string>
-    <string id="31217">Latest song</string>
     <string id="31218">Latest songs</string>
-    <string id="31219">Featured episode</string>
     <string id="31220">Featured episodes</string>
-    <string id="31221">Featured movie</string>
     <string id="31222">Featured movies</string>
-    <string id="31358">Latest album</string>
     <string id="31359">Latest albums</string>
-    <string id="31475">Most Played Albums</string>
     <string id="31027">Reset item</string>
     <string id="31030">WEATHER SCREEN</string>
     <string id="31031">NAVIGATE</string>
@@ -85,9 +78,6 @@
     <string id="31072">System info</string>
     <string id="31073">Actor information</string>
     <string id="31074">Filmography</string>
-    <string id="31075">Featured song</string>
-    <string id="31076">Featured album</string>
-    <string id="31077">Featured add-on</string>
     <string id="31078">Trailer</string>
     <string id="31079">Refresh</string>
     <string id="31080">Director information</string>

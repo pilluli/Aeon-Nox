@@ -67,7 +67,6 @@
         <value condition="Stringcompare(System.Time(mm),59)">FF99E0CC</value>
     </variable>
     <variable name="AreaColorVar">
-        <value condition="Window.IsActive(infodialog) + Skin.HasSetting(colorinfo)">FFFF0000</value>
         <value condition="[Window.IsActive(1128) | Window.IsActive(1138)] + !IsEmpty(Skin.String(diffuse_color))">$INFO[Skin.String(diffuse_color)]</value>
         <value condition="[Window.IsActive(fullscreeninfo) | Window.IsActive(fullscreenvideo) | Window.IsActive(videoosd) | Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)| Window.IsActive(videobookmarks)] + !IsEmpty(Skin.String(diffuse_videolibrary))">$INFO[Skin.String(diffuse_videolibrary)]</value>
         <value condition="[Window.IsActive(musiclibrary) | Window.IsActive(musicosd) | Window.IsActive(musicfiles) | Window.IsActive(visualisation)] + !IsEmpty(Skin.String(diffuse_music))">$INFO[Skin.String(diffuse_music)]</value>
@@ -400,7 +399,7 @@
         <value condition="Container.Content(tvshows) + Skin.HasSetting(tvthumbsinfopane)">views/four_thumbs_layout.png</value>
         <value condition="Container.Content(tvshows) | Container.Content(episodes) | Container.Content(seasons)">views/fanart_layout.png</value>
         <value condition="[Skin.HasSetting(fourthumbs) + Control.IsVisible(501)] | [Skin.HasSetting(fourthumbs503) + Control.IsVisible(503)] | [Skin.HasSetting(fourthumbs504) + Control.IsVisible(504)]">views/four_thumbs_layout.png</value>
-        <value condition="[Skin.HasSetting(fanartinfopane) + Control.IsVisible(501)] | [Skin.HasSetting(fanartinfopane503) + Control.IsVisible(503)] | [Skin.HasSetting(fanartinfopane504) + Control.IsVisible(504)]">views/fanart_layout.png</value>
+        <value condition="Container.Content(musicvideos) | [Skin.HasSetting(fanartinfopane) + Control.IsVisible(501)] | [Skin.HasSetting(fanartinfopane503) + Control.IsVisible(503)] | [Skin.HasSetting(fanartinfopane504) + Control.IsVisible(504)]">views/fanart_layout.png</value>
         <value>views/poster_layout.png</value>
     </variable>
     <variable name="FanartPanelDetail1Var">
@@ -654,17 +653,17 @@
         <value>$INFO[ListItem.Plot]</value>
     </variable>
     <variable name="WidgetTypeLabelVar">
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),recentmovies)">$LOCALIZE[31331]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),randommovies)">$LOCALIZE[31221]</value>
+        <value condition="SubString(Container(9000).ListItem.Property(Widget),recentmovies)">$LOCALIZE[31323]</value>
+        <value condition="SubString(Container(9000).ListItem.Property(Widget),randommovies)">$LOCALIZE[31222]</value>
         <value condition="SubString(Container(9000).ListItem.Property(Widget),inprogressmovies)">$LOCALIZE[31335]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),recenttv)">$LOCALIZE[31332]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),randomtv)">$LOCALIZE[31219]</value>
+        <value condition="SubString(Container(9000).ListItem.Property(Widget),recenttv)">$LOCALIZE[31324]</value>
+        <value condition="SubString(Container(9000).ListItem.Property(Widget),randomtv)">$LOCALIZE[31220]</value>
         <value condition="SubString(Container(9000).ListItem.Property(Widget),watchlisttv)">$LOCALIZE[31464]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),recentsongs)">$LOCALIZE[31217]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),randomsongs)">$LOCALIZE[31075]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),recentalbums)">$LOCALIZE[31358]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),randomalbums)">$LOCALIZE[31076]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),randomaddons)">$LOCALIZE[31077]</value>
+        <value condition="SubString(Container(9000).ListItem.Property(Widget),recentsongs)">$LOCALIZE[31218]</value>
+        <value condition="SubString(Container(9000).ListItem.Property(Widget),randomsongs)">$LOCALIZE[31067]</value>
+        <value condition="SubString(Container(9000).ListItem.Property(Widget),recentalbums)">$LOCALIZE[31359]</value>
+        <value condition="SubString(Container(9000).ListItem.Property(Widget),randomalbums)">$LOCALIZE[31068]</value>
+        <value condition="SubString(Container(9000).ListItem.Property(Widget),randomaddons)">$LOCALIZE[31070]</value>
         <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),system)">$LOCALIZE[138]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),recentmusicvideo)">$LOCALIZE[31081]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),randommusicvideo)">$LOCALIZE[31091]</value>
@@ -672,17 +671,17 @@
         <value condition="Substring(Container(9000).ListItem.Property(Widget),watchlistmusic)">$LOCALIZE[31326]</value>
     </variable>
     <variable name="WidgetTypeLabelVar1124">
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),recentmovies)">$LOCALIZE[31331]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),randommovies)">$LOCALIZE[31221]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.Widget),recentmovies)">$LOCALIZE[31323]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.Widget),randommovies)">$LOCALIZE[31222]</value>
         <value condition="SubString(Skin.String(ItemToEdit.Widget),inprogressmovies)">$LOCALIZE[31335]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),recenttv)">$LOCALIZE[31332]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),randomtv)">$LOCALIZE[31219]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.Widget),recenttv)">$LOCALIZE[31324]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.Widget),randomtv)">$LOCALIZE[31220]</value>
         <value condition="SubString(Skin.String(ItemToEdit.Widget),watchlisttv)">$LOCALIZE[31464]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),recentsongs)">$LOCALIZE[31217]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),randomsongs)">$LOCALIZE[31075]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),recentalbums)">$LOCALIZE[31358]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),randomalbums)">$LOCALIZE[31076]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),randomaddons)">$LOCALIZE[31077]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.Widget),recentsongs)">$LOCALIZE[31218]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.Widget),randomsongs)">$LOCALIZE[31067]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.Widget),recentalbums)">$LOCALIZE[31359]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.Widget),randomalbums)">$LOCALIZE[31068]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.Widget),randomaddons)">$LOCALIZE[31070]</value>
         <value condition="Stringcompare(Skin.String(ItemToEdit.Widget),system)">$LOCALIZE[138]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),recentmusicvideo)">$LOCALIZE[31081]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),randommusicvideo)">$LOCALIZE[31091]</value>
@@ -697,40 +696,6 @@
     <variable name="RecentAddedWidgetLabel1Var">
         <value condition="[[Window.IsActive(1122) | Window.IsActive(1123)] + !SubString(Skin.String(ItemToEdit.Widget),panel)]">$VAR[WidgetTypeLabelVar1124]</value>
         <value condition="!SubString(Container(9000).ListItem.Property(Widget),panel)">$VAR[WidgetTypeLabelVar]</value>
-    </variable>
-    <variable name="RecentAddedWidgetLabel2Var">
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),recentmovies)">$LOCALIZE[31323]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),randommovies)">$LOCALIZE[31222]</value>
-        <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),inprogressmovies)">$LOCALIZE[31335]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),recenttv)">$LOCALIZE[31324]</value>
-        <value condition="SubString(Container(9000).ListItem.Property(Widget),randomtv)">$LOCALIZE[31220]</value>
-        <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),watchlisttv)">$LOCALIZE[31464]</value>
-        <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),recentsongs)">$LOCALIZE[31218]</value>
-        <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),randomsongs)">$LOCALIZE[31067]</value>
-        <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),recentalbums)">$LOCALIZE[31359]</value>
-        <value condition="substring(Container(9000).ListItem.Property(Widget),randomalbums)">$LOCALIZE[31068]</value>
-        <value condition="Stringcompare(Container(9000).ListItem.Property(Widget),randomaddons)">$LOCALIZE[31070]</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),recentmusicvideo)">$LOCALIZE[31081]</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),randommusicvideo)">$LOCALIZE[31091]</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),actor)">$LOCALIZE[31336]</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),watchlistmusic)">$LOCALIZE[31326]</value>
-    </variable>
-    <variable name="RecentAddedWidgetLabel2Var1124">
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),recentmovies)">$LOCALIZE[31323]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),randommovies)">$LOCALIZE[31222]</value>
-        <value condition="Stringcompare(Skin.String(ItemToEdit.Widget),inprogressmovies)">$LOCALIZE[31335]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),recenttv)">$LOCALIZE[31324]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.Widget),randomtv)">$LOCALIZE[31220]</value>
-        <value condition="Stringcompare(Skin.String(ItemToEdit.Widget),watchlisttv)">$LOCALIZE[31464]</value>
-        <value condition="Stringcompare(Skin.String(ItemToEdit.Widget),recentsongs)">$LOCALIZE[31218]</value>
-        <value condition="Stringcompare(Skin.String(ItemToEdit.Widget),randomsongs)">$LOCALIZE[31067]</value>
-        <value condition="Stringcompare(Skin.String(ItemToEdit.Widget),recentalbums)">$LOCALIZE[31359]</value>
-        <value condition="Stringcompare(Skin.String(ItemToEdit.Widget),randomalbums)">$LOCALIZE[31068]</value>
-        <value condition="Stringcompare(Skin.String(ItemToEdit.Widget),randomaddons)">$LOCALIZE[31070]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),recentmusicvideo)">$LOCALIZE[31081]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),randommusicvideo)">$LOCALIZE[31091]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),actor)">$LOCALIZE[31336]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),watchlistmusic)">$LOCALIZE[31326]</value>
     </variable>
     <variable name="FlagDiffuseVar">
         <value condition="Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | [Control.IsVisible(503) + !Skin.HasSetting(showcaseinfoontv) + Container.Content(tvshows) + Skin.HasSetting(landscapelogo)] | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]">FFe1e1e1</value>
@@ -1414,7 +1379,8 @@
         <value condition="[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(showcaseinfoontv) + !Skin.HasSetting(infopaneautotv)">$LOCALIZE[31429]</value>
         <value condition="Container.Content(episodes) + Skin.HasSetting(showcaseinfoonep) + Skin.HasSetting(infopaneautoep)">$LOCALIZE[31194]</value>
         <value condition="Container.Content(episodes) + Skin.HasSetting(showcaseinfoonep) + !Skin.HasSetting(infopaneautoep)">$LOCALIZE[31429]</value>
-        <value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]">$LOCALIZE[413]</value>
+        <value condition="[Container.Content(tvshows) + !Stringcompare(Skin.String(actualViewtype),banners)] | Container.Content(seasons) | Container.Content(episodes)">$LOCALIZE[413]</value>
+        <value condition="[Container.Content(tvshows) + Stringcompare(Skin.String(actualViewtype),banners)] ">$LOCALIZE[474]</value>
         <value condition="[Container.Content(movies) | Container.Content(musicvideos)] + Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto)">$LOCALIZE[31194]</value>
         <value condition="[Container.Content(movies) | Container.Content(musicvideos)] + Skin.HasSetting(showcaseinfoon) + !Skin.HasSetting(infopaneauto)">$LOCALIZE[31429]</value>
         <value condition="Window.IsActive(musiclibrary) + Skin.HasSetting(infopanelmusic) + Skin.HasSetting(infopaneautomusic)">$LOCALIZE[31194]</value>
@@ -1449,17 +1415,17 @@
     <variable name="CustomItemFanartLabelVar">
         <value condition="IsEmpty(Skin.String(ItemToEdit.MultiFanart))">$LOCALIZE[571]</value>
         <value condition="Stringcompare(Skin.String(ItemToEdit.MultiFanart),weather)">$LOCALIZE[31035]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),recentmovies)">$LOCALIZE[31331]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randommovies)">$LOCALIZE[31221]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),recentmovies)">$LOCALIZE[31323]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randommovies)">$LOCALIZE[31222]</value>
         <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),inprogressmovies)">$LOCALIZE[31335]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),recenttv)">$LOCALIZE[31332]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randomtv)">$LOCALIZE[31219]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),recenttv)">$LOCALIZE[31324]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randomtv)">$LOCALIZE[31220]</value>
         <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),watchlisttv)">$LOCALIZE[31464]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),recentsongs)">$LOCALIZE[31217]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randomsongs)">$LOCALIZE[31075]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),recentalbums)">$LOCALIZE[31358]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randomalbums)">$LOCALIZE[31076]</value>
-        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randomaddons)">$LOCALIZE[31077]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),recentsongs)">$LOCALIZE[31218]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randomsongs)">$LOCALIZE[31067]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),recentalbums)">$LOCALIZE[31359]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randomalbums)">$LOCALIZE[31068]</value>
+        <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randomaddons)">$LOCALIZE[31070]</value>
         <value condition="Stringcompare(Skin.String(ItemToEdit.MultiFanart),system)">$LOCALIZE[138]</value>
         <value condition="Substring(Skin.String(ItemToEdit.MultiFanart),recentmusicvideo)">$LOCALIZE[31081]</value>
         <value condition="Substring(Skin.String(ItemToEdit.MultiFanart),randommusicvideo)">$LOCALIZE[31091]</value>
