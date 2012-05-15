@@ -5348,185 +5348,147 @@
             </control>
         </control>
     </include>
+
+
+
+
   <!--BookMark Widget-->
   <include name="VideoBookmarks_widget_back">
     <control type="image">
       <posx>0</posx>
-      <posy>-5</posy>
-      <width>460</width>
-      <height>240</height>
-      <texture border="0,10,0,0">home/videobookmarks.png</texture>
+      <posy>0</posy>
+      <width>700</width>
+      <height>668</height>
+      <texture border="20,70,20,38">home/videoinprogress.png</texture>
       <visible>!IsEmpty(Window.Property(VideoBookmark.5.Type))+!IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
     </control>
     <control type="image">
       <posx>0</posx>
-      <posy>18</posy>
-      <width>460</width>
-      <height>217</height>
-      <texture border="0,20,0,10">home/videobookmarks.png</texture>
+      <posy>0</posy>
+      <width>700</width>
+      <height>556</height>
+      <texture border="20,70,20,38">home/videoinprogress.png</texture>
       <visible>IsEmpty(Window.Property(VideoBookmark.5.Type))+!IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
     </control>
     <control type="image">
       <posx>0</posx>
-      <posy>41</posy>
-      <width>460</width>
-      <height>194</height>
-      <texture border="0,28,0,14">home/videobookmarks.png</texture>
+      <posy>0</posy>
+      <width>700</width>
+      <height>444</height>
+      <texture border="20,70,20,38">home/videoinprogress.png</texture>
       <visible>IsEmpty(Window.Property(VideoBookmark.5.Type))+IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
     </control>
     <control type="image">
       <posx>0</posx>
-      <posy>64</posy>
-      <width>460</width>
-      <height>171</height>
-      <texture border="0,35,0,20">home/videobookmarks.png</texture>
+      <posy>0</posy>
+      <width>700</width>
+      <height>332</height>
+      <texture border="20,70,20,38">home/videoinprogress.png</texture>
       <visible>IsEmpty(Window.Property(VideoBookmark.5.Type))+IsEmpty(Window.Property(VideoBookmark.4.Type))+IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
     </control>
-    <control type="image">
+   <control type="image">
+      <description>background</description>
       <posx>0</posx>
-      <posy>87</posy>
-      <width>460</width>
-      <height>148</height>
-      <texture border="0,38,0,20">home/videobookmarks.png</texture>
+      <posy>0</posy>
+      <width>700</width>
+      <height>220</height>
+      <texture border="20,70,20,38">home/videoinprogress.png</texture>
       <visible>IsEmpty(Window.Property(VideoBookmark.5.Type))+IsEmpty(Window.Property(VideoBookmark.4.Type))+IsEmpty(Window.Property(VideoBookmark.3.Type))+IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
     </control>
   </include>
   <include name="VideoBookmarks_common_title">
     <control type="label">
       <description>Title label</description>
-      <posx>0</posx>
-      <posy>5</posy>
-      <width>460</width>
-      <height>40</height>
+      <posx>15</posx>
+      <posy>15</posy>
+      <width>700</width>
+      <height>60</height>
       <align>center</align>
       <aligny>center</aligny>
       <label>[UPPERCASE]$LOCALIZE[31335][/UPPERCASE]</label>
-      <font>Font_Reg19_Caps</font>
-      <textcolor>c0FFFFFF</textcolor>
-      <shadowcolor>black</shadowcolor>
-      <animation effect="slide" start="0,0" end="0,23" time="400" tween="cubic" easing="inout" condition="IsEmpty(Window.Property(VideoBookmark.4.Type))">Conditional</animation>
-      <animation effect="slide" start="0,0" end="0,23" time="400" tween="cubic" easing="inout" condition="IsEmpty(Window.Property(VideoBookmark.3.Type))">Conditional</animation>
-      <animation effect="slide" start="0,0" end="0,23" time="400" tween="cubic" easing="inout" condition="IsEmpty(Window.Property(VideoBookmark.2.Type))">Conditional</animation>
-      <animation effect="slide" start="0,0" end="0,23" time="400" tween="cubic" easing="inout" condition="IsEmpty(Window.Property(VideoBookmark.5.Type))">Conditional</animation>
+      <font>>Font_Condensed22_Caps</font>
+      <textcolor>white</textcolor>
+      <shadowcolor>-</shadowcolor>
+      <include>Animation_HomeWidget</include>
       <visible>!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
     </control>
   </include>
+
   <include name="VideoBookmarkWidget">
     <control type="group" id="8996">
-      <!-- <visible>Container(9000).HasFocus(2)</visible> -->
-      <visible>[Container(9000).Hasfocus(2) | Container(9000).Hasfocus(10) | Container(9000).Hasfocus(11)] + !Control.Hasfocus(8000) + !Control.Hasfocus(8001\
-) + !Control.Hasfocus(8011)</visible>
-      <animation effect="slide" start="-400" end="0" time="300" tween="quadratic" easing="out">VisibleChange</animation>
+      <visible>[Container(9000).Hasfocus(2) | Container(9000).Hasfocus(10) | Container(9000).Hasfocus(11)] + !Control.Hasfocus(8000) + !Control.Hasfocus(8001) + !Control.Hasfocus(8011) + !Player.HasAudio</visible>
+<animation type="Visible" reversible="true">
+                <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
+                <effect type="fade" start="0" end="100" time="300" />
+            </animation>
+            <animation type="Hidden" reversible="true">
+                <effect type="fade" start="100" end="0" time="300" />
+                <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
+            </animation>
+            <include>VisibleFadeEffect</include>
+      <animation effect="slide" start="0,0" end="-570,0" time="500" easing="inout" tween="cubic" condition="Control.HasFocus(8000)">Conditional</animation>
+
+      <animation effect="slide" start="0,0" end="0,-448" time="1" condition="!IsEmpty(Window.Property(VideoBookmark.5.Type))+!IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,-336" time="1" condition="IsEmpty(Window.Property(VideoBookmark.5.Type))+!IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,-224" time="1" condition="IsEmpty(Window.Property(VideoBookmark.5.Type))+IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,-112" time="1" condition="IsEmpty(Window.Property(VideoBookmark.5.Type))+IsEmpty(Window.Property(VideoBookmark.4.Type))+IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))">Conditional</animation>
+
+      <!--<animation effect="slide" start="-400" end="0" time="300" tween="quadratic" easing="out">VisibleChange</animation>-->
       <posx>15</posx>
-      <posy>425</posy>
+      <posy>548</posy>
       <include>VideoBookmarks_widget_back</include>
       <include>VideoBookmarks_common_title</include>
-      <animation effect="slide" start="0,0" end="0,-380" time="400" tween="cubic" easing="inout" condition="[[!Skin.HasSetting(homepageMusicinfo)+Player.HasAudio]|[!Skin.HasSetting(homepageVideoinfo)+Player.HasVideo+Skin.HasSetting(ShowBackgroundVideo)]]+!Skin.HasSetting(lowermainmenu)">Conditional</animation>
-      <animation effect="slide" start="0,0" end="0,-143" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-      <animation effect="slide" start="0,0" end="0,-285" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)+[[!Skin.HasSetting(homepageMusicinfo)+Player.HasAudio]]">Conditional</animation>
       <control type="list" id="8005">
-        <posx>0</posx>
-        <posy>40</posy>
-        <width>465</width>
-        <height>175</height>
+        <posx>20</posx>
+        <posy>70</posy>
+        <width>700</width>
+        <height>448</height>
         <onleft>9000</onleft>
         <onback>9000</onback>
         <onright condition="Control.isVisible(8997)">8003</onright>
         <onright condition="Control.IsVisible(8998)">8000</onright>
         <onright condition="!Control.IsVisible(8997) + !Control.IsVisible(8998)">9000</onright>
-
         <viewtype label="535">list</viewtype>
         <pagecontrol>-</pagecontrol>
         <scrolltime>200</scrolltime>
         <focusposition>0</focusposition>
-        <animation effect="slide" start="0,0" end="0,23" time="400" tween="cubic" easing="inout" condition="IsEmpty(Window.Property(VideoBookmark.4.Type))">Conditional</animation>
-        <animation effect="slide" start="0,0" end="0,23" time="400" tween="cubic" easing="inout" condition="IsEmpty(Window.Property(VideoBookmark.3.Type))">Conditional</animation>
-        <animation effect="slide" start="0,0" end="0,23" time="400" tween="cubic" easing="inout" condition="IsEmpty(Window.Property(VideoBookmark.2.Type))">Conditional</animation>
-        <animation effect="slide" start="0,0" end="0,23" time="400" tween="cubic" easing="inout" condition="IsEmpty(Window.Property(VideoBookmark.5.Type))">Conditional</animation>
-        <itemlayout height="23" width="365">
+        <itemlayout height="112" width="365">
           <control type="image">
-            <posx>-6</posx>
+            <posx>-18</posx>
             <posy>0</posy>
-            <width>472</width>
-            <height>23</height>
-            <texture>dialogs/context_nofocus.png</texture>
-            <include>VisibleFadeEffect</include>
-          </control>
-          <control type="label">
-            <posx>14</posx>
-            <posy>0</posy>
-            <width>438</width>
-            <height>23</height>
-            <font>Font_Info_Caps</font>
-            <textcolor>c0FFFFFF</textcolor>
-            <shadowcolor>black</shadowcolor>
-            <selectedcolor>selected</selectedcolor>
-            <align>left</align>
-            <aligny>center</aligny>
-            <label>[UPPERCASE]$INFO[ListItem.Label]$INFO[ListItem.Property(EpisodeNo), • ][/UPPERCASE]</label>
-            <visible>Stringcompare(ListItem.Property(Type),episode)</visible>
-          </control>
-          <control type="label">
-            <posx>14</posx>
-            <posy>0</posy>
-            <width>438</width>
-            <height>23</height>
-            <font>Font_Info_Caps</font>
-            <textcolor>c0FFFFFF</textcolor>
-            <shadowcolor>black</shadowcolor>
-            <selectedcolor>selected</selectedcolor>
-            <align>left</align>
-            <aligny>center</aligny>
-            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-            <visible>Stringcompare(ListItem.Property(Type),movie)</visible>
-          </control>
-        </itemlayout>
-        <focusedlayout height="80" width="365">
-          <control type="image">
-            <posx>-6</posx>
-            <posy>0</posy>
-            <width>472</width>
-            <height>80</height>
-            <texture>dialogs/context_nofocus.png</texture>
+            <width>694</width>
+            <height>112</height>
+            <texture border="20,0,20,0">dialogs/context_nofocus.png</texture>
             <include>VisibleFadeEffect</include>
             <visible>!Control.HasFocus(8005)</visible>
           </control>
           <control type="image">
-            <posx>-6</posx>
-            <posy>0</posy>
-            <width>472</width>
-            <height>80</height>
-            <texture>dialogs/context_highlight.png</texture>
-            <include>VisibleFadeEffect</include>
-            <visible>Control.HasFocus(8005)</visible>
-          </control>
-          <control type="image">
-            <posx>15</posx>
-            <posy>5</posy>
-            <width>130</width>
-            <height>70</height>
+            <posx>5</posx>
+            <posy>6</posy>
+            <width>180</width>
+            <height>100</height>
             <texture diffuse="thumbs/multiplex_tvmask.png" background="true">$INFO[ListItem.Property(Fanart)]</texture>
             <fadetime>200</fadetime>
             <aspectratio scalediffuse="false">scale</aspectratio>
           </control>
           <control type="label">
-            <posx>150</posx>
-            <posy>10</posy>
-            <width>295</width>
+            <posx>200</posx>
+            <posy>8</posy>
+            <width>530</width>
             <height>30</height>
             <align>left</align>
             <aligny>top</aligny>
             <font>Font_Info_Caps</font>
-            <textcolor>c0FFFFFF</textcolor>
+            <textcolor>white</textcolor>
             <shadowcolor>black</shadowcolor>
             <selectedcolor>selected</selectedcolor>
             <scroll>true</scroll>
             <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
           </control>
           <control type="label">
-            <posx>150</posx>
-            <posy>30</posy>
-            <width>295</width>
+            <posx>200</posx>
+            <posy>40</posy>
+            <width>530</width>
             <height>20</height>
             <align>left</align>
             <aligny>top</aligny>
@@ -5538,9 +5500,78 @@
             <label>$INFO[ListItem.Label2]</label>
           </control>
           <control type="label">
-            <posx>430</posx>
-            <posy>54</posy>
-            <width>300</width>
+            <posx>640</posx>
+            <posy>75</posy>
+            <width>600</width>
+            <height>20</height>
+            <align>right</align>
+            <aligny>top</aligny>
+            <font>Font_Reg14</font>
+            <textcolor>c0FFFFFF</textcolor>
+            <selectedcolor>selected</selectedcolor>
+            <label>$INFO[ListItem.Property(TimeRemaining)]</label>
+          </control>
+        </itemlayout>
+        <focusedlayout height="112" width="700">
+          <control type="image">
+            <posx>-18</posx>
+            <posy>0</posy>
+            <width>694</width>
+            <height>112</height>
+            <texture border="20,0,20,0">dialogs/context_nofocus.png</texture>
+            <include>VisibleFadeEffect</include>
+            <visible>!Control.HasFocus(8005)</visible>
+          </control>
+          <control type="image">
+            <posx>-19</posx>
+            <posy>0</posy>
+            <width>694</width>
+            <height>112</height>
+            <texture border="20,0,20,0">dialogs/context_highlight.png</texture>
+            <include>VisibleFadeEffect</include>
+            <visible>Control.HasFocus(8005)</visible>
+          </control>
+          <control type="image">
+            <posx>5</posx>
+            <posy>6</posy>
+            <width>180</width>
+            <height>100</height>
+            <texture diffuse="thumbs/multiplex_tvmask.png" background="true">$INFO[ListItem.Property(Fanart)]</texture>
+            <fadetime>200</fadetime>
+            <aspectratio scalediffuse="false">scale</aspectratio>
+          </control>
+          <control type="label">
+            <posx>200</posx>
+            <posy>8</posy>
+            <width>530</width>
+            <height>30</height>
+            <align>left</align>
+            <aligny>top</aligny>
+            <font>Font_Info_Caps</font>
+            <textcolor>white</textcolor>
+            <shadowcolor>black</shadowcolor>
+            <selectedcolor>selected</selectedcolor>
+            <scroll>true</scroll>
+            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+          </control>
+          <control type="label">
+            <posx>200</posx>
+            <posy>40</posy>
+            <width>530</width>
+            <height>20</height>
+            <align>left</align>
+            <aligny>top</aligny>
+            <font>Font_Reg15</font>
+            <textcolor>c0AAAAAA</textcolor>
+            <shadowcolor>FFAAAAA</shadowcolor>
+            <selectedcolor>selected</selectedcolor>
+            <scroll>true</scroll>
+            <label>$INFO[ListItem.Label2]</label>
+          </control>
+          <control type="label">
+            <posx>640</posx>
+            <posy>75</posy>
+            <width>600</width>
             <height>20</height>
             <align>right</align>
             <aligny>top</aligny>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="CustomSubsPrograms">
         <item id="90151">
@@ -1434,6 +1434,7 @@
         <onright>9000</onright>
         <onup condition="Substring(Container(9000).ListItem.Property(Widget),weather) +  Skin.HasSetting(lowermainmenu) ">ActivateWindow(weather)</onup>
         <onup condition="Substring(Container(9000).ListItem.Property(Widget),system) +  Skin.HasSetting(lowermainmenu) ">ActivateWindow(settings)</onup>
+        <onup condition="Control.isVisible(8996) + [!IsEmpty(Window.Property(VideoBookmark.5.Type)) | !IsEmpty(Window.Property(VideoBookmark.4.Type)) | !IsEmpty(Window.Property(VideoBookmark.3.Type)) | !IsEmpty(Window.Property(VideoBookmark.2.Type)) | !IsEmpty(Window.Property(VideoBookmark.1.Type))]">8005</onup>
         <onup condition="Control.IsVisible(5000)">5000</onup>
         <onup condition="Control.IsVisible(8998) +  Skin.HasSetting(lowermainmenu)">CancelAlarm(WidgetMove,true)</onup>
         <onup condition="Control.IsVisible(8998) +  Skin.HasSetting(lowermainmenu)">SetFocus(8000,0)</onup>
