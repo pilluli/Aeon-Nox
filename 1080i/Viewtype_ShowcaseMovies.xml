@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="contents501list">
         <visible>[!Container.Content(episodes) | SubString(Container.FolderPath,videodb://5/)] + !Container.Content(addons)</visible>
@@ -44,7 +44,11 @@
                     <include>WatchedOverlayShowCase</include>
                     <include>OverlayVisibility0</include>
                 </control>
-            </control>
+		<control type="image">
+		  <include>UnavailableOverlayShowCase</include>
+		  <visible>ListItem.Property(unavailable)</visible>
+		</control>
+	    </control>
         </focusedlayout>
     </include>
     <include name="scmfixed">
