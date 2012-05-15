@@ -41,7 +41,7 @@
         <height>90</height>
     </include>
     <include name="UnavailableOverlayShowCase">
-      <posx>72</posx>
+      <posx>18</posx>
       <posy>10</posy>
       <width>90</width>
       <height>90</height>
