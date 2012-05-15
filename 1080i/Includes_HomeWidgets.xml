@@ -5446,7 +5446,7 @@
 
   <include name="VideoBookmarkWidget">
     <control type="group" id="8996">
-      <visible>[Container(9000).Hasfocus(2) | Container(9000).Hasfocus(10) | Container(9000).Hasfocus(11)] + !Control.Hasfocus(8000) + !Control.Hasfocus(8001) + !Control.Hasfocus(8011) + !Player.HasAudio</visible>
+      <visible>[Container(9000).Hasfocus(2) | Container(9000).Hasfocus(10) | Container(9000).Hasfocus(11)] + !Control.Hasfocus(8000) + !Control.Hasfocus(8001) + !Control.Hasfocus(8011)</visible>
 <animation type="Visible" reversible="true">
                 <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
                 <effect type="fade" start="0" end="100" time="300" />
