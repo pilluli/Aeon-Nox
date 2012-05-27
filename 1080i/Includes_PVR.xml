@@ -1,5 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
+    <include name="QuickNavPVRItem">
+         <item>
+            <label>$LOCALIZE[52502]</label>
+            <icon>-</icon>
+            <thumb>common/tv_icon.png</thumb>
+            <onclick>Dialog.Close(1121)</onclick>
+            <onclick>ReplaceWindow(PVR)</onclick>
+        </item>
+    </include>
     <include name="LiveTVChannelView">
         <control type="group">
             <control type="list" id="11">
@@ -41,9 +50,9 @@
     </include>
     <include name="TVViewLayout">
         <include>VisibleFadeEffect</include>
-        <posx>970</posx>
+        <posx>940</posx>
         <posy>96</posy>
-        <width>894</width>
+        <width>924</width>
         <height>831</height>
         <preloaditems>2</preloaditems>
         <viewtype label="535">list</viewtype>
@@ -51,16 +60,28 @@
         <scrolltime>200</scrolltime>
         <onleft>9000</onleft>
         <onright>70</onright>
-        <itemlayout condition="!Skin.HasSetting(smalltvlist)" height="104" width="894">
+        <itemlayout condition="!Skin.HasSetting(Nox.smalltvlist)" height="104" width="924">
             <control type="image">
                 <posx>0</posx>
                 <posy>44</posy>
                 <height>60</height>
-                <width>894</width>
+                <width>924</width>
                 <texture>osd/osd_settings_buttonnf.png</texture>
             </control>
             <control type="label">
-                <posx>140</posx>
+                <posx>55</posx>
+                <posy>25</posy>
+                <width>60</width>
+                <height>45</height>
+                <font>Font_Bold20_Caps</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <selectedcolor>blue</selectedcolor>
+                <info>ListItem.ChannelNumber</info>
+            </control>
+            <control type="label">
+                <posx>170</posx>
                 <posy>1</posy>
                 <width>720</width>
                 <height>40</height>
@@ -70,7 +91,7 @@
                 <label>[B]$INFO[ListItem.Label][/B]</label>
             </control>
             <control type="label">
-                <posx>140</posx>
+                <posx>170</posx>
                 <posy>42</posy>
                 <width>720</width>
                 <height>22</height>
@@ -80,7 +101,7 @@
                 <label>$INFO[ListItem.Title]</label>
             </control>
             <control type="label">
-                <posx>140</posx>
+                <posx>170</posx>
                 <posy>64</posy>
                 <width>120</width>
                 <height>40</height>
@@ -92,7 +113,7 @@
             </control>
             <control type="progress">
                 <description>Progressbar</description>
-                <posx>260</posx>
+                <posx>290</posx>
                 <posy>80</posy>
                 <width>450</width>
                 <height>12</height>
@@ -105,7 +126,7 @@
                 <info>ListItem.Progress</info>
             </control>
             <control type="label">
-                <posx>720</posx>
+                <posx>750</posx>
                 <posy>64</posy>
                 <width>120</width>
                 <height>40</height>
@@ -116,7 +137,7 @@
                 <visible>ListItem.HasEpg</visible>
             </control>
             <control type="image">
-                <posx>22</posx>
+                <posx>58</posx>
                 <posy>0</posy>
                 <width>104</width>
                 <height>104</height>
@@ -125,7 +146,7 @@
                 <aspectratio>keep</aspectratio>
             </control>
             <control type="image">
-                <posx>750</posx>
+                <posx>830</posx>
                 <posy>39</posy>
                 <width>45</width>
                 <height>30</height>
@@ -133,24 +154,38 @@
                 <visible>ListItem.IsRecording</visible>
             </control>
         </itemlayout>
-        <focusedlayout condition="!Skin.HasSetting(smalltvlist)" height="104" width="894">
+        <focusedlayout condition="!Skin.HasSetting(Nox.smalltvlist)" height="104" width="924">
             <control type="image">
                 <posx>0</posx>
                 <posy>44</posy>
                 <height>60</height>
-                <width>894</width>
+                <width>924</width>
                 <texture>osd/osd_settings_buttonnf.png</texture>
             </control>
             <control type="image">
                 <posx>0</posx>
                 <posy>0</posy>
-                <width>893</width>
+                <width>923</width>
                 <height>103</height>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <texture>views/tripanel/listselect_fo.png</texture>
+                <animation effect="fade" start="100" end="50" time="50" condition="Control.IsVisible(10) + !Control.HasFocus(10)">Conditional</animation>
+                <animation effect="fade" start="100" end="50" time="50" condition="Control.IsVisible(11) + !Control.HasFocus(11)">Conditional</animation>
             </control>
             <control type="label">
-                <posx>140</posx>
+                <posx>55</posx>
+                <posy>25</posy>
+                <width>60</width>
+                <height>45</height>
+                <font>Font_Bold20_Caps</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <selectedcolor>blue</selectedcolor>
+                <info>ListItem.ChannelNumber</info>
+            </control>
+            <control type="label">
+                <posx>170</posx>
                 <posy>1</posy>
                 <width>720</width>
                 <height>40</height>
@@ -160,7 +195,7 @@
                 <label>[B]$INFO[ListItem.Label][/B]</label>
             </control>
             <control type="label">
-                <posx>140</posx>
+                <posx>170</posx>
                 <posy>42</posy>
                 <width>720</width>
                 <height>22</height>
@@ -170,7 +205,7 @@
                 <label>$INFO[ListItem.Title]</label>
             </control>
             <control type="label">
-                <posx>140</posx>
+                <posx>170</posx>
                 <posy>64</posy>
                 <width>120</width>
                 <height>40</height>
@@ -182,7 +217,7 @@
             </control>
             <control type="progress">
                 <description>Progressbar</description>
-                <posx>260</posx>
+                <posx>290</posx>
                 <posy>80</posy>
                 <width>450</width>
                 <height>12</height>
@@ -195,7 +230,7 @@
                 <info>ListItem.Progress</info>
             </control>
             <control type="label">
-                <posx>720</posx>
+                <posx>750</posx>
                 <posy>64</posy>
                 <width>120</width>
                 <height>40</height>
@@ -206,7 +241,7 @@
                 <visible>ListItem.HasEpg</visible>
             </control>
             <control type="image">
-                <posx>22</posx>
+                <posx>58</posx>
                 <posy>0</posy>
                 <width>104</width>
                 <height>104</height>
@@ -215,7 +250,7 @@
                 <aspectratio>keep</aspectratio>
             </control>
             <control type="image">
-                <posx>750</posx>
+                <posx>830</posx>
                 <posy>39</posy>
                 <width>45</width>
                 <height>30</height>
@@ -223,16 +258,28 @@
                 <visible>ListItem.IsRecording</visible>
             </control>
         </focusedlayout>
-        <itemlayout condition="Skin.HasSetting(smalltvlist)" height="55" width="894">
+        <itemlayout condition="Skin.HasSetting(Nox.smalltvlist)" height="55" width="924">
             <control type="image">
                 <posx>0</posx>
                 <posy>24</posy>
                 <height>40</height>
-                <width>894</width>
+                <width>924</width>
                 <texture>osd/osd_settings_buttonnf.png</texture>
             </control>
             <control type="label">
-                <posx>90</posx>
+                <posx>55</posx>
+                <posy>12</posy>
+                <width>60</width>
+                <height>45</height>
+                <font>Font_Bold20_Caps</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <selectedcolor>blue</selectedcolor>
+                <info>ListItem.ChannelNumber</info>
+            </control>
+            <control type="label">
+                <posx>120</posx>
                 <posy>12</posy>
                 <width>800</width>
                 <height>40</height>
@@ -243,7 +290,7 @@
                 <visible>StringCompare(ListItem.StartTime,ListItem.EndTime)</visible>
             </control>
             <control type="label">
-                <posx>90</posx>
+                <posx>120</posx>
                 <posy>12</posy>
                 <width>530</width>
                 <height>40</height>
@@ -266,7 +313,7 @@
             </control>
             <control type="progress">
                 <description>Progressbar</description>
-                <posx>695</posx>
+                <posx>725</posx>
                 <posy>29</posy>
                 <width>90</width>
                 <height>12</height>
@@ -279,7 +326,7 @@
                 <info>ListItem.Progress</info>
             </control>
             <control type="label">
-                <posx>790</posx>
+                <posx>820</posx>
                 <posy>12</posy>
                 <width>120</width>
                 <height>40</height>
@@ -290,7 +337,7 @@
                 <visible>ListItem.HasEpg</visible>
             </control>
             <control type="image">
-                <posx>22</posx>
+                <posx>58</posx>
                 <posy>5</posy>
                 <width>60</width>
                 <height>60</height>
@@ -299,7 +346,7 @@
                 <aspectratio>keep</aspectratio>
             </control>
             <control type="image">
-                <posx>750</posx>
+                <posx>830</posx>
                 <posy>39</posy>
                 <width>45</width>
                 <height>30</height>
@@ -307,24 +354,36 @@
                 <visible>ListItem.IsRecording</visible>
             </control>
         </itemlayout>
-        <focusedlayout condition="Skin.HasSetting(smalltvlist)" height="55" width="894">
+        <focusedlayout condition="Skin.HasSetting(Nox.smalltvlist)" height="55" width="924">
             <control type="image">
                 <posx>0</posx>
                 <posy>24</posy>
                 <height>40</height>
-                <width>894</width>
+                <width>924</width>
                 <texture>osd/osd_settings_buttonnf.png</texture>
             </control>
             <control type="image">
                 <posx>0</posx>
                 <posy>9</posy>
-                <width>893</width>
+                <width>923</width>
                 <height>54</height>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <texture>views/tripanel/listselect_fo.png</texture>
             </control>
             <control type="label">
-                <posx>90</posx>
+                <posx>55</posx>
+                <posy>12</posy>
+                <width>60</width>
+                <height>45</height>
+                <font>Font_Bold20_Caps</font>
+                <align>right</align>
+                <aligny>center</aligny>
+                <textcolor>white</textcolor>
+                <selectedcolor>blue</selectedcolor>
+                <info>ListItem.ChannelNumber</info>
+            </control>
+            <control type="label">
+                <posx>120</posx>
                 <posy>12</posy>
                 <width>800</width>
                 <height>40</height>
@@ -335,7 +394,7 @@
                 <visible>StringCompare(ListItem.StartTime,ListItem.EndTime)</visible>
             </control>
             <control type="label">
-                <posx>90</posx>
+                <posx>120</posx>
                 <posy>12</posy>
                 <width>530</width>
                 <height>40</height>
@@ -358,9 +417,9 @@
             </control>
             <control type="progress">
                 <description>Progressbar</description>
-                <posx>695</posx>
+                <posx>725</posx>
                 <posy>29</posy>
-                <width>90</width>
+                <width>120</width>
                 <height>12</height>
                 <texturebg>dialogs/progress/progress_back.png</texturebg>
                 <lefttexture>dialogs/progress/progress_left.png</lefttexture>
@@ -370,7 +429,7 @@
                 <info>ListItem.Progress</info>
             </control>
             <control type="label">
-                <posx>790</posx>
+                <posx>820</posx>
                 <posy>12</posy>
                 <width>120</width>
                 <height>40</height>
@@ -381,7 +440,7 @@
                 <visible>ListItem.HasEpg</visible>
             </control>
             <control type="image">
-                <posx>22</posx>
+                <posx>58</posx>
                 <posy>5</posy>
                 <width>60</width>
                 <height>60</height>
@@ -390,7 +449,7 @@
                 <aspectratio>keep</aspectratio>
             </control>
             <control type="image">
-                <posx>750</posx>
+                <posx>830</posx>
                 <posy>39</posy>
                 <width>45</width>
                 <height>30</height>
@@ -398,98 +457,6 @@
                 <visible>ListItem.IsRecording</visible>
             </control>
         </focusedlayout>
-    </include>
-    <include name="TVViewLayoutSquare">
-        <posx>970</posx>
-        <posy>96</posy>
-        <width>894</width>
-        <height>831</height>
-        <preloaditems>2</preloaditems>
-        <viewtype label="535">panel</viewtype>
-        <pagecontrol>70</pagecontrol>
-        <scrolltime>200</scrolltime>
-        <onleft>9000</onleft>
-        <onright>70</onright>
-        <pagecontrol>70</pagecontrol>
-        <scrolltime>200</scrolltime>
-        <orientation>vertical</orientation>
-        <itemlayout height="120" width="120">
-            <control type="image">
-                <posx>10</posx>
-                <posy>44</posy>
-                <height>60</height>
-                <width>130</width>
-                <texture>osd/osd_settings_buttonnf.png</texture>
-            </control>
-            <control type="image">
-                <posx>22</posx>
-                <posy>0</posy>
-                <width>104</width>
-                <height>104</height>
-                <bordersize>8</bordersize>
-                <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
-                <aspectratio>keep</aspectratio>
-            </control>
-            <control type="image">
-                <posx>750</posx>
-                <posy>39</posy>
-                <width>45</width>
-                <height>30</height>
-                <texture>PVR/PVR-IsRecording.png</texture>
-                <visible>ListItem.IsRecording</visible>
-            </control>
-        </itemlayout>
-        <focusedlayout height="104" width="894">
-            <control type="image">
-                <posx>10</posx>
-                <posy>44</posy>
-                <height>60</height>
-                <width>130</width>
-                <texture>osd/osd_settings_buttonnf.png</texture>
-            </control>
-            <control type="image">
-                <posx>22</posx>
-                <posy>0</posy>
-                <width>104</width>
-                <height>104</height>
-                <bordersize>8</bordersize>
-                <texture background="true" fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
-                <animation type="Focus" reversible="false">
-                    <effect type="zoom" center="auto" start="100" end="160" time="400" easing="out" tween="cubic" reversible="false" />
-                </animation>
-                <aspectratio>keep</aspectratio>
-            </control>
-            <control type="image">
-                <posx>750</posx>
-                <posy>39</posy>
-                <width>45</width>
-                <height>30</height>
-                <texture>PVR/PVR-IsRecordingFO.png</texture>
-                <visible>ListItem.IsRecording</visible>
-            </control>
-        </focusedlayout>
-    </include>
-    <include name="LiveTVChannelViewSquare">
-        <control type="group">
-            <description>TV Channels group</description>
-            <visible>Control.IsVisible(11)</visible>
-            <include>VisibleFadeEffect</include>
-            <control type="panel" id="11">
-                <onup>11</onup>
-                <ondown>11</ondown>
-                <include>TVViewLayoutSquare</include>
-            </control>
-        </control>
-        <control type="group">
-            <description>TV Channels group</description>
-            <visible>Control.IsVisible(12)</visible>
-            <include>VisibleFadeEffect</include>
-            <control type="panel" id="12">
-                <onup>12</onup>
-                <ondown>12</ondown>
-                <include>TVViewLayoutSquare</include>
-            </control>
-        </control>
     </include>
     <include name="LiveTVRecordingsView">
         <control type="group">
@@ -724,13 +691,17 @@
                 </focusedlayout>
             </control>
             <control type="scrollbar" id="72">
-                <posx>1810</posx>
-                <posy>112</posy>
-                <width>27</width>
-                <height>795</height>
+                <include>VisibleFadeEffect</include>
+                <posx>1843</posx>
+                <posy>96</posy>
+                <width>46</width>
+                <height>830</height>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <texturesliderbar border="3,24,3,24">PVR/ScrollbarNF.png</texturesliderbar>
-                <texturesliderbarfocus border="3,24,3,24">PVR/ScrollbarFO.png</texturesliderbarfocus>
+                <texturesliderbackground>-</texturesliderbackground>
+                <texturesliderbar>-</texturesliderbar>
+                <texturesliderbarfocus>-</texturesliderbarfocus>
+                <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
+                <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
                 <onleft>13</onleft>
                 <onright>9000</onright>
                 <showonepage>false</showonepage>
@@ -1166,13 +1137,17 @@
                     </focusedlayout>
                 </control>
                 <control type="scrollbar" id="73">
-                    <posx>1680</posx>
-                    <posy>68</posy>
-                    <width>27</width>
-                    <height>795</height>
+                    <include>VisibleFadeEffect</include>
+                    <posx>1843</posx>
+                    <posy>96</posy>
+                    <width>46</width>
+                    <height>830</height>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturesliderbar border="3,24,3,24">PVR/ScrollbarNF.png</texturesliderbar>
-                    <texturesliderbarfocus border="3,24,3,24">PVR/ScrollbarFO.png</texturesliderbarfocus>
+                    <texturesliderbackground>-</texturesliderbackground>
+                    <texturesliderbar>-</texturesliderbar>
+                    <texturesliderbarfocus>-</texturesliderbarfocus>
+                    <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
+                    <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
                     <onleft>11</onleft>
                     <onright>9000</onright>
                     <showonepage>false</showonepage>
@@ -1464,13 +1439,17 @@
                     </focusedlayout>
                 </control>
                 <control type="scrollbar" id="77">
-                    <posx>1680</posx>
-                    <posy>68</posy>
-                    <width>27</width>
-                    <height>795</height>
+                    <include>VisibleFadeEffect</include>
+                    <posx>1843</posx>
+                    <posy>96</posy>
+                    <width>46</width>
+                    <height>830</height>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturesliderbar border="3,24,3,24">PVR/ScrollbarNF.png</texturesliderbar>
-                    <texturesliderbarfocus border="3,24,3,24">PVR/ScrollbarFO.png</texturesliderbarfocus>
+                    <texturesliderbackground>-</texturesliderbackground>
+                    <texturesliderbar>-</texturesliderbar>
+                    <texturesliderbarfocus>-</texturesliderbarfocus>
+                    <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
+                    <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
                     <onleft>16</onleft>
                     <onright>9000</onright>
                     <showonepage>false</showonepage>
@@ -1710,13 +1689,17 @@
                     </focusedlayout>
                 </control>
                 <control type="scrollbar" id="75">
-                    <posx>1680</posx>
-                    <posy>68</posy>
-                    <width>27</width>
-                    <height>795</height>
+                    <include>VisibleFadeEffect</include>
+                    <posx>1843</posx>
+                    <posy>96</posy>
+                    <width>46</width>
+                    <height>830</height>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturesliderbar border="3,24,3,24">PVR/ScrollbarNF.png</texturesliderbar>
-                    <texturesliderbarfocus border="3,24,3,24">PVR/ScrollbarFO.png</texturesliderbarfocus>
+                    <texturesliderbackground>-</texturesliderbackground>
+                    <texturesliderbar>-</texturesliderbar>
+                    <texturesliderbarfocus>-</texturesliderbarfocus>
+                    <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
+                    <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
                     <onleft>15</onleft>
                     <onright>9000</onright>
                     <showonepage>false</showonepage>
@@ -2006,13 +1989,17 @@
                     </focusedlayout>
                 </control>
                 <control type="scrollbar" id="76">
-                    <posx>1680</posx>
-                    <posy>68</posy>
-                    <width>27</width>
-                    <height>795</height>
+                    <include>VisibleFadeEffect</include>
+                    <posx>1843</posx>
+                    <posy>96</posy>
+                    <width>46</width>
+                    <height>830</height>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturesliderbar border="3,24,3,24">PVR/ScrollbarNF.png</texturesliderbar>
-                    <texturesliderbarfocus border="3,24,3,24">PVR/ScrollbarFO.png</texturesliderbarfocus>
+                    <texturesliderbackground>-</texturesliderbackground>
+                    <texturesliderbar>-</texturesliderbar>
+                    <texturesliderbarfocus>-</texturesliderbarfocus>
+                    <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
+                    <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
                     <onleft>16</onleft>
                     <onright>9000</onright>
                     <showonepage>false</showonepage>

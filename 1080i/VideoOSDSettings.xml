@@ -18,7 +18,7 @@
                 <height>722</height>
                 <texture>osd/osd_settings_back_glow.png</texture>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
                 <include>Animation_VisibleChange400</include>
             </control>
@@ -120,7 +120,6 @@
             <description>Default Slider</description>
             <width>1172</width>
             <height>60</height>
-            <colordiffuse>FFFFFFFF</colordiffuse>
             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>

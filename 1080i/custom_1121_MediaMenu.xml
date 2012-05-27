@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1121">
     <defaultcontrol always="true">9011</defaultcontrol>
     <coordinates>
@@ -6,15 +6,15 @@
         <posx>0</posx>
         <posy>0</posy>
     </coordinates>
-        <animation type="WindowClose">
-            <effect type="slide" start="0,0" end="-420,0" time="400" easing="in" tween="cubic" />
-        </animation>
-            <animation type="WindowOpen">
-                <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
-            </animation>
+    <animation type="WindowClose">
+        <effect type="slide" start="0,0" end="-420,0" time="400" easing="in" tween="cubic" />
+    </animation>
+    <animation type="WindowOpen">
+        <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
+    </animation>
     <controls>
         <control type="list" id="9011">
-            <visible>Skin.HasSetting(viewtypeselect)</visible>
+            <visible>Skin.HasSetting(Nox.viewtypeselect)</visible>
             <posx>0</posx>
             <posy>0</posy>
             <width>450</width>
@@ -25,7 +25,6 @@
             <onup>9011</onup>
             <ondown>9011</ondown>
             <onright>Dialog.CLose(1121)</onright>
-            <onright>SetFocus(50)</onright>
             <itemlayout width="219" height="60">
                 <control type="image">
                     <posx>0</posx>
@@ -107,14 +106,14 @@
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(52)</onclick>
                     <visible>[Window.IsActive(videos) | Window.IsActive(programs) | Window.IsActive(videoplaylist)] + !Container.Content(addons)</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableTriPanelVL)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableTriPanelVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31477]</label>
                     <icon>-</icon>
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(53)</onclick>
-                    <visible>Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | [[Container.Content(years) | Container.Content(genres)] + Window.IsActive(musiclibrary)] | Window.IsActive(musicfiles)</visible>
+                    <visible>Container.Content(artists) | Container.Content(albums) | Container.Content(addons) | Container.Content(songs) | Window.IsActive(musicfiles)</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31153]</label>
@@ -122,7 +121,7 @@
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(511)</onclick>
                     <visible>Window.IsActive(videos)</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableLowListVL)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableLowListVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31153]</label>
@@ -137,14 +136,14 @@
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(512)</onclick>
                     <visible>!Container.Content(seasons) + !Container.Content(genres) + [!IsEmpty(Container.FolderPath) | Window.IsActive(videoplaylist)]</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableInfoWallVL)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableInfoWallVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31234]</label>
                     <icon>-</icon>
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(500)</onclick>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableWallVL)] + [!IsEmpty(Container.FolderPath) | Window.IsActive(videoplaylist)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableWallVL)] + [!IsEmpty(Container.FolderPath) | Window.IsActive(videoplaylist)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31236]</label>
@@ -152,7 +151,7 @@
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(508)</onclick>
                     <visible>Container.Content(TVShows)</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableBannersVL)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableBannersVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31291]</label>
@@ -160,7 +159,7 @@
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(516)</onclick>
                     <visible>Window.IsActive(videos) + [Container.Content(seasons) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(genres)]</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableBigFanVL)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableBigFanVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31380]</label>
@@ -175,15 +174,15 @@
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(514)</onclick>
                     <visible>Container.Content(episodes) | Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Window.IsActive(musiclibrary)</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableEpisodeVL)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableEpisodeVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31150]</label>
                     <icon>-</icon>
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(503)</onclick>
-                    <visible>[Container.Content(TVShows) |  Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)]</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableLandscapeVL)]</visible>
+                    <visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableLandscapeVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31271]</label>
@@ -191,7 +190,7 @@
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(510)</onclick>
                     <visible>Window.IsActive(videos) + !IsEmpty(Container.FolderPath) + !Container.Content(addons) + [!Container.Content(episodes) | SubString(Container.FolderPath,videodb://5/)] + !Container.Content(years)</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisablePostersVL)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisablePostersVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31235]</label>
@@ -199,7 +198,7 @@
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(57)</onclick>
                     <visible>[[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(musicplaylist) | Window.isActive(programs) | Window.isActive(addonbrowser) | [Window.IsActive(videos) + [!Container.Content(episodes) | SubString(Container.FolderPath,videodb://5/)]]] + !IsEmpty(Container.FolderPath) + !Container.Content(years)] | Window.IsActive(videoplaylist)</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableShiftVL)]</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableShiftVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31152]</label>
@@ -213,16 +212,16 @@
                     <icon>-</icon>
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(504)</onclick>
-                    <visible>[[Window.IsActive(videos) + [Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(files)]] | [Window.IsActive(programs) + !Container.Content(addons)] | [Window.IsActive(pictures) + Skin.HasSetting(comics)] | SubString(Container.FolderPath,videodb://5/) | Container.Content(musicvideos)] + !Container.Content(addons)</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableDVDCaseVL)]</visible>
+                    <visible>[[Window.IsActive(videos) + [Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(files)]] | [Window.IsActive(programs) + !Container.Content(addons)] | [Window.IsActive(pictures) + Skin.HasSetting(Nox.comics)] | SubString(Container.FolderPath,videodb://5/) | Container.Content(musicvideos)] + !Container.Content(addons)</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableDVDCaseVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31028]</label>
                     <icon>-</icon>
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(501)</onclick>
-                    <visible>[[[Window.IsActive(videos) + [Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(files)]] | [Window.IsActive(programs) + !Container.Content(addons)] | [Window.IsActive(videos) + Container.Content(genres)] | [Window.IsActive(pictures) + Skin.HasSetting(comics)] | SubString(Container.FolderPath,videodb://5/) | Container.Content(musicvideos)] + !Container.Content(addons)] | Window.IsActive(videoplaylist)</visible>
-                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableShowCaseVL)]</visible>
+                    <visible>[[[Window.IsActive(videos) + [Container.Content(Movies) | Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(files)]] | [Window.IsActive(programs) + !Container.Content(addons)] | [Window.IsActive(videos) + Container.Content(genres)] | [Window.IsActive(pictures) + Skin.HasSetting(Nox.comics)] | SubString(Container.FolderPath,videodb://5/) | Container.Content(musicvideos)] + !Container.Content(addons)] | Window.IsActive(videoplaylist)</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(Nox.DisableShowCaseVL)]</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31029]</label>
@@ -234,7 +233,7 @@
             </content>
         </control>
         <control type="list" id="9011">
-            <visible>!Skin.HasSetting(viewtypeselect)</visible>
+            <visible>!Skin.HasSetting(Nox.viewtypeselect)</visible>
             <visible>!Window.IsVisible(script-globalsearch-main.xml)</visible>
             <posx>0</posx>
             <posy>0</posy>
@@ -246,7 +245,6 @@
             <onup>9011</onup>
             <ondown>9011</ondown>
             <onright>Dialog.Close(1121)</onright>
-            <onright>SetFocus(50)</onright>
             <itemlayout width="219" height="120">
                 <control type="image">
                     <posx>0</posx>
@@ -260,8 +258,9 @@
                     <posy>20</posy>
                     <width>54</width>
                     <height>38</height>
-					<aspectratio align="center">keep</aspectratio>
+                    <aspectratio align="center">keep</aspectratio>
                     <texture>$INFO[ListItem.Thumb]</texture>
+                    <colordiffuse>white2</colordiffuse>
                 </control>
                 <control type="label">
                     <posx>110</posx>
@@ -271,7 +270,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_Reg17_Caps</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>white2</textcolor>
                     <info>ListItem.Label</info>
                 </control>
             </itemlayout>
@@ -291,6 +290,7 @@
                     <width>54</width>
                     <height>38</height>
                     <texture>$INFO[ListItem.Thumb]</texture>
+                    <colordiffuse>white2</colordiffuse>
                 </control>
                 <control type="label">
                     <posx>110</posx>
@@ -300,7 +300,7 @@
                     <align>center</align>
                     <aligny>center</aligny>
                     <font>Font_Reg17_Caps</font>
-                    <textcolor>white</textcolor>
+                    <textcolor>white2</textcolor>
                     <info>ListItem.Label</info>
                 </control>
             </focusedlayout>
@@ -310,16 +310,16 @@
                     <icon>-</icon>
                     <thumb>common/logo_movies.png</thumb>
                     <onclick>Dialog.Close(1121)</onclick>
-                    <onclick>ReplaceWindow(Videos,MovieTitles)</onclick>
-                    <visible>!Skin.HasSetting(HomeMenuNoMovieButton) + Library.HasContent(Movies)</visible>
+                    <onclick>ReplaceWindow(Videos,MovieTitles,return)</onclick>
+                    <visible>!Skin.HasSetting(Nox.HomeMenuNoMovieButton) + Library.HasContent(Movies)</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31503]</label>
                     <icon>-</icon>
                     <thumb>common/tv_icon.png</thumb>
-                    <visible>!Skin.HasSetting(HomeMenuNoTVShowButton) + Library.HasContent(TVShows)</visible>
+                    <visible>!Skin.HasSetting(Nox.HomeMenuNoTVShowButton) + Library.HasContent(TVShows)</visible>
                     <onclick>Dialog.Close(1121)</onclick>
-                    <onclick>ReplaceWindow(Videos,TVShowTitles)</onclick>
+                    <onclick>ReplaceWindow(Videos,TVShowTitles,return)</onclick>
                 </item>
                 <item>
                     <label>$LOCALIZE[31501]</label>
@@ -334,22 +334,15 @@
                     <thumb>common/logo_movies.png</thumb>
                     <visible>Library.HasContent(MusicVideos)</visible>
                     <onclick>Dialog.Close(1121)</onclick>
-                    <onclick>ReplaceWindow(Videos,MusicVideoTitles)</onclick>
+                    <onclick>ReplaceWindow(Videos,MusicVideoTitles,return)</onclick>
                 </item>
-                <item>
-                    <label>$LOCALIZE[52502]</label>
-                    <icon>-</icon>
-                    <thumb>common/tv_icon.png</thumb>
-                    <visible>System.GetBool(pvrmanager.enabled)</visible>
-                    <onclick>Dialog.Close(1121)</onclick>
-                    <onclick>ReplaceWindow(PVR)</onclick>
-                </item>
+                <include condition="System.GetBool(pvrmanager.enabled)">QuickNavPVRItem</include>
                 <item>
                     <label>$LOCALIZE[1037]</label>
                     <icon>-</icon>
                     <thumb>common/featured_icon.png</thumb>
                     <onclick>Dialog.Close(1121)</onclick>
-                    <onclick>ReplaceWindow(Videos,Addons)</onclick>
+                    <onclick>ReplaceWindow(Videos,Addons,return)</onclick>
                 </item>
                 <item>
                     <label>$LOCALIZE[31507]</label>

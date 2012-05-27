@@ -95,6 +95,7 @@
     <string id="31092">Artista fanart (Extrafanart, fanart.jpg, fanart por defecto)</string>
     <string id="31093">Actores que cumplen años hoy</string>
     <string id="31094">Widget Fanart</string>
+	<string id="31095">Valoración</string>
 
     <!-- Playlist Editor labels -->
     <string id="31055">Abrir lista de reproducción</string>
@@ -140,7 +141,7 @@
     <string id="31042">Músicafanart SlideShow</string>
     <string id="31632">Activar widget de información ampliada</string>
     <string id="31635">Artistas similares</string>
-    <string id="31636">Rotativo</string>
+    <string id="31636">Rotatorio</string>
   
   
     <!-- Skin Fontsets -->
@@ -183,7 +184,7 @@
   
     <!--MediaMenu-->
     <string id="31165">Lista Estrecha</string>
-    <string id="31166">Panel info</string>
+    <string id="31166">Panel informativo</string>
     <string id="31168">Sin CoverFlow</string>
     <string id="31169">Panel transparente</string>
     <string id="31170">Lista pequeña</string>
@@ -198,33 +199,30 @@
     <string id="31181">Activar 'Modo brillo'</string>
     <string id="31182">Colorear</string>
     <string id="31183">Usar mismo color para los diálogos</string>
-    <string id="31184">Mostrar marcas 'No Vistos'</string>
-    <string id="31185">Tipo de Vista</string>
-    <string id="31187">Tiempo para Auto Ocultar panel info (segundos)</string>
+    <string id="31184">Marcas 'No Visto'</string>
+    <string id="31185">Opciones de Vista</string>
+    <string id="31187">Tiempo para Auto Ocultar panel info. (segundos)</string>
     <string id="31188">Estado</string>
     <string id="31189">Anterior</string>
     <string id="31190">Próximo</string>
     <string id="31191">Usar como icono</string>
-    <string id="31192">Icono: [B]Thumb[/B]</string>
-    <string id="31193">Icono: [B]Logo[/B]</string>
-    <string id="31194">Aplazado</string>
+    <string id="31194">Retardo</string>
     <string id="31195">Sin panel de fondo</string>
     <string id="31196">Vista Shift pequeña</string>
     <string id="31198">Extrathumbs</string>
-    <string id="31228">Navegación: [B]Vertical[/B]</string>
-    <string id="31229">Navegación: [B]Horizontal[/B]</string>
-    <string id="31230">Tipos de Vista</string>
+    <string id="31228">Vertical</string>
+    <string id="31229">Horizontal</string>
+    <string id="31230">Tipos de Vistas</string>
+	<string id="31231">Navegación</string>
     <string id="31240">'Nuevo'</string>
     <string id="31241">'Visto'</string>
     <string id="31242">Mostrar Marcas</string>
     <string id="31248">Cajas BD/DVD</string>
     <string id="31257">Detalles</string>
-    <string id="31258">Info General</string>
+    <string id="31258">Visión general</string>
     <string id="31265">Ventanas Pop-up reducidas</string>
     <string id="31269">Activar Humo en fondo [I](Puede aumentar el uso de CPU!)   [/I]</string>
     <string id="31272">Diseño</string>
-    <string id="31277">Navegación: [B]Wrap List[/B]</string>
-    <string id="31278">Navegación: [B]Fixed List[/B]</string>
     <string id="31279">Reproducir Trailers a pantalla completa</string>
     <string id="31282">Cajas Transparentes</string>
     <string id="31285">Episodio No.</string>
@@ -256,7 +254,6 @@
     <string id="31453">Emisión</string>
     <string id="31454">Banners</string>
     <string id="31458">Pulsa ARRIBA o ABAJO para cambiar rating</string>
-    <string id="31459">Icono: [B]Fanart[/B]</string>
     <string id="31460">Artwork</string>
     <string id="31464">Recomendado</string>
     <string id="31465">Animar iconos</string>
@@ -269,7 +266,7 @@
     <string id="31481">Mostrar banner en lugar de logo</string>
     <string id="31482">Cajas</string>
     <string id="31483">Mostrar etiqueta</string>
-    <string id="31484">Trailer</string>
+    <string id="31484">Ver trailer</string>
     <string id="31158">Hora actual</string>
     <string id="31627">Ocultar controles del reproductor en OSD</string>
     <string id="31628">Todos los Artistas</string>
@@ -310,11 +307,11 @@
     <string id="31619">Opciones de video a pantalla completa</string>
     <string id="31621">Usar pausa grande para OSD de películas</string>
     <string id="31634">Menú principal</string>
-    <string id="31638">Mostrar información 'Next Aired' en biblioteca</string>
+    <string id="31638">Mostrar información 'Next Aired' en biblioteca de video</string>
     <string id="31639">Ocultar imagen en pantalla de información</string>
     <string id="31640">Mostrar tiempo restante en pantalla de información.</string>
     <string id="31641">Girar la cubierta del CD para add-on 'Artist Slideshow'</string>
-    <string id="31642">'PDA Weather'</string>
+    <string id="31642">'Clima PDA'</string>
     <string id="31643">Personalizar la posición de los objetos de la ventana inicial</string>
     <string id="31646">¿Quieres descargar todos los artwork [CR]disponibles sin la intervención del usuario?</string>
     <string id="31672">Incluir elementos vistos en widgets de lista personalizada</string>
@@ -323,10 +320,10 @@
     <string id="31676">Barra superior</string>
     <string id="31677">Lado izquierdo</string>
     <string id="31186">Modo Kiosko</string>
-    <string id="31179">Deshabilitar Opciones del Panel de Reproducción</string>
-    <string id="31180">Oculta Opciones del Panel de Reproducción</string>
+    <string id="31179">Desactivar panel y ocultar opciones en información de video</string>
+    <string id="31180">Oculta opciones del panel</string>
     <string id="31378">Establecer ruta de la biblioteca de música (necesaria para extrafanart, clearLOGO)</string>
-    <string id="31678">Establecer ruta carpeta bg para tiempo condicional</string>
+    <string id="31678">Establecer ruta carpeta bg para clima condicional</string>
     <string id="31679">Cambiar etiqueta</string>
     <string id="31680">Cambiar fondo</string>
     <string id="31681">Cambiar widget</string>
@@ -342,7 +339,7 @@
     <string id="31691">Cambiar posición</string>
     <string id="31692">Reducir panel de estadística y cronómetro</string>
     <string id="31693">Espacio grande entre elementos del menú</string>
-    <string id="31694">Lista fija:</string>
+    <string id="31694">Lista fija</string>
     <string id="31695">Submenú</string>
     <string id="31696">Diseño alternativo</string>
     <string id="31697">Desactivar marcas de navegación</string>
@@ -400,8 +397,8 @@
     <string id="41151">Personalizado</string>
     <string id="41153">Favorito</string>
     <string id="41154">Función</string>
-    <string id="41155">Siguiente tipo</string>
-    <string id="41156">Anterior tipo</string>
+    <string id="41155">Tipo siguiente</string>
+    <string id="41156">Tipo anterior</string>
     <string id="41157">Seleccionar</string>
     <string id="41158">Etiqueta del menú</string>
     <string id="41159">Icono</string>
@@ -409,7 +406,7 @@
 
     <!--notifications-->
     <string id="42000">Add-on no encontrado</string>
-    <string id="42001">Pulsa DERECHA para ajustar el retraso</string>
+    <string id="42001">Pulsa DERECHA para ajustar el retardo</string>
     <string id="42002">Atención</string>
     <string id="42003">Pulsa DERECHA para ver cambios</string>
     <string id="42004">Extra/FanArt-Temporada no son compatible con XBMC de forma nativa</string>
@@ -422,8 +419,8 @@
     <string id="42012">Actualizando add-ons locales</string>
     <string id="42013">Clic en objetos para ver las opciones disponibles</string>
     <string id="42014">Clic en elementos del menú para ver opciones disponibles</string>
-    <string id="42015">Reproduce algun tema para obtener una vista previa de los ajustes</string>
-    <string id="42016">"Info Adicional de Artista" necesario activar en Artistslideshow Plugin</string>
+    <string id="42015">Reproduce algún tema para obtener una vista previa de los ajustes</string>
+    <string id="42016">"Info. Adicional de Artista" necesario activar en Plugin Artistslideshow</string>
     <string id="42017">Bienvenido a Aeon Nox 3.0</string>
     <string id="42018">Visita el foro en XBMC.org para obtener soporte</string>
 
