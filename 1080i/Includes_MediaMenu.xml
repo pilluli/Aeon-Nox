@@ -1,4 +1,4 @@
-﻿<?xml version="1.0"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <!--Max: 1707 -->
     <include name="PlaylistEditorButtons">
@@ -113,9 +113,8 @@
             <include>Objects_MediaMenuButtonAlt</include>
             <label>587</label>
         </control>
-        <control type="edit" id="8">
+        <control type="button" id="8">
             <description>Search</description>
-            <hinttext></hinttext>
             <include>Objects_MediaMenuButtonAlt</include>
             <label>137</label>
         </control>
@@ -165,7 +164,7 @@
             <description>Stack button (used to display multi-part videos as a single item)</description>
             <label>-</label>
             <include>Objects_MediaMenuButtonAlt</include>
-            <visible>Container.Content(files)</visible>
+            <visible>!SubString(Container.FolderPath,videodb://,left)</visible>
         </control>
         <control type="radiobutton" id="11">
             <description>Unlock Shares</description>
@@ -227,26 +226,25 @@
             <description>Viewtype Settings</description>
             <include>Objects_MediaMenuButtonAlt</include>
             <label>$LOCALIZE[31171]</label>
-            <onclick condition="Control.IsVisible(50)">Skin.SetString(actualViewtype,list)</onclick>
-            <onclick condition="Control.IsVisible(52) | Control.IsVisible(53)">Skin.SetString(actualViewtype,tripanel)</onclick>
-            <onclick condition="Control.IsVisible(57)">Skin.SetString(actualViewtype,shift)</onclick>
-            <onclick condition="Control.IsVisible(500)">Skin.SetString(actualViewtype,wall)</onclick>
-            <onclick condition="Control.IsVisible(501)">Skin.SetString(actualViewtype,showcasemovies)</onclick>
-            <onclick condition="Control.IsVisible(503)">Skin.SetString(actualViewtype,landscape)</onclick>
-            <onclick condition="Control.IsVisible(504)">Skin.SetString(actualViewtype,showcasedvd)</onclick>
-            <onclick condition="Control.IsVisible(506)">Skin.SetString(actualViewtype,lowlistmusic)</onclick>
-            <onclick condition="Control.IsVisible(508)">Skin.SetString(actualViewtype,banners)</onclick>
-            <onclick condition="Control.IsVisible(509)">Skin.SetString(actualViewtype,showcasesquare)</onclick>
-            <onclick condition="Control.IsVisible(510)">Skin.SetString(actualViewtype,posters)</onclick>
-            <onclick condition="Control.IsVisible(511)">Skin.SetString(actualViewtype,lowlist)</onclick>
-            <onclick condition="Control.IsVisible(512)">Skin.SetString(actualViewtype,addonwall)</onclick>
-            <onclick condition="Control.IsVisible(513)">Skin.SetString(actualViewtype,showcasecd)</onclick>
-            <onclick condition="Control.IsVisible(514)">Skin.SetString(actualViewtype,episode)</onclick>
-            <onclick condition="Control.IsVisible(516)">Skin.SetString(actualViewtype,bigfan)</onclick>
-            <onclick condition="Control.IsVisible(517)">Skin.SetString(actualViewtype,stripshow)</onclick>
+            <onclick condition="Control.IsVisible(50)">Skin.SetString(Nox.actualViewtype,list)</onclick>
+            <onclick condition="Control.IsVisible(52) | Control.IsVisible(53)">Skin.SetString(Nox.actualViewtype,tripanel)</onclick>
+            <onclick condition="Control.IsVisible(57)">Skin.SetString(Nox.actualViewtype,shift)</onclick>
+            <onclick condition="Control.IsVisible(500)">Skin.SetString(Nox.actualViewtype,wall)</onclick>
+            <onclick condition="Control.IsVisible(501)">Skin.SetString(Nox.actualViewtype,showcasemovies)</onclick>
+            <onclick condition="Control.IsVisible(503)">Skin.SetString(Nox.actualViewtype,landscape)</onclick>
+            <onclick condition="Control.IsVisible(504)">Skin.SetString(Nox.actualViewtype,showcasedvd)</onclick>
+            <onclick condition="Control.IsVisible(506)">Skin.SetString(Nox.actualViewtype,lowlistmusic)</onclick>
+            <onclick condition="Control.IsVisible(508)">Skin.SetString(Nox.actualViewtype,banners)</onclick>
+            <onclick condition="Control.IsVisible(509)">Skin.SetString(Nox.actualViewtype,showcasesquare)</onclick>
+            <onclick condition="Control.IsVisible(510)">Skin.SetString(Nox.actualViewtype,posters)</onclick>
+            <onclick condition="Control.IsVisible(511)">Skin.SetString(Nox.actualViewtype,lowlist)</onclick>
+            <onclick condition="Control.IsVisible(512)">Skin.SetString(Nox.actualViewtype,addonwall)</onclick>
+            <onclick condition="Control.IsVisible(513)">Skin.SetString(Nox.actualViewtype,showcasecd)</onclick>
+            <onclick condition="Control.IsVisible(514)">Skin.SetString(Nox.actualViewtype,episode)</onclick>
+            <onclick condition="Control.IsVisible(516)">Skin.SetString(Nox.actualViewtype,bigfan)</onclick>
+            <onclick condition="Control.IsVisible(517)">Skin.SetString(Nox.actualViewtype,stripshow)</onclick>
             <onclick>ActivateWindow(1126)</onclick>
             <ondown condition="!Control.IsVisible(1801) + !Control.IsVisible(1800) + Control.IsVisible(3000)">3000</ondown>
-            <ondown condition="!Control.IsVisible(1801) + !Control.IsVisible(1800) + !Control.IsVisible(3000)">1802</ondown>
         </control>
     </include>
     <include name="Media_Menu_Tooltip">
@@ -261,8 +259,7 @@
                 <effect type="fade" time="400" start="100" end="0" />
                 <effect type="slide" time="400" start="0,0" end="-90,0" easing="in" tween="cubic" />
             </animation>
-            <animation effect="slide" start="0" end="-60" time="200" reversible="true" condition="Control.HasFocus(110)">Conditional</animation>
-            <animation effect="slide" start="0" end="-80" time="300" reversible="true" condition="IsEmpty(ListItem.Trailer) + Skin.HasSetting(kioskmode)">Conditional</animation>
+            <animation effect="slide" start="0" end="-80" time="300" reversible="true" condition="IsEmpty(ListItem.Trailer) + Skin.HasSetting(Nox.kioskmode)">Conditional</animation>
             <animation effect="slide" start="0" end="-181" time="400" reversible="true" easing="in" tween="cubic" condition="Window.IsActive(1121)">Conditional</animation>
             <animation effect="slide" start="0" end="-123" time="400" reversible="true" easing="in" tween="cubic" condition="Window.IsActive(1119)">Conditional</animation>
             <animation effect="slide" start="0" end="20" time="400" easing="in" tween="cubic" reversible="true" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
@@ -285,7 +282,7 @@
                     <posy>527</posy>
                     <width>25</width>
                     <height>25</height>
-                    <animation effect="rotate" start="0" end="-90" center="auto" delay="300" time="800" condition="Window.IsActive(script-NextAired-TVGuide.xml) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
+                    <animation effect="rotate" start="0" end="-90" center="auto" delay="300" time="800" condition="Window.IsActive(script-NextAired-TVGuide.xml) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(Nox.WallVertical)]">Conditional</animation>
                     <animation effect="rotate" start="0" end="-180" center="auto" delay="300" time="800" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                     <texture>common/arrowleft.png</texture>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
@@ -314,6 +311,7 @@
                 <texture>common/logo_trailer.png</texture>
                 <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
+                <animation effect="fade" start="100" end="60" time="1500" pulse="true" condition="true">conditional</animation>
                 <animation effect="fade" start="100" end="0" time="500" delay="500" condition="!Control.IsVisible(4051)">Conditional</animation>
                 <animation effect="fade" start="100" end="0" time="200" condition="[IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)] | [IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | Container.Scrolling">Conditional</animation>
                 <visible>!ControlGroup(9000).HasFocus + [Window.IsActive(musiclibrary) | Window.IsActive(videos)]</visible>
@@ -362,7 +360,7 @@
     <include name="Media_Menu">
         <include>Media_Menu_Furniture</include>
         <control type="group" id="9000">
-            <visible>!Skin.HasSetting(kioskmode)</visible>
+            <visible>!Skin.HasSetting(Nox.kioskmode)</visible>
             <control type="group">
                 <include>Animation_MediaMenuSlide2</include>
                 <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119) | Window.IsActive(1126)">
@@ -396,10 +394,10 @@
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <label>[UPPERCASE]$LOCALIZE[31633][/UPPERCASE]</label>
                         <textureradiofocus>common/arrowleft.png</textureradiofocus>
-                        <textureradionofocus>common/arrowleft.png</textureradionofocus> 
+                        <textureradionofocus>common/arrowleft.png</textureradionofocus>
                         <description>Trailer button</description>
                         <height>60</height>
-                        <width>420</width>
+                        <width>400</width>
                         <texturenofocus>settings/listselect_nf.png</texturenofocus>
                         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                         <alttexturenofocus>settings/listselect_nf.png</alttexturenofocus>
@@ -417,8 +415,8 @@
                     <control type="button" id="1802">
                         <description>View As button</description>
                         <include>Objects_MediaMenuButtonAlt</include>
-                        <label>$LOCALIZE[582]: [B]$INFO[Container.Viewmode][/B]</label>
-                        <onclick>Skin.SetBool(viewtypeselect)</onclick>
+                        <label>$LOCALIZE[582]: [COLOR $VAR[SelectedColorVar]][B]$INFO[Container.Viewmode][/B][/COLOR]</label>
+                        <onclick>Skin.SetBool(Nox.viewtypeselect)</onclick>
                         <onclick>ActivateWindow(1121)</onclick>
                         <visible>!Window.IsActive(musicplaylisteditor)</visible>
                     </control>
@@ -441,7 +439,7 @@
                     <include condition="Window.IsActive(videoplaylist)">VideoPlaylistButtons</include>
                     <include condition="Window.IsActive(pictures)">PicturesButtons</include>
                     <include condition="Window.IsActive(musicplaylisteditor)">PlaylistEditorButtons</include>
-                    <include condition="!Skin.HasSetting(hideoptions)">ViewtypeSettingsButton</include>
+                    <include condition="!Skin.HasSetting(Nox.hideoptions)">ViewtypeSettingsButton</include>
                     <control type="button" id="1803">
                         <description>Trailer button</description>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
@@ -481,14 +479,13 @@
                         <radioheight>40</radioheight>
                         <radioposx>338</radioposx>
                         <label>$LOCALIZE[31484]</label>
-                        <onleft>Skin.Reset(viewtypeselect)</onleft>
+                        <onleft>Skin.Reset(Nox.viewtypeselect)</onleft>
                         <onleft>ActivateWindow(1121)</onleft>
-                        <onclick condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
-                        <onclick condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
+                        <onclick condition="!Skin.HasSetting(Nox.fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
+                        <onclick condition="Skin.HasSetting(Nox.fstrailer) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
                         <textureradiofocus>common/logo_trailer.png</textureradiofocus>
                         <textureradionofocus>common/logo_trailer.png</textureradionofocus>
                         <ondown condition="Control.IsVisible(4000)">3000</ondown>
-                        <ondown condition="!Control.IsVisible(4000)">1802</ondown>
                         <visible>!IsEmpty(ListItem.Trailer)</visible>
                     </control>
                     <control type="radiobutton" id="1800">
@@ -512,13 +509,12 @@
                         <radiowidth>40</radiowidth>
                         <radioheight>40</radioheight>
                         <radioposx>338</radioposx>
-                        <onleft>Skin.Reset(viewtypeselect)</onleft>
+                        <onleft>Skin.Reset(Nox.viewtypeselect)</onleft>
                         <onleft>ActivateWindow(1121)</onleft>
                         <label>$LOCALIZE[208] $LOCALIZE[20391]</label>
                         <textureradiofocus>common/logo_trailer.png</textureradiofocus>
                         <textureradionofocus>common/logo_trailer.png</textureradionofocus>
                         <ondown condition="Control.IsVisible(4000)">3000</ondown>
-                        <ondown condition="!Control.IsVisible(4000)">1802</ondown>
                         <onclick>PlayMedia($ESCINFO[Window.Property(SongToMusicVideo.Path)])</onclick>
                         <visible>!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)</visible>
                     </control>
@@ -538,13 +534,12 @@
                         <textoffsety>2</textoffsety>
                         <align>left</align>
                         <aligny>center</aligny>
-                        <onleft>Skin.Reset(viewtypeselect)</onleft>
+                        <onleft>Skin.Reset(Nox.viewtypeselect)</onleft>
                         <onleft>ActivateWindow(1121)</onleft>
                         <font>Font_Condensed22</font>
                         <include>Animation_CommonFade</include>
                         <label>$LOCALIZE[21452]</label>
                         <ondown condition="Control.IsVisible(4000)">3000</ondown>
-                        <ondown condition="!Control.IsVisible(4000)">9000</ondown>
                         <onclick>ActivateWindow(AddonBrowser)</onclick>
                         <visible>SubString(Container.FolderPath,addons://) + !Window.IsActive(addonbrowser)</visible>
                     </control>
@@ -554,14 +549,14 @@
         </control>
         <control type="button" id="9000">
             <include>HiddenObject</include>
-            <visible>Skin.HasSetting(kioskmode)</visible>
+            <visible>Skin.HasSetting(Nox.kioskmode)</visible>
             <onfocus>SetFocus(50)</onfocus>
         </control>
         <control type="button" id="1801">
             <include>HiddenObject</include>
-            <visible>Skin.HasSetting(kioskmode)</visible>
-            <onfocus condition="!Skin.HasSetting(fstrailer)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onfocus>
-            <onfocus condition="Skin.HasSetting(fstrailer)">PlayMedia($ESCINFO[ListItem.Trailer])</onfocus>
+            <visible>Skin.HasSetting(Nox.kioskmode)</visible>
+            <onfocus condition="!Skin.HasSetting(Nox.fstrailer)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onfocus>
+            <onfocus condition="Skin.HasSetting(Nox.fstrailer)">PlayMedia($ESCINFO[ListItem.Trailer])</onfocus>
             <onfocus>SetFocus(50)</onfocus>
         </control>
     </include>
@@ -620,9 +615,9 @@
                 <fadetime>300</fadetime>
                 <posy>0</posy>
                 <aligny>top</aligny>
-                <include condition="!Skin.HasSetting(vinylart) + !Skin.HasSetting(blurayart)">cdart</include>
-                <include condition="Skin.HasSetting(vinylart)">vinylart</include>
-                <include condition="Skin.HasSetting(blurayart)">blurayart</include>
+                <include condition="!Skin.HasSetting(Nox.vinylart) + !Skin.HasSetting(Nox.blurayart)">cdart</include>
+                <include condition="Skin.HasSetting(Nox.vinylart)">vinylart</include>
+                <include condition="Skin.HasSetting(Nox.blurayart)">blurayart</include>
                 <aspectratio align="bottom">keep</aspectratio>
             </control>
             <control type="image">
@@ -638,7 +633,7 @@
                 <height>260</height>
                 <width>260</width>
                 <texture diffuse="thumbs/cdcover_mask.png">$INFO[Player.FolderPath,,folder.jpg]</texture>
-                <visible>!Skin.HasSetting(NowPlayingFolderJPG)</visible>
+                <visible>!Skin.HasSetting(Nox.NowPlayingFolderJPG)</visible>
             </control>
             <control type="image">
                 <posx>0</posx>
@@ -651,25 +646,80 @@
                 <bordersize>20</bordersize>
             </control>
         </control>
+        <control type="grouplist">
+            <orientation>horizontal</orientation>
+            <include condition="Window.isActive(videos) + system.hasaddon(script.tvtunes)">TvTunesVisibleCondition</include>
+            <posy>700</posy>
+            <animation effect="fade" start="100" end="0" time="100" condition="!ControlGroup(3000).HasFocus">Conditional</animation>
+            <posx>30</posx>
+            <itemgap>-17</itemgap>
+            <visible>Player.HasAudio</visible>
+            <control type="button">
+                <width>80</width>
+                <height>80</height>
+                <label>210</label>
+                <font>-</font>
+                <texturenofocus>osd/buttons/OSDPrevTrackNF.png</texturenofocus>
+                <onclick>PlayerControl(Previous)</onclick>
+            </control>
+            <control type="togglebutton">
+                <width>80</width>
+                <height>80</height>
+                <label>31351</label>
+                <altlabel>208</altlabel>
+                <font>-</font>
+                <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
+                <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
+                <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
+                <onclick>PlayerControl(Play)</onclick>
+            </control>
+            <control type="button">
+                <width>80</width>
+                <height>80</height>
+                <label>31352</label>
+                <font>-</font>
+                <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
+                <onclick>up</onclick>
+                <onclick>PlayerControl(Stop)</onclick>
+            </control>
+            <control type="button">
+                <width>80</width>
+                <height>80</height>
+                <label>209</label>
+                <font>-</font>
+                <texturenofocus>osd/buttons/OSDNextTrackNF.png</texturenofocus>
+                <onclick>PlayerControl(Next)</onclick>
+            </control>
+            <control type="button">
+                <width>80</width>
+                <height>80</height>
+                <label>10517</label>
+                <font>-</font>
+                <texturenofocus>osd/buttons/OSDPlaylistNF.png</texturenofocus>
+                <onclick>ActivateWindow(MusicPlaylist)</onclick>
+            </control>
+        </control>
         <control type="grouplist" id="3000">
             <orientation>horizontal</orientation>
-            <include condition="Window.isActive(videos) + system.hasaddon(script.tvtunes)">TvTunesVisibleCondition</include>            
+            <include condition="Window.isActive(videos) + system.hasaddon(script.tvtunes)">TvTunesVisibleCondition</include>
             <posy>700</posy>
             <posx>30</posx>
+            <animation effect="fade" start="100" end="0" time="100" condition="!ControlGroup(3000).HasFocus">Conditional</animation>
             <onup condition="Control.IsVisible(1800)">1800</onup>
             <onup condition="Control.IsVisible(1801) + !Control.IsVisible(1800)">1801</onup>
             <itemgap>-17</itemgap>
             <ondown>1802</ondown>
             <onleft>50</onleft>
+            <visible>Player.HasAudio</visible>
             <onright>50</onright>
-            <visible allowhiddenfocus="true">ControlGroup(3000).HasFocus</visible>
             <control type="button" id="600">
                 <width>80</width>
                 <height>80</height>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <label>210</label>
                 <font>-</font>
                 <texturefocus>osd/buttons/OSDPrevTrackFO.png</texturefocus>
-                <texturenofocus>osd/buttons/OSDPrevTrackNF.png</texturenofocus>
+                <texturenofocus>-</texturenofocus>
                 <onclick>PlayerControl(Previous)</onclick>
             </control>
             <control type="togglebutton" id="602">
@@ -679,7 +729,8 @@
                 <altlabel>208</altlabel>
                 <font>-</font>
                 <texturefocus>osd/buttons/OSDPauseFO.png</texturefocus>
-                <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
+                <texturenofocus>-</texturenofocus>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
                 <alttexturefocus>osd/buttons/OSDPlayFO.png</alttexturefocus>
                 <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
@@ -690,8 +741,9 @@
                 <height>80</height>
                 <label>31352</label>
                 <font>-</font>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
-                <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
+                <texturenofocus>-</texturenofocus>
                 <onclick>up</onclick>
                 <onclick>PlayerControl(Stop)</onclick>
             </control>
@@ -699,9 +751,10 @@
                 <width>80</width>
                 <height>80</height>
                 <label>209</label>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <font>-</font>
                 <texturefocus>osd/buttons/OSDNextTrackFO.png</texturefocus>
-                <texturenofocus>osd/buttons/OSDNextTrackNF.png</texturenofocus>
+                <texturenofocus>-</texturenofocus>
                 <onclick>PlayerControl(Next)</onclick>
             </control>
             <control type="button" id="700">
@@ -709,8 +762,9 @@
                 <height>80</height>
                 <label>10517</label>
                 <font>-</font>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <texturefocus>osd/buttons/OSDPlaylistFO.png</texturefocus>
-                <texturenofocus>osd/buttons/OSDPlaylistNF.png</texturenofocus>
+                <texturenofocus>-</texturenofocus>
                 <onclick>ActivateWindow(MusicPlaylist)</onclick>
             </control>
         </control>

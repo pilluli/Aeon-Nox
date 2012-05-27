@@ -95,6 +95,7 @@
     <string id="31092">Artist fanart (Extrafanart, fanart.jpg, default fanart)</string>
     <string id="31093">Actors Born Today</string>
     <string id="31094">Widget Fanart</string>
+    <string id="31095">Rating</string>
 
     <!-- Playlist Editor labels -->
     <string id="31055">Open playlist</string>
@@ -197,7 +198,6 @@
     <string id="31178">Choose color</string>
     <string id="31181">Activate 'Glow Mode'</string>
     <string id="31182">Colored</string>
-    <string id="31183">Use same color for dialogs</string>
     <string id="31184">Unwatched icon</string>
     <string id="31185">Viewtype</string>
     <string id="31187">Time-out for auto hide infopanel (seconds)</string>
@@ -205,15 +205,14 @@
     <string id="31189">Previous Episode</string>
     <string id="31190">Next Episode</string>
     <string id="31191">Use as icon</string>
-    <string id="31192">Icon: [B]Thumb[/B]</string>
-    <string id="31193">Icon: [B]Logo[/B]</string>
     <string id="31194">Delayed</string>
     <string id="31195">No background panel</string>
     <string id="31196">Small Shift view</string>
     <string id="31198">Extrathumbs</string>
-    <string id="31228">Navigation: [B]Vertical[/B]</string>
-    <string id="31229">Navigation: [B]Horizontal[/B]</string>
+    <string id="31228">Vertical</string>
+    <string id="31229">Horizontal</string>
     <string id="31230">Viewtypes</string>
+    <string id="31231">Navigation</string>
     <string id="31240">'New' flag</string>
     <string id="31241">'Watched' flag</string>
     <string id="31242">Show Flags</string>
@@ -223,8 +222,6 @@
     <string id="31265">Smaller pop-up dialogs</string>
     <string id="31269">Enable background effect [I](Can increase CPU usage!)   [/I]</string>
     <string id="31272">Layout</string>
-    <string id="31277">Navigation: [B]Wrap List[/B]</string>
-    <string id="31278">Navigation: [B]Fixed List[/B]</string>
     <string id="31279">Play trailers in fullscreen</string>
     <string id="31282">Clear Cases</string>
     <string id="31285">Episode No.</string>
@@ -256,7 +253,6 @@
     <string id="31453">Airtime</string>
     <string id="31454">Banners</string>
     <string id="31458">Push UP or DOWN to change rating</string>
-    <string id="31459">Icon: [B]Fanart[/B]</string>
     <string id="31460">Artwork</string>
     <string id="31464">Recommended</string>
     <string id="31465">Animated icons</string>
@@ -275,7 +271,7 @@
     <string id="31628">All Artists</string>
     <string id="31629">All Videos</string>
     <string id="31630">Custom</string>
-    <string id="31631">Show Logo.png instead Of Title</string>
+    <string id="31631">Show Logo.png instead of title</string>
     <string id="31633">QuickNav</string>
 
     <!-- Home Menu -->
@@ -342,7 +338,7 @@
     <string id="31691">Toggle position</string>
     <string id="31692">Shorter time and library stats panel</string>
     <string id="31693">Wider space between main menu items</string>
-    <string id="31694">Fixed list:</string>
+    <string id="31694">Fixed list</string>
     <string id="31695">Submenu</string>
     <string id="31696">Alternative layout</string>
     <string id="31697">Disable navigation hints</string>

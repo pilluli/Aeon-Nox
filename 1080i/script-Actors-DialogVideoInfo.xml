@@ -66,7 +66,7 @@
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <texture>common/topbar_down.png</texture>
                 <include>TopbarPulseAnimationRight</include>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
             </control>
         </control>
         <control type="group">
@@ -98,7 +98,7 @@
                 <height>1080</height>
                 <texture>info/info_rightpaneltop.png</texture>
             </control>
-            <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
+            <include condition="Skin.HasSetting(Nox.effect_bg)">BG_Effect_Home</include>
             <control type="label">
                 <description>Filename</description>
                 <posx>825</posx>
@@ -183,7 +183,7 @@
                     <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
                     <scroll>true</scroll>
                     <textcolor>FFececec</textcolor>
-                    <animation effect="slide" start="0,-38" end="0,-38" time="0" condition="[!IsEmpty(ListItem.Tagline) + Container.Content(movies)] | Container.Content(episodes) | Container.Content(musicvideos)">Conditional</animation>
+                    <animation effect="slide" start="0,-38" end="0,-38" time="0" condition="!IsEmpty(ListItem.Tagline)">Conditional</animation>
                 </control>
                 <control type="label">
                     <description>Tagline</description>
@@ -341,7 +341,7 @@
                             <aligny>center</aligny>
                             <font>Font_Reg19</font>
                             <textcolor>FF868686</textcolor>
-                            <label>$LOCALIZE[368]:</label>
+                            <label>$LOCALIZE[31095]:</label>
                         </control>
                         <control type="label">
                             <description>RatingAndVotes+Top250</description>
@@ -407,7 +407,7 @@
                     <font>Font_Reg19</font>
                     <pagecontrol>60</pagecontrol>
                     <label fallback="312577">$INFO[ListItem.Plot]</label>
-                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
+                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(Nox.AutoScroll) + !Control.HasFocus(60)</autoscroll>
                     <textcolor>FFececec</textcolor>
                     <visible>![Control.HasFocus(20) | Control.HasFocus(5055)]</visible>
                 </control>
@@ -490,7 +490,7 @@
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <texture>common/topbar_top.png</texture>
                 <include>TopbarPulseAnimationLeft</include>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
             </control>
             <!-- Fanart -->
             <control type="image">
