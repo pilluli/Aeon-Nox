@@ -40,7 +40,7 @@
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <texture>common/topbar_down.png</texture>
                     <include>TopbarPulseAnimationRight</include>
-                    <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
             </control>
             <control type="group">
@@ -74,7 +74,7 @@
                     <height>1080</height>
                     <texture>info/info_rightpaneltop.png</texture>
                 </control>
-                <include condition="Skin.HasSetting(Nox.effect_bg)">BG_Effect_Home</include>
+                <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
                 <control type="group">
                     <posx>825</posx>
                     <posy>68</posy>
@@ -248,7 +248,7 @@
                         <font>Font_Condensed22</font>
                         <pagecontrol>60</pagecontrol>
                         <label fallback="312577">$INFO[ListItem.Property(Biography)]</label>
-                        <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(Nox.AutoScroll) + !Control.HasFocus(60)</autoscroll>
+                        <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
                         <textcolor>FFececec</textcolor>
                         <visible>!Control.IsVisible(150)</visible>
                     </control>
@@ -302,6 +302,20 @@
                                 <visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
                                 <textoffsetx>15</textoffsetx>
                             </control>
+								                                <control type="label">
+                                    <posx>690</posx>
+                                    <posy>0</posy>
+                                    <width>100</width>
+                                    <height>50</height>
+                                    <font>font12</font>
+                                    <align>right</align>
+                                    <aligny>center</aligny>
+                                    <textcolor>white2</textcolor>
+                                    <selectedcolor>FFEB9E17</selectedcolor>
+                                    <label>$INFO[ListItem.Year]</label>
+                                    <textoffsetx>15</textoffsetx>
+                                    <scroll>true</scroll>
+                                </control>
                             <control type="image">
                                 <posx>650</posx>
                                 <posy>7</posy>
@@ -350,6 +364,20 @@
                                     <textoffsetx>15</textoffsetx>
                                     <scroll>true</scroll>
                                 </control>
+								                                <control type="label">
+                                    <posx>690</posx>
+                                    <posy>0</posy>
+                                    <width>100</width>
+                                    <height>50</height>
+                                    <font>font12</font>
+                                    <align>right</align>
+                                    <aligny>center</aligny>
+                                    <textcolor>white2</textcolor>
+                                    <selectedcolor>FFEB9E17</selectedcolor>
+                                    <label>$INFO[ListItem.Year]</label>
+                                    <textoffsetx>15</textoffsetx>
+                                    <scroll>true</scroll>
+                                </control>
                             </control>
                             <control type="group">
                                 <visible>Control.HasFocus(150)</visible>
@@ -388,6 +416,20 @@
                                     <selectedcolor>FFEB9E17</selectedcolor>
                                     <info>ListItem.Label</info>
                                     <visible>!IsEmpty(ListItem.Property(LibraryHasMovie))</visible>
+                                    <textoffsetx>15</textoffsetx>
+                                    <scroll>true</scroll>
+                                </control>
+								                                <control type="label">
+                                    <posx>690</posx>
+                                    <posy>0</posy>
+                                    <width>100</width>
+                                    <height>50</height>
+                                    <font>font12</font>
+                                    <align>right</align>
+                                    <aligny>center</aligny>
+                                    <textcolor>white2</textcolor>
+                                    <selectedcolor>FFEB9E17</selectedcolor>
+                                    <label>$INFO[ListItem.Year]</label>
                                     <textoffsetx>15</textoffsetx>
                                     <scroll>true</scroll>
                                 </control>
@@ -436,101 +478,6 @@
                                 <aligny>center</aligny>
                                 <label>$ADDON[script.metadata.actors 32311]</label>
                             </control>
-                        </control>
-                    </control>
-                    <control type="group">
-                        <posy>135</posy>
-                        <posx>315</posx>
-                        <control type="panel" id="49">
-                            <posx>435</posx>
-                            <posy>30</posy>
-                            <width>1000</width>
-                            <height>450</height>
-                            <onleft>49</onleft>
-                            <onright>49</onright>
-                            <onup>9000</onup>
-                            <ondown>9000</ondown>
-                            <pagecontrol>-</pagecontrol>
-                            <scrolltime>200</scrolltime>
-                            <itemlayout height="45" width="500">
-                                <control type="label">
-                                    <posx>248</posx>
-                                    <posy>0</posy>
-                                    <width>240</width>
-                                    <height>45</height>
-                                    <font>font13</font>
-                                    <align>right</align>
-                                    <aligny>center</aligny>
-                                    <textcolor>grey</textcolor>
-                                    <selectedcolor>grey</selectedcolor>
-                                    <info>ListItem.Label</info>
-                                </control>
-                                <control type="label">
-                                    <posx>262</posx>
-                                    <posy>0</posy>
-                                    <width>500</width>
-                                    <height>45</height>
-                                    <font>font13</font>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <textcolor>FFFFFFFF</textcolor>
-                                    <selectedcolor>FFFFFFFF</selectedcolor>
-                                    <info>ListItem.Label2</info>
-                                </control>
-                            </itemlayout>
-                            <focusedlayout height="45" width="500">
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>0</posy>
-                                    <width>1110</width>
-                                    <height>45</height>
-                                    <visible>Control.HasFocus(49)</visible>
-                                    <texture>views/tripanel/listselect_fo.png</texture>
-                                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                                    <animation effect="fade" time="300">Visible</animation>
-                                    <animation effect="fade" time="300">Hidden</animation>
-                                </control>
-                                <control type="label">
-                                    <posx>248</posx>
-                                    <posy>0</posy>
-                                    <width>240</width>
-                                    <height>45</height>
-                                    <font>font13</font>
-                                    <align>right</align>
-                                    <aligny>center</aligny>
-                                    <textcolor>grey</textcolor>
-                                    <selectedcolor>grey</selectedcolor>
-                                    <info>ListItem.Label</info>
-                                </control>
-                                <control type="label">
-                                    <posx>262</posx>
-                                    <posy>0</posy>
-                                    <width>500</width>
-                                    <height>45</height>
-                                    <font>font13</font>
-                                    <align>left</align>
-                                    <aligny>center</aligny>
-                                    <textcolor>FFFFFFFF</textcolor>
-                                    <selectedcolor>FFFFFFFF</selectedcolor>
-                                    <info>ListItem.Label2</info>
-                                </control>
-                            </focusedlayout>
-                            <content>
-                                <item>
-                                    <label>$ADDON[script.metadata.actors 32013]:</label>
-                                    <label2>$INFO[ListItem.Property(Deathday)]$INFO[ListItem.Property(DeathageLong), (,)]</label2>
-                                    <onclick>-</onclick>
-                                    <visible>!IsEmpty(ListItem.Property(Deathday))</visible>
-                                </item>
-                            </content>
-                        </control>
-                        <control type="image">
-                            <posx>435</posx>
-                            <posy>555</posy>
-                            <width>1110</width>
-                            <height>6</height>
-                            <aspectratio>stretch</aspectratio>
-                            <texture>actors-separator.png</texture>
                         </control>
                     </control>
                     <control type="image">
@@ -786,7 +733,7 @@
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <texture>common/topbar_top.png</texture>
                     <include>TopbarPulseAnimationLeft</include>
-                    <visible>!Skin.HasSetting(Nox.DisableGlowbar)</visible>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
             </control>
         </control>
