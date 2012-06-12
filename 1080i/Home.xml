@@ -175,11 +175,8 @@
         <control type="group">
             <include>Animation_OpenCloseZoom</include>
             <include>RecentWidget</include>
-<<<<<<< HEAD
-	    <include>VideoBookmarkWidget</include>
-=======
             <include>RecentWidget2</include>
->>>>>>> master
+	    <include>VideoBookmarkWidget</include>
         </control>
         <include>PosterWidgetTrailerLabel</include>
         <!-- Library Totals -->
