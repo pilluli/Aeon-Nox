@@ -70,16 +70,15 @@
         <!-- Music ExtraFanart -->
         <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
         <include condition="Skin.HasSetting(artistslideshowhome)">MusicArtistSlideshowHome</include>
-				           <control type="image">
-                <include>FullscreenDimensions</include>
-                <animation effect="fade" start="100" end="50" time="0" condition="true">conditional</animation>
-                <texture>$INFO[Container(9000).ListItem.Property(Color),common/,.png]</texture>
-                <include>Animation_WindowFade200</include>
-		        <fadetime>600</fadetime>
-            </control>	
+        <control type="image">
+            <include>FullscreenDimensions</include>
+            <animation effect="fade" start="100" end="50" time="0" condition="true">conditional</animation>
+            <texture>$INFO[Container(9000).ListItem.Property(Color),common/,.png]</texture>
+            <include>Animation_WindowFade200</include>
+            <fadetime>600</fadetime>
+        </control>
         <!-- Home Fullscreen Video -->
         <include>CommonMediaPlayingBackground</include>
-		
         <control type="group">
             <visible>Skin.HasSetting(Glowbar_Home)</visible>
             <include>Animation_VisibleChange400</include>
@@ -87,7 +86,7 @@
                 <include>FullscreenDimensions</include>
                 <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
                 <texture>common/black.png</texture>
-            </control>´
+            </control>
             <control type="image">
                 <posx>0</posx>
                 <posy>-150</posy>
@@ -126,7 +125,7 @@
                 <height>945</height>
                 <texture>home/nowplaying_shadow.png</texture>
                 <visible>!ControlGroup(5000).HasFocus</visible>
-                <visible>Control.HasFocus(8000) | Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),panel)</visible>
+                <visible>[[Control.HasFocus(8000) | Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),panel)] + !Skin.HasSetting(DisableWidgets)]</visible>
                 <include>Animation_VisibleChangeDelayed</include>
                 <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             </control>
@@ -138,7 +137,7 @@
                 <height>945</height>
                 <texture flipy="true">home/nowplaying_shadow.png</texture>
                 <include>Animation_VisibleChangeDelayed</include>
-                <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo)] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)]</visible>
+                <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo)] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)] | [[Control.HasFocus(7000) | Substring(Control.GetLabel(4325),featured) | Substring(Control.GetLabel(4325),weather) | Substring(Control.GetLabel(4325),panel)] + !Skin.HasSetting(DisableWidgets)]</visible>
                 <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             </control>
         </control>
@@ -153,7 +152,7 @@
                 <height>694</height>
                 <texture>home/nowplaying_shadow.png</texture>
                 <visible>!ControlGroup(5000).HasFocus</visible>
-                <visible>Control.HasFocus(8000) | Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),panel)</visible>
+                <visible>[[Control.HasFocus(8000) | Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),panel)] + !Skin.HasSetting(DisableWidgets)]</visible>
                 <include>Animation_VisibleChangeDelayed</include>
             </control>
             <control type="image">
@@ -164,12 +163,12 @@
                 <height>545</height>
                 <texture flipy="true">home/nowplaying_shadow.png</texture>
                 <include>Animation_VisibleChangeDelayed</include>
-                <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo)] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)]</visible>
+                <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo)] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)] | [[Control.HasFocus(7000) | Substring(Control.GetLabel(4325),featured) | Substring(Control.GetLabel(4325),weather) | Substring(Control.GetLabel(4325),panel)] + !Skin.HasSetting(DisableWidgets)]</visible>
             </control>
         </control>
         <!-- Featured widget -->
-        <include condition="Substring(Skin.String(widgetlist),featured) | Substring(Skin.String(widgetlist),panel)">HomeFeaturedWidget</include>
-        <include condition="Substring(Skin.String(widget2list),featured) | Substring(Skin.String(widget2list),panel)">HomeFeaturedWidget2</include>
+        <include condition="Substring(Skin.String(widgetlist),featured) | Substring(Skin.String(widgetlist),panel)">HomePanelWidget</include>
+        <include condition="Substring(Skin.String(widget2list),featured) | Substring(Skin.String(widget2list),panel)">HomePanelWidget2</include>
         <!-- Latest/Random Items -->
         <control type="group">
             <include>Animation_OpenCloseZoom</include>
@@ -343,19 +342,19 @@
                 <texture>common/arrowback.png</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
-                    <control type="label">
-                        <posx>65</posx>
-                        <posy>0</posy>
-                        <width>100</width>
-                        <height>74</height>
-                        <font>Font_Reg14</font>
-                        <include>detailcolornofocus</include>
-                        <aligny>center</aligny>
-                        <align>center</align>
-                        <label>Show Widgets</label>
-                        <fontcolor>white</fontcolor>
-                        <wrapmultiline>true</wrapmultiline>
-                    </control>
+            <control type="label">
+                <posx>65</posx>
+                <posy>0</posy>
+                <width>100</width>
+                <height>74</height>
+                <font>Font_Reg14</font>
+                <include>detailcolornofocus</include>
+                <aligny>center</aligny>
+                <align>center</align>
+                <label>Show Widgets</label>
+                <fontcolor>white</fontcolor>
+                <wrapmultiline>true</wrapmultiline>
+            </control>
         </control>
     </controls>
 </window>
