@@ -96,6 +96,7 @@
     <string id="31093">Actors Born Today</string>
     <string id="31094">Widget Fanart</string>
     <string id="31095">Rating</string>
+    <string id="31096">Search on YouTube</string>
 
     <!-- Playlist Editor labels -->
     <string id="31055">Open playlist</string>
@@ -173,6 +174,7 @@
     <string id="31151">DVD Case</string>
     <string id="31152">CD Case</string>
     <string id="31153">Low List</string>
+    <string id="31233">Panel</string>
     <string id="31234">Wall</string>
     <string id="31235">Shift</string>
     <string id="31236">BannerPlex</string>
@@ -313,7 +315,7 @@
     <string id="31642">'PDA Weather'</string>
     <string id="31643">Customize Home window furniture</string>
     <string id="31646">Do you want to download all available [CR]artwork without user interaction?</string>
-    <string id="31672">Include watched items in the custom playlist widgets</string>
+    <string id="31672">Show watched items in playlist widgets</string>
     <string id="31674">Switch panel layout</string>
     <string id="31675">Customize top bar</string>
     <string id="31676">Top bar</string>

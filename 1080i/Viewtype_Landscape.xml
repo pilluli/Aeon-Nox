@@ -62,7 +62,7 @@
             <width>90</width>
             <height>90</height>
             <include>OverlayVisibility0</include>
-            <visible>![Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
+            <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
         </control>
         <control type="group">
             <posx>-20</posx>
@@ -78,7 +78,9 @@
         <onleft>503</onleft>
         <onright>503</onright>
         <onup>7000</onup>
-        <ondown>61</ondown>
+        <ondown condition="![Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">61</ondown>
+        <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + !IsEmpty(ListItem.Trailer)">1801</ondown>
+        <ondown condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]] + IsEmpty(ListItem.Trailer)">7000</ondown>
         <orientation>horizontal</orientation>
         <viewtype label="$LOCALIZE[31150]">BigWrap</viewtype>
         <pagecontrol>61</pagecontrol>
@@ -88,10 +90,10 @@
         <visible>[Container.Content(TVShows) | Container.Content(Seasons) | Container.Content(Episodes) | Container.Content(Movies) | Container.Content(artists)]</visible>
         <include>Animation_OpenCloseZoom_New</include>
         <animation effect="slide" start="0" end="52" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]">Conditional</animation>
-        <itemlayout width="495" height="450" condition="![Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]]">
+        <itemlayout width="495" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]] | Container.Content(artists)">
             <include>LandscapeThumbs</include>
         </itemlayout>
-        <focusedlayout width="600" height="450" condition="![Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies) | Container.Content(artists)]]">
+        <focusedlayout width="600" height="450" condition="![[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]] | Container.Content(artists)">
             <control type="group">
                 <animation effect="zoom" center="auto" start="100" end="122" time="300" tween="quadratic" easing="out" reversible="false">Focus</animation>
                 <animation type="UnFocus" condition="Control.HasFocus(503)">
@@ -144,44 +146,69 @@
                 </control>
             </control>
         </focusedlayout>
-        <itemlayout width="495" height="450" condition="[Skin.HasSetting(landscapelogo) + Container.Content(artists)]">
+        <itemlayout width="516" height="450" condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">
+        </itemlayout>
+        <focusedlayout width="516" height="450" condition="[Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]]">
+            <control type="group">
+                <animation effect="zoom" center="auto" start="100" end="122" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+                <animation effect="zoom" center="auto" start="122" end="100" time="200" tween="back" easing="out" reversible="false">UnFocus</animation>
+                <control type="image">
+                    <posx>60</posx>
+                    <posy>178</posy>
+                    <width>390</width>
+                    <height>164</height>
+                    <aspectratio aligny="bottom">keep</aspectratio>
+                    <texture fallback="fallback.png">$INFO[ListItem.Path,,logo.png]</texture>
+                </control>
+                <control type="image">
+                    <posx>60</posx>
+                    <posy>345</posy>
+                    <width>390</width>
+                    <height>164</height>
+                    <aspectratio aligny="top">keep</aspectratio>
+                    <texture flipy="true" fallback="fallback.png">$INFO[ListItem.Path,,logo.png]</texture>
+                    <animation effect="fade" start="10" end="10" time="200" tween="cubic" easing="inout" condition="true">Conditional</animation>
+                </control>
+            </control>
+        </focusedlayout> 
+        <itemlayout width="495" height="450" condition="[Skin.HasSetting(landscapeclearart) + [Container.Content(tvshows) | Container.Content(movies)]]">
             <control type="image">
                 <posx>38</posx>
-                <posy>178</posy>
-                <width>420</width>
-                <height>164</height>
+                <posy>-82</posy>
+                <width>450</width>
+                <height>400</height>
                 <aspectratio aligny="bottom">keep</aspectratio>
-                <texture fallback="fallback.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
+                <texture fallback="fallback.png">$INFO[ListItem.Path,,clearart.png]</texture>
             </control>
             <control type="image">
                 <posx>38</posx>
-                <posy>345</posy>
-                <width>420</width>
-                <height>164</height>
+                <posy>295</posy>
+                <width>450</width>
+                <height>400</height>
                 <aspectratio aligny="top">keep</aspectratio>
-                <texture flipy="true" fallback="fallback.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
+                <texture flipy="true" fallback="fallback.png">$INFO[ListItem.Path,,clearart.png]</texture>
                 <animation effect="fade" start="10" end="10" time="200" tween="cubic" easing="inout" condition="true">Conditional</animation>
             </control>
         </itemlayout>
-        <focusedlayout width="495" height="450" condition="[Skin.HasSetting(landscapelogo) + Container.Content(artists)]">
+        <focusedlayout width="495" height="450" condition="[Skin.HasSetting(landscapeclearart) + [Container.Content(tvshows) | Container.Content(movies)]]">
             <control type="group">
                 <animation effect="zoom" center="auto" start="100" end="122" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                 <animation effect="zoom" center="auto" start="122" end="100" time="200" tween="back" easing="out" reversible="false">UnFocus</animation>
                 <control type="image">
                     <posx>52</posx>
-                    <posy>178</posy>
-                    <width>390</width>
-                    <height>164</height>
+                    <posy>-82</posy>
+                    <width>450</width>
+                    <height>400</height>
                     <aspectratio aligny="bottom">keep</aspectratio>
-                    <texture fallback="fallback.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
+                    <texture fallback="fallback.png">$INFO[ListItem.Path,,clearart.png]</texture>
                 </control>
                 <control type="image">
                     <posx>52</posx>
-                    <posy>345</posy>
-                    <width>390</width>
-                    <height>164</height>
+                    <posy>295</posy>
+                    <width>450</width>
+                    <height>400</height>
                     <aspectratio aligny="top">keep</aspectratio>
-                    <texture flipy="true" fallback="fallback.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
+                    <texture flipy="true" fallback="fallback.png">$INFO[ListItem.Path,,clearart.png]</texture>
                     <animation effect="fade" start="10" end="10" time="200" tween="cubic" easing="inout" condition="true">Conditional</animation>
                 </control>
             </control>
@@ -203,6 +230,52 @@
             <include condition="!Skin.HasSetting(showcasewrap)">lsfixed</include>
             <include condition="Skin.HasSetting(showcasewrap)">lswrap</include>
             <control type="group">
+                <visible>[[Skin.HasSetting(landscapeonelogo) | Skin.HasSetting(landscapelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
+                <posy>987</posy>
+                <control type="image">
+                    <posx>60</posx>
+                    <posy>0</posy>
+                    <include>AudioFlagsVars</include>
+                    <texture fallback="flags/studios/default-studio.png">$INFO[ListItem.Studio,flags/studios/,.png]</texture>
+                </control>
+                <control type="group">
+                <animation effect="slide" start="0" end="1380" reversible="true" condition="Container.Content(tvshows)">Conditional</animation>
+                    <control type="image">
+                        <posy>1</posy>
+                        <width>112</width>
+                        <posx>345</posx>
+                        <include>AudioFlagsVars</include>
+                        <texture>flags/posters/imdb.png</texture>
+                    </control>
+                    <control type="label">
+                        <posx>351</posx>
+                        <posy>27</posy>
+                        <width>135</width>
+                        <height>38</height>
+                        <align>center</align>
+                        <aligny>center</aligny>
+                        <font>Font_Bold24</font>
+                        <textcolor>floor</textcolor>
+                        <label fallback="?">$INFO[ListItem.Rating]</label>
+                    </control>
+                </control>
+                <control type="image">
+                    <posx>1725</posx>
+                    <posy>0</posy>
+                    <include>AudioFlagsVars</include>
+                    <texture>$VAR[AudioFlagVar,flags/audio/,.png]</texture>
+                    <visible>!ListItem.IsFolder</visible>
+                </control>
+                <control type="image">
+                    <description>Audio Flags</description>
+                    <posx>1440</posx>
+                    <posy>0</posy>
+                    <include>AudioFlagsVars</include>
+                    <texture>$INFO[ListItem.VideoResolution,flags/resolution/,.png]</texture>
+                    <visible>!ListItem.IsFolder</visible>
+                </control>
+            </control>
+            <control type="group">
                 <control type="label">
                     <posx>510</posx>
                     <posy>1040</posy>
@@ -216,7 +289,7 @@
                     <textcolor>floor</textcolor>
                     <shadowcolor>floorshadow</shadowcolor>
                     <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
-                    <visible>![Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
+                    <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
                     <visible>!Container.Content(episodes)</visible>
                 </control>
                 <control type="label">
@@ -233,7 +306,7 @@
                     <shadowcolor>floorshadow</shadowcolor>
                     <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
                     <visible>Container.Content(episodes)</visible>
-                    <visible>![Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
+                    <visible>![[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]]</visible>
                 </control>
                 <control type="label">
                     <posx>510</posx>
@@ -248,7 +321,7 @@
                     <textcolor>FFe1e1e1</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <label>$VAR[LandscapeLogoLabelVar]</label>
-                    <visible>Skin.HasSetting(landscapelogo) + [Container.Content(tvshows) | Container.Content(movies)]  + !Control.HasFocus(61)</visible>
+                    <visible>[Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]  + !Control.HasFocus(61)</visible>
                 </control>
                 <!--    <control type="label">
           <posx>510</posx>
