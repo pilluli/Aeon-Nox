@@ -49,6 +49,7 @@
                 <posx>0</posx>
                 <posy>854</posy>
                 <control type="group">
+					<posy>20</posy>
                     <posx>8</posx>
                     <animation type="Conditional" reversible="true" condition="Container.Content(artists)">
                         <effect type="rotatey" center="248" start="0" end="180" time="1500" />
@@ -162,7 +163,7 @@
                         <align>justify</align>
                         <font>Font_Condensed22</font>
                         <pagecontrol>60</pagecontrol>
-                        <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        <autoscroll delay="15000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                         <textcolor>grey2</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <label>$INFO[ListItem.Comment,$LOCALIZE[569]: ]</label>

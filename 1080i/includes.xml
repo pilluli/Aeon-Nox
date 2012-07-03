@@ -40,6 +40,7 @@
     <include file="Includes_Widget2.xml" />
     <include file="Includes_CustomizerWindow.xml" />
     <include file="includesWeatherWorldCommonValues.xml" />
+    <include file="Viewtype_FullscreenPanel.xml" />
     <include name="VideoBackground">
         <control type="group">
             <visible>Player.HasVideo + [Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(506) | Control.IsVisible(511) | Control.IsVisible(50) | Control.IsVisible(500) | Control.IsVisible(514) | Control.IsVisible(516) | Control.IsVisible(500) | Control.IsVisible(510) | Control.IsVisible(57) | [[Control.IsVisible(501) | Control.IsVisible(504) | Control.IsVisible(503) | Control.IsVisible(508)] + !Control.IsVisible(7550)] | [[Control.IsVisible(509) | Control.IsVisible(513)] + !Control.IsVisible(7679)]]</visible>
@@ -81,15 +82,6 @@
         <animation effect="fade" time="250">WindowClose</animation>
         <animation effect="fade" time="250">Visible</animation>
         <animation effect="fade" time="250">Hidden</animation>
-    </include>
-    <include name="CommonMusicBackground">
-        <control type="multiimage">
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/music.jpg" background="true">$INFO[Skin.String(MusicHomeItem.MultiFanart)]</imagepath>
-            <visible>Window.IsActive(musicfiles) | Window.IsActive(musicplaylist)</visible>
-            <animation effect="fade" start="0" end="100" time="1000">Visible</animation>
-        </control>
     </include>
     <include name="CommonPictureBackground">
         <control type="multiimage">
@@ -423,45 +415,48 @@
         </control>
     </include>
     <include name="Furniture_SettingsFloor">
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
-            <texture>common/black.png</texture>
-            <visible>Skin.HasSetting(Glowbar_Home)</visible>
-            <include>Animation_VisibleChange400</include>
-        </control>
-        <control type="image">
-            <posx>0</posx>
-            <posy>472</posy>
-            <width>1920</width>
-            <height>608</height>
-            <texture>views/showcase_floor.png</texture>
-            <colordiffuse>$VAR[FloorColorVar]</colordiffuse>
-        </control>
-        <control type="image">
-            <width>1920</width>
-            <height>206</height>
-            <posx>0</posx>
-            <posy>874</posy>
-            <texture>views/panel_spot.png</texture>
-            <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
-        </control>
-        <control type="image">
-            <posx>46</posx>
-            <posy>110</posy>
-            <width>1822</width>
-            <height>1038</height>
-            <texture>wall/wall_bg_reflection.png</texture>
-        </control>
-        <include>Neon_Floor</include>
-        <control type="image">
+        <control type="group">
             <include>Animation_OpenClose_Furniture</include>
-            <posx>0</posx>
-            <posy>-100</posy>
-            <width>1920</width>
-            <height>608</height>
-            <texture flipy="true">views/showcase_glow.png</texture>
-            <colordiffuse>$VAR[FloorColorVar]</colordiffuse>
+            <control type="image">
+                <include>FullscreenDimensions</include>
+                <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
+                <texture>common/black.png</texture>
+                <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                <include>Animation_VisibleChange400</include>
+            </control>
+            <control type="image">
+                <posx>0</posx>
+                <posy>472</posy>
+                <width>1920</width>
+                <height>608</height>
+                <texture>views/showcase_floor.png</texture>
+                <colordiffuse>$VAR[FloorColorVar]</colordiffuse>
+            </control>
+            <control type="image">
+                <width>1920</width>
+                <height>206</height>
+                <posx>0</posx>
+                <posy>874</posy>
+                <texture>views/panel_spot.png</texture>
+                <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>49</posx>
+                <posy>112</posy>
+                <width>1819</width>
+                <height>1038</height>
+                <texture>wall/wall_bg_reflection.png</texture>
+                <animation effect="zoom" end="91" center="960,360" time="400" tween="cubic" easing="inout" condition="true">Conditional</animation>
+            </control>
+            <include>Neon_Floor</include>
+            <control type="image">
+                <posx>0</posx>
+                <posy>-100</posy>
+                <width>1920</width>
+                <height>608</height>
+                <texture flipy="true">views/showcase_glow.png</texture>
+                <colordiffuse>$VAR[FloorColorVar]</colordiffuse>
+            </control>
         </control>
     </include>
     <include name="Furniture_SettingsBackPanel">
@@ -1088,7 +1083,8 @@
                 <item>
                     <label fallback="31502">$INFO[Skin.String(QuickNavItem1.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Film.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Film.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
+                    <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
                     <onclick>Dialog.Close(1121)</onclick>
                     <onclick condition="IsEmpty(Skin.String(QuickNavItem1.Type))">ReplaceWindow(Videos,MovieTitles,return)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem1.Type),1) | stringcompare(Skin.String(QuickNavItem1.Type),2) | stringcompare(Skin.String(QuickNavItem1.Type),3) | stringcompare(Skin.String(QuickNavItem1.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem1.Path)])</onclick>
@@ -1100,7 +1096,8 @@
                 <item>
                     <label fallback="31503">$INFO[Skin.String(QuickNavItem2.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Television.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
+                    <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
                     <onclick>Dialog.Close(1121)</onclick>
                     <onclick condition="IsEmpty(Skin.String(QuickNavItem2.Type))">ReplaceWindow(Videos,TVShowTitles,return)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem2.Type),1) | stringcompare(Skin.String(QuickNavItem2.Type),2) | stringcompare(Skin.String(QuickNavItem2.Type),3) | stringcompare(Skin.String(QuickNavItem2.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem2.Path)])</onclick>
@@ -1112,7 +1109,8 @@
                 <item>
                     <label fallback="31501">$INFO[Skin.String(QuickNavItem3.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Headphone.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Headphone.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
+                    <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
                     <onclick>Dialog.Close(1121)</onclick>
                     <onclick condition="IsEmpty(Skin.String(QuickNavItem3.Type))">ReplaceWindow(Music)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem3.Type),1) | stringcompare(Skin.String(QuickNavItem3.Type),2) | stringcompare(Skin.String(QuickNavItem3.Type),3) | stringcompare(Skin.String(QuickNavItem3.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem3.Path)])</onclick>
@@ -1124,7 +1122,8 @@
                 <item>
                     <label fallback="20389">$INFO[Skin.String(QuickNavItem4.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Media.png">$INFO[Skin.String(QuickNavItem4.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Media.png">$INFO[Skin.String(QuickNavItem4.MultiFanart)]</thumb>
+                    <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
                     <onclick>Dialog.Close(1121)</onclick>
                     <onclick condition="IsEmpty(Skin.String(QuickNavItem4.Type))">ReplaceWindow(Videos,MusicVideoTitles,return)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem4.Type),1) | stringcompare(Skin.String(QuickNavItem4.Type),2) | stringcompare(Skin.String(QuickNavItem4.Type),3) | stringcompare(Skin.String(QuickNavItem4.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem4.Path)])</onclick>
@@ -1134,11 +1133,12 @@
 					<visible>!Skin.HasSetting(QuickNavItem4)</visible>
                 </item>
                 <item>
-                    <label fallback="52502">$INFO[Skin.String(QuickNavItem5.Label)]</label>
+                    <label fallback="1036">$INFO[Skin.String(QuickNavItem5.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Monitor.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Star.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
+                    <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
                     <onclick>Dialog.Close(1121)</onclick>
-                    <onclick condition="IsEmpty(Skin.String(QuickNavItem5.Type))">ReplaceWindow(PVR)</onclick>
+                    <onclick condition="IsEmpty(Skin.String(QuickNavItem5.Type))">ActivateWindow(favourites)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem5.Type),1) | stringcompare(Skin.String(QuickNavItem5.Type),2) | stringcompare(Skin.String(QuickNavItem5.Type),3) | stringcompare(Skin.String(QuickNavItem5.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem5.Path)])</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem5.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickNavItem5.Path)],return)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem5.Type),5)">ReplaceWindow(MusicLibrary,$INFO[Skin.String(QuickNavItem5.Path)],return)</onclick>
@@ -1148,7 +1148,8 @@
                 <item>
                     <label fallback="1037">$INFO[Skin.String(QuickNavItem6.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Star.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Monitor.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
+                    <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
                     <onclick>Dialog.Close(1121)</onclick>
                     <onclick condition="IsEmpty(Skin.String(QuickNavItem6.Type))">ReplaceWindow(Videos,Addons,return)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem6.Type),1) | stringcompare(Skin.String(QuickNavItem6.Type),2) | stringcompare(Skin.String(QuickNavItem6.Type),3) | stringcompare(Skin.String(QuickNavItem6.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem6.Path)])</onclick>
@@ -1160,7 +1161,8 @@
                 <item>
                     <label fallback="31507">$INFO[Skin.String(QuickNavItem7.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Puzzle.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Puzzle.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
+                    <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
                     <onclick>Dialog.Close(1121)</onclick>
                     <onclick condition="IsEmpty(Skin.String(QuickNavItem7.Type))">ReplaceWindow(Programs,addons)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem7.Type),1) | stringcompare(Skin.String(QuickNavItem7.Type),2) | stringcompare(Skin.String(QuickNavItem7.Type),3) | stringcompare(Skin.String(QuickNavItem7.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem7.Path)])</onclick>
@@ -1172,8 +1174,9 @@
                 <item>
                     <label fallback="137">$INFO[Skin.String(QuickNavItem8.Label)]</label>
                     <icon>-</icon>
+                    <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
                     <onclick>Dialog.Close(1121)</onclick>
-                    <thumb fallback="BigIcons/Search.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Search.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
                     <onclick condition="IsEmpty(Skin.String(QuickNavItem8.Type))">RunScript(script.globalsearch)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem8.Type),1) | stringcompare(Skin.String(QuickNavItem8.Type),2) | stringcompare(Skin.String(QuickNavItem8.Type),3) | stringcompare(Skin.String(QuickNavItem8.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem8.Path)])</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem8.Type),4)">ReplaceWindow(Videos,$INFO[Skin.String(QuickNavItem8.Path)],return)</onclick>
@@ -1184,7 +1187,8 @@
                 <item>
                     <label fallback="559">$INFO[Skin.String(QuickNavItem9.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Format.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Format.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
+                    <onclick condition="Window.IsActive(playercontrols)">Dialog.Close(114)</onclick>
                     <onclick>Dialog.Close(1121)</onclick>
                     <onclick condition="IsEmpty(Skin.String(QuickNavItem9.Type))">ReplaceWindow(musicplaylist)</onclick>
 					<onclick condition="stringcompare(Skin.String(QuickNavItem9.Type),1) | stringcompare(Skin.String(QuickNavItem9.Type),2) | stringcompare(Skin.String(QuickNavItem9.Type),3) | stringcompare(Skin.String(QuickNavItem9.Type),0)">RunAddon($INFO[Skin.String(QuickNavItem9.Path)])</onclick>

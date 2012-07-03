@@ -1,6 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1121">
     <defaultcontrol always="true">9011</defaultcontrol>
+    <onload>ClearProperty(QuickNavSetup,home)</onload>
 	<onunload>ClearProperty(quicknavsetup,home)</onunload>
 	<onunload>Skin.Reset(viewtypeselect)</onunload>
     <coordinates>
@@ -164,11 +165,19 @@
                     <visible>![Window.IsActive(videos) + Skin.HasSetting(DisableLowListVL)]</visible>
                 </item>
                 <item>
-                    <label>Panel</label>
+                    <label>31233</label>
                     <icon>-</icon>
                     <thumb>-</thumb>
                     <onclick>Container.SetViewMode(550)</onclick>
-                    <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
+                    <visible>Window.IsActive(videos)</visible>
+                    <visible>![Window.IsActive(videos) + Skin.HasSetting(DisablePanelVL)]</visible>
+                </item>
+                <item>
+                    <label>InfoPanel</label>
+                    <icon>-</icon>
+                    <thumb>-</thumb>
+                    <onclick>Container.SetViewMode(518)</onclick>
+                    <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(episodes)</visible>
                 </item>
                 <item>
                     <label>$LOCALIZE[31153]</label>
@@ -463,7 +472,7 @@
                 <item>
                     <label fallback="31502">$INFO[Skin.String(QuickNavItem1.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Film.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Film.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem1)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
 					<visible>!Skin.HasSetting(QuickNavItem1)</visible>
@@ -471,7 +480,7 @@
                 <item>
                     <label fallback="31502">$INFO[Skin.String(QuickNavItem1.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Film.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Film.png">$INFO[Skin.String(QuickNavItem1.MultiFanart)]</thumb>
 					<property name="DisableIcon">close.png</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem1)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
@@ -480,7 +489,7 @@
                 <item>
                     <label fallback="31503">$INFO[Skin.String(QuickNavItem2.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Television.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem2)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
 					<visible>!Skin.HasSetting(QuickNavItem2)</visible>
@@ -488,7 +497,7 @@
                 <item>
                     <label fallback="31503">$INFO[Skin.String(QuickNavItem2.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Television.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Television.png">$INFO[Skin.String(QuickNavItem2.MultiFanart)]</thumb>
 					<property name="DisableIcon">close.png</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem2)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
@@ -497,7 +506,7 @@
                 <item>
                     <label fallback="31501">$INFO[Skin.String(QuickNavItem3.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Headphone.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Headphone.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem3)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
 					<visible>!Skin.HasSetting(QuickNavItem3)</visible>
@@ -505,7 +514,7 @@
                 <item>
                     <label fallback="31501">$INFO[Skin.String(QuickNavItem3.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Headphone.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Headphone.png">$INFO[Skin.String(QuickNavItem3.MultiFanart)]</thumb>
 					<property name="DisableIcon">close.png</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem3)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
@@ -514,7 +523,7 @@
                 <item>
                     <label fallback="20389">$INFO[Skin.String(QuickNavItem4.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Media.png">$INFO[Skin.String(QuickNavItem4.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Media.png">$INFO[Skin.String(QuickNavItem4.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem4)</onclick>
 					<visible>!Skin.HasSetting(QuickNavItem4)</visible>
                     <onclick>ActivateWindow(1136)</onclick>
@@ -522,24 +531,24 @@
                 <item>
                     <label fallback="20389">$INFO[Skin.String(QuickNavItem4.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Media.png">$INFO[Skin.String(QuickNavItem4.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Media.png">$INFO[Skin.String(QuickNavItem4.MultiFanart)]</thumb>
 					<property name="DisableIcon">close.png</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem4)</onclick>
 					<visible>Skin.HasSetting(QuickNavItem4)</visible>
                     <onclick>ActivateWindow(1136)</onclick>
                 </item>
 				<item>
-					<label fallback="52502">$INFO[Skin.String(QuickNavItem5.Label)]</label>
+					<label fallback="1036">$INFO[Skin.String(QuickNavItem5.Label)]</label>
 					<icon>-</icon>
-					<thumb fallback="BigIcons/Monitor.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
+					<thumb fallback="special://skin/extras/BigIcons/Star.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem5)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
 					<visible>!Skin.HasSetting(QuickNavItem5)</visible>
 				</item>
 				<item>
-					<label fallback="52502">$INFO[Skin.String(QuickNavItem5.Label)]</label>
+					<label fallback="1036">$INFO[Skin.String(QuickNavItem5.Label)]</label>
 					<icon>-</icon>
-					<thumb fallback="BigIcons/Monitor.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
+					<thumb fallback="special://skin/extras/BigIcons/Star.png">$INFO[Skin.String(QuickNavItem5.MultiFanart)]</thumb>
 					<property name="DisableIcon">close.png</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem5)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
@@ -548,7 +557,7 @@
                 <item>
                     <label fallback="1037">$INFO[Skin.String(QuickNavItem6.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Star.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Monitor.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem6)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
 					<visible>!Skin.HasSetting(QuickNavItem6)</visible>
@@ -556,7 +565,7 @@
                 <item>
                     <label fallback="1037">$INFO[Skin.String(QuickNavItem6.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Star.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Monitor.png">$INFO[Skin.String(QuickNavItem6.MultiFanart)]</thumb>
 					<property name="DisableIcon">close.png</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem6)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
@@ -565,7 +574,7 @@
                 <item>
                     <label fallback="31507">$INFO[Skin.String(QuickNavItem7.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Puzzle.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Puzzle.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem7)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
 					<visible>!Skin.HasSetting(QuickNavItem7)</visible>
@@ -573,7 +582,7 @@
                 <item>
                     <label fallback="31507">$INFO[Skin.String(QuickNavItem7.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Puzzle.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Puzzle.png">$INFO[Skin.String(QuickNavItem7.MultiFanart)]</thumb>
 					<property name="DisableIcon">close.png</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem7)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
@@ -582,7 +591,7 @@
                 <item>
                     <label fallback="137">$INFO[Skin.String(QuickNavItem8.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Search.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Search.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem8)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
 					<visible>!Skin.HasSetting(QuickNavItem8)</visible>
@@ -590,7 +599,7 @@
                 <item>
                     <label fallback="137">$INFO[Skin.String(QuickNavItem8.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Search.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Search.png">$INFO[Skin.String(QuickNavItem8.MultiFanart)]</thumb>
 					<property name="DisableIcon">close.png</property>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem8)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
@@ -599,7 +608,7 @@
                 <item>
                     <label fallback="559">$INFO[Skin.String(QuickNavItem9.Label)]</label>
                     <icon>-</icon>
-                    <thumb fallback="BigIcons/Format.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Format.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem9)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
 					<visible>!Skin.HasSetting(QuickNavItem9)</visible>
@@ -608,7 +617,7 @@
                     <label fallback="559">$INFO[Skin.String(QuickNavItem9.Label)]</label>
                     <icon>-</icon>
 					<property name="DisableIcon">close.png</property>
-                    <thumb fallback="BigIcons/Format.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
+                    <thumb fallback="special://skin/extras/BigIcons/Format.png">$INFO[Skin.String(QuickNavItem9.MultiFanart)]</thumb>
                     <onclick>Skin.SetString(MenuItem,QuickNavItem9)</onclick>
                     <onclick>ActivateWindow(1136)</onclick>
 					<visible>Skin.HasSetting(QuickNavItem9)</visible>

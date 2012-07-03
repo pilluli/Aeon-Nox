@@ -1172,7 +1172,7 @@
                             <font>Font_Reg19</font>
                             <label fallback="312577">$INFO[VideoPlayer.Plot]</label>
                             <textcolor>FFececec</textcolor>
-                            <autoscroll delay="5000" time="2000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+                            <autoscroll delay="5000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>Skin.HasSetting(nowplayingpanel)</visible>
                         </control>
                     </control>
@@ -2386,14 +2386,15 @@
                         <itemgap>0</itemgap>
                         <aligny>center</aligny>
                         <scrolltime>0</scrolltime>
-                        <onup>9000</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">9000</onup>
                         <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">4445</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(1) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon1,home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(2) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon2,home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(3) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon3,home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(4) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon4,home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5019).HasFocus(5) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon5,home)</onup>
-                        <onup condition="IsEmpty(Control.GetLabel(4325)) + !Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</onup>
+                        <onup condition="!Skin.HasSetting(lowermainmenu)">9000</onup>
                         <ondown>9000</ondown>
                         <ondown condition="Container(5019).HasFocus(1) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon1,home)</ondown>
                         <ondown condition="Container(5019).HasFocus(2) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon2,home)</ondown>
@@ -2569,14 +2570,15 @@
                         <itemgap>0</itemgap>
                         <aligny>center</aligny>
                         <scrolltime>0</scrolltime>
-                        <onup>9000</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">9000</onup>
                         <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">4445</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(1) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon6,home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(2) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon7,home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(3) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon8,home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(4) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon9,home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Container(5020).HasFocus(5) + Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon10,home)</onup>
-                        <onup condition="IsEmpty(Control.GetLabel(4325)) + !Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</onup>
+                        <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">ActivateWindow(1137)</onup>
+                        <onup condition="!Skin.HasSetting(lowermainmenu)">9000</onup>
                         <ondown>9000</ondown>
                         <ondown condition="Container(5020).HasFocus(1) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon6,home)</ondown>
                         <ondown condition="Container(5020).HasFocus(2) + !Skin.HasSetting(lowermainmenu)">SetProperty(CustomYesNoDialog,Icon7,home)</ondown>
@@ -2754,7 +2756,7 @@
                         <onleft>5010</onleft>
                         <onright>5010</onright>
 						<preloaditems>2</preloaditems>
-                        <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">SetFocus(6010)</onup>
+                        <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">SetFocus(4445)</onup>
                         <onup condition="!Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onup>
                         <ondown condition="Skin.HasSetting(lowermainmenu)">9000</ondown>
                         <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
@@ -2874,6 +2876,177 @@
 						<content>
 							<include condition="Substring(Skin.String(widgetlist),concerts)">ConcertsPanelContent1124</include>
 							<include condition="Substring(Skin.String(widgetlist),concerts)">ConcertsPanelContent</include>
+						</content>
+					</control>
+                </control>
+                <control type="group">
+                    <visible>Substring(Control.GetLabel(4321),nextairedpanel)</visible>
+					<include>Animation_VisibleChange400</include>
+					<control type="panel" id="5010">
+                        <posx>27</posx>
+                        <posy>26</posy>
+                        <width>1595</width>
+                        <height>348</height>
+						<orientation>horizontal</orientation>
+                        <include>Animation_VisibleChange400</include>
+                        <onleft>5010</onleft>
+                        <onright>5010</onright>
+						<preloaditems>2</preloaditems>
+                        <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">SetFocus(4445)</onup>
+                        <onup condition="!Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onup>
+                        <ondown condition="Skin.HasSetting(lowermainmenu)">9000</ondown>
+                        <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
+                        <onback>9000</onback>
+						<pagecontrol>-</pagecontrol>
+						<scrolltime>200</scrolltime>
+                        <itemlayout height="450" width="532">
+                            <control type="image">
+                                <description>Main Icon</description>
+                                <posx>21</posx>
+                                <posy>42</posy>
+                                <width>183</width>
+                                <height>275</height>
+                                <fadetime>IconCrossfadeTime</fadetime>
+                                <texture diffuse="thumbs/movieposter_mask.png" background="true">DefaultVideoBigPoster.png</texture>
+                                <aspectratio scalediffuse="false">stretch</aspectratio>
+                                <info>ListItem.Thumb</info>
+                            </control>
+                            <control type="image">
+                                <description>Main Icon Glass overlay</description>
+                                <posx>1.5</posx>
+                                <posy>22.5</posy>
+                                <width>222</width>
+                                <height>313</height>
+                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                                <bordersize>19.5</bordersize>
+                                <aspectratio scalediffuse="false">scale</aspectratio>
+                            </control>
+                    <control type="label">
+                        <posx>200</posx>
+                        <posy>25</posy>
+                        <width>340</width>
+                        <height>50</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Reg24</font>
+                        <textcolor>white2</textcolor>
+                        <shadowcolor>-</shadowcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                        <textoffsetx>15</textoffsetx>
+                    </control>
+                    <control type="label">
+                        <posx>200</posx>
+                        <posy>78</posy>
+                        <width>340</width>
+                        <height>30</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <font>Font_Condensed22</font>
+                        <textcolor>grey2</textcolor>
+                        <shadowcolor>-</shadowcolor>
+                        <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
+                        <textoffsetx>15</textoffsetx>
+                    </control>
+                        <control type="textbox">
+                            <posx>215</posx>
+                            <posy>112</posy>
+                            <width>300</width>
+                            <height>205</height>
+                            <align>left</align>
+                            <label>$INFO[ListItem.Label2]</label>
+                            <font>Font_Condensed20</font>
+                            <include>listcolornofocus</include>
+                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        </control>
+                        </itemlayout>
+                        <focusedlayout height="450" width="532">
+                            <control type="group">
+                                <control type="image">
+                                    <description>Main Icon</description>
+                                    <posx>21</posx>
+                                    <posy>42</posy>
+                                    <width>183</width>
+                                    <height>275</height>
+                                    <fadetime>IconCrossfadeTime</fadetime>
+                                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                                </control>
+                                <control type="image">
+                                    <posx>1.5</posx>
+                                    <posy>22.5</posy>
+                                    <width>222</width>
+                                    <height>313</height>
+                                    <description>Main Icon Glass overlay</description>
+                                    <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
+                                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
+                                    <bordersize>19.5</bordersize>
+                                    <aspectratio scalediffuse="false">stretch</aspectratio>
+                                </control>
+                            </control>
+						<control type="label">
+							<posx>200</posx>
+							<posy>25</posy>
+							<width>340</width>
+							<height>50</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_Reg24</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Label]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+						<control type="label">
+							<posx>200</posx>
+							<posy>70</posy>
+							<width>340</width>
+							<height>50</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_Condensed22</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Property(NextTitle)]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+						<control type="label">
+							<posx>200</posx>
+							<posy>112</posy>
+							<width>340</width>
+							<height>30</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_Condensed22</font>
+							<textcolor>grey2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Property(NextNumber)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+							<control type="textbox">
+								<posx>215</posx>
+								<posy>146</posy>
+								<width>300</width>
+								<height>205</height>
+								<align>left</align>
+								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
+								<font>Font_Condensed20</font>
+								<include>listcolornofocus</include>
+								<autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
+							</control>
+                            <control type="image">
+                                <posx>0</posx>
+                                <posy>20</posy>
+                                <width>532</width>
+                                <height>319</height>
+								<aspectratio>stretch</aspectratio>
+                                <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
+                                <texture border="5">views/addonwall_select.png</texture>
+                                <visible>Control.HasFocus(5010)</visible>
+                            </control>
+                        </focusedlayout>
+						<content>
+							<include>NextAiredWidgetContent</include>
 						</content>
 					</control>
                 </control>
@@ -4960,7 +5133,7 @@
                         <animation effect="fade" start="100" end="0" time="0" condition="!Substring(Control.GetLabel(4321),panel)">Conditional</animation>
                         <onleft>5010</onleft>
                         <onright>5010</onright>
-                        <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">SetFocus(6010)</onup>
+                        <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">SetFocus(4445)</onup>
                         <onup condition="!Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu) + IsEmpty(Window(Home).Property(PanelWidgetInfo))">SetProperty(PanelWidgetInfo,True,Home)</onup>
                         <onup condition="IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu) + IsEmpty(Window(Home).Property(PanelWidgetInfo))">SetFocus(5014)</onup>
@@ -5016,7 +5189,7 @@
                                 <visible>Control.HasFocus(5010)</visible>
                             </control>
                         </focusedlayout>
-                        <itemlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panel,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
+                        <itemlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panel,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),babe) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
                             <control type="group">
                                 <control type="image">
                                     <description>Main Icon</description>
@@ -5025,7 +5198,7 @@
                                     <width>309</width>
                                     <height>309</height>
                                     <texture background="true">DefaultAlbumCover.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
                                     <info>ListItem.Icon</info>
                                 </control>
                                 <control type="label">
@@ -5053,7 +5226,7 @@
                                 </control>
                             </control>
                         </itemlayout>
-                        <focusedlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panel,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
+                        <focusedlayout width="319" height="360" condition="Substring(Control.GetLabel(4321),panel,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),artists) |  Substring(Control.GetLabel(4321),babe) |Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
                             <control type="group">
                                 <control type="image">
                                     <description>Main Icon</description>
@@ -5062,7 +5235,7 @@
                                     <width>309</width>
                                     <height>309</height>
                                     <texture background="true">DefaultAlbumCover.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
+                                    <aspectratio scalediffuse="false" aligny="top">scale</aspectratio>
                                     <info>ListItem.Icon</info>
                                 </control>
                                 <control type="label">
@@ -5312,7 +5485,8 @@
                         </itemlayout>
                         <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)] ">
                             <control type="group">
-                                <control type="image">
+                                  <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+                               <control type="image">
                                     <description>Main Icon</description>
                                     <posx>21</posx>
                                     <posy>42</posy>
@@ -5459,6 +5633,8 @@
                         </itemlayout>
                         <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),pics)]">
                             <control type="group">
+                            <control type="group">
+                                 <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                                 <control type="image">
                                     <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
                                     <aspectratio scalediffuse="false">scale</aspectratio>
@@ -5480,6 +5656,7 @@
                                     <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
                                     <bordersize>9</bordersize>
                                 </control>
+                            </control>
                                 <control type="label">
                                     <posx>15</posx>
                                     <posy>305</posy>
@@ -5622,25 +5799,29 @@
                             </control>
                         </itemlayout>
                         <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
-                            <control type="group">        
-                                <control type="image">
-                                    <posx>20</posx>
-                                    <posy>15</posy>
-                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
-                                    <height>320</height>
-                                    <width>340</width>
-                                    <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+                            <control type="group"> 
+                                <control type="group">
+                                 <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+                                    <control type="image">
+                                        <posx>20</posx>
+                                        <posy>15</posy>
+                                        <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                                        <height>320</height>
+                                        <width>340</width>
+                                        <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
+                                    </control>
+                                    <control type="image">
+                                        <posx>0</posx>
+                                        <posy>-5</posy>
+                                        <height>360</height>
+                                        <width>380</width>
+                                        <aspectratio scalediffuse="false" align="center">scale</aspectratio>
+                                        <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
+                                        <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
+                                        <bordersize>20</bordersize>
+                                    </control>
                                 </control>
-                                <control type="image">
-                                    <posx>0</posx>
-                                    <posy>-5</posy>
-                                    <height>360</height>
-                                    <width>380</width>
-                                    <aspectratio scalediffuse="false" align="center">scale</aspectratio>
-                                    <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
-                                    <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
-                                    <bordersize>20</bordersize>
-                                </control>
+
                                 <control type="image">
                                     <posx>400</posx>
                                     <posy>95</posy>
@@ -5783,6 +5964,7 @@
                             <include condition="Window.IsActive(1124)">BornActorsItems1124</include>
                             <include condition="Window.IsActive(1124)">RandomAddonsItems1124</include>
                             <include condition="Window.IsActive(1124)">WatchListTVItems1124</include>
+                            <include condition="Window.IsActive(1124) | Substring(Skin.String(widgetlist),babe)">DailyBabesContent</include>
                         </content>
                     </control>
                     <control type="label">
@@ -6317,7 +6499,7 @@
                                     <property name="Network">$INFO[Window(Home).Property(NextAired.1.Network)]</property>
                                     <property name="LatestDate">$INFO[Window(Home).Property(NextAired.1.LatestDate)]</property>
                                     <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.1.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.1.Runtime)]</property>
+                                    <property name="RunningTime">$INFO[Window(Home).Property(NextAired.1.Runtime)]</property>
                                     <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.1.Library)],return)</onclick>
                                     <visible>!IsEmpty(Window(Home).Property(NextAired.1.Label))</visible>
                                 </item>
@@ -6333,7 +6515,7 @@
                                     <property name="Network">$INFO[Window(Home).Property(NextAired.2.Network)]</property>
                                     <property name="LatestDate">$INFO[Window(Home).Property(NextAired.2.LatestDate)]</property>
                                     <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.2.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.2.Runtime)]</property>
+                                    <property name="RunningTime">$INFO[Window(Home).Property(NextAired.2.Runtime)]</property>
                                     <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.2.Library)],return)</onclick>
                                     <visible>!IsEmpty(Window(Home).Property(NextAired.2.Label))</visible>
                                 </item>
@@ -6349,7 +6531,7 @@
                                     <property name="Network">$INFO[Window(Home).Property(NextAired.3.Network)]</property>
                                     <property name="LatestDate">$INFO[Window(Home).Property(NextAired.3.LatestDate)]</property>
                                     <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.3.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.3.Runtime)]</property>
+                                    <property name="RunningTime">$INFO[Window(Home).Property(NextAired.3.Runtime)]</property>
                                     <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.3.Library)],return)</onclick>
                                     <visible>!IsEmpty(Window(Home).Property(NextAired.3.Label))</visible>
                                 </item>
@@ -6365,7 +6547,7 @@
                                     <property name="Network">$INFO[Window(Home).Property(NextAired.4.Network)]</property>
                                     <property name="LatestDate">$INFO[Window(Home).Property(NextAired.4.LatestDate)]</property>
                                     <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.4.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.4.Runtime)]</property>
+                                    <property name="RunningTime">$INFO[Window(Home).Property(NextAired.4.Runtime)]</property>
                                     <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.4.Library)],return)</onclick>
                                     <visible>!IsEmpty(Window(Home).Property(NextAired.4.Label))</visible>
                                 </item>
@@ -6381,7 +6563,7 @@
                                     <property name="Network">$INFO[Window(Home).Property(NextAired.5.Network)]</property>
                                     <property name="LatestDate">$INFO[Window(Home).Property(NextAired.5.LatestDate)]</property>
                                     <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.5.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.5.Runtime)]</property>
+                                    <property name="RunningTime">$INFO[Window(Home).Property(NextAired.5.Runtime)]</property>
                                     <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.5.Library)],return)</onclick>
                                     <visible>!IsEmpty(Window(Home).Property(NextAired.5.Label))</visible>
                                 </item>
@@ -6397,7 +6579,7 @@
                                     <property name="Network">$INFO[Window(Home).Property(NextAired.6.Network)]</property>
                                     <property name="LatestDate">$INFO[Window(Home).Property(NextAired.6.LatestDate)]</property>
                                     <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.6.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.6.Runtime)]</property>
+                                    <property name="RunningTime">$INFO[Window(Home).Property(NextAired.6.Runtime)]</property>
                                     <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.6.Library)],return)</onclick>
                                     <visible>!IsEmpty(Window(Home).Property(NextAired.6.Label))</visible>
                                 </item>
@@ -6413,7 +6595,7 @@
                                     <property name="Network">$INFO[Window(Home).Property(NextAired.7.Network)]</property>
                                     <property name="LatestDate">$INFO[Window(Home).Property(NextAired.7.LatestDate)]</property>
                                     <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.7.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.7.Runtime)]</property>
+                                    <property name="RunningTime">$INFO[Window(Home).Property(NextAired.7.Runtime)]</property>
                                     <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.7.Library)],return)</onclick>
                                     <visible>!IsEmpty(Window(Home).Property(NextAired.7.Label))</visible>
                                 </item>
@@ -6429,7 +6611,7 @@
                                     <property name="Network">$INFO[Window(Home).Property(NextAired.8.Network)]</property>
                                     <property name="LatestDate">$INFO[Window(Home).Property(NextAired.8.LatestDate)]</property>
                                     <property name="LatestTitle">$INFO[Window(Home).Property(NextAired.8.LatestTitle)]</property>
-                                    <property name="Runtime">$INFO[Window(Home).Property(NextAired.8.Runtime)]</property>
+                                    <property name="RunningTime">$INFO[Window(Home).Property(NextAired.8.Runtime)]</property>
                                     <onclick>ActivateWindow(Videos,$INFO[Window(Home).Property(NextAired.8.Library)],return)</onclick>
                                     <visible>!IsEmpty(Window(Home).Property(NextAired.8.Label))</visible>
                                 </item>
@@ -6488,4 +6670,834 @@
                 </control>
                 </control> 
     </include>
-</includes>
+    <include name="InteractiveCasesBackground">
+        <control type="group">
+            <animation effect="fade" time="600">VisibleChange</animation>
+            <include>Animation_WindowFade250</include>
+            <visible>Substring(Control.GetLabel(4322),dvdcase,left)</visible>
+            <control type="group">
+                <control type="group">
+                    <description>Case 1</description>
+                    <posx>1170</posx>
+                    <posy>1030</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="-65" end="-65" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                        <width>223</width>
+                    <fadetime>600</fadetime>
+                        <height>334</height>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case1Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>276</width>
+                        <height>360</height>
+                        <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Case 2</description>
+                    <posx>800</posx>
+                    <posy>0</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                        <width>223</width>
+                    <fadetime>600</fadetime>
+                        <height>334</height>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case2Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>276</width>
+                        <height>360</height>
+                        <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Case 3</description>
+                    <posx>500</posx>
+                    <posy>150</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                    <fadetime>600</fadetime>
+                        <width>223</width>
+                        <height>334</height>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case3Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>276</width>
+                        <height>360</height>
+                        <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Case 4</description>
+                    <posx>1550</posx>
+                    <posy>300</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                    <fadetime>600</fadetime>
+                        <width>223</width>
+                        <height>334</height>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case4Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>276</width>
+                        <height>360</height>
+                        <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Case 5</description>
+                    <posx>1000</posx>
+                    <posy>170</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                        <width>223</width>
+                        <height>334</height>
+                    <fadetime>600</fadetime>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case5Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>276</width>
+                        <height>360</height>
+                        <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Case 6</description>
+                    <posx>1900</posx>
+                    <posy>-100</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                        <width>223</width>
+                        <height>334</height>
+                    <fadetime>600</fadetime>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case6Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>276</width>
+                        <height>360</height>
+                        <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Case 7</description>
+                    <posx>1500</posx>
+                    <posy>800</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                        <width>223</width>
+                        <height>334</height>
+                    <fadetime>600</fadetime>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case7Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>276</width>
+                        <height>360</height>
+                        <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Case 8</description>
+                    <posx>1450</posx>
+                    <posy>650</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="-35" end="-35" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                        <width>223</width>
+                        <height>334</height>
+                    <fadetime>600</fadetime>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case8Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>276</width>
+                        <height>360</height>
+                        <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Case 9</description>
+                    <posx>1100</posx>
+                    <posy>400</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                        <width>223</width>
+                    <fadetime>600</fadetime>
+                        <height>334</height>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case9Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>276</width>
+                        <height>360</height>
+                        <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                    </control>
+                </control>
+                <control type="group">
+                    <description>Case 10</description>
+                    <posx>700</posx>
+                    <posy>400</posy>
+                    <animation effect="zoom" start="180" end="180" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                    <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
+                    <control type="image">
+                        <posx>39</posx>
+                        <posy>9</posy>
+                        <width>223</width>
+                    <fadetime>600</fadetime>
+                        <height>334</height>
+                        <align>center</align>
+                        <aspectratio scalediffuse="false">scale</aspectratio>
+                        <texture background="true" diffuse="thumbs/boxes/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[Case10Var]</texture>
+                    </control>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>276</width>
+                        <height>360</height>
+                        <bordertexture>thumbs/boxes/poster_shadow.png</bordertexture>
+                        <texture background="true">thumbs/boxes/poster_glass.png</texture>
+                    </control>
+                </control>
+            </control>
+        </control>
+    </include>
+
+    <include name="LiveCDCasesbackground">
+        <control type="group">
+            <animation effect="fade" time="600">VisibleChange</animation>
+            <include>Animation_WindowFade250</include>
+            <visible>Substring(Control.GetLabel(4322),case,left)</visible>
+            <control type="group">
+                <posx>-200</posx>
+            <control type="group">
+                <description>CD Case 1</description>
+                <posx>1120</posx>
+                <posy>700</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="9" end="9" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>302</width>
+                    <height>302</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase1Var]</texture>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Glass overlay</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>375</width>
+                    <height>342</height>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                    
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 2</description>
+                <posx>700</posx>
+                <posy>0</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>302</width>
+                    <height>302</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase2Var]</texture>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Glass overlay</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>375</width>
+                    <height>342</height>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>
+                    
+                    <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 3</description>
+                <posx>430</posx>
+                <posy>150</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>302</width>
+                    <height>302</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase3Var]</texture>
+                    <fadetime>600</fadetime>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Glass overlay</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>375</width>
+                    <height>342</height>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
+                    <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 4</description>
+                <posx>1600</posx>
+                <posy>200</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>302</width>
+                    <height>302</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase4Var]</texture>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Glass overlay</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>375</width>
+                    <height>342</height>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
+                    <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 5</description>
+                <posx>1000</posx>
+                <posy>100</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>302</width>
+                    <height>302</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase5Var]</texture>
+                    <fadetime>600</fadetime>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Glass overlay</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>375</width>
+                    <height>342</height>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
+                    <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 6</description>
+                <posx>1950</posx>
+                <posy>-100</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>302</width>
+                    <height>302</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase6Var]</texture>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Glass overlay</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>375</width>
+                    <height>342</height>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
+                    <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 7</description>
+                <posx>1700</posx>
+                <posy>800</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>302</width>
+                    <height>302</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase7Var]</texture>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Glass overlay</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>375</width>
+                    <height>342</height>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
+                    <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 8</description>
+                <posx>1470</posx>
+                <posy>510</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="-15" end="-15" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>302</width>
+                    <fadetime>600</fadetime>
+                    <height>302</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase8Var]</texture>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Glass overlay</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>375</width>
+                    <height>342</height>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
+                    <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 9</description>
+                <posx>1050</posx>
+                <posy>400</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>302</width>
+                    <height>302</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase9Var]</texture>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Glass overlay</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>375</width>
+                    <height>342</height>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
+                    <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 10</description>
+                <posx>600</posx>
+                <posy>400</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>302</width>
+                    <height>302</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[CDCase10Var]</texture>
+                    <fadetime>600</fadetime>
+                    <aspectratio scalediffuse="false">scale</aspectratio>
+                </control>
+                <control type="image">
+                    <description>Glass overlay</description>
+                    <posx>0</posx>
+                    <posy>0</posy>
+                    <width>375</width>
+                    <height>342</height>
+                    <bordertexture>thumbs/boxes/cd_shadow_light.png</bordertexture>                    
+
+                    <texture background="true">thumbs/boxes/cd_glass.png</texture>
+                </control>
+            </control>
+            </control>
+        </control>
+    </include>
+    <include name="LiveNoCasesbackground">
+        <control type="group">
+            <animation effect="fade" time="600">VisibleChange</animation>
+            <include>Animation_WindowFade250</include>
+            <visible>Substring(Control.GetLabel(4322),nocase,left)</visible>
+            <control type="group">
+                <posx>-200</posx>
+            <control type="group">
+                <description>CD Case 1</description>
+                <posx>1120</posx>
+                <posy>700</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="9" end="9" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase1Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 2</description>
+                <posx>700</posx>
+                <posy>0</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="65" end="65" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase2Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 3</description>
+                <posx>430</posx>
+                <posy>150</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="10" end="10" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase3Var]</texture>
+                    <fadetime>600</fadetime>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 4</description>
+                <posx>1600</posx>
+                <posy>200</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="-20" end="-20" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase4Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 5</description>
+                <posx>1000</posx>
+                <posy>100</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="25" end="25" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase5Var]</texture>
+                    <fadetime>600</fadetime>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 6</description>
+                <posx>1950</posx>
+                <posy>-100</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="75" end="75" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase6Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 7</description>
+                <posx>1700</posx>
+                <posy>800</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="45" end="45" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase7Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 8</description>
+                <posx>1470</posx>
+                <posy>510</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="-15" end="-15" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <fadetime>600</fadetime>
+                    <height>400</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase8Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 9</description>
+                <posx>1050</posx>
+                <posy>400</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="-10" end="-10" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <fadetime>600</fadetime>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase9Var]</texture>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            <control type="group">
+                <description>CD Case 10</description>
+                <posx>600</posx>
+                <posy>400</posy>
+                <animation effect="zoom" start="150" end="150" center="auto" time="0" tween="linear" condition="true">Conditional</animation>
+                <animation effect="rotate" center="auto" start="3" end="3" time="0" condition="true">Conditional</animation>
+                <control type="image">
+                    <posx>54</posx>
+                    <posy>17</posy>
+                    <width>400</width>
+                    <height>400</height>
+                    <texture background="true" diffuse="thumbs/boxes/cdcover_mask_aa.png" fallback="DefaultAudio.png">$VAR[NoCase10Var]</texture>
+                    <fadetime>600</fadetime>
+                    <aspectratio scalediffuse="false">keep</aspectratio>
+                </control>
+            </control>
+            </control>
+        </control>
+    </include>
+    
+    <include name="DailyBabesContent">
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2012.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2012.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2012.jpg</icon>
+								<onclick>SetFocus(22222)</onclick>
+                                <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2012.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2012.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2012.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+								<onclick>SetFocus(22222)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2012.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2012.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2012.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+								<onclick>SetFocus(22222)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2012.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2012.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2012.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+								<onclick>SetFocus(22222)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2012.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2012.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2012.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+								<onclick>SetFocus(22222)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2012.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2012.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2012.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+								<onclick>SetFocus(22222)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2012.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2012.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2012.jpg</icon>
+                                <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
+								<onclick>SetFocus(22222)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2012.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2012.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2012.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+								<onclick>SetFocus(22222)</onclick>
+							</item>
+                         </include>
+                <include name="DailyBabesContent2">
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2011.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2011.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2011.jpg</icon>
+								<onclick>SetFocus(22223)</onclick>
+                                <visible>Stringcompare(Control.GetLabel(4325),babespanel)</visible>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2011.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2011.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2011.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4325),babespanel)</visible>
+								<onclick>SetFocus(22223)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2011.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2011.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2011.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4325),babespanel)</visible>
+								<onclick>SetFocus(22223)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2011.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2011.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2011.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4325),babespanel)</visible>
+								<onclick>SetFocus(22223)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2011.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2011.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2011.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4325),babespanel)</visible>
+								<onclick>SetFocus(22223)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2011.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2011.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2011.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4325),babespanel)</visible>
+								<onclick>SetFocus(22223)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2011.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2011.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2011.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4325),babespanel)</visible>
+								<onclick>SetFocus(22223)</onclick>
+							</item>
+							<item>
+								<property name="Fanart">http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2011.jpg</property>
+                                <thumb>http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2011.jpg</thumb>
+                                <icon>http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2011.jpg</icon>
+                                <visible>Stringcompare(Control.GetLabel(4325),babespanel)</visible>
+								<onclick>SetFocus(22223)</onclick>
+							</item>
+                         </include>
+
+    <include name="DailyBabeBG">
+        <control type="multiimage">
+            <fadetime>600</fadetime>
+            <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
+            <aspectratio align="center" aligny="top">keep</aspectratio>
+            <include>Animation_VisibleChange400</include>
+            <randomize>true</randomize>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),dailybabe)</visible>
+        </control>
+    </include>
+    </includes>

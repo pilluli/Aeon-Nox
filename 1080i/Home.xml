@@ -4,8 +4,8 @@
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
     <onload condition="Window.Previous(startup) + Skin.HasSetting(customstartupfocus)">Control.Move(9000,$INFO[Skin.String(CustomFocusOffset)])</onload>
     <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome)">XBMC.RunScript(script.randomitems,limit=16&amp;unplayed=True)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),recentpics) | Substring(Skin.String(widget2list),recentpics) | Substring(Skin.String(backgroundlist),recentpics)]">XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Latest'&sort='Added'&limit=8)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),randompics) | Substring(Skin.String(widget2list),randompics) | Substring(Skin.String(backgroundlist),randompics)]">XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Random'&sort='Added'&limit=8)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),recentpics) | Substring(Skin.String(widget2list),recentpics) | Substring(Skin.String(backgroundlist),recentpics)]">XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=8)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),randompics) | Substring(Skin.String(widget2list),randompics) | Substring(Skin.String(backgroundlist),randompics)]">XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=8)</onload>
     <onload>ClearProperty(DontRunTVShowScripts,Home)</onload>
     <onload>AlarmClock(BGMove,Control.Move(4324,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(WidgetMove,Control.Move(8000,1),00:07,silent,loop)</onload>
@@ -49,16 +49,31 @@
     <controls>
         <include>MainMenuCommonContent</include>
         <!-- Fanart -->
+
         <control type="multiimage">
             <fadetime>600</fadetime>
             <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
 			<aspectratio align="center" aligny="top">scale</aspectratio>
             <include>Animation_VisibleChange400</include>
             <randomize>true</randomize>
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <visible>!Control.IsVisible(2355)</visible>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" delay="600" reversible="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" delay="600" reversible="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <visible>!Control.IsVisible(2355) + ![Substring(Control.GetLabel(4322),case) | Substring(Control.GetLabel(4322),dailybabe)]</visible>
         </control>
+        <include condition="SubString(Skin.String(backgroundlist),dailybabe)">DailyBabeBG</include>
+        <control type="image">
+            <fadetime>600</fadetime>
+            <include>FullscreenDimensions</include>
+            <include>Animation_WindowFade250</include>
+            <aspectratio align="center" aligny="top">scale</aspectratio>
+            <texture background="true" fallback="special://skin/backgrounds/speakergrill.jpg">$INFO[Skin.String(LiveBG)]</texture>
+            <animation effect="fade" time="500">Visible</animation>
+            <animation effect="fade" time="500">Hidden</animation>
+            <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),case)</visible>
+        </control>
+        <include condition="SubString(Skin.String(backgroundlist),dvdcase)">InteractiveCasesBackground</include>
+        <include condition="SubString(Skin.String(backgroundlist), case)">LiveCDCasesbackground</include>
+        <include condition="SubString(Skin.String(backgroundlist), nocase)">LiveNoCasesbackground</include>
         <include condition="Skin.HasSetting(homecdwall)">cdwall-musicvisualisation</include>
         <control type="image">
             <fadetime>600</fadetime>
@@ -91,6 +106,8 @@
                 <include>FullscreenDimensions</include>
                 <colordiffuse>$INFO[Skin.String(BackgroundDarkness)]</colordiffuse>
                 <texture>common/black.png</texture>
+                <include>Animation_VisibleChange400</include>
+                <visible>![Skin.HasSetting(DisableWidgets) + !Player.HasMedia]</visible>
             </control>
             <control type="image">
                 <posx>0</posx>
@@ -360,6 +377,51 @@
                 <fontcolor>white</fontcolor>
                 <wrapmultiline>true</wrapmultiline>
             </control>
+        </control>
+        <control type="group">
+                    <control type="image">
+                <include>FullscreenDimensions</include>
+                <colordiffuse>CCFFFFFF</colordiffuse>
+                <visible>Control.HasFocus(22222) | Control.HasFocus(22223)</visible>
+                <include>Animation_VisibleChange400</include>
+                <texture>common/black.png</texture>
+            </control>
+                    <control type="image">
+            <fadetime>600</fadetime>
+            <include>FullscreenDimensions</include>
+            <include>Animation_WindowFade250</include>
+            <aspectratio align="center" aligny="top">keep</aspectratio>
+            <texture background="true">$INFO[Container(5010).ListItem.Thumb]</texture>
+            <animation effect="fade" time="500">Visible</animation>
+            <animation effect="fade" time="500">Hidden</animation>
+            <visible>Control.HasFocus(22222)</visible>
+        </control>
+                    <control type="image">
+            <fadetime>600</fadetime>
+            <include>FullscreenDimensions</include>
+            <include>Animation_WindowFade250</include>
+            <aspectratio align="center" aligny="top">keep</aspectratio>
+            <texture background="true">$INFO[Container(6010).ListItem.Thumb]</texture>
+            <animation effect="fade" time="500">Visible</animation>
+            <animation effect="fade" time="500">Hidden</animation>
+            <visible>Control.HasFocus(22223)</visible>
+        </control>
+        <control type="button" id="22222">
+            <include>HiddenObject</include>
+            <onleft>Control.Move(5010,-1)</onleft>
+            <onright>Control.Move(5010,1)</onright>
+            <onup>Control.Move(5010,1)</onup>
+            <ondown>Control.Move(5010,-1)</ondown>
+            <onback>SetFocus(5010)</onback>
+        </control>
+        <control type="button" id="22223">
+            <include>HiddenObject</include>
+            <onleft>Control.Move(6010,-1)</onleft>
+            <onright>Control.Move(6010,1)</onright>
+            <onup>Control.Move(6010,1)</onup>
+            <ondown>Control.Move(6010,-1)</ondown>
+            <onback>SetFocus(6010)</onback>
+        </control>
         </control>
     </controls>
 </window>
