@@ -2,7 +2,7 @@
 <window id="1115" type="window">
     <defaultcontrol>40</defaultcontrol>
     <onload>XBMC.RunScript(script.randomitems,limit=16&amp;unplayed=True)</onload>
-    <onload condition="System.HasAddon(script.watchlist) + IsEmpty(Window(Home).Property(WatchList_Running))">RunScript(script.watchlist,movies=true&amp;episodes=true&amp;albums=true&amp;limit=8)</onload>
+    <onload condition="System.HasAddon(script.watchlist) + IsEmpty(Window(Home).Property(WatchList_Running))">RunScript(script.watchlist,movies=true&amp;episodes=true&amp;albums=true&amp;limit=10)</onload>
     <onload condition="ControlGroup(5000).HasFocus">AlarmClock(Tile,Control.Move(5002,1),00:04,silent,loop)</onload>
     <onload condition="ControlGroup(5000).HasFocus">AlarmClock(TileTwo,Control.Move(5003,1),00:07,silent,loop)</onload>
     <onload condition="ControlGroup(6000).HasFocus">AlarmClock(Tile,Control.Move(6002,1),00:04,silent,loop)</onload>
@@ -27,7 +27,7 @@
             <description>Fanart</description>
             <animation effect="fade" time="500" condition="!Window.Previous(weather)">WindowOpen</animation>
             <animation effect="fade" time="200" condition="!Window.Next(weather)">WindowClose</animation>
-            <imagepath background="true" fallback="special://skin/backgrounds/system.jpg">$VAR[FeaturedFanartVar]</imagepath>
+            <imagepath background="true" fallback="special://skin/backgrounds/featured.jpg">$VAR[FeaturedFanartVar]</imagepath>
         </control>
         <include>CommonMediaPlayingBackground</include>
         <control type="image">
@@ -4413,7 +4413,7 @@
                             <textcolor>white2</textcolor>
                             <shadowcolor>-</shadowcolor>
                             <label>$INFO[Container(10002).ListItem.Property(Summary)]</label>
-                            <autoscroll delay="2000" time="2000" repeat="4000">Control.HasFocus(10010)</autoscroll>
+                            <autoscroll delay="2000" time="5000" repeat="4000">Control.HasFocus(10010)</autoscroll>
                         </control>
                         <control type="label">
                             <posx>0</posx>

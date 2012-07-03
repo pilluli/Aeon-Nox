@@ -2,6 +2,10 @@
 <window type="dialog" id="1134">
     <defaultcontrol always="true">4</defaultcontrol>
     <allowoverlay>no</allowoverlay>
+    <onload condition="!IsEmpty(Window(visualisation).Property(MusicVizBG))">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Skin.String(MusicViz.MultiFanart)])</onload>
+    <onunload condition="!IsEmpty(Window(visualisation).Property(MusicVizBG))">Skin.SetString(MusicViz.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
+    <onunload condition="!IsEmpty(Window(visualisation).Property(MusicVizBG))">Skin.Reset(ItemToEdit.MultiFanart)</onunload>
+    <onunload>ClearProperty(MusicVizBG,visualisation)</onunload>
     <controls>
         <control type="group">
 			<posx>90</posx>
@@ -10,7 +14,7 @@
                 <posx>379</posx>
                 <posy>200</posy>
                 <width>943</width>
-                <height>500</height>
+                <height>620</height>
                 <texture border="20">osd/osd_settings_back_glow.png</texture>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <visible>Skin.HasSetting(Glowbar_Home)</visible>
@@ -23,7 +27,7 @@
                 <posy>200</posy>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <width>943</width>
-                <height>500</height>
+                <height>620</height>
                 <texture border="20">osd/osd_settings_back.png</texture>
             </control>
             <include>Animation_OpenCloseZoom</include>
@@ -125,6 +129,27 @@
                         <onclick>Skin.SetPath(ItemToEdit.MultiFanart)</onclick>
                         <onclick>Dialog.Close(1134)</onclick>
                     </item>
+                    <item id="24">
+                        <description>artist fanart (music viz)</description>
+                        <label>31092</label>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,artistfanart)</onclick>
+                        <onclick>Dialog.Close(1134)</onclick>
+                        <visible>!IsEmpty(Window(visualisation).Property(MusicVizBG))</visible>
+                    </item>
+                    <item id="25">
+                        <description>cd-wall</description>
+                        <label>31039</label>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,cd-wall)</onclick>
+                        <onclick>Dialog.Close(1134)</onclick>
+                        <visible>!IsEmpty(Window(visualisation).Property(MusicVizBG))</visible>
+                    </item>
+                    <item id="26">
+                        <description>Artist slideshow</description>
+                        <label>31044</label>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,artistslideshow)</onclick>
+                        <onclick>Dialog.Close(1134)</onclick>
+                        <visible>!IsEmpty(Window(visualisation).Property(MusicVizBG))</visible>
+                    </item>
                     <item id="7">
                         <description>Set music fanart</description>
                         <label>$LOCALIZE[1211] [LOWERCASE]$LOCALIZE[20445][/LOWERCASE]</label>
@@ -135,6 +160,12 @@
                         <description>Set video fanart</description>
                         <label>$LOCALIZE[1212] [LOWERCASE]$LOCALIZE[20445][/LOWERCASE]</label>
                         <onclick>Skin.SetString(ItemToEdit.MultiFanart,special://profile/Thumbnails/Video/Fanart)</onclick>
+                        <onclick>Dialog.Close(1134)</onclick>
+                    </item>
+                    <item id="89">
+                        <description>Set video fanart</description>
+                        <label>Daily Babes</label>
+                        <onclick>Skin.SetString(ItemToEdit.MultiFanart,dailybabe)</onclick>
                         <onclick>Dialog.Close(1134)</onclick>
                     </item>
                     <item id="9">
@@ -261,10 +292,23 @@
                     <item id="21">
                         <description>Custom Item fanart</description>
                         <label>World Map + Icons</label>
-                        <onclick>RunScript(script.widget.weatherworld,time=10&limit=9&mapsize=1920x1080&tilesize=360x60&window=10000&condition=StringCompare(Control.GetLabel(4322),googleweather2))</onclick>
+                        <onclick>RunScript(script.widget.weatherworld,time=10&amp;limit=9&amp;mapsize=1920x1080&amp;tilesize=360x60&amp;window=10000&amp;condition=StringCompare(Control.GetLabel(4322),googleweather2))</onclick>
                         <onclick>Skin.SetString(ItemToEdit.MultiFanart,googleweather2)</onclick>
                         <onclick>Dialog.Close(1134)</onclick>
                         <visible>SubString(Weather.Plugin,weather.google) + System.HasAddon(script.widget.weatherworld)</visible>
+                    </item>
+                    <item id="22">
+                        <description>interactive cases</description>
+                        <label>Live DVD cases</label>
+                        <onclick>ActivateWindow(1155)</onclick>
+                        <onclick>Dialog.Close(1134)</onclick>
+                    </item>
+                    <item id="23">
+                        <description>interactive cases</description>
+                        <label>Live CD cases</label>
+                        <onclick>SetProperty(LiveCasesType,True,Home)</onclick>
+                        <onclick>ActivateWindow(1155)</onclick>
+                        <onclick>Dialog.Close(1134)</onclick>
                     </item>
                     <item id="4">
                         <description>Set single image</description>
