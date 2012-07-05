@@ -2922,46 +2922,47 @@
                                 <bordersize>19.5</bordersize>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                             </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <posy>25</posy>
-                        <width>340</width>
-                        <height>50</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Reg24</font>
-                        <textcolor>white2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <posy>78</posy>
-                        <width>340</width>
-                        <height>30</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed22</font>
-                        <textcolor>grey2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                        <control type="textbox">
-                            <posx>215</posx>
-                            <posy>112</posy>
-                            <width>300</width>
-                            <height>205</height>
-                            <align>left</align>
-                            <label>$INFO[ListItem.Label2]</label>
-                            <font>Font_Condensed20</font>
-                            <include>listcolornofocus</include>
-                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        </control>
+	<control type="label">
+							<posx>200</posx>
+							<posy>31</posy>
+							<width>340</width>
+							<height>50</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_ShowcaseMainLabel2</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+						<control type="label">
+							<posx>200</posx>
+							<posy>70</posy>
+							<width>340</width>
+							<height>50</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_Condensed20</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Property(NextNumber)]: $INFO[ListItem.Property(NextTitle)]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+							<control type="textbox">
+								<posx>215</posx>
+								<posy>146</posy>
+								<width>300</width>
+								<height>205</height>
+								<align>left</align>
+								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391] • ]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
+								<font>Font_Condensed18</font>
+								<include>listcolornofocus</include>
+								<autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
+							</control>
                         </itemlayout>
                         <focusedlayout height="450" width="532">
                             <control type="group">
+                                <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                                 <control type="image">
                                     <description>Main Icon</description>
                                     <posx>21</posx>
@@ -2986,15 +2987,15 @@
                             </control>
 						<control type="label">
 							<posx>200</posx>
-							<posy>25</posy>
+							<posy>31</posy>
 							<width>340</width>
 							<height>50</height>
 							<align>left</align>
 							<aligny>center</aligny>
-							<font>Font_Reg24</font>
+							<font>Font_ShowcaseMainLabel2</font>
 							<textcolor>white2</textcolor>
 							<shadowcolor>-</shadowcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 							<textoffsetx>15</textoffsetx>
 						</control>
 						<control type="label">
@@ -3004,23 +3005,10 @@
 							<height>50</height>
 							<align>left</align>
 							<aligny>center</aligny>
-							<font>Font_Condensed22</font>
+							<font>Font_Condensed20</font>
 							<textcolor>white2</textcolor>
 							<shadowcolor>-</shadowcolor>
-							<label>$INFO[ListItem.Property(NextTitle)]</label>
-							<textoffsetx>15</textoffsetx>
-						</control>
-						<control type="label">
-							<posx>200</posx>
-							<posy>112</posy>
-							<width>340</width>
-							<height>30</height>
-							<align>left</align>
-							<aligny>center</aligny>
-							<font>Font_Condensed22</font>
-							<textcolor>grey2</textcolor>
-							<shadowcolor>-</shadowcolor>
-							<label>$INFO[ListItem.Property(NextNumber)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]</label>
+							<label>$INFO[ListItem.Property(NextNumber)]: $INFO[ListItem.Property(NextTitle)]</label>
 							<textoffsetx>15</textoffsetx>
 						</control>
 							<control type="textbox">
@@ -3029,8 +3017,8 @@
 								<width>300</width>
 								<height>205</height>
 								<align>left</align>
-								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
-								<font>Font_Condensed20</font>
+								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391] • ]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
+								<font>Font_Condensed18</font>
 								<include>listcolornofocus</include>
 								<autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
 							</control>
@@ -4389,6 +4377,7 @@
                     <onfocus condition="Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)">SetFocus(5020)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4321),tv)">SetFocus(5021)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4321),addons)">SetFocus(5040)</onfocus>
+                    <onfocus condition="Substring(Control.GetLabel(4321),babe)">SetFocus(22222)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4321),album) | Substring(Control.GetLabel(4321),song)  | Substring(Control.GetLabel(4321),artist) | Substring(Control.GetLabel(4321),watchlistmusic) | Substring(Control.GetLabel(4321),pics)">SetFocus(5030)</onfocus>
                 </control>
                 <control type="group">
@@ -4524,15 +4513,15 @@
                         <control type="button" id="50190">
                             <description>RANDOMIZE</description>
                             <label>$LOCALIZE[31087]</label>
-                            <onclick condition="Container(9000).HasFocus(101)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem1.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem1)</onclick>
-                            <onclick condition="Container(9000).HasFocus(102)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem2.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem2)</onclick>
-                            <onclick condition="Container(9000).HasFocus(103)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem3.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem3)</onclick>
-                            <onclick condition="Container(9000).HasFocus(104)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem4.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem4)</onclick>
-                            <onclick condition="Container(9000).HasFocus(105)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem5.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem5)</onclick>
-                            <onclick condition="Container(9000).HasFocus(106)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem6.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem6)</onclick>
-                            <onclick condition="Container(9000).HasFocus(107)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem7.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem7)</onclick>
-                            <onclick condition="Container(9000).HasFocus(108)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem8.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem8)</onclick>
-                            <onclick condition="Container(9000).HasFocus(109)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem9.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem9)</onclick>
+                            <onclick condition="Container(9000).HasFocus(101)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem1.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem1)</onclick>
+                            <onclick condition="Container(9000).HasFocus(102)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem2.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem2)</onclick>
+                            <onclick condition="Container(9000).HasFocus(103)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem3.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem3)</onclick>
+                            <onclick condition="Container(9000).HasFocus(104)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem4.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem4)</onclick>
+                            <onclick condition="Container(9000).HasFocus(105)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem5.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem5)</onclick>
+                            <onclick condition="Container(9000).HasFocus(106)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem6.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem6)</onclick>
+                            <onclick condition="Container(9000).HasFocus(107)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem7.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem7)</onclick>
+                            <onclick condition="Container(9000).HasFocus(108)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem8.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem8)</onclick>
+                            <onclick condition="Container(9000).HasFocus(109)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem9.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem9)</onclick>
                             <include>HiddenObject</include>
                             <visible>Substring(Control.GetLabel(4321),random) + Substring(Control.GetLabel(4321),custom)</visible>
                             <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
@@ -4852,7 +4841,7 @@
                         <textcolor>ccffffff</textcolor>
                         <label fallback="414">$VAR[WidgetTextboxVar]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        <visible>!Substring(Control.GetLabel(4321),pics)</visible>
+                        <visible>![Substring(Control.GetLabel(4321),pics) | Substring(Control.GetLabel(4321),song)]</visible>
                     </control>
                     <control type="image">
                         <posx>1261</posx>
@@ -4923,7 +4912,7 @@
                         <control type="button" id="5035">
                             <description>RANDOMIZE</description>
                             <label>$LOCALIZE[31087]</label>
-                            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Random'&sort='Added'&limit=8)</onclick>
+                            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
                             <include>HiddenObject</include>
                             <visible>Substring(Control.GetLabel(4321),randompics)</visible>
                             <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
@@ -6626,7 +6615,7 @@
 						<height>300</height>
 						<align>right</align>
 						<textcolor>$VAR[SubTitleColorVar]</textcolor>
-						<label>Temperature[CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]Condition[CR]Coordinates</label>
+						<label>$LOCALIZE[42257][CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]$LOCALIZE[42258][CR]$LOCALIZE[42259]</label>
 					</control>
 					<control type="label">
 						<posx>200</posx>

@@ -1295,46 +1295,48 @@
                                 <bordersize>19.5</bordersize>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                             </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <posy>25</posy>
-                        <width>340</width>
-                        <height>50</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Reg24</font>
-                        <textcolor>white2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <posy>78</posy>
-                        <width>340</width>
-                        <height>30</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed22</font>
-                        <textcolor>grey2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                        <control type="textbox">
-                            <posx>215</posx>
-                            <posy>112</posy>
-                            <width>300</width>
-                            <height>205</height>
-                            <align>left</align>
-                            <label>$INFO[ListItem.Label2]</label>
-                            <font>Font_Condensed20</font>
-                            <include>listcolornofocus</include>
-                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        </control>
+	<control type="label">
+							<posx>200</posx>
+							<posy>31</posy>
+							<width>340</width>
+							<height>50</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_ShowcaseMainLabel2</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+						<control type="label">
+							<posx>200</posx>
+							<posy>70</posy>
+							<width>340</width>
+							<height>50</height>
+							<align>left</align>
+							<aligny>center</aligny>
+							<font>Font_Condensed20</font>
+							<textcolor>white2</textcolor>
+							<shadowcolor>-</shadowcolor>
+							<label>$INFO[ListItem.Property(NextNumber)]: $INFO[ListItem.Property(NextTitle)]</label>
+							<textoffsetx>15</textoffsetx>
+						</control>
+							<control type="textbox">
+								<posx>215</posx>
+								<posy>146</posy>
+								<width>300</width>
+								<height>205</height>
+								<align>left</align>
+								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391] • ]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
+								<font>Font_Condensed18</font>
+								<include>listcolornofocus</include>
+								<autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
+							</control>
                         </itemlayout>
                         <focusedlayout height="450" width="532">
                             <control type="group">
+                                                             <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
+
                                 <control type="image">
                                     <description>Main Icon</description>
                                     <posx>21</posx>
@@ -1357,40 +1359,40 @@
                                     <aspectratio scalediffuse="false">stretch</aspectratio>
                                 </control>
                             </control>
-						<control type="label">
+	<control type="label">
 							<posx>200</posx>
-							<posy>25</posy>
+							<posy>31</posy>
 							<width>340</width>
 							<height>50</height>
 							<align>left</align>
 							<aligny>center</aligny>
-							<font>Font_Reg24</font>
+							<font>Font_ShowcaseMainLabel2</font>
 							<textcolor>white2</textcolor>
 							<shadowcolor>-</shadowcolor>
-							<label>$INFO[ListItem.Label]</label>
+							<label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
 							<textoffsetx>15</textoffsetx>
 						</control>
 						<control type="label">
 							<posx>200</posx>
-							<posy>78</posy>
+							<posy>70</posy>
 							<width>340</width>
-							<height>30</height>
+							<height>50</height>
 							<align>left</align>
 							<aligny>center</aligny>
-							<font>Font_Condensed22</font>
-							<textcolor>grey2</textcolor>
+							<font>Font_Condensed20</font>
+							<textcolor>white2</textcolor>
 							<shadowcolor>-</shadowcolor>
-							<label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
+							<label>$INFO[ListItem.Property(NextNumber)]: $INFO[ListItem.Property(NextTitle)]</label>
 							<textoffsetx>15</textoffsetx>
 						</control>
 							<control type="textbox">
 								<posx>215</posx>
-								<posy>112</posy>
+								<posy>146</posy>
 								<width>300</width>
 								<height>205</height>
 								<align>left</align>
-								<label>$INFO[ListItem.Label2]</label>
-								<font>Font_Condensed20</font>
+								<label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391] • ]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
+								<font>Font_Condensed18</font>
 								<include>listcolornofocus</include>
 								<autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
 							</control>
@@ -2746,6 +2748,7 @@
                     <include>HiddenObject</include>
                     <onfocus condition="Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)">SetFocus(6020)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4325),tv)">SetFocus(6021)</onfocus>
+                    <onfocus condition="Substring(Control.GetLabel(4325),babe)">SetFocus(22223)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4325),addons)">SetFocus(6040)</onfocus>
                     <onfocus condition="Substring(Control.GetLabel(4325),album) | Substring(Control.GetLabel(4325),artist) | Substring(Control.GetLabel(4325),song) | Substring(Control.GetLabel(4325),watchlistmusic) | Substring(Control.GetLabel(4325),pics)">SetFocus(6030)</onfocus>
                 </control>
@@ -2882,15 +2885,15 @@
                         <control type="button" id="60190">
                             <description>RANDOMIZE</description>
                             <label>$LOCALIZE[31087]</label>
-                            <onclick condition="Container(9000).HasFocus(101)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem1.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem1)</onclick>
-                            <onclick condition="Container(9000).HasFocus(102)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem2.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem2)</onclick>
-                            <onclick condition="Container(9000).HasFocus(103)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem3.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem3)</onclick>
-                            <onclick condition="Container(9000).HasFocus(104)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem4.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem4)</onclick>
-                            <onclick condition="Container(9000).HasFocus(105)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem5.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem5)</onclick>
-                            <onclick condition="Container(9000).HasFocus(106)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem6.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem6)</onclick>
-                            <onclick condition="Container(9000).HasFocus(107)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem7.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem7)</onclick>
-                            <onclick condition="Container(9000).HasFocus(108)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem8.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem8)</onclick>
-                            <onclick condition="Container(9000).HasFocus(109)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem9.Path)], method=random, limit=8, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem9)</onclick>
+                            <onclick condition="Container(9000).HasFocus(101)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem1.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem1)</onclick>
+                            <onclick condition="Container(9000).HasFocus(102)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem2.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem2)</onclick>
+                            <onclick condition="Container(9000).HasFocus(103)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem3.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem3)</onclick>
+                            <onclick condition="Container(9000).HasFocus(104)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem4.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem4)</onclick>
+                            <onclick condition="Container(9000).HasFocus(105)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem5.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem5)</onclick>
+                            <onclick condition="Container(9000).HasFocus(106)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem6.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem6)</onclick>
+                            <onclick condition="Container(9000).HasFocus(107)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem7.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem7)</onclick>
+                            <onclick condition="Container(9000).HasFocus(108)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem8.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem8)</onclick>
+                            <onclick condition="Container(9000).HasFocus(109)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem9.Path)], method=random, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem9)</onclick>
                             <include>HiddenObject</include>
                             <visible>Substring(Control.GetLabel(4325),random) + Substring(Control.GetLabel(4325),custom)</visible>
                             <onback>ClearProperty(PanelWidget2Info,Home)</onback>
@@ -3266,7 +3269,7 @@
                         <control type="button" id="6035">
                             <description>RANDOMIZE</description>
                             <label>$LOCALIZE[31087]</label>
-                            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&method='Random'&sort='Added'&limit=8)</onclick>
+                            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
                             <include>HiddenObject</include>
                             <visible>Substring(Control.GetLabel(4325),randompics)</visible>
                             <onback>ClearProperty(PanelWidget2Info,Home)</onback>
@@ -8012,7 +8015,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.1.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBRandom.1.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Random'&current=1)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=1)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.1.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.1.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBRandom.1.Folder)]</property>
@@ -8021,7 +8024,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.2.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBRandom.2.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Random'&current=2)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=2)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.2.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.2.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBRandom.2.Folder)]</property>
@@ -8030,7 +8033,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.3.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBRandom.3.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Random'&current=3)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=3)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.3.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.3.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBRandom.3.Folder)]</property>
@@ -8039,7 +8042,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.4.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBRandom.4.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Random'&current=4)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=4)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.4.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.4.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBRandom.4.Folder)]</property>
@@ -8048,7 +8051,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.5.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBRandom.5.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Random'&current=5)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=5)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.5.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.5.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBRandom.5.Folder)]</property>
@@ -8057,7 +8060,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.6.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBRandom.6.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Random'&current=6)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=6)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.6.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.6.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBRandom.6.Folder)]</property>
@@ -8066,7 +8069,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.7.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBRandom.7.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Random'&current=7)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=7)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.7.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.7.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBRandom.7.Folder)]</property>
@@ -8075,7 +8078,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBRandom.8.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBRandom.8.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Random'&current=8)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Random'&amp;current=8)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBRandom.8.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBRandom.8.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBRandom.8.Folder)]</property>
@@ -8086,7 +8089,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.1.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBLatest.1.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Latest'&current=1)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=1)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.1.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.1.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBLatest.1.Folder)]</property>
@@ -8095,7 +8098,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.2.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBLatest.2.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Latest'&current=2)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=2)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.2.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.2.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBLatest.2.Folder)]</property>
@@ -8104,7 +8107,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.3.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBLatest.3.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Latest'&current=3)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=3)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.3.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.3.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBLatest.3.Folder)]</property>
@@ -8113,7 +8116,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.4.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBLatest.4.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Latest'&current=4)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=4)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.4.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.4.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBLatest.4.Folder)]</property>
@@ -8122,7 +8125,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.5.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBLatest.5.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Latest'&current=5)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=5)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.5.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.5.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBLatest.5.Folder)]</property>
@@ -8131,7 +8134,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.6.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBLatest.6.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Latest'&current=6)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=6)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.6.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.6.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBLatest.6.Folder)]</property>
@@ -8140,7 +8143,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.7.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBLatest.7.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Latest'&current=7)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=7)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.7.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.7.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBLatest.7.Folder)]</property>
@@ -8149,7 +8152,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MyPicsDBLatest.8.Name)]</label>
             <label2>$INFO[Window(Home).Property(MyPicsDBLatest.8.Date)]</label2>
-			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&method='Latest'&current=8)</onclick>
+			<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='slideshow'&amp;method='Latest'&amp;current=8)</onclick>
             <thumb>$INFO[Window(Home).Property(MyPicsDBLatest.8.Path)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MyPicsDBLatest.8.Path)]</property>
             <property name="Folder">$INFO[Window(Home).Property(MyPicsDBLatest.8.Folder)]</property>
@@ -8519,6 +8522,7 @@
                         </itemlayout>
                         <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo) | Substring(Control.GetLabel(4325),actors)] ">
                             <control type="group">
+                                 <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                                 <control type="image">
                                     <description>Main Icon</description>
                                     <posx>21</posx>
@@ -8666,6 +8670,8 @@
                         </itemlayout>
                         <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),pics)]">
                             <control type="group">
+                                                            <control type="group">
+                                 <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                                 <control type="image">
                                     <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
                                     <aspectratio scalediffuse="false">scale</aspectratio>
@@ -8686,6 +8692,7 @@
                                     <aspectratio scalediffuse="false">scale</aspectratio>
                                     <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
                                     <bordersize>9</bordersize>
+                                </control>
                                 </control>
                                 <control type="label">
                                     <posx>15</posx>
@@ -8829,7 +8836,9 @@
                             </control>
                         </itemlayout>
                         <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4325),panel2,right) + [Substring(Control.GetLabel(4325),addons) | Substring(Control.GetLabel(4325),albums) | Substring(Control.GetLabel(4325),artists) | Substring(Control.GetLabel(4325),songs) | Substring(Control.GetLabel(4325),watchlistmusic)]">
-                            <control type="group">        
+                            <control type="group"> 
+                                                            <control type="group">
+                                 <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                                 <control type="image">
                                     <posx>20</posx>
                                     <posy>15</posy>
@@ -8848,6 +8857,7 @@
                                     <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
                                     <bordersize>20</bordersize>
                                 </control>
+                              </control>
                                 <control type="image">
                                     <posx>400</posx>
                                     <posy>95</posy>
