@@ -115,8 +115,8 @@
         <value>$VAR[AreaColorVar]</value>
     </variable>
     <variable name="QuickNavButtonLabelVar">
-        <value condition="IsEmpty(Window(home).Property(quicknavsetup))">QuickConfig</value>
-        <value>Quit</value>
+        <value condition="IsEmpty(Window(home).Property(quicknavsetup))">$LOCALIZE[42260]</value>
+        <value>$LOCALIZE[13009]</value>
     </variable>
     <variable name="SpotColorVar">
         <value condition="!Skin.HasSetting(randomcolor) + [Window.IsActive(1128) | Window.IsActive(1138)] + StringCompare(Skin.String(diffuse_color),FFFFFFFF)">diffuse_white</value>
@@ -561,9 +561,9 @@
         <value>$LOCALIZE[31686]</value>
     </variable>
     <variable name="MainMenuTypeVar">
-        <value condition="Skin.HasSetting(mainmenuicons)">Icons</value>
-        <value condition="Skin.HasSetting(biggergap)">Labels (Bigger Gaps)</value>
-        <value>Labels</value>
+        <value condition="Skin.HasSetting(mainmenuicons)">$LOCALIZE[536]</value>
+        <value condition="Skin.HasSetting(biggergap)">$LOCALIZE[42261]</value>
+        <value>$LOCALIZE[31083]</value>
     </variable>
     <variable name="Window1137Label1Var">
         <value condition="Window.IsActive(1124)">$LOCALIZE[31063]</value>
@@ -674,9 +674,9 @@
         <value condition="Substring(Container(9000).ListItem.Property(Widget),randommusicvideo)">$LOCALIZE[31091]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),actor)">$LOCALIZE[31336]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),watchlistmusic)">$LOCALIZE[31326]</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),randompics)">Random Pictures</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),recentpics)">Latest Pictures</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),randomartists)">Random Artists</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),randompics)">$LOCALIZE[42216]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),recentpics)">$LOCALIZE[42215]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),randomartists)">$LOCALIZE[42217]</value>
     </variable>
     <variable name="BGColorTextureVar">
         <value condition="[Window.IsActive(1122) | Window.IsActive(1123)]">$INFO[Skin.String(ItemToEdit.Color),common/,.png]</value>
@@ -699,10 +699,10 @@
         <value condition="Substring(Skin.String(ItemToEdit.Widget),randommusicvideo)">$LOCALIZE[31091]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),actor)">$LOCALIZE[31336]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),watchlistmusic)">$LOCALIZE[31326]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),randompics)">Random Pictures</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),recentpics)">Latest Pictures</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),concerts)">Near Concerts</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),randomartists)">Random Artists</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),randompics)">$LOCALIZE[42216]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),recentpics)">$LOCALIZE[42215]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),concerts)">$LOCALIZE[42218]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),randomartists)">$LOCALIZE[42217]</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="Widget2TypeLabelVar">
@@ -722,10 +722,10 @@
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),randommusicvideo)">$LOCALIZE[31091]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),actor)">$LOCALIZE[31336]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),watchlistmusic)">$LOCALIZE[31326]</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),randompics)">Random Pictures</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),recentpics)">Latest Pictures</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),concerts)">Near Concerts</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),randomartists)">Random Artists</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),randompics)">$LOCALIZE[42216]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),recentpics)">$LOCALIZE[42215]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),concerts)">$LOCALIZE[42218]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),randomartists)">$LOCALIZE[42217]</value>
     </variable>
     <variable name="Widget2TypeLabelVar1124">
         <value condition="SubString(Skin.String(ItemToEdit.Widget2),recentmovies)">$LOCALIZE[31323]</value>
@@ -744,10 +744,10 @@
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),randommusicvideo)">$LOCALIZE[31091]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),actor)">$LOCALIZE[31336]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),watchlistmusic)">$LOCALIZE[31326]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget2),randompics)">Random Pictures</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget2),recentpics)">Latest Pictures</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget2),concerts)">Near Concerts</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget2),randomartists)">Random Artists</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),randompics)">$LOCALIZE[42216]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),recentpics)">$LOCALIZE[42215]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),concerts)">$LOCALIZE[42218]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),randomartists)">$LOCALIZE[42217]</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="PanelWidgetLabel1Var">
@@ -910,119 +910,119 @@
         <value condition="Container.Content(years)">$INFO[ListItem(-7).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(-7).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(-7).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(-7).Thumb]</value>
+        <value>$INFO[ListItem(-7).Icon]</value>
     </variable>
     <variable name="ShowcaseItem-6Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(-6).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(-6).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(-6).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(-6).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(-6).Thumb]</value>
+        <value>$INFO[ListItem(-6).Icon]</value>
     </variable>
     <variable name="ShowcaseItem-5Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(-5).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(-5).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(-5).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(-5).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(-5).Thumb]</value>
+        <value>$INFO[ListItem(-5).Icon]</value>
     </variable>
     <variable name="ShowcaseItem-4Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(-4).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(-4).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(-4).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(-4).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(-4).Thumb]</value>
+        <value>$INFO[ListItem(-4).Icon]</value>
     </variable>
     <variable name="ShowcaseItem-3Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(-3).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(-3).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(-3).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(-3).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(-3).Thumb]</value>
+        <value>$INFO[ListItem(-3).Icon]</value>
     </variable>
     <variable name="ShowcaseItem-2Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(-2).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(-2).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(-2).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(-2).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(-2).Thumb]</value>
+        <value>$INFO[ListItem(-2).Icon]</value>
     </variable>
     <variable name="ShowcaseItem-1Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(-1).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(-1).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(-1).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(-1).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(-1).Thumb]</value>
+        <value>$INFO[ListItem(-1).Icon]</value>
     </variable>
     <variable name="ShowcaseItem0Var">
         <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem.Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem.Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem.Path,,poster.jpg]</value>
-        <value>$INFO[ListItem.Thumb]</value>
+        <value>$INFO[ListItem.Icon]</value>
     </variable>
     <variable name="ShowcaseItem1Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(1).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(1).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(1).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(1).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(1).Thumb]</value>
+        <value>$INFO[ListItem(1).Icon]</value>
     </variable>
     <variable name="ShowcaseItem2Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(2).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(2).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(2).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(2).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(2).Thumb]</value>
+        <value>$INFO[ListItem(2).Icon]</value>
     </variable>
     <variable name="ShowcaseItem3Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(3).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(3).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(3).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(3).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(3).Thumb]</value>
+        <value>$INFO[ListItem(3).Icon]</value>
     </variable>
     <variable name="ShowcaseItem4Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(4).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(4).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(4).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(4).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(4).Thumb]</value>
+        <value>$INFO[ListItem(4).Icon]</value>
     </variable>
     <variable name="ShowcaseItem5Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(5).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(5).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(5).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(5).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(5).Thumb]</value>
+        <value>$INFO[ListItem(5).Icon]</value>
     </variable>
     <variable name="ShowcaseItem6Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(6).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(6).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(6).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(6).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(6).Thumb]</value>
+        <value>$INFO[ListItem(6).Icon]</value>
     </variable>
     <variable name="ShowcaseItem7Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(7).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(7).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(7).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(7).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(7).Thumb]</value>
+        <value>$INFO[ListItem(7).Icon]</value>
     </variable>
     <variable name="ShowcaseItem8Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(8).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(8).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(8).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(8).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(8).Thumb]</value>
+        <value>$INFO[ListItem(8).Icon]</value>
     </variable>
     <variable name="ShowcaseItem9Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(9).Label,special://skin/extras/genre/video/icons/,.jpg]</value>
         <value condition="Container.Content(years)">$INFO[ListItem(9).Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value condition="SubString(Container.FolderPath,videodb://5/)">$INFO[ListItem(9).Path,,../poster.jpg]</value>
         <value condition="Skin.HasSetting(TVShowsUsePoster) + Container.Content(tvshows)">$INFO[ListItem(9).Path,,poster.jpg]</value>
-        <value>$INFO[ListItem(9).Thumb]</value>
+        <value>$INFO[ListItem(9).Icon]</value>
     </variable>
     <variable name="MusicShowcaseItem-6Var">
         <value condition="Container.Content(genres)">$INFO[ListItem(-6).Label,special://skin/extras/genre/music/icons/,.jpg]</value>
@@ -1384,10 +1384,10 @@
         <value>$LOCALIZE[107]</value>
     </variable>
     <variable name="HomeMusicBGVar">
-        <value condition="Skin.HasSetting(musicfanarthome)">Extrafanart</value>
-        <value condition="Skin.HasSetting(homecdwall)">CD Wall</value>
-        <value condition="Skin.HasSetting(artistslideshowhome)">Plugin</value>
-        <value>No</value>
+        <value condition="Skin.HasSetting(musicfanarthome)">$LOCALIZE[31047]</value>
+        <value condition="Skin.HasSetting(homecdwall)">$LOCALIZE[31039]</value>
+        <value condition="Skin.HasSetting(artistslideshowhome)">$LOCALIZE[24000]</value>
+        <value>$LOCALIZE[106]</value>
     </variable>
     <variable name="AddonWallCasesLabelVar">
         <value condition="Skin.HasSetting(useclearcasesinfowall)">$LOCALIZE[31282]</value>
@@ -1554,6 +1554,11 @@
         <value condition="Skin.HasSetting(submenufixedlist)">$LOCALIZE[31695]</value>
         <value>$LOCALIZE[31032]</value>
     </variable>
+    <variable name="FSPanelTypeVar">
+        <value condition="Skin.HasSetting(fspanel2columns)">$LOCALIZE[42263]</value>
+        <value condition="Skin.HasSetting(fspanelfanart)">$LOCALIZE[20445]</value>
+        <value>$LOCALIZE[31175]</value>
+    </variable>
     <variable name="BigFanIconVar">
         <value condition="Skin.HasSetting(bigfanclearart)">$INFO[ListItem.Path,,clearart.png]</value>
         <value condition="Skin.HasSetting(bigfanlogo)">$INFO[ListItem.Path,,logo.png]</value>
@@ -1616,8 +1621,8 @@
     </variable>
     <variable name="LandscapeTypeLabelVar">
         <value condition="Skin.HasSetting(landscapelogo)">$LOCALIZE[31059]</value>
-        <value condition="Skin.HasSetting(landscapeonelogo)">Single Logo</value>
-        <value condition="Skin.HasSetting(landscapeclearart)">ClearArt</value>
+        <value condition="Skin.HasSetting(landscapeonelogo)">$LOCALIZE[42262]</value>
+        <value condition="Skin.HasSetting(landscapeclearart)">$LOCALIZE[31086]</value>
         <value>$LOCALIZE[21371]</value>
     </variable>
     <variable name="LandscapeLogoPanelLabelVar">

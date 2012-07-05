@@ -63,16 +63,17 @@
                 <control type="image">
                     <include>MusicVizBG</include>
                     <texture fallback="special://skin/backgrounds/music.jpg">$INFO[MusicPlayer..Property(Fanart_Image)]</texture>
+                    <visible>StringCompare(Control.getLabel(8871),empty.png) + StringCompare(Control.getLabel(8872),empty.png) + !SubString(Control.getLabel(8870),extrafanart)</visible>
                 </control>
-                <control type="image">
+                <control type="image" id="8872">
                     <include>MusicVizBG</include>
-                    <texture>$INFO[Player.FolderPath,,fanart.jpg]</texture>
+                    <texture fallback="empty.png">$INFO[Player.FolderPath,,fanart.jpg]</texture>
                 </control>
-                <control type="image">
+                <control type="image" id="8871">
                     <include>MusicVizBG</include>
-                    <texture>$INFO[Player.FolderPath,,../fanart.jpg]</texture>
+                    <texture fallback="empty.png">$INFO[Player.FolderPath,,../fanart.jpg]</texture>
                 </control>
-                <control type="multiimage">
+                <control type="multiimage" id="8870">
                     <description>extrafanart</description>
                     <randomize>false</randomize>
                     <include>MusicVizBG</include>
