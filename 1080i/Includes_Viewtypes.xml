@@ -554,8 +554,8 @@
         <control type="group" id="8857">
             <description>Furniture Showcase</description>
             <include>Animation_OpenClose_Furniture</include>
-			<include>Animation_VisibleChange400</include>
-            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | [Control.IsVisible(518) + Skin.HasSetting(fspanelbackground)] | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [[[!Container.Content(movies) + Skin.HasSetting(addonwallaltbackground)] | [Container.Content(movies) + Skin.HasSetting(addonwallaltbackgroundmovies)]] + Control.IsVisible(512)]]</visible>
+            <include>Animation_VisibleChange400</include>
+            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | [Control.IsVisible(518) + Skin.HasSetting(fspanelbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [[[!Container.Content(movies) + Skin.HasSetting(addonwallaltbackground)] | [Container.Content(movies) + Skin.HasSetting(addonwallaltbackgroundmovies)]] + Control.IsVisible(512)]]</visible>
             <control type="image">
                 <posx>0</posx>
                 <posy>472</posy>
@@ -745,17 +745,17 @@
         </control>
         <control type="image">
             <posx>0</posx>
-            <posy>944</posy>
+            <posy>924</posy>
             <width>1920</width>
-            <height>195</height>
+            <height>224</height>
             <texture>home/homemenu_gradient.png</texture>
-            <visible>!Skin.HasTheme(Lite_Floor) + Control.IsVisible(57)</visible>
+            <visible>!Skin.HasTheme(Lite_Floor) + [Control.IsVisible(57) | Control.IsVisible(550)]</visible>
         </control>
     </include>
     <include name="Furniture_Glow">
         <control type="image">
             <include>Animation_OpenClose_Furniture</include>
-			<include>Animation_VisibleChange400</include>
+            <include>Animation_VisibleChange400</include>
             <visible>![Control.IsVisible(516) | Control.IsVisible(514) | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [[[!Container.Content(movies) + Skin.HasSetting(addonwallaltbackground)] | [Container.Content(movies) + Skin.HasSetting(addonwallaltbackgroundmovies)]] + Control.IsVisible(512)]]</visible>
             <posx>0</posx>
             <posy>-100</posy>
@@ -770,7 +770,8 @@
     <include name="WallPanel">
         <control type="group">
             <include>Animation_OpenCloseZoom_New</include>
-            <visible>Control.IsVisible(500) | [Control.IsVisible(512) + ![[!Container.Content(movies) + Skin.HasSetting(addonwallaltbackground)] | [Container.Content(movies) + Skin.HasSetting(addonwallaltbackgroundmovies)]]] | Control.IsVisible(500)</visible>
+            <include>Animation_VisibleChange400</include>
+            <visible>[Control.IsVisible(512) + ![[!Container.Content(movies) + Skin.HasSetting(addonwallaltbackground)] | [Container.Content(movies) + Skin.HasSetting(addonwallaltbackgroundmovies)]]] | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)]</visible>
             <control type="image">
                 <posx>112</posx>
                 <posy>68</posy>
@@ -804,27 +805,30 @@
     </include>
     <!--Includes for Wall viewtypes-->
     <include name="WallArrows">
-        <control type="image">
-            <posx>86</posx>
-            <posy>150</posy>
-            <width>30</width>
-            <height>786</height>
-            <texture>wall/wall_arrow.png</texture>
-            <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-            <animation effect="slide" start="-150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
-            <animation effect="fade" start="100" end="0" time="400" condition="Container(560).Column(0) + !ControlGroup(9000).HasFocus()">Conditional</animation>
+        <control type="group">
+            <visible>!Skin.HasSetting(wallfullscreen)</visible>
+            <include>Animation_VisibleChange400</include>
             <visible>[!Skin.HasSetting(WallVertical) + Control.IsVisible(500) + !Window.IsActive(musiclibrary)] | [!Skin.HasSetting(WallMusicVertical) + Control.IsVisible(500) + Window.IsActive(musiclibrary)]</visible>
-        </control>
-        <control type="image">
-            <posx>1804</posx>
-            <posy>150</posy>
-            <width>30</width>
-            <height>786</height>
-            <texture flipx="true">wall/wall_arrow.png</texture>
-            <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-            <animation effect="slide" start="150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
-            <animation effect="fade" start="100" end="0" time="400" condition="Container(560).Column(8) + !ControlGroup(9000).HasFocus()">Conditional</animation>
-            <visible>[!Skin.HasSetting(WallVertical) + Control.IsVisible(500) + !Window.IsActive(musiclibrary)] | [!Skin.HasSetting(WallMusicVertical) + Control.IsVisible(500) + Window.IsActive(musiclibrary)]</visible>
+            <control type="image">
+                <posx>86</posx>
+                <posy>150</posy>
+                <width>30</width>
+                <height>786</height>
+                <texture>wall/wall_arrow.png</texture>
+                <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                <animation effect="slide" start="-150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="Container(560).Column(0) + !ControlGroup(9000).HasFocus()">Conditional</animation>
+            </control>
+            <control type="image">
+                <posx>1804</posx>
+                <posy>150</posy>
+                <width>30</width>
+                <height>786</height>
+                <texture flipx="true">wall/wall_arrow.png</texture>
+                <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                <animation effect="slide" start="150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
+                <animation effect="fade" start="100" end="0" time="400" condition="Container(560).Column(8) + !ControlGroup(9000).HasFocus()">Conditional</animation>
+            </control>
         </control>
     </include>
     <include name="OverlayVisibility-7">

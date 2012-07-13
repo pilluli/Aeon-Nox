@@ -45,7 +45,7 @@
         </control>
         <control type="multiimage">
             <imagepath background="true">$VAR[1124FanartVar]</imagepath>
-			<aspectratio align="center" aligny="top">scale</aspectratio>
+            <aspectratio align="center" aligny="top">scale</aspectratio>
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <visible>!Substring(Control.GetLabel(4322),dailybabe)</visible>
@@ -53,7 +53,7 @@
         <control type="multiimage">
             <fadetime>600</fadetime>
             <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
-			<aspectratio align="center" aligny="top">keep</aspectratio>
+            <aspectratio align="center" aligny="top">keep</aspectratio>
             <include>Animation_VisibleChange400</include>
             <randomize>true</randomize>
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
@@ -76,7 +76,7 @@
         <include condition="System.HasAddon(script.widget.weatherworld)">WorldWeatherIcons</include>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <animation effect="fade" start="100" end="50" time="0" condition="true">conditional</animation>
+            <colordiffuse>$INFO[Skin.String(ColorLevel)]</colordiffuse>
             <texture>$VAR[BGColorTextureVar]</texture>
             <include>Animation_WindowFade200</include>
             <fadetime>600</fadetime>
@@ -164,8 +164,6 @@
                 <visible>[Player.HasAudio + !Skin.HasSetting(nohomepageMusicinfo)] | [Player.HasVideo + !Skin.HasSetting(homepageVideoinfo)]</visible>
             </control>
         </control>
-        <!-- NowPlaying Info -->
-        <include>Furniture_HomeNowPlaying</include>
         <include>HomePanelWidget_1124</include>
         <include>HomePanelWidget2_1124</include>
         <control type="group" id="8996">
@@ -228,21 +226,19 @@
                     <scroll>false</scroll>
                     <align>left</align>
                     <include>dialogeffect</include>
-                    <label>$LOCALIZE[31040] $LOCALIZE[31295]</label>
+                    <label>$LOCALIZE[31176]</label>
                     <include>Animation_VisibleChangeDelayed</include>
                 </control>
             </control>
         </control>
-        <!-- Library Totals -->
-        <include>LibraryStats</include>
         <!-- Time Panel-->
         <include>TimePanel</include>
         <control type="group">
             <include>Animation_OpenCloseZoom</include>
             <include>RecentWidget_1124</include>
             <include>RecentWidget2_1124</include>
-            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget_Standard</include>
-            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget_Plus</include>
+            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget</include>
+            <include condition="!IsEmpty(Weather.Plugin)">Weather_Widget2</include>
         </control>
         <!--Main Menu-->
         <control type="group">

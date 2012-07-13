@@ -2,33 +2,41 @@
 <window id="2600">
     <defaultcontrol always="true">7510</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
+    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include><include condition="!Skin.HasSetting(firstrun3.5)">AutoConfig3.5</include>
     <controls>
-            <control type="image">
-				<include>FullscreenDimensions</include> 
-				<fadetime>600</fadetime>
-				<texture background="true">special://skin/backgrounds/weather.jpg</texture>
+        <control type="multiimage">
+            <include>FullscreenDimensions</include>
+            <fadetime>600</fadetime>
+            <texture background="true">special://skin/backgrounds/weather/</texture>
             <animation effect="fade" time="500" condition="!Window.Previous(1115)">WindowOpen</animation>
             <animation effect="fade" time="200" condition="!Window.Next(1115)">WindowClose</animation>
-             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <visible>!StringCompare(Skin.String(WeatherHomeItem.MultiFanart),weather) + ![SubString(Skin.String(WeatherHomeItem.MultiFanart),\) | SubString(Skin.String(WeatherHomeItem.MultiFanart),/)]</visible>
-           </control>
-        <control type="multiimage">
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/weather.jpg" background="true">$INFO[Skin.String(WeatherHomeItem.MultiFanart)]</imagepath>
-            <animation effect="fade" time="500" condition="!Window.Previous(1115)">WindowOpen</animation>
-            <animation effect="fade" time="200" condition="!Window.Next(1115)">WindowClose</animation>
-            <visible>!StringCompare(Skin.String(WeatherHomeItem.MultiFanart),weather) + [SubString(Skin.String(WeatherHomeItem.MultiFanart),\) | SubString(Skin.String(WeatherHomeItem.MultiFanart),/)]</visible>
+            <visible>!SubString(Skin.String(WeatherHomeItem.MultiFanart),weather) + ![SubString(Skin.String(WeatherHomeItem.MultiFanart),\) | SubString(Skin.String(WeatherHomeItem.MultiFanart),/)]</visible>
         </control>
         <control type="multiimage">
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/weather.jpg" background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Weather.FanartCode]</imagepath>
+            <imagepath fallback="special://skin/backgrounds/weather/" background="true">$INFO[Skin.String(WeatherHomeItem.MultiFanart)]</imagepath>
+            <animation effect="fade" time="500" condition="!Window.Previous(1115)">WindowOpen</animation>
+            <animation effect="fade" time="200" condition="!Window.Next(1115)">WindowClose</animation>
+            <visible>!SubString(Skin.String(WeatherHomeItem.MultiFanart),weather) + [SubString(Skin.String(WeatherHomeItem.MultiFanart),\) | SubString(Skin.String(WeatherHomeItem.MultiFanart),/)]</visible>
+        </control>
+        <control type="multiimage">
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <imagepath fallback="special://skin/backgrounds/weather/" background="true">$INFO[Skin.String(WeatherFanartDir)]$INFO[Weather.FanartCode]</imagepath>
             <animation effect="fade" time="500" condition="!Window.Previous(1115)">WindowOpen</animation>
             <animation effect="fade" time="200" condition="!Window.Next(1115)">WindowClose</animation>
             <visible>StringCompare(Skin.String(WeatherHomeItem.MultiFanart),weather)</visible>
+        </control>
+        <control type="multiimage">
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
+            <imagepath fallback="special://skin/backgrounds/weather/" background="true">$INFO[Window(Weather).Property(Current.Earth.Phase.LargeImage)]</imagepath>
+            <animation effect="fade" time="500" condition="!Window.Previous(1115)">WindowOpen</animation>
+            <animation effect="fade" time="200" condition="!Window.Next(1115)">WindowClose</animation>
+            <visible>SubString(Skin.String(WeatherHomeItem.MultiFanart),googleweather)</visible>
         </control>
         <control type="group">
             <include>Animation_OpenClose_Furniture</include>
@@ -1760,6 +1768,12 @@
                                 </focusedlayout>
                                 <content>
                                     <item>
+                                        <label>42275</label>
+                                        <icon></icon>
+                                        <onclick>-</onclick>
+                                        <visible>IsEmpty(Window.Property(Video.1.Title)) + IsEmpty(Window.Property(Video.2.Title)) + IsEmpty(Window.Property(Video.3.Title)) + IsEmpty(Window.Property(MapList.1.MapLabel.1)) + IsEmpty(Window.Property(MapList.1.MapLabel.2)) + IsEmpty(Window.Property(MapList.1.MapLabel.3))</visible>
+                                    </item>
+                                    <item>
                                         <label>$INFO[Window.Property(Video.1.Title)]</label>
                                         <icon>icon-video.png</icon>
                                         <onclick>PlayMedia($ESCINFO[Window.Property(Video.1)],1,noresume)</onclick>
@@ -2161,7 +2175,7 @@
                     <label>$INFO[Window.Property(Alerts.RSS)]</label>
                     <scroll>true</scroll>
                     <wrapmultiline>false</wrapmultiline>
-                    <scrollspeed>50</scrollspeed>
+                    <scrollspeed>30</scrollspeed>
                     <visible>Window.Property(Alerts.IsFetched)</visible>
                     <animation effect="slide" start="0,0" end="0,429" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
@@ -2847,7 +2861,7 @@
                         <label>5</label>
                         <onclick>ActivateWindow(MyWeatherSettings)</onclick>
                     </control>
-                     <control type="button" id="5">
+                    <control type="button" id="5">
                         <description>Around the world</description>
                         <include>Objects_MediaMenuButtonAlt</include>
                         <label>42246</label>

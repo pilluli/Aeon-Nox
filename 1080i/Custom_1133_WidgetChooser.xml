@@ -4,7 +4,7 @@
     <allowoverlay>no</allowoverlay>
     <controls>
         <control type="group">
-			<posy>200</posy>
+            <posy>200</posy>
             <control type="image">
                 <description>Panel</description>
                 <posx>326</posx>
@@ -25,10 +25,10 @@
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <height>560</height>
                 <texture border="20">osd/osd_settings_back.png</texture>
-			</control>
+            </control>
             <include>Animation_OpenCloseZoom</include>
             <control type="group">
-				<posy>-100</posy>
+                <posy>-100</posy>
                 <control type="panel" id="4">
                     <description>Movie widgets</description>
                     <posx>347</posx>
@@ -114,8 +114,9 @@
                     <content>
                         <item>
                             <label>$LOCALIZE[231]</label>
-							<onclick condition="!Skin.HasSetting(widget2)">Skin.Reset(ItemToEdit.Widget)</onclick>
-							<onclick condition="Skin.HasSetting(widget2)">Skin.Reset(ItemToEdit.Widget2)</onclick>
+                            <onclick condition="!Skin.HasSetting(widget2)">Skin.Reset(ItemToEdit.Widget)</onclick>
+                            <onclick condition="Skin.HasSetting(widget2)">Skin.Reset(ItemToEdit.Widget2)</onclick>
+                            <onclick>Dialog.Close(1133)</onclick>
                         </item>
                         <item>
                             <label>$LOCALIZE[31323]</label>
@@ -132,7 +133,7 @@
                             <visible>Library.HasContent(movies)</visible>
                         </item>
                         <item>
-                            <label>$LOCALIZE[20395]</label>
+                            <label>$LOCALIZE[42272]</label>
                             <onclick condition="!Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,featuredmovies)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget2,featuredmovies)</onclick>
                             <visible>Library.HasContent(movies)</visible>
@@ -147,7 +148,7 @@
                         </item>
                         <item>
                             <label>$LOCALIZE[31093]</label>
-							<onclick>RunScript(script.metadata.actors,borntoday,10,random)</onclick>
+                            <onclick>RunScript(script.metadata.actors,borntoday,10,random)</onclick>
                             <onclick condition="!Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,actors,1124)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,actors2,1124)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
@@ -263,7 +264,7 @@
                             <visible>Library.HasContent(tvshows)</visible>
                         </item>
                         <item>
-                            <label>$LOCALIZE[20395]</label>
+                            <label>$LOCALIZE[42273]</label>
                             <onclick condition="!Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,featuredtv)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget2,featuredtv)</onclick>
                             <visible>Library.HasContent(tvshows)</visible>
@@ -386,7 +387,7 @@
                             <visible>Library.HasContent(music)</visible>
                         </item>
                         <item>
-                            <label>$LOCALIZE[20395]</label>
+                            <label>$LOCALIZE[42274]</label>
                             <visible>Library.HasContent(music)</visible>
                             <onclick condition="!Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,featuredmusic)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,featuredmusic2)</onclick>
@@ -526,14 +527,12 @@
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget2,weather)</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
                             <visible>!IsEmpty(Weather.Plugin)</visible>
-                            <visible>[!Substring(Skin.String(ItemToEdit.Widget2),weather) + !Skin.HasSetting(widget2)] | [!Substring(Skin.String(ItemToEdit.Widget),weather) + Skin.HasSetting(widget2)]</visible>
                         </item>
                         <item>
                             <label>$LOCALIZE[31642]</label>
                             <onclick condition="!Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,weatherpda)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget2,weatherpda)</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
-                            <visible>[!Substring(Skin.String(ItemToEdit.Widget2),weather) + !Skin.HasSetting(widget2)] | [!Substring(Skin.String(ItemToEdit.Widget),weather) + Skin.HasSetting(widget2)]</visible>
                             <visible>System.HasAddon(weather.fanart.pda.style) + !IsEmpty(Weather.Plugin)</visible>
                         </item>
                         <item>
@@ -544,7 +543,7 @@
                         </item>
                         <item>
                             <label>42215</label>
-							<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onclick>
+                            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onclick>
                             <onclick condition="!Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,recentpics,1124)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,recentpics2,1124)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
@@ -552,7 +551,7 @@
                         </item>
                         <item>
                             <label>42216</label>
-							<onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
+                            <onclick>XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onclick>
                             <onclick condition="!Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,randompics,1124)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,randompics2,1124)</onclick>
                             <onclick>ActivateWindow(1137)</onclick>
@@ -566,7 +565,7 @@
                         </item>
                         <item>
                             <label>42218</label>
-							<onclick>RunScript(script.ExtraMusicInfo,info=NearEvents)</onclick>
+                            <onclick>RunScript(script.ExtraMusicInfo,info=NearEvents)</onclick>
                             <onclick condition="!Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget,concertspanel)</onclick>
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget2,concertspanel)</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
@@ -590,6 +589,33 @@
                             <onclick condition="Skin.HasSetting(widget2)">Skin.SetString(ItemToEdit.Widget2,googlepanel)</onclick>
                             <onclick>Dialog.Close(1133)</onclick>
                             <visible>SubString(Weather.Plugin,weather.google)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[42280] 1</label>
+                            <onclick condition="!Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,rss1,1124)</onclick>
+                            <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,rss1_2,1124)</onclick>
+                            <onclick>SetProperty(RSSWidget,RSSWidget1,1124)</onclick>
+                            <onclick>ActivateWindow(1160)</onclick>
+                            <onclick>Dialog.Close(1133)</onclick>
+                            <visible>System.HasAddon(script.rssclient)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[42280] 2</label>
+                            <onclick condition="!Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,rss2,1124)</onclick>
+                            <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,rss2_2,1124)</onclick>
+                            <onclick>SetProperty(RSSWidget,RSSWidget2,1124)</onclick>
+                            <onclick>ActivateWindow(1160)</onclick>
+                            <onclick>Dialog.Close(1133)</onclick>
+                            <visible>System.HasAddon(script.rssclient)</visible>
+                        </item>
+                        <item>
+                            <label>$LOCALIZE[42280] 3</label>
+                            <onclick condition="!Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,rss3,1124)</onclick>
+                            <onclick condition="Skin.HasSetting(widget2)">SetProperty(CustomYesNoDialog,rss3_2,1124)</onclick>
+                            <onclick>SetProperty(RSSWidget,RSSWidget3,1124)</onclick>
+                            <onclick>ActivateWindow(1160)</onclick>
+                            <onclick>Dialog.Close(1133)</onclick>
+                            <visible>System.HasAddon(script.rssclient)</visible>
                         </item>
                     </content>
                 </control>

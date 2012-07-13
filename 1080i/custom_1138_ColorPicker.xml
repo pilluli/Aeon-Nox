@@ -82,7 +82,7 @@
                         <posy>0</posy>
                         <width>70</width>
                         <height>70</height>
-                        <texture>views/addonwall_select.png</texture>
+                        <texture>views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <colordiffuse>black</colordiffuse>
                         <bordersize>1.7</bordersize>
                         <include>Animation_CommonFade</include>
@@ -254,6 +254,14 @@
                     <onclick>Skin.ToggleSetting(colorallareas)</onclick>
                     <selected>Skin.HasSetting(colorallareas)</selected>
                     <visible>IsEmpty(Window(1124).Property(skincolor))</visible>
+                </control>
+                <control type="button" id="11">
+                    <label>$LOCALIZE[31090]</label>
+                    <onup>10</onup>
+                    <ondown>10</ondown>
+                    <include>ColorChooserButton</include>
+                    <onclick>RunScript(script.color.picker,Skin.SetString(ColorLevel,$INFO[Skin.String(ColorLevel)]),Transparency&amp;Min=0&amp;Max=100&amp;SetStringInRealTime=true)</onclick>
+                    <visible>!IsEmpty(Window(1124).Property(skincolor))</visible>
                 </control>
             </control>
         </control>

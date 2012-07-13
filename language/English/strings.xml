@@ -422,12 +422,12 @@
     <string id="42014">Click on menu items to see available options</string>
     <string id="42015">Play some Music to get live Preview of Settings</string>
     <string id="42016">Needs "Additional Artist Info" activated in Artistslideshow Plugin</string>
-    <string id="42017">Welcome to Aeon Nox 3.0</string>
+    <string id="42017">Welcome to Aeon Nox 3.5</string>
     <string id="42018">Visit XBMC.org Forums for support</string>
 
 
     <string id="42100">Set area color for 'Featured' window</string>
-    <string id="42101">Set area color for  'Settings' window</string>
+    <string id="42101">Set area color for 'Settings' window</string>
     <string id="42102">AIRING TODAY</string>
     <string id="42104">Fallback</string>
     <string id="42105">Playlist widget</string>
@@ -498,7 +498,22 @@
     <string id="42262">Single Logo</string>
     <string id="42263">Two Columns</string>
     <string id="42264">Show Widgets</string>
-
+    <string id="42265">WakeOnLAN</string>
+    <string id="42266">Video Folder</string>
+    <string id="42267">Music Folder</string>
+    <string id="42268">Enter MAC Address</string>
+    <string id="42269">Online Video Help</string>
+    <string id="42270">Help</string>
+    <string id="42271">Available at Passion-XBMC repository</string>
+    <string id="42272">Mixed Movies</string>
+    <string id="42273">Mixed TV</string>
+    <string id="42274">Mixed Music</string>
+    <string id="42275">No Content for this Area</string>
+    <string id="42276">Do you want to see some videos introducing [CR]Aeon Nox 3.5 and its new features?</string>
+    <string id="42277">Home NowPlaying Customizer</string>
+    <string id="42278">Click on "Play" buttons To preview settings</string>
+    <string id="42279">Fade background in video</string>
+    <string id="42280">RSS Feed</string>
 
 
 </strings>

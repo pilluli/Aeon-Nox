@@ -258,7 +258,7 @@
     <onunload condition="Skin.HasSetting(mainmenuicons)">ActivateWindow(1156)</onunload>
     <controls>
         <control type="group">
-            <visible>!Window.IsActive(1137) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138)</visible>
+            <visible>!Window.IsActive(1137) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138) + !Window.IsActive(1155)</visible>
             <include>Animation_DialogPopup</include>
             <control type="image">
                 <description>Panel</description>
@@ -281,7 +281,6 @@
                 <height>622</height>
                 <texture border="20">osd/osd_settings_back.png</texture>
             </control>
-            <include>Animation_OpenCloseZoom</include>
             <control type="group">
                 <control type="grouplist">
                     <posx>875</posx>
@@ -572,6 +571,8 @@
                             <onclick>Skin.Reset(ItemToEdit.Widget2)</onclick>
                             <onclick>Skin.Reset(ItemToEdit.Label)</onclick>
                             <onclick>Skin.Reset(ItemToEdit.Path)</onclick>
+                            <onclick>Skin.Reset(ItemToEdit.Icon)</onclick>
+                            <onclick>Skin.Reset(ItemToEdit.Color)</onclick>
                         </control>
                     </control>
                 </control>

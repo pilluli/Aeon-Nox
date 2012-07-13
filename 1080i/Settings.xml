@@ -2,7 +2,7 @@
 <window id="4">
     <defaultcontrol always="true">9000</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
+    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include><include condition="!Skin.HasSetting(firstrun3.5)">AutoConfig3.5</include>
     <animation type="WindowOpen" reversible="false" condition="!Window.Previous(10012) + !Window.Previous(10013) + !Window.Previous(10014) + !Window.Previous(10015) + !Window.Previous(10016) + !Window.Previous(10017) + !Window.Previous(10018) + !Window.Previous(10019) + !Window.Previous(10020) + !Window.Previous(1111) + !Window.Previous(10007)">
         <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
         <effect type="fade" start="0" end="100" time="300" />
@@ -17,17 +17,17 @@
         <include>Furniture_SettingsFloor</include>
         <control type="group">
             <animation effect="zoom" end="91" center="960,360" time="400" tween="cubic" easing="inout" condition="true">Conditional</animation>
-        <control type="image">
-            <description>background image</description>
-            <posx>36</posx>
-            <posy>36</posy>
-            <width>1846</width>
-            <height>1006</height>
-            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <include>Animation_VisibleChange400</include>
-            <texture>settings/settings_panelback_shadow.png</texture>
-        </control>
+            <control type="image">
+                <description>background image</description>
+                <posx>36</posx>
+                <posy>36</posy>
+                <width>1846</width>
+                <height>1006</height>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <include>Animation_VisibleChange400</include>
+                <texture>settings/settings_panelback_shadow.png</texture>
+            </control>
             <control type="image">
                 <description>background image</description>
                 <posx>34</posx>
@@ -95,32 +95,32 @@
                     <item id="2">
                         <label>157</label>
                         <onclick>ActivateWindow(VideosSettings)</onclick>
-                        <icon>special://skin/backgrounds/videos.jpg</icon>
+                        <icon>special://skin/backgrounds/videos/videos.jpg</icon>
                         <property name="description">$LOCALIZE[31401]</property>
                     </item>
                     <item id="3">
                         <label>2</label>
                         <onclick>ActivateWindow(MusicSettings)</onclick>
-                        <icon>special://skin/backgrounds/music.jpg</icon>
+                        <icon>special://skin/backgrounds/music/music.jpg</icon>
                         <property name="description">$LOCALIZE[31402]</property>
                     </item>
                     <item id="4">
                         <label>1</label>
                         <onclick>ActivateWindow(PicturesSettings)</onclick>
-                        <icon>special://skin/backgrounds/pictures.jpg</icon>
+                        <icon>special://skin/backgrounds/pictures/pictures.jpg</icon>
                         <property name="description">$LOCALIZE[31403]</property>
                     </item>
                     <item id="5">
                         <label>8</label>
                         <onclick>ActivateWindow(WeatherSettings)</onclick>
-                        <icon>special://skin/backgrounds/weather.jpg</icon>
+                        <icon>special://skin/backgrounds/weather/weather.jpg</icon>
                         <property name="description">$LOCALIZE[31404]</property>
                     </item>
                     <item id="6">
                         <label>24001</label>
                         <label2>31411</label2>
                         <onclick>ActivateWindow(AddonBrowser)</onclick>
-                        <icon>special://skin/backgrounds/addons.jpg</icon>
+                        <icon>special://skin/backgrounds/addons/addons.jpg</icon>
                         <property name="description">$LOCALIZE[31408]</property>
                     </item>
                     <item id="7">
@@ -132,7 +132,7 @@
                     <item id="8">
                         <label>13000</label>
                         <onclick>ActivateWindow(SystemSettings)</onclick>
-                        <icon>special://skin/backgrounds/system.jpg</icon>
+                        <icon>special://skin/backgrounds/system/system.jpg</icon>
                         <property name="description">$LOCALIZE[31406]</property>
                     </item>
                     <include condition="System.GetBool(pvrmanager.enabled)">PVR_Settings</include>

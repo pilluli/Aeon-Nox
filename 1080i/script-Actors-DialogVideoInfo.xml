@@ -160,9 +160,9 @@
                 </control>
                 <control type="button" id="22">
                     <description>Search On Youtube</description>
-					<label>$LOCALIZE[31096]</label>
+                    <label>$LOCALIZE[31096]</label>
                     <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Title],return)</onclick>
-					<onclick>Dialog.Close(all,true)</onclick>
+                    <onclick>Dialog.Close(all,true)</onclick>
                     <include>DialogVideoInfoButton</include>
                 </control>
             </control>
@@ -631,7 +631,7 @@
                 <width>550</width>
                 <height>314</height>
                 <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                <texture border="5">views/addonwall_select.png</texture>
+                <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                 <visible>Control.HasFocus(5055)</visible>
             </control>
             <control type="image">

@@ -27,7 +27,7 @@
             <description>Fanart</description>
             <animation effect="fade" time="500" condition="!Window.Previous(weather)">WindowOpen</animation>
             <animation effect="fade" time="200" condition="!Window.Next(weather)">WindowClose</animation>
-            <imagepath background="true" fallback="special://skin/backgrounds/featured.jpg">$VAR[FeaturedFanartVar]</imagepath>
+            <imagepath background="true" fallback="special://skin/backgrounds/">$VAR[FeaturedFanartVar]</imagepath>
         </control>
         <include>CommonMediaPlayingBackground</include>
         <control type="image">
@@ -417,7 +417,7 @@
                                     <width>280</width>
                                     <height>280</height>
                                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                    <texture border="5">views/addonwall_select.png</texture>
+                                    <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                     <visible>Control.HasFocus(5001)</visible>
                                 </control>
                             </control>
@@ -859,7 +859,7 @@
                         <width>624</width>
                         <height>560</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(5010)</visible>
                     </control>
                     <control type="image">
@@ -868,7 +868,7 @@
                         <width>376</width>
                         <height>560</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(5011)</visible>
                     </control>
                     <control type="image">
@@ -1049,7 +1049,7 @@
                                     <width>280</width>
                                     <height>280</height>
                                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                    <texture border="5">views/addonwall_select.png</texture>
+                                    <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                     <visible>Control.HasFocus(6001)</visible>
                                 </control>
                             </control>
@@ -1059,7 +1059,7 @@
                                 <label>$LOCALIZE[342]</label>
                                 <label2>$INFO[Window(Home).Property(Movies.Count)]</label2>
                                 <icon>DefaultMovies.png</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/movies.jpg">$INFO[Skin.String(MovieHomeItem.MultiFanart)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/movies/movies.jpg">$INFO[Skin.String(MovieHomeItem.MultiFanart)]</property>
                                 <onclick>ActivateWindow(videos,movietitles,return)</onclick>
                             </item>
                             <item id="1">
@@ -1487,7 +1487,7 @@
                         <width>624</width>
                         <height>560</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6010)</visible>
                     </control>
                     <control type="image">
@@ -1496,7 +1496,7 @@
                         <width>376</width>
                         <height>560</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(6011)</visible>
                     </control>
                     <control type="image">
@@ -1676,7 +1676,7 @@
                                     <width>280</width>
                                     <height>280</height>
                                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                    <texture border="5">views/addonwall_select.png</texture>
+                                    <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                     <visible>Control.HasFocus(7001)</visible>
                                 </control>
                             </control>
@@ -1686,13 +1686,13 @@
                                 <label>$LOCALIZE[20343]</label>
                                 <label2>$INFO[Window(Home).Property(TVShows.Count)]</label2>
                                 <icon>DefaultTVShows.png</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/tvshows.jpg">$INFO[Skin.String(TVShowHomeItem.MultiFanart)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/tvshows/tvshows.jpg">$INFO[Skin.String(TVShowHomeItem.MultiFanart)]</property>
                                 <onclick>ActivateWindow(videos,TvShowTitles,return)</onclick>
                             </item>
                             <item id="1">
                                 <label>$INFO[system.addontitle(script.tv.show.next.aired)]</label>
                                 <icon>$INFO[system.addonicon(script.tv.show.next.aired)]</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/tvguide.jpg">$INFO[Skin.String(TVGuideHomeItem.MultiFanart)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/tvguide/tvguide.jpg">$INFO[Skin.String(TVGuideHomeItem.MultiFanart)]</property>
                                 <onclick>XBMC.RunAddon(script.tv.show.next.aired)</onclick>
                             </item>
                         </content>
@@ -2572,7 +2572,7 @@
                         <width>624</width>
                         <height>560</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(7010)</visible>
                     </control>
                     <control type="image">
@@ -2751,7 +2751,7 @@
                                     <width>280</width>
                                     <height>280</height>
                                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                    <texture border="5">views/addonwall_select.png</texture>
+                                    <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                     <visible>Control.HasFocus(8001)</visible>
                                 </control>
                             </control>
@@ -2761,14 +2761,14 @@
                                 <label>$LOCALIZE[132]</label>
                                 <label2>$INFO[Window(Home).Property(Music.AlbumsCount)]</label2>
                                 <icon>DefaultMusicAlbums.png</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/music.jpg">$INFO[Skin.String(MusicHomeItem.MultiFanart)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/music/music.jpg">$INFO[Skin.String(MusicHomeItem.MultiFanart)]</property>
                                 <onclick>ActivateWindow(MusicLibrary,Albums,return)</onclick>
                             </item>
                             <item id="1">
                                 <label>133</label>
                                 <label2>$INFO[Window(Home).Property(Music.ArtistsCount)]</label2>
                                 <icon>DefaultArtist.png</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/music.jpg">$INFO[Skin.String(MusicHomeItem.MultiFanart)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/music/music.jpg">$INFO[Skin.String(MusicHomeItem.MultiFanart)]</property>
                                 <onclick>ActivateWindow(MusicLibrary,Artists,return)</onclick>
                             </item>
                         </content>
@@ -3283,7 +3283,7 @@
                         <width>560</width>
                         <height>560</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(8010)</visible>
                     </control>
                     <control type="image">
@@ -3462,7 +3462,7 @@
                                     <width>280</width>
                                     <height>280</height>
                                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                    <texture border="5">views/addonwall_select.png</texture>
+                                    <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                     <visible>Control.HasFocus(9001)</visible>
                                 </control>
                             </control>
@@ -3472,13 +3472,13 @@
                                 <label>$LOCALIZE[134]</label>
                                 <label2>$INFO[Window(Home).Property(Music.SongsCount)]</label2>
                                 <icon>DefaultMusicSongs.png</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/music.jpg">$INFO[Skin.String(MusicHomeItem.MultiFanart)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/music/music.jpg">$INFO[Skin.String(MusicHomeItem.MultiFanart)]</property>
                                 <onclick>ActivateWindow(MusicLibrary,Songs,return)</onclick>
                             </item>
                             <item id="1">
                                 <label>1038</label>
                                 <icon>DefaultAddonMusic.png</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/addons.jpg">$INFO[Skin.String(AddonsHomeItem.MultiFanart)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/addons/addons.jpg">$INFO[Skin.String(AddonsHomeItem.MultiFanart)]</property>
                                 <onclick>ActivateWindow(MusicLibrary,Addons,return)</onclick>
                             </item>
                         </content>
@@ -4007,7 +4007,7 @@
                         <width>560</width>
                         <height>560</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(9010)</visible>
                     </control>
                     <control type="image">
@@ -4187,7 +4187,7 @@
                                     <width>280</width>
                                     <height>280</height>
                                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                    <texture border="5">views/addonwall_select.png</texture>
+                                    <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                     <visible>Control.HasFocus(10001)</visible>
                                 </control>
                             </control>
@@ -4197,14 +4197,14 @@
                                 <label>$LOCALIZE[24001]</label>
                                 <label2>$INFO[Window(Home).Property(RandomAddon.Count)]</label2>
                                 <icon>DefaultAddon.png</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/addons.jpg">$INFO[Skin.String(AddonsHomeItem.MultiFanart)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/addons/addons.jpg">$INFO[Skin.String(AddonsHomeItem.MultiFanart)]</property>
                                 <onclick>ActivateWindow(AddonBrowser)</onclick>
                             </item>
                             <item id="1">
                                 <label>0</label>
                                 <label2>-</label2>
                                 <icon>DefaultProgram.png</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/programs.jpg">$INFO[Skin.String(ProgramsHomeItem.MultiFanart)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/programs/programs.jpg">$INFO[Skin.String(ProgramsHomeItem.MultiFanart)]</property>
                                 <onclick>ActivateWindow(Programs,addons,return)</onclick>
                             </item>
                         </content>
@@ -4561,7 +4561,7 @@
                                         <width>280</width>
                                         <height>280</height>
                                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                        <texture border="5">views/addonwall_select.png</texture>
+                                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                         <visible>Control.HasFocus(10003)</visible>
                                     </control>
                                 </control>
@@ -4572,28 +4572,28 @@
                                     <icon fallback="DefaultAddon.png">$INFO[system.addonicon(Skin.String(HomeProgramButton1))]</icon>
                                     <onclick condition="!IsEmpty(Skin.String(HomeProgramButton1))">XBMC.RunAddon($INFO[Skin.String(HomeProgramButton1)])</onclick>
                                     <onclick condition="IsEmpty(Skin.String(HomeProgramButton1))">Skin.SetAddon(HomeProgramButton1,xbmc.addon.executable)</onclick>
-                                    <property name="Fanart">special://skin/backgrounds/addons.jpg</property>
+                                    <property name="Fanart">special://skin/backgrounds/addons/addons.jpg</property>
                                 </item>
                                 <item id="1">
                                     <label fallback="ADD-ON2">$INFO[system.addontitle(Skin.String(HomeProgramButton2))]</label>
                                     <icon fallback="DefaultAddon.png">$INFO[system.addonicon(Skin.String(HomeProgramButton2))]</icon>
                                     <onclick condition="!IsEmpty(Skin.String(HomeProgramButton2))">XBMC.RunAddon($INFO[Skin.String(HomeProgramButton2)])</onclick>
                                     <onclick condition="IsEmpty(Skin.String(HomeProgramButton2))">Skin.SetAddon(HomeProgramButton2,xbmc.addon.executable)</onclick>
-                                    <property name="Fanart">special://skin/backgrounds/addons.jpg</property>
+                                    <property name="Fanart">special://skin/backgrounds/addons/addons.jpg</property>
                                 </item>
                                 <item id="2">
                                     <label fallback="ADD-ON3">$INFO[system.addontitle(Skin.String(HomeProgramButton3))]</label>
                                     <icon fallback="DefaultAddon.png">$INFO[system.addonicon(Skin.String(HomeProgramButton3))]</icon>
                                     <onclick condition="!IsEmpty(Skin.String(HomeProgramButton3))">XBMC.RunAddon($INFO[Skin.String(HomeProgramButton3)])</onclick>
                                     <onclick condition="IsEmpty(Skin.String(HomeProgramButton3))">Skin.SetAddon(HomeProgramButton3,xbmc.addon.executable)</onclick>
-                                    <property name="Fanart">special://skin/backgrounds/addons.jpg</property>
+                                    <property name="Fanart">special://skin/backgrounds/addons/addons.jpg</property>
                                 </item>
                                 <item id="3">
                                     <label fallback="ADD-ON4">$INFO[system.addontitle(Skin.String(HomeProgramButton4))]</label>
                                     <icon fallback="DefaultAddon.png">$INFO[system.addonicon(Skin.String(HomeProgramButton4))]</icon>
                                     <onclick condition="!IsEmpty(Skin.String(HomeProgramButton4))">XBMC.RunAddon($INFO[Skin.String(HomeProgramButton4)])</onclick>
                                     <onclick condition="IsEmpty(Skin.String(HomeProgramButton4))">Skin.SetAddon(HomeProgramButton4,xbmc.addon.executable)</onclick>
-                                    <property name="Fanart">special://skin/backgrounds/addons.jpg</property>
+                                    <property name="Fanart">special://skin/backgrounds/addons/addons.jpg</property>
                                 </item>
                             </content>
                         </control>
@@ -4604,7 +4604,7 @@
                         <width>439</width>
                         <height>439</height>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                        <texture border="5">views/addonwall_select.png</texture>
+                        <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                         <visible>Control.HasFocus(10010)</visible>
                     </control>
                     <control type="image">
@@ -4783,7 +4783,7 @@
                                     <width>280</width>
                                     <height>280</height>
                                     <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
-                                    <texture border="5">views/addonwall_select.png</texture>
+                                    <texture border="5">views/addonwall_select.png</texture><include>Animation_VisibleChange200</include>
                                     <visible>Control.HasFocus(4001)</visible>
                                 </control>
                             </control>
@@ -4793,13 +4793,13 @@
                                 <label>$INFO[System.AddonTitle($INFO[Weather.Plugin])]</label>
                                 <label2>-</label2>
                                 <icon>$INFO[System.AddonIcon($INFO[Weather.Plugin])]</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherHomeItem.MultiFanart)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/weather/weather.jpg">$INFO[Skin.String(WeatherHomeItem.MultiFanart)]</property>
                                 <onclick>ActivateWindow(Weather)</onclick>
                             </item>
                             <item id="1">
                                 <label>$LOCALIZE[8] [LOWERCASE]$LOCALIZE[5][/LOWERCASE]</label>
                                 <icon>DefaultAddonWeather.png</icon>
-                                <property name="Fanart" fallback="special://skin/backgrounds/system.jpg">$INFO[Skin.String(Home_Custom_Back_System_Folder)]</property>
+                                <property name="Fanart" fallback="special://skin/backgrounds/system/system.jpg">$INFO[Skin.String(Home_Custom_Back_System_Folder)]</property>
                                 <onclick>ActivateWindow(weathersettings)</onclick>
                             </item>
                         </content>
@@ -4831,12 +4831,12 @@
                             <textoffsetx>8</textoffsetx>
                             <label>[UPPERCASE]$LOCALIZE[31905][/UPPERCASE]</label>
                         </control>
-                        <control type="image">
+                        <control type="multiimage">
                             <posx>0</posx>
                             <posy>0</posy>
                             <width>540</width>
                             <height>540</height>
-                            <texture fallback="special://skin/backgrounds/weather.jpg">$INFO[Skin.String(WeatherHomeItem.MultiFanart)]</texture>
+                            <imagepath>special://skin/backgrounds/weather/</imagepath>
                             <colordiffuse>6627292b</colordiffuse>
                         </control>
                         <control type="group">

@@ -746,7 +746,6 @@
     <onunload condition="Stringcompare(Skin.String(MenuItem),QuickNavItem9)">Skin.SetString(QuickNavItem9.Label,$INFO[Skin.String(ItemToEdit.Label)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),QuickNavItem9)">Skin.SetString(QuickNavItem9.Path,$INFO[Skin.String(ItemToEdit.Path)])</onunload>
     <onunload condition="Stringcompare(Skin.String(MenuItem),QuickNavItem9)">Skin.SetString(QuickNavItem9.MultiFanart,$INFO[Skin.String(ItemToEdit.MultiFanart)])</onunload>
-
     <onload condition="Stringcompare(Skin.String(MenuItem),QuickList1_1)">Skin.SetString(ItemToEdit.Type,$INFO[Skin.String(QuickList1_1.Type)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),QuickList1_1)">Skin.SetString(ItemToEdit.Label,$INFO[Skin.String(QuickList1_1.Label)])</onload>
     <onload condition="Stringcompare(Skin.String(MenuItem),QuickList1_1)">Skin.SetString(ItemToEdit.Path,$INFO[Skin.String(QuickList1_1.Path)])</onload>
@@ -826,7 +825,7 @@
     <onunload>Skin.Reset(ItemToEdit.Icon)</onunload>
     <controls>
         <control type="group">
-            <visible>!Window.IsActive(1137) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138) + !Window.IsActive(1142) + !Window.IsActive(1143) + !Window.IsActive(1144) + !Window.IsActive(1145)</visible>
+            <visible>!Window.IsActive(1137) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138) + !Window.IsActive(1142) + !Window.IsActive(1143) + !Window.IsActive(1144) + !Window.IsActive(1145) + !Window.IsActive(1155)</visible>
             <include>Animation_DialogPopup</include>
             <control type="image">
                 <description>Panel</description>
@@ -849,7 +848,6 @@
                 <height>390</height>
                 <texture>osd/osd_settings_back.png</texture>
             </control>
-            <include>Animation_OpenCloseZoom</include>
             <control type="group">
                 <control type="grouplist">
                     <posx>875</posx>
@@ -1520,8 +1518,6 @@
                             <selected>Skin.HasSetting(SettingsSub5)</selected>
                             <visible>Stringcompare(Skin.String(MenuItem),SettingsSub5)</visible>
                         </control>
-						
-						
                         <control type="radiobutton" id="122">
                             <description>Hide item</description>
                             <label>$LOCALIZE[24021]</label>
@@ -1594,7 +1590,6 @@
                             <selected>Skin.HasSetting(QuickNavItem9)</selected>
                             <visible>Stringcompare(Skin.String(MenuItem),QuickNavItem9)</visible>
                         </control>
- 
                         <control type="radiobutton" id="141">
                             <description>Hide item</description>
                             <label>$LOCALIZE[24022]</label>
@@ -1619,7 +1614,7 @@
                             <selected>Skin.HasSetting(WeatherSub3)</selected>
                             <visible>Stringcompare(Skin.String(MenuItem),WeatherSub3)</visible>
                         </control>
-                         <control type="radiobutton" id="144">
+                        <control type="radiobutton" id="144">
                             <description>Hide item</description>
                             <label>$LOCALIZE[24022]</label>
                             <include>Objects_CustomizerSettingsButton</include>
@@ -1627,7 +1622,7 @@
                             <selected>Skin.HasSetting(WeatherSub4)</selected>
                             <visible>Stringcompare(Skin.String(MenuItem),WeatherSub4)</visible>
                         </control>
-						<control type="radiobutton" id="145">
+                        <control type="radiobutton" id="145">
                             <description>Hide item</description>
                             <label>$LOCALIZE[24022]</label>
                             <include>Objects_CustomizerSettingsButton</include>
@@ -1659,8 +1654,6 @@
                             <selected>Skin.HasSetting(WeatherSub8)</selected>
                             <visible>Stringcompare(Skin.String(MenuItem),WeatherSub8)</visible>
                         </control>
-						
-						
                         <control type="radiobutton" id="152">
                             <description>Hide item</description>
                             <label>$LOCALIZE[24021]</label>
@@ -1732,9 +1725,7 @@
                             <onclick>Skin.ToggleSetting(QuickList1_9)</onclick>
                             <selected>Skin.HasSetting(QuickList1_9)</selected>
                             <visible>Stringcompare(Skin.String(MenuItem),QuickList1_9)</visible>
-                        </control>		
-						
-						
+                        </control>
                         <control type="button" id="2140">
                             <label>$LOCALIZE[41156]</label>
                             <include>Objects_CustomizerSettingsButton</include>
@@ -1751,14 +1742,14 @@
                             <include>Objects_CustomizerSettingsButton</include>
                             <label>$LOCALIZE[31680]</label>
                             <onclick>ActivateWindow(1134)</onclick>
-							<visible>Window.IsActive(1124)</visible>
+                            <visible>Window.IsActive(1124)</visible>
                         </control>
                         <control type="button" id="2144">
                             <include>Objects_CustomizerSettingsButton</include>
                             <label>42207</label>
                             <onclick>SetProperty(BigIconToMultiFanart,True,1124)</onclick>
                             <onclick>ActivateWindow(1145)</onclick>
-							<visible>!Window.IsActive(1124)</visible>
+                            <visible>!Window.IsActive(1124)</visible>
                         </control>
                         <control type="button" id="2145">
                             <include>Objects_CustomizerSettingsButton</include>

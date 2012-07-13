@@ -1,0 +1,218 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window type="dialog" id="1160">
+    <defaultcontrol always="true">4</defaultcontrol>
+    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget1)">Skin.SetString(CustomHomeFeedURL1,$INFO[Skin.String(RSSWidgetFeed)])</onunload>
+    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget2)">Skin.SetString(CustomHomeFeedURL2,$INFO[Skin.String(RSSWidgetFeed)])</onunload>
+    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget3)">Skin.SetString(CustomHomeFeedURL3,$INFO[Skin.String(RSSWidgetFeed)])</onunload>
+    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget1)">XBMC.RunScript(script.rssclient,guiless,feed=$INFO[Skin.String(CustomHomeFeedURL1)],imagecaching=false,window=10000,limit=8,prefix=RSS1)</onunload>
+    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget2)">XBMC.RunScript(script.rssclient,guiless,feed=$INFO[Skin.String(CustomHomeFeedURL2)],imagecaching=false,window=10000,limit=8,prefix=RSS2)</onunload>
+    <onunload condition="StringCompare(Window(1124).Property(RSSWidget),RSSWidget3)">XBMC.RunScript(script.rssclient,guiless,feed=$INFO[Skin.String(CustomHomeFeedURL3)],imagecaching=false,window=10000,limit=8,prefix=RSS3)</onunload>
+    <onunload>Skin.Reset(RSSWidgetFeed)</onunload>
+    <onunload>ActivateWindow(1137)</onunload>
+    <allowoverlay>no</allowoverlay>
+    <controls>
+        <control type="group">
+            <posx>280</posx>
+            <control type="image">
+                <description>Panel</description>
+                <posx>230</posx>
+                <posy>200</posy>
+                <width>940</width>
+                <height>560</height>
+                <texture border="20">osd/osd_settings_back_glow.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                <include>PanelGlowFade</include>
+                <include>Animation_VisibleChange400</include>
+            </control>
+            <control type="image">
+                <description>Panel</description>
+                <posx>230</posx>
+                <posy>200</posy>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <width>940</width>
+                <height>560</height>
+                <texture border="20">osd/osd_settings_back.png</texture>
+            </control>
+            <include>Animation_OpenCloseZoom</include>
+            <control type="panel" id="4">
+                <posx>250</posx>
+                <posy>240</posy>
+                <width>900</width>
+                <height>540</height>
+                <itemgap>0</itemgap>
+                <aligny>center</aligny>
+                <scrolltime>0</scrolltime>
+                <orientation>vertical</orientation>
+                <onright>20</onright>
+                <animation effect="fade" time="200">Visible</animation>
+                <animation effect="fade" time="200">Hidden</animation>
+                <animation effect="fade" time="200">WindowOpen</animation>
+                <animation effect="fade" time="200">WindowClose</animation>
+                <itemlayout height="60" width="300">
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>300</width>
+                        <height>60</height>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <texture>button-nofocus.png</texture>
+                    </control>
+                    <control type="label">
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>300</width>
+                        <height>60</height>
+                        <align>left</align>
+                        <aligny>center</aligny>
+                        <textoffsetx>10</textoffsetx>
+                        <font>Font_Reg19</font>
+                        <textcolor>grey2</textcolor>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
+                </itemlayout>
+                <focusedlayout height="60" width="300">
+                    <control type="group">
+                        <visible>Control.HasFocus(4)</visible>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>300</width>
+                            <height>60</height>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                            <texture>views/tripanel/listselect_fo.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>300</width>
+                            <height>60</height>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <textoffsetx>10</textoffsetx>
+                            <scroll>true</scroll>
+                            <font>Font_Reg19</font>
+                            <textcolor>white2</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                    <control type="group">
+                        <visible>!Control.HasFocus(4)</visible>
+                        <control type="image">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>300</width>
+                            <height>60</height>
+                            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                            <texture>button-nofocus.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>0</posx>
+                            <posy>0</posy>
+                            <width>300</width>
+                            <align>left</align>
+                            <aligny>center</aligny>
+                            <textoffsetx>10</textoffsetx>
+                            <font>Font_Reg19</font>
+                            <textcolor>grey2</textcolor>
+                            <label>$INFO[ListItem.Label]</label>
+                        </control>
+                    </control>
+                </focusedlayout>
+                <content>
+                    <item>
+                        <description>Set single image</description>
+                        <label>$LOCALIZE[231]</label>
+                        <onclick>Skin.Reset(RSSWidgetFeed)</onclick>
+                        <onclick>Dialog.Close(1160)</onclick>
+                    </item>
+                    <item>
+                        <label>News</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://pipes.yahoo.com/pipes/pipe.run?_id=4677eed472058f27c407989f58fb12fd&_render=rss)</onclick>
+                    </item>
+                    <item>
+                        <label>XBMC Cinema</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://pipes.yahoo.com/pipes/pipe.run?_id=2547d7359c1c48b74498130dec548ed3&_render=rss)</onclick>
+                    </item>
+                    <item>
+                        <label>XBMC Trailer</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://pipes.yahoo.com/pipes/pipe.run?_id=83a789dbf4dd541f3c8c02270ea4f0d0&_render=rss)</onclick>
+                    </item>
+                    <item>
+                        <label>DailyMotion</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://pipes.yahoo.com/pipes/pipe.run?_id=7df4edce4cea1fd455e0289a1e9d1721&_render=rss)</onclick>
+                    </item>
+                    <item>
+                        <label>YouTube User Uploads</label>
+                        <onclick>Skin.SetString(SearchString)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://pipes.yahoo.com/pipes/pipe.run?_id=5cc10db1ae3a763e4919c6de8fb58551&_render=rss&youtubeid=$INFO[Skin.String(SearchString)])</onclick>
+                        <onclick>Dialog.Close(1160)</onclick>
+                    </item>
+                    <item>
+                        <label>YouTube User Favorites</label>
+                        <onclick>Skin.SetString(SearchString)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://pipes.yahoo.com/pipes/pipe.run?_id=6eeab87a37b2983b1f391adb753814a3&_render=rss&youtubeid=$INFO[Skin.String(SearchString)])</onclick>
+                        <onclick>Dialog.Close(1160)</onclick>
+                    </item>
+                    <item>
+                        <label>Music Videos</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://pipes.yahoo.com/pipes/pipe.run?_id=74fc14a798efee89310bea2b56f99336&amp;_render=rss&amp;n=15)</onclick>
+                    </item>
+                     <item>
+                        <label>Top 10</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://pipes.yahoo.com/pipes/pipe.run?_id=9KUs2CRI3hGF2JCZ3rVd_w&_render=rss)</onclick>
+                    </item>
+                     <item>
+                        <label>Youtube Most Viewed (Day)</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://gdata.youtube.com/feeds/base/standardfeeds/most_viewed?client=ytapi-youtube-browse&alt=rss&time=today)</onclick>
+                    </item>
+                     <item>
+                        <label>Youtube Most Viewed (Week)</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://gdata.youtube.com/feeds/base/standardfeeds/most_viewed?client=ytapi-youtube-browse&alt=rss&time=this_week)</onclick>
+                    </item>
+                     <item>
+                        <label>Youtube Most Viewed (Month)</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://gdata.youtube.com/feeds/base/standardfeeds/most_viewed?client=ytapi-youtube-browse&alt=rss&time=this_month)</onclick>
+                    </item>
+                     <item>
+                        <label>Youtube Most Popular (Day)</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://gdata.youtube.com/feeds/base/standardfeeds/most_popular?client=ytapi-youtube-browse&alt=rss&time=today)</onclick>
+                    </item>
+                     <item>
+                        <label>Youtube Most Popular (Week)</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://gdata.youtube.com/feeds/base/standardfeeds/most_popular?client=ytapi-youtube-browse&alt=rss&time=this_week)</onclick>
+                    </item>
+                     <item>
+                        <label>Youtube Most Popular (Month)</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://gdata.youtube.com/feeds/base/standardfeeds/most_popular?client=ytapi-youtube-browse&alt=rss&time=this_month)</onclick>
+                    </item>
+                    <item>
+                        <label>Media Aggregator</label>
+                        <onclick>Notification(,Type "web" "video" "news" "images" or "all types")</onclick>
+                        <onclick>Skin.SetString(SearchType)</onclick>
+                        <onclick>Skin.SetString(SearchString)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed,http://pipes.yahoo.com/pipes/pipe.run?_id=b2026f9ec8e619cfc40940382f1ddad8&_render=rss&filterinput=$INFO[Skin.String(SearchType)]&maininput=$INFO[Skin.String(SearchString)])</onclick>
+                        <onclick>Dialog.Close(1160)</onclick>
+                    </item>
+                    <item>
+                        <label>31630</label>
+                        <onclick>Dialog.Close(1160)</onclick>
+                        <onclick>Skin.SetString(RSSWidgetFeed)</onclick>
+                    </item>
+                </content>
+            </control>
+        </control>
+    </controls>
+</window>
