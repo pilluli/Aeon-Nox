@@ -182,7 +182,6 @@
                 <height>442</height>
                 <texture>osd/osd_settings_back.png</texture>
             </control>
-            <include>Animation_OpenCloseZoom</include>
             <control type="group">
                 <control type="grouplist">
                     <posx>875</posx>
@@ -263,6 +262,7 @@
                             <onclick>Skin.Reset(ItemToEdit.Label)</onclick>
                             <onclick>Skin.Reset(ItemToEdit.Icon)</onclick>
                             <onclick>Skin.Reset(ItemToEdit.Path)</onclick>
+                            <onclick>Skin.Reset(ItemToEdit.MultiFanart)</onclick>
                         </control>
                     </control>
                 </control>

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <window id="0">
     <defaultcontrol always="true">9000</defaultcontrol>
-    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
+    <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include><include condition="!Skin.HasSetting(firstrun3.5)">AutoConfig3.5</include>
     <onload>XBMC.RunScript(script.video.bookmarks.browser,limit=5)</onload>
     <onload condition="Window.Previous(startup) + Skin.HasSetting(customstartupfocus)">Control.Move(9000,$INFO[Skin.String(CustomFocusOffset)])</onload>
     <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome)">XBMC.RunScript(script.randomitems,limit=16&amp;unplayed=True)</onload>
@@ -17,24 +17,24 @@
     <onload>AlarmClock(HomeTile2Left,Control.Move(6001,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Right,Control.Move(6003,1),00:10,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Mid,Control.Move(6002,1),00:15,silent,loop)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem1.Enable) + SubString(Skin.String(CustomHomeItem1.Widget),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem1.Path)], method=$INFO[Skin.String(Custom1.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem1)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem2.Enable) + SubString(Skin.String(CustomHomeItem2.Widget),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem2.Path)], method=$INFO[Skin.String(Custom2.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem2)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem3.Enable) + SubString(Skin.String(CustomHomeItem3.Widget),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem3.Path)], method=$INFO[Skin.String(Custom3.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem3)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem4.Enable) + SubString(Skin.String(CustomHomeItem4.Widget),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem4.Path)], method=$INFO[Skin.String(Custom4.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem4)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem5.Enable) + SubString(Skin.String(CustomHomeItem5.Widget),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem5.Path)], method=$INFO[Skin.String(Custom5.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem5)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem6.Enable) + SubString(Skin.String(CustomHomeItem6.Widget),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem6.Path)], method=$INFO[Skin.String(Custom6.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem6)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem7.Enable) + SubString(Skin.String(CustomHomeItem7.Widget),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem7.Path)], method=$INFO[Skin.String(Custom7.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem7)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem8.Enable) + SubString(Skin.String(CustomHomeItem8.Widget),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem8.Path)], method=$INFO[Skin.String(Custom8.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem8)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem9.Enable) + SubString(Skin.String(CustomHomeItem9.Widget),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem9.Path)], method=$INFO[Skin.String(Custom9.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem9)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem1.Enable) + SubString(Skin.String(CustomHomeItem1.Widget2),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem1.Path)], method=$INFO[Skin.String(Custom1.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem1)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem2.Enable) + SubString(Skin.String(CustomHomeItem2.Widget2),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem2.Path)], method=$INFO[Skin.String(Custom2.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem2)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem3.Enable) + SubString(Skin.String(CustomHomeItem3.Widget2),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem3.Path)], method=$INFO[Skin.String(Custom3.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem3)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem4.Enable) + SubString(Skin.String(CustomHomeItem4.Widget2),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem4.Path)], method=$INFO[Skin.String(Custom4.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem4)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem5.Enable) + SubString(Skin.String(CustomHomeItem5.Widget2),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem5.Path)], method=$INFO[Skin.String(Custom5.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem5)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem6.Enable) + SubString(Skin.String(CustomHomeItem6.Widget2),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem6.Path)], method=$INFO[Skin.String(Custom6.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem6)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem7.Enable) + SubString(Skin.String(CustomHomeItem7.Widget2),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem7.Path)], method=$INFO[Skin.String(Custom7.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem7)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem8.Enable) + SubString(Skin.String(CustomHomeItem8.Widget2),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem8.Path)], method=$INFO[Skin.String(Custom8.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem8)</onload>
-    <onload condition="Skin.HasSetting(CustomHomeItem9.Enable) + SubString(Skin.String(CustomHomeItem9.Widget2),custom) + System.HasAddon(script.randomandlastitems)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem9.Path)], method=$INFO[Skin.String(Custom9.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem9)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem1.Enable) + [SubString(Skin.String(CustomHomeItem1.Widget),custom) | SubString(Skin.String(CustomHomeItem1.MultiFanart),custom)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem1.Path)], method=$INFO[Skin.String(Custom1.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem1)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem2.Enable) + [SubString(Skin.String(CustomHomeItem2.Widget),custom) | SubString(Skin.String(CustomHomeItem2.MultiFanart),custom)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem2.Path)], method=$INFO[Skin.String(Custom2.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem2)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem3.Enable) + [SubString(Skin.String(CustomHomeItem3.Widget),custom) | SubString(Skin.String(CustomHomeItem3.MultiFanart),custom)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem3.Path)], method=$INFO[Skin.String(Custom3.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem3)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem4.Enable) + [SubString(Skin.String(CustomHomeItem4.Widget),custom) | SubString(Skin.String(CustomHomeItem4.MultiFanart),custom)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem4.Path)], method=$INFO[Skin.String(Custom4.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem4)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem5.Enable) + [SubString(Skin.String(CustomHomeItem5.Widget),custom) | SubString(Skin.String(CustomHomeItem5.MultiFanart),custom)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem5.Path)], method=$INFO[Skin.String(Custom5.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem5)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem6.Enable) + [SubString(Skin.String(CustomHomeItem6.Widget),custom) | SubString(Skin.String(CustomHomeItem6.MultiFanart),custom)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem6.Path)], method=$INFO[Skin.String(Custom6.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem6)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem7.Enable) + [SubString(Skin.String(CustomHomeItem7.Widget),custom) | SubString(Skin.String(CustomHomeItem7.MultiFanart),custom)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem7.Path)], method=$INFO[Skin.String(Custom7.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem7)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem8.Enable) + [SubString(Skin.String(CustomHomeItem8.Widget),custom) | SubString(Skin.String(CustomHomeItem8.MultiFanart),custom)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem8.Path)], method=$INFO[Skin.String(Custom8.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem8)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem9.Enable) + [SubString(Skin.String(CustomHomeItem9.Widget),custom) | SubString(Skin.String(CustomHomeItem9.MultiFanart),custom)]">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem9.Path)], method=$INFO[Skin.String(Custom9.Method1)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=CustomHomeItem9)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem1.Enable) + SubString(Skin.String(CustomHomeItem1.Widget2),custom)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem1.Path)], method=$INFO[Skin.String(Custom1.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem1)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem2.Enable) + SubString(Skin.String(CustomHomeItem2.Widget2),custom)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem2.Path)], method=$INFO[Skin.String(Custom2.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem2)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem3.Enable) + SubString(Skin.String(CustomHomeItem3.Widget2),custom)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem3.Path)], method=$INFO[Skin.String(Custom3.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem3)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem4.Enable) + SubString(Skin.String(CustomHomeItem4.Widget2),custom)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem4.Path)], method=$INFO[Skin.String(Custom4.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem4)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem5.Enable) + SubString(Skin.String(CustomHomeItem5.Widget2),custom)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem5.Path)], method=$INFO[Skin.String(Custom5.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem5)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem6.Enable) + SubString(Skin.String(CustomHomeItem6.Widget2),custom)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem6.Path)], method=$INFO[Skin.String(Custom6.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem6)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem7.Enable) + SubString(Skin.String(CustomHomeItem7.Widget2),custom)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem7.Path)], method=$INFO[Skin.String(Custom7.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem7)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem8.Enable) + SubString(Skin.String(CustomHomeItem8.Widget2),custom)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem8.Path)], method=$INFO[Skin.String(Custom8.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem8)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem9.Enable) + SubString(Skin.String(CustomHomeItem9.Widget2),custom)">XBMC.RunScript(script.randomandlastitems, playlist=$INFO[Skin.String(CustomHomeItem9.Path)], method=$INFO[Skin.String(Custom9.Method2)], limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=SecondCustomHomeItem9)</onload>
     <onunload>CancelAlarm(HomeTileLeft,true)</onunload>
     <onunload>CancelAlarm(HomeTileRight,true)</onunload>
     <onunload>CancelAlarm(HomeTileMid,true)</onunload>
@@ -50,55 +50,59 @@
     <controls>
         <include>MainMenuCommonContent</include>
         <!-- Fanart -->
-
-        <control type="multiimage">
-            <fadetime>600</fadetime>
-            <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
-			<aspectratio align="center" aligny="top">scale</aspectratio>
-            <include>Animation_VisibleChange400</include>
-            <randomize>true</randomize>
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" delay="600" reversible="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" delay="600" reversible="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <visible>!Control.IsVisible(2355) + ![Substring(Control.GetLabel(4322),case) | Substring(Control.GetLabel(4322),dailybabe)]</visible>
+        <include condition="Skin.HasSetting(FadeHomeBG)">CommonMediaPlayingBackground</include>
+        <control type="group">
+             <visible>![Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo) + !Skin.HasSetting(FadeHomeBG)]</visible>
+            <animation effect="fade" start="100" end="30" time="0" condition="Player.HasVideo + !Skin.HasSetting(ShowBackgroundVideo) + Skin.HasSetting(FadeHomeBG)">Conditional</animation>
+             <control type="multiimage">
+                <fadetime>600</fadetime>
+                <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
+                <aspectratio align="center" aligny="top">scale</aspectratio>
+                <include>Animation_VisibleChange400</include>
+                <randomize>true</randomize>
+                <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" delay="600" reversible="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+                <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" delay="600" reversible="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+                <visible>!Control.IsVisible(2355) + ![Substring(Control.GetLabel(4322),case) | Substring(Control.GetLabel(4322),dailybabe)]</visible>
+            </control>
+            <include condition="SubString(Skin.String(backgroundlist),dailybabe)">DailyBabeBG</include>
+            <control type="image">
+                <fadetime>600</fadetime>
+                <include>FullscreenDimensions</include>
+                <include>Animation_WindowFade250</include>
+                <aspectratio align="center" aligny="top">scale</aspectratio>
+                <texture background="true" fallback="special://skin/backgrounds/speakergrill.jpg">$INFO[Skin.String(LiveBG)]</texture>
+                <animation effect="fade" time="500">Visible</animation>
+                <animation effect="fade" time="500">Hidden</animation>
+                <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),case)</visible>
+            </control>
+            <include condition="SubString(Skin.String(backgroundlist),dvdcase)">InteractiveCasesBackground</include>
+            <include condition="SubString(Skin.String(backgroundlist), case)">LiveCDCasesbackground</include>
+            <include condition="SubString(Skin.String(backgroundlist), nocase)">LiveNoCasesbackground</include>
+            <include condition="Skin.HasSetting(homecdwall)">cdwall-musicvisualisation</include>
+            <control type="image">
+                <fadetime>600</fadetime>
+                <include>FullscreenDimensions</include>
+                <aspectratio align="center" aligny="top">scale</aspectratio>
+                <texture background="true">$VAR[HomeWidgetFanartVar]</texture>
+                <visible>[Control.HasFocus(8000) | Control.HasFocus(7000) | Control.HasFocus(5010) | Control.HasFocus(5012) | ControlGroup(5014).HasFocus | ControlGroup(5020).HasFocus | ControlGroup(5021).HasFocus | ControlGroup(5030).HasFocus | ControlGroup(5040).HasFocus | Control.HasFocus(6010) | Control.HasFocus(6012) | ControlGroup(6014).HasFocus | ControlGroup(6020).HasFocus | ControlGroup(6021).HasFocus | ControlGroup(6030).HasFocus | ControlGroup(6040).HasFocus] | [Player.HasAudio + Skin.HasSetting(musicfanarthome)]</visible>
+                <animation effect="fade" time="600">Visible</animation>
+                <animation effect="fade" time="600">Hidden</animation>
+                <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+                <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            </control>
+            <!-- Music ExtraFanart -->
+            <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
+            <include condition="Skin.HasSetting(artistslideshowhome)">MusicArtistSlideshowHome</include>
         </control>
-        <include condition="SubString(Skin.String(backgroundlist),dailybabe)">DailyBabeBG</include>
-        <control type="image">
-            <fadetime>600</fadetime>
-            <include>FullscreenDimensions</include>
-            <include>Animation_WindowFade250</include>
-            <aspectratio align="center" aligny="top">scale</aspectratio>
-            <texture background="true" fallback="special://skin/backgrounds/speakergrill.jpg">$INFO[Skin.String(LiveBG)]</texture>
-            <animation effect="fade" time="500">Visible</animation>
-            <animation effect="fade" time="500">Hidden</animation>
-            <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),case)</visible>
-        </control>
-        <include condition="SubString(Skin.String(backgroundlist),dvdcase)">InteractiveCasesBackground</include>
-        <include condition="SubString(Skin.String(backgroundlist), case)">LiveCDCasesbackground</include>
-        <include condition="SubString(Skin.String(backgroundlist), nocase)">LiveNoCasesbackground</include>
-        <include condition="Skin.HasSetting(homecdwall)">cdwall-musicvisualisation</include>
-        <control type="image">
-            <fadetime>600</fadetime>
-            <include>FullscreenDimensions</include>
-			<aspectratio align="center" aligny="top">scale</aspectratio>
-            <texture background="true">$VAR[HomeWidgetFanartVar]</texture>
-            <visible>[Control.HasFocus(8000) | Control.HasFocus(7000) | Control.HasFocus(5010) | Control.HasFocus(5012) | ControlGroup(5014).HasFocus | ControlGroup(5020).HasFocus | ControlGroup(5021).HasFocus | ControlGroup(5030).HasFocus | ControlGroup(5040).HasFocus | Control.HasFocus(6010) | Control.HasFocus(6012) | ControlGroup(6014).HasFocus | ControlGroup(6020).HasFocus | ControlGroup(6021).HasFocus | ControlGroup(6030).HasFocus | ControlGroup(6040).HasFocus] | [Player.HasAudio + Skin.HasSetting(musicfanarthome)]</visible>
-            <animation effect="fade" time="600">Visible</animation>
-            <animation effect="fade" time="600">Hidden</animation>
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-        </control>
-        <!-- Music ExtraFanart -->
-        <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
-        <include condition="Skin.HasSetting(artistslideshowhome)">MusicArtistSlideshowHome</include>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <animation effect="fade" start="100" end="50" time="0" condition="true">conditional</animation>
+            <colordiffuse>$INFO[Skin.String(ColorLevel)]</colordiffuse>
             <texture>$INFO[Container(9000).ListItem.Property(Color),common/,.png]</texture>
             <include>Animation_WindowFade200</include>
             <fadetime>600</fadetime>
         </control>
         <!-- Home Fullscreen Video -->
-        <include>CommonMediaPlayingBackground</include>
+        <include condition="!Skin.HasSetting(FadeHomeBG)">CommonMediaPlayingBackground</include>
         <include condition="Substring(Skin.String(backgroundlist),googleweather2) + System.HasAddon(script.widget.weatherworld)">WorldWeatherIcons</include>
         <control type="group">
             <visible>Skin.HasSetting(Glowbar_Home)</visible>
@@ -302,6 +306,8 @@
                     <onfocus condition="Control.IsVisible(8998)">SetFocus(8000)</onfocus>
                     <onfocus condition="Substring(Container(9000).ListItem.Property(Widget),weather)">ActivateWindow(weather)</onfocus>
                     <onfocus condition="Substring(Container(9000).ListItem.Property(Widget),system)">ActivateWindow(settings)</onfocus>
+                    <onfocus condition="[IsEmpty(Window(Home).Property(NextAired.1.Label)) + Substring(Control.GetLabel(4321),nextairedpanel)]">SetFocus(9000)</onfocus>
+                    <onfocus condition="[IsEmpty(Window(Home).Property(WatchList_Movie.1.Label)) + Substring(Control.GetLabel(4321),inprogressmovies)]">SetFocus(9000)</onfocus>
                 </control>
                 <!--focus second widget-->
                 <control type="button" id="4445">
@@ -312,7 +318,10 @@
                     <onfocus condition="Control.IsVisible(7998)">SetFocus(7000)</onfocus>
                     <onfocus condition="Substring(Container(9000).ListItem.Property(Widget2),weather)">ActivateWindow(weather)</onfocus>
                     <onfocus condition="Substring(Container(9000).ListItem.Property(Widget2),system)">ActivateWindow(settings)</onfocus>
-                </control>
+                    <onfocus condition="[IsEmpty(Window(Home).Property(NextAired.1.Label)) + Substring(Control.GetLabel(4325),nextairedpanel)]">SetFocus(9000)</onfocus>
+                    <onfocus condition="[IsEmpty(Window(Home).Property(WatchList_Movie.1.Label)) + Substring(Control.GetLabel(4325),inprogressmovies)]">SetFocus(9000)</onfocus>
+
+                    </control>
                 <include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
                 <include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList</include>
                 <control type="group">
@@ -323,8 +332,8 @@
             </control>
         </control>
         <!--Weather info-->
-        <include condition="!Skin.HasSetting(ExtendedWeatherInfo) + !IsEmpty(Weather.Plugin) + [SubString(Skin.String(widgetlist),weather) | SubString(Skin.String(widget2list),weather)]">Weather_Widget_Standard</include>
-        <include condition="Skin.HasSetting(ExtendedWeatherInfo) + !IsEmpty(Weather.Plugin) + [SubString(Skin.String(widgetlist),weather) | SubString(Skin.String(widget2list),weather)]">Weather_Widget_Plus</include>
+        <include condition="!IsEmpty(Weather.Plugin) + SubString(Skin.String(widgetlist),weather)">Weather_Widget</include>
+        <include condition="!IsEmpty(Weather.Plugin) + SubString(Skin.String(widget2list),weather)">Weather_Widget2</include>
         <!-- Music Info -->
         <include condition="!Skin.HasSetting(nohomepageMusicinfo) | !Skin.HasSetting(homepageVideoinfo)">Furniture_HomeNowPlaying</include>
         <control type="group">
@@ -381,49 +390,49 @@
             </control>
         </control>
         <control type="group">
-                    <control type="image">
+            <control type="image">
                 <include>FullscreenDimensions</include>
                 <colordiffuse>CCFFFFFF</colordiffuse>
                 <visible>Control.HasFocus(22222) | Control.HasFocus(22223)</visible>
                 <include>Animation_VisibleChange400</include>
                 <texture>common/black.png</texture>
             </control>
-                    <control type="image">
-            <fadetime>600</fadetime>
-            <include>FullscreenDimensions</include>
-            <include>Animation_WindowFade250</include>
-            <aspectratio align="center" aligny="top">keep</aspectratio>
-            <texture background="true">$INFO[Container(5010).ListItem.Thumb]</texture>
-            <animation effect="fade" time="500">Visible</animation>
-            <animation effect="fade" time="500">Hidden</animation>
-            <visible>Control.HasFocus(22222)</visible>
-        </control>
-                    <control type="image">
-            <fadetime>600</fadetime>
-            <include>FullscreenDimensions</include>
-            <include>Animation_WindowFade250</include>
-            <aspectratio align="center" aligny="top">keep</aspectratio>
-            <texture background="true">$INFO[Container(6010).ListItem.Thumb]</texture>
-            <animation effect="fade" time="500">Visible</animation>
-            <animation effect="fade" time="500">Hidden</animation>
-            <visible>Control.HasFocus(22223)</visible>
-        </control>
-        <control type="button" id="22222">
-            <include>HiddenObject</include>
-            <onleft>Control.Move(5010,-1)</onleft>
-            <onright>Control.Move(5010,1)</onright>
-            <onup>Control.Move(5010,1)</onup>
-            <ondown>Control.Move(5010,-1)</ondown>
-            <onback>SetFocus(5010)</onback>
-        </control>
-        <control type="button" id="22223">
-            <include>HiddenObject</include>
-            <onleft>Control.Move(6010,-1)</onleft>
-            <onright>Control.Move(6010,1)</onright>
-            <onup>Control.Move(6010,1)</onup>
-            <ondown>Control.Move(6010,-1)</ondown>
-            <onback>SetFocus(6010)</onback>
-        </control>
+            <control type="image">
+                <fadetime>600</fadetime>
+                <include>FullscreenDimensions</include>
+                <include>Animation_WindowFade250</include>
+                <aspectratio align="center" aligny="top">keep</aspectratio>
+                <texture background="true">$INFO[Container(5010).ListItem.Thumb]</texture>
+                <animation effect="fade" time="500">Visible</animation>
+                <animation effect="fade" time="500">Hidden</animation>
+                <visible>Control.HasFocus(22222)</visible>
+            </control>
+            <control type="image">
+                <fadetime>600</fadetime>
+                <include>FullscreenDimensions</include>
+                <include>Animation_WindowFade250</include>
+                <aspectratio align="center" aligny="top">keep</aspectratio>
+                <texture background="true">$INFO[Container(6010).ListItem.Thumb]</texture>
+                <animation effect="fade" time="500">Visible</animation>
+                <animation effect="fade" time="500">Hidden</animation>
+                <visible>Control.HasFocus(22223)</visible>
+            </control>
+            <control type="button" id="22222">
+                <include>HiddenObject</include>
+                <onleft>Control.Move(5010,-1)</onleft>
+                <onright>Control.Move(5010,1)</onright>
+                <onup>Control.Move(5010,1)</onup>
+                <ondown>Control.Move(5010,-1)</ondown>
+                <onback>SetFocus(5010)</onback>
+            </control>
+            <control type="button" id="22223">
+                <include>HiddenObject</include>
+                <onleft>Control.Move(6010,-1)</onleft>
+                <onright>Control.Move(6010,1)</onright>
+                <onup>Control.Move(6010,1)</onup>
+                <ondown>Control.Move(6010,-1)</ondown>
+                <onback>SetFocus(6010)</onback>
+            </control>
         </control>
     </controls>
 </window>

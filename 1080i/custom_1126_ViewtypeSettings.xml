@@ -837,12 +837,10 @@
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[41156]: [COLOR $VAR[SelectedColorVar]]$VAR[FSPanelTypeVar][/COLOR]</label>
                 <selected>Skin.HasSetting(fspanel2columns)</selected>
-                
                 <onclick condition="!Skin.HasSetting(fspanel2columns) + !Skin.HasSetting(fspanelfanart)">Skin.SetBool(fspanelfanart)</onclick>
                 <onclick condition="Skin.HasSetting(fspanelfanart)">Skin.SetBool(fspanel2columns)</onclick>
                 <onclick condition="Skin.HasSetting(fspanelfanart)">Skin.Reset(fspanelfanart)</onclick>
                 <onclick condition="Skin.HasSetting(fspanel2columns)">Skin.Reset(fspanel2columns)</onclick>
-                
                 <visible>stringcompare(Skin.String(actualViewtype),fspanel)</visible>
             </control>
             <control type="radiobutton" id="16572">
@@ -850,7 +848,7 @@
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>31195</label>
                 <onclick>Skin.ToggleSetting(fspanelbackground)</onclick>
-                <selected>!Skin.HasSetting(fspanelbackground)</selected>
+                <selected>Skin.HasSetting(fspanelbackground)</selected>
                 <visible>stringcompare(Skin.String(actualViewtype),fspanel)</visible>
             </control>
             <control type="radiobutton" id="16573">
@@ -897,6 +895,14 @@
                 <selected>Skin.HasSetting(wallcases)</selected>
                 <visible>stringcompare(Skin.String(actualViewtype),wall) + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(musicvideos)]</visible>
             </control>
+            <control type="radiobutton" id="16531">
+                <description>Wall Cases</description>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>31195</label>
+                <onclick>Skin.ToggleSetting(wallfullscreen)</onclick>
+                <selected>Skin.HasSetting(wallfullscreen)</selected>
+                <visible>stringcompare(Skin.String(actualViewtype),wall)</visible>
+            </control>
             <control type="radiobutton" id="1644">
                 <description>BannerWall</description>
                 <include>Objects_MediaMenuButtonAlt2</include>
@@ -922,6 +928,14 @@
                 <label>$LOCALIZE[31674]</label>
                 <onclick>Skin.ToggleSetting(SwitchTriPanel)</onclick>
                 <selected>Skin.HasSetting(SwitchTriPanel)</selected>
+                <visible>stringcompare(Skin.String(actualViewtype),tripanel)</visible>
+            </control>
+            <control type="radiobutton" id="1640">
+                <description>Tri-panel Banner</description>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[31477] [LOWERCASE]$LOCALIZE[31069][/LOWERCASE]</label>
+                <onclick>Skin.ToggleSetting(tripanelextrafanart)</onclick>
+                <selected>Skin.HasSetting(tripanelextrafanart)</selected>
                 <visible>stringcompare(Skin.String(actualViewtype),tripanel)</visible>
             </control>
             <control type="radiobutton" id="1631">
