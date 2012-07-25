@@ -258,7 +258,8 @@
     <onunload condition="Skin.HasSetting(mainmenuicons)">ActivateWindow(1156)</onunload>
     <controls>
         <control type="group">
-            <visible>!Window.IsActive(1137) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138) + !Window.IsActive(1155)</visible>
+            <visible>!Window.IsActive(script-RSS_Editor-rssEditor.xml) + !Window.IsActive(1137) + !Window.IsActive(1160) + !Window.IsActive(1162) + !Window.IsActive(1133) + !Window.IsActive(1134) + !Window.IsActive(1138) + !Window.IsActive(1155)</visible>
+            <visible></visible>
             <include>Animation_DialogPopup</include>
             <control type="image">
                 <description>Panel</description>
@@ -315,7 +316,7 @@
                     </control>
                     <control type="button">
                         <include>Objects_CustomizerInfoButton</include>
-                        <visible>![Substring(Skin.String(ItemToEdit.MultiFanart),recent,left) | Substring(Skin.String(ItemToEdit.MultiFanart),widgetfanart,left) | Substring(Skin.String(ItemToEdit.MultiFanart),random,left) | Substring(Skin.String(ItemToEdit.MultiFanart),watchlist,left) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),inprogressmovies) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),special://profile/Thumbnails/Music/Fanart) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),special://profile/Thumbnails/Video/Fanart) | IsEmpty(Skin.String(ItemToEdit.MultiFanart))]</visible>
+                        <visible>![Substring(Skin.String(ItemToEdit.MultiFanart),recent,left) | Substring(Skin.String(ItemToEdit.MultiFanart),widgetfanart,left) | Substring(Skin.String(ItemToEdit.MultiFanart),random,left) | Substring(Skin.String(ItemToEdit.MultiFanart),dvdcase,left) | Substring(Skin.String(ItemToEdit.MultiFanart),nocase,left) | Substring(Skin.String(ItemToEdit.MultiFanart),case,left) | Substring(Skin.String(ItemToEdit.MultiFanart),watchlist,left) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),inprogressmovies) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),special://profile/Thumbnails/Music/Fanart) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),special://profile/Thumbnails/Video/Fanart) | IsEmpty(Skin.String(ItemToEdit.MultiFanart))]</visible>
                         <label>$LOCALIZE[31102] [LOWERCASE]$LOCALIZE[573][/LOWERCASE]:</label>
                         <label2>[COLOR white]$INFO[Skin.String(ItemToEdit.MultiFanart)][/COLOR]</label2>
                     </control>

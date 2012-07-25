@@ -110,6 +110,10 @@
         <value condition="Skin.HasSetting(colortexthome)">$VAR[ColorDiffuseVar]</value>
         <value>white2</value>
     </variable>
+    <variable name="RSSLabelColorVar">
+        <value condition="Skin.HasSetting(alternativerss)">white</value>
+        <value>black</value>
+    </variable>
     <variable name="SelectedColorVar">
         <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
         <value>$VAR[AreaColorVar]</value>
@@ -283,8 +287,8 @@
         <value condition="substring(ListItem.AudioCodec,ac3,left) + Substring(ListItem.AudioChannels,2)">dolbypro</value>
         <value>$INFO[ListItem.AudioCodec]</value>
     </variable>
-    <variable name="CaseLabelVar">
-        <value condition="Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)">tvshows</value>
+    <variable name="CaseTypeVar">
+        <value condition="Skin.HasSetting(usecases)">tvshows</value>
         <value>movies</value>
     </variable>
     <variable name="NextEpisodeVar">
@@ -537,7 +541,8 @@
     </variable>
     <variable name="TVShowLogoVar">
         <value condition="Container.Content(episodes)">$INFO[ListItem.path,,../logo.png]</value>
-        <value condition="Container.Content(artists)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</value>
+        <value condition="Container.Content(albums) + Substring(Container.FolderPath,musicdb://2/)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[Container.FolderName,,/logo.png]</value>
+        <value condition="Container.Content(artists) | Container.Content(albums) | Container.Content(songs)">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</value>
         <value>$INFO[ListItem.Path,,logo.png]</value>
     </variable>
     <variable name="TVShowClearArtVar">
@@ -587,9 +592,9 @@
         <value>$LOCALIZE[106]</value>
     </variable>
     <variable name="LibraryStatsVar">
-        <value condition="[Substring(Container(9000).ListItem.Property(Widget),moviescustom) | Substring(Container(9000).ListItem.Property(Widget2),moviescustom)] | Container(9000).HasFocus(10)">$INFO[Container(9000).ListItem.Property(LibraryStatsMovies)]</value>
-        <value condition="[Substring(Container(9000).ListItem.Property(Widget),tvcustom) | Substring(Container(9000).ListItem.Property(Widget2),tvcustom)] | Container(9000).HasFocus(11)">$INFO[Container(9000).ListItem.Property(LibraryStatsTV)]</value>
-        <value condition="[Substring(Container(9000).ListItem.Property(Widget),albumscustom) | Substring(Container(9000).ListItem.Property(Widget2),albumscustom)] | Container(9000).HasFocus(3) | Container(9000).HasFocus(33)">$INFO[Container(9000).ListItem.Property(LibraryStatsMusic)]</value>
+        <value condition="!IsEmpty(Container(9000).ListItem.Property(LibraryStatsMovies))">$INFO[Container(9000).ListItem.Property(LibraryStatsMovies)]</value>
+        <value condition="!IsEmpty(Container(9000).ListItem.Property(LibraryStatsTV))">$INFO[Container(9000).ListItem.Property(LibraryStatsTV)]</value>
+        <value condition="!IsEmpty(Container(9000).ListItem.Property(LibraryStatsMusic))">$INFO[Container(9000).ListItem.Property(LibraryStatsMusic)]</value>
         <value condition="System.HasAddon(plugin.image.mypicsdb) + [Substring(Container(9000).ListItem.Property(Widget),randompics) | Substring(Container(9000).ListItem.Property(Widget2),randompics)]">Categories: $INFO[Window(Home).Property(MyPicsDBRandom.Categories)] • Collections: $INFO[Window(Home).Property(MyPicsDBRandom.Collections)] • Folders: $INFO[Window(Home).Property(MyPicsDBRandom.Folders)]</value>
         <value condition="System.HasAddon(plugin.image.mypicsdb) + [Substring(Container(9000).ListItem.Property(Widget),recentpics) | Substring(Container(9000).ListItem.Property(Widget2),recentpics)]">Categories: $INFO[Window(Home).Property(MyPicsDBLatest.Categories)] • Collections: $INFO[Window(Home).Property(MyPicsDBLatest.Collections)] • Folders: $INFO[Window(Home).Property(MyPicsDBLatest.Folders)]</value>
         <value condition="Container(9000).HasFocus(21) + PVR.IsRecording">$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</value>
@@ -597,20 +602,14 @@
         <value condition="Window.IsActive(1131)">$LOCALIZE[31683]</value>
     </variable>
     <variable name="ShortLibraryStatsVar">
-        <value condition="[Substring(Container(9000).ListItem.Property(Widget),moviescustom) | Substring(Container(9000).ListItem.Property(Widget2),moviescustom)] | Container(9000).HasFocus(10)">$INFO[Container(9000).ListItem.Property(ShortLibraryStatsMovies)]</value>
-        <value condition="[Substring(Container(9000).ListItem.Property(Widget),tvcustom) | Substring(Container(9000).ListItem.Property(Widget2),tvcustom)] | Container(9000).HasFocus(11)">$INFO[Container(9000).ListItem.Property(ShortLibraryStatsTV)]</value>
-        <value condition="[Substring(Container(9000).ListItem.Property(Widget),albumscustom) | Substring(Container(9000).ListItem.Property(Widget2),albumscustom)] | Container(9000).HasFocus(3) | Container(9000).HasFocus(33)">$INFO[Container(9000).ListItem.Property(ShortLibraryStatsMusic)]</value>
+        <value condition="!IsEmpty(Container(9000).ListItem.Property(LibraryStatsMovies))">$INFO[Container(9000).ListItem.Property(ShortLibraryStatsMovies)]</value>
+        <value condition="!IsEmpty(Container(9000).ListItem.Property(LibraryStatsTV))">$INFO[Container(9000).ListItem.Property(ShortLibraryStatsTV)]</value>
+        <value condition="!IsEmpty(Container(9000).ListItem.Property(LibraryStatsMusic))">$INFO[Container(9000).ListItem.Property(ShortLibraryStatsMusic)]</value>
         <value condition="System.HasAddon(plugin.image.mypicsdb) + [Substring(Container(9000).ListItem.Property(Widget),randompics) | Substring(Container(9000).ListItem.Property(Widget2),randompics)]">Collections: $INFO[Window(Home).Property(MyPicsDBRandom.Collections)] • Folders: $INFO[Window(Home).Property(MyPicsDBRandom.Folders)]</value>
         <value condition="System.HasAddon(plugin.image.mypicsdb) + [Substring(Container(9000).ListItem.Property(Widget),recentpics) | Substring(Container(9000).ListItem.Property(Widget2),recentpics)]">Collections: $INFO[Window(Home).Property(MyPicsDBLatest.Collections)] • Folders: $INFO[Window(Home).Property(MyPicsDBLatest.Folders)]</value>
         <value condition="Container(9000).HasFocus(21) + PVR.IsRecording">$LOCALIZE[19158] $INFO[PVR.NowRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • [B][COLOR=FF48D1CC]$INFO[PVR.NowRecordingTitle][/COLOR][/B] [B][COLOR=white]($INFO[PVR.NowRecordingChannel, ])[/COLOR][/B]</value>
         <value condition="Container(9000).HasFocus(21) + PVR.HasNonRecordingTimer">$LOCALIZE[19157] $INFO[PVR.NextRecordingDateTime, [B][COLOR=white], [/COLOR][/B]$LOCALIZE[19126] - ] • $INFO[PVR.NextRecordingTitle, [B][COLOR=white],[/COLOR][/B]]$INFO[PVR.NextRecordingChannel, - [B][COLOR=white],[/COLOR][/B]]</value>
         <value condition="Window.IsActive(1131)">$LOCALIZE[31683]</value>
-    </variable>
-    <variable name="RSSFeedVar">
-        <value condition="Player.HasAudio + Skin.HasSetting(alternativerss)">$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[10523]: [COLOR ffaaaaaa],[/COLOR]]$INFO[MusicPlayer.Property(Artist_Description),$LOCALIZE[21887]: [COLOR ffaaaaaa],[/COLOR]]</value>
-        <value condition="Player.HasAudio + !Skin.HasSetting(alternativerss)">$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[10523]: [COLOR a9000000],[/COLOR]]$INFO[MusicPlayer.Property(Artist_Description),$LOCALIZE[21887]: [COLOR a9000000],[/COLOR]]</value>
-        <value condition="Player.HasVideo + !IsEmpty(VideoPlayer.Plot)">$INFO[VideoPlayer.Plot]</value>
-        <value></value>
     </variable>
     <variable name="FurniturePositionVar">
         <value condition="Stringcompare(Window.Property(actualItem),TimePanel) + Skin.HasSetting(timehomehigh)">$LOCALIZE[31617]</value>
@@ -691,9 +690,10 @@
         <value condition="Substring(Container(9000).ListItem.Property(Widget),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget),google)">$LOCALIZE[42221]</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),rss1)">$LOCALIZE[42280] 1</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),rss2)">$LOCALIZE[42280] 2</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget),rss3)">$LOCALIZE[42280] 3</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),rss1)">$INFO[Skin.String(CustomHomeFeedTitle1)]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),rss2)">$INFO[Skin.String(CustomHomeFeedTitle2)]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),rss3)">$INFO[Skin.String(CustomHomeFeedTitle3)]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget),wunderground)">Weather Wunderground</value>
     </variable>
     <variable name="BGColorTextureVar">
         <value condition="[Window.IsActive(1122) | Window.IsActive(1123)]">$INFO[Skin.String(ItemToEdit.Color),common/,.png]</value>
@@ -723,12 +723,13 @@
         <value condition="Substring(Skin.String(ItemToEdit.Widget),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),google)">$LOCALIZE[42221]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),rss1)">$LOCALIZE[42280] 1</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),rss2)">$LOCALIZE[42280] 2</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),rss3)">$LOCALIZE[42280] 3</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),rss1)">$INFO[Skin.String(CustomHomeFeedTitle1)]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),rss2)">$INFO[Skin.String(CustomHomeFeedTitle2)]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),rss3)">$INFO[Skin.String(CustomHomeFeedTitle3)]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmusic)">$LOCALIZE[42274]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredtv)">$LOCALIZE[42273]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmovies)">$LOCALIZE[42272]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),wunderground)">Weather Wunderground</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="Widget2TypeLabelVar">
@@ -755,9 +756,10 @@
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Container(9000).ListItem.Property(Widget2),google)">$LOCALIZE[42221]</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rss1)">$LOCALIZE[42280] 1</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rss2)">$LOCALIZE[42280] 2</value>
-        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rss3)">$LOCALIZE[42280] 3</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rss1)">$INFO[Skin.String(CustomHomeFeedTitle1)]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rss2)">$INFO[Skin.String(CustomHomeFeedTitle2)]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),rss3)">$INFO[Skin.String(CustomHomeFeedTitle3)]</value>
+        <value condition="Substring(Container(9000).ListItem.Property(Widget2),wunderground)">Weather Wunderground</value>
     </variable>
     <variable name="Widget2TypeLabelVar1124">
         <value condition="SubString(Skin.String(ItemToEdit.Widget2),recentmovies)">$LOCALIZE[31323]</value>
@@ -783,12 +785,13 @@
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),nextaired)">$LOCALIZE[42219]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),babe)">$LOCALIZE[42220]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),google)">$LOCALIZE[42221]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss1)">$LOCALIZE[42280] 1</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss2)">$LOCALIZE[42280] 2</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss3)">$LOCALIZE[42280] 3</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss1)">$INFO[Skin.String(CustomHomeFeedTitle1)]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss2)">$INFO[Skin.String(CustomHomeFeedTitle2)]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss3)">$INFO[Skin.String(CustomHomeFeedTitle3)]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmusic)">$LOCALIZE[42274]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredtv)">$LOCALIZE[42273]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmovies)">$LOCALIZE[42272]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),wunderground)">Weather Wunderground</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="PanelWidgetLabel1Var">
@@ -894,7 +897,7 @@
     </variable>
     <variable name="MusicExtraFanartVar">
         <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/music/fanart/,.jpg]</value>
-        <value>$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart]</value>
+        <value>$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/extrafanart/]</value>
     </variable>
     <variable name="MusicPanelDetailLabel1Var">
         <value condition="Container.Content(albums)">$LOCALIZE[176]:</value>
@@ -1583,6 +1586,9 @@
     </variable>
     <variable name="CustomItemFanartLabelVar">
         <value condition="IsEmpty(Skin.String(ItemToEdit.MultiFanart))">$LOCALIZE[571]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.MultiFanart),dvdcase,left)">$LOCALIZE[42224]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.MultiFanart),nocase,left)">$LOCALIZE[42226]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.MultiFanart),case,left)">$LOCALIZE[42225]</value>
         <value condition="Substring(Skin.String(ItemToEdit.MultiFanart),weather)">$LOCALIZE[31035]</value>
         <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),recentmovies)">$LOCALIZE[31323]</value>
         <value condition="SubString(Skin.String(ItemToEdit.MultiFanart),randommovies)">$LOCALIZE[31222]</value>
@@ -1951,61 +1957,91 @@
         <value condition="StringCompare(Control.GetLabel(4322),nocaserecentpics)">$INFO[Window(home).Property(MyPicsDBRandom.5.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaserandompics)">$INFO[Window(home).Property(MyPicsDBLatest.5.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaseartists)">$INFO[Window(home).Property(RandomArtist.5.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaserandomtv)">$INFO[Window(home).Property(RandomEpisode.5.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaselatesttv)">$INFO[Window(home).Property(LatestEpisode.5.Thumb)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocasedailybabes)">http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2012.jpg</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocasecustom)">$VAR[CustomLiveContent5]</value>
     </variable>
     <variable name="NoCase2Var">
         <value condition="StringCompare(Control.GetLabel(4322),nocaserecentpics)">$INFO[Window(home).Property(MyPicsDBRandom.9.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaserandompics)">$INFO[Window(home).Property(MyPicsDBLatest.9.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaseartists)">$INFO[Window(home).Property(RandomArtist.9.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaserandomtv)">$INFO[Window(home).Property(RandomEpisode.9.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaselatesttv)">$INFO[Window(home).Property(LatestEpisode.9.Thumb)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocasedailybabes)">http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2012.jpg</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocasecustom)">$VAR[CustomLiveContent9]</value>
     </variable>
     <variable name="NoCase3Var">
         <value condition="StringCompare(Control.GetLabel(4322),nocaserecentpics)">$INFO[Window(home).Property(MyPicsDBRandom.8.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaserandompics)">$INFO[Window(home).Property(MyPicsDBLatest.8.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaseartists)">$INFO[Window(home).Property(RandomArtist.8.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaserandomtv)">$INFO[Window(home).Property(RandomEpisode.8.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaselatesttv)">$INFO[Window(home).Property(LatestEpisode.8.Thumb)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocasedailybabes)">http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2012.jpg</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocasecustom)">$VAR[CustomLiveContent8]</value>
     </variable>
     <variable name="NoCase4Var">
         <value condition="StringCompare(Control.GetLabel(4322),nocaserecentpics)">$INFO[Window(home).Property(MyPicsDBRandom.7.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaserandompics)">$INFO[Window(home).Property(MyPicsDBLatest.7.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaseartists)">$INFO[Window(home).Property(RandomArtist.7.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaserandomtv)">$INFO[Window(home).Property(RandomEpisode.7.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaselatesttv)">$INFO[Window(home).Property(LatestEpisode.7.Thumb)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocasedailybabes)">http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2012.jpg</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocasecustom)">$VAR[CustomLiveContent7]</value>
     </variable>
     <variable name="NoCase5Var">
         <value condition="StringCompare(Control.GetLabel(4322),nocaserecentpics)">$INFO[Window(home).Property(MyPicsDBRandom.4.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaserandompics)">$INFO[Window(home).Property(MyPicsDBLatest.4.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaseartists)">$INFO[Window(home).Property(RandomArtist.4.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaserandomtv)">$INFO[Window(home).Property(RandomEpisode.4.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaselatesttv)">$INFO[Window(home).Property(LatestEpisode.4.Thumb)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocasedailybabes)">http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2012.jpg</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocasecustom)">$VAR[CustomLiveContent4]</value>
     </variable>
     <variable name="NoCase6Var">
         <value condition="StringCompare(Control.GetLabel(4322),nocaserecentpics)">$INFO[Window(home).Property(MyPicsDBRandom.6.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaserandompics)">$INFO[Window(home).Property(MyPicsDBLatest.6.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaseartists)">$INFO[Window(home).Property(RandomArtist.6.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaserandomtv)">$INFO[Window(home).Property(RandomEpisode.6.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaselatesttv)">$INFO[Window(home).Property(LatestEpisode.6.Thumb)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocasedailybabes)">http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2012.jpg</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocasecustom)">$VAR[CustomLiveContent6]</value>
     </variable>
     <variable name="NoCase7Var">
         <value condition="StringCompare(Control.GetLabel(4322),nocaserecentpics)">$INFO[Window(home).Property(MyPicsDBRandom.10.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaserandompics)">$INFO[Window(home).Property(MyPicsDBLatest.10.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaseartists)">$INFO[Window(home).Property(RandomArtist.10.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaserandomtv)">$INFO[Window(home).Property(RandomEpisode.10.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaselatesttv)">$INFO[Window(home).Property(LatestEpisode.10.Thumb)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocasedailybabes)">http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2012.jpg</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocasecustom)">$VAR[CustomLiveContent10]</value>
     </variable>
     <variable name="NoCase8Var">
         <value condition="StringCompare(Control.GetLabel(4322),nocaserecentpics)">$INFO[Window(home).Property(MyPicsDBRandom.3.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaserandompics)">$INFO[Window(home).Property(MyPicsDBLatest.3.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaseartists)">$INFO[Window(home).Property(RandomArtist.3.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaserandomtv)">$INFO[Window(home).Property(RandomEpisode.3.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaselatesttv)">$INFO[Window(home).Property(LatestEpisode.3.Thumb)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocasedailybabes)">http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2012.jpg</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocasecustom)">$VAR[CustomLiveContent3]</value>
     </variable>
     <variable name="NoCase9Var">
         <value condition="StringCompare(Control.GetLabel(4322),nocaserecentpics)">$INFO[Window(home).Property(MyPicsDBRandom.2.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaserandompics)">$INFO[Window(home).Property(MyPicsDBLatest.2.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaseartists)">$INFO[Window(home).Property(RandomArtist.2.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaserandomtv)">$INFO[Window(home).Property(RandomEpisode.2.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaselatesttv)">$INFO[Window(home).Property(LatestEpisode.2.Thumb)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocasedailybabes)">http://dailybabenews.com/images/babe_09-$INFO[System.Date(dd)]-2012.jpg</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocasecustom)">$VAR[CustomLiveContent2]</value>
     </variable>
     <variable name="NoCase10Var">
         <value condition="StringCompare(Control.GetLabel(4322),nocaserecentpics)">$INFO[Window(home).Property(MyPicsDBRandom.1.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaserandompics)">$INFO[Window(home).Property(MyPicsDBLatest.1.Path)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocaseartists)">$INFO[Window(home).Property(RandomArtist.1.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaserandomtv)">$INFO[Window(home).Property(RandomEpisode.1.Thumb)]</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocaselatesttv)">$INFO[Window(home).Property(LatestEpisode.1.Thumb)]</value>
         <value condition="StringCompare(Control.GetLabel(4322),nocasedailybabes)">http://dailybabenews.com/images/babe_10-$INFO[System.Date(dd)]-2012.jpg</value>
+        <value condition="StringCompare(Control.GetLabel(4322),nocasecustom)">$VAR[CustomLiveContent1]</value>
     </variable>
     <variable name="CustomLiveContent1">
         <value condition="Container(9000).HasFocus(101) | [Stringcompare(Skin.String(MenuItem),CustomHomeItem1) + Window.IsActive(1122)]">$INFO[Window(Home).Property(CustomHomeItem1.1.Thumb)]</value>

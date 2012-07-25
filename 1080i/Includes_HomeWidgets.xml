@@ -307,25 +307,6 @@
                     <include>Animation_VisibleChange400</include>
                     <visible>Skin.HasSetting(rsshomelow)</visible>
                 </control>
-                <control type="label" id="815">
-                    <posx>0</posx>
-                    <posy>3</posy>
-                    <width>1920</width>
-                    <height>3</height>
-                    <font>Font_Condensed20</font>
-                    <align>left</align>
-                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                    <shadowcolor>-</shadowcolor>
-                    <textoffsetx>0</textoffsetx>
-                    <label>$VAR[RSSFeedVar]</label>
-                    <scroll>true</scroll>
-                    <wrapmultiline>false</wrapmultiline>
-                    <scrollspeed>40</scrollspeed>
-                    <include>Animation_VisibleChange400</include>
-                    <visible>!Skin.HasSetting(rotatenowplayingpanel)</visible>
-                    <visible>[!Skin.HasSetting(nohomepageMusicinfo) + Player.HasAudio] | [!Skin.HasSetting(homepageVideoinfo) + Player.HasVideo]</visible>
-                    <animation effect="slide" start="0,0" end="0,429" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                </control>
                 <control type="label">
                     <posx>0</posx>
                     <posy>3</posy>
@@ -333,7 +314,7 @@
                     <height>3</height>
                     <font>Font_Condensed20</font>
                     <align>left</align>
-                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
+                    <textcolor>$VAR[RSSLabelColorVar]</textcolor>
                     <shadowcolor>-</shadowcolor>
                     <textoffsetx>5</textoffsetx>
                     <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.1.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.2.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.3.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.4.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.5.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.6.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.7.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.8.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.9.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=ffaaaaaa]$INFO[Window.Property(peopleborntoday.10.job), • ][/COLOR]</label>
@@ -341,7 +322,6 @@
                     <wrapmultiline>false</wrapmultiline>
                     <scrollspeed>40</scrollspeed>
                     <visible>Skin.HasSetting(ActorBirthdayRSS)</visible>
-                    <animation effect="fade" start="100" end="0" time="400" condition="Control.IsVisible(815) + !IsEmpty(Control.GetLabel(815))">Conditional</animation>
                     <animation effect="slide" start="0,0" end="0,429" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
                 <control type="rss">
@@ -360,7 +340,6 @@
                     <titlecolor>$VAR[HomeMenuWidgetTextVar]</titlecolor>
                     <scrollspeed>40</scrollspeed>
                     <visible>!Skin.HasSetting(ActorBirthdayRSS)</visible>
-                    <animation effect="fade" start="100" end="0" time="400" condition="Control.IsVisible(815) + !IsEmpty(Control.GetLabel(815))">Conditional</animation>
                     <animation effect="slide" start="0,0" end="0,429" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
             </control>
@@ -390,24 +369,6 @@
                     <visible>Skin.HasSetting(rsshomelow)</visible>
                     <animation effect="slide" start="0,0" end="0,-384" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
-                <control type="label" id="815">
-                    <posx>165</posx>
-                    <posy>3</posy>
-                    <width>1880</width>
-                    <height>3</height>
-                    <font>Font_Condensed20</font>
-                    <align>left</align>
-                    <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                    <shadowcolor>-</shadowcolor>
-                    <textoffsetx>0</textoffsetx>
-                    <label>$VAR[RSSFeedVar]</label>
-                    <include>Animation_VisibleChange400</include>
-                    <scroll>true</scroll>
-                    <wrapmultiline>false</wrapmultiline>
-                    <scrollspeed>40</scrollspeed>
-                    <visible>[!Skin.HasSetting(nohomepageMusicinfo) + Player.HasAudio] | [!Skin.HasSetting(homepageVideoinfo) + Player.HasVideo]</visible>
-                    <animation effect="slide" start="0,0" end="0,429" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
-                </control>
                 <control type="label">
                     <posx>165</posx>
                     <posy>3</posy>
@@ -415,7 +376,7 @@
                     <height>3</height>
                     <font>Font_Condensed20</font>
                     <align>left</align>
-                    <textcolor>a9000000</textcolor>
+                    <textcolor>$VAR[RSSLabelColorVar]</textcolor>
                     <shadowcolor>-</shadowcolor>
                     <textoffsetx>0</textoffsetx>
                     <label>$INFO[Window(Home).Property(peopleborntoday.1.name)][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.1.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.2.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.2.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.3.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.3.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.4.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.4.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.5.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.5.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.6.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.6.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.7.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.7.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.8.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.8.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.9.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.9.job), • ][/COLOR]$INFO[Window(Home).Property(peopleborntoday.10.name), | ][COLOR=a9000000]$INFO[Window.Property(peopleborntoday.10.job), • ][/COLOR]</label>
@@ -423,7 +384,6 @@
                     <wrapmultiline>false</wrapmultiline>
                     <scrollspeed>40</scrollspeed>
                     <visible>Skin.HasSetting(ActorBirthdayRSS)</visible>
-                    <animation effect="fade" start="100" end="0" time="400" condition="Control.IsVisible(815) + !IsEmpty(Control.GetLabel(815))">Conditional</animation>
                     <animation effect="slide" start="0,0" end="0,429" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
                 <control type="rss">
@@ -441,7 +401,6 @@
                     <titlecolor>dc2B60DE</titlecolor>
                     <scrollspeed>40</scrollspeed>
                     <visible>!Skin.HasSetting(ActorBirthdayRSS)</visible>
-                    <animation effect="fade" start="100" end="0" time="400" condition="Control.IsVisible(815) + !IsEmpty(Control.GetLabel(815))">Conditional</animation>
                     <animation effect="slide" start="0,0" end="0,429" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(rsshomelow)">Conditional</animation>
                 </control>
                 <control type="group">
@@ -1043,10 +1002,12 @@
     </include>
     <include name="Furniture_HomeNowPlaying">
         <control type="group">
+            <posy>14</posy>
             <visible>IsEmpty(Control.GetLabel(4325)) | Skin.HasSetting(DisableWidgets)</visible>
             <include condition="System.GetBool(pvrmanager.enabled)">HideItemOnTV</include>
+             <animation effect="slide" start="0,0" end="0,35" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <include>Animation_Widgets</include>
-            <animation effect="slide" start="0,0" end="0,25" time="400" tween="cubic" easing="inout" condition="[Skin.HasSetting(highnavhelp) | Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)] + Window.IsActive(home)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="0,11" time="400" tween="cubic" easing="inout" condition="[Skin.HasSetting(highnavhelp) | Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)] + Window.IsActive(home)">Conditional</animation>
             <control type="group" id="8995">
                 <posx>22</posx>
                 <posy>-650</posy>
@@ -1093,7 +1054,7 @@
                         <posy>660</posy>
                         <width>1650</width>
                         <height>402</height>
-                        <animation effect="fade" start="100" end="40" time="0" condition="Skin.HasSetting(nowplayingpanel)">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="Skin.HasSetting(nowplayingpanel)">Conditional</animation>
                         <texture border="50">featured/panel_featured.png</texture>
                     </control>
                 </control>
@@ -1883,6 +1844,7 @@
             <include>Animation_Widgets</include>
             <animation type="Conditional" condition="true">
                 <effect type="fade" start="100" end="90" time="500" tween="cubic" easing="inout" />
+                <effect type="zoom" start="100" end="99" center="960,540" time="300" tween="cubic" easing="out" />
             </animation>
             <animation effect="slide" start="0,0" end="0,-285" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" start="0,0" end="0,18" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [Skin.HasSetting(highnavhelp) | Skin.HasSetting(totalshomehigh) | Skin.HasSetting(timehomehigh)]">Conditional</animation>
@@ -2555,7 +2517,12 @@
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4321),googlepanel)</visible>
                     <include>Animation_VisibleChange400</include>
-                    <include condition="Substring(Skin.String(widgetlist),googlepanel)">GooglePanelWidget</include>
+                    <include condition="Substring(Skin.String(widgetlist),googlepanel) + SubString(Weather.Plugin,google)">GooglePanelWidget</include>
+                </control>
+                <control type="group">
+                    <visible>Substring(Control.GetLabel(4321),wunderground)</visible>
+                    <include>Animation_VisibleChange400</include>
+                    <include condition="Substring(Skin.String(widgetlist),wunderground) + SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
                 </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4321),featured)</visible>
@@ -3415,6 +3382,20 @@
                             <onup>SetFocus(5010)</onup>
                             <ondown>ClearProperty(PanelWidgetInfo,Home)</ondown>
                             <ondown>SetFocus(5010)</ondown>
+                            <visible>Substring(Control.GetLabel(4321),tv)</visible>
+                        </control>
+                        <control type="button" id="5026">
+                            <description>Play</description>
+                            <label>$LOCALIZE[208]</label>
+                            <include>HiddenObject</include>
+                            <onclick>PlayMedia($ESCINFO[Container(5010).ListItem.Property(Media)])</onclick>
+                            <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
+                            <onback>SetFocus(5010)</onback>
+                            <onup>ClearProperty(PanelWidgetInfo,Home)</onup>
+                            <onup>SetFocus(5010)</onup>
+                            <ondown>ClearProperty(PanelWidgetInfo,Home)</ondown>
+                            <ondown>SetFocus(5010)</ondown>
+                            <visible>Substring(Control.GetLabel(4321),rss)</visible>
                         </control>
                         <control type="button" id="5023">
                             <description>Return</description>
@@ -3456,7 +3437,7 @@
                             <shadowcolor>black</shadowcolor>
                             <include>BreadcrumbsLabel</include>
                             <label>$INFO[Control.GetLabel(5022)]</label>
-                            <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(5022)">Conditional</animation>
+                            <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!Control.HasFocus(5022) + !Control.HasFocus(5026)">Conditional</animation>
                         </control>
                         <control type="label">
                             <textcolor>white2</textcolor>
@@ -3850,8 +3831,8 @@
                 <onback>ClearProperty(PanelWidgetInfo,Home)</onback>
                 <onback>9000</onback>
                 <viewtype label="535">list</viewtype>
-                <preloaditems>2</preloaditems>
-                <scrolltime tween="quadratic" easing="out">400</scrolltime>
+<!--                 <preloaditems>2</preloaditems>
+ -->                <scrolltime tween="quadratic" easing="out">400</scrolltime>
                 <itemlayout width="228" height="340" condition="Substring(Control.GetLabel(4321),panel,right) + [Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)]">
                     <control type="image">
                         <description>Main Icon</description>
@@ -4127,133 +4108,15 @@
                     </control>
                 </focusedlayout>
                 <itemlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)]">
-                    <control type="image">
-                        <description>Main Icon</description>
-                        <posx>21</posx>
-                        <posy>42</posy>
-                        <width>183</width>
-                        <height>275</height>
-                        <fadetime>IconCrossfadeTime</fadetime>
-                        <texture diffuse="thumbs/movieposter_mask.png" background="true">DefaultVideoBigPoster.png</texture>
-                        <aspectratio scalediffuse="false">stretch</aspectratio>
-                        <info>ListItem.Icon</info>
-                    </control>
-                    <control type="image">
-                        <description>Main Icon Glass overlay</description>
-                        <posx>1.5</posx>
-                        <posy>22.5</posy>
-                        <width>222</width>
-                        <height>313</height>
-                        <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                        <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                        <bordersize>19.5</bordersize>
-                        <aspectratio scalediffuse="false">scale</aspectratio>
-                    </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <posy>25</posy>
-                        <width>340</width>
-                        <height>50</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Reg24</font>
-                        <textcolor>white2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <posy>78</posy>
-                        <width>340</width>
-                        <height>30</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed22</font>
-                        <textcolor>grey2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="textbox">
-                        <posx>215</posx>
-                        <posy>112</posy>
-                        <width>300</width>
-                        <height>205</height>
-                        <align>left</align>
-                        <label>$INFO[ListItem.Label2]</label>
-                        <font>Font_Condensed20</font>
-                        <include>listcolornofocus</include>
-                        <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                    </control>
+                     <include>Panel2WidgetPosterLayout</include>
                 </itemlayout>
                 <focusedlayout height="450" width="532" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo) | Substring(Control.GetLabel(4321),actors)]">
-                    <control type="group">
-                        <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
-                        <control type="image">
-                            <description>Main Icon</description>
-                            <posx>21</posx>
-                            <posy>42</posy>
-                            <width>183</width>
-                            <height>275</height>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                            <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                        </control>
-                        <control type="image">
-                            <posx>1.5</posx>
-                            <posy>22.5</posy>
-                            <width>222</width>
-                            <height>313</height>
-                            <description>Main Icon Glass overlay</description>
-                            <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                            <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                            <bordersize>19.5</bordersize>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
-                        </control>
-                    </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <posy>25</posy>
-                        <width>340</width>
-                        <height>50</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Reg24</font>
-                        <textcolor>white2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Label]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="label">
-                        <posx>200</posx>
-                        <posy>78</posy>
-                        <width>340</width>
-                        <height>30</height>
-                        <align>left</align>
-                        <aligny>center</aligny>
-                        <font>Font_Condensed22</font>
-                        <textcolor>grey2</textcolor>
-                        <shadowcolor>-</shadowcolor>
-                        <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
-                        <textoffsetx>15</textoffsetx>
-                    </control>
-                    <control type="textbox">
-                        <posx>215</posx>
-                        <posy>112</posy>
-                        <width>300</width>
-                        <height>205</height>
-                        <align>left</align>
-                        <label>$INFO[ListItem.Label2]</label>
-                        <font>Font_Condensed20</font>
-                        <include>listcolornofocus</include>
-                        <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                    </control>
+                    <include>Panel2WidgetPosterLayout</include>
                     <control type="image">
                         <posx>0</posx>
-                        <posy>20</posy>
+                        <posy>10</posy>
                         <width>532</width>
-                        <height>319</height>
+                        <height>334</height>
                         <aspectratio>stretch</aspectratio>
                         <colordiffuse>$VAR[SelectedColorVar]</colordiffuse>
                         <texture border="5">views/addonwall_select.png</texture>
@@ -4261,161 +4124,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),pics) | Substring(Control.GetLabel(4321),rss)]">
-                    <control type="group">
-                        <visible>!Substring(Control.GetLabel(4321),panel,right)</visible>
-                        <control type="image">
-                            <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
-                            <bordersize>9</bordersize>
-                            <posx>15</posx>
-                            <posy>23</posy>
-                            <width>455</width>
-                            <height>297</height>
-                            <fadetime>IconCrossfadeTime</fadetime>
-                        </control>
-                        <control type="image">
-                            <posx>15</posx>
-                            <posy>23</posy>
-                            <width>455</width>
-                            <height>297</height>
-                            <fadetime>IconCrossfadeTime2</fadetime>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
-                            <bordersize>9</bordersize>
-                        </control>
-                        <control type="label">
-                            <posx>15</posx>
-                            <posy>305</posy>
-                            <width>389</width>
-                            <height>40</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Condensed18</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label2]$INFO[ListItem.Property(Date)]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="label">
-                            <posx>470</posx>
-                            <posy>25</posy>
-                            <width>340</width>
-                            <height>50</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Reg24</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="label">
-                            <posx>470</posx>
-                            <posy>78</posy>
-                            <width>340</width>
-                            <height>30</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Condensed22</font>
-                            <textcolor>grey2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Property(EpisodeNumber)]$INFO[ListItem.Property(Rating), • ]$INFO[ListItem.Property(Channel)]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="textbox">
-                            <posx>485</posx>
-                            <posy>112</posy>
-                            <width>300</width>
-                            <height>205</height>
-                            <align>left</align>
-                            <label>$INFO[ListItem.Property(Plot)]</label>
-                            <font>Font_Condensed20</font>
-                            <include>listcolornofocus</include>
-                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        </control>
-                    </control>
+                    <include>Panel2WidgetEpisodeLayout</include>
                 </itemlayout>
                 <focusedlayout width="798" height="340" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),pics) | Substring(Control.GetLabel(4321),rss)]">
-                    <control type="group">
-                        <visible>!Substring(Control.GetLabel(4321),panel,right)</visible>
-                    <control type="group">
-                        <control type="group">
-                            <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
-                            <control type="image">
-                                <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[ListItem.Icon]</texture>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
-                                <bordersize>9</bordersize>
-                                <posx>15</posx>
-                                <posy>23</posy>
-                                <width>455</width>
-                                <height>297</height>
-                                <fadetime>IconCrossfadeTime</fadetime>
-                            </control>
-                            <control type="image">
-                                <posx>15</posx>
-                                <posy>23</posy>
-                                <width>455</width>
-                                <height>297</height>
-                                <fadetime>IconCrossfadeTime2</fadetime>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <texture diffuse="thumbs/multiplex_tvmask.png">thumbs/multiplex_tv_glass.png</texture>
-                                <bordersize>9</bordersize>
-                            </control>
-                        </control>
-                        <control type="label">
-                            <posx>15</posx>
-                            <posy>305</posy>
-                            <width>389</width>
-                            <height>40</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Condensed18</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label2]$INFO[ListItem.Property(Date)]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="label">
-                            <posx>470</posx>
-                            <posy>25</posy>
-                            <width>340</width>
-                            <height>50</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Reg24</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="label">
-                            <posx>470</posx>
-                            <posy>78</posy>
-                            <width>340</width>
-                            <height>30</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Condensed22</font>
-                            <textcolor>grey2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Property(EpisodeNumber)]$INFO[ListItem.Property(Rating), • ]$INFO[ListItem.Property(Channel)]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="textbox">
-                            <posx>485</posx>
-                            <posy>112</posy>
-                            <width>300</width>
-                            <height>205</height>
-                            <align>left</align>
-                            <label>$INFO[ListItem.Property(Plot)]</label>
-                            <font>Font_Condensed20</font>
-                            <include>listcolornofocus</include>
-                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        </control>
-                    </control>
-                    </control>
+                    <include>Panel2WidgetEpisodeLayout</include>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -4427,167 +4139,10 @@
                     </control>
                 </focusedlayout>
                 <itemlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
-                    <control type="group">
-                        <control type="image">
-                            <posx>20</posx>
-                            <posy>15</posy>
-                            <height>320</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
-                            <width>340</width>
-                            <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
-                        </control>
-                        <control type="image">
-                            <posx>0</posx>
-                            <posy>-5</posy>
-                            <height>360</height>
-                            <width>380</width>
-                            <aspectratio scalediffuse="false" align="center">scale</aspectratio>
-                            <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
-                            <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
-                            <bordersize>20</bordersize>
-                        </control>
-                        <control type="image">
-                            <posx>400</posx>
-                            <posy>95</posy>
-                            <height>320</height>
-                            <width>340</width>
-                            <texture background="true">$INFO[ListItem.Property(ArtistPath),,/logo.png]</texture>
-                            <visible>IsEmpty(ListItem.Property(Album_Description)) + Substring(Control.GetLabel(4321),custom)</visible>
-                        </control>
-                        <control type="label">
-                            <posx>370</posx>
-                            <posy>25</posy>
-                            <width>420</width>
-                            <height>50</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Reg24</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="label">
-                            <posx>370</posx>
-                            <posy>78</posy>
-                            <width>420</width>
-                            <height>30</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Condensed22</font>
-                            <textcolor>grey2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label2]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="label">
-                            <posx>370</posx>
-                            <posy>112</posy>
-                            <width>420</width>
-                            <height>30</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Condensed22</font>
-                            <textcolor>grey2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Property(Year)]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="textbox">
-                            <posx>385</posx>
-                            <posy>144</posy>
-                            <width>400</width>
-                            <height>175</height>
-                            <align>left</align>
-                            <label>$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</label>
-                            <font>Font_Condensed20</font>
-                            <include>listcolornofocus</include>
-                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        </control>
-                    </control>
-                </itemlayout>
+                     <include>Panel2WidgetSquareLayout</include>
+                    </itemlayout>
                 <focusedlayout width="798" height="360" condition="Substring(Control.GetLabel(4321),panel2,right) + [Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),songs) | Substring(Control.GetLabel(4321),watchlistmusic)]">
-                    <control type="group">
-                        <control type="group">
-                            <animation effect="zoom" center="100,150" start="95" end="100" time="600" tween="back" easing="out" reversible="false">Focus</animation>
-                            <control type="image">
-                                <posx>20</posx>
-                                <posy>15</posy>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <height>320</height>
-                                <width>340</width>
-                                <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[ListItem.Icon]</texture>
-                            </control>
-                            <control type="image">
-                                <posx>0</posx>
-                                <posy>-5</posy>
-                                <height>360</height>
-                                <width>380</width>
-                                <aspectratio scalediffuse="false" align="center">scale</aspectratio>
-                                <texture diffuse="thumbs/cdcover_mask.png">thumbs/cdcover_glass_noreflect.png</texture>
-                                <bordertexture border="20">thumbs/cd_shadow.png</bordertexture>
-                                <bordersize>20</bordersize>
-                            </control>
-                        </control>
-                        <control type="image">
-                            <posx>400</posx>
-                            <posy>95</posy>
-                            <height>320</height>
-                            <width>340</width>
-                            <texture background="true">$INFO[ListItem.Property(ArtistPath),,/logo.png]</texture>
-                            <visible>IsEmpty(ListItem.Property(Album_Description)) + Substring(Control.GetLabel(4321),custom)</visible>
-                        </control>
-                        <control type="label">
-                            <posx>370</posx>
-                            <posy>25</posy>
-                            <width>420</width>
-                            <height>50</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Reg24</font>
-                            <textcolor>white2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="label">
-                            <posx>370</posx>
-                            <posy>78</posy>
-                            <width>420</width>
-                            <height>30</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Condensed22</font>
-                            <textcolor>grey2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Label2]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="label">
-                            <posx>370</posx>
-                            <posy>112</posy>
-                            <width>420</width>
-                            <height>30</height>
-                            <align>left</align>
-                            <aligny>center</aligny>
-                            <font>Font_Condensed22</font>
-                            <textcolor>grey2</textcolor>
-                            <shadowcolor>-</shadowcolor>
-                            <label>$INFO[ListItem.Property(Year)]</label>
-                            <textoffsetx>15</textoffsetx>
-                        </control>
-                        <control type="textbox">
-                            <posx>385</posx>
-                            <posy>144</posy>
-                            <width>400</width>
-                            <height>175</height>
-                            <align>left</align>
-                            <label>$INFO[ListItem.Property(Album_Description)]$INFO[ListItem.Property(Artist_Description)]</label>
-                            <font>Font_Condensed20</font>
-                            <include>listcolornofocus</include>
-                            <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                        </control>
-                    </control>
+                    <include>Panel2WidgetSquareLayout</include>
                     <control type="image">
                         <posx>0</posx>
                         <posy>0</posy>
@@ -5339,6 +4894,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.1.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.1.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.1.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.2.Media)])</onclick>
@@ -5349,6 +4905,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.2.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.2.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.2.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.3.Media)])</onclick>
@@ -5359,6 +4916,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.3.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.3.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.3.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.4.Media)])</onclick>
@@ -5369,6 +4927,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.4.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.4.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.4.Title))</visible>
 					</item>
                 </include>
     <include name="RSS1WidgetContent">
@@ -5381,6 +4940,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.5.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.5.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.5.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.6.Media)])</onclick>
@@ -5391,6 +4951,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.6.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.6.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.6.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.7.Media)])</onclick>
@@ -5401,6 +4962,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.7.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.7.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.7.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.8.Media)])</onclick>
@@ -5411,6 +4973,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.8.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.8.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.8.Title))</visible>
 					</item>
     </include>
     <include name="RSS1Widget2Content1124">
@@ -5423,6 +4986,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.1.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.1.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.1.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.2.Media)])</onclick>
@@ -5433,6 +4997,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.2.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.2.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.2.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.3.Media)])</onclick>
@@ -5443,6 +5008,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.3.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.3.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.3.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.4.Media)])</onclick>
@@ -5453,6 +5019,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.4.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.4.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.4.Title))</visible>
 					</item>
                 </include>
     <include name="RSS1Widget2Content">
@@ -5465,6 +5032,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.5.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.5.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.5.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.6.Media)])</onclick>
@@ -5475,6 +5043,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.6.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.6.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.6.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.7.Media)])</onclick>
@@ -5485,6 +5054,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.7.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.7.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.7.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS1.RSS.8.Media)])</onclick>
@@ -5495,6 +5065,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS1.RSS.8.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS1.RSS.8.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss1)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS1.RSS.8.Title))</visible>
 					</item>
     </include>
     <include name="RSS2WidgetContent1124">
@@ -5507,6 +5078,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.1.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.1.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.1.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.2.Media)])</onclick>
@@ -5517,6 +5089,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.2.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.2.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.2.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.3.Media)])</onclick>
@@ -5527,6 +5100,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.3.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.3.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.3.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.4.Media)])</onclick>
@@ -5537,6 +5111,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.4.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.4.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.4.Title))</visible>
 					</item>
                 </include>
     <include name="RSS2WidgetContent">
@@ -5549,6 +5124,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.5.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.5.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.5.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.6.Media)])</onclick>
@@ -5559,6 +5135,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.6.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.6.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.6.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.7.Media)])</onclick>
@@ -5569,6 +5146,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.7.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.7.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.7.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.8.Media)])</onclick>
@@ -5579,6 +5157,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.8.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.8.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.8.Title))</visible>
 					</item>
     </include>
     <include name="RSS2Widget2Content1124">
@@ -5591,6 +5170,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.1.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.1.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.1.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.2.Media)])</onclick>
@@ -5601,6 +5181,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.2.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.2.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.2.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.3.Media)])</onclick>
@@ -5611,6 +5192,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.3.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.3.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.3.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.4.Media)])</onclick>
@@ -5621,6 +5203,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.4.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.4.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.4.Title))</visible>
 					</item>
                 </include>
     <include name="RSS2Widget2Content">
@@ -5633,6 +5216,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.5.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.5.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.5.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.6.Media)])</onclick>
@@ -5643,6 +5227,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.6.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.6.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.6.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.7.Media)])</onclick>
@@ -5653,6 +5238,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.7.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.7.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.7.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS2.RSS.8.Media)])</onclick>
@@ -5663,6 +5249,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS2.RSS.8.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS2.RSS.8.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss2)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS2.RSS.8.Title))</visible>
 					</item>
     </include>
     <include name="RSS3WidgetContent1124">
@@ -5675,6 +5262,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.1.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.1.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.1.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.2.Media)])</onclick>
@@ -5685,6 +5273,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.2.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.2.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.2.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.3.Media)])</onclick>
@@ -5695,6 +5284,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.3.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.3.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.3.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.4.Media)])</onclick>
@@ -5705,6 +5295,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.4.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.4.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.4.Title))</visible>
 					</item>
                 </include>
     <include name="RSS3WidgetContent">
@@ -5717,6 +5308,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.5.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.5.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.5.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.6.Media)])</onclick>
@@ -5727,6 +5319,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.6.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.6.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.6.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.7.Media)])</onclick>
@@ -5737,6 +5330,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.7.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.7.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.7.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.8.Media)])</onclick>
@@ -5747,6 +5341,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.8.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.8.Media)]</property>
                         <visible>Substring(Control.GetLabel(4321),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.8.Title))</visible>
 					</item>
     </include>
     <include name="RSS3Widget2Content1124">
@@ -5759,6 +5354,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.1.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.1.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.1.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.2.Media)])</onclick>
@@ -5769,6 +5365,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.2.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.2.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.2.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.3.Media)])</onclick>
@@ -5779,6 +5376,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.3.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.3.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.3.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.4.Media)])</onclick>
@@ -5789,6 +5387,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.4.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.4.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.4.Title))</visible>
 					</item>
                 </include>
     <include name="RSS3Widget2Content">
@@ -5801,6 +5400,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.5.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.5.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.5.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.6.Media)])</onclick>
@@ -5811,6 +5411,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.6.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.6.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.6.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.7.Media)])</onclick>
@@ -5821,6 +5422,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.7.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.7.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.7.Title))</visible>
 					</item>
 					<item>
 						<onclick>XBMC.PlayMedia($INFO[Window(home).Property(RSS3.RSS.8.Media)])</onclick>
@@ -5831,6 +5433,7 @@
                         <property name="Channel">$INFO[Window(home).Property(RSS3.RSS.8.Channel)]</property>
                         <property name="Media">$INFO[Window(home).Property(RSS3.RSS.8.Media)]</property>
                         <visible>Substring(Control.GetLabel(4325),rss3)</visible>
+                        <visible>!IsEmpty(Window(home).Property(RSS3.RSS.8.Title))</visible>
 					</item>
     </include>   
     <include name="GooglePanelWidget">
@@ -6181,6 +5784,92 @@
       </control>
     </control>
   </include>
+    <include name="WundergroundWidget">
+        <control type="group">
+            <control type="group">
+                <control type="label">
+                    <posx>190</posx>
+                    <posy>68</posy>
+                    <width>200</width>
+                    <height>300</height>
+                    <align>right</align>
+                    <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                    <label>$LOCALIZE[42257][CR]$LOCALIZE[402][CR]$LOCALIZE[406][CR]$LOCALIZE[403][CR]$LOCALIZE[405][CR]$LOCALIZE[42258][CR]Pressure</label>
+                </control>
+                <control type="label">
+                    <posx>200</posx>
+                    <posy>68</posy>
+                    <width>250</width>
+                    <height>300</height>
+                    <label>$INFO[Window(weather).Property(Current.Temperature)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.FeelsLike)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Humidity)][CR]$INFO[Window(weather).Property(Current.UVIndex)][CR]$INFO[Window(weather).Property(Current.DewPoint)]$INFO[System.TemperatureUnits][CR]$INFO[Window(weather).Property(Current.Condition)][CR]$INFO[Window(weather).Property(Current.Location.Latitude)] $INFO[Window(weather).Property(Current.Pressure)]</label>
+                </control>
+                <control type="label">
+                    <posx>600</posx>
+                    <posy>68</posy>
+                    <width>200</width>
+                    <height>300</height>
+                    <align>right</align>
+                    <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                    <label>$LOCALIZE[404][CR]Visibility[CR]Sunrise[CR]Sunset[CR]Moon Phase[CR]Average Day (Low)[CR]Average Day (High)</label>
+                </control>
+                <control type="label">
+                    <posx>610</posx>
+                    <posy>68</posy>
+                    <width>250</width>
+                    <height>300</height>
+                    <label>$INFO[Window(weather).Property(Current.Wind)][CR]$INFO[Window(weather).Property(Current.Visibility)][CR]$INFO[Window(weather).Property(Today.Sunrise)][CR]$INFO[Window(weather).Property(Today.Sunset)][CR]$INFO[Window(weather).Property(Today.MoonPhase)][CR]$INFO[Window(weather).Property(Today.AvgLowTemperature)][CR]$INFO[Window(weather).Property(Today.AvgHighTemperature)]</label>
+                </control>
+                <control type="image">
+                    <posx>900</posx>
+                    <posy>22</posy>
+                    <width>400</width>
+                    <height>356</height>
+                    <aspectratio aligny="center">scale</aspectratio>
+                    <texture background="true">$INFO[Window(weather).Property(Current.Earth.Phase.Image)]</texture>
+                </control>
+
+                                <control type="multiimage">
+                                    <description>maps multiimage</description>
+                                    <posx>1020</posx>
+                                    <posy>17</posy>
+                                    <width>600</width>
+                                    <height>370</height>
+                                    <imagepath>$INFO[Window(weather).Property(MapPath)]</imagepath>
+                                    <timeperimage>500</timeperimage>
+                                    <pauseatend>1000</pauseatend>
+                                    <fadetime>0</fadetime>
+                                    <randomize>false</randomize>
+                                    <loop>yes</loop>
+                                    <aspectratio>keep</aspectratio>
+                                    <aligny>center</aligny>
+                                </control>
+                      <control type="image">
+                                <posx>1110</posx>
+                                <posy>320</posy>
+                                <width>426</width>
+                                <height>47</height>
+                                <texture>weather/whitepanel.png</texture>
+                                <aspectratio>stretch</aspectratio>
+                            </control>
+<!--                             <control type="image">
+                                <posx>1100</posx>
+                                <posy>312</posy>
+                                <width>506</width>
+                                <height>42</height>
+                                <texture>weather/key1.png</texture>
+                                <aspectratio>keep</aspectratio>
+                            </control> -->
+                            <control type="image">
+                                <posx>1070</posx>
+                                <posy>322</posy>
+                                <width>506</width>
+                                <height>42</height>
+                                <texture>weather/key2.png</texture>
+                                <aspectratio>keep</aspectratio>
+                            </control>
+            </control>
+        </control>
+    </include>
     <include name="InteractiveCasesBackground">
         <control type="group">
             <animation effect="fade" time="600">VisibleChange</animation>
