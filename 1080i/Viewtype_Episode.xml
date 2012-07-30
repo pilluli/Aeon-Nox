@@ -242,7 +242,7 @@
                         <aspectratio scalediffuse="false">scale</aspectratio>
                     </control>
 		    <control type="image">
-		      <posx>1158</posx>
+		      <posx>1208</posx>
 		      <posy>20</posy>
 		      <width>80</width>
 		      <height>80</height>
@@ -250,7 +250,7 @@
 		      <visible>SubString(ListItem.Overlay,OverlayWatched.png)</visible>
 		    </control>
 		    <control type="image">
-		      <posx>860</posx>
+		      <posx>910</posx>
 		      <posy>20</posy>
 		      <width>80</width>
 		      <height>80</height>
