@@ -5371,7 +5371,7 @@
       <align>center</align>
       <aligny>center</aligny>
       <label>[UPPERCASE]$LOCALIZE[31335][/UPPERCASE]</label>
-      <font>>Font_Bold22_Caps</font>
+      <font>Font_Bold22_Caps</font>
       <textcolor>white</textcolor>
       <shadowcolor>-</shadowcolor>
       <include>Animation_HomeWidget</include>
