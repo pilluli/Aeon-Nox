@@ -5,7 +5,7 @@
     <views>50,53,57,500,503,509,506,512,513,514</views>
     <backgroundcolor>black</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
-    <include condition="!Skin.HasSetting(firstrun3.5)">AutoConfig3.5</include>
+    
     <onload condition="System.HasAddon(script.song-to-musicvideo)">RunScript(script.song-to-musicvideo)</onload>
     <controls>
         <control type="group">
@@ -64,12 +64,12 @@
                 <visible>[!Container.OnNext + !Container.OnPrevious + Skin.HasSetting(infopaneautomusic)] | !Skin.HasSetting(infopaneautomusic)</visible>
                 <include>DelayAnimations</include>
             </control>
-            <include>Furniture_Showcase</include>
-            <include>WallPanel</include>
-            <control type="group">
-                <visible>Control.IsVisible(513) | Control.IsVisible(509)</visible>
+           <control type="group">
+                <visible>Control.IsVisible(513) | Control.IsVisible(509) | Control.IsVisible(503)</visible>
                 <include>ShowcaseInfoPaneMusic</include>
             </control>
+            <include>Furniture_Showcase</include>
+            <include>WallPanel</include>
             <control type="group">
                 <include>CommonRootView</include>
                 <!-- view id = 50 -->

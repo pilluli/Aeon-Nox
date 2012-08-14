@@ -174,7 +174,6 @@
                         <posy>-400</posy>
                         <width>500</width>
                         <height>193</height>
-                        <aspectratio>stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
                         <texture background="true" fallback="empty.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
@@ -215,7 +214,6 @@
                         <posy>-400</posy>
                         <width>500</width>
                         <height>193</height>
-                        <aspectratio>stretch</aspectratio>
                         <fadetime>400</fadetime>
                         <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
                         <texture background="true" fallback="empty.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
@@ -271,7 +269,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -295,7 +293,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -319,7 +317,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -343,7 +341,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -367,7 +365,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                 </control>
@@ -394,7 +392,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -418,7 +416,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -442,7 +440,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -466,7 +464,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -491,7 +489,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -516,7 +514,7 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            <scrollspeed>20</scrollspeed>
+                            
                         </control>
                     </control>
                 </control>

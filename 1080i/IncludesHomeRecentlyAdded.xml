@@ -456,7 +456,6 @@
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <visible>Skin.HasSetting(Glowbar_Home)</visible>
                     <include>Animation_VisibleChange400</include>
-                    <aspectratio>stretch</aspectratio>
                 </control>
                 <control type="image">
                     <posx>0</posx>
@@ -543,14 +542,13 @@
                         <align>justify</align>
                         <aligny>top</aligny>
                         <font>Font_Reg20</font>
-                        <textcolor>c0ffffff</textcolor>
+                        <textcolor>white2</textcolor>
                         <label>$INFO[Container(8000).ListItem.Property(Plot)]</label>
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
                 <control type="image">
                     <texture>thumbs/multiplex_tvmask_shadow.png</texture>
-                    <aspectratio>stretch</aspectratio>
                     <posx>-21</posx>
                     <posy>76</posy>
                     <width>523</width>
@@ -652,7 +650,6 @@
                         <posy>120</posy>
                         <width>688</width>
                         <height>150</height>
-                        
                         <textcolor>white3</textcolor>
                         <align>justify</align>
                         <aligny>top</aligny>

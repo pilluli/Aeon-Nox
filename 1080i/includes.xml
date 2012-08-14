@@ -184,6 +184,7 @@
             <height>100</height>
             <aspectratio aligny="top">scale</aspectratio>
             <texture>special://skin/extras/BigIcons/Exclamation.png</texture>
+            <colordiffuse>white</colordiffuse>
             <animation effect="fade" start="100" end="70" time="600" pulse="true" condition="true">Conditional</animation>
         </control>
     </include>
@@ -195,6 +196,7 @@
             <height>100</height>
             <aspectratio aligny="top">scale</aspectratio>
             <texture>special://skin/extras/BigIcons/Search.png</texture>
+            <colordiffuse>white</colordiffuse>
         </control>
     </include>
     <include name="Dialogs_VolumeIcon">
@@ -204,6 +206,7 @@
             <width>130</width>
             <height>130</height>
             <texture>special://skin/extras/BigIcons/Speaker.png</texture>
+            <colordiffuse>white</colordiffuse>
         </control>
     </include>
     <include name="Dialogs_Settings">
@@ -214,6 +217,7 @@
             <height>100</height>
             <aspectratio aligny="top">scale</aspectratio>
             <texture>special://skin/extras/BigIcons/Gears.png</texture>
+            <colordiffuse>white</colordiffuse>
         </control>
     </include>
     <include name="Dialogs_Progress">
@@ -233,7 +237,6 @@
         <width>564</width>
         <height>32</height>
         <textcolor>white3</textcolor>
-        
         <scroll>true</scroll>
     </include>
     <include name="Dialogs_Label1">
@@ -263,7 +266,6 @@
         <textoffsety>2</textoffsety>
         <onleft>Skin.Reset(viewtypeselect)</onleft>
         <onleft>ActivateWindow(1121)</onleft>
-        <aligny>center</aligny>
         <font>Font_Reg19</font>
         <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
@@ -303,7 +305,6 @@
         <disabledcolor>grey3</disabledcolor>
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
-        <aligny>center</aligny>
         <font>Font_Reg19</font>
         <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
@@ -322,7 +323,6 @@
         <disabledcolor>grey3</disabledcolor>
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
-        <aligny>center</aligny>
         <onleft>Dialog.Close(1126)</onleft>
         <onright>Dialog.Close(1126)</onright>
         <onright>SetFocus(50)</onright>
@@ -516,6 +516,7 @@
             <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
         </control>
         <include>BG_Effect_Settings_Panel</include>
+        <include>Furniture_SettingsLogo</include>
     </include>
     <include name="Furniture_SettingsInternalBackPanel">
         <posx>34</posx>
@@ -526,10 +527,12 @@
     </include>
     <include name="Furniture_SettingsLogo">
         <control type="image">
-            <posx>105</posx>
-            <posy>66</posy>
-            <width>270</width>
-            <height>108</height>
+            <posx>50</posx>
+            <posy>37</posy>
+            <width>360</width>
+            <height>178</height>
+            <aspectratio>keep</aspectratio>
+            <colordiffuse>white</colordiffuse>
             <texture>XBMC_Logo.png</texture>
         </control>
     </include>
@@ -644,7 +647,6 @@
         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
         <radioposx>1300</radioposx>
         <textoffsetx>70</textoffsetx>
-        <aligny>center</aligny>
     </include>
     <include name="Default_SettingRadioButtonShort">
         <posx>0</posx>
@@ -659,7 +661,6 @@
         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
         <radioposx>535</radioposx>
         <textoffsetx>30</textoffsetx>
-        <aligny>center</aligny>
     </include>
     <include name="Default_SettingButton">
         <posx>0</posx>
@@ -673,7 +674,6 @@
         <textcolor>grey2</textcolor>
         <focusedcolor>white</focusedcolor>
         <textoffsetx>70</textoffsetx>
-        <aligny>center</aligny>
     </include>
     <include name="Default_SettingButtonShort">
         <posx>0</posx>
@@ -687,7 +687,6 @@
         <textcolor>grey2</textcolor>
         <focusedcolor>white</focusedcolor>
         <textoffsetx>30</textoffsetx>
-        <aligny>center</aligny>
     </include>
     <include name="FullscreenDimensions">
         <posx>0</posx>
@@ -724,8 +723,8 @@
     <include name="NextAiredThumbVars">
         <posx>8</posx>
         <posy>8</posy>
-        <width>158</width>
-        <height>105</height>
+        <width>160</width>
+        <height>150</height>
         <aspectratio>keep</aspectratio>
         <texture background="true">$INFO[ListItem.Thumb]</texture>
         <visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),0)</visible>
@@ -754,6 +753,7 @@
         <posy>2</posy>
         <width>172</width>
         <height>164</height>
+        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
         <texture>views/tripanel/listselect_fo.png</texture>
     </include>
     <include name="Objects_CommonSettingsButton">
@@ -979,10 +979,6 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(IncludeWatchedCVPL,False)</onload>
         <onload>Skin.SetBool(firstrun)</onload>
     </include>
-    <include name="AutoConfig3.5">
-        <onload condition="!Skin.HasSetting(firstrun3.5)">SetProperty(CustomYesNoDialog,Setup3.5,home)</onload>
-        <onload condition="!Skin.HasSetting(firstrun3.5)">ActivateWindow(1137)</onload>
-    </include>
     <include name="PVR_Settings">
         <item id="21">
             <label>52502</label>
@@ -1038,7 +1034,6 @@
         <disabledcolor>grey3</disabledcolor>
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
-        <aligny>center</aligny>
         <font>Font_Reg19</font>
         <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
@@ -1212,4 +1207,59 @@
             <visible>!Skin.HasSetting(QuickNavItem9)</visible>
         </item>
     </include>
+    <include name="FileManagerPanels">
+            <control type="image">
+                <posx>105</posx>
+                <posy>110</posy>
+                <width>748</width>
+                <height>683</height>
+                <texture>wall/wall_bg_glow.png</texture>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                <include>PanelGlowFade</include>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>105</posx>
+                <posy>110</posy>
+                <width>748</width>
+                <height>683</height>
+                    <texture>wall/wall_bg.png</texture>
+            </control>
+            <control type="image">
+                <posx>105</posx>
+                <posy>112</posy>
+                <width>748</width>
+                <height>683</height>
+                <texture>wall/wall_bg_reflection.png</texture>
+            </control>
+            <control type="image">
+                <posx>675</posx>
+                <posy>149</posy>
+                <width>128</width>
+                <height>540</height>
+                <texture>views/listpanel_detailwide.png</texture>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            </control>
+    </include>
+                <include name="FileBrowserPanel">
+                <control type="image">
+                    <posx>92</posx>
+                    <posy>110</posy>
+                    <width>1132</width>
+                    <height>1056</height>
+                    <texture>wall/wall_bg_glow.png</texture>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <include>Animation_VisibleChange400</include>
+                    <include>PanelGlowFade</include>
+                </control>
+                <control type="image">
+                    <posx>92</posx>
+                    <posy>110</posy>
+                    <width>1132</width>
+                    <height>1056</height>
+                    <texture>wall/wall_bg.png</texture>
+                    <icolordiffuse>$VAR[DialogColorVar]</icolordiffuse>
+                </control>
+            </include>
 </includes>

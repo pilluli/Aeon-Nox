@@ -3,7 +3,7 @@
     <defaultcontrol always="true">9000</defaultcontrol>
     <backgroundcolor>black</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
-    <include condition="!Skin.HasSetting(firstrun3.5)">AutoConfig3.5</include>
+    
     <animation type="WindowOpen" reversible="false" condition="![Window.Previous(10004)|Window.Previous(1116)]">
         <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
         <effect type="fade" start="0" end="100" time="300" />
@@ -19,7 +19,6 @@
         <control type="group">
             <animation effect="zoom" end="91" center="960,360" time="400" tween="cubic" easing="inout" condition="true">Conditional</animation>
             <include>Furniture_SettingsBackPanel</include>
-            <include>Furniture_SettingsLogo</include>
             <control type="list" id="9000">
                 <posx>63</posx>
                 <posy>194</posy>
@@ -250,7 +249,6 @@
                     <textcolor>grey2</textcolor>
                     <focusedcolor>white</focusedcolor>
                     <textoffsetx>30</textoffsetx>
-                    <aligny>center</aligny>
                     <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search="Aeon Nox 3.5 Tutorial",return)</onclick>
                     <visible>Container(9000).Hasfocus(8)</visible>
                 </control>

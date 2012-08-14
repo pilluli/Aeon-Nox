@@ -26,7 +26,6 @@
                 <posy>70r</posy>
                 <width>500</width>
                 <height>20</height>
-                
                 <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <scroll>false</scroll>
@@ -39,7 +38,6 @@
                 <posy>32r</posy>
                 <width>500</width>
                 <height>20</height>
-                
                 <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
                 <shadowcolor>black</shadowcolor>
                 <scroll>false</scroll>
@@ -93,7 +91,7 @@
                     <control type="label" id="200">
                         <width>250</width>
                         <height>35</height>
-                        <font>font12</font>
+                        
                         <label>31006</label>
                         <textcolor>blue</textcolor>
                         <align>center</align>

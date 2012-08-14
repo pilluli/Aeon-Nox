@@ -15,7 +15,6 @@
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <width>650</width>
                     <height>815</height>
-                    <aspectratio>stretch</aspectratio>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
                 <control type="image">
@@ -23,7 +22,6 @@
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     <width>650</width>
                     <height>815</height>
-                    <aspectratio>stretch</aspectratio>
                 </control>
                 <control type="grouplist">
                     <posx>140</posx>
@@ -32,18 +30,16 @@
                     <orientation>horizontal</orientation>
                     <control type="label">
                         <width min="50" max="400">auto</width>
-                        
                         <label>$VAR[TriPanelSquareDetail1Var]</label>
                         <textcolor>$VAR[SubTitleColorVar]</textcolor>
                         <aligny>bottom</aligny>
                     </control>
                     <control type="label">
                         <width>350</width>
-                        
                         <label fallback="N/A">$VAR[TriPanelSquareValue1Var]</label>
                         <textcolor>white6</textcolor>
                         <scroll>true</scroll>
-                        <scrollspeed>20</scrollspeed>
+                        
                     </control>
                 </control>
                 <control type="grouplist">
@@ -54,18 +50,16 @@
                     <orientation>horizontal</orientation>
                     <control type="label">
                         <width min="50" max="400">auto</width>
-                        
                         <label>$VAR[TriPanelSquareDetail2Var]</label>
                         <textcolor>$VAR[SubTitleColorVar]</textcolor>
                         <aligny>bottom</aligny>
                     </control>
                     <control type="label">
                         <width>350</width>
-                        
                         <label fallback="N/A">$VAR[TriPanelSquareValue2Var]</label>
                         <textcolor>white6</textcolor>
                         <scroll>true</scroll>
-                        <scrollspeed>20</scrollspeed>
+                        
                     </control>
                 </control>
                 <control type="textbox">
@@ -170,7 +164,6 @@
                     <texture border="0,100,0,300">views/tripanel/info_panel_glow.png</texture>
                     <width>650</width>
                     <height>835</height>
-                    <aspectratio>stretch</aspectratio>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 </control>
@@ -178,7 +171,6 @@
                     <texture border="0,100,0,300">views/tripanel/info_panel.png</texture>
                     <width>650</width>
                     <height>835</height>
-                    <aspectratio>stretch</aspectratio>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
                 <!-- Runtime label -->
@@ -189,18 +181,16 @@
                     <orientation>horizontal</orientation>
                     <control type="label">
                         <width min="50" max="400">auto</width>
-                        
                         <label>$VAR[TriPanelSquareDetail1Var]</label>
                         <textcolor>$VAR[SubTitleColorVar]</textcolor>
                         <aligny>bottom</aligny>
                     </control>
                     <control type="label">
                         <width>350</width>
-                        
                         <label fallback="N/A">$VAR[TriPanelSquareValue1Var]</label>
                         <textcolor>white6</textcolor>
                         <scroll>true</scroll>
-                        <scrollspeed>20</scrollspeed>
+                        
                     </control>
                 </control>
                 <control type="grouplist">
@@ -211,18 +201,16 @@
                     <orientation>horizontal</orientation>
                     <control type="label">
                         <width min="50" max="400">auto</width>
-                        
                         <label>$VAR[TriPanelSquareDetail2Var]</label>
                         <textcolor>$VAR[SubTitleColorVar]</textcolor>
                         <aligny>bottom</aligny>
                     </control>
                     <control type="label">
                         <width>350</width>
-                        
                         <label fallback="N/A">$VAR[TriPanelSquareValue2Var]</label>
                         <textcolor>white6</textcolor>
                         <scroll>true</scroll>
-                        <scrollspeed>20</scrollspeed>
+                        
                     </control>
                 </control>
                 <control type="textbox">
@@ -241,7 +229,6 @@
                     <colordiffuse>white6</colordiffuse>
                     <width>650</width>
                     <height>835</height>
-                    <aspectratio>stretch</aspectratio>
                 </control>
             </control>
             <control type="group">
