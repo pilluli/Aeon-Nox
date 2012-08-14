@@ -59,8 +59,7 @@
                         <height>45</height>
                         <align>right</align>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <!--<label>$VAR[EpisodeTitleVar]</label>-->
-			<label>$INFO[ListItem.Label]</label>
+                        <label>$VAR[EpisodeTitleVar]</label>
                         <font>Font_Reg25</font>
                         <include>listcolornofocus</include>
                     </control>
@@ -90,14 +89,14 @@
                     <control type="label">
                         <posx>1330</posx>
                         <posy>25</posy>
-                        <width>50</width>
+                        <width>70</width>
                         <height>45</height>
                <animation type="Conditional" condition="StringCompare(ListItem.Overlay,OverlayWatched.png)">
                     <effect type="fade" end="30" time="0" easing="in" tween="cubic" />
                 </animation>
                         <align>center</align>
-                        <label>$INFO[ListItem.Episode]</label>
-                        <font>Font_MainClassic4</font>
+                        <label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]</label>
+                        <font>Font_Bold22</font>
                         <textcolor>grey</textcolor>
                         <visible>Container.Content(episodes)</visible>
                     </control>
@@ -277,15 +276,15 @@
                                         <control type="label">
                         <posx>1330</posx>
                         <posy>90</posy>
-                        <width>50</width>
+                        <width>70</width>
                         <height>45</height>
                <animation type="Conditional" condition="StringCompare(ListItem.Overlay,OverlayWatched.png)">
                     <effect type="fade" end="30" time="0" easing="in" tween="cubic" />
                       <effect type="slide" end="0,-30" time="0" easing="in" tween="cubic" />
                </animation>
                         <align>center</align>
-                        <label>$INFO[ListItem.Episode]</label>
-                        <font>Font_MainClassic4</font>
+                        <label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]</label>
+                        <font>Font_Bold22</font>
                         <textcolor>grey</textcolor>
                         <visible>Container.Content(episodes)</visible>
                     </control>
@@ -302,9 +301,9 @@
                             <scrollout>false</scrollout>
                             <pauseatend>1800</pauseatend>
                             <scrollspeed>40</scrollspeed>
-                            <label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]. [UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+                            <label>$VAR[EpisodeTitleVar]</label>
                             <textcolor>$VAR[TitleColorVar]</textcolor>
-                            <font>Font_Reg25</font>
+                            <font>Font_Reg25_Caps</font>
                             <include>listcolornofocus</include>
                             <visible>!IsEmpty(ListItem.Title)</visible>
                         </control>
