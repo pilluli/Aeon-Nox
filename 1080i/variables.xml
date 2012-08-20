@@ -82,39 +82,6 @@
         <value condition="Window.IsActive(600) + !IsEmpty(Skin.String(diffuse_PVR))">$INFO[Skin.String(diffuse_PVR)]</value>
         <value>FF6db9e5</value>
     </variable>
-    <variable name="ColorDiffuseVar">
-        <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
-        <value>$VAR[AreaColorVar]</value>
-    </variable>
-    <variable name="DialogColorVar">
-        <value condition="Skin.HasTheme(White)">FFFFFFFF</value>
-        <value condition="![Window.IsActive(home) | Window.IsActive(startup) | Window.IsActive(1124)] + Skin.HasSetting(colordialogs)">$VAR[ColorDiffuseVar]</value>
-        <value condition="[Window.IsActive(home) | Window.IsActive(startup) | Window.IsActive(1124)] + Skin.HasSetting(colordialogshome)">$VAR[ColorDiffuseVar]</value>
-        <value>FFFFFFFF</value>
-    </variable>
-    <variable name="ExtendedColorDiffuseVar">
-        <value condition="Skin.HasTheme(White)">FFFFFFFF</value>
-        <value condition="!Skin.HasSetting(randomcolor) + ![Skin.HasSetting(DisableGlowbar) + !Skin.HasSetting(ExtendedGlowMode)]">$VAR[AreaColorVar]</value>
-        <value condition="Skin.HasSetting(randomcolor) + ![Skin.HasSetting(DisableGlowbar) + !Skin.HasSetting(ExtendedGlowMode)]">$VAR[DayTimeColorVar]</value>
-        <value condition="Skin.HasTheme(Lite_Floor)">FFFFFFFF</value>
-        <value>black</value>
-    </variable>
-    <variable name="HomeMenuTextFocusVar">
-        <value condition="Skin.HasSetting(colortexthome)">$VAR[FontColorVar]</value>
-        <value>white</value>
-    </variable>
-    <variable name="HomeMenuWidgetTextVar">
-        <value condition="Skin.HasSetting(colortexthome)">$VAR[FontColorVar]</value>
-        <value>white2</value>
-    </variable>
-    <variable name="RSSLabelColorVar">
-        <value condition="Skin.HasSetting(alternativerss)">white</value>
-        <value>black</value>
-    </variable>
-    <variable name="SpotColorVar2">
-        <value condition="Skin.HasTheme(White)">FFAAAAAA</value>
-        <value>$VAR[SpotColorVar]</value>
-    </variable>
     <variable name="FontColorVar">
         <value condition="[Window.IsActive(1128) | Window.IsActive(1138)] + !IsEmpty(Skin.String(font_color))">$INFO[Skin.String(font_color)]</value>
         <value condition="[Window.IsActive(fullscreeninfo) | Window.IsActive(fullscreenvideo) | Window.IsActive(videoosd) | Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml) | Window.IsActive(osdvideosettings) | Window.IsActive(osdaudiosettings)| Window.IsActive(videobookmarks)] + !IsEmpty(Skin.String(font_videolibrary))">$INFO[Skin.String(font_videolibrary)]</value>
@@ -126,16 +93,10 @@
         <value condition="Window.IsActive(musicplaylist) + !IsEmpty(Skin.String(font_musicplaylist))">$INFO[Skin.String(font_musicplaylist)]</value>
         <value condition="Window.IsActive(videoplaylist) + !IsEmpty(Skin.String(font_videoplaylist))">$INFO[Skin.String(font_videoplaylist)]</value>
         <value condition="Window.IsActive(weather) + !IsEmpty(Skin.String(font_weather))">$INFO[Skin.String(font_weather)]</value>
-        <value condition="[Window.IsActive(1115) | Window.IsActive(script-globalsearch-main.xml)] + !IsEmpty(Skin.String(font_featured))">$INFO[Skin.String(font_featured)]</value>
+        <value condition="[Window.IsActive(1115) | Window.IsActive(script-globalsearch-main.xml) | Window.IsActive(script-globalsearch-infodialog.xml)] + !IsEmpty(Skin.String(font_featured))">$INFO[Skin.String(font_featured)]</value>
         <value condition="[Window.IsActive(1111) | Window.IsActive(settings) | Window.IsActive(systeminfo) | Window.IsActive(picturessettings) | Window.IsActive(programssettings) | Window.IsActive(weathersettings) | Window.IsActive(musicsettings) | Window.IsActive(systemsettings) | Window.IsActive(videossettings) | Window.IsActive(networksettings) | Window.IsActive(appearancesettings) | Window.IsActive(profiles) | Window.IsActive(filemanager) | Window.IsActive(10020)] + !IsEmpty(Skin.String(font_settings))">$INFO[Skin.String(font_settings)]</value>
         <value condition="Window.IsActive(600) + !IsEmpty(Skin.String(font_PVR))">$INFO[Skin.String(font_PVR)]</value>
         <value>white2</value>
-    </variable>
-    <!--    <variable name="FontColorVar">
-        <value>$VAR[SpotColorVar]</value>
-    </variable> -->
-    <variable name="FocusTextureColorVar">
-        <value>$VAR[SpotColorVar]</value>
     </variable>
     <variable name="SpotColorVar">
         <!--          <value condition="Skin.HasTheme(Lite_Floor)">FFFFFFFF</value>
@@ -157,19 +118,51 @@
         <value condition="Window.IsActive(600) + StringCompare(Skin.String(diffuse_PVR),FFFFFFFF)">diffuse_white</value>
         <value>$VAR[AreaColorVar]</value>
     </variable>
+    <variable name="SpotColorVar2">
+        <value condition="Skin.HasTheme(White)">FFAAAAAA</value>
+        <value>$VAR[SpotColorVar]</value>
+    </variable>
+    <variable name="ColorDiffuseVar">
+        <value condition="Skin.HasSetting(randomcolor)">$VAR[DayTimeColorVar]</value>
+        <value>$VAR[AreaColorVar]</value>
+    </variable>
+    <variable name="DialogColorVar">
+        <value condition="Skin.HasTheme(White)">FFFFFFFF</value>
+        <value condition="Skin.HasSetting(colordialogs)">$VAR[ColorDiffuseVar]</value>
+        <value>FFFFFFFF</value>
+    </variable>
+    <variable name="ExtendedColorDiffuseVar">
+        <value condition="Skin.HasTheme(White)">FFFFFFFF</value>
+        <value condition="!Skin.HasSetting(randomcolor) + ![Skin.HasSetting(DisableGlowbar) + !Skin.HasSetting(ExtendedGlowMode)]">$VAR[AreaColorVar]</value>
+        <value condition="Skin.HasSetting(randomcolor) + ![Skin.HasSetting(DisableGlowbar) + !Skin.HasSetting(ExtendedGlowMode)]">$VAR[DayTimeColorVar]</value>
+        <value condition="Skin.HasTheme(Lite_Floor)">FFFFFFFF</value>
+        <value>black</value>
+    </variable>
+    <variable name="HomeMenuTextFocusVar">
+        <value condition="Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
+        <value>white</value>
+    </variable>
+    <variable name="HomeMenuWidgetTextVar">
+        <value condition="Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
+        <value>white2</value>
+    </variable>
+    <variable name="RSSLabelColorVar">
+        <value condition="Skin.HasSetting(alternativerss)">white</value>
+        <value>black</value>
+    </variable>
+    <variable name="FocusTextureColorVar">
+        <value>$VAR[SpotColorVar]</value>
+    </variable>
     <variable name="TitleColorVar">
-        <value condition="![Window.IsActive(home) | Window.IsActive(1124)] + Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
-        <value condition="[Window.IsActive(home) | Window.IsActive(1124)] + Skin.HasSetting(colortexthome)">$VAR[FontColorVar]</value>
+        <value condition="Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
         <value>white6</value>
     </variable>
-    <variable name="SubTitleColorVar">
-        <value condition="![Window.IsActive(home) | Window.IsActive(1124)] + Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
-        <value condition="[Window.IsActive(home) | Window.IsActive(1124)] + Skin.HasSetting(colortexthome)">$VAR[FontColorVar]</value>
+   <variable name="SubTitleColorVar">
+        <value condition="Skin.HasSetting(colortext)">$VAR[FontColorVar]</value>
         <value>grey</value>
     </variable>
     <variable name="ExtendedColorVar">
-        <value condition="[Window.IsActive(home) | Window.IsActive(1124)] + [Skin.HasSetting(Glowbar_Home) | Skin.HasSetting(ExtendedGlowMode_Home)]">$VAR[ColorDiffuseVar]</value>
-        <value condition="![Window.IsActive(home) | Window.IsActive(1124)] + Skin.HasSetting(ExtendedGlowMode)">$VAR[ColorDiffuseVar]</value>
+        <value condition="Skin.HasSetting(ExtendedGlowMode)">$VAR[ColorDiffuseVar]</value>
         <value>FFFFFFFF</value>
     </variable>
     <variable name="QuickNavButtonLabelVar">
@@ -181,18 +174,6 @@
         <value condition="!Skin.HasSetting(DisableGlowbar) + !Skin.HasSetting(ExtendedGlowMode)">$LOCALIZE[630]</value>
         <value condition="Skin.HasSetting(DisableGlowbar) + Skin.HasSetting(ExtendedGlowMode)">$LOCALIZE[31085]</value>
         <value>$LOCALIZE[106]</value>
-    </variable>
-    <variable name="GlowModeHomeLabelVar">
-        <value condition="Skin.HasSetting(Glowbar_Home) + Skin.HasSetting(ExtendedGlowMode_Home)">$LOCALIZE[31082]</value>
-        <value condition="Skin.HasSetting(Glowbar_Home) + !Skin.HasSetting(ExtendedGlowMode_Home)">$LOCALIZE[630]</value>
-        <value condition="!Skin.HasSetting(Glowbar_Home) + Skin.HasSetting(ExtendedGlowMode_Home)">$LOCALIZE[31085]</value>
-        <value>$LOCALIZE[106]</value>
-    </variable>
-    <variable name="ExtraColorHomeLabelVar">
-        <value condition="Skin.HasSetting(colortexthome) + !Skin.HasSetting(colordialogshome)">$LOCALIZE[31083]</value>
-        <value condition="Skin.HasSetting(colortexthome) + Skin.HasSetting(colordialogshome)">$LOCALIZE[31083] &amp; $LOCALIZE[31084]</value>
-        <value condition="!Skin.HasSetting(colortexthome) + Skin.HasSetting(colordialogshome)">$LOCALIZE[31084]</value>
-        <value>$LOCALIZE[31032]</value>
     </variable>
     <variable name="ExtraColorLabelVar">
         <value condition="Skin.HasSetting(colortext) + !Skin.HasSetting(colordialogs)">$LOCALIZE[31083]</value>
@@ -339,7 +320,7 @@
     <variable name="InfoWallPreviewTextureVar">
         <value condition="System.HasAddon(script.metadata.actors) + [Container.Content(actors) | Container.Content(directors)]">$INFO[Window.Property(current.actor.fanart_image)]</value>
         <value condition="[Window.IsActive(musicfiles) | Window.IsActive(musiclibrary) | Window.IsActive(musicplaylist)] + IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/music/music.jpg</value>
-        <value condition="Container.Content(addons) + IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/addons/addons.jpg</value>
+        <value condition="Container.Content(addons) + IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/search/search.jpg</value>
         <value condition="Container.Content(movies) + IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/fallback_movies.jpg</value>
         <value condition="[Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + IsEmpty(Listitem.Property(Fanart_Image))">special://skin/backgrounds/fallback_tvshows.jpg</value>
         <value condition="[Window.IsActive(pictures) + Skin.HasSetting(pictures)] + IsEmpty(Listitem.Thumb)">special://skin/backgrounds/pictures/pictures.jpg</value>
@@ -396,7 +377,7 @@
         <value condition="Container.Content(movies)">special://skin/backgrounds/fallback_movies.jpg</value>
         <value condition="Container.Content(Seasons) | Container.Content(TVShows) | Container.Content(Episodes)">special://skin/backgrounds/fallback_tvshows.jpg</value>
         <value condition="Container.Content(MusicVideos) | Container.Content(Artists) | Container.Content(Albums)">special://skin/backgrounds/music/</value>
-        <value condition="Container.Content(addons)">special://skin/backgrounds/addons/</value>
+        <value condition="Container.Content(addons)">special://skin/backgrounds/search/</value>
         <value>special://skin/backgrounds/videos/</value>
     </variable>
     <variable name="NowPlayingBackGroundVar">
@@ -597,7 +578,6 @@
         <value>$LOCALIZE[31083]</value>
     </variable>
     <variable name="Window1137Label1Var">
-        <value condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Setup3.5)">$LOCALIZE[42276]</value>
         <value condition="Window.IsActive(1124)">$LOCALIZE[31063]</value>
         <value>$LOCALIZE[31062]?</value>
     </variable>
@@ -748,6 +728,9 @@
         <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredtv)">$LOCALIZE[42273]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmovies)">$LOCALIZE[42272]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget),wunderground)">Weather Wunderground</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),google)">$LOCALIZE[42221]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),pda)">$LOCALIZE[31642]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget),weather)">$LOCALIZE[31071]</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="Widget2TypeLabelVar">
@@ -806,10 +789,13 @@
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss1)">$INFO[Skin.String(CustomHomeFeedTitle1)]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss2)">$INFO[Skin.String(CustomHomeFeedTitle2)]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Widget2),rss3)">$INFO[Skin.String(CustomHomeFeedTitle3)]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmusic)">$LOCALIZE[42274]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredtv)">$LOCALIZE[42273]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),featuredmovies)">$LOCALIZE[42272]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Widget),wunderground)">Weather Wunderground</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),featuredmusic)">$LOCALIZE[42274]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),featuredtv)">$LOCALIZE[42273]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),featuredmovies)">$LOCALIZE[42272]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),wunderground)">Weather Wunderground</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),google)">$LOCALIZE[42221]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),pda)">$LOCALIZE[31642]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Widget2),weather)">$LOCALIZE[31071]</value>
         <value>$LOCALIZE[16018]</value>
     </variable>
     <variable name="PanelWidgetLabel1Var">
@@ -833,9 +819,9 @@
         <value>floor</value>
     </variable>
     <variable name="MusicOSDRepeatButtonVar">
-        <value condition="!Playlist.IsRepeat + !Playlist.IsRepeatOne + !Control.HasFocus(704)">special://skin/extras/BigIcons/ButtonRepeatOff.png</value>
-        <value condition="Playlist.IsRepeatOne + !Control.HasFocus(704)">special://skin/extras/BigIcons/ButtonRepeatOne.png</value>
-        <value condition="Playlist.IsRepeat + !Control.HasFocus(704)">special://skin/extras/BigIcons/ButtonReload.png</value>
+        <value condition="!Playlist.IsRepeat + !Playlist.IsRepeatOne">special://skin/extras/BigIcons/ButtonRepeatOff.png</value>
+        <value condition="Playlist.IsRepeatOne">special://skin/extras/BigIcons/ButtonRepeatOne.png</value>
+        <value condition="Playlist.IsRepeat">special://skin/extras/BigIcons/ButtonReload.png</value>
     </variable>
     <variable name="MusicOSDRepeatButtonVar2">
         <value condition="[!Playlist.IsRepeat + !Playlist.IsRepeatOne] + Control.HasFocus(704)">special://skin/extras/BigIcons/ButtonRepeatOff.png</value>
@@ -864,6 +850,11 @@
     <variable name="SortImageVar">
         <value condition="!Substring(Control.GetLabel(4),$LOCALIZE[585])">special://skin/extras/BigIcons/Arrowup.png</value>
         <value>special://skin/extras/BigIcons/Arrowdown.png</value>
+    </variable>
+   <variable name="RepeatImageVar">
+        <value condition="Substring(Control.GetLabel(26),$LOCALIZE[595])">special://skin/extras/BigIcons/ButtonRepeatOff.png</value>
+        <value condition="Substring(Control.GetLabel(26),$LOCALIZE[596])">special://skin/extras/BigIcons/ButtonRepeatOne.png</value>
+        <value>special://skin/extras/BigIcons/ButtonReload.png</value>
     </variable>
     <variable name="MultiFanartVar">
         <value condition="Window.IsActive(1124) + [Window.IsActive(1122) | Window.IsActive(1123) | Window.IsActive(1136)]">$INFO[Skin.String(ItemToEdit.MultiFanart)]</value>
@@ -901,11 +892,11 @@
         <value>-</value>
     </variable>
     <variable name="WidgetBackVar">
-        <value condition="Skin.HasSetting(glasshome) + Skin.HasSetting(Glowbar_Home)">keyboard/keyboard_back_classic.png</value>
+        <value condition="Skin.HasSetting(glasshome) + !Skin.HasSetting(DisableGlowbar)">keyboard/keyboard_back_classic.png</value>
         <value>keyboard/keyboard_back.png</value>
     </variable>
     <variable name="WeatherWidgetBackVar">
-        <value condition="Skin.HasSetting(glasshome) + Skin.HasSetting(Glowbar_Home)">keyboard/numeric_back_classic.png</value>
+        <value condition="Skin.HasSetting(glasshome) + !Skin.HasSetting(DisableGlowbar)">keyboard/numeric_back_classic.png</value>
         <value>keyboard/numeric_back.png</value>
     </variable>
     <variable name="PosterWidgetDurationVar">
@@ -1533,6 +1524,11 @@
         <value condition="Skin.HasSetting(artistslideshowhome)">$LOCALIZE[24000]</value>
         <value>$LOCALIZE[106]</value>
     </variable>
+     <variable name="HomeFSImageVar">
+        <value condition="Control.HasFocus(22222)">$INFO[Container(5010).ListItem.Thumb]</value>
+        <value condition="Control.HasFocus(22223)">$INFO[Container(6010).ListItem.Thumb]</value>
+        <value>-</value>
+    </variable>
     <variable name="AddonWallCasesLabelVar">
         <value condition="Skin.HasSetting(useclearcasesinfowall)">$LOCALIZE[31282]</value>
         <value condition="Skin.HasSetting(usecasesinfowall)">$LOCALIZE[31248]</value>
@@ -1578,12 +1574,14 @@
         <value condition="!IsEmpty(MusicPlayer.Property(Album_Description))">$INFO[MusicPlayer.Property(Album_Description),$LOCALIZE[24016]:  [COLOR white6],[/COLOR][CR]]</value>
     </variable>
     <variable name="InfoPanelToggleLabelVar">
+        <value condition="[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(infopaneofftv)">$LOCALIZE[106]</value>
         <value condition="[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(showcaseinfoontv) + Skin.HasSetting(infopaneautotv)">$LOCALIZE[31194]</value>
         <value condition="[Container.Content(tvshows) | Container.Content(seasons)] + Skin.HasSetting(showcaseinfoontv) + !Skin.HasSetting(infopaneautotv)">$LOCALIZE[31429]</value>
         <value condition="Container.Content(episodes) + Skin.HasSetting(showcaseinfoonep) + Skin.HasSetting(infopaneautoep)">$LOCALIZE[31194]</value>
         <value condition="Container.Content(episodes) + Skin.HasSetting(showcaseinfoonep) + !Skin.HasSetting(infopaneautoep)">$LOCALIZE[31429]</value>
         <value condition="[Container.Content(tvshows) + !Stringcompare(Skin.String(actualViewtype),banners)] | Container.Content(seasons) | Container.Content(episodes)">$LOCALIZE[413]</value>
         <value condition="[Container.Content(tvshows) + Stringcompare(Skin.String(actualViewtype),banners)]">$LOCALIZE[474]</value>
+        <value condition="[Container.Content(movies) | Container.Content(musicvideos)] + Skin.HasSetting(infopaneoff)">$LOCALIZE[106]</value>
         <value condition="[Container.Content(movies) | Container.Content(musicvideos)] + Skin.HasSetting(showcaseinfoon) + Skin.HasSetting(infopaneauto)">$LOCALIZE[31194]</value>
         <value condition="[Container.Content(movies) | Container.Content(musicvideos)] + Skin.HasSetting(showcaseinfoon) + !Skin.HasSetting(infopaneauto)">$LOCALIZE[31429]</value>
         <value condition="Window.IsActive(musiclibrary) + Skin.HasSetting(infopanelmusic) + Skin.HasSetting(infopaneautomusic)">$LOCALIZE[31194]</value>
@@ -1743,19 +1741,19 @@
         <value>$INFO[ListItem.Path,,cdart.png]</value>
     </variable>
     <variable name="ContextBottomVar">
-        <value condition="[Skin.HasSetting(Glowbar_Home) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">dialogs/context_bottom_glow.png</value>
+        <value condition="[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">dialogs/context_bottom_glow.png</value>
         <value>dialogs/context_bottom.png</value>
     </variable>
     <variable name="ContextTopVar">
-        <value condition="[Skin.HasSetting(Glowbar_Home) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">dialogs/context_top_glow.png</value>
+        <value condition="[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">dialogs/context_top_glow.png</value>
         <value>dialogs/context_top.png</value>
     </variable>
     <variable name="ContextMiddleVar">
-        <value condition="[Skin.HasSetting(Glowbar_Home) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">dialogs/context_middle_glow.png</value>
+        <value condition="[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">dialogs/context_middle_glow.png</value>
         <value>dialogs/context_middle.png</value>
     </variable>
     <variable name="ShutdownTopVar">
-        <value condition="[Skin.HasSetting(Glowbar_Home) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">dialogs/context_top_shutdown_glow.png</value>
+        <value condition="[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">dialogs/context_top_shutdown_glow.png</value>
         <value>dialogs/context_top_shutdown.png</value>
     </variable>
     <variable name="FakeListRCB">

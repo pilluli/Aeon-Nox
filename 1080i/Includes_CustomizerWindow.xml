@@ -25,7 +25,7 @@
                     <animation effect="fade" start="100" end="80" time="2500" pulse="true" condition="true">conditional</animation>
                     <texture border="50">featured/panel_featured_shadow.png</texture>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>Animation_VisibleChange400</include>
                 </control>
                 <control type="image">
@@ -336,7 +336,7 @@
                                 <posy>30</posy>
                                 <width>390</width>
                                 <height>40</height>
-                                <font>font12</font>
+                                
                                 <aligny>center</aligny>
                                 <font>Font_Reg15</font>
                                 <info>ListItem.Label2</info>
@@ -348,7 +348,7 @@
                                 <posy>60</posy>
                                 <width>390</width>
                                 <height>40</height>
-                                <font>font12</font>
+                                
                                 <aligny>center</aligny>
                                 <font>Font_Reg15</font>
                                 <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
@@ -379,7 +379,7 @@
                                 <posy>30</posy>
                                 <width>390</width>
                                 <height>40</height>
-                                <font>font12</font>
+                                
                                 <aligny>center</aligny>
                                 <font>Font_Reg15</font>
                                 <info>ListItem.Label2</info>
@@ -391,7 +391,7 @@
                                 <posy>60</posy>
                                 <width>390</width>
                                 <height>40</height>
-                                <font>font12</font>
+                                
                                 <aligny>center</aligny>
                                 <font>Font_Reg15</font>
                                 <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
@@ -1046,7 +1046,7 @@
                     <animation effect="fade" start="100" end="80" time="2500" pulse="true" condition="true">conditional</animation>
                     <texture border="50">featured/panel_featured_shadow.png</texture>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>Animation_VisibleChange400</include>
                 </control>
                 <control type="image">
@@ -1357,7 +1357,7 @@
                                 <posy>30</posy>
                                 <width>390</width>
                                 <height>40</height>
-                                <font>font12</font>
+                                
                                 <aligny>center</aligny>
                                 <font>Font_Reg15</font>
                                 <info>ListItem.Label2</info>
@@ -1369,7 +1369,7 @@
                                 <posy>60</posy>
                                 <width>390</width>
                                 <height>40</height>
-                                <font>font12</font>
+                                
                                 <aligny>center</aligny>
                                 <font>Font_Reg15</font>
                                 <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
@@ -1400,7 +1400,7 @@
                                 <posy>30</posy>
                                 <width>390</width>
                                 <height>40</height>
-                                <font>font12</font>
+                                
                                 <aligny>center</aligny>
                                 <font>Font_Reg15</font>
                                 <info>ListItem.Label2</info>
@@ -1412,7 +1412,7 @@
                                 <posy>60</posy>
                                 <width>390</width>
                                 <height>40</height>
-                                <font>font12</font>
+                                
                                 <aligny>center</aligny>
                                 <font>Font_Reg15</font>
                                 <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
@@ -2069,7 +2069,7 @@
                     <height>370</height>
                     <texture border="50">keyboard/keyboard_back_shadow.png</texture>
                     <include>PanelGlowFade</include>
-                    <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>Animation_VisibleChange400</include>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 </control>
@@ -2803,7 +2803,7 @@
                     <height>370</height>
                     <texture border="50">keyboard/keyboard_back_shadow.png</texture>
                     <include>PanelGlowFade</include>
-                    <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                     <include>Animation_VisibleChange400</include>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 </control>

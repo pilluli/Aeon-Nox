@@ -1,9 +1,26 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="1137" type="dialog">
     <defaultcontrol>11</defaultcontrol>
+                 <onload condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem1) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupCustomHomeItem1)]</onload>
+                            <onload condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem2) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupCustomHomeItem2)]</onload>
+                            <onload condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem3) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupCustomHomeItem3)]</onload>
+                            <onload condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem4) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupCustomHomeItem4)]</onload>
+                            <onload condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem5) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupCustomHomeItem5)]</onload>
+                            <onload condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem6) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupCustomHomeItem6)]</onload>
+                            <onload condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem7) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupCustomHomeItem7)]</onload>
+                            <onload condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem8) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupCustomHomeItem8)]</onload>
+                            <onload condition="!Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem9) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupCustomHomeItem9)]</onload>
+                            <onload condition="Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem1) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupSecondCustomHomeItem1)]</onload>
+                            <onload condition="Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem2) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupSecondCustomHomeItem2)]</onload>
+                            <onload condition="Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem3) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupSecondCustomHomeItem3)]</onload>
+                            <onload condition="Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem4) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupSecondCustomHomeItem4)]</onload>
+                            <onload condition="Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem5) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupSecondCustomHomeItem5)]</onload>
+                            <onload condition="Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem6) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupSecondCustomHomeItem6)]</onload>
+                            <onload condition="Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem7) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupSecondCustomHomeItem7)]</onload>
+                            <onload condition="Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem8) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupSecondCustomHomeItem8)]</onload>
+                            <onload condition="Skin.HasSetting(widget2) + Stringcompare(Skin.String(MenuItem),CustomHomeItem9) + [Stringcompare(Skin.String(ItemToEdit.Type),4) | Stringcompare(Skin.String(ItemToEdit.Type),5)]">$INFO[Skin.String(StartupSecondCustomHomeItem9)]</onload>
     <onunload>ClearProperty(CustomYesNoDialog,home)</onunload>
     <onunload>ClearProperty(CustomYesNoDialog,1124)</onunload>
-    <onload>Skin.SetBool(firstrun3.5)</onload>
     <onload>Dialog.Close(1133)</onload>
     <zorder>4</zorder>
     <coordinates>
@@ -20,7 +37,7 @@
             <texture>common/white.png</texture>
             <animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
-            <visible>Substring(Window(home).Property(CustomYesNoDialog),Icon) | StringCompare(Window(home).Property(CustomYesNoDialog),Setup3.5)</visible>
+            <visible>Substring(Window(home).Property(CustomYesNoDialog),Icon)</visible>
         </control>
         <control type="group">
             <animation effect="slide" start="0,0" end="0,-338" time="0" condition="Window.IsActive(1124)">Conditional</animation>
@@ -42,7 +59,7 @@
                     <height>330</height>
                     <texture>dialogs/dialog_back_shadow.png</texture>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>[Skin.HasSetting(Glowbar_Home) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]</visible>
+                    <visible>[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]</visible>
                     <include>PanelGlowFade</include>
                     <include>Animation_VisibleChange400</include>
                 </control>
@@ -53,20 +70,6 @@
                     <height>60</height>
                     <texture>osd/osd_settings_buttonnf.png</texture>
                 </control>
-                <control type="label">
-                    <posx>0</posx>
-                    <posy>0</posy>
-                    <width>780</width>
-                    <height>78</height>
-                    <textcolor>$VAR[FontColorVar]</textcolor>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    
-                    <scroll>true</scroll>
-                    <label>42017</label>
-                    <textoffsetx>45</textoffsetx>
-                    <visible>StringCompare(Window(home).Property(CustomYesNoDialog),Setup3.5)</visible>
-                </control>
                 <control type="label" id="4">
                     <posx>0</posx>
                     <posy>88</posy>
@@ -75,7 +78,6 @@
                     <textcolor>white3</textcolor>
                     <align>center</align>
                     <label>$VAR[Window1137Label1Var]</label>
-                    
                     <scroll>true</scroll>
                     <textoffsetx>45</textoffsetx>
                 </control>
@@ -84,7 +86,6 @@
                     <posy>258</posy>
                     <width>175</width>
                     <height>45</height>
-                    
                     <label>$VAR[Window1137RightButtonLabelVar]</label>
                     <textcolor>grey2</textcolor>
                     <focusedcolor>white3</focusedcolor>
@@ -105,6 +106,8 @@
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom)">Skin.SetString(ItemToEdit.Widget,recentalbumscustompanel)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom)">Skin.SetString(ItemToEdit.Widget,recentmoviescustompanel)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom)">Skin.SetString(ItemToEdit.Widget,randommoviescustompanel)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom)">Skin.SetString(ItemToEdit.Widget,inprogressmoviescustompanel)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom)">Skin.SetString(ItemToEdit.Widget,watchlisttvcustompanel)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom)">Skin.SetString(ItemToEdit.Widget,recenttvcustompanel)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom)">Skin.SetString(ItemToEdit.Widget,randomtvcustompanel)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons)">Skin.SetString(ItemToEdit.Widget,randomaddonspanel)</onfocus>
@@ -132,6 +135,8 @@
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom2)">Skin.SetString(ItemToEdit.Widget2,recentalbumscustompanel)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom2)">Skin.SetString(ItemToEdit.Widget2,recentmoviescustompanel)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom2)">Skin.SetString(ItemToEdit.Widget2,randommoviescustompanel)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom2)">Skin.SetString(ItemToEdit.Widget2,inprogressmoviescustompanel)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom2)">Skin.SetString(ItemToEdit.Widget2,watchlisttvcustompanel)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom2)">Skin.SetString(ItemToEdit.Widget2,recenttvcustompanel)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom2)">Skin.SetString(ItemToEdit.Widget2,randomtvcustompanel)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons2)">Skin.SetString(ItemToEdit.Widget2,randomaddonspanel)</onfocus>
@@ -172,7 +177,6 @@
                     <posy>258</posy>
                     <width>175</width>
                     <height>45</height>
-                    
                     <label>$VAR[Window1137LeftButtonLabelVar]</label>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <textcolor>grey2</textcolor>
@@ -182,7 +186,6 @@
                     <textoffsetx>30</textoffsetx>
                     <textoffsety />
                     <onclick>Dialog.Close(1137)</onclick>
-                    <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Setup3.5)">ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search="Aeon Nox 3.5 Tutorial",return)</onclick>
                     <!-- iconpanel -->
                     <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon1)">Skin.Reset(IconPanelItem1.Label)</onclick>
                     <onclick condition="Stringcompare(Window(Home).Property(CustomYesNoDialog),Icon1)">Skin.Reset(IconPanelItem1.Icon)</onclick>
@@ -240,6 +243,8 @@
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom)">Skin.SetString(ItemToEdit.Widget,recentalbumscustom)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom)">Skin.SetString(ItemToEdit.Widget,recentmoviescustom)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom)">Skin.SetString(ItemToEdit.Widget,randommoviescustom)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom)">Skin.SetString(ItemToEdit.Widget,inprogressmoviescustom)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom)">Skin.SetString(ItemToEdit.Widget,watchlisttvcustom)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom)">Skin.SetString(ItemToEdit.Widget,recenttvcustom)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom)">Skin.SetString(ItemToEdit.Widget,randomtvcustom)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons)">Skin.SetString(ItemToEdit.Widget,randomaddons)</onfocus>
@@ -267,6 +272,8 @@
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom2)">Skin.SetString(ItemToEdit.Widget2,recentalbumscustom)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom2)">Skin.SetString(ItemToEdit.Widget2,recentmoviescustom)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom2)">Skin.SetString(ItemToEdit.Widget2,randommoviescustom)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom2)">Skin.SetString(ItemToEdit.Widget2,inprogressmoviescustom)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom2)">Skin.SetString(ItemToEdit.Widget2,watchlisttvcustom)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom2)">Skin.SetString(ItemToEdit.Widget2,recenttvcustom)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom2)">Skin.SetString(ItemToEdit.Widget2,randomtvcustom)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons2)">Skin.SetString(ItemToEdit.Widget2,randomaddons)</onfocus>
@@ -302,7 +309,6 @@
                     <posy>258</posy>
                     <width>175</width>
                     <height>45</height>
-                    
                     <label>31065</label>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <textcolor>grey2</textcolor>
@@ -311,7 +317,7 @@
                     <align>center</align>
                     <textoffsetx>30</textoffsetx>
                     <textoffsety />
-                    <visible>!Substring(Window(Home).Property(CustomYesNoDialog),Icon) + !Substring(Window(Home).Property(CustomYesNoDialog),Setup3.5)</visible>
+                    <visible>!Substring(Window(Home).Property(CustomYesNoDialog),Icon)</visible>
                     <!-- widget style -->
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmovies)">Skin.SetString(ItemToEdit.Widget,recentmoviespanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommovies)">Skin.SetString(ItemToEdit.Widget,randommoviespanel2)</onfocus>
@@ -328,6 +334,8 @@
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom)">Skin.SetString(ItemToEdit.Widget,recentalbumscustompanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom)">Skin.SetString(ItemToEdit.Widget,recentmoviescustompanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom)">Skin.SetString(ItemToEdit.Widget,randommoviescustompanel2)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom)">Skin.SetString(ItemToEdit.Widget,inprogressmoviescustompanel2)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom)">Skin.SetString(ItemToEdit.Widget,watchlisttvcustompanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom)">Skin.SetString(ItemToEdit.Widget,recenttvcustompanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom)">Skin.SetString(ItemToEdit.Widget,randomtvcustompanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons)">Skin.SetString(ItemToEdit.Widget,randomaddonspanel2)</onfocus>
@@ -355,6 +363,8 @@
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentalbumscustom2)">Skin.SetString(ItemToEdit.Widget2,recentalbumscustompanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recentmoviescustom2)">Skin.SetString(ItemToEdit.Widget2,recentmoviescustompanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randommoviescustom2)">Skin.SetString(ItemToEdit.Widget2,randommoviescustompanel2)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),inprogressmoviescustom2)">Skin.SetString(ItemToEdit.Widget2,inprogressmoviescustompanel2)</onfocus>
+                    <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),watchlisttvcustom2)">Skin.SetString(ItemToEdit.Widget2,watchlisttvcustompanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),recenttvcustom2)">Skin.SetString(ItemToEdit.Widget2,recenttvcustompanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomtvcustom2)">Skin.SetString(ItemToEdit.Widget2,randomtvcustompanel2)</onfocus>
                     <onfocus condition="Stringcompare(Window(1124).Property(CustomYesNoDialog),randomaddons2)">Skin.SetString(ItemToEdit.Widget2,randomaddonspanel2)</onfocus>

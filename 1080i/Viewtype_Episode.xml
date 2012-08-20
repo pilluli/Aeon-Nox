@@ -11,8 +11,9 @@
             </control>
             <control type="image">
                 <include>FullscreenDimensions</include>
-                <texture>common/fanartoverlay.png</texture>
-                <colordiffuse>eeffffff</colordiffuse>
+                <texture>common/white.png</texture>
+                <animation effect="fade" start="100" end="80" time="50" condition="true">Conditional</animation>
+                <colordiffuse>black</colordiffuse>
                 <visible>!Skin.HasSetting(altoverlayinfowall)</visible>
                 <include>Animation_WindowFade200</include>
             </control>
@@ -78,8 +79,28 @@
                         <posy>26</posy>
                         <width>42</width>
                         <height>42</height>
+               <animation type="Conditional" condition="Container.Content(episodes)">
+                    <effect type="zoom" end="150" time="0" easing="in" tween="cubic" />
+<!--                     <effect type="fade" end="15" time="400" easing="in" tween="cubic" />
+ -->                    <effect type="slide" end="5,-2" time="0" easing="in" tween="cubic" />
+                </animation>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <animation effect="slide" start="0,0" end="0,-20" time="300" tween="cubic" easing="inout" condition="Container.Content(seasons)">Conditional</animation>
                         <info>ListItem.Overlay,thumbs/Alt</info>
+                    </control>
+                    <control type="label">
+                        <posx>1330</posx>
+                        <posy>25</posy>
+                        <width>80</width>
+                        <height>45</height>
+               <animation type="Conditional" condition="StringCompare(ListItem.Overlay,OverlayWatched.png)">
+                    <effect type="fade" end="30" time="0" easing="in" tween="cubic" />
+                </animation>
+                        <align>center</align>
+                        <label>$INFO[ListItem.Episode]</label>
+                        <font>Font_MainClassic4</font>
+                        <textcolor>white</textcolor>
+                        <visible>Container.Content(episodes)</visible>
                     </control>
                 </itemlayout>
                 <itemlayout width="950" height="140" condition="Skin.HasSetting(episodebanner) + Container.Content(tvshows)">
@@ -125,6 +146,7 @@
                             <posx>1255</posx>
                             <posy>40</posy>
                             <width>42</width>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                             <height>42</height>
                             <info>ListItem.Overlay,thumbs/Alt</info>
                         </control>
@@ -183,7 +205,8 @@
                         <posx>1285</posx>
                         <posy>106</posy>
                         <width>42</width>
-                        <height>42</height>
+                          <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                      <height>42</height>
                         <info>ListItem.Overlay,thumbs/Alt</info>
                     </control>
                     <control type="group">
@@ -246,8 +269,29 @@
                         <posx>1285</posx>
                         <posy>106</posy>
                         <width>42</width>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <height>42</height>
                         <info>ListItem.Overlay,thumbs/Alt</info>
+              <animation type="Conditional" condition="Container.Content(episodes)">
+                    <effect type="zoom" end="150" time="0" easing="in" tween="cubic" />
+<!--                     <effect type="fade" end="15" time="400" easing="in" tween="cubic" />
+ -->                    <effect type="slide" end="5,-2" time="0" easing="in" tween="cubic" />
+                </animation>
+                    </control>
+                                        <control type="label">
+                        <posx>1330</posx>
+                        <posy>90</posy>
+                        <width>80</width>
+                        <height>45</height>
+               <animation type="Conditional" condition="StringCompare(ListItem.Overlay,OverlayWatched.png)">
+                    <effect type="fade" end="30" time="0" easing="in" tween="cubic" />
+                      <effect type="slide" end="0,-30" time="0" easing="in" tween="cubic" />
+               </animation>
+                        <align>center</align>
+                        <label>$INFO[ListItem.Episode]</label>
+                        <font>Font_MainClassic4</font>
+                        <textcolor>white</textcolor>
+                        <visible>Container.Content(episodes)</visible>
                     </control>
                     <control type="group">
                         <posx>50</posx>
@@ -330,7 +374,8 @@
                         <posx>1337</posx>
                         <posy>26</posy>
                         <width>42</width>
-                        <height>42</height>
+                          <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                      <height>42</height>
                         <info>ListItem.Overlay,thumbs/Alt</info>
                     </control>
                 </itemlayout>
@@ -349,7 +394,8 @@
                         <posx>1337</posx>
                         <posy>106</posy>
                         <width>42</width>
-                        <height>42</height>
+                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                       <height>42</height>
                         <info>ListItem.Overlay,thumbs/Alt</info>
                     </control>
                     <control type="group">
@@ -441,7 +487,6 @@
                     <height>800</height>
                     <align>center</align>
                     <bordersize>18</bordersize>
-                    <aspectratio>stretch</aspectratio>
                     <include>PanelGlowFade</include>
                     <include>Animation_VisibleChange400</include>
                     <visible>Skin.HasSetting(ExtendedGlowMode) + !Skin.HasSetting(DisableGlowbar)</visible>

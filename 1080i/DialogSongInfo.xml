@@ -38,7 +38,7 @@
                 <height>608</height>
                 <texture>views/showcase_glow.png</texture>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>Animation_VisibleChange400</include>
                 <include>Animation_WindowFade200</include>
             </control>
@@ -179,7 +179,7 @@
                                 <shadowcolor>black</shadowcolor>
                                 <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
-                                <scrollspeed>20</scrollspeed>
+                                
                             </control>
                         </control>
                         <control type="grouplist">
@@ -203,7 +203,7 @@
                                 <shadowcolor>black</shadowcolor>
                                 <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
-                                <scrollspeed>20</scrollspeed>
+                                
                             </control>
                         </control>
                         <control type="grouplist">
@@ -227,7 +227,7 @@
                                 <shadowcolor>black</shadowcolor>
                                 <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
-                                <scrollspeed>20</scrollspeed>
+                                
                             </control>
                         </control>
                         <control type="grouplist">
@@ -251,7 +251,7 @@
                                 <shadowcolor>black</shadowcolor>
                                 <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
-                                <scrollspeed>20</scrollspeed>
+                                
                             </control>
                         </control>
                         <control type="grouplist">
@@ -275,7 +275,7 @@
                                 <shadowcolor>black</shadowcolor>
                                 <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
-                                <scrollspeed>20</scrollspeed>
+                                
                             </control>
                         </control>
                         <control type="grouplist">

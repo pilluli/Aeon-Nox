@@ -40,7 +40,6 @@
                 <width>729</width>
                 <height>1080</height>
                 <texture>info/movieinfogradient.png</texture>
-                <aspectratio>stretch</aspectratio>
             </control>
             <control type="image">
                 <posx>0</posx>
@@ -49,7 +48,6 @@
                 <height>1080</height>
                 <texture background="true">$INFO[ListItem.Icon]</texture>
                 <include>Animation_VisibleChange200</include>
-                <aspectratio>stretch</aspectratio>
             </control>
             <control type="image">
                 <animation effect="fade" time="400" delay="510">Visible</animation>
@@ -170,7 +168,7 @@
                     <font>Font_Reg38_Caps</font>
                     <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
                     <scroll>true</scroll>
-                    <scrollspeed>20</scrollspeed>
+                    
                     <textcolor>white2</textcolor>
                     <animation effect="slide" start="0,-38" end="0,-38" time="0" condition="!IsEmpty(ListItem.Tagline)">Conditional</animation>
                 </control>
@@ -181,7 +179,7 @@
                     <font>Font_Reg22</font>
                     <label>$INFO[ListItem.Tagline]</label>
                     <scroll>true</scroll>
-                    <scrollspeed>20</scrollspeed>
+                    
                     <textcolor>FF868686</textcolor>
                 </control>
                 <!-- First Row -->
@@ -214,7 +212,7 @@
                     <font>Font_Reg20_Caps</font>
                     <label fallback="312577">[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
                     <scroll>true</scroll>
-                    <scrollspeed>20</scrollspeed>
+                    
                     <textcolor>FF868686</textcolor>
                     <height>85</height>
                 </control>
@@ -239,7 +237,7 @@
                         <aligny>center</aligny>
                         <font>Font_Reg19</font>
                         <scroll>true</scroll>
-                        <scrollspeed>20</scrollspeed>
+                        
                         <textcolor>white2</textcolor>
                         <label fallback="312577">$INFO[ListItem.Director]</label>
                     </control>
@@ -265,7 +263,7 @@
                         <aligny>center</aligny>
                         <font>Font_Reg19</font>
                         <scroll>true</scroll>
-                        <scrollspeed>20</scrollspeed>
+                        
                         <textcolor>white2</textcolor>
                         <label fallback="312577">$INFO[ListItem.Writer]</label>
                     </control>
