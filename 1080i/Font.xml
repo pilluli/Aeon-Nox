@@ -3,6 +3,11 @@
     <fontset id="Default" idloc="31390" unicode="true">
         <!--Aeon Nox-->
         <font>
+            <name>font13</name>
+            <filename>Ubuntu-C.ttf</filename>
+            <size>31</size>
+        </font>
+        <font>
             <name>Font_Bold16</name>
             <filename>Ubuntu-C.ttf</filename>
             <style>bold</style>
@@ -89,6 +94,12 @@
             <size>52</size>
         </font>
         <font>
+            <name>Font_MainSecond</name>
+            <filename>Dekar.ttf</filename>
+            <aspect>0.9</aspect>
+            <size>116</size>
+        </font>
+        <font>
             <name>Font_OSDClassic</name>
             <filename>Ubuntu-C_CAPS.ttf</filename>
             <size>75</size>
@@ -117,6 +128,7 @@
             <name>Font_Reg14</name>
             <filename>Ubuntu-C.ttf</filename>
             <size>25</size>
+            <linespacing>0.8</linespacing>
         </font>
         <font>
             <name>Font_Reg15</name>
@@ -299,6 +311,11 @@
         </font>
     </fontset>
     <fontset id="Roboto" unicode="true">
+         <font>
+            <name>font13</name>
+            <filename>Ubuntu-C.ttf</filename>
+            <size>31</size>
+        </font>
         <!--Aeon Nox-->
         <font>
             <name>Font_Bold16</name>
@@ -578,6 +595,11 @@
         </font>
     </fontset>
     <fontset id="Classic" unicode="true">
+        <font>
+            <name>font13</name>
+            <filename>Ubuntu-C.ttf</filename>
+            <size>31</size>
+        </font>
         <!--Aeon Nox-->
         <font>
             <name>Font_Bold16</name>
@@ -928,6 +950,11 @@
         </font>
     </fontset>
     <fontset id="Korean" unicode="true">
+        <font>
+            <name>font13</name>
+            <filename>Ubuntu-C.ttf</filename>
+            <size>31</size>
+        </font>
         <font>
             <name>Font_Bold16</name>
             <filename>Ubuntu-B_KOR.ttf</filename>

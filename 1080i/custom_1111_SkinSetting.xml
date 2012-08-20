@@ -3,7 +3,7 @@
     <defaultcontrol always="true">9000</defaultcontrol>
     <backgroundcolor>black</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
-    <include condition="!Skin.HasSetting(firstrun3.5)">AutoConfig3.5</include>
+    
     <animation type="WindowOpen" reversible="false" condition="![Window.Previous(10004)|Window.Previous(1116)]">
         <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
         <effect type="fade" start="0" end="100" time="300" />
@@ -19,7 +19,6 @@
         <control type="group">
             <animation effect="zoom" end="91" center="960,360" time="400" tween="cubic" easing="inout" condition="true">Conditional</animation>
             <include>Furniture_SettingsBackPanel</include>
-            <include>Furniture_SettingsLogo</include>
             <control type="list" id="9000">
                 <posx>63</posx>
                 <posy>194</posy>
@@ -82,6 +81,10 @@
                         <label>42270</label>
                         <onclick>-</onclick>
                     </item>
+                    <item id="9">
+                        <label>470</label>
+                        <onclick>-</onclick>
+                    </item>
                 </content>
             </control>
             <control type="label">
@@ -114,11 +117,19 @@
                         <onclick>Skin.ToggleSetting(AutoScroll)</onclick>
                         <selected>Skin.HasSetting(AutoScroll)</selected>
                     </control>
+                  <control type="radiobutton" id="127">
+                        <label>42284</label>
+                        <include>Default_SettingRadioButton</include>
+                        <onclick>Skin.ToggleSetting(trailerincontextmenu)</onclick>
+                        <onclick>Skin.SetBool(fstrailer)</onclick>
+                        <selected>Skin.HasSetting(trailerincontextmenu)</selected>
+                    </control>
                     <control type="radiobutton" id="298">
                         <label>31279</label>
                         <include>Default_SettingRadioButton</include>
                         <onclick>Skin.ToggleSetting(fstrailer)</onclick>
                         <selected>Skin.HasSetting(fstrailer)</selected>
+                        <enable>!Skin.HasSetting(trailerincontextmenu)</enable>
                     </control>
                     <control type="radiobutton" id="290">
                         <label>31265</label>
@@ -153,6 +164,7 @@
                         <include>Default_SettingRadioButton</include>
                         <onclick>Skin.ToggleSetting(NextAiredInfo)</onclick>
                         <selected>!Skin.HasSetting(NextAiredInfo)</selected>
+
                     </control>
                     <control type="radiobutton" id="107">
                         <label>21398</label>
@@ -250,7 +262,6 @@
                     <textcolor>grey2</textcolor>
                     <focusedcolor>white</focusedcolor>
                     <textoffsetx>30</textoffsetx>
-                    <aligny>center</aligny>
                     <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search="Aeon Nox 3.5 Tutorial",return)</onclick>
                     <visible>Container(9000).Hasfocus(8)</visible>
                 </control>
@@ -644,6 +655,94 @@
                         <selected>!Skin.HasSetting(DisableInfoPanelVL)</selected>
                     </control>
                 </control>
+                <control type="grouplist" id="9005">
+                    <visible>Container(9000).Hasfocus(9)</visible>
+                    <posx>387</posx>
+                    <posy>195   </posy>
+                    <width>1469</width>
+                    <height>732</height>
+                    <itemgap>-1</itemgap>
+                    <pagecontrol>60</pagecontrol>
+                    <onleft>9000</onleft>
+                    <onright>60</onright>
+                    <onup>9001</onup>
+                    <ondown>9001</ondown>
+                    <control type="label">
+                        <label>Aeon Nox 3.6</label>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1469</width>
+                        <height>74</height>
+                        <font>Font_MainClassic3</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+                        <radioposx>1300</radioposx>
+                        <textoffsetx>70</textoffsetx>
+                    </control>
+                    <control type="label">
+                        <label>by BigNoid &amp; Phil65</label>
+                        <posx>0</posx>
+                        <posy>0</posy>
+                        <width>1469</width>
+                        <height>74</height>
+                        <font>Font_Reg15</font>
+                        <textcolor>grey2</textcolor>
+                        <focusedcolor>white</focusedcolor>
+                        <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
+                        <radioposx>1300</radioposx>
+                        <textoffsetx>70</textoffsetx>
+                    </control>
+                    <control type="label">
+                        <label>[B]CREDITS TO:[/B]</label>
+                        <include>Default_SettingRadioButton</include>
+                    </control>
+                    <control type="label">
+                        <label>[B]N.O.W.A.L.L.[/B] for creating Artwork</label>
+                        <include>Default_SettingRadioButton</include>
+                    </control>
+                    <control type="label">
+                        <label>[B]Fional88[/B] for creating the tutorial videos</label>
+                        <include>Default_SettingRadioButton</include>
+                    </control>
+                    <control type="label">
+                        <label>[B]www.webdesignerdepot.com[/B] for permission to include icons</label>
+                        <include>Default_SettingRadioButton</include>
+                    </control>
+                    <control type="label">
+                        <label>[B]DJH_ [/B]for creating Aeon, [B]Jezz_X [/B]for creating Confluence, [B]black[/B] for creating Xperience1080</label>
+                        <include>Default_SettingRadioButton</include>
+                    </control>
+                    <control type="label">
+                        <label>Translators: [B]CutSickAss[/B], [B]epoke[/B], [B]frodo19[/B], [B]mindweaver[/B], [B]Passer[/B], [B]PatOso[/B], [B]peppe_sr[/B], [B]Rififi77[/B], [B]Roman_V_M[/B]</label>
+                        <include>Default_SettingRadioButton</include>
+                    </control>
+                    <control type="label">
+                        <label>Also to: [B]Deano316[/B], [B]defluo[/B], [B]fmronan[/B] &amp; [B]xhaggi[/B] and all other people who contributed to this project </label>
+                        <include>Default_SettingRadioButton</include>
+                    </control>
+                </control>
+
+                                    <control type="image">
+                     <visible>Container(9000).Hasfocus(9)</visible>
+                   <texture>fanarttv.png</texture>
+                    <width>400</width>
+                    <posx>620</posx>
+                    <posy>860</posy>
+                    <aspectratio>keep</aspectratio>
+                    </control>
+                                    <control type="image">
+                     <visible>Container(9000).Hasfocus(9)</visible>
+                   <texture>xbmc.png</texture>
+                    <width>400</width>
+                    <posx>1140</posx>
+                    <posy>830</posy>
+                    <aspectratio>keep</aspectratio>
+                    </control>
             </control>
         </control>
         <control type="image">

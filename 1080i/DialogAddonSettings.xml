@@ -26,13 +26,22 @@
             <control type="image">
                 <posx>34</posx>
                 <posy>34</posy>
-                <width>1850</width>
+                <width>925</width>
                 <height>1010</height>
-                <texture>settings/addonsettings_panelback.png</texture>
+                <aspectratio align="left">scale</aspectratio>
+                <texture>settings/settings_panelback.png</texture>
+                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+            </control>
+            <control type="image">
+                <posx>959</posx>
+                <posy>34</posy>
+                <width>925</width>
+                <height>1010</height>
+                <aspectratio align="right">scale</aspectratio>
+                <texture flipx="true">settings/settings_panelback.png</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
             </control>
             <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Settings_Panel</include>
-            <include>Furniture_SettingsLogo</include>
             <control type="grouplist" id="9">
                 <posx>63</posx>
                 <posy>180</posy>

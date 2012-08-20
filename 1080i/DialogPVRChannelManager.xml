@@ -16,7 +16,7 @@
             <height>975</height>
             <texture border="60">osd/osd_settings_back_glow.png</texture>
             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <visible>Skin.HasSetting(Glowbar_Home)</visible>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
             <include>Animation_VisibleChange400</include>
         </control>
@@ -206,7 +206,7 @@
                         <posy>26</posy>
                         <width>525</width>
                         <height>45</height>
-                        <font>font12</font>
+                        
                         <aligny>center</aligny>
                         <textcolor>black</textcolor>
                         <label>$LOCALIZE[19210]: $INFO[ListItem.Property(ClientName)]</label>
@@ -267,7 +267,6 @@
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <textoffsetx>10</textoffsetx>
                     <aligny>center</aligny>
-                    
                     <label>19201</label>
                     <onright>60</onright>
                     <onleft>20</onleft>
@@ -286,7 +285,6 @@
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <textoffsetx>10</textoffsetx>
                     <aligny>center</aligny>
-                    
                     <label>19202</label>
                     <onleft>20</onleft>
                     <onright>60</onright>
@@ -314,7 +312,6 @@
                     <radioposx>472</radioposx>
                     <textoffsetx>10</textoffsetx>
                     <aligny>center</aligny>
-                    
                     <label>19206</label>
                     <onleft>20</onleft>
                     <onright>60</onright>
@@ -333,7 +330,6 @@
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <textoffsetx>10</textoffsetx>
                     <aligny>center</aligny>
-                    
                     <label>19200</label>
                     <onright>60</onright>
                     <onleft>20</onleft>
@@ -366,7 +362,6 @@
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <textoffsetx>10</textoffsetx>
                     <aligny>center</aligny>
-                    
                     <label>19205</label>
                     <onleft>20</onleft>
                     <onright>34</onright>
@@ -386,7 +381,6 @@
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <textoffsetx>10</textoffsetx>
                     <aligny>center</aligny>
-                    
                     <label>19024</label>
                     <onleft>30</onleft>
                     <onright>60</onright>
@@ -406,7 +400,6 @@
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <textoffsetx>10</textoffsetx>
                     <aligny>center</aligny>
-                    
                     <label>19023</label>
                     <onleft>30</onleft>
                     <onright>60</onright>
@@ -425,7 +418,6 @@
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <textoffsetx>10</textoffsetx>
                     <aligny>center</aligny>
-                    
                     <align>center</align>
                     <label>19203</label>
                     <onleft>20</onleft>
@@ -445,7 +437,6 @@
                     <focusedcolor>FFFFFFFF</focusedcolor>
                     <textoffsetx>10</textoffsetx>
                     <aligny>center</aligny>
-                    
                     <align>center</align>
                     <label>19211</label>
                     <onleft>20</onleft>
@@ -466,7 +457,6 @@
                     <textoffsetx>10</textoffsetx>
                     <aligny>center</aligny>
                     <align>center</align>
-                    
                     <align>center</align>
                     <label>19204</label>
                     <onleft>20</onleft>

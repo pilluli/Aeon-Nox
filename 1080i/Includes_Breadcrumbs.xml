@@ -21,6 +21,7 @@
         <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">dialogeffect</include>
     </include>
     <include name="Breadcrumbs_BackBar">
+        <visible>![Control.IsVisible(503) + Skin.HasSetting(landscapeonelogo)]</visible>
         <control type="group">
             <visible>!Skin.HasSetting(ClassicTopBar) + !Skin.HasSetting(disabletopbar)</visible>
             <control type="image">
@@ -104,7 +105,7 @@
                         <label>[COLOR white3]$INFO[MusicPlayer.Artist][/COLOR]</label>
                         <label>[COLOR white2]$INFO[MusicPlayer.Title][/COLOR]</label>
                         <scrollout>false</scrollout>
-                        <scrollspeed>20</scrollspeed>
+                        
                         <pauseatend>7000</pauseatend>
                         <visible>Player.HasAudio</visible>
                     </control>
@@ -120,7 +121,7 @@
                         <label>[COLOR white3]$INFO[Videoplayer.TVShowTitle][/COLOR]</label>
                         <label>[COLOR white2]$INFO[Videoplayer.Title][/COLOR]</label>
                         <scrollout>false</scrollout>
-                        <scrollspeed>20</scrollspeed>
+                        
                         <pauseatend>7000</pauseatend>
                         <visible>!IsEmpty(Videoplayer.TVShowTitle) + Player.HasVideo</visible>
                     </control>
@@ -135,7 +136,7 @@
                         <scroll>true</scroll>
                         <label>$INFO[Videoplayer.Title]</label>
                         <scrollout>false</scrollout>
-                        <scrollspeed>20</scrollspeed>
+                        
                         <pauseatend>7000</pauseatend>
                         <visible>IsEmpty(Videoplayer.TVShowTitle) + Player.HasVideo + IsEmpty(VideoPlayer.ChannelName)</visible>
                     </control>
@@ -151,7 +152,7 @@
                         <label>$INFO[Videoplayer.Title]</label>
                         <label>$INFO[Videoplayer.ChannelName]</label>
                         <scrollout>false</scrollout>
-                        <scrollspeed>20</scrollspeed>
+                        
                         <pauseatend>7000</pauseatend>
                         <visible>Player.HasVideo + !IsEmpty(VideoPlayer.ChannelName)</visible>
                     </control>
@@ -189,7 +190,7 @@
                 <headlinecolor>$VAR[BreadCrumbsContentColorVar]</headlinecolor>
                 <highlightcolor>$VAR[BreadCrumbsContentColorVar]</highlightcolor>
                 <titlecolor>FFFFFFFF</titlecolor>
-                <scrollspeed>20</scrollspeed>
+                
             </control>
         </control>
     </include>
@@ -230,6 +231,7 @@
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 <include>Animation_VisibleChange400</include>
                 <visible>Skin.HasSetting(ClassicTopBar)</visible>
+                <visible>!Window.IsVisible(script-globalsearch-main.xml)</visible>
                 <animation effect="slide" start="750" end="0" time="300">VisibleChange</animation>
             </control>
             <control type="grouplist">

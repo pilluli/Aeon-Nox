@@ -47,21 +47,22 @@
                 <posy>39</posy>
                 <width>1920</width>
                 <height>750</height>
-                <control type="image">
-                    <posx>112</posx>
-                    <width>1695</width>
-                    <height>885</height>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texture>views/tablet_template_glow.png</texture>
-                </control>
-                <control type="image">
-                    <posx>112</posx>
-                    <width>1695</width>
-                    <height>885</height>
-                    <texture>views/tablet_template.png</texture>
-                </control>
+                    <control type="image">
+                        <posx>112</posx>
+                        <width>1695</width>
+                        <height>1050</height>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <include>PanelGlowFade</include>
+                        <texture>wall/wall_bg_glow.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>112</posx>
+                        <width>1695</width>
+                        <height>1050</height>
+                        <texture>wall/wall_bg.png</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    </control>
                 <control type="image">
                     <posy>8</posy>
                     <posx>112</posx>
@@ -109,7 +110,6 @@
                             <posy>0</posy>
                             <height>20</height>
                             <width>420</width>
-                            
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <label>$LOCALIZE[515]:</label>
                         </control>
@@ -118,7 +118,6 @@
                             <posy>30</posy>
                             <height>20</height>
                             <width>300</width>
-                            
                             <textcolor>white2</textcolor>
                             <label fallback="312577">$INFO[ListItem.Property(genre)]</label>
                         </control>
@@ -127,7 +126,6 @@
                             <posy>0</posy>
                             <height>20</height>
                             <width>420</width>
-                            
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <label>Console:</label>
                         </control>
@@ -136,7 +134,6 @@
                             <posy>30</posy>
                             <height>20</height>
                             <width>300</width>
-                            
                             <textcolor>white2</textcolor>
                             <label fallback="312577">$INFO[ListItem.Property(console)]</label>
                         </control>
@@ -145,7 +142,6 @@
                             <posy>75</posy>
                             <height>20</height>
                             <width>420</width>
-                            
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <label>Developer:</label>
                         </control>
@@ -154,7 +150,6 @@
                             <posy>105</posy>
                             <height>20</height>
                             <width>300</width>
-                            
                             <textcolor>white2</textcolor>
                             <label fallback="312577">$INFO[ListItem.Property(developer)]</label>
                         </control>
@@ -163,7 +158,6 @@
                             <posy>75</posy>
                             <height>20</height>
                             <width>420</width>
-                            
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <label>$LOCALIZE[345]:</label>
                         </control>
@@ -172,7 +166,6 @@
                             <posy>105</posy>
                             <height>20</height>
                             <width>300</width>
-                            
                             <textcolor>white2</textcolor>
                             <label fallback="312577">$INFO[ListItem.Property(year)]</label>
                         </control>
@@ -181,7 +174,6 @@
                             <posy>147</posy>
                             <height>20</height>
                             <width>420</width>
-                            
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <label>Publisher:</label>
                         </control>
@@ -190,7 +182,6 @@
                             <posy>177</posy>
                             <height>20</height>
                             <width>300</width>
-                            
                             <textcolor>white2</textcolor>
                             <label fallback="312577">$INFO[ListItem.Property(publisher)]</label>
                         </control>
@@ -201,7 +192,6 @@
                                 <posy>147</posy>
                                 <height>20</height>
                                 <width>420</width>
-                                
                                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
                                 <label>$LOCALIZE[563]:</label>
                             </control>
@@ -210,7 +200,6 @@
                                 <posy>177</posy>
                                 <height>20</height>
                                 <width>300</width>
-                                
                                 <textcolor>white2</textcolor>
                                 <label fallback="312577">$INFO[ListItem.Property(rating)]$INFO[ListItem.Property(votes)]</label>
                             </control>
@@ -222,7 +211,6 @@
                                 <posy>147</posy>
                                 <height>20</height>
                                 <width>420</width>
-                                
                                 <textcolor>$VAR[SubTitleColorVar]</textcolor>
                                 <label>$LOCALIZE[576]:</label>
                             </control>
@@ -231,7 +219,6 @@
                                 <posy>177</posy>
                                 <height>20</height>
                                 <width>300</width>
-                                
                                 <textcolor>white2</textcolor>
                                 <label fallback="312577">$INFO[ListItem.Property(playcount)]</label>
                             </control>
@@ -241,7 +228,6 @@
                             <posy>228</posy>
                             <width>652</width>
                             <height>220</height>
-                            
                             <label fallback="312577">$INFO[ListItem.Property(plot)]</label>
                             <textcolor>white6</textcolor>
                             <align>justify</align>
@@ -349,7 +335,6 @@
                 <width>1695</width>
                 <height>1038</height>
                 <texture>wall/wall_bg_glow.png</texture>
-                <aspectratio>stretch</aspectratio>
                 <include>PanelGlowFade</include>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
@@ -1302,7 +1287,6 @@
                             <posy>202</posy>
                             <height>20</height>
                             <width>570</width>
-                            
                             <textcolor>white3</textcolor>
                             <scroll>true</scroll>
                             <label>$INFO[ListItem.Property(genre)]</label>
@@ -2145,7 +2129,7 @@
                     <onup>9000</onup>
                     <ondown>2200</ondown>
                     <orientation>horizontal</orientation>
-                    <viewtype label="Shift">BigWrap</viewtype>
+                    <viewtype label="31235">BigWrap</viewtype>
                     <pagecontrol>2200</pagecontrol>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <focusposition>1</focusposition>
@@ -2263,33 +2247,7 @@
                 <control type="group">
                     <posy>-20</posy>
                     <include>Animation_ListSlideLeft</include>
-                    <control type="image">
-                        <posx>90</posx>
-                        <posy>110</posy>
-                        <width>1138</width>
-                        <height>970</height>
-                        <texture>views/listpanel_back_shadow.png</texture>
-                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <include>Animation_VisibleChange400</include>
-                        <include>PanelGlowFade</include>
-                    </control>
-                    <control type="image">
-                        <posx>90</posx>
-                        <posy>110</posy>
-                        <width>1138</width>
-                        <height>970</height>
-                        <texture>views/listpanel_back.png</texture>
-                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                    </control>
-                    <control type="image">
-                        <posx>90</posx>
-                        <posy>954</posy>
-                        <width>1138</width>
-                        <height>349</height>
-                        <texture>views/listpanel_back_reflection.png</texture>
-                    </control>
-                    <include condition="Skin.HasSetting(effect_bg)">BG_Effect_List_Panel</include>
+                    <include>ListPanel</include>
                     <control type="image">
                         <posx>990</posx>
                         <posy>123</posy>
@@ -2343,7 +2301,6 @@
                                 <posy>54</posy>
                                 <width>800</width>
                                 <height>36</height>
-                                
                                 <aligny>center</aligny>
                                 <include>detailcolornofocus</include>
                                 <label>$INFO[ListItem.Property(genre)]</label>
@@ -2400,7 +2357,6 @@
                                 <posy>54</posy>
                                 <width>800</width>
                                 <height>36</height>
-                                
                                 <aligny>center</aligny>
                                 <include>listcolornofocus</include>
                                 <label>$INFO[ListItem.Property(genre)]</label>
