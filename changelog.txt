@@ -9,8 +9,12 @@
 - reworked search window
 - search instead of add-ons for main menu
 - removed support for script.moviesets (led to crashes)
-- ability to zoom into radar image from wunderwgound widget
+- ability to zoom into radar image from wundergound widget
 - Lot of bugfixes
+- reorganized textures
+- watchlist support for video playlists
+- wide list option for lowlist music
+- progress bars with mouse support for musicOSD and videoOSD
 
 [B]3.5.0[/B]
 - Added Eject/Load button to shutdown menu for AppleTV users.

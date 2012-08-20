@@ -4,7 +4,7 @@
     <backgroundcolor>black</backgroundcolor>
     <allowoverlay>no</allowoverlay>
     <onload>Skin.Reset(vispanelrotate)</onload>
-    <onload>AlarmClock(Vis,Skin.ToggleSetting(vispanelrotate),00:15,silent,loop)</onload>
+    <onload>AlarmClock(Vis,Skin.ToggleSetting(vispanelrotate),00:20,silent,loop)</onload>
     <onload>AlarmClock(Vis3,Control.Move(5222,1),00:04,silent,loop)</onload>
     <onload>AlarmClock(Vis4,Control.Move(5223,1),00:04,silent,loop)</onload>
     <onload>AlarmClock(BGMoveViz,Control.Move(4324,1),00:07,silent,loop)</onload>
@@ -498,13 +498,14 @@
                         <texture fallback="empty.png">$INFO[MusicPlayer.Codec,flags/audio/,.png]</texture>
                     </control>
                     <control type="label">
-                        <posx>591</posx>
+                        <posx>588</posx>
                         <posy>69</posy>
                         <width>210</width>
                         <height>86</height>
                         <aligny>center</aligny>
+                        <align>center</align>
                         <scroll>false</scroll>
-                        <font>Font_Reg19</font>
+                        <font>Font_MainClassic4</font>
                         <shadowcolor>black</shadowcolor>
                         <wrapmultiline>true</wrapmultiline>
                         <visible>StringCompare(Control.GetLabel(8309),empty.png)</visible>
@@ -555,6 +556,7 @@
                     <posx>610</posx>
                     <posy>76</posy>
                     <width>1920</width>
+ <animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(musicosd)">Conditional</animation>
                     <height>150</height>
                     <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
@@ -586,6 +588,7 @@
                     <height>36</height>
                     <align>right</align>
                     <aligny>-</aligny>
+ <animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(musicosd)">Conditional</animation>
                     <font>Font_Reg19_Caps</font>
                     <label>$INFO[MusicPlayer.BitRate,,[COLOR grey] kbps | [/COLOR]]$INFO[MusicPlayer.SampleRate,,[COLOR grey] kHz |[/COLOR] ]$INFO[MusicPlayer.bitspersample,,[COLOR grey] bit  | [/COLOR] ]$INFO[MusicPlayer.Channels,,[COLOR grey] $LOCALIZE[31703][/COLOR]]</label>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
@@ -642,7 +645,7 @@
             <include>Animation_Widgets</include>
             <control type="group" id="8995">
                 <posx>22</posx>
-                <posy>-600</posy>
+                <posy>-597</posy>
                 <animation type="Conditional" condition="Skin.HasSetting(vispanelrotate) + Skin.HasSetting(activatepanelrotation) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))" reversible="false">
                     <effect type="rotatex" center="251" start="0" end="90" time="550" tween="cubic" easing="in" />
                     <effect type="rotatex" center="251" start="90" end="-90" time="0" delay="550" />
@@ -669,29 +672,29 @@
                     <control type="image">
                         <!--bg panel-->
                         <posx>120</posx>
-                        <posy>660</posy>
+                        <posy>650</posy>
                         <width>1650</width>
-                        <height>502</height>
+                        <height>593</height>
                         <animation effect="fade" start="100" end="80" time="2500" pulse="true" condition="true">conditional</animation>
-                        <texture border="50">featured/panel_featured_shadow.png</texture>
+                        <texture>wall/wall_bg_glow.png</texture>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <include>Animation_VisibleChange400</include>
                     </control>
                     <control type="image">
                         <posx>120</posx>
-                        <posy>660</posy>
+                        <posy>650</posy>
                         <width>1650</width>
-                        <height>502</height>
-                        <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
-                        <texture border="50">featured/panel_featured.png</texture>
+                        <height>593</height>
+                        <animation effect="fade" start="100" end="73" time="0" condition="true">Conditional</animation>
+                        <texture>wall/wall_bg.png</texture>
                     </control>
                 </control>
                 <control type="group">
                     <control type="group">
                         <!--artist slideshow-->
-                        <animation effect="slide" start="0" end="-1330,0" time="0" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
-                        <animation effect="zoom" start="100" end="110" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
+                        <animation effect="slide" start="0" end="-1388,-21" time="0" condition="true">Conditional</animation>
+                        <animation effect="zoom" start="100" end="118" time="0" center="960,500" condition="true">Conditional</animation>
                         <control type="group">
                             <posx>1436</posx>
                             <posy>672</posy>
@@ -699,17 +702,17 @@
                             <animation effect="fade" time="400">VisibleChange</animation>
                             <control type="image">
                                 <posx>0</posx>
-                                <posy>0</posy>
+                                <posy>3</posy>
                                 <width>425</width>
-                                <height>400</height>
+                                <height>390</height>
                                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                                 <texture>thumbs/boxes/cd_shadow_light_shadow.png</texture>
-                                <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                                 <animation effect="fade" start="100" end="80" time="2500" pulse="true" condition="true">conditional</animation>
                                 <include>Animation_VisibleChange400</include>
                             </control>
                             <control type="image">
-                                <posy>19</posy>
+                                <posy>22</posy>
                                 <posx>22</posx>
                                 <width>380</width>
                                 <height>354</height>
@@ -717,7 +720,7 @@
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                             </control>
                             <control type="multiimage">
-                                <posy>19</posy>
+                                <posy>22</posy>
                                 <posx>22</posx>
                                 <width>380</width>
                                 <height>354</height>
@@ -729,7 +732,7 @@
                                 <randomize>true</randomize>
                             </control>
                             <control type="multiimage">
-                                <posy>19</posy>
+                                <posy>22</posy>
                                 <posx>22</posx>
                                 <width>380</width>
                                 <height>354</height>
@@ -742,7 +745,7 @@
                             </control>
                             <control type="image">
                                 <posx>0</posx>
-                                <posy>0</posy>
+                                <posy>3</posy>
                                 <width>425</width>
                                 <height>400</height>
                                 <texture>thumbs/boxes/cd_shadow_light.png</texture>
@@ -946,18 +949,10 @@
                         <autoscroll delay="5000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
-                <control type="image">
-                    <posx>141</posx>
-                    <posy>681</posy>
-                    <width>1608</width>
-                    <height>459</height>
-                    <texture border="50">featured/panel_featured_overlay.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                </control>
             </control>
             <control type="group">
                 <posx>22</posx>
-                <posy>-600</posy>
+                <posy>-597</posy>
                 <visible>Skin.HasSetting(vispanelrotate) + Skin.HasSetting(activatepanelrotation) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))</visible>
                 <animation effect="fade" time="500">WindowOpen</animation>
                 <animation effect="fade" time="200">WindowClose</animation>
@@ -973,25 +968,26 @@
                     <effect type="fade" start="100" end="0" time="0" delay="550" />
                     <effect type="rotatex" center="251" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
                 </animation>
-                <control type="image">
-                    <posx>120</posx>
-                    <posy>660</posy>
-                    <width>1650</width>
-                    <height>502</height>
-                    <animation effect="fade" start="100" end="80" time="2500" pulse="true" condition="true">conditional</animation>
-                    <texture border="50">featured/panel_featured_shadow.png</texture>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <visible>Skin.HasSetting(Glowbar_Home)</visible>
-                    <include>Animation_VisibleChange400</include>
-                </control>
-                <control type="image">
-                    <posx>120</posx>
-                    <posy>660</posy>
-                    <width>1650</width>
-                    <height>502</height>
-                    <animation effect="fade" start="100" end="70" time="0" condition="true">Conditional</animation>
-                    <texture border="50">featured/panel_featured.png</texture>
-                </control>
+                    <control type="image">
+                        <!--bg panel-->
+                        <posx>120</posx>
+                        <posy>650</posy>
+                        <width>1650</width>
+                        <height>593</height>
+                        <animation effect="fade" start="100" end="80" time="2500" pulse="true" condition="true">conditional</animation>
+                        <texture>wall/wall_bg_glow.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>Animation_VisibleChange400</include>
+                    </control>
+                    <control type="image">
+                        <posx>120</posx>
+                        <posy>650</posy>
+                        <width>1650</width>
+                        <height>593</height>
+                        <animation effect="fade" start="100" end="73" time="0" condition="true">Conditional</animation>
+                        <texture>wall/wall_bg.png</texture>
+                    </control>
                 <control type="group">
                     <posx>150</posx>
                     <posy>732</posy>
@@ -1010,21 +1006,21 @@
                     <visible>IsEmpty(Window(Visualisation).Property(ArtistSlideshowRefresh))</visible>
                     <animation effect="fade" time="400">VisibleChange</animation>
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>425</width>
-                        <height>400</height>
+                        <posx>-20</posx>
+                        <posy>-8</posy>
+                        <width>445</width>
+                        <height>418</height>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texture>thumbs/boxes/cd_shadow_light_shadow.png</texture>
-                        <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <animation effect="fade" start="100" end="80" time="2500" pulse="true" condition="true">conditional</animation>
                         <include>Animation_VisibleChange400</include>
                     </control>
                     <control type="multiimage">
-                        <posy>19</posy>
-                        <posx>22</posx>
-                        <width>380</width>
-                        <height>354</height>
+                        <posy>11</posy>
+                        <posx>2</posx>
+                        <width>400</width>
+                        <height>374</height>
                         <imagepath background="true" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Container(5222).ListItem.Icon]</imagepath>
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <timeperimage>5000</timeperimage>
@@ -1074,104 +1070,14 @@
                             </control>
                         </focusedlayout>
                         <content>
-                            <item id="1">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.1.SimilarName)]</label>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.1.SimilarThumb)]</icon>
-                                <onclick>-</onclick>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarThumb))</visible>
-                                <thumb>-</thumb>
-                            </item>
-                            <item id="2">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.2.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.2.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.2.SimilarThumb))</visible>
-                            </item>
-                            <item id="3">
-                                <onclick>-</onclick>
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.3.SimilarName)]</label>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.3.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.3.SimilarThumb))</visible>
-                            </item>
-                            <item id="4">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.4.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.4.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.4.SimilarThumb))</visible>
-                            </item>
-                            <item id="5">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.5.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.5.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.5.SimilarThumb))</visible>
-                            </item>
-                            <item id="6">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.6.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.6.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.6.SimilarThumb))</visible>
-                            </item>
-                            <item id="7">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.7.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.7.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.7.SimilarThumb))</visible>
-                            </item>
-                            <item id="8">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.8.SimilarName)]</label>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.8.SimilarThumb)]</icon>
-                                <onclick>-</onclick>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.8.SimilarThumb))</visible>
-                            </item>
-                            <item id="9">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.9.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.9.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.9.SimilarThumb))</visible>
-                            </item>
-                            <item id="10">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.10.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.10.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.10.SimilarThumb))</visible>
-                            </item>
-                            <item id="11">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.11.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.11.SimilarThumb))</visible>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.11.SimilarThumb)]</icon>
-                            </item>
-                            <item id="12">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.12.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.12.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.12.SimilarThumb))</visible>
-                            </item>
-                            <item id="13">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.13.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.13.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.13.SimilarThumb))</visible>
-                            </item>
-                            <item id="14">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.14.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.14.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.14.SimilarThumb))</visible>
-                            </item>
-                            <item id="15">
-                                <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.15.SimilarName)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.15.SimilarThumb)]</icon>
-                                <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.15.SimilarThumb))</visible>
-                            </item>
+                            <include>SimilarArtistsItems</include>
                         </content>
                     </control>
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
-                        <width>425</width>
-                        <height>400</height>
+                        <posx>-20</posx>
+                        <posy>-8</posy>
+                        <width>445</width>
+                        <height>420</height>
                         <texture>thumbs/boxes/cd_shadow_light.png</texture>
                     </control>
                 </control>
@@ -1198,7 +1104,7 @@
                         <height>400</height>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texture>thumbs/boxes/cd_shadow_light_shadow.png</texture>
-                        <visible>Skin.HasSetting(Glowbar_Home)</visible>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                         <animation effect="fade" start="100" end="80" time="2500" pulse="true" condition="true">conditional</animation>
                         <include>Animation_VisibleChange400</include>
                     </control>
@@ -1266,137 +1172,10 @@
                         </control>
                     </focusedlayout>
                     <content>
-                        <item id="1">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.1.AlbumName)]</label>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.1.AlbumThumb)]</icon>
-                            <onclick>-</onclick>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.AlbumThumb))</visible>
-                            <thumb>-</thumb>
-                        </item>
-                        <item id="2">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.2.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.2.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.2.AlbumThumb))</visible>
-                        </item>
-                        <item id="3">
-                            <onclick>-</onclick>
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.3.AlbumName)]</label>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.3.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.3.AlbumThumb))</visible>
-                        </item>
-                        <item id="4">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.4.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.4.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.4.AlbumThumb))</visible>
-                        </item>
-                        <item id="5">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.5.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.5.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.5.AlbumThumb))</visible>
-                        </item>
-                        <item id="6">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.6.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.6.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.6.AlbumThumb))</visible>
-                        </item>
-                        <item id="7">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.7.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.7.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.7.AlbumThumb))</visible>
-                        </item>
-                        <item id="8">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.8.AlbumName)]</label>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.8.AlbumThumb)]</icon>
-                            <onclick>-</onclick>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.8.AlbumThumb))</visible>
-                        </item>
-                        <item id="9">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.9.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.9.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.9.AlbumThumb))</visible>
-                        </item>
-                        <item id="10">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.10.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.10.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.10.AlbumThumb))</visible>
-                        </item>
-                        <item id="11">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.11.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.11.AlbumThumb))</visible>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.11.AlbumThumb)]</icon>
-                        </item>
-                        <item id="12">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.12.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.12.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.12.AlbumThumb))</visible>
-                        </item>
-                        <item id="13">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.13.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.13.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.13.AlbumThumb))</visible>
-                        </item>
-                        <item id="14">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.14.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.14.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.14.AlbumThumb))</visible>
-                        </item>
-                        <item id="15">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.15.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.15.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.15.AlbumThumb))</visible>
-                        </item>
-                        <item id="16">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.16.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.16.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.16.AlbumThumb))</visible>
-                        </item>
-                        <item id="17">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.17.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.17.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.17.AlbumThumb))</visible>
-                        </item>
-                        <item id="18">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.18.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.18.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.18.AlbumThumb))</visible>
-                        </item>
-                        <item id="19">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.19.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.19.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.19.AlbumThumb))</visible>
-                        </item>
-                        <item id="20">
-                            <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.20.AlbumName)]</label>
-                            <onclick>-</onclick>
-                            <icon>$INFO[Window(Visualisation).Property(ArtistSlideshow.20.AlbumThumb)]</icon>
-                            <visible>!IsEmpty(Window(Visualisation).Property(ArtistSlideshow.20.AlbumThumb))</visible>
-                        </item>
+                        <include>DiscographyItems</include>
                     </content>
                 </control>
-                <control type="image">
-                    <posx>141</posx>
-                    <posy>681</posy>
-                    <width>1608</width>
-                    <height>459</height>
-                    <texture border="50">featured/panel_featured_overlay.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                </control>
+
             </control>
         </control>
     </controls>

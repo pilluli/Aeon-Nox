@@ -47,21 +47,22 @@
                 <posy>39</posy>
                 <width>1920</width>
                 <height>750</height>
-                <control type="image">
-                    <posx>112</posx>
-                    <width>1695</width>
-                    <height>885</height>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texture>views/tablet_template_glow.png</texture>
-                </control>
-                <control type="image">
-                    <posx>112</posx>
-                    <width>1695</width>
-                    <height>885</height>
-                    <texture>views/tablet_template.png</texture>
-                </control>
+                    <control type="image">
+                        <posx>112</posx>
+                        <width>1695</width>
+                        <height>1050</height>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <include>PanelGlowFade</include>
+                        <texture>wall/wall_bg_glow.png</texture>
+                    </control>
+                    <control type="image">
+                        <posx>112</posx>
+                        <width>1695</width>
+                        <height>1050</height>
+                        <texture>wall/wall_bg.png</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    </control>
                 <control type="image">
                     <posy>8</posy>
                     <posx>112</posx>
@@ -2128,7 +2129,7 @@
                     <onup>9000</onup>
                     <ondown>2200</ondown>
                     <orientation>horizontal</orientation>
-                    <viewtype label="Shift">BigWrap</viewtype>
+                    <viewtype label="31235">BigWrap</viewtype>
                     <pagecontrol>2200</pagecontrol>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <focusposition>1</focusposition>
