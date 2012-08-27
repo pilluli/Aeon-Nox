@@ -162,7 +162,7 @@
             <width>776</width>
             <height>147</height>
             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <visible>[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]</visible>
+            <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
             <include>Animation_VisibleChange400</include>
             <texture>dialogs/scan_backg_shadow.png</texture>
@@ -190,23 +190,24 @@
     </include>
     <include name="Dialogs_HardDrive">
         <control type="image">
-            <posx>4</posx>
-            <posy>18</posy>
-            <width>133</width>
+            <posx>21</posx>
+            <posy>20</posy>
+            <width>100</width>
             <height>100</height>
-            <aspectratio aligny="top">scale</aspectratio>
-            <texture>special://skin/extras/BigIcons/Search.png</texture>
-            <colordiffuse>white</colordiffuse>
+            <texture>dialogs/busy.png</texture>
+            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <colordiffuse>white2</colordiffuse>
+            <animation effect="rotate" start="360" end="0" center="auto" time="2500" loop="true" condition="true">conditional</animation>
         </control>
     </include>
     <include name="Dialogs_VolumeIcon">
         <control type="image">
-            <posx>4</posx>
-            <posy>8</posy>
-            <width>130</width>
-            <height>130</height>
-            <texture>special://skin/extras/BigIcons/Speaker.png</texture>
-            <colordiffuse>white</colordiffuse>
+            <posx>21</posx>
+            <posy>20</posy>
+            <width>100</width>
+            <height>100</height>
+            <texture>dialogs/volume.png</texture>
+            <colordiffuse>white2</colordiffuse>
         </control>
     </include>
     <include name="Dialogs_Settings">
@@ -379,8 +380,8 @@
         <font>Font_Reg19_Caps</font>
         <textoffsety>8</textoffsety>
         <textoffsetx>30</textoffsetx>
-        <include condition="[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]">ShutdownGlow</include>
-        <include condition="![[!Skin.HasSetting(DisableGlowbar) + [Window.IsActive(home) | Window.IsActive(startup)]] | [!Skin.HasSetting(DisableGlowbar) + ![Window.IsActive(home) | Window.IsActive(startup)]]]">ShutdownNoGlow</include>
+        <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlow</include>
+        <include condition="![!Skin.HasSetting(DisableGlowbar)]">ShutdownNoGlow</include>
     </include>
     <include name="HiddenObject">
         <posx>-300</posx>
@@ -393,7 +394,7 @@
         <font>-</font>
     </include>
     <include name="subcolornofocus">
-        <textcolor>ff969696</textcolor>
+        <textcolor>grey</textcolor>
     </include>
     <include name="listcolornofocus">
         <textcolor>white2</textcolor>
@@ -411,7 +412,7 @@
     </include>
     <include name="Objects_KeyOffVars">
         <textcolor>grey2</textcolor>
-        <focusedcolor>FFFFFFFF</focusedcolor>
+        <focusedcolor>white</focusedcolor>
         <selectedcolor>grey2</selectedcolor>
         <align>center</align>
         <aligny>top</aligny>
@@ -1039,31 +1040,12 @@
         <radiowidth>98</radiowidth>
         <radioposx>508</radioposx>
     </include>
-    <include name="ActorMetaDataContextButton">
-        <control type="button" id="2001">
-            <posx>0</posx>
-            <posy>0</posy>
-            <height>58</height>
-            <width>462</width>
-            <textcolor>context</textcolor>
-            <focusedcolor>white2</focusedcolor>
-            <texturenofocus>dialogs/context_nofocus.png</texturenofocus>
-            <texturefocus>dialogs/shutdown_focus.png</texturefocus>
-            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
-            <align>center</align>
-            <font>Font_Reg19</font>
-            <textoffsety>12</textoffsety>
-            <label>$VAR[ContextMenuLabel2001]</label>
-            <onclick>RunScript(script.metadata.actors,$INFO[ListItem.Label])</onclick>
-            <visible>Container.Content(Actors) | Container.Content(Directors) | Container.Content(Artists)</visible>
-        </control>
-    </include>
     <include name="DialogVideoInfoButton">
         <posx>0</posx>
         <posy>0</posy>
         <width>254.5</width>
         <height>50</height>
-        <textcolor>FF868686</textcolor>
+        <textcolor>grey</textcolor>
         <focusedcolor>white2</focusedcolor>
         <disabledcolor>66868686</disabledcolor>
         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
@@ -1564,27 +1546,26 @@
             <control type="group">
                 <posx>0</posx>
                 <posy>915</posy>
-  
                 <control type="group">
                     <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(MusicVideos) | VideoPlayer.Content(episodes)</visible>
                     <animation effect="slide" start="0,0" end="0,30" reversible="true" condition="IsEmpty(VideoPlayer.Rating)">Conditional</animation>
-                    <control type="image">
-                        <posx>98</posx>
-                        <posy>105</posy>
-                        <width>180</width>
-                        <height>36</height>
-                        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                        <texture>$INFO[VideoPlayer.Rating,stars/,.png]</texture>
-                    </control>
                     <control type="label">
-                        <posx>98</posx>
+                        <posx>38</posx>
                         <posy>56</posy>
-                        <width>180</width>
+                        <width>300</width>
                         <height>38</height>
                         <align>center</align>
                         <aligny>center</aligny>
                         <font>Font_OSDTitle2</font>
-                        <label>$INFO[VideoPlayer.Year]$INFO[VideoPlayer.Season,S] $INFO[VideoPlayer.Episode,E]</label>
+                        <label>$INFO[VideoPlayer.Year]$VAR[VideoSeasonVar,S]$VAR[VideoEpisodeVar,E]</label>
+                    </control>
+                    <control type="image">
+                        <posx>98</posx>
+                        <posy>110</posy>
+                        <width>180</width>
+                        <height>36</height>
+                        <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
+                        <texture>$INFO[VideoPlayer.Rating,stars/,.png]</texture>
                     </control>
                 </control>
             </control>
@@ -1633,4 +1614,11 @@
                 </control>
             </control>
             </include>
+    <include name="ClassicOSDButton">
+        <posx>0</posx>
+        <posy>0</posy>
+        <width>115</width>
+        <height>115</height>
+        <font>-</font>
+    </include>
 </includes>
