@@ -17,7 +17,7 @@
             <name>Font_Bold19</name>
             <filename>Ubuntu-C.ttf</filename>
             <style>bold</style>
-            <size>32</size>
+            <size>33</size>
         </font>
         <font>
             <name>Font_Bold20</name>
@@ -94,12 +94,6 @@
             <size>52</size>
         </font>
         <font>
-            <name>Font_MainSecond</name>
-            <filename>Dekar.ttf</filename>
-            <aspect>0.9</aspect>
-            <size>116</size>
-        </font>
-        <font>
             <name>Font_OSDClassic</name>
             <filename>Ubuntu-C_CAPS.ttf</filename>
             <size>75</size>
@@ -149,6 +143,11 @@
             <name>Font_Reg18</name>
             <filename>Ubuntu-C.ttf</filename>
             <size>31</size>
+        </font>
+        <font>
+            <name>Font_Reg32</name>
+            <filename>Ubuntu-C.ttf</filename>
+            <size>32</size>
         </font>
         <font>
             <name>Font_Reg19</name>
@@ -272,7 +271,7 @@
         <font>
             <name>Font_Reg19_Caps</name>
             <filename>Ubuntu-C_CAPS.ttf</filename>
-            <size>32</size>
+            <size>33</size>
         </font>
         <font>
             <name>Font_Reg20_Caps</name>
@@ -325,7 +324,7 @@
         <font>
             <name>Font_Bold19</name>
             <filename>Roboto-BoldCondensed.ttf</filename>
-            <size>32</size>
+            <size>33</size>
         </font>
         <font>
             <name>Font_Bold20</name>
@@ -443,9 +442,14 @@
             <size>31</size>
         </font>
         <font>
-            <name>Font_Reg19</name>
+            <name>Font_Reg32</name>
             <filename>Roboto-Condensed.ttf</filename>
             <size>32</size>
+        </font>
+        <font>
+            <name>Font_Reg19</name>
+            <filename>Roboto-Condensed.ttf</filename>
+            <size>33</size>
         </font>
         <font>
             <name>Font_Reg20</name>
@@ -556,7 +560,7 @@
         <font>
             <name>Font_Reg19_Caps</name>
             <filename>Roboto-Condensed.ttf</filename>
-            <size>32</size>
+            <size>33</size>
         </font>
         <font>
             <name>Font_Reg20_Caps</name>
@@ -613,7 +617,7 @@
             <name>Font_Bold19</name>
             <filename>Ubuntu-C.ttf</filename>
             <style>bold</style>
-            <size>32</size>
+            <size>33</size>
             <aspect>1.15</aspect>
         </font>
         <font>
@@ -761,9 +765,15 @@
             <aspect>1.15</aspect>
         </font>
         <font>
-            <name>Font_Reg19</name>
+            <name>Font_Reg32</name>
             <filename>Ubuntu-C.ttf</filename>
             <size>32</size>
+            <aspect>1.15</aspect>
+        </font>
+        <font>
+            <name>Font_Reg19</name>
+            <filename>Ubuntu-C.ttf</filename>
+            <size>33</size>
             <aspect>1.15</aspect>
         </font>
         <font>
@@ -903,7 +913,7 @@
         <font>
             <name>Font_Reg19_Caps</name>
             <filename>Ubuntu-C_CAPS.ttf</filename>
-            <size>32</size>
+            <size>33</size>
             <aspect>1.15</aspect>
         </font>
         <font>

@@ -35,7 +35,7 @@
                 <posx>34</posx>
                 <posy>34</posy>
                 <width>1850</width>
-                     <visible>!Skin.HasSetting(panelinfo)</visible>
+                     <visible>![Skin.HasSetting(panelinfo) + Container.Content(movies)]</visible>
                <height>1010</height>
                 <texture background="true">settings/settings_intframe_bottom.png</texture>
                 <include>Animation_SettingsInternalPanel</include>
@@ -44,7 +44,7 @@
                 <posx>498</posx>
                 <posy>87</posy>
                 <width>1260</width>
-                    <visible>!Skin.HasSetting(panelinfo)</visible>
+                    <visible>![Skin.HasSetting(panelinfo) + Container.Content(movies)]</visible>
                 <height>708</height>
                 <texture>common/black.png</texture>
             </control>
@@ -56,7 +56,7 @@
                 <aspectratio>keep</aspectratio>
                 <fadetime>600</fadetime>
                 <texture background="true">$VAR[FanartFallbackToIcon]</texture>
-                    <visible>!Skin.HasSetting(panelinfo)</visible>
+                    <visible>![Skin.HasSetting(panelinfo) + Container.Content(movies)]</visible>
                 <visible>!Player.HasVideo</visible>
             </control>
             <control type="image">
@@ -69,11 +69,11 @@
                 <animation effect="fade" start="100" end="0" time="200" condition="Player.HasVideo">Conditional</animation>
             </control>
              <control type="group">
-                    <posx>580</posx>
+                    <posx>540</posx>
                     <posy>188</posy>
                     <width>894</width>
                     <height>540</height>
-                    <visible>Skin.HasSetting(panelinfo)</visible>
+                    <visible>[Skin.HasSetting(panelinfo) + Container.Content(movies)]</visible>
                             <control type="label">
             <posx>0</posx>
             <posy>-40</posy>
@@ -84,27 +84,26 @@
             <aligny>center</aligny>
         </control>
         <control type="image">
-            <posx>650</posx>
-            <posy>50</posy>
+            <posx>674</posx>
+            <posy>63</posy>
             <width>550</width>
             <height>550</height>
             <fadetime>200</fadetime>
             <texture>$INFO[ListItem.Icon]</texture>
-            <aspectratio aligny="top">keep</aspectratio>
+            <aspectratio aligny="bottom" align="right">keep</aspectratio>
             <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
             <bordersize>7</bordersize>
         </control>
                     <control type="grouplist">
                         <posx>0</posx>
-                        <posy>-20</posy>
+                        <posy>-5</posy>
                         <width>1200</width>
                         <orientation>horizontal</orientation>
                         <itemgap>10</itemgap>
                         <control type="label">
                             <width min="50" max="1200">auto</width>
-                            <label fallback="N/A">$INFO[ListItem.Tagline]</label>
+                            <label>$INFO[ListItem.Tagline]</label>
                             <textcolor>white6</textcolor>
-                            
                             <scroll>true</scroll>
                         </control>
                     </control>
@@ -217,10 +216,9 @@
                         </control>
                         <control type="label">
                             <width min="50" max="720">auto</width>
-                            <label fallback="N/A">$INFO[ListItem.Duration),, $LOCALIZE[12391]]</label>
+                            <label fallback="N/A">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
-
                         </control>
                     </control>
                     <control type="grouplist">
@@ -240,7 +238,6 @@
                             <label fallback="N/A">$INFO[ListItem.Studio]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
-
                         </control>
                     </control>
                     <control type="grouplist">
@@ -256,11 +253,11 @@
                             <aligny>bottom</aligny>
                         </control>
                         <control type="label">
-                            <width min="50" max="720">auto</width>
+                            <width>600</width>
                             <label fallback="N/A">$INFO[ListItem.Mpaa]</label>
                             <textcolor>white6</textcolor>
                             <scroll>true</scroll>
-
+                            <wrapmultiline>true</wrapmultiline>
                         </control>
                     </control>
                 </control>
@@ -272,7 +269,21 @@
                 <font>Font_Reg20</font>
                 <label>$VAR[GlobalPlotOutlineVar]</label>
                 <align>justify</align>
+                    <visible>![Skin.HasSetting(panelinfo) + Container.Content(movies)]</visible>
                 <textcolor>white2</textcolor>
+                <shadowcolor>-</shadowcolor>
+                <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+            </control>
+            <control type="textbox">
+                <posx>527</posx>
+                <posy>810</posy>
+                <width>1200</width>
+                <height>184</height>
+                <font>Font_Reg18</font>
+                <label>$VAR[GlobalPlotVar]</label>
+                <align>justify</align>
+                <textcolor>white2</textcolor>
+                    <visible>[Skin.HasSetting(panelinfo) + Container.Content(movies)]</visible>
                 <shadowcolor>-</shadowcolor>
                 <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
@@ -322,11 +333,12 @@
                 <textoffsetx>15</textoffsetx>
             </control>
                             <control type="image">
-                                <posx>70</posx>
-                                <posy>60</posy>
+                                <posx>80</posx>
+                                <posy>61</posy>
                                 <width>226</width>
                                 <height>33</height>
                                 <aspectratio>keep</aspectratio>
+                                <visible>Container.Content(movies) | Container.Content(tvshows)</visible>
                                 <texture fallback="rating0.png">$INFO[ListItem.Rating,stars/,.png]</texture>
                                 <colordiffuse>FF7c7c7c</colordiffuse>
                             </control>
@@ -355,8 +367,8 @@
                 <textoffsetx>15</textoffsetx>
             </control>
                             <control type="image">
-                                <posx>70</posx>
-                                <posy>60</posy>
+                                <posx>80</posx>
+                                <posy>61</posy>
                                 <width>226</width>
                                 <height>33</height>
                                 <aspectratio>keep</aspectratio>
