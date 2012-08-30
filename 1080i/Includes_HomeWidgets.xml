@@ -5289,7 +5289,7 @@
           <control type="label">
             <posx>200</posx>
             <posy>8</posy>
-            <width>530</width>
+            <width>440</width>
             <height>30</height>
             <align>left</align>
             <aligny>top</aligny>
@@ -5303,7 +5303,7 @@
           <control type="label">
             <posx>200</posx>
             <posy>40</posy>
-            <width>530</width>
+            <width>440</width>
             <height>20</height>
             <align>left</align>
             <aligny>top</aligny>
