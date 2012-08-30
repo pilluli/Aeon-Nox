@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="Viewtype_Episode">
         <control type="group">
@@ -61,7 +61,7 @@
                         <align>right</align>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <label>$VAR[EpisodeTitleVar]</label>
-                        <font>Font_Reg25</font>
+                        <font>Font_Reg25_Caps</font>
                         <include>listcolornofocus</include>
                     </control>
                     <control type="label">
@@ -97,8 +97,8 @@
                     <effect type="fade" end="30" time="0" easing="in" tween="cubic" />
                 </animation>
                         <align>center</align>
-                        <label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]</label>
-                        <font>Font_Bold22</font>
+                        <label>$INFO[ListItem.Episode]</label>
+                        <font>Font_MainClassic4</font>
                         <textcolor>white</textcolor>
                         <visible>Container.Content(episodes)</visible>
                     </control>
@@ -183,7 +183,7 @@
                             <height>225</height>
                             <fadetime>200</fadetime>
                             <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$VAR[ListPosterVar]</texture>
-                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <aspectratio scalediffuse="false">scale</aspectratio>
                         </control>
                         <control type="image">
                             <posx>-11.5</posx>
@@ -288,9 +288,9 @@
                       <effect type="slide" end="0,-30" time="0" easing="in" tween="cubic" />
                </animation>
                         <align>center</align>
-                        <label>$INFO[ListItem.Season]x$INFO[ListItem.Episode]</label>
-                        <font>Font_Bold22</font>
-                        <textcolor>grey</textcolor>
+                        <label>$INFO[ListItem.Episode]</label>
+                        <font>Font_MainClassic4</font>
+                        <textcolor>white</textcolor>
                         <visible>Container.Content(episodes)</visible>
                     </control>
                     <control type="group">
@@ -306,7 +306,7 @@
                             <scrollout>false</scrollout>
                             <pauseatend>1800</pauseatend>
                             <scrollspeed>40</scrollspeed>
-                            <label>$VAR[EpisodeTitleVar]</label>
+                            <label>$INFO[ListItem.Title]</label>
                             <textcolor>$VAR[TitleColorVar]</textcolor>
                             <font>Font_Reg25_Caps</font>
                             <include>listcolornofocus</include>
