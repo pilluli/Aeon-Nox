@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <!--Language file translated with Team XBMC Translator-->
 <!--Translator: Riffi77 - silvestik - foX aCe-->
-<!--Date of translation: 08/22/2012-->
+<!--Date of translation: 08/24/2012-->
 <!--$Revision$-->
 <strings>
   <string id="31001">Adorer</string>
@@ -77,6 +77,7 @@
   <string id="31094">Widget fanart</string>
   <string id="31095">Classement</string>
   <string id="31096">Rechercher sur YouTube</string>
+  <string id="31097">OSD modèle classique</string>
   <string id="31101">Éléments de la fenêtre d'accueil</string>
   <string id="31102">Arrière-plan</string>
   <string id="31113">Une image</string>

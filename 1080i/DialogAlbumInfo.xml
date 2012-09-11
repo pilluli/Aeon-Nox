@@ -25,14 +25,12 @@
             <visible>[Skin.HasSetting(musicextrafanart) + !IsEmpty(Skin.String(ArtistsLogosPath))]</visible>
         </control>
         <control type="image">
-            <posx>0</posx>
             <posy>404</posy>
             <width>1923</width>
             <height>780</height>
             <texture>home/nowplaying_shadow.png</texture>
         </control>
         <control type="image">
-            <posx>0</posx>
             <posy>404</posy>
             <width>1923</width>
             <height>780</height>
@@ -40,7 +38,6 @@
             <texture>home/nowplaying_shadow.png</texture>
         </control>
         <control type="image">
-            <posx>0</posx>
             <posy>622</posy>
             <width>1920</width>
             <height>608</height>
@@ -52,7 +49,6 @@
         </control>
         <!-- Thumb -->
         <control type="group">
-            <posx>0</posx>
             <posy>854</posy>
             <control type="group">
                 <posy>20</posy>
@@ -170,7 +166,7 @@
                         <shadowcolor>black</shadowcolor>
                     </control>
                     <control type="image" id="8308">
-                        <posx>500</posx>
+                        <posx>465</posx>
                         <posy>-400</posy>
                         <width>500</width>
                         <height>193</height>
@@ -178,7 +174,6 @@
                         <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
                         <texture background="true" fallback="empty.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
                         <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
-                        <animation effect="slide" time="400" tween="cubic" easing="inout" end="-35" condition="!Skin.HasSetting(CDArtinVis) | Skin.HasSetting(ThumbOrSlide)">Conditional</animation>
                     </control>
                     <control type="label">
                         <posx>500</posx>
@@ -210,7 +205,7 @@
                         <shadowcolor>black</shadowcolor>
                     </control>
                     <control type="image" id="8309">
-                        <posx>500</posx>
+                        <posx>465</posx>
                         <posy>-400</posy>
                         <width>500</width>
                         <height>193</height>
@@ -218,7 +213,6 @@
                         <animation effect="fade" start="100" end="0" time="0" condition="Substring(Control.GetLabel(8308),empty.png)">Conditional</animation>
                         <texture background="true" fallback="empty.png">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
                         <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
-                        <animation effect="slide" time="400" tween="cubic" easing="inout" end="-35" condition="!Skin.HasSetting(CDArtinVis) | Skin.HasSetting(ThumbOrSlide)">Conditional</animation>
                     </control>
                     <control type="label">
                         <posx>500</posx>
@@ -269,7 +263,6 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -293,12 +286,10 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
-                        <posy>0</posy>
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <control type="label">
@@ -317,7 +308,6 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -341,7 +331,6 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -365,7 +354,6 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                 </control>
@@ -392,7 +380,6 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -416,12 +403,10 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                     <control type="grouplist">
                         <posx>500</posx>
-                        <posy>0</posy>
                         <width>778</width>
                         <orientation>horizontal</orientation>
                         <control type="label">
@@ -440,7 +425,6 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -464,7 +448,6 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -489,7 +472,6 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                     <control type="grouplist">
@@ -514,7 +496,6 @@
                             <shadowcolor>black</shadowcolor>
                             <scrollout>false</scrollout>
                             <pauseatend>1000</pauseatend>
-                            
                         </control>
                     </control>
                 </control>
@@ -710,14 +691,12 @@
             <onright>61</onright>
             <onup>50</onup>
             <ondown>50</ondown>
-            <viewtype label="">list</viewtype>
             <pagecontrol>61</pagecontrol>
             <scrolltime>200</scrolltime>
             <aligny>bottom</aligny>
             <orientation>vertical</orientation>
             <itemlayout condition="Container.Content(Albums)" height="40" width="500">
                 <control type="image">
-                    <posx>0</posx>
                     <posy>-20</posy>
                     <width>500</width>
                     <height>60</height>
@@ -725,7 +704,6 @@
                 </control>
                 <control type="label">
                     <posx>10</posx>
-                    <posy>0</posy>
                     <width>500</width>
                     <height>40</height>
                     <font>Font_Reg17</font>
@@ -737,7 +715,6 @@
                 </control>
                 <control type="label">
                     <posx>500</posx>
-                    <posy>0</posy>
                     <width>500</width>
                     <height>40</height>
                     <font>Font_Reg17</font>
@@ -753,7 +730,6 @@
                 <control type="group">
                     <visible>!Control.HasFocus(50)</visible>
                     <control type="image">
-                        <posx>0</posx>
                         <posy>-20</posy>
                         <width>500</width>
                         <height>60</height>
@@ -761,7 +737,6 @@
                     </control>
                     <control type="label">
                         <posx>10</posx>
-                        <posy>0</posy>
                         <width>500</width>
                         <height>40</height>
                         <font>Font_Reg17</font>
@@ -773,7 +748,6 @@
                     </control>
                     <control type="label">
                         <posx>500</posx>
-                        <posy>0</posy>
                         <width>500</width>
                         <height>40</height>
                         <font>Font_Reg17</font>
@@ -788,8 +762,6 @@
                 <control type="group">
                     <visible>Control.HasFocus(50)</visible>
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <width>500</width>
                         <height>40</height>
                         <texture>views/tripanel/listselect_fo.png</texture>
@@ -797,7 +769,6 @@
                     </control>
                     <control type="label">
                         <posx>10</posx>
-                        <posy>0</posy>
                         <width>500</width>
                         <height>40</height>
                         <font>Font_Reg17</font>
@@ -809,7 +780,6 @@
                     </control>
                     <control type="label">
                         <posx>500</posx>
-                        <posy>0</posy>
                         <width>500</width>
                         <height>40</height>
                         <font>Font_Reg17</font>
@@ -824,7 +794,6 @@
             </focusedlayout>
             <itemlayout condition="Container.Content(Artists)" height="40" width="500">
                 <control type="image">
-                    <posx>0</posx>
                     <posy>-20</posy>
                     <width>500</width>
                     <height>60</height>
@@ -832,7 +801,6 @@
                 </control>
                 <control type="label">
                     <posx>10</posx>
-                    <posy>0</posy>
                     <width>500</width>
                     <height>40</height>
                     <font>Font_Reg17</font>
@@ -847,7 +815,6 @@
                 <control type="group">
                     <visible>!Control.HasFocus(50)</visible>
                     <control type="image">
-                        <posx>0</posx>
                         <posy>-20</posy>
                         <width>500</width>
                         <height>60</height>
@@ -855,7 +822,6 @@
                     </control>
                     <control type="label">
                         <posx>10</posx>
-                        <posy>0</posy>
                         <width>500</width>
                         <height>40</height>
                         <font>Font_Reg17</font>
@@ -869,8 +835,6 @@
                 <control type="group">
                     <visible>Control.HasFocus(50)</visible>
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <width>500</width>
                         <height>40</height>
                         <texture>views/tripanel/listselect_fo.png</texture>
@@ -878,7 +842,6 @@
                     </control>
                     <control type="label">
                         <posx>10</posx>
-                        <posy>0</posy>
                         <width>500</width>
                         <height>40</height>
                         <font>Font_Reg17</font>
@@ -898,8 +861,8 @@
                     <animation effect="zoom" start="100" end="65" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
                     <control type="image">
                         
-                        <posx>0</posx>
-                        <posy>0</posy>
+                        
+                        
                         <width>425</width>
                         <height>400</height>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
@@ -921,8 +884,8 @@
                     </control>
                     <control type="image">
                         
-                        <posx>0</posx>
-                        <posy>0</posy>
+                        
+                        
                         <width>425</width>
                         <height>400</height>
                         <texture>thumbs/boxes/cd_shadow_light.png</texture>
@@ -937,7 +900,7 @@
                     <onup>5011</onup>
                     <ondown>5011</ondown>
                     <onback>5011</onback>
-                    <viewtype label="21371">list</viewtype>
+                    
                     <orientation>vertical</orientation>
                     <pagecontrol>60</pagecontrol>
                     <animation effect="zoom" start="100" end="85" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
@@ -947,7 +910,7 @@
                     <itemlayout width="614" height="30">
                         <control type="label">
                             <posx>425</posx>
-                            <posy>0</posy>
+                            
                             <width>300</width>
                             <height>34</height>
                             <font>Font_Info_Caps</font>
@@ -962,7 +925,7 @@
                     <focusedlayout width="614" height="30">
                         <control type="label">
                             <posx>425</posx>
-                            <posy>0</posy>
+                            
                             <width>300</width>
                             <height>34</height>
                             <font>Font_Info_Caps</font>
@@ -1000,8 +963,8 @@
                     <animation effect="fade" time="400">VisibleChange</animation>
                     <control type="image">
                         
-                        <posx>0</posx>
-                        <posy>0</posy>
+                        
+                        
                         <width>425</width>
                         <height>400</height>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
@@ -1031,7 +994,7 @@
                         <ondown>5011</ondown>
                         <onback>5011</onback>
                         <animation effect="zoom" start="100" end="85" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
-                        <viewtype label="21371">list</viewtype>
+                        
                         <orientation>vertical</orientation>
                         <pagecontrol>60</pagecontrol>
                         <focusposition>0</focusposition>
@@ -1040,7 +1003,7 @@
                         <itemlayout width="614" height="30">
                             <control type="label">
                                 <posx>15</posx>
-                                <posy>0</posy>
+                                
                                 <width>375</width>
                                 <height>34</height>
                                 <font>Font_Info_Caps</font>
@@ -1055,7 +1018,7 @@
                         <focusedlayout width="614" height="30">
                             <control type="label">
                                 <posx>15</posx>
-                                <posy>0</posy>
+                                
                                 <width>368</width>
                                 <height>34</height>
                                 <font>Font_Info_Caps</font>
@@ -1073,8 +1036,8 @@
                     </control>
                     <control type="image">
                         
-                        <posx>0</posx>
-                        <posy>0</posy>
+                        
+                        
                         <width>425</width>
                         <height>400</height>
                         <texture>thumbs/boxes/cd_shadow_light.png</texture>

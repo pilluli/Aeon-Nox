@@ -4,8 +4,6 @@
     <allowoverlay>no</allowoverlay>
     <coordinates>
         <system>1</system>
-        <posx>0</posx>
-        <posy>0</posy>
     </coordinates>
     <controls>
         <control type="image">
@@ -82,7 +80,6 @@
                 <onright>413</onright>
             </control>
             <control type="list" id="450">
-                <viewtype label="List">list</viewtype>
                 <posx>90</posx>
                 <posy>158</posy>
                 <width>1140</width>
@@ -96,15 +93,12 @@
                 <ondown>450</ondown>
                 <itemlayout height="60">
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <height>60</height>
                         <width>1140</width>
                         <texture>osd/osd_settings_buttonnf.png</texture>
                     </control>
                     <control type="label">
                         <posx>68</posx>
-                        <posy>0</posy>
                         <width>810</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
@@ -114,7 +108,6 @@
                     </control>
                     <control type="label">
                         <posx>1041</posx>
-                        <posy>0</posy>
                         <width>795</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
@@ -133,15 +126,12 @@
                 </itemlayout>
                 <focusedlayout height="60">
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <height>60</height>
                         <width>1140</width>
                         <texture>osd/osd_settings_buttonnf.png</texture>
                     </control>
                     <control type="image">
                         <posx>10</posx>
-                        <posy>0</posy>
                         <width>1117</width>
                         <height>58</height>
                         <texture>views/tripanel/listselect_fo.png</texture>
@@ -150,7 +140,6 @@
                     </control>
                     <control type="label">
                         <posx>68</posx>
-                        <posy>0</posy>
                         <width>810</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
@@ -160,7 +149,6 @@
                     </control>
                     <control type="label">
                         <posx>1041</posx>
-                        <posy>0</posy>
                         <width>795</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
@@ -179,7 +167,6 @@
                 </focusedlayout>
             </control>
             <control type="list" id="451">
-                <viewtype label="List">list</viewtype>
                 <posx>90</posx>
                 <posy>158</posy>
                 <width>1156</width>
@@ -193,15 +180,12 @@
                 <ondown>451</ondown>
                 <itemlayout height="60">
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <height>60</height>
                         <width>1156</width>
                         <texture>osd/osd_settings_buttonnf.png</texture>
                     </control>
                     <control type="label">
                         <posx>68</posx>
-                        <posy>0</posy>
                         <width>810</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
@@ -211,7 +195,6 @@
                     </control>
                     <control type="label">
                         <posx>1041</posx>
-                        <posy>0</posy>
                         <width>795</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
@@ -230,15 +213,12 @@
                 </itemlayout>
                 <focusedlayout height="60">
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <height>60</height>
                         <width>1156</width>
                         <texture>osd/osd_settings_buttonnf.png</texture>
                     </control>
                     <control type="image">
                         <posx>10</posx>
-                        <posy>0</posy>
                         <width>1117</width>
                         <height>58</height>
                         <texture>views/tripanel/listselect_fo.png</texture>
@@ -247,7 +227,6 @@
                     </control>
                     <control type="label">
                         <posx>68</posx>
-                        <posy>0</posy>
                         <width>810</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
@@ -257,7 +236,6 @@
                     </control>
                     <control type="label">
                         <posx>1041</posx>
-                        <posy>0</posy>
                         <width>795</width>
                         <height>60</height>
                         <font>Font_Reg19</font>
@@ -289,8 +267,6 @@
                 <enable>!StringCompare(Window.Property(dialogprogress),1)</enable>
                 <orientation>horizontal</orientation>
                 <control type="button" id="413">
-                    <posx>0</posx>
-                    <posy>0</posy>
                     <width>279</width>
                     <height>80</height>
                     <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
@@ -305,8 +281,6 @@
                     <disabledcolor>grey</disabledcolor>
                 </control>
                 <control type="button" id="414">
-                    <posx>0</posx>
-                    <posy>0</posy>
                     <width>279</width>
                     <height>80</height>
                     <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
@@ -321,8 +295,6 @@
                     <disabledcolor>grey</disabledcolor>
                 </control>
                 <control type="button" id="415">
-                    <posx>0</posx>
-                    <posy>0</posy>
                     <width>279</width>
                     <height>80</height>
                     <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
@@ -337,8 +309,6 @@
                     <disabledcolor>grey</disabledcolor>
                 </control>
                 <control type="radiobutton" id="416">
-                    <posx>0</posx>
-                    <posy>0</posy>
                     <width>279</width>
                     <height>80</height>
                     <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
@@ -371,16 +341,12 @@
                 <posx>570</posx>
                 <posy>375</posy>
                 <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
                     <width>780</width>
                     <height>330</height>
                     <texture>dialogs/dialog_back.png</texture>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
                 <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
                     <width>780</width>
                     <height>330</height>
                     <include>PanelGlowFade</include>
@@ -390,22 +356,17 @@
                 </control>
                 <control type="image">
                     <posx>15</posx>
-                    <posy>0</posy>
                     <width>750</width>
                     <height>60</height>
                     <texture>osd/osd_settings_buttonnf.png</texture>
                 </control>
                 <control type="label" id="1011">
-                    <posx>0</posx>
-                    <posy>0</posy>
                     <width>0</width>
                     <height>0</height>
                     <font>-</font>
                     <visible>false</visible>
                 </control>
                 <control type="label">
-                    <posx>0</posx>
-                    <posy>0</posy>
                     <width>780</width>
                     <height>78</height>
                     <textcolor>$VAR[FontColorVar]</textcolor>
@@ -416,12 +377,9 @@
                     <label>$INFO[Control.GetLabel(1011)] $INFO[Control.GetLabel(1015),- ,%]</label>
                 </control>
                 <control type="grouplist">
-                    <posx>0</posx>
                     <posy>68</posy>
                     <itemgap>0</itemgap>
                     <control type="label" id="1012">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <width>780</width>
                         <height>45</height>
                         <textcolor>white3</textcolor>
@@ -429,8 +387,6 @@
                         <textoffsetx>45</textoffsetx>
                     </control>
                     <control type="label" id="1013">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <width>780</width>
                         <height>45</height>
                         <textcolor>white3</textcolor>
@@ -438,8 +394,6 @@
                         <textoffsetx>45</textoffsetx>
                     </control>
                     <control type="label" id="1014">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <width>780</width>
                         <height>45</height>
                         <textcolor>white3</textcolor>

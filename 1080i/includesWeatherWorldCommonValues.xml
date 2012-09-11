@@ -2,20 +2,15 @@
 <includes>
     <include name="WeatherWorldMapImage">
         <control type="image">
-            <posx>0</posx>
-            <posy>0</posy>
             <width>1920</width>
             <height>1080</height>
             <texture background="true" fallback="special://skin/backgrounds/Land_shallow_topo_2048.jpg">$INFO[Window(Weather).Property(Current.Earth.Phase.LargeImage)]</texture>
-            <include>backgroundfade</include>
             <fadetime>FanartCrossfadeTime</fadetime>
             <visible>!Skin.HasSetting(ShowEarthMeteoFanart) | StringCompare(Window(1114).Property(Weather.CurrentView),earthphase)|StringCompare(Window(12600).Property(showcities),1)|StringCompare(Window(12600).Property(showcitiesicons),1)</visible>
         </control>
     </include>
     <include name="WeatherWorldTileImage">
         <control type="image">
-            <posx>0</posx>
-            <posy>0</posy>
             <width>360</width>
             <height>60</height>
             <texture border="5">button-nofocus.png</texture>
@@ -23,8 +18,6 @@
         </control>
     </include>
     <include name="WeatherWorldTopLeftPointer">
-        <posx>0</posx>
-        <posy>0</posy>
         <width>20</width>
         <height>20</height>
         <aspectratio>keep</aspectratio>
@@ -32,14 +25,12 @@
     </include>
     <include name="WeatherWorldTopRightPointer">
         <posx>340</posx>
-        <posy>0</posy>
         <width>20</width>
         <height>20</height>
         <aspectratio>keep</aspectratio>
         <texture flipx="true">pointer-focus-click.png</texture>
     </include>
     <include name="WeatherWorldConditionIconCommonValues">
-        <posx>0</posx>
         <posy>20</posy>
         <width>40</width>
         <height>40</height>
@@ -96,7 +87,6 @@
         <shadowcolor>black</shadowcolor>
     </include>
     <include name="WeatherWorldLatitudeLongitudeCommonValues">
-        <posx>0</posx>
         <posy>60</posy>
         <width>360</width>
         <height>20</height>
@@ -135,7 +125,6 @@
                         <label>$INFO[Window.Property(weatherworld.city.1.name)]</label>
                     </control>
                     <control type="grouplist">
-                        <posx>0</posx>
                         <align>right</align>
                         <include>WeatherWorldGroupListCommonValues</include>
                         <control type="label">
@@ -227,7 +216,6 @@
                         <label>$INFO[Window.Property(weatherworld.city.2.name)]</label>
                     </control>
                     <control type="grouplist">
-                        <posx>0</posx>
                         <align>right</align>
                         <include>WeatherWorldGroupListCommonValues</include>
                         <control type="label">
@@ -319,7 +307,6 @@
                         <label>$INFO[Window.Property(weatherworld.city.3.name)]</label>
                     </control>
                     <control type="grouplist">
-                        <posx>0</posx>
                         <align>right</align>
                         <include>WeatherWorldGroupListCommonValues</include>
                         <control type="label">
@@ -411,7 +398,6 @@
                         <label>$INFO[Window.Property(weatherworld.city.4.name)]</label>
                     </control>
                     <control type="grouplist">
-                        <posx>0</posx>
                         <align>right</align>
                         <include>WeatherWorldGroupListCommonValues</include>
                         <control type="label">
@@ -503,7 +489,6 @@
                         <label>$INFO[Window.Property(weatherworld.city.5.name)]</label>
                     </control>
                     <control type="grouplist">
-                        <posx>0</posx>
                         <align>right</align>
                         <include>WeatherWorldGroupListCommonValues</include>
                         <control type="label">
@@ -595,7 +580,6 @@
                         <label>$INFO[Window.Property(weatherworld.city.6.name)]</label>
                     </control>
                     <control type="grouplist">
-                        <posx>0</posx>
                         <align>right</align>
                         <include>WeatherWorldGroupListCommonValues</include>
                         <control type="label">
@@ -687,7 +671,6 @@
                         <label>$INFO[Window.Property(weatherworld.city.7.name)]</label>
                     </control>
                     <control type="grouplist">
-                        <posx>0</posx>
                         <align>right</align>
                         <include>WeatherWorldGroupListCommonValues</include>
                         <control type="label">
@@ -779,7 +762,6 @@
                         <label>$INFO[Window.Property(weatherworld.city.8.name)]</label>
                     </control>
                     <control type="grouplist">
-                        <posx>0</posx>
                         <align>right</align>
                         <include>WeatherWorldGroupListCommonValues</include>
                         <control type="label">
@@ -871,7 +853,6 @@
                         <label>$INFO[Window.Property(weatherworld.city.9.name)]</label>
                     </control>
                     <control type="grouplist">
-                        <posx>0</posx>
                         <align>right</align>
                         <include>WeatherWorldGroupListCommonValues</include>
                         <control type="label">
