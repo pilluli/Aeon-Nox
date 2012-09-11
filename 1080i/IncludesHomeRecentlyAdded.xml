@@ -18,7 +18,6 @@
                 </control>
                 <control type="image">
                     <posx>-15</posx>
-                    <posy>0</posy>
                     <width>375</width>
                     <height>34</height>
                     <texture>dialogs/context_nofocus.png</texture>
@@ -26,7 +25,6 @@
                 </control>
                 <control type="label">
                     <posx>45</posx>
-                    <posy>0</posy>
                     <width>310</width>
                     <height>34</height>
                     <font>Font_Reg15_Caps</font>
@@ -47,7 +45,6 @@
                 </control>
                 <control type="image">
                     <posx>-15</posx>
-                    <posy>0</posy>
                     <width>375</width>
                     <height>34</height>
                     <texture>dialogs/context_nofocus.png</texture>
@@ -55,7 +52,6 @@
                 </control>
                 <control type="label">
                     <posx>45</posx>
-                    <posy>0</posy>
                     <width>310</width>
                     <height>34</height>
                     <font>Font_Info_Caps</font>
@@ -131,7 +127,7 @@
         <control type="group" id="8998">
             <posx>1542</posx>
             <posy>678</posy>
-            <visible>![Skin.HasSetting(DisableWidgets) + Window.IsActive(home)]</visible>
+            <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Window.IsActive(home)]</visible>
             <visible>![IsEmpty(Control.GetLabel(4323)) + Window.IsActive(home) + Substring(Control.GetLabel(4321),custom) + [Container(9000).HasFocus(101) | Container(9000).HasFocus(102) | Container(9000).HasFocus(103) | Container(9000).HasFocus(104) | Container(9000).HasFocus(105) | Container(9000).HasFocus(106) | Container(9000).HasFocus(107) | Container(9000).HasFocus(108) | Container(9000).HasFocus(109)]]</visible>
             <visible>!Substring(Control.GetLabel(4321),weather) + !Substring(Control.GetLabel(4321),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4321),panel) + !IsEmpty(Control.GetLabel(4321))</visible>
             <include>Animation_Widgets</include>
@@ -221,8 +217,6 @@
                                 <animation effect="fade" time="50">Hidden</animation>
                             </control>
                             <control type="image">
-                                <posx>0</posx>
-                                <posy>0</posy>
                                 <width>148</width>
                                 <height>203</height>
                                 <fadetime>200</fadetime>
@@ -246,8 +240,6 @@
                                 <animation effect="fade" time="50">Hidden</animation>
                             </control>
                             <control type="image">
-                                <posx>0</posx>
-                                <posy>0</posy>
                                 <width>148</width>
                                 <height>203</height>
                                 <fadetime>200</fadetime>
@@ -271,8 +263,6 @@
                                 <animation effect="fade" time="50">Hidden</animation>
                             </control>
                             <control type="image">
-                                <posx>0</posx>
-                                <posy>0</posy>
                                 <width>168</width>
                                 <height>234</height>
                                 <fadetime>200</fadetime>
@@ -392,31 +382,25 @@
                         <itemgap>40</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="label">
-                            <posx>0</posx>
                             <width min="100" max="800">auto</width>
                             <height>45</height>
                             <aligny>center</aligny>
-                            <posy>0</posy>
                             <textcolor>white6</textcolor>
                             <label>[COLOR=$VAR[HomeMenuWidgetTextVar]]$LOCALIZE[345]: [/COLOR]$INFO[Container(8000).ListItem.Property(Year)]</label>
                             <font>Font_Reg20</font>
                         </control>
                         <control type="label">
-                            <posx>0</posx>
                             <width min="100" max="800">auto</width>
                             <height>45</height>
                             <aligny>center</aligny>
-                            <posy>0</posy>
                             <textcolor>white6</textcolor>
                             <label>[COLOR=$VAR[HomeMenuWidgetTextVar]]$LOCALIZE[31095]: [/COLOR]$INFO[Container(8000).ListItem.Property(Rating)]</label>
                             <font>Font_Reg20</font>
                         </control>
                         <control type="label">
-                            <posx>0</posx>
                             <width min="100" max="800">auto</width>
                             <height>45</height>
                             <aligny>center</aligny>
-                            <posy>0</posy>
                             <textcolor>white6</textcolor>
                             <label>[COLOR=$VAR[HomeMenuWidgetTextVar]]$LOCALIZE[2050]: [/COLOR] $INFO[Container(8000).ListItem.Property(RunningTime),, $LOCALIZE[12391]]</label>
                             <font>Font_Reg20</font>
@@ -424,7 +408,6 @@
                     </control>
                     <control type="label">
                         <posx>38</posx>
-                        <posy>0</posy>
                         <width>1050</width>
                         <height>45</height>
                         <aligny>center</aligny>
@@ -458,8 +441,6 @@
                     <include>Animation_VisibleChange400</include>
                 </control>
                 <control type="image">
-                    <posx>0</posx>
-                    <posy>0</posy>
                     <width>260</width>
                     <height>390</height>
                     <fadetime>IconCrossfadeTime</fadetime>
@@ -653,7 +634,7 @@
                         <textcolor>white3</textcolor>
                         <align>justify</align>
                         <aligny>top</aligny>
-                        <label fallback="-">$INFO[Container(8000).ListItem.Property(Summary)]$INFO[Container(8000).ListItem.Property(Album_Description)]$INFO[Container(8000).ListItem.Property(Artist_Description)]</label>
+                        <label fallback="-">$INFO[Container(8000).ListItem.Property(Summary)]$INFO[Container(8000).ListItem.Property(Description)]</label>
                     </control>
                 </control>
                 <control type="image">
@@ -785,6 +766,15 @@
                     <height>280</height>
                     <onleft>8993</onleft>
                     <onright condition="SubString(Control.GetLabel(4321),random) + IsEmpty(Container(8000).ListItem.Property(Trailer))">XBMC.RunScript(script.randomitems,limit=16&amp;unplayed=True)</onright>
+                    <onright condition="SubString(Control.GetLabel(4321),custom) + IsEmpty(Container(8000).ListItem.Property(Trailer)) + Container(9000).HasFocus(101)">$INFO[Skin.String(StartupCustomHomeItem1)]</onright>
+                    <onright condition="SubString(Control.GetLabel(4321),custom) + IsEmpty(Container(8000).ListItem.Property(Trailer)) + Container(9000).HasFocus(102)">$INFO[Skin.String(StartupCustomHomeItem2)]</onright>
+                    <onright condition="SubString(Control.GetLabel(4321),custom) + IsEmpty(Container(8000).ListItem.Property(Trailer)) + Container(9000).HasFocus(103)">$INFO[Skin.String(StartupCustomHomeItem3)]</onright>
+                    <onright condition="SubString(Control.GetLabel(4321),custom) + IsEmpty(Container(8000).ListItem.Property(Trailer)) + Container(9000).HasFocus(104)">$INFO[Skin.String(StartupCustomHomeItem4)]</onright>
+                    <onright condition="SubString(Control.GetLabel(4321),custom) + IsEmpty(Container(8000).ListItem.Property(Trailer)) + Container(9000).HasFocus(105)">$INFO[Skin.String(StartupCustomHomeItem5)]</onright>
+                    <onright condition="SubString(Control.GetLabel(4321),custom) + IsEmpty(Container(8000).ListItem.Property(Trailer)) + Container(9000).HasFocus(106)">$INFO[Skin.String(StartupCustomHomeItem6)]</onright>
+                    <onright condition="SubString(Control.GetLabel(4321),custom) + IsEmpty(Container(8000).ListItem.Property(Trailer)) + Container(9000).HasFocus(107)">$INFO[Skin.String(StartupCustomHomeItem7)]</onright>
+                    <onright condition="SubString(Control.GetLabel(4321),custom) + IsEmpty(Container(8000).ListItem.Property(Trailer)) + Container(9000).HasFocus(108)">$INFO[Skin.String(StartupCustomHomeItem8)]</onright>
+                    <onright condition="SubString(Control.GetLabel(4321),custom) + IsEmpty(Container(8000).ListItem.Property(Trailer)) + Container(9000).HasFocus(109)">$INFO[Skin.String(StartupCustomHomeItem9)]</onright>
                     <onright condition="!IsEmpty(Container(8000).ListItem.Property(Trailer))">PlayMedia($ESCINFO[Container(8000).ListItem.Property(Trailer)])</onright>
                     <onup condition="!IsEmpty(Control.GetLabel(4325)) + Skin.HasSetting(lowermainmenu)">SetFocus(4445)</onup>
                     <onup condition="!Skin.HasSetting(lowermainmenu)">SetFocus(9000)</onup>
@@ -793,14 +783,12 @@
 		    <ondown condition="Container(9000).HasFocus(2)">8005</ondown>
 		    <ondown condition="![Container(9000).HasFocus(2)]">8000</ondown>
 		    <onback>8993</onback>
-		    <viewtype label="535">list</viewtype>
                     <preloaditems>2</preloaditems>
                     <pagecontrol>-</pagecontrol>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <itemlayout height="34" width="450">
                         <control type="image">
                             <posx>-15</posx>
-                            <posy>0</posy>
                             <width>424</width>
                             <height>34</height>
                             <texture>dialogs/context_nofocus.png</texture>
@@ -808,7 +796,6 @@
                         </control>
                         <control type="label">
                             <posx>15</posx>
-                            <posy>0</posy>
                             <width>375</width>
                             <height>34</height>
                             <font>Font_Info_Caps</font>
@@ -821,7 +808,6 @@
                     <focusedlayout height="34" width="450">
                         <control type="image">
                             <posx>1</posx>
-                            <posy>0</posy>
                             <width>390</width>
                             <height>34</height>
                             <texture>views/tripanel/listselect_fo.png</texture>
@@ -831,7 +817,6 @@
                         </control>
                         <control type="label">
                             <posx>15</posx>
-                            <posy>0</posy>
                             <width>368</width>
                             <height>34</height>
                             <font>Font_Info_Caps</font>

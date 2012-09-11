@@ -4,7 +4,6 @@
     <backgroundcolor>black</backgroundcolor>
     <allowoverlay>no</allowoverlay>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
-    
     <animation type="WindowOpen" reversible="false" condition="!Window.Previous(10012) + !Window.Previous(10013) + !Window.Previous(10014) + !Window.Previous(10015) + !Window.Previous(10016) + !Window.Previous(10017) + !Window.Previous(10018) + !Window.Previous(10019) + !Window.Previous(10020) + !Window.Previous(1111) + !Window.Previous(10007)">
         <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
         <effect type="fade" start="0" end="100" time="300" />
@@ -19,37 +18,8 @@
         <include>Furniture_SettingsFloor</include>
         <control type="group">
             <animation effect="zoom" end="91" center="960,360" time="400" tween="cubic" easing="inout" condition="true">Conditional</animation>
-            <control type="image">
-                <posx>36</posx>
-                <posy>36</posy>
-                <width>1846</width>
-                <height>1006</height>
-                <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <include>Animation_VisibleChange400</include>
-                <texture>settings/settings_panelback_shadow.png</texture>
-            </control>
-            <control type="image">
-                <posx>34</posx>
-                <posy>34</posy>
-                <width>1850</width>
-                <height>1010</height>
-                <texture>settings/settings_panelback2.png</texture>
-                <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-            </control>
-            <control type="image">
-                <include>Furniture_SettingsInternalBackPanel</include>
-                <include>Animation_SettingsInternalPanel</include>
-            </control>
-            <control type="image">
-                <posx>80</posx>
-                <posy>45</posy>
-                <width>400</width>
-                <height>158</height>
-                <aspectratio>keep</aspectratio>
-                <colordiffuse>white</colordiffuse>
-                <texture>XBMC_Logo.png</texture>
-            </control>
+            <include>Furniture_SettingsBackPanel2</include>
+            <include>Furniture_SettingsInternalBackPanel</include>
             <control type="list" id="9000">
                 <posx>63</posx>
                 <posy>190</posy>
@@ -63,7 +33,6 @@
                 <itemlayout height="74" width="570">
                     <control type="label">
                         <posx>30</posx>
-                        <posy>0</posy>
                         <width>389</width>
                         <height>74</height>
                         <font>Font_Bold20</font>
@@ -74,8 +43,6 @@
                 </itemlayout>
                 <focusedlayout height="74" width="570">
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <width>434</width>
                         <height>74</height>
                         <texture>views/tripanel/listselect_fo.png</texture>
@@ -84,7 +51,6 @@
                     </control>
                     <control type="label">
                         <posx>30</posx>
-                        <posy>0</posy>
                         <width>389</width>
                         <height>74</height>
                         <font>Font_Bold20</font>
@@ -184,7 +150,6 @@
             <control type="group">
                 <control type="grouplist">
                     <posx>22</posx>
-                    <posy>0</posy>
                     <width>750</width>
                     <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                     <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>

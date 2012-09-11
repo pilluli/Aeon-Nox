@@ -1560,13 +1560,12 @@
     <include name="Furniture_ClassicHomeGradient">
         <control type="image">
             <posx>0</posx>
-            <posy>453</posy>
+            <posy>455</posy>
             <width>1920</width>
             <height>225</height>
             <texture>home/homemenu_gradient.png</texture>
         </control>
         <control type="image">
-            <posx>0</posx>
             <posy>453</posy>
             <width>1920</width>
             <height>225</height>
@@ -1582,7 +1581,7 @@
         <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
         <include>Animation_VisibleChange200</include>
         <shadowcolor>-</shadowcolor>
-                <posy>-2</posy>
+        <posy>-2</posy>
         <font>Font_MainClassic</font>
         <visible>True</visible>
     </include>
@@ -1597,7 +1596,6 @@
         <font>-</font>
         <visible>False</visible>
     </include>
-
     <include name="MainMenuListContent">
         <hitrect x="-238" y="475" w="2400" h="130" />
         <posx>-338</posx>
@@ -1607,12 +1605,13 @@
         <onleft>9000</onleft>
         <onright>9000</onright>
 	<onup condition="Control.isVisible(8996) + [!IsEmpty(Window.Property(VideoBookmark.5.Type)) | !IsEmpty(Window.Property(VideoBookmark.4.Type)) | !IsEmpty(Window.Property(VideoBookmark.3.Type)) | !IsEmpty(Window.Property(VideoBookmark.2.Type)) | !IsEmpty(Window.Property(VideoBookmark.1.Type))]">8005</onup>
-        <onup condition="!Skin.HasSetting(DisableWidgets) + Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</onup>
-        <onup condition="!Skin.HasSetting(DisableWidgets) + Skin.HasSetting(lowermainmenu) + IsEmpty(Control.GetLabel(4321)) + !IsEmpty(Control.GetLabel(4325))">4445</onup>
-        <onup condition="!Skin.HasSetting(DisableWidgets) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4325))">4445</onup>
+        <onup condition="IsEmpty(Window(home).Property(DisableWidgets)) + Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</onup>
+        <onup condition="IsEmpty(Window(home).Property(DisableWidgets)) + Skin.HasSetting(lowermainmenu) + IsEmpty(Control.GetLabel(4321)) + !IsEmpty(Control.GetLabel(4325))">4445</onup>
+        <onup condition="IsEmpty(Window(home).Property(DisableWidgets)) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4325))">4445</onup>
         <ondown>9010</ondown>
-        <ondown condition="!Skin.HasSetting(DisableWidgets) + !IntegerGreaterThan(Container(9010).NumItems,0) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
-        <onback condition="!Skin.HasSetting(DisableWidgetToggle)">Skin.ToggleSetting(DisableWidgets)</onback>
+        <ondown condition="IsEmpty(Window(home).Property(DisableWidgets)) + !IntegerGreaterThan(Container(9010).NumItems,0) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
+        <onback condition="!Skin.HasSetting(DisableWidgetToggle) + IsEmpty(Window(home).Property(DisableWidgets))">SetProperty(DisableWidgets,1,home)</onback>
+        <onback condition="!Skin.HasSetting(DisableWidgetToggle) + !IsEmpty(Window(home).Property(DisableWidgets))">ClearProperty(DisableWidgets,home)</onback>
         <pagecontrol>-</pagecontrol>
         <scrolltime tween="quadratic" easing="out">300</scrolltime>
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
@@ -1637,10 +1636,10 @@
                 <width>250</width>
                 <textcolor>white4</textcolor>
                 <shadowcolor>-</shadowcolor>
-        <height>225</height>
-        <align>center</align>
-        <aligny>center</aligny>
-        <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                <height>225</height>
+                <align>center</align>
+                <aligny>center</aligny>
+                <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
                 <font>Font_Reg17_Caps</font>
             </control>
         </itemlayout>
@@ -1719,8 +1718,8 @@
                 <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
                 <include>MainMenuLabels</include>
                 <visible>Control.HasFocus(9000) | Window.IsActive(1128)</visible>
-                </control>
-           <control type="label">
+            </control>
+            <control type="label">
                 <posx>260</posx>
                 <width>519</width>
                 <textcolor>white5</textcolor>
@@ -1733,7 +1732,7 @@
                 <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
                 <include>MainMenuAltLabels</include>
                 <visible>Control.HasFocus(9000) | Window.IsActive(1128)</visible>
-                </control>
+            </control>
         </focusedlayout>
         <itemlayout height="225" width="639" condition="Skin.HasSetting(biggergap)">
             <control type="label">
@@ -1764,7 +1763,7 @@
                 <include>MainMenuLabels</include>
                 <visible>Control.HasFocus(9000) | Window.IsActive(1128)</visible>
             </control>
-                        <control type="label">
+            <control type="label">
                 <posx>320</posx>
                 <width>639</width>
                 <textcolor>white5</textcolor>
@@ -1985,13 +1984,12 @@
         <scrolltime tween="quadratic" easing="out">300</scrolltime>
         <onup>9000</onup>
         <onback>SetFocus(9000)</onback>
-        <ondown condition="!Skin.HasSetting(DisableWidgets) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
+        <ondown condition="IsEmpty(Window(home).Property(DisableWidgets)) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
         <ondown condition="!Skin.HasSetting(lowermainmenu) + IsEmpty(Control.GetLabel(4321))">9000</ondown>
         <ondown condition="Skin.HasSetting(lowermainmenu)">9000</ondown>
         <itemlayout width="225" height="50">
             <control type="label">
                 <posx>112</posx>
-                <posy>0</posy>
                 <height>50</height>
                 <width>218</width>
                 <align>center</align>
@@ -2005,7 +2003,6 @@
         <focusedlayout width="225" height="50">
             <control type="label">
                 <posx>112</posx>
-                <posy>0</posy>
                 <height>50</height>
                 <width>218</width>
                 <align>center</align>
@@ -2018,7 +2015,6 @@
             </control>
             <control type="label">
                 <posx>112</posx>
-                <posy>0</posy>
                 <height>50</height>
                 <width>218</width>
                 <align>center</align>
@@ -2161,7 +2157,7 @@
                 <include>MainMenuLabels</include>
                 <visible>!Control.HasFocus(9010)</visible>
             </control>
-                       <control type="label">
+            <control type="label">
                 <posx>260</posx>
                 <width>519</width>
                 <textcolor>white5</textcolor>
@@ -2918,7 +2914,6 @@
         <itemlayout width="225" height="50">
             <control type="label">
                 <posx>112</posx>
-                <posy>0</posy>
                 <height>50</height>
                 <width>218</width>
                 <align>center</align>
@@ -2939,7 +2934,6 @@
         <focusedlayout width="225" height="50">
             <control type="label">
                 <posx>112</posx>
-                <posy>0</posy>
                 <height>50</height>
                 <width>218</width>
                 <align>center</align>
@@ -2953,7 +2947,6 @@
             </control>
             <control type="label">
                 <posx>112</posx>
-                <posy>0</posy>
                 <height>50</height>
                 <width>218</width>
                 <align>center</align>

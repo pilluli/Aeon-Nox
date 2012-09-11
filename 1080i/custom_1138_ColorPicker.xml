@@ -30,8 +30,6 @@
     <onunload>ClearProperty(skincolor,1124)</onunload>
     <coordinates>
         <system>1</system>
-        <posx>0</posx>
-        <posy>0</posy>
     </coordinates>
     <controls>
         <control type="group">
@@ -58,7 +56,7 @@
             </control>
             <include>Dialogs_Settings</include>
             <control type="panel" id="10">
-                <posx>150</posx>
+                <posx>142</posx>
                 <posy>4</posy>
                 <width>600</width>
                 <height>300</height>
@@ -69,8 +67,6 @@
                 <onup>11</onup>
                 <itemlayout height="75" width="75">
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <width>70</width>
                         <height>70</height>
                         <texture>$INFO[ListItem.Icon]</texture>
@@ -79,16 +75,12 @@
                 </itemlayout>
                 <focusedlayout height="75" width="75">
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <width>70</width>
                         <height>70</height>
                         <texture>$INFO[ListItem.Icon]</texture>
                         <include>Animation_CommonFade</include>
                     </control>
                     <control type="image">
-                        <posx>0</posx>
-                        <posy>0</posy>
                         <width>70</width>
                         <height>70</height>
                         <texture>views/addonwall_select.png</texture>
@@ -293,8 +285,8 @@
                 </content>
             </control>
             <control type="group">
-                <posx>-313</posx>
-                <posy>-40</posy>
+                <posx>137</posx>
+                <posy>270</posy>
                 <control type="radiobutton" id="11">
                     <label>$LOCALIZE[31088]</label>
                     <onup>10</onup>

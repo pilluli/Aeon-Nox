@@ -7,8 +7,6 @@
             <animation effect="slide" start="0,0" end="0,-218" time="300" delay="150" tween="quadratic" easing="out">WindowClose</animation>
             <animation effect="slide" start="0,0" end="0,-218" time="300" tween="quadratic" easing="out" condition="Window.IsVisible(VisualisationSettings) | Window.IsVisible(VisualisationPresetList) | Window.IsVisible(1117) | Window.IsVisible(1100)">Conditional</animation>
             <control type="image">
-                <posx>0</posx>
-                <posy>0</posy>
                 <width>1920</width>
                 <height>135</height>
                 <texture flipy="true">osd/osd_back.png</texture>
@@ -17,7 +15,6 @@
                 <posy>10</posy>
                 <visible>!Skin.HasSetting(ClassicOSD)</visible>
                 <control type="grouplist">
-                    <posx>0</posx>
                     <posy>11</posy>
                     <width>960</width>
                     <height>135</height>
@@ -72,7 +69,6 @@
                     </control>
                 </control>
                 <control type="grouplist" id="650">
-                    <posx>0</posx>
                     <posy>11</posy>
                     <width>960</width>
                     <height>135</height>
@@ -322,7 +318,7 @@
                     <align>right</align>
                     <usecontrolcoords>false</usecontrolcoords>
                     <onup>707</onup>
-                    <ondown>Skin.ToggleSetting(ThumbOrSlide)</ondown>
+                    <ondown>Skin.ToggleSetting(vispanelrotate)</ondown>
                     <onleft>706</onleft>
                     <onright>700</onright>
                     <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
@@ -374,7 +370,7 @@
                     <align>right</align>
                     <usecontrolcoords>false</usecontrolcoords>
                     <onup>707</onup>
-                    <ondown>Skin.ToggleSetting(ThumbOrSlide)</ondown>
+                    <ondown>Skin.ToggleSetting(vispanelrotate)</ondown>
                     <onleft>605</onleft>
                     <onright>700</onright>
                     <control type="togglebutton" id="703">
@@ -393,7 +389,7 @@
                         <altclick>Close</altclick>
                         <altclick>XBMC.RunScript($INFO[Skin.String(LyricScript_Path)])</altclick>
                         <usealttexture>IsEmpty(Skin.String(LyricScript_Path))</usealttexture>
-                        <ondown>Skin.ToggleSetting(ThumbOrSlide)</ondown>
+                        <ondown>Skin.ToggleSetting(vispanelrotate)</ondown>
                     </control>
                     <control type="button" id="704">
                         <width>1</width>
@@ -440,7 +436,6 @@
             <control type="group">
                 <visible>Skin.HasSetting(ClassicOSD)</visible>
                 <control type="grouplist" id="650">
-                    <posx>0</posx>
                     <posy>4</posy>
                     <width>640</width>
                     <height>150</height>
@@ -501,7 +496,6 @@
                 </control>
                 <control type="grouplist" id="652">
                     <description>Video settings buttons</description>
-                    <posx>0</posx>
                     <posy>4</posy>
                     <width>1920</width>
                     <height>150</height>
@@ -572,7 +566,6 @@
                 </control>
                 <control type="grouplist" id="651">
                     <description>Video settings buttons</description>
-                    <posx>0</posx>
                     <posy>4</posy>
                     <width>1920</width>
                     <height>150</height>
@@ -637,13 +630,12 @@
                         <texturefocus>osd/buttons/OSDInfoFO.png</texturefocus>
                         <texturenofocus>osd/buttons/OSDInfoNF.png</texturenofocus>
                         <onclick>ActivateWindow(1112)</onclick>
-                        <ondown condition="System.Hasaddon(script.artistslideshow)">Skin.ToggleSetting(ThumbOrSlide)</ondown>
+                        <ondown>Skin.ToggleSetting(vispanelrotate)</ondown>
                     </control>
                 </control>
             </control>
             <control type="label">
                 <posx>440</posx>
-                <posy>0</posy>
                 <width>200</width>
                 <height>125</height>
                 <label>$INFO[System.CurrentControl]</label>
@@ -656,7 +648,6 @@
             </control>
             <control type="label">
                 <posx>440r</posx>
-                <posy>0</posy>
                 <width>200</width>
                 <height>125</height>
                 <label>$INFO[System.CurrentControl]</label>
@@ -670,7 +661,7 @@
                 <animation effect="slide" start="0" end="-30" reversible="true" condition="Skin.HasSetting(ClassicOSD)">Conditional</animation>
             </control>
         </control>
-                <control type="group">
+        <control type="group">
             <posy>993</posy>
             <animation type="Visible">
                 <effect type="fade" time="200" start="0" end="100" />
