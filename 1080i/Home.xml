@@ -18,24 +18,18 @@
     <onload>AlarmClock(HomeTile2Left,Control.Move(6001,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Right,Control.Move(6003,1),00:10,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Mid,Control.Move(6002,1),00:15,silent,loop)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem1.Enable) + [SubString(Skin.String(CustomHomeItem1.Widget),custom) | SubString(Skin.String(CustomHomeItem1.MultiFanart),custom,right)]">$INFO[Skin.String(StartupCustomHomeItem1)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem2.Enable) + [SubString(Skin.String(CustomHomeItem2.Widget),custom) | SubString(Skin.String(CustomHomeItem2.MultiFanart),custom,right)]">$INFO[Skin.String(StartupCustomHomeItem2)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem3.Enable) + [SubString(Skin.String(CustomHomeItem3.Widget),custom) | SubString(Skin.String(CustomHomeItem3.MultiFanart),custom,right)]">$INFO[Skin.String(StartupCustomHomeItem3)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem4.Enable) + [SubString(Skin.String(CustomHomeItem4.Widget),custom) | SubString(Skin.String(CustomHomeItem4.MultiFanart),custom,right)]">$INFO[Skin.String(StartupCustomHomeItem4)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem5.Enable) + [SubString(Skin.String(CustomHomeItem5.Widget),custom) | SubString(Skin.String(CustomHomeItem5.MultiFanart),custom,right)]">$INFO[Skin.String(StartupCustomHomeItem5)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem6.Enable) + [SubString(Skin.String(CustomHomeItem6.Widget),custom) | SubString(Skin.String(CustomHomeItem6.MultiFanart),custom,right)]">$INFO[Skin.String(StartupCustomHomeItem6)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem7.Enable) + [SubString(Skin.String(CustomHomeItem7.Widget),custom) | SubString(Skin.String(CustomHomeItem7.MultiFanart),custom,right)]">$INFO[Skin.String(StartupCustomHomeItem7)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem8.Enable) + [SubString(Skin.String(CustomHomeItem8.Widget),custom) | SubString(Skin.String(CustomHomeItem8.MultiFanart),custom,right)]">$INFO[Skin.String(StartupCustomHomeItem8)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem9.Enable) + [SubString(Skin.String(CustomHomeItem9.Widget),custom) | SubString(Skin.String(CustomHomeItem9.MultiFanart),custom,right)]">$INFO[Skin.String(StartupCustomHomeItem9)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem1.Enable) + SubString(Skin.String(CustomHomeItem1.Widget2),custom)">$INFO[Skin.String(StartupSecondCustomHomeItem1)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem2.Enable) + SubString(Skin.String(CustomHomeItem2.Widget2),custom)">$INFO[Skin.String(StartupSecondCustomHomeItem2)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem3.Enable) + SubString(Skin.String(CustomHomeItem3.Widget2),custom)">$INFO[Skin.String(StartupSecondCustomHomeItem3)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem4.Enable) + SubString(Skin.String(CustomHomeItem4.Widget2),custom)">$INFO[Skin.String(StartupSecondCustomHomeItem4)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem5.Enable) + SubString(Skin.String(CustomHomeItem5.Widget2),custom)">$INFO[Skin.String(StartupSecondCustomHomeItem5)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem6.Enable) + SubString(Skin.String(CustomHomeItem6.Widget2),custom)">$INFO[Skin.String(StartupSecondCustomHomeItem6)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem7.Enable) + SubString(Skin.String(CustomHomeItem7.Widget2),custom)">$INFO[Skin.String(StartupSecondCustomHomeItem7)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem8.Enable) + SubString(Skin.String(CustomHomeItem8.Widget2),custom)">$INFO[Skin.String(StartupSecondCustomHomeItem8)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Skin.HasSetting(CustomHomeItem9.Enable) + SubString(Skin.String(CustomHomeItem9.Widget2),custom)">$INFO[Skin.String(StartupSecondCustomHomeItem9)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylistCall1))">$INFO[Skin.String(SmartPlaylistCall1)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylistCall2))">$INFO[Skin.String(SmartPlaylistCall2)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylistCall3))">$INFO[Skin.String(SmartPlaylistCall3)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylistCall4))">$INFO[Skin.String(SmartPlaylistCall4)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylistCall5))">$INFO[Skin.String(SmartPlaylistCall5)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylistCall6))">$INFO[Skin.String(SmartPlaylistCall6)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SecondSmartPlaylistCall1))">$INFO[Skin.String(SecondSmartPlaylistCall1)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SecondSmartPlaylistCall2))">$INFO[Skin.String(SecondSmartPlaylistCall2)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SecondSmartPlaylistCall3))">$INFO[Skin.String(SecondSmartPlaylistCall3)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SecondSmartPlaylistCall4))">$INFO[Skin.String(SecondSmartPlaylistCall4)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SecondSmartPlaylistCall5))">$INFO[Skin.String(SecondSmartPlaylistCall5)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SecondSmartPlaylistCall6))">$INFO[Skin.String(SecondSmartPlaylistCall6)]</onload>
     <onunload>CancelAlarm(HomeTileLeft,true)</onunload>
     <onunload>CancelAlarm(HomeTileRight,true)</onunload>
     <onunload>CancelAlarm(HomeTileMid,true)</onunload>
@@ -95,13 +89,6 @@
             <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
             <include condition="Skin.HasSetting(artistslideshowhome)">MusicArtistSlideshowHome</include>
             <include>CommonMediaPlayingBackground</include>
-        </control>
-        <control type="image">
-            <include>FullscreenDimensions</include>
-            <colordiffuse>$INFO[Skin.String(ColorLevel)]</colordiffuse>
-            <texture>$INFO[Container(9000).ListItem.Property(Color),common/,.png]</texture>
-            <include>Animation_WindowFade200</include>
-            <fadetime>600</fadetime>
         </control>
         <!-- Home Fullscreen Video -->
         <include condition="!Skin.HasSetting(FadeHomeBG)">CommonMediaPlayingBackground</include>
