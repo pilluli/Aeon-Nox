@@ -110,7 +110,7 @@
         </control>
     </include>
     <include name="EpisodeViewtypeMusicLayouts">
-        <itemlayout width="950" height="90" condition="Window.IsActive(musiclibrary)">
+        <itemlayout width="950" height="90">
             <control type="label">
                 <posx>1315</posx>
                 <width>126</width>
@@ -151,7 +151,7 @@
                 <info>ListItem.Overlay,thumbs/Alt</info>
             </control>
         </itemlayout>
-        <focusedlayout width="950" height="346" condition="Window.IsActive(musiclibrary)">
+        <focusedlayout width="950" height="346">
             <control type="image">
                 <posx>990</posx>
                 <width>322</width>
@@ -385,6 +385,7 @@
             </control>
             <control type="group">
                 <posx>50</posx>
+                <posy>-15</posy>
                 <animation effect="slide" start="0,0" end="220,0" time="0" condition="Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons)">Conditional</animation>
                 <animation type="Conditional" reversible="false" condition="Control.HasFocus(514) + [!Container(514).OnNext + !Container(514).OnPrevious]">
                     <effect type="fade" start="0" end="100" time="200" />
@@ -418,7 +419,7 @@
                     <posx>99</posx>
                     <posy>107</posy>
                     <width>740</width>
-                    <height>122</height>
+                    <height>138</height>
                     <align>right</align>
                     <info>ListItem.Plot</info>
                     <font>Font_Reg19</font>

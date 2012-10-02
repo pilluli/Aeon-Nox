@@ -17,6 +17,39 @@
                     <animation effect="slide" start="0,0" end="0,-214" time="150" condition="Skin.HasSetting(nohighlist) + Control.HasFocus(7002)">Conditional</animation>
                     <animation effect="slide" start="0,0" end="0,-50" time="150" condition="!Skin.HasSetting(nohighlist) + Control.HasFocus(7002)">Conditional</animation>
                     <animation effect="slide" start="0,0" end="0,-165" time="150" condition="!Skin.HasSetting(nohighlist)">Conditional</animation>
+                    <control type="group">
+                        <visible>Container.Content(movies) + Skin.HasSetting(lowlisttagline) + !IsEmpty(ListItem.Tagline) + !Control.HasFocus(7002)</visible>
+                        <!--                         <animation type="Visible">
+                            <effect type="slide" start="0,50" end="0,0" time="400" easing="in" tween="cubic" />
+                            <effect type="fade" start="0" end="100" time="300" reversible="true" />
+                        </animation>
+                        <animation type="Hidden">
+                            <effect type="slide" start="0,0" end="0,50" time="400" easing="out" tween="cubic" />
+                            <effect type="fade" start="100" end="0" time="200" reversible="true" />
+                        </animation> -->
+                        <animation type="Visible">
+                            <effect type="zoom" end="100,100" start="100,0" time="400" easing="in" tween="cubic" center="960,755" />
+                        </animation>
+                        <animation type="Hidden">
+                            <effect type="zoom" end="100,0" start="100,100" time="400" easing="out" tween="cubic" center="960,755" />
+                        </animation>
+                        <control type="image">
+                            <posx>333</posx>
+                            <posy>667</posy>
+                            <width>1173</width>
+                            <height>87</height>
+                            <texture border="150,0,150,0">osd/osd_bottom_bar.png</texture>
+                        </control>
+                        <control type="label">
+                            <posx>453</posx>
+                            <posy>710</posy>
+                            <width>985</width>
+                            <font>Font_Reg19_Caps</font>
+                            <label>$INFO[ListItem.Tagline]</label>
+                            <scroll>true</scroll>
+                            <textcolor>black</textcolor>
+                        </control>
+                    </control>
                     <control type="image">
                         <posy>710</posy>
                         <width>1920</width>
@@ -159,7 +192,7 @@
                         <align>center</align>
                         <aligny>center</aligny>
                         <textcolor>white3</textcolor>
-                        <label>[UPPERCASE]$INFO[ListItem.Tagline][/UPPERCASE]</label>
+                        <label>$INFO[ListItem.Tagline]</label>
                     </control>
                     <control type="fadelabel">
                         <posx>450</posx>
@@ -169,7 +202,7 @@
                         <font>Font_OSDTitle2_Caps</font>
                         <aligny>center</aligny>
                         <textcolor>white3</textcolor>
-                        <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+                        <label>$INFO[ListItem.Title]</label>
                     </control>
                     <control type="label">
                         <posx>450</posx>
@@ -715,7 +748,7 @@
                         <aligny>center</aligny>
                         <include>detailcolornofocus</include>
                         <font>Font_Bold16_Caps</font>
-                        <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
                         <posx>710</posx>
@@ -747,6 +780,7 @@
                         <width>814</width>
                         <height>66</height>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                            <include>PanelGlowFade</include>
                         <texture>views/tripanel/listselect_fo.png</texture>
                         <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="300" condition="!Control.HasFocus(511)">Conditional</animation>
                     </control>
@@ -757,7 +791,7 @@
                         <aligny>center</aligny>
                         <include>listcolornofocus</include>
                         <font>Font_Bold16_Caps</font>
-                        <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                     <control type="label">
                         <posx>30</posx>

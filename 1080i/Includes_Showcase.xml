@@ -647,10 +647,10 @@
         </control>
     </include>
     <include name="ShowcaseSquare">
-        <control type="group" id="7007">
+            <control type="group" id="7007">
             <posy>580</posy>
             <camera x="960" y="810" />
-            <visible>Control.IsVisible(509) + Container.OnNext + !Skin.HasSetting(noflowalbum)</visible>
+            <visible>Container.OnNext + !Skin.HasSetting(noflowalbum)</visible>
             <animation effect="slide" end="-150,0" time="250" reversible="false">Hidden</animation>
             <control type="group">
                 <posx>75</posx>
@@ -727,7 +727,7 @@
         <control type="group" id="7002">
             <posy>580</posy>
             <camera x="960" y="810" />
-            <visible>Control.IsVisible(509) + Container.OnPrevious + !Skin.HasSetting(noflowalbum)</visible>
+            <visible>Container.OnPrevious + !Skin.HasSetting(noflowalbum)</visible>
             <animation effect="slide" end="150,0" time="250" reversible="false">Hidden</animation>
             <control type="group">
                 <posx>1440</posx>
@@ -818,7 +818,7 @@
                 <effect type="zoom" start="100" end="130" center="960,540" time="300" tween="cubic" easing="in" />
                 <effect type="fade" start="100" end="0" time="300" delay="300" />
             </animation>
-            <visible>Control.IsVisible(509) + !Control.IsVisible(7007) + !Control.IsVisible(7002) + Control.IsVisible(970)</visible>
+            <visible>!Control.IsVisible(7007) + !Control.IsVisible(7002) + Control.IsVisible(970)</visible>
             <control type="group">
                 <posx>75</posx>
                 <animation effect="slide" time="300" start="0" end="818" tween="cubic" easing="in">WindowClose</animation>
@@ -954,10 +954,12 @@
     </include>
     <include name="ShowcaseInfoPaneMovies">
         <control type="group" id="7550">
-            <visible>[Control.IsVisible(197) | Control.IsVisible(198)] + [[Skin.HasSetting(showcaseinfoon) + !Skin.HasSetting(infopaneoff) + [Container.Content(movies) | Container.Content(musicvideos)]] | [Skin.HasSetting(showcaseinfoontv) + !Skin.HasSetting(infopaneofftv) + [Container.Content(tvshows) | Container.Content(seasons)]] | [Skin.HasSetting(showcaseinfoonep) + Container.Content(episodes)]] | Control.HasFocus(7000)</visible>
+            <visible>Control.IsVisible(197) | Control.HasFocus(7000) | Stringcompare(Control.GetLabel(4421),infopanelon)</visible>
             <visible>!StringCompare(ListItem.Label,..)</visible>
             <visible>!Control.HasFocus(109)</visible>
+            <visible>Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(509) | Control.IsVisible(504) | Control.IsVisible(501)</visible>
             <animation effect="slide" start="0,-1200" end="0,0" time="750" easing="out" tween="cubic">VisibleChange</animation>
+            <animation effect="slide" end="0,45" time="400" easing="inout" tween="cubic" condition="Control.IsVisible(503) | Control.IsVisible(508)">Conditional</animation>
             <animation effect="fade" time="250">WindowOpen</animation>
             <animation effect="slide" start="0,0" end="0,-1000" time="300" easing="in" tween="cubic">WindowClose</animation>
             <animation effect="slide" start="0,0" end="0,35" time="500" easing="in" tween="cubic" condition="!Skin.HasSetting(no_infopane_panel) + Control.IsVisible(503)">Conditional</animation>
@@ -1047,7 +1049,7 @@
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
                         <animation effect="zoom" end="111" center="460,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(no_infopane_panel) + Control.IsVisible(503)">Conditional</animation>
-                        <visible>Container.Content(episodes) | [Container.Content(tvshows) + ![Skin.HasSetting(tvposterinfopane) | Skin.HasSetting(tvthumbsinfopane)]] | Container.Content(seasons) | [Container.Content(movies) + Skin.HasSetting(fanartinfopane) + Control.IsVisible(501)] | [Container.Content(movies) + Skin.HasSetting(fanartinfopane503) + Control.IsVisible(503)] | [Container.Content(movies) + Skin.HasSetting(fanartinfopane504) + Control.IsVisible(504)] | Container.Content(musicvideos)</visible>
+                        <visible>StringCompare(Control.GetLabel(4420),fanart)</visible>
                         <animation type="VisibleChange">
                             <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
                         </animation>
@@ -1061,10 +1063,10 @@
             <control type="group">
                 <posx>915</posx>
                 <posy>114</posy>
-                <animation effect="slide" start="0,0" end="-348,-22" reversible="false" condition="[Container.Content(movies) + [[Skin.HasSetting(extrathumbs) + Control.IsVisible(501)] | [Skin.HasSetting(extrathumbs503) + Control.IsVisible(503)] | [Skin.HasSetting(extrathumbs504) + Control.IsVisible(504)]]] | [Container.Content(movies) + [[Skin.HasSetting(posterinfopane) + Control.IsVisible(501)] | [Skin.HasSetting(posterinfopane503) + Control.IsVisible(503)] | [Skin.HasSetting(posterinfopane504) + Control.IsVisible(504)]]] | [Container.Content(tvshows) + Skin.HasSetting(tvposterinfopane)]">Conditional</animation>
-                <animation effect="zoom" center="auto" start="100" end="92" time="600" tween="back" easing="out" reversible="false" condition="[Container.Content(movies) + [[Skin.HasSetting(extrathumbs) + Control.IsVisible(501)] | [Skin.HasSetting(extrathumbs503) + Control.IsVisible(503)] | [Skin.HasSetting(extrathumbs504) + Control.IsVisible(504)]]] | [Container.Content(movies) + [[Skin.HasSetting(posterinfopane) + Control.IsVisible(501)] | [Skin.HasSetting(posterinfopane503) + Control.IsVisible(503)] | [Skin.HasSetting(posterinfopane504) + Control.IsVisible(504)]]] | [Container.Content(tvshows) + Skin.HasSetting(tvposterinfopane)]">Conditional</animation>
-                <animation effect="slide" start="0,0" end="-358,-38" reversible="false" condition="[Container.Content(movies) + [[Skin.HasSetting(fourthumbs) + Control.IsVisible(501)] | [Skin.HasSetting(fourthumbs503) + Control.IsVisible(503)] | [Skin.HasSetting(fourthumbs504) + Control.IsVisible(504)]]] | [Container.Content(tvshows) + Skin.HasSetting(tvthumbsinfopane)]">Conditional</animation>
-                <animation effect="zoom" center="auto" start="100" end="88" time="600" tween="back" easing="out" reversible="false" condition="[Container.Content(movies) + [[Skin.HasSetting(fourthumbs) + Control.IsVisible(501)] | [Skin.HasSetting(fourthumbs503) + Control.IsVisible(503)] | [Skin.HasSetting(fourthumbs504) + Control.IsVisible(504)]]] | [Container.Content(tvshows) + Skin.HasSetting(tvthumbsinfopane)]">Conditional</animation>
+                <animation effect="slide" start="0,0" end="-348,-22" reversible="false" condition="StringCompare(Control.GetLabel(4420),poster) | StringCompare(Control.GetLabel(4420),extrathumbs)">Conditional</animation>
+                <animation effect="zoom" center="auto" start="100" end="92" time="600" tween="back" easing="out" reversible="false" condition="StringCompare(Control.GetLabel(4420),poster) | StringCompare(Control.GetLabel(4420),extrathumbs)">Conditional</animation>
+                <animation effect="slide" start="0,0" end="-358,-38" reversible="false" condition="StringCompare(Control.GetLabel(4420),fourthumbs)">Conditional</animation>
+                <animation effect="zoom" center="auto" start="100" end="88" time="600" tween="back" easing="out" reversible="false" condition="StringCompare(Control.GetLabel(4420),fourthumbs)">Conditional</animation>
                 <control type="image">
                     <width>786</width>
                     <height>442</height>

@@ -122,6 +122,7 @@
             <animation effect="slide" start="735,0" end="0,0" delay="0" time="300">Visible</animation>
             <animation effect="slide" start="0,0" end="735,0" time="300">WindowClose</animation>
             <control type="group">
+                <posy>0</posy>
                 <posx>748r</posx>
                 <control type="image">
                     <posx>-45</posx>
@@ -139,7 +140,6 @@
                     <aligny>center</aligny>
                     <font>Font_Reg19_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <label>[COLOR grey]$INFO[System.Date(ddd)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
                 </control>
                 <control type="grouplist">
@@ -157,7 +157,6 @@
                         <width min="15" max="1920">auto</width>
                         <font>Font_Reg19_Caps</font>
                         <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
-                        <shadowcolor>-</shadowcolor>
                         <label>$INFO[Window(weather).Property(Current.Temperature)] $INFO[System.TemperatureUnits]</label>
                     </control>
                     <control type="label">
@@ -166,7 +165,6 @@
                         <width min="1" max="1920">auto</width>
                         <font>Font_Reg19_Caps</font>
                         <textcolor>grey</textcolor>
-                        <shadowcolor>-</shadowcolor>
                         <label>•</label>
                     </control>
                     <control type="label">
@@ -176,7 +174,6 @@
                         <font>Font_Reg19_Caps</font>
                         <textcolor>grey</textcolor>
                         <scroll>false</scroll>
-                        <shadowcolor>-</shadowcolor>
                         <label>$INFO[Window(Weather).Property(Current.Condition)]</label>
                     </control>
                 </control>
@@ -219,8 +216,9 @@
                 <animation effect="slide" start="0,0" end="0,-98" time="100">WindowClose</animation>
                 <animation effect="slide" start="0,-98" end="0,0" time="100">Visible</animation>
                 <animation effect="slide" start="0,0" end="0,-98" time="100">Hidden</animation>
-                <label>[UPPERCASE]$LOCALIZE[31043][/UPPERCASE]</label>
+                <label>$LOCALIZE[31043]</label>
                 <visible>Player.Paused</visible>
+                <font>Font_Reg18_Caps</font>
             </control>
             <control type="image">
                 <posy>-400</posy>
@@ -856,7 +854,6 @@
                         <width>375</width>
                         <height>34</height>
                         <font>Font_Reg22_Caps</font>
-                        <shadowcolor>-</shadowcolor>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <aligny>center</aligny>
                         <label>$LOCALIZE[31635]</label>
@@ -908,7 +905,6 @@
                                 <height>34</height>
                                 <font>Font_Info_Caps</font>
                                 <textcolor>grey2</textcolor>
-                                <shadowcolor>-</shadowcolor>
                                 <aligny>center</aligny>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
@@ -920,7 +916,6 @@
                                 <height>34</height>
                                 <font>Font_Info_Caps</font>
                                 <textcolor>$VAR[TitleColorVar]</textcolor>
-                                <shadowcolor>-</shadowcolor>
                                 <aligny>center</aligny>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
@@ -1001,7 +996,6 @@
                             <height>34</height>
                             <font>Font_Info_Caps</font>
                             <textcolor>grey2</textcolor>
-                            <shadowcolor>-</shadowcolor>
                             <align>right</align>
                             <aligny>center</aligny>
                             <label>$INFO[ListItem.Label]</label>
@@ -1014,7 +1008,6 @@
                             <height>34</height>
                             <font>Font_Info_Caps</font>
                             <textcolor>$VAR[TitleColorVar]</textcolor>
-                            <shadowcolor>-</shadowcolor>
                             <align>right</align>
                             <aligny>center</aligny>
                             <label>$INFO[ListItem.Label]</label>

@@ -12,6 +12,7 @@
     <onload>AlarmClock(HomeTile2Left,Control.Move(6001,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Right,Control.Move(6003,1),00:10,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Mid,Control.Move(6002,1),00:15,silent,loop)</onload>
+    <onload>ClearProperty(FocusOnSubmenu,home)</onload>
     <onunload>CancelAlarm(BGMove,true)</onunload>
     <onunload>CancelAlarm(HomeTileLeft,true)</onunload>
     <onunload>CancelAlarm(HomeTileRight,true)</onunload>
@@ -32,7 +33,7 @@
         <include>MainMenuCommonContent</include>
         <control type="label" id="11111">
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
-            <label> $INFO[Skin.String(MusicVideosHomeItem.Widget)] $INFO[Skin.String(MusicHomeItem.Widget)] $INFO[Skin.String(TVShowHomeItem.Widget)] $INFO[Skin.String(MovieHomeItem.Widget)] $INFO[Skin.String(LiveTVHomeItem.Widget)] $INFO[Skin.String(PicturesHomeItem.Widget)] $INFO[Skin.String(TVGuideHomeItem.Widget)] $INFO[Skin.String(FeaturedHomeItem.Widget)] $INFO[Skin.String(CustomHomeItem1.Widget)] $INFO[Skin.String(CustomHomeItem2.Widget)] $INFO[Skin.String(CustomHomeItem3.Widget)] $INFO[Skin.String(CustomHomeItem4.Widget)] $INFO[Skin.String(CustomHomeItem5.Widget)] $INFO[Skin.String(CustomHomeItem6.Widget)] $INFO[Skin.String(VideosHomeItem.Widget)] $INFO[Skin.String(ProgramsHomeItem.Widget)] $INFO[Skin.String(SettingsHomeItem.Widget)] $INFO[Skin.String(SearchHomeItem.Widget)] $INFO[Skin.String(ShutdownHomeItem.Widget)] $INFO[Skin.String(FavouritesHomeItem.Widget)] $INFO[Skin.String(PlayDiscHomeItem.Widget)] $INFO[Skin.String(WeatherHomeItem.Widget)] $INFO[Skin.String(ComicsHomeItem.Widget)] $INFO[Skin.String(FullscreenHomeItem.Widget)] </label>
+            <label> $INFO[Skin.String(MusicVideosHomeItem.Widget)] $INFO[Skin.String(MusicHomeItem.Widget)] $INFO[Skin.String(TVShowHomeItem.Widget)] $INFO[Skin.String(MovieHomeItem.Widget)] $INFO[Skin.String(LiveTVHomeItem.Widget)] $INFO[Skin.String(PicturesHomeItem.Widget)] $INFO[Skin.String(TVGuideHomeItem.Widget)] $INFO[Skin.String(FeaturedHomeItem.Widget)] $INFO[Skin.String(CustomHomeItem1.Widget)] $INFO[Skin.String(CustomHomeItem2.Widget)] $INFO[Skin.String(CustomHomeItem3.Widget)] $INFO[Skin.String(CustomHomeItem4.Widget)] $INFO[Skin.String(CustomHomeItem5.Widget)] $INFO[Skin.String(CustomHomeItem6.Widget)] $INFO[Skin.String(VideosHomeItem.Widget)] $INFO[Skin.String(ProgramsHomeItem.Widget)] $INFO[Skin.String(SettingsHomeItem.Widget)] $INFO[Skin.String(SearchHomeItem.Widget)] $INFO[Skin.String(ShutdownHomeItem.Widget)] $INFO[Skin.String(FavouritesHomeItem.Widget)] $INFO[Skin.String(PlayDiscHomeItem.Widget)] $INFO[Skin.String(WeatherHomeItem.Widget)] $INFO[Skin.String(ComicsHomeItem.Widget)] $INFO[Skin.String(FullscreenHomeItem.Widget)] $INFO[Skin.String(CustomSub9_1.Widget)] $INFO[Skin.String(CustomSub9_2.Widget)] $INFO[Skin.String(CustomSub9_4.Widget)] $INFO[Skin.String(CustomSub9_5.Widget)] $INFO[Skin.String(CustomSub8_1.Widget)] $INFO[Skin.String(CustomSub8_2.Widget)] $INFO[Skin.String(CustomSub8_3.Widget)] $INFO[Skin.String(CustomSub8_4)] $INFO[Skin.String(CustomSub8_5.Widget)] $INFO[Skin.String(CustomSub11_1.Widget)] $INFO[Skin.String(CustomSub11_2.Widget)] $INFO[Skin.String(CustomSub11_3.Widget)] $INFO[Skin.String(CustomSub11_4.Widget)] $INFO[Skin.String(CustomSub11_5.Widget)] $INFO[Skin.String(CustomSub11_6.Widget)] $INFO[Skin.String(CustomSub11_7.Widget)] $INFO[Skin.String(CustomSub11_8.Widget)] </label>
         </control>
         <control type="label" id="11112">
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
@@ -208,7 +209,6 @@
                     <width min="15" max="1920">auto</width>
                     <font>Font_Info_Caps</font>
                     <textcolor>grey</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <scroll>false</scroll>
                     <include>dialogeffect</include>
                     <label>$LOCALIZE[31176]</label>

@@ -56,7 +56,7 @@
                         <textoffsetx>10</textoffsetx>
                         <font>Font_Reg15_Caps</font>
                         <textcolor>white2</textcolor>
-                        <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                        <label>$INFO[ListItem.Label]</label>
                     </control>
                 </itemlayout>
                 <focusedlayout height="50" width="300">
@@ -85,7 +85,7 @@
                             <scroll>true</scroll>
                             <font>Font_Reg15_Caps</font>
                             <textcolor>white2</textcolor>
-                            <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                            <label>$INFO[ListItem.Label]</label>
                         </control>
                     </control>
                 </focusedlayout>
@@ -96,7 +96,7 @@
                         <onclick>Skin.SetString(ItemToEdit.Position,0)</onclick>
                         <onclick>Dialog.Close(1147)</onclick>
                     </item>
-                         <item>
+                    <item>
                         <label fallback="31500">$INFO[Skin.String(PicturesHomeItem.Label)]</label>
                         <include>Objects_ShortSettingsButton</include>
                         <onclick>Skin.SetString(ItemToEdit.Position,1)</onclick>

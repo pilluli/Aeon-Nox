@@ -2,18 +2,15 @@
 <includes>
     <include name="InfoPane_Fanart_Movies">
         <control type="group">
-            <visible>Container.Content(musicvideos) | [Container.Content(movies) + [[Skin.HasSetting(fanartinfopane) + Control.IsVisible(501)] | [Skin.HasSetting(fanartinfopane503) + Control.IsVisible(503)] | [Skin.HasSetting(fanartinfopane504) + Control.IsVisible(504)] | [Control.IsVisible(501) + Skin.HasSetting(fourthumbs)] | [Control.IsVisible(503) + Skin.HasSetting(fourthumbs503)] | [Control.IsVisible(504) + Skin.HasSetting(fourthumbs504)]]] |
-				[Container.Content(tvshows) + !Skin.HasSetting(tvposterinfopane)] | Container.Content(seasons) | Container.Content(episodes)</visible>
+            <visible>StringCompare(Control.GetLabel(4420),fanart) | StringCompare(Control.GetLabel(4420),fourthumbs)</visible>
             <posx>158</posx>
             <posy>63</posy>
-            <animation effect="slide" start="0,0" end="472,0" time="0" easing="inout" tween="cubic" condition="[Container.Content(movies) + [[Control.IsVisible(501) + Skin.HasSetting(fourthumbs)] | [Control.IsVisible(503) + Skin.HasSetting(fourthumbs503)] | [Control.IsVisible(504) + Skin.HasSetting(fourthumbs504)]]] | [Container.Content(tvshows) + Skin.HasSetting(tvthumbsinfopane)]">Conditional</animation>
-            <animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo + [[Skin.HasSetting(fourthumbs) + Control.IsVisible(501)] | [Skin.HasSetting(fourthumbs503) + Control.IsVisible(503)] | [Skin.HasSetting(fourthumbs504) + Control.IsVisible(504)]]">Conditional</animation>
+            <animation effect="slide" start="0,0" end="472,0" time="0" easing="inout" tween="cubic" condition="StringCompare(Control.GetLabel(4420),fourthumbs)">Conditional</animation>
+            <animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo + StringCompare(Control.GetLabel(4420),fourthumbs)">Conditional</animation>
             <animation type="VisibleChange">
                 <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
             </animation>
             <control type="group">
-                <!--                 <include condition="System.HasAddon(script.moviesets) + [System.GetBool(videolibrary.groupmoviesets) | SubString(Container.FolderPath,videodb://1/7/)]">MovieSetsVisibility</include>
- -->
                 <include>Animation_VisibleChange200</include>
                 <control type="label">
                     <posy>-4</posy>
@@ -128,15 +125,13 @@
                 <control type="textbox">
                     <posy>226</posy>
                     <width>652</width>
-                    <height>220</height>
+                    <height>230</height>
                     <label>$VAR[FanartPanelPlotVar]</label>
                     <textcolor>white6</textcolor>
                     <align>justify</align>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
             </control>
-            <!--             <include condition="System.HasAddon(script.moviesets) + [System.GetBool(videolibrary.groupmoviesets) | SubString(Container.FolderPath,videodb://1/7/)]">InfoPanelFanartMovieSetsLayout</include>
- -->
         </control>
     </include>
     <include name="ExtraThumbs">
@@ -145,7 +140,7 @@
             <control type="group">
                 <posx>161</posx>
                 <posy>68</posy>
-                <visible>[Skin.HasSetting(fourthumbs) + Control.IsVisible(501)] | [Skin.HasSetting(fourthumbs503) + Control.IsVisible(503)] | [Skin.HasSetting(fourthumbs504) + Control.IsVisible(504)]</visible>
+                <visible>StringCompare(Control.GetLabel(4420),fourthumbs)</visible>
                 <animation type="VisibleChange">
                     <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
                 </animation>
@@ -175,7 +170,7 @@
             <control type="group">
                 <posx>1369</posx>
                 <posy>68</posy>
-                <visible>[Skin.HasSetting(fourthumbs) + Control.IsVisible(501)] | [Skin.HasSetting(fourthumbs503) + Control.IsVisible(503)] | [Skin.HasSetting(fourthumbs504) + Control.IsVisible(504)] | [Skin.HasSetting(extrathumbs) + Control.IsVisible(501)] | [Skin.HasSetting(extrathumbs503) + Control.IsVisible(503)] | [Skin.HasSetting(extrathumbs504) + Control.IsVisible(504)]</visible>
+                <visible>SubString(Control.GetLabel(4420),thumbs)</visible>
                 <animation type="VisibleChange">
                     <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
                 </animation>
@@ -206,7 +201,7 @@
     </include>
     <include name="TVShowThumbs">
         <control type="group">
-            <visible>[Container.Content(tvshows) + Skin.HasSetting(tvthumbsinfopane)]</visible>
+            <visible>Container.Content(tvshows) + StringCompare(Control.GetLabel(4420),fourthumbs)</visible>
             <animation type="VisibleChange">
                 <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
             </animation>
@@ -263,7 +258,7 @@
     </include>
     <include name="InfoPane_Poster_Movies">
         <control type="group">
-            <visible>[Container.Content(movies) + [[Skin.HasSetting(posterinfopane) + Control.IsVisible(501)] | [Skin.HasSetting(posterinfopane503) + Control.IsVisible(503)] | [Skin.HasSetting(posterinfopane504) + Control.IsVisible(504)] | [Skin.HasSetting(extrathumbs) + Control.IsVisible(501)] | [Skin.HasSetting(extrathumbs503) + Control.IsVisible(503)] | [Skin.HasSetting(extrathumbs504) + Control.IsVisible(504)]]] | [Container.Content(tvshows) + Skin.HasSetting(tvposterinfopane)]]</visible>
+            <visible>StringCompare(Control.GetLabel(4420),poster) | StringCompare(Control.GetLabel(4420),extrathumbs)</visible>
             <animation type="VisibleChange">
                 <effect type="fade" start="0" end="100" delay="400" time="200" reversible="true" />
             </animation>
@@ -277,7 +272,7 @@
                 <aspectratio scalediffuse="false" align="center">scale</aspectratio>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
-                <visible>[Container.Content(movies) + [[Skin.HasSetting(posterinfopane) + Control.IsVisible(501)] | [Skin.HasSetting(posterinfopane503) + Control.IsVisible(503)] | [Skin.HasSetting(posterinfopane504) + Control.IsVisible(504)]]] | [Container.Content(tvshows) + Skin.HasSetting(tvposterinfopane)]</visible>
+                <visible>StringCompare(Control.GetLabel(4420),poster)</visible>
             </control>
             <control type="image">
                 <posx>1387.5</posx>
@@ -288,13 +283,11 @@
                 <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
                 <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                 <bordersize>19.5</bordersize>
-                <visible>[Container.Content(movies) + [[Skin.HasSetting(posterinfopane) + Control.IsVisible(501)] | [Skin.HasSetting(posterinfopane503) + Control.IsVisible(503)] | [Skin.HasSetting(posterinfopane504) + Control.IsVisible(504)]]] | [Container.Content(tvshows) + Skin.HasSetting(tvposterinfopane)]</visible>
+                <visible>StringCompare(Control.GetLabel(4420),poster)</visible>
             </control>
             <control type="group">
                 <posx>158</posx>
                 <posy>60</posy>
-                <!--                 <include condition="System.GetBool(videolibrary.groupmoviesets) + System.HasAddon(script.moviesets)">MovieSetsVisibility</include>
- -->
                 <include>Animation_VisibleChange200</include>
                 <control type="label">
                     <posy>-6</posy>
@@ -399,7 +392,7 @@
                     <posx>480</posx>
                     <posy>2</posy>
                     <width>657</width>
-                    <height>404</height>
+                    <height>393</height>
                     <label fallback="312577">$VAR[FanartPanelPlotVar]</label>
                     <align>justify</align>
                     <textcolor>white6</textcolor>
@@ -421,10 +414,10 @@
                     <visible>Control.IsVisible(504) + [[Skin.HasSetting(noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]]</visible>
                 </control>
                 <control type="textbox">
-                    <posx>480</posx>
+                    <posx>486</posx>
                     <posy>2</posy>
                     <width>657</width>
-                    <height>472</height>
+                    <height>460</height>
                     <label fallback="312577">$VAR[FanartPanelPlotVar]</label>
                     <align>justify</align>
                     <textcolor>white6</textcolor>
@@ -433,10 +426,10 @@
                     <visible>Control.IsVisible(504) + ![[Skin.HasSetting(noflowdvd) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowdvdtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]]</visible>
                 </control>
                 <control type="textbox">
-                    <posx>480</posx>
+                    <posx>486</posx>
                     <posy>2</posy>
                     <width>657</width>
-                    <height>472</height>
+                    <height>460</height>
                     <visible>!Control.IsVisible(504)</visible>
                     <label fallback="312577">$VAR[FanartPanelPlotVar]</label>
                     <align>justify</align>
@@ -446,8 +439,6 @@
                     <visible>![[Skin.HasSetting(noflow) + ![Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]] | [Skin.HasSetting(noflowtv) + [Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]]] | Control.IsVisible(503)</visible>
                 </control>
             </control>
-            <!--             <include condition="System.GetBool(videolibrary.groupmoviesets) + System.HasAddon(script.moviesets)">InfoPanelPosterMovieSetsLayout</include>
- -->
         </control>
     </include>
     <include name="Furniture_Showcase">
@@ -585,7 +576,7 @@
             <shadowcolor>floorshadow</shadowcolor>
             <visible>!Control.HasFocus(61)</visible>
             <include>Animation_VisibleChange400</include>
-            <label>[UPPERCASE]$VAR[SecondLabelVar][/UPPERCASE]</label>
+            <label>$VAR[SecondLabelVar]</label>
         </control>
     </include>
     <include name="FirstLabelFloor">
@@ -600,7 +591,7 @@
             <scrollspeed>30</scrollspeed>
             <textcolor>floor</textcolor>
             <shadowcolor>floorshadow</shadowcolor>
-            <label>[UPPERCASE]$VAR[FirstLabelVar][/UPPERCASE]</label>
+            <label>$VAR[FirstLabelVar]</label>
         </control>
     </include>
     <include name="FloorLabels">

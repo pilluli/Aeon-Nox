@@ -92,22 +92,6 @@
                         <texture>PVR/SeparatorChannels.png</texture>
                     </control>
                     <control type="label">
-                        <posx>195</posx>
-                        <posy>22</posy>
-                        <width>375</width>
-                        <font>Font_Reg20</font>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                    </control>
-                    <control type="image">
-                        <posx>562</posx>
-                        <posy>33</posy>
-                        <width>45</width>
-                        <height>30</height>
-                        <texture>PVR/PVR-IsRecording.png</texture>
-                        <visible>ListItem.IsRecording</visible>
-                    </control>
-                    <control type="label">
                         <posx>35</posx>
                         <posy>32</posy>
                         <width>60</width>
@@ -116,11 +100,20 @@
                         <aligny>center</aligny>
                         <info>ListItem.ChannelNumber</info>
                     </control>
+                    <control type="image">
+                        <posx>82</posx>
+                        <posy>10</posy>
+                        <width>90</width>
+                        <height>90</height>
+                        <bordersize>4</bordersize>
+                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                    </control>
                     <control type="label">
                         <posx>195</posx>
                         <posy>22</posy>
                         <width>375</width>
-                        <font>Font_Reg20</font>
+                        <font>Font_Bold19</font>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
@@ -129,7 +122,8 @@
                         <posy>42</posy>
                         <width>345</width>
                         <height>30</height>
-                        <textcolor>grey</textcolor>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
+                        <font>Font_Reg19</font>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Title]</label>
                         <scroll>yes</scroll>
@@ -146,9 +140,9 @@
                         <visible>ListItem.HasEpg</visible>
                     </control>
                     <control type="progress" id="20">
-                        <posx>265</posx>
+                        <posx>280</posx>
                         <posy>90</posy>
-                        <width>275</width>
+                        <width>260</width>
                         <height>9</height>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
@@ -170,40 +164,24 @@
                         <visible>ListItem.HasEpg</visible>
                     </control>
                     <control type="image">
-                        <posx>82</posx>
-                        <posy>10</posy>
-                        <width>90</width>
-                        <height>90</height>
-                        <bordersize>4</bordersize>
-                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
-                        <aspectratio>keep</aspectratio>
+                    	<animation effect="fade" start="100" end="20" time="800" pulse="true" condition="true">conditional</animation>
+                        <posx>155</posx>
+                        <posy>73</posy>
+                        <width>35</width>
+                        <height>35</height>
+                        <texture>PVR/PVR-IsRecording.png</texture>
+                        <visible>ListItem.IsRecording</visible>
                     </control>
                 </itemlayout>
                 <focusedlayout height="113" width="635">
                     <control type="image">
                         <posx>12</posx>
-                        <posy>1</posy>
+                        <posy>0</posy>
                         <width>635</width>
-                        <height>113</height>
+                        <height>112</height>
                         <texture>views/tripanel/listselect_fo.png</texture>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <include>VisibleFadeEffect</include>
-                    </control>
-                    <control type="label">
-                        <posx>195</posx>
-                        <posy>22</posy>
-                        <width>375</width>
-                        <font>Font_Reg20</font>
-                        <aligny>center</aligny>
-                        <label>$INFO[ListItem.Label]</label>
-                    </control>
-                    <control type="image">
-                        <posx>562</posx>
-                        <posy>33</posy>
-                        <width>45</width>
-                        <height>30</height>
-                        <texture>PVR/PVR-IsRecordingFO.png</texture>
-                        <visible>ListItem.IsRecording</visible>
                     </control>
                     <control type="label">
                         <posx>35</posx>
@@ -214,21 +192,33 @@
                         <aligny>center</aligny>
                         <info>ListItem.ChannelNumber</info>
                     </control>
+                    <control type="image">
+                        <posx>82</posx>
+                        <posy>10</posy>
+                        <width>90</width>
+                        <height>90</height>
+                        <bordersize>4</bordersize>
+                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
+                        <aspectratio>keep</aspectratio>
+                    </control>
+                    <control type="label">
+                        <posx>195</posx>
+                        <posy>22</posy>
+                        <width>375</width>
+                        <font>Font_Bold19</font>
+                        <aligny>center</aligny>
+                        <label>$INFO[ListItem.Label]</label>
+                    </control>
                     <control type="label">
                         <posx>195</posx>
                         <posy>42</posy>
                         <width>345</width>
                         <height>30</height>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
+                        <font>Font_Reg19</font>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Title]</label>
                         <scroll>yes</scroll>
-                    </control>
-                    <control type="image">
-                        <posx>26</posx>
-                        <posy>53</posy>
-                        <width>600</width>
-                        <height>60</height>
-                        <texture>PVR/SeparatorChannels.png</texture>
                     </control>
                     <control type="label">
                         <posx>195</posx>
@@ -242,9 +232,9 @@
                         <visible>ListItem.HasEpg</visible>
                     </control>
                     <control type="progress" id="20">
-                        <posx>265</posx>
+                        <posx>280</posx>
                         <posy>90</posy>
-                        <width>275</width>
+                        <width>260</width>
                         <height>9</height>
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
@@ -266,13 +256,13 @@
                         <visible>ListItem.HasEpg</visible>
                     </control>
                     <control type="image">
-                        <posx>82</posx>
-                        <posy>10</posy>
-                        <width>90</width>
-                        <height>90</height>
-                        <bordersize>4</bordersize>
-                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
-                        <aspectratio>keep</aspectratio>
+                    	<animation effect="fade" start="100" end="20" time="800" pulse="true" condition="true">conditional</animation>
+                        <posx>155</posx>
+                        <posy>73</posy>
+                        <width>35</width>
+                        <height>35</height>
+                        <texture>PVR/PVR-IsRecording.png</texture>
+                        <visible>ListItem.IsRecording</visible>
                     </control>
                 </focusedlayout>
             </control>

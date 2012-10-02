@@ -9,7 +9,7 @@
     <onload condition="IsEmpty(Skin.String(startupcount))">Skin.SetString(startupcount,1)</onload>
     <onload condition="Substring(Skin.String(widgetlist),actors) | Substring(Skin.String(widget2list),actors) | Skin.HasSetting(ActorBirthdayRSS)">RunScript(script.metadata.actors,borntoday,10,random)</onload>
     <onload condition="Substring(Skin.String(backgroundlist),googleweather2) + System.HasAddon(script.widget.weatherworld)">RunScript(script.widget.weatherworld,time=10&amp;limit=9&amp;mapsize=1920x1080&amp;tilesize=360x60&amp;window=10000&amp;condition=StringCompare(Control.GetLabel(4322),googleweather2))</onload>
-    <onload condition="System.HasAddon(script.randomitems)">XBMC.RunScript(script.randomitems,limit=16&amp;unplayed=True&amp;alarm=60)</onload>
+    <onload condition="System.HasAddon(script.randomitems)">XBMC.RunScript(script.randomitems,limit=10&amp;unplayed=True&amp;alarm=60)</onload>
     <onload condition="Library.HasContent(tvshows)">XBMC.RunScript(script.tv.show.next.aired,silent=True)</onload>
     <onload condition="Substring(Skin.String(widgetlist),rss1) | Substring(Skin.String(widget2list),rss1)">XBMC.RunScript(script.rssclient,guiless,feed=$INFO[Skin.String(CustomHomeFeedURL1)],imagecaching=false,window=10000,limit=8,prefix=RSS1)</onload>
     <onload condition="Substring(Skin.String(widgetlist),rss2) | Substring(Skin.String(widget2list),rss2)">XBMC.RunScript(script.rssclient,guiless,feed=$INFO[Skin.String(CustomHomeFeedURL2)],imagecaching=false,window=10000,limit=8,prefix=RSS2)</onload>
@@ -18,19 +18,22 @@
     <onload condition="Substring(Skin.String(widgetlist),recentpics) | Substring(Skin.String(widget2list),recentpics) | Substring(Skin.String(backgroundlist),recentpics)">XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onload>
     <onload condition="System.HasAddon(plugin.image.mypicsdb)">XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
     <onload condition="Substring(Skin.String(widgetlist),concerts) | Substring(Skin.String(widget2list),concerts)">RunScript(script.ExtraMusicInfo,info=NearEvents)</onload>
-    <onload condition="!IsEmpty(Skin.String(SmartPlaylistCall1))">$INFO[Skin.String(SmartPlaylistCall1)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SmartPlaylistCall2))">$INFO[Skin.String(SmartPlaylistCall2)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SmartPlaylistCall3))">$INFO[Skin.String(SmartPlaylistCall3)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SmartPlaylistCall4))">$INFO[Skin.String(SmartPlaylistCall4)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SmartPlaylistCall5))">$INFO[Skin.String(SmartPlaylistCall5)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SmartPlaylistCall6))">$INFO[Skin.String(SmartPlaylistCall6)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SecondSmartPlaylistCall1))">$INFO[Skin.String(SecondSmartPlaylistCall1)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SecondSmartPlaylistCall2))">$INFO[Skin.String(SecondSmartPlaylistCall2)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SecondSmartPlaylistCall3))">$INFO[Skin.String(SecondSmartPlaylistCall3)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SecondSmartPlaylistCall4))">$INFO[Skin.String(SecondSmartPlaylistCall4)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SecondSmartPlaylistCall5))">$INFO[Skin.String(SecondSmartPlaylistCall5)]</onload>
-    <onload condition="!IsEmpty(Skin.String(SecondSmartPlaylistCall6))">$INFO[Skin.String(SecondSmartPlaylistCall6)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist1.Call))">$INFO[Skin.String(SmartPlaylist1.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist2.Call))">$INFO[Skin.String(SmartPlaylist2.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist3.Call))">$INFO[Skin.String(SmartPlaylist3.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist4.Call))">$INFO[Skin.String(SmartPlaylist4.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist5.Call))">$INFO[Skin.String(SmartPlaylist5.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist6.Call))">$INFO[Skin.String(SmartPlaylist6.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist7.Call))">$INFO[Skin.String(SmartPlaylist7.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist8.Call))">$INFO[Skin.String(SmartPlaylist8.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist9.Call))">$INFO[Skin.String(SmartPlaylist9.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist10.Call))">$INFO[Skin.String(SmartPlaylist10.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist11.Call))">$INFO[Skin.String(SmartPlaylist11.Call)]</onload>
+    <onload condition="!IsEmpty(Skin.String(SmartPlaylist12.Call))">$INFO[Skin.String(SmartPlaylist12.Call)]</onload>
     <onload condition="System.HasAddon(script.xbmc.intro.movie)">RunScript(script.xbmc.intro.movie)</onload>
+    <onload>AlarmClock(GotToHome,SetFocus(9000),00:10,silent)</onload>
+    <onload>ClearProperty(FocusOnSubmenu,home)</onload>
+    <onunload>CancelAlarm(GotToHome,true)</onunload>
     <onunload>Skin.SetString(widgetlist,$INFO[Control.GetLabel(11111)])</onunload>
     <onunload>Skin.SetString(widget2list,$INFO[Control.GetLabel(11112)])</onunload>
     <onunload>Skin.SetString(backgroundlist,$INFO[Control.GetLabel(11113)])</onunload>
@@ -43,7 +46,7 @@
     </animation>
     <controls>
         <control type="label" id="11111">
-            <label> $INFO[Skin.String(MusicVideosHomeItem.Widget)] $INFO[Skin.String(MusicHomeItem.Widget)] $INFO[Skin.String(TVShowHomeItem.Widget)] $INFO[Skin.String(MovieHomeItem.Widget)] $INFO[Skin.String(LiveTVHomeItem.Widget)] $INFO[Skin.String(PicturesHomeItem.Widget)] $INFO[Skin.String(TVGuideHomeItem.Widget)] $INFO[Skin.String(FeaturedHomeItem.Widget)] $INFO[Skin.String(CustomHomeItem1.Widget)] $INFO[Skin.String(CustomHomeItem2.Widget)] $INFO[Skin.String(CustomHomeItem3.Widget)] $INFO[Skin.String(CustomHomeItem4.Widget)] $INFO[Skin.String(CustomHomeItem5.Widget)] $INFO[Skin.String(CustomHomeItem6.Widget)] $INFO[Skin.String(VideosHomeItem.Widget)] $INFO[Skin.String(ProgramsHomeItem.Widget)] $INFO[Skin.String(SettingsHomeItem.Widget)] $INFO[Skin.String(SearchHomeItem.Widget)] $INFO[Skin.String(ShutdownHomeItem.Widget)] $INFO[Skin.String(FavouritesHomeItem.Widget)] $INFO[Skin.String(PlayDiscHomeItem.Widget)] $INFO[Skin.String(WeatherHomeItem.Widget)] $INFO[Skin.String(ComicsHomeItem.Widget)] $INFO[Skin.String(FullscreenHomeItem.Widget)] </label>
+            <label> $INFO[Skin.String(MusicVideosHomeItem.Widget)] $INFO[Skin.String(MusicHomeItem.Widget)] $INFO[Skin.String(TVShowHomeItem.Widget)] $INFO[Skin.String(MovieHomeItem.Widget)] $INFO[Skin.String(LiveTVHomeItem.Widget)] $INFO[Skin.String(PicturesHomeItem.Widget)] $INFO[Skin.String(TVGuideHomeItem.Widget)] $INFO[Skin.String(FeaturedHomeItem.Widget)] $INFO[Skin.String(CustomHomeItem1.Widget)] $INFO[Skin.String(CustomHomeItem2.Widget)] $INFO[Skin.String(CustomHomeItem3.Widget)] $INFO[Skin.String(CustomHomeItem4.Widget)] $INFO[Skin.String(CustomHomeItem5.Widget)] $INFO[Skin.String(CustomHomeItem6.Widget)] $INFO[Skin.String(VideosHomeItem.Widget)] $INFO[Skin.String(ProgramsHomeItem.Widget)] $INFO[Skin.String(SettingsHomeItem.Widget)] $INFO[Skin.String(SearchHomeItem.Widget)] $INFO[Skin.String(ShutdownHomeItem.Widget)] $INFO[Skin.String(FavouritesHomeItem.Widget)] $INFO[Skin.String(PlayDiscHomeItem.Widget)] $INFO[Skin.String(WeatherHomeItem.Widget)] $INFO[Skin.String(ComicsHomeItem.Widget)] $INFO[Skin.String(FullscreenHomeItem.Widget)] $INFO[Skin.String(CustomSub9_1.Widget)] $INFO[Skin.String(CustomSub9_2.Widget)] $INFO[Skin.String(CustomSub9_4.Widget)] $INFO[Skin.String(CustomSub9_5.Widget)] $INFO[Skin.String(CustomSub8_1.Widget)] $INFO[Skin.String(CustomSub8_2.Widget)] $INFO[Skin.String(CustomSub8_3.Widget)] $INFO[Skin.String(CustomSub8_4)] $INFO[Skin.String(CustomSub8_5.Widget)] $INFO[Skin.String(CustomSub11_1.Widget)] $INFO[Skin.String(CustomSub11_2.Widget)] $INFO[Skin.String(CustomSub11_3.Widget)] $INFO[Skin.String(CustomSub11_4.Widget)] $INFO[Skin.String(CustomSub11_5.Widget)] $INFO[Skin.String(CustomSub11_6.Widget)] $INFO[Skin.String(CustomSub11_7.Widget)] $INFO[Skin.String(CustomSub11_8.Widget)] </label>
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
         </control>
         <control type="label" id="11112">
@@ -58,7 +61,12 @@
             <label> $INFO[Skin.String(MusicVideosHomeItem.Submenu)] $INFO[Skin.String(MusicHomeItem.Submenu)] $INFO[Skin.String(TVShowHomeItem.Submenu)] $INFO[Skin.String(MovieHomeItem.Submenu)] $INFO[Skin.String(LiveTVHomeItem.Submenu)] $INFO[Skin.String(PicturesHomeItem.Submenu)] $INFO[Skin.String(TVGuideHomeItem.Submenu)] $INFO[Skin.String(FeaturedHomeItem.Submenu)] $INFO[Skin.String(CustomHomeItem1.Submenu)] $INFO[Skin.String(CustomHomeItem2.Submenu)] $INFO[Skin.String(CustomHomeItem3.Submenu)] $INFO[Skin.String(CustomHomeItem4.Submenu)] $INFO[Skin.String(CustomHomeItem5.Submenu)] $INFO[Skin.String(CustomHomeItem6.Submenu)] $INFO[Skin.String(VideosHomeItem.Submenu)] $INFO[Skin.String(ProgramsHomeItem.Submenu)] $INFO[Skin.String(SettingsHomeItem.Submenu)] $INFO[Skin.String(SearchHomeItem.Submenu)] $INFO[Skin.String(ShutdownHomeItem.Submenu)] $INFO[Skin.String(FavouritesHomeItem.Submenu)] $INFO[Skin.String(PlayDiscHomeItem.Submenu)] $INFO[Skin.String(WeatherHomeItem.Submenu)] $INFO[Skin.String(ComicsHomeItem.Submenu)] $INFO[Skin.String(FullscreenHomeItem.Submenu)] </label>
             <animation effect="fade" start="100" end="0" time="0" condition="true">conditional</animation>
         </control>
+        <control type="button" id="9000">
+            <onfocus>ReplaceWindow(Home)</onfocus>
+            <include>HiddenObject</include>
+        </control>
         <control type="button" id="10">
+            <onfocus condition="Skin.HasSetting(Use_Startup_Playlist)">XBMC.PlayMedia($ESCINFO[Skin.String(Startup_Playlist_Path)])</onfocus>
             <onfocus condition="!System.HasAddon(script.xbmc.intro.movie)">SetFocus(11)</onfocus>
             <onleft>ReplaceWindow(Home)</onleft>
             <onup>ReplaceWindow(Home)</onup>
@@ -66,46 +74,14 @@
             <onright>ReplaceWindow(Home)</onright>
             <onclick>ReplaceWindow(Home)</onclick>
             <include>HiddenObject</include>
-            <visible>!Skin.HasSetting(Use_Startup_Playlist)</visible>
-        </control>
-        <control type="button" id="10">
-            <onfocus>XBMC.PlayMedia($ESCINFO[Skin.String(Startup_Playlist_Path)])</onfocus>
-            <onfocus condition="!System.HasAddon(script.xbmc.intro.movie)">SetFocus(11)</onfocus>
-            <onleft>ReplaceWindow(Home)</onleft>
-            <onup>ReplaceWindow(Home)</onup>
-            <ondown>ReplaceWindow(Home)</ondown>
-            <onright>ReplaceWindow(Home)</onright>
-            <onclick>ReplaceWindow(Home)</onclick>
-            <include>HiddenObject</include>
-            <visible>Skin.HasSetting(Use_Startup_Playlist)</visible>
         </control>
         <control type="button" id="11">
-            <onfocus condition="!System.HasAddon(script.watchlist)">SetFocus(12)</onfocus>
-            <onfocus condition="System.HasAddon(script.watchlist)">SetFocus(11)</onfocus>
-            <visible>IsEmpty(Window(Home).Property(WatchList_Running)) + !System.IdleTime(6)</visible>
             <onleft>ReplaceWindow(Home)</onleft>
             <onup>ReplaceWindow(Home)</onup>
             <ondown>ReplaceWindow(Home)</ondown>
             <onright>ReplaceWindow(Home)</onright>
             <onclick>ReplaceWindow(Home)</onclick>
-            <animation effect="fade" start="0" end="100" time="0" delay="1000">Focus</animation>
             <include>HiddenObject</include>
-        </control>
-        <control type="button" id="11">
-            <include>HiddenObject</include>
-            <onfocus>ReplaceWindow(Home)</onfocus>
-            <onleft>ReplaceWindow(Home)</onleft>
-            <onup>ReplaceWindow(Home)</onup>
-            <ondown>ReplaceWindow(Home)</ondown>
-            <onright>ReplaceWindow(Home)</onright>
-            <onclick>ReplaceWindow(Home)</onclick>
-            <visible>!IsEmpty(Window(Home).Property(WatchList_Running)) | System.IdleTime(6)</visible>
-            <animation effect="fade" start="0" end="100" time="0" delay="1000">Focus</animation>
-        </control>
-        <control type="button" id="12">
-            <include>HiddenObject</include>
-            <onfocus>ReplaceWindow(Home)</onfocus>
-            <animation effect="fade" start="0" end="100" time="0" delay="4000">Focus</animation>
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
@@ -140,7 +116,6 @@
             <align>center</align>
             <font>Font_MainClassic4</font>
             <textcolor>white2</textcolor>
-            <shadowcolor>-</shadowcolor>
             <label>42283</label>
             <textoffsetx>15</textoffsetx>
             <visible>![Stringcompare(Skin.String(startupcount),3) | Skin.HasTheme(White)]</visible>
