@@ -2,7 +2,7 @@
 <includes>
     <include name="ShowcaseInfoPaneMusic">
         <control type="group" id="7679">
-            <visible>Control.IsVisible(199) + [[Skin.HasSetting(infopanelmusic) + [Container.Content(albums) | Container.Content(artists)]] | [!Skin.HasSetting(infopanellauncher) + [Window.IsActive(programs) + !Container.Content(addons)]] | Control.HasFocus(7000)]</visible>
+            <visible>Control.IsVisible(199)  | Control.HasFocus(7000) | Stringcompare(Control.GetLabel(4421),infopanelon)</visible>
             <visible>!Control.HasFocus(109)</visible>
             <animation effect="slide" start="0,-1200" end="0,0" time="700" easing="out" tween="cubic">VisibleChange</animation>
             <animation effect="slide" start="0,-1200" end="0,0" time="550" delay="800" easing="out" tween="cubic">WindowOpen</animation>
@@ -135,7 +135,7 @@
                         <width>729</width>
                         <height>220</height>
                         <align>justify</align>
-                        <label fallback="312577">$VAR[MusicPanelPlotVar]</label>
+                        <label fallback="312577">$VAR[InfoWallTextboxVar]</label>
                         <textcolor>white6</textcolor>
                         <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
@@ -551,6 +551,7 @@
                 <width>900</width>
                 <height>45</height>
                 <aligny>left</aligny>
+                <visible>!IsEmpty(MusicPlayer.Offset(1).Title)</visible>
                 <textcolor>$VAR[TitleColorVar]</textcolor>
                 <label>$LOCALIZE[42289]</label>
                 <font>Font_Reg22_Caps</font>

@@ -60,7 +60,7 @@
                 <height>1080</height>
                 <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
-                <texture background="true">$INFO[ListItem.FilenameAndPath]$INFO[ListItem.Label,,/fanart.jpg]</texture>
+                <texture background="true">$INFO[ListItem.FileNameAndPath]season$INFO[ListItem.Season]-fanart.jpg</texture>
                 <visible>Container.Content(tvshows)</visible>
             </control>
             <control type="image">
@@ -69,7 +69,7 @@
                 <height>1080</height>
                 <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
-                <texture background="true">$INFO[ListItem.Path,,fanart.jpg]</texture>
+                <texture background="true">$INFO[ListItem.Path]../season$INFO[ListItem.Season]-fanart.jpg</texture>
                 <visible>Container.Content(episodes)</visible>
             </control>
             <control type="image">
@@ -137,7 +137,7 @@
                     <posy>16</posy>
                     <width>1018</width>
                     <font>Font_Reg38_Caps</font>
-                    <label>[UPPERCASE]$INFO[ListItem.Title][/UPPERCASE]</label>
+                    <label>$INFO[ListItem.Title]</label>
                     <scroll>true</scroll>
                     <textcolor>white2</textcolor>
                     <animation effect="slide" start="0,-38" end="0,-38" time="0" condition="[!IsEmpty(ListItem.Tagline) + Container.Content(movies)] | Container.Content(episodes) | Container.Content(musicvideos)">Conditional</animation>
@@ -211,7 +211,7 @@
                     <width>555</width>
                     <aligny>center</aligny>
                     <font>Font_Reg20_Caps</font>
-                    <label fallback="312577">[UPPERCASE]$INFO[ListItem.Genre][/UPPERCASE]</label>
+                    <label fallback="312577">$INFO[ListItem.Genre]</label>
                     <scroll>true</scroll>
                     <textcolor>grey</textcolor>
                     <height>85</height>
@@ -483,11 +483,11 @@
                     <visible>Container.Content(movies) | Container.Content(episodes) | Container.Content(MusicVideos) | [Container.Content(tvshows) + !Skin.HasSetting(NextAiredInfo)]</visible>
                     <control type="image">
                         <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                        <posx>570</posx>
+                        <posx>569</posx>
                         <posy>257</posy>
-                        <width>1</width>
+                        <width>2</width>
                         <height>40</height>
-                        <texture>info/info_flagupright.png</texture>
+                        <texture>views/tripanel/upright.png</texture>
                     </control>
                     <control type="group">
                         <posy>-4</posy>
@@ -539,9 +539,9 @@
                 </control>
                 <control type="textbox">
                     <posx>4</posx>
-                    <posy>528</posy>
+                    <posy>536</posy>
                     <width>1016</width>
-                    <height>340</height>
+                    <height>320</height>
                     <align>justify</align>
                     <font>Font_Reg32</font>
                     <pagecontrol>60</pagecontrol>
@@ -582,12 +582,12 @@
                     </control>
                     <control type="image" id="900013">
                         <width>161</width>
-                        <height>102</height>
+                        <height>90</height>
                         <colordiffuse>FF7c7c7c</colordiffuse>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
                         <aspectratio>keep</aspectratio>
-                        <animation effect="slide" start="0,0" end="0,-15" reversible="true" condition="true">Conditional</animation>
+                        <animation effect="slide" start="0,0" end="0,-9" reversible="true" condition="true">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(900013))</visible>
                     </control>
                     <control type="image">
@@ -767,8 +767,8 @@
                 </control>
             </control>
             <control type="spincontrol" id="60">
-                <posx>1835</posx>
-                <posy>576</posy>
+                <posx>1840</posx>
+                <posy>584</posy>
                 <width>50</width>
                 <height>88</height>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>

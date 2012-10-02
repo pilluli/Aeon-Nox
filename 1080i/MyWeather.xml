@@ -435,7 +435,6 @@
                                         <width>375</width>
                                         <height>34</height>
                                         <font>Font_Reg18_Caps</font>
-                                        <include>listcolorfocus</include>
                                         <aligny>center</aligny>
                                         <label>$INFO[ListItem.Label]</label>
                                     </control>
@@ -444,7 +443,6 @@
                                         <posy>35</posy>
                                         <width>660</width>
                                         <height>34</height>
-                                        <include>listcolorfocus</include>
                                         <aligny>center</aligny>
                                         <label>$INFO[ListItem.Property(Outlook)]</label>
                                         <scroll>true</scroll>
@@ -1084,7 +1082,6 @@
                                         <width>375</width>
                                         <height>34</height>
                                         <font>Font_Reg18_Caps</font>
-                                        <include>listcolorfocus</include>
                                         <aligny>center</aligny>
                                         <label>$INFO[ListItem.Label]</label>
                                     </control>
@@ -1093,7 +1090,6 @@
                                         <posy>35</posy>
                                         <width>660</width>
                                         <height>34</height>
-                                        <include>listcolorfocus</include>
                                         <aligny>center</aligny>
                                         <label>$INFO[ListItem.Property(Outlook)]</label>
                                         <scroll>true</scroll>
@@ -1103,7 +1099,6 @@
                                         <posy>66</posy>
                                         <width>660</width>
                                         <height>34</height>
-                                        <include>listcolorfocus</include>
                                         <aligny>center</aligny>
                                         <label>$INFO[ListItem.Property(Temperature)]  •  $INFO[ListItem.Property(Humidity)]</label>
                                     </control>
@@ -1112,7 +1107,6 @@
                                         <posy>66</posy>
                                         <width>660</width>
                                         <height>34</height>
-                                        <include>listcolorfocus</include>
                                         <aligny>center</aligny>
                                         <label>$INFO[ListItem.Property(FeelsLike),$LOCALIZE[402]: ]</label>
                                     </control>
@@ -1592,7 +1586,6 @@
                                         <posx>120</posx>
                                         <width>810</width>
                                         <height>60</height>
-                                        <include>listcolorfocus</include>
                                         <aligny>center</aligny>
                                         <label>$INFO[ListItem.Label]</label>
                                     </control>
@@ -1932,7 +1925,7 @@
                                     <textcolor>white2</textcolor>
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                                    <label>$INFO[ListItem.Label]</label>
                                 </control>
                                 <control type="image">
                                     <posx>50</posx>
@@ -1962,7 +1955,7 @@
                                     <textcolor>white2</textcolor>
                                     <align>center</align>
                                     <aligny>center</aligny>
-                                    <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
+                                    <label>$INFO[ListItem.Label]</label>
                                 </control>
                                 <control type="image">
                                     <posx>50</posx>
@@ -2065,7 +2058,6 @@
                     <font>Font_Reg17</font>
                     <align>right</align>
                     <textcolor>floor</textcolor>
-                    <shadowcolor>-</shadowcolor>
                     <textoffsetx>0</textoffsetx>
                     <label>$INFO[Window.Property(Alerts.RSS)]</label>
                     <scroll>true</scroll>
@@ -2817,5 +2809,6 @@
             <hitrect x="-50" y="0" w="50" h="1080" />
             <onfocus>SetFocus(9000)</onfocus>
         </control>
+                <include>ContextMenuOverlay</include>
     </controls>
 </window>
