@@ -88,7 +88,6 @@
                         <texturenofocus>special://skin/extras/BigIcons/ButtonPause.png</texturenofocus>
                         <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
                         <alttexturenofocus>special://skin/extras/BigIcons/ButtonPlay.png</alttexturenofocus>
-                        <visible>true</visible>
                     </control>
                     <control type="button">
                         <posx>100</posx>
@@ -265,7 +264,6 @@
                         <onleft>601</onleft>
                         <onright>603</onright>
                         <onclick>PlayerControl(Play)</onclick>
-                        <visible>true</visible>
                     </control>
                     <control type="button" id="603">
                         <posx>100</posx>
@@ -449,7 +447,6 @@
                         <texturenofocus>osd/buttons/OSDPauseNF.png</texturenofocus>
                         <usealttexture>Player.Paused | Player.Forwarding | Player.Rewinding</usealttexture>
                         <alttexturenofocus>osd/buttons/OSDPlayNF.png</alttexturenofocus>
-                        <visible>true</visible>
                     </control>
                     <control type="button">
                         <posx>100</posx>
@@ -620,7 +617,6 @@
                         <onleft>601</onleft>
                         <onright>603</onright>
                         <onclick>PlayerControl(Play)</onclick>
-                        <visible>true</visible>
                     </control>
                     <control type="button" id="603">
                         <posx>100</posx>
@@ -1175,7 +1171,6 @@
                     <pagecontrol>25</pagecontrol>
                     <scrolltime tween="sine" easing="out">200</scrolltime>
                     <orientation>horizontal</orientation>
-                    <usecontrolcoords>false</usecontrolcoords>
                     <onup>703</onup>
                     <ondown>701</ondown>
                     <onleft>605</onleft>
@@ -1195,7 +1190,7 @@
                         <altclick>XBMC.RunScript($INFO[Skin.String(SubtitleScript_Path)])</altclick>
                         <usealttexture>IsEmpty(Skin.String(SubtitleScript_Path))</usealttexture>
                     </control>
-                    <control type="button" id="704">
+                    <control type="button" id="804">
                         <include>ClassicOSDButton</include>
                         <label>31355</label>
                         <texturefocus>osd/buttons/OSDDvdFO.png</texturefocus>
@@ -1240,12 +1235,11 @@
             </control>
         </control>
         <control type="group">
-            <visible>!Window.IsActive(fullscreeninfo) + VideoPlayer.Content(LiveTV)</visible>
-            <include>FullScreenInfoBar</include>
+            <visible>!Window.IsActive(fullscreeninfo)</visible>
+            <include condition="VideoPlayer.Content(LiveTV)">FullScreenInfoBarLiveTV</include>
         </control>
         <control type="group">
-            <visible>!Window.IsActive(fullscreeninfo) + !VideoPlayer.Content(LiveTV)</visible>
-            <posy>993</posy>
+            <visible>!Window.IsActive(fullscreeninfo)</visible>
             <animation type="Visible">
                 <effect type="fade" time="200" start="0" end="100" />
                 <effect type="slide" time="200" start="0,98" end="0,0" easing="out" tween="cubic" />
@@ -1254,91 +1248,7 @@
                 <effect type="fade" time="200" start="100" end="0" />
                 <effect type="slide" time="200" start="0,0" end="0,98" easing="in" tween="cubic" />
             </animation>
-            <animation type="WindowOpen">
-                <effect type="fade" time="200" start="0" end="100" />
-                <effect type="slide" time="200" start="0,98" end="0,0" easing="out" tween="cubic" />
-            </animation>
-            <animation type="WindowClose">
-                <effect type="fade" time="200" start="100" end="0" />
-                <effect type="slide" time="200" start="0,0" end="0,98" easing="in" tween="cubic" />
-            </animation>
-            <control type="image">
-                <posx>-80</posx>
-                <width>2080</width>
-                <height>87</height>
-                <texture border="80,0,80,0">osd/osd_progress_bar_back.png</texture>
-            </control>
-            <control type="progress" id="23">
-                <posx>150</posx>
-                <posy>57</posy>
-                <width>1620</width>
-                <height>20</height>
-                <info>Player.ProgressCache</info>
-                <texturebg>osd/info/osd_progress_back.png</texturebg>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <lefttexture>osd/info/osd_progresscache_left.png</lefttexture>
-                <midtexture>osd/info/osd_progresscache_mid.png</midtexture>
-                <righttexture>osd/info/osd_progresscache_right.png</righttexture>
-                <overlaytexture>-</overlaytexture>
-                <visible>true</visible>
-            </control>
-            <control type="progress" id="23">
-                <posx>150</posx>
-                <posy>57</posy>
-                <width>1620</width>
-                <height>20</height>
-                <info>Player.Progress</info>
-                <texturebg>osd/info/osd_progress_back_cache.png</texturebg>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <lefttexture>osd/info/osd_progress_left.png</lefttexture>
-                <midtexture>osd/info/osd_progress_mid.png</midtexture>
-                <righttexture>osd/info/osd_progress_right.png</righttexture>
-                <overlaytexture>-</overlaytexture>
-                <visible>true</visible>
-            </control>
-            <control type="slider" id="87">
-                <posx>150</posx>
-                <posy>57</posy>
-                <width>1620</width>
-                <height>20</height>
-                <action>seek</action>
-                <texturesliderbar>-</texturesliderbar>
-                <textureslidernib>-</textureslidernib>
-                <textureslidernibfocus>-</textureslidernibfocus>
-            </control>
-            <control type="label">
-                <posx>135</posx>
-                <posy>45</posy>
-                <width>300</width>
-                <height>42</height>
-                <font>Font_Reg19</font>
-                <textcolor>osdseek</textcolor>
-                <label>$INFO[Player.Time]</label>
-                <align>right</align>
-                <aligny>center</aligny>
-            </control>
-            <control type="label">
-                <posx>135r</posx>
-                <posy>45</posy>
-                <width>300</width>
-                <height>42</height>
-                <font>Font_Reg19</font>
-                <textcolor>osdseek</textcolor>
-                <label>$INFO[Player.Duration]</label>
-                <aligny>center</aligny>
-                <visible>!Skin.HasSetting(PreferRemaining)</visible>
-            </control>
-            <control type="label">
-                <posx>135r</posx>
-                <posy>45</posy>
-                <width>300</width>
-                <height>42</height>
-                <font>Font_Reg19</font>
-                <textcolor>osdseek</textcolor>
-                <label>$INFO[Player.TimeRemaining,- ]</label>
-                <aligny>center</aligny>
-                <visible>Skin.HasSetting(PreferRemaining)</visible>
-            </control>
+            <include condition="!VideoPlayer.Content(LiveTV)">BottomProgressBar</include>
         </control>
     </controls>
 </window>

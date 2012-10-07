@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
     <allowoverlay>no</allowoverlay>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
     <controls>
         <control type="image" id="101">
             <include>FullscreenDimensions</include>
@@ -90,7 +92,6 @@
                 <aligny>top</aligny>
                 <label>$INFO[Control.Getlabel(505)]</label>
                 <textcolor>white6</textcolor>
-                <align>justify</align>
                 <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
             <control type="image" id="506">

@@ -119,7 +119,7 @@
                 <aligny>center</aligny>
                 <label>$INFO[ListItem.TrackNumber]</label>
                 <font>Font_Reg25_Caps</font>
-                <include>listcolornofocus</include>
+                <textcolor>white2</textcolor>
                 <visible>Container.Content(songs)</visible>
             </control>
             <control type="label">
@@ -130,7 +130,7 @@
                 <textcolor>$VAR[TitleColorVar]</textcolor>
                 <label>$VAR[EpisodeTitleVar]</label>
                 <font>Font_Reg25_Caps</font>
-                <include>listcolornofocus</include>
+                <textcolor>white2</textcolor>
             </control>
             <control type="label">
                 <posx>1280</posx>
@@ -179,27 +179,23 @@
                     <posy>22</posy>
                     <align>right</align>
                     <width>825</width>
-                    <scrollout>false</scrollout>
-                    <pauseatend>1800</pauseatend>
                     <scrollspeed>40</scrollspeed>
                     <label>$INFO[ListItem.Label]</label>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <font>Font_Reg25_Caps</font>
                     <visible>!Container.Content(songs)</visible>
-                    <include>listcolornofocus</include>
+                    <textcolor>white2</textcolor>
                 </control>
                 <control type="label">
                     <posx>838</posx>
                     <posy>22</posy>
                     <align>right</align>
                     <width>825</width>
-                    <scrollout>false</scrollout>
-                    <pauseatend>1800</pauseatend>
                     <scrollspeed>40</scrollspeed>
                     <label>$INFO[ListItem.Title]</label>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <font>Font_Reg25_Caps</font>
-                    <include>listcolornofocus</include>
+                    <textcolor>white2</textcolor>
                     <visible>Container.Content(songs)</visible>
                 </control>
                 <control type="label">
@@ -220,7 +216,6 @@
                     <align>right</align>
                     <label>$VAR[InfoWallTextboxVar]</label>
                     <font>Font_Reg19</font>
-                    <include>listcolornofocus</include>
                     <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
             </control>
@@ -236,7 +231,7 @@
                 <textcolor>$VAR[TitleColorVar]</textcolor>
                 <label>$VAR[EpisodeTitleVar]</label>
                 <font>Font_Reg25_Caps</font>
-                <include>listcolornofocus</include>
+                <textcolor>white2</textcolor>
             </control>
             <control type="label">
                 <posx>1280</posx>
@@ -395,13 +390,11 @@
                     <posy>22</posy>
                     <align>right</align>
                     <width>825</width>
-                    <scrollout>false</scrollout>
-                    <pauseatend>1800</pauseatend>
                     <scrollspeed>40</scrollspeed>
                     <label>$INFO[ListItem.Title]</label>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <font>Font_Reg25_Caps</font>
-                    <include>listcolornofocus</include>
+                    <textcolor>white2</textcolor>
                     <visible>!IsEmpty(ListItem.Title)</visible>
                 </control>
                 <control type="label">
@@ -423,7 +416,6 @@
                     <align>right</align>
                     <info>ListItem.Plot</info>
                     <font>Font_Reg19</font>
-                    <include>listcolornofocus</include>
                     <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
             </control>
@@ -477,13 +469,11 @@
                     <posy>22</posy>
                     <align>right</align>
                     <width>825</width>
-                    <scrollout>false</scrollout>
-                    <pauseatend>1800</pauseatend>
                     <scrollspeed>40</scrollspeed>
                     <label>$INFO[ListItem.Title]</label>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <font>Font_Reg25_Caps</font>
-                    <include>listcolornofocus</include>
+                    <textcolor>white2</textcolor>
                     <visible>!IsEmpty(ListItem.Title)</visible>
                 </control>
                 <control type="label">
@@ -505,7 +495,6 @@
                     <align>right</align>
                     <info>ListItem.Plot</info>
                     <font>Font_Reg19</font>
-                    <include>listcolornofocus</include>
                     <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
             </control>

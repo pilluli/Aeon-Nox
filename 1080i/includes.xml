@@ -214,12 +214,6 @@
         <posy>96</posy>
         <width>578</width>
         <height>21</height>
-        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-        <texturebg>dialogs/progress/progress_back.png</texturebg>
-        <lefttexture>dialogs/progress/progress_left.png</lefttexture>
-        <midtexture>dialogs/progress/progress_mid.png</midtexture>
-        <righttexture>dialogs/progress/progress_right.png</righttexture>
-        <overlaytexture>-</overlaytexture>
     </include>
     <include name="Dialogs_LabelVars">
         <posx>158</posx>
@@ -302,7 +296,7 @@
     <include name="Objects_MediaMenuButtonAlt2">
         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
         <height>60</height>
-        <width>600</width>
+        <width>470</width>
         <texturenofocus>settings/listselect_nf.png</texturenofocus>
         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
         <alttexturenofocus>settings/listselect_nf.png</alttexturenofocus>
@@ -318,12 +312,12 @@
         <font>Font_Reg19</font>
         <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
-        <radioposx>508</radioposx>
+        <radioposx>378</radioposx>
     </include>
     <include name="Objects_MediaMenuLabelAlt2">
         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
         <height>45</height>
-        <width>600</width>
+        <width>470</width>
         <texturenofocus>settings/listselect_nf3.png</texturenofocus>
         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
         <alttexturenofocus>settings/listselect_nf3.png</alttexturenofocus>
@@ -371,7 +365,7 @@
     </include>
     <include name="Objects_ShutdownMenuButton">
         <height>75</height>
-        <width>440</width>
+        <width>550</width>
         <textcolor>context</textcolor>
         <focusedcolor>white2</focusedcolor>
         <disabledcolor>$VAR[SpotColorVar2]</disabledcolor>
@@ -380,9 +374,9 @@
         <aligny>top</aligny>
         <font>Font_Reg19_Caps</font>
         <textoffsety>15</textoffsety>
-        <textoffsetx>95</textoffsetx>
+        <textoffsetx>125</textoffsetx>
         <include condition="!Skin.HasSetting(DisableGlowbar)">ShutdownGlow</include>
-        <include condition="![!Skin.HasSetting(DisableGlowbar)]">ShutdownNoGlow</include>
+        <include condition="Skin.HasSetting(DisableGlowbar)">ShutdownNoGlow</include>
     </include>
     <include name="Objects_ShutdownMenuIcon">
         <height>63</height>
@@ -398,19 +392,6 @@
         <texturenofocus>-</texturenofocus>
         <label>-</label>
         <font>-</font>
-    </include>
-    <include name="subcolornofocus">
-        <textcolor>grey</textcolor>
-    </include>
-    <include name="listcolornofocus">
-        <textcolor>white2</textcolor>
-    </include>
-    <include name="subcolorfocus">
-        <textcolor>grey</textcolor>
-        <selectedcolor>grey</selectedcolor>
-    </include>
-    <include name="detailcolornofocus">
-        <textcolor>grey2</textcolor>
     </include>
     <include name="TvTunesVisibleCondition">
         <visible>IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))</visible>
@@ -925,7 +906,7 @@
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(lowermainmenu)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(wallgenretv)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(altbreadcrumbstexture)</onload>
-        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(1sec)</onload>
+        <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(InfopanelDelay,2)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(GlobalNowPlaying)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetBool(altoverlayinfowall)</onload>
         <onload condition="!Skin.HasSetting(firstrun)">Skin.SetString(IncludeWatchedCVPL,False)</onload>
@@ -1047,15 +1028,15 @@
         <onload>Skin.SetBool(firstrun)</onload>
     </include>
     <include name="DelayAnimations">
-        <animation effect="fade" start="0" end="100" time="150" delay="1333" condition="Skin.HasSetting(1sec)">Visible</animation>
-        <animation effect="fade" start="0" end="100" time="150" delay="2666" condition="Skin.HasSetting(2sec)">Visible</animation>
-        <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Skin.HasSetting(3sec)">Visible</animation>
-        <animation effect="fade" start="0" end="100" time="150" delay="5333" condition="Skin.HasSetting(4sec)">Visible</animation>
-        <animation effect="fade" start="0" end="100" time="150" delay="6666" condition="Skin.HasSetting(5sec)">Visible</animation>
+        <animation effect="fade" start="0" end="100" time="150" delay="1333" condition="Stringcompare(Skin.String(InfopanelDelay),1)">Visible</animation>
+        <animation effect="fade" start="0" end="100" time="150" delay="2666" condition="Stringcompare(Skin.String(InfopanelDelay),2)">Visible</animation>
+        <animation effect="fade" start="0" end="100" time="150" delay="4000" condition="Stringcompare(Skin.String(InfopanelDelay),3)">Visible</animation>
+        <animation effect="fade" start="0" end="100" time="150" delay="5333" condition="Stringcompare(Skin.String(InfopanelDelay),4)">Visible</animation>
+        <animation effect="fade" start="0" end="100" time="150" delay="6666" condition="Stringcompare(Skin.String(InfopanelDelay),5)">Visible</animation>
     </include>
     <include name="UnwatchedIcon">
         <control type="group">
-            <visible>Skin.HasSetting(unwatchedicon) + [Container.Content(tvshows) | Container.Content(seasons)] + !StringCompare(ListItem.Label,..)</visible>
+            <visible>Skin.HasSetting(unwatchedicon) + [Container.Content(tvshows) | Container.Content(seasons)] + IntegerGreaterThan(ListItem.Property(UnWatchedEpisodes),0)</visible>
             <control type="image">
                 <posx>10</posx>
                 <posy>5</posy>
@@ -1118,18 +1099,17 @@
         <control type="image">
             <include>FullscreenDimensions</include>
             <texture>diffuseoverlay.png</texture>
- <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
             <animation effect="fade" start="100" end="0" time="300" condition="Window.IsVisible(fullscreenvideo)">Conditional</animation>
             <animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
         </control>
     </include>
     <include name="ContextMenuOverlay">
-
         <control type="image">
             <include>FullscreenDimensions</include>
             <texture>diffuseoverlay.png</texture>
- <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+            <colordiffuse>$VAR[SpotColorVar2]</colordiffuse>
             <animation effect="fade" start="0" end="100" time="700">WindowOpen</animation>
             <animation effect="fade" start="100" end="0" time="300">WindowClose</animation>
             <visible>Window.IsActive(contextmenu)</visible>
@@ -1302,6 +1282,147 @@
             <icolordiffuse>$VAR[DialogColorVar]</icolordiffuse>
         </control>
     </include>
+    <include name="FullScreenInfoBarLiveTV">
+   		<control type="image" id="1">
+            <posy>900</posy>
+            <width>1920</width>
+            <height>180</height>
+            <texture>osd/osd_back.png</texture>
+        </control>
+        <control type="group" id="1">
+            <posy>865</posy>
+            <include>Neon_Topbar</include>
+        </control>
+        <control type="group" id="1">
+               <posx>-1536</posx>
+               <animation type="WindowOpen">
+                   <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" easing="out" />
+               </animation>
+               <animation type="WindowClose">
+                   <effect type="slide" start="0,0" end="-450,0" time="600" tween="cubic" easing="out" />
+                   <effect type="fade" start="100" end="0" time="600" />
+               </animation>
+               <control type="image" id="1">
+                   <posx>1580</posx>
+                   <posy>842</posy>
+                   <width>300</width>
+                   <height>180</height>
+                   <texture>$INFO[VideoPlayer.Cover]</texture>
+                   <aspectratio>keep</aspectratio>
+                   <visible>!IsEmpty(VideoPlayer.Cover)</visible>
+               </control>
+           </control>
+           <control type="group" id="1">
+               <animation type="WindowOpen">
+                   <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" easing="out" />
+               </animation>
+               <animation type="WindowClose">
+                   <effect type="slide" start="0,0" end="450,0" time="600" tween="cubic" easing="out" />
+                   <effect type="fade" start="100" end="0" time="600" />
+               </animation>
+               <control type="label" id="1">
+                   <posx>1560</posx>
+                   <posy>975</posy>
+                   <width>350</width>
+                   <height>68</height>
+                   <align>center</align>
+                   <aligny>center</aligny>
+                   <font>Font_Bold19</font>
+                   <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                   <label>$INFO[VideoPlayer.ChannelName]</label>
+                   <scroll>true</scroll>
+               </control>
+           </control>
+        <control type="progress" id="1">
+            <posx>390</posx>
+            <posy>1002</posy>
+            <width>1140</width>
+            <height>22</height>
+            <info>Player.ProgressCache</info>
+            <texturebg>osd/info/osd_progress_back.png</texturebg>
+            <lefttexture>osd/info/osd_progresscache_left.png</lefttexture>
+            <midtexture>osd/info/osd_progresscache_mid.png</midtexture>
+            <righttexture>osd/info/osd_progresscache_right.png</righttexture>
+            <visible>VideoPlayer.HasEpg</visible>
+        </control>
+        <control type="progress" id="1">
+            <posx>390</posx>
+            <posy>1002</posy>
+            <width>1140</width>
+            <height>22</height>
+            <info>Player.Progress</info>
+            <texturebg>osd/info/osd_progress_back_cache.png</texturebg>
+            <lefttexture>osd/info/osd_progress_left.png</lefttexture>
+            <midtexture>osd/info/osd_progress_mid.png</midtexture>
+            <righttexture>osd/info/osd_progress_right.png</righttexture>
+            <visible>VideoPlayer.HasEpg</visible>
+        </control>
+        <control type="group" id="1">
+            <posy>908</posy>
+            <control type="label" id="1">
+                <posy>5</posy>
+                <width>1920</width>
+                <height>38</height>
+                <font>Font_Bold22</font>
+                <align>center</align>
+                <label>$INFO[VideoPlayer.Title]</label>
+                <visible>!IsEmpty(VideoPlayer.Title)</visible>
+            </control>
+            <control type="label" id="1">
+                <posy>50</posy>
+                <width>1920</width>
+                <height>38</height>
+                <font>Font_Reg17</font>
+                <align>center</align>
+                <textcolor>grey</textcolor>
+                <label>$LOCALIZE[19031]: $INFO[VideoPlayer.NextTitle]</label>
+                <visible>!IsEmpty(VideoPlayer.NextTitle)</visible>
+            </control>
+        </control>
+        <control type="group" id="1">
+            <posy>908</posy>
+            <control type="label" id="1">
+                <posx>390</posx>
+                <posy>128</posy>
+                <width>1140</width>
+                <height>38</height>
+                <font>Font_Reg19</font>
+                <textcolor>white6</textcolor>
+                <label>$INFO[VideoPlayer.Time]</label>
+            </control>
+            <control type="label" id="1">
+                <posy>128</posy>
+                <width>1920</width>
+                <height>38</height>
+                <font>Font_Reg19</font>
+                <align>center</align>
+                <textcolor>white6</textcolor>
+                <label>$INFO[System.Time,, / ]$INFO[Player.FinishTime]</label>
+            </control>
+            <control type="label" id="1">
+                <posx>1530</posx>
+                <posy>128</posy>
+                <width>1140</width>
+                <height>38</height>
+                <font>Font_Reg19</font>
+                <align>right</align>
+                <textcolor>white6</textcolor>
+                <label>$INFO[VideoPlayer.Duration]</label>
+                <visible>!Skin.HasSetting(PreferRemaining)</visible>
+            </control>
+            <control type="label" id="1">
+                <posx>1530</posx>
+                <posy>128</posy>
+                <width>1140</width>
+                <height>38</height>
+                <font>Font_Reg19</font>
+                <align>right</align>
+                <textcolor>white6</textcolor>
+                <label>$INFO[Player.TimeRemaining,- ]</label>
+                <visible>Skin.HasSetting(PreferRemaining)</visible>
+            </control>
+        </control>
+    </include>
     <include name="FullScreenInfoBar">
         <control type="group">
             <posx>1552</posx>
@@ -1317,7 +1438,7 @@
             </animation>
             <control type="image" id="1000">
                 <posx>22</posx>
-                <posy>-51</posy>
+                <posy>-70</posy>
                 <width>345</width>
                 <height>234</height>
                 <texture background="true" fallback="empty.png">$INFO[Player.FolderPath,,clearart.png]</texture>
@@ -1325,11 +1446,11 @@
             </control>
             <control type="image" id="1001">
                 <posx>22</posx>
-                <posy>-51</posy>
+                <posy>-70</posy>
                 <width>345</width>
                 <height>234</height>
                 <texture background="true" fallback="empty.png">$INFO[Player.FolderPath,,../clearart.png]</texture>
-                <aspectratio>keep</aspectratio>
+                <aspectratio aligny="bottom">keep</aspectratio>
                 <visible>StringCompare(Control.GetLabel(1000),empty.png)</visible>
             </control>
             <control type="image" id="1002">
@@ -1367,7 +1488,7 @@
             <texture>osd/osd_bottom_bar.png</texture>
             <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
         </control>
-        <control type="label" id="1">
+        <control type="label">
             <posx>750</posx>
             <posy>910</posy>
             <width>420</width>
@@ -1447,7 +1568,7 @@
                 </control>
             </control>
             <control type="group">
-                <visible>[VideoPlayer.Content(episodes) + Skin.HasSetting(TVShowsUsePoster)] | VideoPlayer.Content(LiveTV)</visible>
+                <visible>VideoPlayer.Content(episodes) + Skin.HasSetting(TVShowsUsePoster)</visible>
                 <posx>-1536</posx>
                 <animation type="WindowOpen">
                     <effect type="slide" start="-450,0" end="0,0" time="600" tween="cubic" easing="out" />
@@ -1465,7 +1586,6 @@
                     <include>PanelGlowFade</include>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <visible>!VideoPlayer.Content(LiveTV)</visible>
                     <include>Animation_VisibleChange400</include>
                 </control>
                 <control type="image">
@@ -1475,7 +1595,6 @@
                     <height>207</height>
                     <texture background="true" diffuse="thumbs/multiplex_tvmask.png">$INFO[VideoPlayer.Cover]</texture>
                     <aspectratio scalediffuse="false">scale</aspectratio>
-                    <visible>!VideoPlayer.Content(LiveTV)</visible>
                 </control>
                 <control type="image">
                     <posx>1536</posx>
@@ -1486,38 +1605,6 @@
                     <aspectratio scalediffuse="false">scale</aspectratio>
                     <bordertexture border="9">thumbs/multiplex_tvborder.png</bordertexture>
                     <bordersize>9</bordersize>
-                    <visible>!VideoPlayer.Content(LiveTV)</visible>
-                </control>
-                <control type="image">
-                    <posx>1545</posx>
-                    <posy>862</posy>
-                    <width>368</width>
-                    <height>207</height>
-                    <texture>$INFO[VideoPlayer.Cover]</texture>
-                    <aspectratio>keep</aspectratio>
-                    <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.Cover)</visible>
-                </control>
-            </control>
-            <control type="group">
-                <visible>VideoPlayer.Content(LiveTV)</visible>
-                <animation type="WindowOpen">
-                    <effect type="slide" start="450,0" end="0,0" time="600" tween="cubic" easing="out" />
-                </animation>
-                <animation type="WindowClose">
-                    <effect type="slide" start="0,0" end="450,0" time="600" tween="cubic" easing="out" />
-                    <effect type="fade" start="100" end="0" time="600" />
-                </animation>
-                <control type="label">
-                    <posx>1560</posx>
-                    <posy>977</posy>
-                    <width>300</width>
-                    <height>68</height>
-                    <align>center</align>
-                    <aligny>center</aligny>
-                    <font>Font_Reg19</font>
-                    <textcolor>white2</textcolor>
-                    <label>[B]$INFO[VideoPlayer.ChannelName][/B]</label>
-                    <scroll>true</scroll>
                 </control>
             </control>
             <control type="group">
@@ -1548,12 +1635,9 @@
             <height>22</height>
             <info>Player.ProgressCache</info>
             <texturebg>osd/info/osd_progress_back.png</texturebg>
-            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             <lefttexture>osd/info/osd_progresscache_left.png</lefttexture>
             <midtexture>osd/info/osd_progresscache_mid.png</midtexture>
             <righttexture>osd/info/osd_progresscache_right.png</righttexture>
-            <overlaytexture>-</overlaytexture>
-            <visible>true</visible>
         </control>
         <control type="progress" id="23">
             <posx>390</posx>
@@ -1562,12 +1646,9 @@
             <height>22</height>
             <info>Player.Progress</info>
             <texturebg>osd/info/osd_progress_back_cache.png</texturebg>
-            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             <lefttexture>osd/info/osd_progress_left.png</lefttexture>
             <midtexture>osd/info/osd_progress_mid.png</midtexture>
             <righttexture>osd/info/osd_progress_right.png</righttexture>
-            <overlaytexture>-</overlaytexture>
-            <visible>true</visible>
         </control>
         <control type="fadelabel">
             <posx>390</posx>
@@ -1584,7 +1665,6 @@
             <label>$INFO[VideoPlayer.mpaa]</label>
             <label>$INFO[VideoPlayer.PlayCount,[COLOR bcicon]$LOCALIZE[567]: [/COLOR]]</label>
             <scroll>true</scroll>
-            <scrollout>false</scrollout>
             <scrollspeed>70</scrollspeed>
             <pauseatend>5000</pauseatend>
             <visible>VideoPlayer.Content(movies)</visible>
@@ -1602,7 +1682,6 @@
             <label>$INFO[VideoPlayer.Writer,[COLOR bcicon]$LOCALIZE[31157][/COLOR] ]</label>
             <label>$INFO[VideoPlayer.PlayCount,[COLOR bcicon]$LOCALIZE[567]: [/COLOR]]</label>
             <scroll>true</scroll>
-            <scrollout>false</scrollout>
             <scrollspeed>70</scrollspeed>
             <pauseatend>5000</pauseatend>
             <visible>VideoPlayer.Content(episodes)</visible>
@@ -1631,19 +1710,6 @@
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                     <texture>$INFO[VideoPlayer.Rating,stars/,.png]</texture>
                 </control>
-            </control>
-        </control>
-        <control type="group">
-            <posy>908</posy>
-            <control type="label">
-                <posy>50</posy>
-                <width>1920</width>
-                <height>38</height>
-                <font>Font_Reg17</font>
-                <align>center</align>
-                <textcolor>grey</textcolor>
-                <label>$LOCALIZE[19031]: $INFO[VideoPlayer.NextTitle]</label>
-                <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.NextTitle)</visible>
             </control>
         </control>
         <control type="group">
@@ -1690,6 +1756,90 @@
             </control>
         </control>
     </include>
+
+    <include name="BottomProgressBar">
+        <control type="group">
+            <posy>993</posy>
+            <animation type="WindowOpen">
+                <effect type="fade" time="200" start="0" end="100" />
+                <effect type="slide" time="200" start="0,98" end="0,0" easing="out" tween="cubic" />
+            </animation>
+            <animation type="WindowClose">
+                <effect type="fade" time="200" start="100" end="0" />
+                <effect type="slide" time="200" start="0,0" end="0,98" easing="in" tween="cubic" />
+            </animation>
+            <control type="image">
+                <posx>-80</posx>
+                <width>2080</width>
+                <height>87</height>
+                <texture border="80,0,80,0">osd/osd_progress_bar_back.png</texture>
+            </control>
+            <control type="progress" id="23">
+                <posx>150</posx>
+                <posy>57</posy>
+                <width>1620</width>
+                <height>20</height>
+                <info>Player.ProgressCache</info>
+                <texturebg>osd/info/osd_progress_back.png</texturebg>
+                <lefttexture>osd/info/osd_progresscache_left.png</lefttexture>
+                <midtexture>osd/info/osd_progresscache_mid.png</midtexture>
+                <righttexture>osd/info/osd_progresscache_right.png</righttexture>
+            </control>
+            <control type="progress" id="23">
+                <posx>150</posx>
+                <posy>57</posy>
+                <width>1620</width>
+                <height>20</height>
+                <info>Player.Progress</info>
+                <texturebg>osd/info/osd_progress_back_cache.png</texturebg>
+                <lefttexture>osd/info/osd_progress_left.png</lefttexture>
+                <midtexture>osd/info/osd_progress_mid.png</midtexture>
+                <righttexture>osd/info/osd_progress_right.png</righttexture>
+                <overlaytexture>-</overlaytexture>
+            </control>
+            <control type="slider" id="87">
+                <posx>150</posx>
+                <posy>57</posy>
+                <width>1620</width>
+                <height>20</height>
+                <action>seek</action>
+            </control>
+            <control type="label">
+                <posx>135</posx>
+                <posy>45</posy>
+                <width>300</width>
+                <height>42</height>
+                <font>Font_Reg19</font>
+                <textcolor>osdseek</textcolor>
+                <label>$INFO[Player.Time]</label>
+                <align>right</align>
+                <aligny>center</aligny>
+            </control>
+            <control type="label">
+                <posx>135r</posx>
+                <posy>45</posy>
+                <width>300</width>
+                <height>42</height>
+                <font>Font_Reg19</font>
+                <textcolor>osdseek</textcolor>
+                <label>$INFO[Player.Duration]</label>
+                <aligny>center</aligny>
+                <visible>!Skin.HasSetting(PreferRemaining)</visible>
+            </control>
+            <control type="label">
+                <posx>135r</posx>
+                <posy>45</posy>
+                <width>300</width>
+                <height>42</height>
+                <font>Font_Reg19</font>
+                <textcolor>osdseek</textcolor>
+                <label>$INFO[Player.TimeRemaining,- ]</label>
+                <aligny>center</aligny>
+                <visible>Skin.HasSetting(PreferRemaining)</visible>
+            </control>
+        </control>
+    </include>
+    
     <include name="ClassicOSDButton">
         <width>115</width>
         <height>115</height>
@@ -1708,18 +1858,6 @@
         <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_videoplaylist)])</onload>
         <onload condition="[Window.IsActive(home) | Window.IsActive(1130)]">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_mainmenu)])</onload>
         <onload condition="Window.IsActive(weather)">Skin.SetString(diffuse_color,$INFO[Skin.String(diffuse_weather)])</onload>
-        <onunload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(diffuse_music,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml)">Skin.SetString(diffuse_videolibrary,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="Window.IsActive(PVR)">Skin.SetString(diffuse_PVR,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="Window.IsActive(pictures)">Skin.SetString(diffuse_pictures,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="Window.IsActive(1115)">Skin.SetString(diffuse_featured,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="Window.IsActive(1111)">Skin.SetString(diffuse_settings,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="Window.IsActive(addonbrowser)">Skin.SetString(diffuse_addons,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)]">Skin.SetString(diffuse_programs,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="Window.IsActive(musicplaylist)">Skin.SetString(diffuse_musicplaylist,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="Window.IsActive(videoplaylist)">Skin.SetString(diffuse_videoplaylist,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="[Window.IsActive(home) | Window.IsActive(1130)]">Skin.SetString(diffuse_mainmenu,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onunload condition="Window.IsActive(weather)">Skin.SetString(diffuse_weather,$INFO[Skin.String(diffuse_color)])</onunload>
         <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(font_color,$INFO[Skin.String(font_music)])</onload>
         <onload condition="Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml)">Skin.SetString(font_color,$INFO[Skin.String(font_videolibrary)])</onload>
         <onload condition="Window.IsActive(PVR)">Skin.SetString(font_color,$INFO[Skin.String(font_PVR)])</onload>
@@ -1732,6 +1870,18 @@
         <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(font_color,$INFO[Skin.String(font_videoplaylist)])</onload>
         <onload condition="[Window.IsActive(home) | Window.IsActive(1130)]">Skin.SetString(font_color,$INFO[Skin.String(font_mainmenu)])</onload>
         <onload condition="Window.IsActive(weather)">Skin.SetString(font_color,$INFO[Skin.String(font_weather)])</onload>
+        <onunload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(diffuse_music,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml)">Skin.SetString(diffuse_videolibrary,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="Window.IsActive(PVR)">Skin.SetString(diffuse_PVR,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="Window.IsActive(pictures)">Skin.SetString(diffuse_pictures,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="Window.IsActive(1115)">Skin.SetString(diffuse_featured,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="Window.IsActive(1111)">Skin.SetString(diffuse_settings,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="Window.IsActive(addonbrowser)">Skin.SetString(diffuse_addons,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)]">Skin.SetString(diffuse_programs,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="Window.IsActive(musicplaylist)">Skin.SetString(diffuse_musicplaylist,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="Window.IsActive(videoplaylist)">Skin.SetString(diffuse_videoplaylist,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="[Window.IsActive(home) | Window.IsActive(1130)]">Skin.SetString(diffuse_mainmenu,$INFO[Skin.String(diffuse_color)])</onunload>
+        <onunload condition="Window.IsActive(weather)">Skin.SetString(diffuse_weather,$INFO[Skin.String(diffuse_color)])</onunload>
         <onunload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(font_music,$INFO[Skin.String(font_color)])</onunload>
         <onunload condition="Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml)">Skin.SetString(font_videolibrary,$INFO[Skin.String(font_color)])</onunload>
         <onunload condition="Window.IsActive(PVR)">Skin.SetString(font_PVR,$INFO[Skin.String(font_color)])</onunload>
@@ -1770,18 +1920,6 @@
         <onunload condition="Window.IsActive(videoplaylist)">Skin.SetString(diffuse_white_videoplaylist,$INFO[Skin.String(diffuse_color)])</onunload>
         <onunload condition="[Window.IsActive(home) | Window.IsActive(1130)]">Skin.SetString(diffuse_white_mainmenu,$INFO[Skin.String(diffuse_color)])</onunload>
         <onunload condition="Window.IsActive(weather)">Skin.SetString(diffuse_white_weather,$INFO[Skin.String(diffuse_color)])</onunload>
-        <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(font_color,$INFO[Skin.String(white_font_music)])</onload>
-        <onload condition="Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml)">Skin.SetString(font_color,$INFO[Skin.String(white_font_videolibrary)])</onload>
-        <onload condition="Window.IsActive(PVR)">Skin.SetString(font_color,$INFO[Skin.String(white_font_PVR)])</onload>
-        <onload condition="Window.IsActive(pictures)">Skin.SetString(font_color,$INFO[Skin.String(white_font_pictures)])</onload>
-        <onload condition="Window.IsActive(1115)">Skin.SetString(font_color,$INFO[Skin.String(white_font_featured)])</onload>
-        <onload condition="Window.IsActive(1111)">Skin.SetString(font_color,$INFO[Skin.String(white_font_settings)])</onload>
-        <onload condition="Window.IsActive(addonbrowser)">Skin.SetString(font_color,$INFO[Skin.String(white_font_addons)])</onload>
-        <onload condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)]">Skin.SetString(font_color,$INFO[Skin.String(white_font_programs)])</onload>
-        <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(font_color,$INFO[Skin.String(white_font_musicplaylist)])</onload>
-        <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(font_color,$INFO[Skin.String(white_font_videoplaylist)])</onload>
-        <onload condition="[Window.IsActive(home) | Window.IsActive(1130)]">Skin.SetString(font_color,$INFO[Skin.String(white_font_mainmenu)])</onload>
-        <onload condition="Window.IsActive(weather)">Skin.SetString(font_color,$INFO[Skin.String(white_font_weather)])</onload>
         <onunload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(white_font_music,$INFO[Skin.String(font_color)])</onunload>
         <onunload condition="Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml)">Skin.SetString(white_font_videolibrary,$INFO[Skin.String(font_color)])</onunload>
         <onunload condition="Window.IsActive(PVR)">Skin.SetString(white_font_PVR,$INFO[Skin.String(font_color)])</onunload>
@@ -1794,9 +1932,21 @@
         <onunload condition="Window.IsActive(videoplaylist)">Skin.SetString(white_font_videoplaylist,$INFO[Skin.String(font_color)])</onunload>
         <onunload condition="[Window.IsActive(home) | Window.IsActive(1130)]">Skin.SetString(white_font_mainmenu,$INFO[Skin.String(font_color)])</onunload>
         <onunload condition="Window.IsActive(weather)">Skin.SetString(white_font_weather,$INFO[Skin.String(font_color)])</onunload>
+        <onload condition="Window.IsActive(musiclibrary) | Window.IsActive(musicfiles)">Skin.SetString(font_color,$INFO[Skin.String(white_font_music)])</onload>
+        <onload condition="Window.IsActive(videos) | Window.IsActive(script-NextAired-TVGuide.xml)">Skin.SetString(font_color,$INFO[Skin.String(white_font_videolibrary)])</onload>
+        <onload condition="Window.IsActive(PVR)">Skin.SetString(font_color,$INFO[Skin.String(white_font_PVR)])</onload>
+        <onload condition="Window.IsActive(pictures)">Skin.SetString(font_color,$INFO[Skin.String(white_font_pictures)])</onload>
+        <onload condition="Window.IsActive(1115)">Skin.SetString(font_color,$INFO[Skin.String(white_font_featured)])</onload>
+        <onload condition="Window.IsActive(1111)">Skin.SetString(font_color,$INFO[Skin.String(white_font_settings)])</onload>
+        <onload condition="Window.IsActive(addonbrowser)">Skin.SetString(font_color,$INFO[Skin.String(white_font_addons)])</onload>
+        <onload condition="[Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)]">Skin.SetString(font_color,$INFO[Skin.String(white_font_programs)])</onload>
+        <onload condition="Window.IsActive(musicplaylist)">Skin.SetString(font_color,$INFO[Skin.String(white_font_musicplaylist)])</onload>
+        <onload condition="Window.IsActive(videoplaylist)">Skin.SetString(font_color,$INFO[Skin.String(white_font_videoplaylist)])</onload>
+        <onload condition="[Window.IsActive(home) | Window.IsActive(1130)]">Skin.SetString(font_color,$INFO[Skin.String(white_font_mainmenu)])</onload>
+        <onload condition="Window.IsActive(weather)">Skin.SetString(font_color,$INFO[Skin.String(white_font_weather)])</onload>
     </include>
     <include name="QuickList">
-            <control type="group">
+        <control type="group">
             <posx>665</posx>
             <include>Animation_OpenCloseZoom_New</include>
             <control type="image">
@@ -2178,6 +2328,5 @@
                 <visible>!Skin.HasSetting(kioskmode)</visible>
             </control>
         </control>
-
     </include>
 </includes>

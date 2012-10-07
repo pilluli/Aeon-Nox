@@ -30,8 +30,6 @@
                 <posy>90</posy>
                 <width>1754</width>
                 <height>478</height>
-                <align>justify</align>
-                <textcolor>white2</textcolor>
                 <font>Font_Reg20</font>
                 <label>$INFO[Window(Visualisation).Property(ArtistSlideshow.ArtistBiography)]</label>
                 <onleft>201</onleft>
@@ -48,8 +46,6 @@
                 <posy>90</posy>
                 <width>1754</width>
                 <height>478</height>
-                <align>justify</align>
-                <textcolor>white2</textcolor>
                 <font>Font_Reg20</font>
                 <label>$INFO[MusicPlayer.Property(Artist_Description)]</label>
                 <onleft>203</onleft>
@@ -65,7 +61,6 @@
                 <posx>1743</posx>
                 <control type="spincontrol" id="201">
                     <textcolor>grey</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <spinposx>-4</spinposx>
                     <textoffsetx>0</textoffsetx>
                     <aligny>center</aligny>
@@ -83,7 +78,6 @@
                 </control>
                 <control type="spincontrol" id="203">
                     <textcolor>grey</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <spinposx>-4</spinposx>
                     <textoffsetx>0</textoffsetx>
                     <aligny>center</aligny>

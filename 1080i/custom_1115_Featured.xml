@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="1115" type="window">
     <defaultcontrol>40</defaultcontrol>
-    <backgroundcolor>black</backgroundcolor>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
     <onload>XBMC.RunScript(script.randomitems,limit=10&amp;unplayed=True)</onload>
     <onload condition="System.HasAddon(script.watchlist) + IsEmpty(Window(Home).Property(WatchList_Running))">RunScript(script.watchlist,movies=true&amp;episodes=true&amp;albums=true&amp;limit=10)</onload>
     <onload condition="ControlGroup(5000).HasFocus">AlarmClock(Tile,Control.Move(5002,1),00:04,silent,loop)</onload>
@@ -18,13 +18,16 @@
     <onunload>ClearProperty(InfoDialog,1115)</onunload>
     <onunload>CancelAlarm(Tile,true)</onunload>
     <onunload>CancelAlarm(TileTwo,true)</onunload>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
     <controls>
         <!-- Fanart -->
-        <control type="image">
-            <texture background="true" fallback="special://skin/backgrounds/featured/featured.jpg">special://skin/backgrounds/featured/featured.jpg</texture>
+        <control type="multiimage">
+            <imagepath background="true">special://skin/backgrounds/featured/</imagepath>
+            <fadetime>FanartCrossfadeTime</fadetime>
         </control>
         <include>CommonMediaPlayingBackground</include>
         <control type="image">
@@ -86,13 +89,11 @@
                 <height>1080</height>
                 <texture>views/showcase_vignette.png</texture>
                 <colordiffuse>vignette</colordiffuse>
-                <visible>true</visible>
             </control>
             <control type="image">
                 <posx>1224</posx>
                 <width>696</width>
                 <height>1080</height>
-                <visible>true</visible>
                 <colordiffuse>vignette</colordiffuse>
                 <texture flipx="true">views/showcase_vignette.png</texture>
             </control>
@@ -186,7 +187,6 @@
                             <width>479</width>
                             <height>118</height>
                             <scroll>false</scroll>
-                            <scrollout>false</scrollout>
                             <pauseatend>5000</pauseatend>
                             <label>$LOCALIZE[342]...</label>
                             <label>$LOCALIZE[20343]...</label>
@@ -2982,8 +2982,6 @@
                     <width>834</width>
                     <height>313</height>
                     <font>Font_Reg19</font>
-                    <align>justify</align>
-                    <textcolor>white2</textcolor>
                     <pagecontrol>-</pagecontrol>
                     <label>$VAR[FeaturedInfoDialogPlotVar]</label>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -3037,8 +3035,6 @@
                     <width>674</width>
                     <height>313</height>
                     <font>Font_Reg19</font>
-                    <align>justify</align>
-                    <textcolor>white2</textcolor>
                     <pagecontrol>-</pagecontrol>
                     <label>$VAR[FeaturedInfoDialogPlotVar]</label>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -3188,7 +3184,6 @@
             </control>
             <control type="group">
                 <control type="grouplist">
-                    <visible>true</visible>
                     <width>1900</width>
                     <align>right</align>
                     <aligny>center</aligny>
@@ -3313,12 +3308,6 @@
                     <posy>96</posy>
                     <width>420</width>
                     <height>21</height>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturebg>dialogs/progress/progress_back.png</texturebg>
-                    <lefttexture>dialogs/progress/progress_left.png</lefttexture>
-                    <midtexture>dialogs/progress/progress_mid.png</midtexture>
-                    <righttexture>dialogs/progress/progress_right.png</righttexture>
-                    <overlaytexture>-</overlaytexture>
                     <info>Player.Progress</info>
                 </control>
                 <control type="label">
@@ -3404,12 +3393,10 @@
                     <posy>96</posy>
                     <width>360</width>
                     <height>21</height>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <texturebg>dialogs/progress/progress_back.png</texturebg>
                     <lefttexture>osd/seek/progresscache_left.png</lefttexture>
                     <midtexture>osd/seek/progresscache_mid.png</midtexture>
                     <righttexture>osd/seek/progresscache_right.png</righttexture>
-                    <overlaytexture>-</overlaytexture>
                     <info>Player.ProgressCache</info>
                 </control>
                 <control type="progress">
@@ -3417,12 +3404,6 @@
                     <posy>96</posy>
                     <width>360</width>
                     <height>21</height>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturebg>osd/seek/progresscache_back.png</texturebg>
-                    <lefttexture>dialogs/progress/progress_left.png</lefttexture>
-                    <midtexture>dialogs/progress/progress_mid.png</midtexture>
-                    <righttexture>dialogs/progress/progress_right.png</righttexture>
-                    <overlaytexture>-</overlaytexture>
                     <info>Player.Progress</info>
                 </control>
                 <control type="label">

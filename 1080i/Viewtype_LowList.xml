@@ -326,7 +326,6 @@
                         <height>350</height>
                         <font>Font_Reg19</font>
                         <label>$VAR[GlobalPlotVar]</label>
-                        <align>justify</align>
                         <textcolor>white6</textcolor>
                         <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
@@ -511,7 +510,6 @@
                             <height>234</height>
                             <font>Font_Reg19</font>
                             <label>$VAR[FanartPanelPlotVar]</label>
-                            <align>justify</align>
                             <textcolor>white6</textcolor>
                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>Skin.HasSetting(nohighlist)</visible>
@@ -523,7 +521,6 @@
                             <height>196</height>
                             <font>Font_Reg19</font>
                             <label>$INFO[ListItem.Plot]</label>
-                            <align>justify</align>
                             <textcolor>white6</textcolor>
                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>Skin.HasSetting(LowListPlotOnly) + !Skin.HasSetting(nohighlist)</visible>
@@ -535,7 +532,6 @@
                             <height>388</height>
                             <font>Font_Reg19</font>
                             <label>$VAR[FanartPanelPlotVar]</label>
-                            <align>justify</align>
                             <textcolor>white6</textcolor>
                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>[!Skin.HasSetting(LowListPlotOnly) | [Container.Content(seasons) + ListItem.IsFolder]] + !Skin.HasSetting(nohighlist)</visible>
@@ -746,7 +742,7 @@
                         <width>645</width>
                         <height>66</height>
                         <aligny>center</aligny>
-                        <include>detailcolornofocus</include>
+                        <textcolor>grey2</textcolor>
                         <font>Font_Bold16_Caps</font>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
@@ -780,7 +776,7 @@
                         <width>814</width>
                         <height>66</height>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <include>PanelGlowFade</include>
+                        <include>PanelGlowFade</include>
                         <texture>views/tripanel/listselect_fo.png</texture>
                         <animation effect="fade" start="100" end="60" tween="sine" easing="inout" time="300" condition="!Control.HasFocus(511)">Conditional</animation>
                     </control>
@@ -789,7 +785,7 @@
                         <width>645</width>
                         <height>33</height>
                         <aligny>center</aligny>
-                        <include>listcolornofocus</include>
+                        <textcolor>white2</textcolor>
                         <font>Font_Bold16_Caps</font>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
@@ -799,7 +795,7 @@
                         <width>645</width>
                         <height>33</height>
                         <aligny>center</aligny>
-                        <include>listcolornofocus</include>
+                        <textcolor>white2</textcolor>
                         <font>Font_Info</font>
                         <label>$VAR[LowListSubTitleVar]</label>
                     </control>
@@ -809,7 +805,7 @@
                         <height>33</height>
                         <align>center</align>
                         <aligny>center</aligny>
-                        <include>listcolornofocus</include>
+                        <textcolor>white2</textcolor>
                         <font>Font_Bold16</font>
                         <label>$INFO[ListItem.Year]</label>
                     </control>
@@ -820,7 +816,7 @@
                         <height>33</height>
                         <align>center</align>
                         <aligny>center</aligny>
-                        <include>listcolornofocus</include>
+                        <textcolor>white2</textcolor>
                         <font>Font_Info</font>
                         <label>$INFO[ListItem.Rating]</label>
                     </control>

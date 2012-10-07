@@ -2,9 +2,11 @@
 <window id="131">
     <defaultcontrol>9000</defaultcontrol>
     <zorder>5</zorder>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
     <controls>
         <include>Furniture_SettingsBackPanel</include>
         <control type="label">
@@ -37,16 +39,10 @@
         </control>
         <control type="spincontrolex" id="9">
             <include>Default_SettingButton</include>
-            <textureup>settings/spin-up.png</textureup>
-            <texturedown>settings/spin-down.png</texturedown>
-            <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-            <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
-            <disabledcolor>60d0d0d0</disabledcolor>
             <aligny>center</aligny>
             <spinposx>-2</spinposx>
             <textoffsetx>75</textoffsetx>
             <reverse>yes</reverse>
-            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
         </control>
         <control type="grouplist" id="9000">
             <posx>63</posx>
@@ -69,7 +65,6 @@
                 <label>186</label>
                 <font>Font_Bold20_Caps</font>
                 <textcolor>grey</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>30</textoffsetx>
                 <aligny>center</aligny>
@@ -85,7 +80,6 @@
                 <label>222</label>
                 <font>Font_Bold20_Caps</font>
                 <textcolor>grey</textcolor>
-                <focusedcolor>white</focusedcolor>
                 <textoffsety>18</textoffsety>
                 <textoffsetx>30</textoffsetx>
                 <aligny>center</aligny>

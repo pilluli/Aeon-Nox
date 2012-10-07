@@ -2,9 +2,11 @@
 <window>
     <allowoverlay>no</allowoverlay>
     <defaultcontrol always="false">101</defaultcontrol>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
     <controls>
         <control type="group">
             <control type="image">
@@ -55,10 +57,6 @@
                 <posx>1425</posx>
                 <posy>6</posy>
                 <height>62</height>
-                <textureup>settings/spin-up.png</textureup>
-                <texturedown>settings/spin-down.png</texturedown>
-                <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-                <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
                 <textcolor>grey</textcolor>
                 <focusedcolor>white</focusedcolor>
                 <spinposx>-4</spinposx>
@@ -152,10 +150,6 @@
                 <posx>1425</posx>
                 <posy>6</posy>
                 <height>62</height>
-                <textureup>settings/spin-up.png</textureup>
-                <texturedown>settings/spin-down.png</texturedown>
-                <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-                <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
                 <textcolor>grey</textcolor>
                 <focusedcolor>white</focusedcolor>
                 <spinposx>-4</spinposx>
@@ -241,10 +235,6 @@
                 <posx>1425</posx>
                 <posy>6</posy>
                 <height>62</height>
-                <textureup>settings/spin-up.png</textureup>
-                <texturedown>settings/spin-down.png</texturedown>
-                <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-                <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
                 <textcolor>grey</textcolor>
                 <focusedcolor>white</focusedcolor>
                 <spinposx>-4</spinposx>
@@ -280,10 +270,7 @@
             </control>
             <control type="label" id="200">
                 <include>HiddenObject</include>
-                <visible>true</visible>
             </control>
         </control>
-        <!-- ** Required ** Do not change <id> or <type> -->
-        <!-- ** Required ** Do not change <id> or <type> -->
     </controls>
 </window>

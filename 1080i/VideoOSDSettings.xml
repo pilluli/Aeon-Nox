@@ -72,17 +72,9 @@
         </control>
         <control type="sliderex" id="10">
             <width>1272</width>
-            <height>60</height>
-            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-            <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-            <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
-            <texturesliderbar>osd/osd_slider_bg_settings.png</texturesliderbar>
-            <textureslidernib>osd/osd_slider_nib_nf.png</textureslidernib>
-            <textureslidernibfocus>osd/osd_slider_nib.png</textureslidernibfocus>
             <font>Font_Reg20</font>
             <textcolor>grey2</textcolor>
             <textoffsetx>45</textoffsetx>
-            <focusedcolor>white</focusedcolor>
         </control>
         <control type="button" id="7">
             <width>1172</width>
@@ -90,7 +82,6 @@
             <font>Font_Reg20</font>
             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
             <textcolor>grey2</textcolor>
-            <focusedcolor>white</focusedcolor>
             <colordiffuse>FFFFFFFF</colordiffuse>
             <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
@@ -113,16 +104,10 @@
             <height>60</height>
             <font>Font_Reg20</font>
             <textoffsetx>45</textoffsetx>
-            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
             <textcolor>grey2</textcolor>
             <focusedcolor>white</focusedcolor>
-            <colordiffuse>FFFFFFFF</colordiffuse>
             <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
             <texturenofocus>osd/osd_settings_buttonnf.png</texturenofocus>
-            <textureup>settings/spin-up.png</textureup>
-            <texturedown>settings/spin-down.png</texturedown>
-            <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-            <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
             <spinposx>13</spinposx>
             <aligny>center</aligny>
             <reverse>yes</reverse>

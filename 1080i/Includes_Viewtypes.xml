@@ -75,7 +75,6 @@
                     <textcolor>white2</textcolor>
                     <scrollspeed>200</scrollspeed>
                     <pauseatend>3000</pauseatend>
-                    <scrollout>false</scrollout>
                     <label>$INFO[ListItem.RatingAndVotes]</label>
                     <label>$LOCALIZE[13409] #$INFO[ListItem.Top250]</label>
                     <visible>!IsEmpty(ListItem.Top250)</visible>
@@ -128,7 +127,6 @@
                     <height>230</height>
                     <label>$VAR[FanartPanelPlotVar]</label>
                     <textcolor>white6</textcolor>
-                    <align>justify</align>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
             </control>
@@ -343,7 +341,6 @@
                     <height>20</height>
                     <width>422</width>
                     <pauseatend>3000</pauseatend>
-                    <scrollout>false</scrollout>
                     <label fallback="312577">$VAR[PosterPanelValue4Var]</label>
                 </control>
                 <control type="label">
@@ -394,7 +391,6 @@
                     <width>657</width>
                     <height>393</height>
                     <label fallback="312577">$VAR[FanartPanelPlotVar]</label>
-                    <align>justify</align>
                     <textcolor>white6</textcolor>
                     <animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo">Conditional</animation>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -407,7 +403,6 @@
                     <width>657</width>
                     <height>440</height>
                     <label fallback="312577">$VAR[FanartPanelPlotVar]</label>
-                    <align>justify</align>
                     <textcolor>white6</textcolor>
                     <animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo">Conditional</animation>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -419,7 +414,6 @@
                     <width>657</width>
                     <height>460</height>
                     <label fallback="312577">$VAR[FanartPanelPlotVar]</label>
-                    <align>justify</align>
                     <textcolor>white6</textcolor>
                     <animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo">Conditional</animation>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -432,7 +426,6 @@
                     <height>460</height>
                     <visible>!Control.IsVisible(504)</visible>
                     <label fallback="312577">$VAR[FanartPanelPlotVar]</label>
-                    <align>justify</align>
                     <textcolor>white6</textcolor>
                     <animation effect="fade" start="100" end="0" time="1100" condition="Player.HasVideo">Conditional</animation>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -504,7 +497,6 @@
                         <height>1080</height>
                         <texture>views/showcase_vignette.png</texture>
                         <colordiffuse>vignette</colordiffuse>
-                        <visible>true</visible>
                         <animation effect="slide" start="0" end="-180" reversible="true" condition="Control.IsVisible(512)">Conditional</animation>
                         <animation effect="slide" start="0" end="-105" reversible="true" condition="Control.IsVisible(500)">Conditional</animation>
                         <animation type="Conditional" condition="Control.HasFocus(110)">
@@ -516,7 +508,6 @@
                         <posx>1224</posx>
                         <width>696</width>
                         <height>1080</height>
-                        <visible>true</visible>
                         <colordiffuse>vignette</colordiffuse>
                         <texture flipx="true">views/showcase_vignette.png</texture>
                         <animation effect="slide" start="0" end="180" reversible="true" condition="Control.IsVisible(512)">Conditional</animation>
@@ -692,7 +683,7 @@
                 <width>100</width>
                 <height>74</height>
                 <font>Font_Reg12</font>
-                <include>detailcolornofocus</include>
+                <textcolor>grey2</textcolor>
                 <aligny>center</aligny>
                 <align>center</align>
                 <label>42288</label>
