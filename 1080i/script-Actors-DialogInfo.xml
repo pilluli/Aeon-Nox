@@ -92,7 +92,6 @@
                                 <font>Font_Reg19</font>
                                 <label fallback="N/A">$INFO[ListItem.Property(AlsoKnownAs)]</label>
                                 <textcolor>grey</textcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -112,7 +111,6 @@
                                 <font>Font_Reg19</font>
                                 <label fallback="N/A">$INFO[ListItem.Property(Birthday)]$INFO[ListItem.Property(AgeLong), (,)]</label>
                                 <textcolor>grey</textcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -132,7 +130,6 @@
                                 <font>Font_Reg19</font>
                                 <label fallback="N/A">$INFO[ListItem.Property(PlaceOfBirth)]</label>
                                 <textcolor>grey</textcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -152,7 +149,6 @@
                                 <font>Font_Reg19</font>
                                 <label fallback="N/A">$INFO[ListItem.Property(TotalMovies)]</label>
                                 <textcolor>grey</textcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -172,7 +168,6 @@
                                 <font>Font_Reg19</font>
                                 <label fallback="N/A">$INFO[ListItem.Property(Homepage)]</label>
                                 <textcolor>grey</textcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -193,7 +188,6 @@
                                 <font>Font_Reg19</font>
                                 <label fallback="N/A">$INFO[ListItem.Property(Deathday)]$INFO[ListItem.Property(DeathageLong), (,)]</label>
                                 <textcolor>grey</textcolor>
-                                <scrollout>false</scrollout>
                                 <pauseatend>1000</pauseatend>
                             </control>
                         </control>
@@ -203,12 +197,10 @@
                         <posy>480</posy>
                         <width>1000</width>
                         <height>464</height>
-                        <align>justify</align>
                         <font>Font_Reg19</font>
                         <pagecontrol>60</pagecontrol>
                         <label fallback="312577">$INFO[ListItem.Property(Biography)]</label>
                         <autoscroll delay="15000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
-                        <textcolor>white2</textcolor>
                         <visible>!Control.IsVisible(150)</visible>
                     </control>
                     <control type="list" id="150">

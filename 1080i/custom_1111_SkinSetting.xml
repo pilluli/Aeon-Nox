@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="1111">
     <defaultcontrol always="true">9000</defaultcontrol>
-    <backgroundcolor>black</backgroundcolor>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
     <animation type="WindowOpen" reversible="false" condition="![Window.Previous(10004)|Window.Previous(1116)]">
         <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
@@ -36,7 +36,7 @@
                         <width>306</width>
                         <height>74</height>
                         <font>Font_Bold20</font>
-                        <include>detailcolornofocus</include>
+                        <textcolor>grey2</textcolor>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
@@ -54,7 +54,7 @@
                         <width>306</width>
                         <height>74</height>
                         <font>Font_Bold20</font>
-                        <include>listcolornofocus</include>
+                        <textcolor>white2</textcolor>
                         <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
@@ -255,7 +255,6 @@
                     <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
                     <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                     <textcolor>grey2</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <textoffsetx>70</textoffsetx>
                     <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search="Aeon Nox 3.5 Tutorial",return)</onclick>
                     <visible>Container(9000).Hasfocus(8)</visible>
@@ -668,7 +667,6 @@
                         <height>74</height>
                         <font>Font_MainClassic3</font>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>
@@ -681,7 +679,6 @@
                         <height>74</height>
                         <font>Font_Reg15</font>
                         <textcolor>grey2</textcolor>
-                        <focusedcolor>white</focusedcolor>
                         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <texturenofocus>settings/settings_radiobuttonoff.png</texturenofocus>

@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window type="dialog" id="1125">
     <defaultcontrol always="true">451</defaultcontrol>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
     <onload>RunScript(script.playlists,type=video)</onload>
     <include>Animation_DialogPopup2</include>
     <controls>
@@ -143,7 +145,6 @@
                     <onclick>Skin.SetString($INFO[Skin.String(HomeMenuPlaylist_Label)],)</onclick>
                     <onclick>Dialog.Close(1125)</onclick>
                     <onclick>SetFocus(9000)</onclick>
-                    <visible>true</visible>
                 </item>
                 <item id="1">
                     <label>$INFO[Window(0).Property(ScriptPlaylist.1.name)]</label>

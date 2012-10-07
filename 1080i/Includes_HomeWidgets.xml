@@ -78,7 +78,7 @@
                     <aspectratio>keep</aspectratio>
                     <include>dialogeffect</include>
                     <animation effect="slide" start="0,0" end="0,5" time="200" tween="quadratic" easing="out" condition="true">Conditional</animation>
-                    <visible>[Control.HasFocus(8993) + IntegerGreaterThan(Container(9010).NumItems,0)] | ControlGroup(5000).HasFocus | Control.HasFocus(8000) | ControlGroup(6000).HasFocus | Control.HasFocus(7000)</visible>
+                    <visible>[Control.HasFocus(9000) + IntegerGreaterThan(Container(9010).NumItems,0)] | ControlGroup(5000).HasFocus | Control.HasFocus(8000) | ControlGroup(6000).HasFocus | Control.HasFocus(7000)</visible>
                 </control>
                 <control type="label" id="3999">
                     <height>36</height>
@@ -89,7 +89,7 @@
                     <scroll>false</scroll>
                     <include>dialogeffect</include>
                     <label>$VAR[NavHelper2LabelVar]</label>
-                    <visible>[Control.HasFocus(8993) + IntegerGreaterThan(Container(9010).NumItems,0)] | ControlGroup(5000).HasFocus | Control.HasFocus(8000) | ControlGroup(6000).HasFocus | Control.HasFocus(7000)</visible>
+                    <visible>[Control.HasFocus(9000) + IntegerGreaterThan(Container(9010).NumItems,0)] | ControlGroup(5000).HasFocus | Control.HasFocus(8000) | ControlGroup(6000).HasFocus | Control.HasFocus(7000)</visible>
                 </control>
             </control>
         </control>
@@ -472,7 +472,7 @@
                     <animation effect="slide" end="0" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(nowplayingpanel)">Conditional</animation>
                     <include>Animation_CommonFade</include>
                     <control type="image">
-                    	<animation effect="fade" end="30" condition="true">conditional</animation>
+                        <animation effect="fade" end="30" condition="true">conditional</animation>
                         <posx>15</posx>
                         <posy>723</posy>
                         <width>498</width>
@@ -890,8 +890,8 @@
                             <width>670</width>
                             <height>260</height>
                             <font>Font_Reg19</font>
+                            <align>left</align>
                             <label fallback="312577">$INFO[VideoPlayer.CastAndRole]</label>
-                            <textcolor>white2</textcolor>
                             <autoscroll>false</autoscroll>
                             <animation effect="slide" time="400" tween="cubic" easing="inout" start="0" end="160" condition="Skin.HasSetting(ShowBackgroundVideo)">Conditional</animation>
                             <visible>Skin.HasSetting(nowplayingpanel) + !VideoPlayer.Content(episodes) + !VideoPlayer.Content(livetv)</visible>
@@ -903,7 +903,7 @@
                             <height>260</height>
                             <font>Font_Reg19</font>
                             <label fallback="312577">$INFO[VideoPlayer.CastAndRole]</label>
-                            <textcolor>white2</textcolor>
+                            <align>left</align>
                             <autoscroll>false</autoscroll>
                             <visible>Skin.HasSetting(nowplayingpanel) + VideoPlayer.Content(episodes)</visible>
                             <animation effect="slide" time="400" tween="cubic" easing="inout" start="0" end="-15" condition="Skin.HasSetting(ShowBackgroundVideo)">Conditional</animation>
@@ -915,7 +915,6 @@
                             <height>260</height>
                             <font>Font_Reg19</font>
                             <label fallback="312577">$INFO[VideoPlayer.Plot]</label>
-                            <textcolor>white2</textcolor>
                             <autoscroll delay="5000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                             <visible>Skin.HasSetting(nowplayingpanel)</visible>
                         </control>
@@ -984,7 +983,6 @@
                     <posy>700</posy>
                     <width>570</width>
                     <height>311</height>
-                    <align>justify</align>
                     <aligny>top</aligny>
                     <font>Font_Reg15</font>
                     <textcolor>white6</textcolor>
@@ -1476,6 +1474,7 @@
             <visible>[Substring(Control.GetLabel(4321),featured) | Substring(Control.GetLabel(4321),panel)]</visible>
             <visible>![IsEmpty(Window(Home).Property(NextAired.1.Label)) + Substring(Control.GetLabel(4321),nextairedpanel)]</visible>
             <visible>![IsEmpty(Window(Home).Property(WatchList_Movie.1.Label)) + Substring(Control.GetLabel(4321),inprogressmovies)]</visible>
+            <visible>![IsEmpty(Window(Home).Property(WatchList_Episode.1.Label)) + Substring(Control.GetLabel(4321),watchlisttv)]</visible>
             <include>Animation_Widgets</include>
             <animation type="Conditional" condition="true">
                 <effect type="fade" start="100" end="90" time="500" tween="cubic" easing="inout" />
@@ -1924,9 +1923,9 @@
                                 <posy>140</posy>
                                 <width>300</width>
                                 <height>205</height>
+                                <align>left</align>
                                 <label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391] • ]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
                                 <font>Font_Reg15</font>
-                                <include>listcolornofocus</include>
                                 <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
                             </control>
                         </itemlayout>
@@ -1980,9 +1979,9 @@
                                 <posy>140</posy>
                                 <width>300</width>
                                 <height>205</height>
+                                <align>left</align>
                                 <label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391] • ]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
                                 <font>Font_Reg15</font>
-                                <include>listcolornofocus</include>
                                 <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
                             </control>
                             <control type="image">
@@ -2533,7 +2532,6 @@
                         <posy>145</posy>
                         <width>1343</width>
                         <height>208</height>
-                        <align>justify</align>
                         <aligny>top</aligny>
                         <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
@@ -2696,7 +2694,6 @@
                         <posy>145</posy>
                         <width>956</width>
                         <height>195</height>
-                        <align>justify</align>
                         <aligny>top</aligny>
                         <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
@@ -2841,7 +2838,6 @@
                         <posy>145</posy>
                         <width>1221</width>
                         <height>195</height>
-                        <align>justify</align>
                         <aligny>top</aligny>
                         <font>Font_Reg19</font>
                         <textcolor>white6</textcolor>
@@ -5751,7 +5747,6 @@
                 <height>210</height>
                 <label>$INFO[ListItem.Property(Description)]</label>
                 <font>Font_Reg17</font>
-                <include>listcolornofocus</include>
                 <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
         </control>
@@ -5842,7 +5837,6 @@
                 <height>205</height>
                 <label>$INFO[ListItem.Property(Plot)]</label>
                 <font>Font_Reg17</font>
-                <include>listcolornofocus</include>
                 <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
             </control>
         </control>
@@ -5921,7 +5915,6 @@
             <height>205</height>
             <label>$INFO[ListItem.Property(Plot)]</label>
             <font>Font_Reg17</font>
-            <include>listcolornofocus</include>
             <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>
     </include>

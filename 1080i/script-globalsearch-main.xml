@@ -2,10 +2,12 @@
 <window>
     <allowoverlay>no</allowoverlay>
     <defaultcontrol always="true">9000</defaultcontrol>
-    <backgroundcolor>black</backgroundcolor>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
     <controls>
         <!-- Main Group -->
         <control type="group" id="100">
@@ -84,7 +86,7 @@
                                 <width>389</width>
                                 <height>74</height>
                                 <font>Font_Bold20</font>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <aligny>center</aligny>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
@@ -94,7 +96,7 @@
                                 <height>74</height>
                                 <font>Font_Bold20</font>
                                 <textcolor>$VAR[TitleColorVar]</textcolor>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <label>[B]$INFO[ListItem.Label2][/B]</label>
@@ -113,7 +115,7 @@
                                 <width>389</width>
                                 <height>74</height>
                                 <font>Font_Bold20</font>
-                                <include>listcolornofocus</include>
+                                <textcolor>white2</textcolor>
                                 <aligny>center</aligny>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
@@ -122,7 +124,7 @@
                                 <width>389</width>
                                 <height>74</height>
                                 <font>Font_Bold20</font>
-                                <include>listcolornofocus</include>
+                                <textcolor>white2</textcolor>
                                 <align>right</align>
                                 <aligny>center</aligny>
                                 <label>[B]$INFO[ListItem.Label2][/B]</label>
@@ -264,7 +266,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
                                             <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
@@ -276,7 +277,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plotoutline)]</label>
                                             <autoscroll>false</autoscroll>
                                         </control>
@@ -347,7 +347,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(111)</autoscroll>
                                             <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
@@ -359,7 +358,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plotoutline)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(111)</autoscroll>
                                         </control>
@@ -442,7 +440,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
                                             <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
@@ -454,7 +451,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plotoutline)]</label>
                                             <autoscroll>false</autoscroll>
                                         </control>
@@ -525,7 +521,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(121)</autoscroll>
                                             <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
@@ -537,7 +532,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plotoutline)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(121)</autoscroll>
                                         </control>
@@ -689,7 +683,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(131)</autoscroll>
                                         </control>
@@ -772,7 +765,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
                                         </control>
@@ -843,7 +835,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(141)</autoscroll>
                                         </control>
@@ -926,7 +917,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
                                         </control>
@@ -997,7 +987,6 @@
                                             <height>120</height>
                                             <aligny>top</aligny>
                                             <font>Font_Reg20</font>
-                                            <textcolor>white2</textcolor>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(151)</autoscroll>
                                         </control>

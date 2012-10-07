@@ -1,9 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="129">
     <defaultcontrol always="true">11</defaultcontrol>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
     <include>Animation_DialogPopup</include>
     <controls>
         <include>DialogBackFade</include>
@@ -105,7 +107,6 @@
                 <texturenofocus>-</texturenofocus>
                 <textcolor>FF6a6565</textcolor>
                 <selectedcolor>$VAR[FontColorVar]</selectedcolor>
-                <focusedcolor>white</focusedcolor>
                 <label>-</label>
                 <onup>10</onup>
                 <onleft>19</onleft>
@@ -131,7 +132,6 @@
                     <font>Font_Reg20</font>
                     <label>1024</label>
                     <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <textoffsetx>30</textoffsetx>
                     <onleft>10</onleft>
                     <onright>10</onright>
@@ -148,7 +148,6 @@
                     <font>Font_Reg20</font>
                     <label>15019</label>
                     <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <textoffsetx>30</textoffsetx>
                     <onleft>10</onleft>
                     <onright>10</onright>
@@ -165,7 +164,6 @@
                     <font>Font_Reg20</font>
                     <label>1210</label>
                     <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <textoffsetx>30</textoffsetx>
                     <onleft>10</onleft>
                     <onright>10</onright>
@@ -182,7 +180,6 @@
                     <font>Font_Reg20</font>
                     <label>222</label>
                     <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <textoffsetx>30</textoffsetx>
                     <onleft>12</onleft>
                     <onright>12</onright>
@@ -199,7 +196,6 @@
                     <font>Font_Reg20</font>
                     <label>186</label>
                     <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <textoffsetx>30</textoffsetx>
                     <onleft>12</onleft>
                     <onright>12</onright>

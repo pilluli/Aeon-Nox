@@ -289,8 +289,8 @@
                 <texture>dialogs/context_middle.png</texture>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <animation type="Conditional" condition="Window.IsActive(1126)">
-                    <effect type="zoom" end="150,100" time="400" easing="in" tween="cubic" />
-                    <effect type="slide" end="-149" time="400" easing="in" tween="cubic" />
+                    <effect type="zoom" end="115,100" time="400" easing="in" tween="cubic" />
+                    <effect type="slide" end="-62" time="400" easing="in" tween="cubic" />
                 </animation>
                 <animation type="Conditional" condition="Window.IsActive(1121)">
                     <effect type="zoom" end="66,100" time="400" easing="in" tween="cubic" />
@@ -323,7 +323,7 @@
                     <effect type="fade" start="100" end="0" time="500" reversible="true" />
                 </animation>
                 <animation type="Conditional" condition="Window.IsActive(1126)">
-                    <effect type="zoom" end="150,100" time="400" easing="in" tween="cubic" />
+                    <effect type="zoom" end="115,100" time="400" easing="in" tween="cubic" />
                 </animation>
                 <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119)">
                     <effect type="zoom" end="66,100" time="400" easing="in" tween="cubic" />
@@ -762,7 +762,7 @@
                 <width>376</width>
                 <height>74</height>
                 <font>Font_Reg15_Caps</font>
-                <include>listcolornofocus</include>
+                <textcolor>white2</textcolor>
                 <aligny>center</aligny>
                 <label>[COLOR white3]$INFO[MusicPlayer.Artist][/COLOR]</label>
                 <visible>!ControlGroup(3000).HasFocus</visible>
@@ -774,7 +774,7 @@
                 <width>376</width>
                 <height>74</height>
                 <font>Font_Reg15_Caps</font>
-                <include>listcolornofocus</include>
+                <textcolor>white2</textcolor>
                 <aligny>center</aligny>
                 <label>[COLOR AA777777]$INFO[MusicPlayer.Album][/COLOR]</label>
                 <visible>!ControlGroup(3000).HasFocus</visible>
@@ -786,7 +786,7 @@
                 <width>376</width>
                 <height>74</height>
                 <font>Font_Reg15_Caps</font>
-                <include>listcolornofocus</include>
+                <textcolor>white2</textcolor>
                 <aligny>center</aligny>
                 <label>[COLOR AA777777]$INFO[MusicPlayer.Title][/COLOR]</label>
                 <visible>!ControlGroup(3000).HasFocus</visible>

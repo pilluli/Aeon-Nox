@@ -135,7 +135,7 @@
                         <height>20</height>
                         <font>Font_Reg12</font>
                         <aligny>center</aligny>
-                        <include>subcolornofocus</include>
+                        <textcolor>grey</textcolor>
                         <label>$INFO[ListItem.StartTime]</label>
                         <visible>ListItem.HasEpg</visible>
                     </control>
@@ -144,7 +144,6 @@
                         <posy>90</posy>
                         <width>260</width>
                         <height>9</height>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
                         <lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
                         <midtexture border="12,0,12,0">dialogs/progress/progress_mid.png</midtexture>
@@ -159,12 +158,12 @@
                         <height>20</height>
                         <font>Font_Reg12</font>
                         <aligny>center</aligny>
-                        <include>subcolornofocus</include>
+                        <textcolor>grey</textcolor>
                         <label>$INFO[ListItem.EndTime]</label>
                         <visible>ListItem.HasEpg</visible>
                     </control>
                     <control type="image">
-                    	<animation effect="fade" start="100" end="20" time="800" pulse="true" condition="true">conditional</animation>
+                        <animation effect="fade" start="100" end="20" time="800" pulse="true" condition="true">conditional</animation>
                         <posx>155</posx>
                         <posy>73</posy>
                         <width>35</width>
@@ -227,7 +226,7 @@
                         <height>20</height>
                         <font>Font_Reg12</font>
                         <aligny>center</aligny>
-                        <include>subcolornofocus</include>
+                        <textcolor>grey</textcolor>
                         <label>$INFO[ListItem.StartTime]</label>
                         <visible>ListItem.HasEpg</visible>
                     </control>
@@ -236,7 +235,6 @@
                         <posy>90</posy>
                         <width>260</width>
                         <height>9</height>
-                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                         <texturebg border="12,0,12,0">dialogs/progress/progress_back.png</texturebg>
                         <lefttexture border="12,0,0,0">dialogs/progress/progress_left.png</lefttexture>
                         <midtexture border="12,0,12,0">dialogs/progress/progress_mid.png</midtexture>
@@ -251,12 +249,12 @@
                         <height>20</height>
                         <font>Font_Reg12</font>
                         <aligny>center</aligny>
-                        <include>subcolornofocus</include>
+                        <textcolor>grey</textcolor>
                         <label>$INFO[ListItem.EndTime]</label>
                         <visible>ListItem.HasEpg</visible>
                     </control>
                     <control type="image">
-                    	<animation effect="fade" start="100" end="20" time="800" pulse="true" condition="true">conditional</animation>
+                        <animation effect="fade" start="100" end="20" time="800" pulse="true" condition="true">conditional</animation>
                         <posx>155</posx>
                         <posy>73</posy>
                         <width>35</width>

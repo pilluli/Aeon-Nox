@@ -66,8 +66,6 @@
                     <height>184</height>
                     <font>Font_Reg22</font>
                     <label>$VAR[GlobalPlotOutlineVar]</label>
-                    <align>justify</align>
-                    <textcolor>white2</textcolor>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
             </control>
@@ -317,8 +315,6 @@
                     <height>260</height>
                     <font>Font_Reg22</font>
                     <label>$VAR[GlobalPlotVar]</label>
-                    <align>justify</align>
-                    <textcolor>white2</textcolor>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
             </control>
@@ -367,7 +363,7 @@
                     <control type="image">
                         <width>434</width>
                         <height>74</height>
-                            <include>PanelGlowFade</include>
+                        <include>PanelGlowFade</include>
                         <texture>views/tripanel/listselect_fo.png</texture>
                         <animation effect="fade" start="100" end="50" time="50" condition="!Control.HasFocus(550)">Conditional</animation>
                         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
@@ -398,7 +394,7 @@
                 <focusedlayout height="148" width="570" condition="Skin.HasSetting(panellogo) + [Container.Content(movies) | Container.Content(tvshows)]">
                     <control type="image">
                         <width>434</width>
-                            <include>PanelGlowFade</include>
+                        <include>PanelGlowFade</include>
                         <height>148</height>
                         <texture>views/tripanel/listselect_fo.png</texture>
                         <animation effect="fade" start="100" end="50" time="50" condition="!Control.HasFocus(550)">Conditional</animation>

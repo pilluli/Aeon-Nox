@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window id="2600">
     <defaultcontrol always="true">7510</defaultcontrol>
-    <backgroundcolor>black</backgroundcolor>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
     <allowoverlay>no</allowoverlay>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
     <onunload>ClearProperty(FSMap,weather)</onunload>
@@ -66,13 +66,11 @@
                 <height>1080</height>
                 <texture>views/showcase_vignette.png</texture>
                 <colordiffuse>vignette</colordiffuse>
-                <visible>true</visible>
             </control>
             <control type="image">
                 <posx>1224</posx>
                 <width>696</width>
                 <height>1080</height>
-                <visible>true</visible>
                 <colordiffuse>vignette</colordiffuse>
                 <texture flipx="true">views/showcase_vignette.png</texture>
             </control>
@@ -1557,7 +1555,7 @@
                                         <posx>120</posx>
                                         <width>810</width>
                                         <height>60</height>
-                                        <include>listcolornofocus</include>
+                                        <textcolor>white2</textcolor>
                                         <aligny>center</aligny>
                                         <label>$INFO[ListItem.Label]</label>
                                     </control>
@@ -2563,11 +2561,11 @@
                             <width>742</width>
                             <height>900</height>
                             <align>right</align>
-                            <textcolor>white2</textcolor>
                             <pagecontrol>61</pagecontrol>
                             <label>[CR]Astro Twilight Start-End:[CR]Nautical Twilight Start-End:[CR]Civil Twilight Start-End:[CR]Sunrise &amp; Sunset:[CR]Sun Azimuth:[CR]Length of day:[CR]Difference:[CR]Solar noon Time:[CR]Solar noon Altitude:[CR]Solar noon Distance:[CR][CR]Moonrise &amp; Moonset:[CR]Moon Azimuth:[CR]Meridian Passing Time:[CR]Meridian Passing Altitude:[CR]Meridian Passing Distance:[CR]Illuminated:[CR]Moon Phase:[CR]</label>
                         </control>
                         <control type="textbox">
+                            <align>left</align>
                             <posx>1072</posx>
                             <posy>165</posy>
                             <width>742</width>
@@ -2653,16 +2651,11 @@
                             <textcolor>$VAR[FontColorVar]</textcolor>
                             <focusedcolor>white6</focusedcolor>
                             <disabledcolor>grey3</disabledcolor>
-                            <textureup>settings/spin-up.png</textureup>
-                            <texturedown>settings/spin-down.png</texturedown>
-                            <textureupfocus>settings/spin-up-focus.png</textureupfocus>
-                            <texturedownfocus>settings/spin-down-focus.png</texturedownfocus>
                             <height>60</height>
                             <width>398</width>
                             <onleft>ActivateWindow(1121)</onleft>
                             <texturenofocus>settings/listselect_nf.png</texturenofocus>
                             <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
-                            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                             <font>Font_Reg19</font>
                             <textoffsety>27</textoffsety>
                             <aligny>top</aligny>
@@ -2809,6 +2802,6 @@
             <hitrect x="-50" y="0" w="50" h="1080" />
             <onfocus>SetFocus(9000)</onfocus>
         </control>
-                <include>ContextMenuOverlay</include>
+        <include>ContextMenuOverlay</include>
     </controls>
 </window>

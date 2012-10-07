@@ -1,11 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
     <allowoverlay>yes</allowoverlay>
-    <backgroundcolor>black</backgroundcolor>
+    <backgroundcolor>backgroundcolor</backgroundcolor>
     <defaultcontrol always="false">2</defaultcontrol>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
     <controls>
         <!-- background -->
         <control type="multiimage" id="75">
@@ -218,7 +220,6 @@
                             <height>220</height>
                             <label fallback="312577">$INFO[ListItem.Property(plot)]</label>
                             <textcolor>white6</textcolor>
-                            <align>justify</align>
                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                         </control>
                     </control>
@@ -293,13 +294,11 @@
                 <height>1080</height>
                 <texture>views/showcase_vignette.png</texture>
                 <colordiffuse>vignette</colordiffuse>
-                <visible>true</visible>
             </control>
             <control type="image">
                 <posx>1224</posx>
                 <width>696</width>
                 <height>1080</height>
-                <visible>true</visible>
                 <colordiffuse>vignette</colordiffuse>
                 <texture flipx="true">views/showcase_vignette.png</texture>
             </control>
@@ -1293,7 +1292,6 @@
                             <width>570</width>
                             <height>350</height>
                             <font>Font_Reg19</font>
-                            <align>justify</align>
                             <label fallback="312577">$INFO[ListItem.Property(plot)]</label>
                             <textcolor>white6</textcolor>
                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
@@ -2260,7 +2258,7 @@
                                 <height>48</height>
                                 <font>Font_Reg22</font>
                                 <aligny>center</aligny>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                             <control type="label">
@@ -2269,7 +2267,7 @@
                                 <width>800</width>
                                 <height>36</height>
                                 <aligny>center</aligny>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Property(genre)]</label>
                             </control>
                             <control type="label">
@@ -2280,7 +2278,7 @@
                                 <font>Font_Info</font>
                                 <align>center</align>
                                 <aligny>center</aligny>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Property(year)]</label>
                             </control>
                             <control type="image">
@@ -2315,7 +2313,7 @@
                                 <height>48</height>
                                 <font>Font_Reg22</font>
                                 <aligny>center</aligny>
-                                <include>listcolornofocus</include>
+                                <textcolor>white2</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                             <control type="label">
@@ -2324,7 +2322,7 @@
                                 <width>800</width>
                                 <height>36</height>
                                 <aligny>center</aligny>
-                                <include>listcolornofocus</include>
+                                <textcolor>white2</textcolor>
                                 <label>$INFO[ListItem.Property(genre)]</label>
                             </control>
                             <control type="label">
@@ -2335,7 +2333,7 @@
                                 <font>Font_Info</font>
                                 <align>center</align>
                                 <aligny>center</aligny>
-                                <include>listcolornofocus</include>
+                                <textcolor>white2</textcolor>
                                 <label>$INFO[ListItem.Property(year)]</label>
                             </control>
                             <control type="image">
@@ -2359,7 +2357,7 @@
                                 <height>60</height>
                                 <font>Font_Reg19</font>
                                 <aligny>center</aligny>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <info>ListItem.Label</info>
                             </control>
                             <control type="label">
@@ -2369,7 +2367,7 @@
                                 <font>Font_Reg19</font>
                                 <aligny>center</aligny>
                                 <align>center</align>
-                                <include>detailcolornofocus</include>
+                                <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Property(year)]</label>
                             </control>
                             <control type="image">
@@ -2401,7 +2399,7 @@
                                 <height>60</height>
                                 <font>Font_Reg19</font>
                                 <aligny>center</aligny>
-                                <include>listcolornofocus</include>
+                                <textcolor>white2</textcolor>
                                 <info>ListItem.Label</info>
                             </control>
                             <control type="label">
@@ -2411,7 +2409,7 @@
                                 <font>Font_Reg19</font>
                                 <aligny>center</aligny>
                                 <align>center</align>
-                                <include>listcolornofocus</include>
+                                <textcolor>white2</textcolor>
                                 <label>$INFO[ListItem.Property(year)]</label>
                             </control>
                             <control type="image">

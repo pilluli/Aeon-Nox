@@ -3,9 +3,11 @@
     <defaultcontrol always="true">450</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <zorder>4</zorder>
-    <coordinates>
-        <system>1</system>
-    </coordinates>
+	<coordinates>
+		<system>1</system>
+		<posx>0</posx>
+		<posy>0</posy>
+	</coordinates>
     <controls>
         <include>DialogBackFade</include>
         <control type="group">
@@ -280,7 +282,6 @@
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
                     <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <disabledcolor>grey3</disabledcolor>
                 </control>
                 <control type="button" id="414">
@@ -294,7 +295,6 @@
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
                     <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <disabledcolor>grey3</disabledcolor>
                 </control>
                 <control type="button" id="415">
@@ -308,7 +308,6 @@
                     <aligny>top</aligny>
                     <textoffsety>16</textoffsety>
                     <textcolor>white2</textcolor>
-                    <focusedcolor>white</focusedcolor>
                     <disabledcolor>grey3</disabledcolor>
                 </control>
                 <control type="radiobutton" id="416">
