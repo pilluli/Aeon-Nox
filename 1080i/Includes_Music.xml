@@ -62,8 +62,7 @@
                         <width>776</width>
                         <height>435</height>
                         <aspectratio>scale</aspectratio>
-                        <fadetime>400</fadetime>
-                        <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[ListItem.property(fanart_image)]</texture>
+                        <texture background="true" fallback="special://skin/backgrounds/fallback_music.jpg">$INFO[ListItem.Art(fanart)]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
                     </control>
@@ -542,7 +541,6 @@
             <posy>680</posy>
             <width>1290</width>
             <height>1080</height>
-            <itemgap>0</itemgap>
             <orientation>vertical</orientation>
             <animation effect="fade" time="400">VisibleChange</animation>
             <visible>Skin.HasSetting(itemsplaylist) | Window.IsActive(visualisation)</visible>
@@ -582,7 +580,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(1).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -614,7 +611,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(2).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -646,7 +642,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(3).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -678,7 +673,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(4).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -710,7 +704,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(5).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -743,7 +736,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(6).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -776,7 +768,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(7).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -809,7 +800,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(8).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -842,7 +832,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(9).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -875,7 +864,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(10).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -908,7 +896,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(11).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -941,7 +928,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(12).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>
@@ -974,7 +960,6 @@
                     <width min="50" max="610">auto</width>
                     <height>26</height>
                     <aligny>left</aligny>
-                    <textcolor>white2</textcolor>
                     <label>$INFO[MusicPlayer.Offset(13).Title]</label>
                     <font>Font_Reg15_Caps</font>
                 </control>

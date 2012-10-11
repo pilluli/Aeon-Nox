@@ -27,6 +27,7 @@
                     <posx>140</posx>
                     <posy>125</posy>
                     <width>445</width>
+                    <itemgap>5</itemgap>
                     <orientation>horizontal</orientation>
                     <control type="label">
                         <width min="50" max="400">auto</width>
@@ -39,12 +40,14 @@
                         <label fallback="N/A">$VAR[TriPanelSquareValue1Var]</label>
                         <textcolor>white6</textcolor>
                         <scroll>true</scroll>
+                        <aligny>bottom</aligny>
                     </control>
                 </control>
                 <control type="grouplist">
                     <posx>140</posx>
                     <posy>170</posy>
                     <width>445</width>
+                    <itemgap>5</itemgap>
                     <visible>!Container.Content(addons)</visible>
                     <orientation>horizontal</orientation>
                     <control type="label">
@@ -58,6 +61,7 @@
                         <label fallback="N/A">$VAR[TriPanelSquareValue2Var]</label>
                         <textcolor>white6</textcolor>
                         <scroll>true</scroll>
+                        <aligny>bottom</aligny>
                     </control>
                 </control>
                 <control type="textbox">
@@ -191,6 +195,7 @@
                     <posx>100</posx>
                     <posy>120</posy>
                     <width>480</width>
+                    <itemgap>5</itemgap>
                     <orientation>horizontal</orientation>
                     <control type="label">
                         <width min="50" max="400">auto</width>
@@ -203,12 +208,14 @@
                         <label fallback="N/A">$VAR[TriPanelSquareValue1Var]</label>
                         <textcolor>white6</textcolor>
                         <scroll>true</scroll>
+                        <aligny>bottom</aligny>
                     </control>
                 </control>
                 <control type="grouplist">
                     <posx>100</posx>
                     <posy>165</posy>
                     <width>485</width>
+                    <itemgap>5</itemgap>
                     <visible>!Container.Content(addons)</visible>
                     <orientation>horizontal</orientation>
                     <control type="label">
@@ -222,6 +229,7 @@
                         <label fallback="N/A">$VAR[TriPanelSquareValue2Var]</label>
                         <textcolor>white6</textcolor>
                         <scroll>true</scroll>
+                        <aligny>bottom</aligny>
                     </control>
                 </control>
                 <control type="textbox">
@@ -319,7 +327,6 @@
                             <label>$VAR[TriPanelSquareListValueVar]</label>
                             <scroll>false</scroll>
                             <align>center</align>
-                            <aligny>center</aligny>
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                         </control>
                         <control type="label">
@@ -329,7 +336,6 @@
                             <label>$VAR[TriPanelSquareListValue2Var]</label>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
-                            <aligny>center</aligny>
                         </control>
                         <control type="label">
                             <posx>795</posx>
@@ -340,7 +346,6 @@
                             <scroll>false</scroll>
                             <align>right</align>
                             <textcolor>grey2</textcolor>
-                            <aligny>center</aligny>
                             <visible>!Container.Content(albums) + [!Container.Content(addons) | Window.IsActive(addonbrowser)]</visible>
                         </control>
                         <control type="image">
@@ -393,8 +398,6 @@
                             <label>$VAR[TriPanelSquareListValueVar]</label>
                             <scroll>false</scroll>
                             <align>center</align>
-                            <aligny>center</aligny>
-                            <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
                             <posx>120</posx>
@@ -402,8 +405,6 @@
                             <height>52</height>
                             <label>$VAR[TriPanelSquareListValue2Var]</label>
                             <font>Font_Reg19</font>
-                            <textcolor>white2</textcolor>
-                            <aligny>center</aligny>
                         </control>
                         <control type="label">
                             <posx>795</posx>
@@ -413,8 +414,6 @@
                             <label>$INFO[ListItem.Label2]</label>
                             <scroll>false</scroll>
                             <align>right</align>
-                            <textcolor>white2</textcolor>
-                            <aligny>center</aligny>
                             <visible>!Container.Content(albums) + [!Container.Content(addons) | Window.IsActive(addonbrowser)]</visible>
                         </control>
                         <control type="image">
@@ -458,7 +457,6 @@
                             <label>$VAR[TriPanelSquareListValueVar]</label>
                             <scroll>false</scroll>
                             <align>center</align>
-                            <aligny>center</aligny>
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                         </control>
                         <control type="label">
@@ -468,7 +466,6 @@
                             <label>$VAR[TriPanelSquareListValue2Var]</label>
                             <font>Font_Reg19</font>
                             <textcolor>white6</textcolor>
-                            <aligny>center</aligny>
                         </control>
                         <control type="label">
                             <posy>50</posy>
@@ -478,7 +475,6 @@
                             <label>$VAR[ListLabel2Var]</label>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>
-                            <aligny>center</aligny>
                         </control>
                         <control type="label">
                             <posx>795</posx>
@@ -489,7 +485,6 @@
                             <scroll>false</scroll>
                             <align>right</align>
                             <textcolor>grey2</textcolor>
-                            <aligny>center</aligny>
                             <visible>!Container.Content(albums) + !Container.Content(addons)</visible>
                         </control>
                         <control type="image">
@@ -542,8 +537,6 @@
                             <label>$VAR[TriPanelSquareListValueVar]</label>
                             <scroll>false</scroll>
                             <align>center</align>
-                            <aligny>center</aligny>
-                            <textcolor>white2</textcolor>
                         </control>
                         <control type="label">
                             <posx>120</posx>
@@ -551,8 +544,6 @@
                             <height>49</height>
                             <label>$VAR[TriPanelSquareListValue2Var]</label>
                             <font>Font_Reg19</font>
-                            <textcolor>white2</textcolor>
-                            <aligny>center</aligny>
                         </control>
                         <control type="label">
                             <posy>50</posy>
@@ -561,8 +552,6 @@
                             <height>49</height>
                             <label>$VAR[ListLabel2Var]</label>
                             <font>Font_Reg19</font>
-                            <textcolor>white2</textcolor>
-                            <aligny>center</aligny>
                         </control>
                         <control type="label">
                             <posx>795</posx>
@@ -572,8 +561,6 @@
                             <label>$INFO[ListItem.Label2]</label>
                             <scroll>false</scroll>
                             <align>right</align>
-                            <textcolor>white2</textcolor>
-                            <aligny>center</aligny>
                             <visible>!Container.Content(albums) + !Container.Content(addons)</visible>
                         </control>
                         <control type="image">
@@ -590,13 +577,6 @@
                     <posy>126</posy>
                     <width>46</width>
                     <height>480</height>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                    <texturesliderbackground>-</texturesliderbackground>
-                    <texturesliderbar>-</texturesliderbar>
-                    <texturesliderbarfocus>-</texturesliderbarfocus>
-                    <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-                    <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
-                    <orientation>vertical</orientation>
                     <onup>70</onup>
                     <ondown>70</ondown>
                     <onright>9000</onright>

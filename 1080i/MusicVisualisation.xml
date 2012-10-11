@@ -62,7 +62,7 @@
                 <visible>StringCompare(Skin.String(MusicViz.MultiFanart),artistfanart)</visible>
                 <control type="multiimage">
                     <include>MusicVizBG</include>
-                    <imagepath fallback="special://skin/backgrounds/music/">$INFO[MusicPlayer.Property(Fanart_Image)]</imagepath>
+                    <imagepath fallback="special://skin/backgrounds/music/">$INFO[Player.Art(fanart)]</imagepath>
                     <visible>!SubString(Control.getLabel(8870),extrafanart)</visible>
                     <visible>StringCompare(Control.getLabel(8872),empty.png)</visible>
                 </control>
@@ -137,7 +137,6 @@
                     <width>600</width>
                     <height>40</height>
                     <align>right</align>
-                    <aligny>center</aligny>
                     <font>Font_Reg19_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
                     <label>[COLOR grey]$INFO[System.Date(ddd)], $INFO[System.Date(d)] $INFO[System.Date(mmm)] $INFO[System.Date(yyyy)]  •[/COLOR]  $INFO[System.Time]</label>
@@ -209,7 +208,6 @@
                 <posy>-854</posy>
                 <width>420</width>
                 <height>42</height>
-                <aligny>center</aligny>
                 <align>center</align>
                 <textcolor>FF363636</textcolor>
                 <animation effect="slide" start="0,-98" end="0,0" time="100">WindowOpen</animation>
@@ -546,7 +544,6 @@
                         <posy>69</posy>
                         <width>210</width>
                         <height>86</height>
-                        <aligny>center</aligny>
                         <align>center</align>
                         <scroll>false</scroll>
                         <font>Font_MainClassic4</font>
@@ -587,7 +584,6 @@
                             <posy>69</posy>
                             <width>210</width>
                             <height>86</height>
-                            <aligny>center</aligny>
                             <scroll>false</scroll>
                             <font>Font_Reg19</font>
                             <shadowcolor>black</shadowcolor>
@@ -612,6 +608,7 @@
                         <textcolor>white3</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <align>right</align>
+                        <aligny>bottom</aligny>
                         <visible>Player.HasDuration</visible>
                     </control>
                     <control type="label">
@@ -622,6 +619,7 @@
                         <textcolor>white3</textcolor>
                         <shadowcolor>black</shadowcolor>
                         <align>right</align>
+                        <aligny>bottom</aligny>
                         <visible>!Player.HasDuration</visible>
                     </control>
                 </control>
@@ -756,7 +754,7 @@
                                 <posx>22</posx>
                                 <width>380</width>
                                 <height>354</height>
-                                <texture background="true" fallback="DefaultArtist.png" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+                                <texture background="true" fallback="DefaultArtist.png" diffuse="thumbs/boxes/cdcover_mask.png">$INFO[Player.Art(fanart)]</texture>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                             </control>
                             <control type="multiimage">
@@ -769,7 +767,6 @@
                                 <visible>!System.HasAddon(script.artistslideshow)</visible>
                                 <timeperimage>5000</timeperimage>
                                 <fadetime>750</fadetime>
-                                <randomize>true</randomize>
                             </control>
                             <control type="multiimage">
                                 <posy>22</posy>
@@ -781,7 +778,6 @@
                                 <visible>System.HasAddon(script.artistslideshow)</visible>
                                 <timeperimage>5000</timeperimage>
                                 <fadetime>750</fadetime>
-                                <randomize>true</randomize>
                             </control>
                             <control type="image">
                                 <posy>3</posy>
@@ -854,7 +850,6 @@
                         <height>34</height>
                         <font>Font_Reg22_Caps</font>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
-                        <aligny>center</aligny>
                         <label>$LOCALIZE[31635]</label>
                     </control>
                     <animation effect="slide" start="575" end="0" time="700" tween="cubic" easing="out" delay="400">WindowOpen</animation>
@@ -880,7 +875,6 @@
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <timeperimage>5000</timeperimage>
                         <fadetime>750</fadetime>
-                        <randomize>true</randomize>
                     </control>
                     <control type="list" id="5222">
                         <include>Animation_VisibleChange400</include>
@@ -904,7 +898,6 @@
                                 <height>34</height>
                                 <font>Font_Info_Caps</font>
                                 <textcolor>grey2</textcolor>
-                                <aligny>center</aligny>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                         </itemlayout>
@@ -915,7 +908,6 @@
                                 <height>34</height>
                                 <font>Font_Info_Caps</font>
                                 <textcolor>$VAR[TitleColorVar]</textcolor>
-                                <aligny>center</aligny>
                                 <label>$INFO[ListItem.Label]</label>
                             </control>
                         </focusedlayout>
@@ -964,7 +956,6 @@
                         <aspectratio scalediffuse="false">scale</aspectratio>
                         <timeperimage>5000</timeperimage>
                         <fadetime>750</fadetime>
-                        <randomize>true</randomize>
                     </control>
                     <control type="image">
                         <width>445</width>
@@ -995,7 +986,6 @@
                             <font>Font_Info_Caps</font>
                             <textcolor>grey2</textcolor>
                             <align>right</align>
-                            <aligny>center</aligny>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                     </itemlayout>
@@ -1007,7 +997,6 @@
                             <font>Font_Info_Caps</font>
                             <textcolor>$VAR[TitleColorVar]</textcolor>
                             <align>right</align>
-                            <aligny>center</aligny>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                     </focusedlayout>

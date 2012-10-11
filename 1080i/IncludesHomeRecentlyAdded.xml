@@ -6,7 +6,6 @@
             <posy>60</posy>
             <width>340</width>
             <height>300</height>
-            <pagecontrol>-</pagecontrol>
             <itemlayout width="340" height="34">
                 <control type="image">
                     <posx>6</posx>
@@ -14,21 +13,20 @@
                     <width>30</width>
                     <height>30</height>
                     <texture>$INFO[ListItem.Icon]</texture>
-                    <include>VisibleFadeEffect</include>
+                    <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="image">
                     <posx>-15</posx>
                     <width>375</width>
                     <height>34</height>
                     <texture>dialogs/context_nofocus.png</texture>
-                    <include>VisibleFadeEffect</include>
+                    <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="label">
                     <posx>45</posx>
                     <width>310</width>
                     <height>34</height>
                     <font>Font_Reg15_Caps</font>
-                    <aligny>center</aligny>
                     <scroll>true</scroll>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
@@ -40,21 +38,20 @@
                     <width>30</width>
                     <height>30</height>
                     <texture>$INFO[ListItem.Icon]</texture>
-                    <include>VisibleFadeEffect</include>
+                    <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="image">
                     <posx>-15</posx>
                     <width>375</width>
                     <height>34</height>
                     <texture>dialogs/context_nofocus.png</texture>
-                    <include>VisibleFadeEffect</include>
+                    <include>Animation_VisibleChange200</include>
                 </control>
                 <control type="label">
                     <posx>45</posx>
                     <width>310</width>
                     <height>34</height>
                     <font>Font_Info_Caps</font>
-                    <aligny>center</aligny>
                     <scroll>true</scroll>
                     <label>$INFO[ListItem.Label]</label>
                 </control>
@@ -143,7 +140,6 @@
                     <width>330</width>
                     <height>60</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <label>$VAR[RecentAddedWidgetLabel1Var]</label>
                     <font>Font_Reg19_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
@@ -166,7 +162,6 @@
                     <width>330</width>
                     <label>$INFO[Container(8000).ListItem.Label2] • $INFO[Container(8000).ListItem.Property(EpisodeNumber)]</label>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <font>Font_Reg15_Caps</font>
                     <textcolor>grey</textcolor>
                     <scrollspeed>30</scrollspeed>
@@ -189,14 +184,12 @@
                                 <posy>19</posy>
                                 <width>110</width>
                                 <height>165</height>
-                                <fadetime>800</fadetime>
                                 <animation effect="fade" time="300">Visible</animation>
                                 <animation effect="fade" time="50">Hidden</animation>
                             </control>
                             <control type="image">
                                 <width>148</width>
                                 <height>203</height>
-                                <fadetime>200</fadetime>
                                 <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
                                 <bordertexture border="19">thumbs/poster_shadow.png</bordertexture>
                                 <bordersize>19</bordersize>
@@ -212,14 +205,12 @@
                                 <posy>19</posy>
                                 <width>110</width>
                                 <height>165</height>
-                                <fadetime>800</fadetime>
                                 <animation effect="fade" time="300">Visible</animation>
                                 <animation effect="fade" time="50">Hidden</animation>
                             </control>
                             <control type="image">
                                 <width>148</width>
                                 <height>203</height>
-                                <fadetime>200</fadetime>
                                 <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
                                 <bordertexture border="19">thumbs/poster_shadow.png</bordertexture>
                                 <bordersize>19</bordersize>
@@ -235,14 +226,12 @@
                                 <posy>19</posy>
                                 <width>130</width>
                                 <height>195</height>
-                                <fadetime>800</fadetime>
                                 <animation effect="fade" time="300">Visible</animation>
                                 <animation effect="fade" time="50">Hidden</animation>
                             </control>
                             <control type="image">
                                 <width>168</width>
                                 <height>234</height>
-                                <fadetime>200</fadetime>
                                 <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
                                 <bordertexture border="19">thumbs/poster_shadow.png</bordertexture>
                                 <bordersize>19</bordersize>
@@ -258,7 +247,6 @@
                         <posy>63</posy>
                         <width>345</width>
                         <height>240</height>
-                        <fadetime>800</fadetime>
                         <animation effect="fade" time="300">Visible</animation>
                         <animation effect="fade" time="50">Hidden</animation>
                         <visible>Substring(Control.GetLabel(4321),addons) | Substring(Control.GetLabel(4321),albums) | Substring(Control.GetLabel(4321),artists) | Substring(Control.GetLabel(4321),watchlistmusic) | Substring(Control.GetLabel(4321),actor) | Substring(Control.GetLabel(4321),pics)</visible>
@@ -272,7 +260,6 @@
                         <posy>63</posy>
                         <width>345</width>
                         <height>194</height>
-                        <fadetime>800</fadetime>
                         <animation effect="fade" time="300">Visible</animation>
                         <animation effect="fade" time="50">Hidden</animation>
                         <visible>Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),rss)</visible>
@@ -286,7 +273,6 @@
                         <posy>63</posy>
                         <width>345</width>
                         <height>194</height>
-                        <fadetime>800</fadetime>
                         <animation effect="fade" time="300">Visible</animation>
                         <animation effect="fade" time="50">Hidden</animation>
                         <visible>[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + !StringCompare(Control.GetLabel(4322),widgetfanart)</visible>
@@ -302,7 +288,6 @@
                     <width>330</width>
                     <height>30</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <label>$INFO[Container(8000).ListItem.Label]</label>
                     <font>Font_Reg19_Caps</font>
                     <textcolor>grey</textcolor>
@@ -360,7 +345,6 @@
                         <control type="label">
                             <width min="100" max="800">auto</width>
                             <height>45</height>
-                            <aligny>center</aligny>
                             <textcolor>white6</textcolor>
                             <label>[COLOR=$VAR[HomeMenuWidgetTextVar]]$LOCALIZE[345]: [/COLOR]$INFO[Container(8000).ListItem.Property(Year)]</label>
                             <font>Font_Reg20</font>
@@ -368,7 +352,6 @@
                         <control type="label">
                             <width min="100" max="800">auto</width>
                             <height>45</height>
-                            <aligny>center</aligny>
                             <textcolor>white6</textcolor>
                             <label>[COLOR=$VAR[HomeMenuWidgetTextVar]]$LOCALIZE[31095]: [/COLOR]$INFO[Container(8000).ListItem.Property(Rating)]</label>
                             <font>Font_Reg20</font>
@@ -376,7 +359,6 @@
                         <control type="label">
                             <width min="100" max="800">auto</width>
                             <height>45</height>
-                            <aligny>center</aligny>
                             <textcolor>white6</textcolor>
                             <label>[COLOR=$VAR[HomeMenuWidgetTextVar]]$LOCALIZE[2050]: [/COLOR] $INFO[Container(8000).ListItem.Property(RunningTime),, $LOCALIZE[12391]]</label>
                             <font>Font_Reg20</font>
@@ -386,9 +368,7 @@
                         <posx>38</posx>
                         <width>1050</width>
                         <height>45</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg24_Caps</font>
-                        <textcolor>white2</textcolor>
                         <label>$INFO[Container(8000).ListItem.Label]</label>
                         <scroll>true</scroll>
                     </control>
@@ -466,7 +446,6 @@
                         <height>45</height>
                         <font>Font_Bold28_Caps</font>
                         <textcolor>grey</textcolor>
-                        <aligny>center</aligny>
                         <label fallback="-">$INFO[Container(8000).ListItem.Label2]</label>
                     </control>
                     <control type="label">
@@ -475,8 +454,6 @@
                         <width>675</width>
                         <height>30</height>
                         <font>Font_Reg21_Caps</font>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                         <label fallback="-">$INFO[Container(8000).ListItem.Label]</label>
                     </control>
                     <control type="label">
@@ -544,7 +521,6 @@
                     <posy>77</posy>
                     <width>498</width>
                     <height>287</height>
-                    <fadetime>IconCrossfadeTime</fadetime>
                 </control>
             </control>
             <!--Focused Random/Latest Music/Add-on-->
@@ -573,7 +549,6 @@
                         <width>800</width>
                         <height>38</height>
                         <font>Font_Reg24_Caps</font>
-                        <textcolor>white2</textcolor>
                         <label>$INFO[Container(8000).ListItem.Label2]</label>
                     </control>
                     <control type="label">
@@ -666,7 +641,6 @@
                     <width>382</width>
                     <height>60</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <label>$VAR[RecentAddedWidgetLabel1Var]</label>
                     <font>Font_Reg19_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
@@ -678,7 +652,6 @@
                     <width>382</width>
                     <height>60</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <label>$VAR[WidgetTypeLabelVar1124]</label>
                     <font>Font_Reg19_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
@@ -715,7 +688,6 @@
                     <width>382</width>
                     <height>30</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <label>$LOCALIZE[20161] $LOCALIZE[24001]: $INFO[Window(Home).Property(RandomAddon.Count)]</label>
                     <font>Font_Reg19_Caps</font>
                     <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
@@ -744,7 +716,6 @@
                     <ondown>8000</ondown>
                     <onback>8993</onback>
                     <preloaditems>2</preloaditems>
-                    <pagecontrol>-</pagecontrol>
                     <scrolltime tween="quadratic" easing="out">200</scrolltime>
                     <itemlayout height="34" width="450">
                         <control type="image">
@@ -752,7 +723,7 @@
                             <width>424</width>
                             <height>34</height>
                             <texture>dialogs/context_nofocus.png</texture>
-                            <include>VisibleFadeEffect</include>
+                            <include>Animation_VisibleChange200</include>
                         </control>
                         <control type="label">
                             <posx>15</posx>
@@ -760,7 +731,6 @@
                             <height>34</height>
                             <font>Font_Info_Caps</font>
                             <textcolor>grey2</textcolor>
-                            <aligny>center</aligny>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                     </itemlayout>
@@ -771,7 +741,7 @@
                             <height>34</height>
                             <texture>views/tripanel/listselect_fo.png</texture>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <include>VisibleFadeEffect</include>
+                            <include>Animation_VisibleChange200</include>
                             <animation effect="fade" start="100" end="70" time="1000" pulse="true" condition="!IsEmpty(Container(8000).ListItem.Property(Trailer))">Conditional</animation>
                         </control>
                         <control type="label">
@@ -779,8 +749,6 @@
                             <width>368</width>
                             <height>34</height>
                             <font>Font_Info_Caps</font>
-                            <textcolor>white2</textcolor>
-                            <aligny>center</aligny>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                     </focusedlayout>

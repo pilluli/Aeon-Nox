@@ -37,14 +37,10 @@
                 <posy>240</posy>
                 <width>900</width>
                 <height>600</height>
-                <itemgap>0</itemgap>
                 <aligny>center</aligny>
                 <scrolltime>0</scrolltime>
                 <orientation>vertical</orientation>
-                <animation effect="fade" time="200">Visible</animation>
-                <animation effect="fade" time="200">Hidden</animation>
-                <animation effect="fade" time="200">WindowOpen</animation>
-                <animation effect="fade" time="200">WindowClose</animation>
+                <include>Animation_WindowFade250</include>
                 <itemlayout height="60" width="300">
                     <control type="image">
                         <width>300</width>
@@ -55,7 +51,6 @@
                     <control type="label">
                         <width>300</width>
                         <height>60</height>
-                        <aligny>center</aligny>
                         <textoffsetx>10</textoffsetx>
                         <font>Font_Reg19</font>
                         <textcolor>grey2</textcolor>
@@ -74,11 +69,9 @@
                         <control type="label">
                             <width>300</width>
                             <height>60</height>
-                            <aligny>center</aligny>
                             <textoffsetx>10</textoffsetx>
                             <scroll>true</scroll>
                             <font>Font_Reg19</font>
-                            <textcolor>white2</textcolor>
                             <label>$INFO[ListItem.Label]</label>
                         </control>
                     </control>
@@ -92,7 +85,6 @@
                         </control>
                         <control type="label">
                             <width>300</width>
-                            <aligny>center</aligny>
                             <textoffsetx>10</textoffsetx>
                             <font>Font_Reg19</font>
                             <textcolor>grey2</textcolor>

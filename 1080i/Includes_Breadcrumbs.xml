@@ -3,18 +3,17 @@
     <include name="BreadcrumbsIcon">
         <aspectratio>keep</aspectratio>
         <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-        <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">dialogeffect</include>
+        <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">Animation_WindowFade200</include>
         <visible>Skin.HasSetting(breadcrumbslabel) + ![Skin.HasSetting(GlobalNowPlaying) + Player.HasMedia]</visible>
     </include>
     <include name="BreadcrumbsLabel">
         <height>38</height>
-        <aligny>center</aligny>
         <width min="15" max="1920">auto</width>
         <font>Font_Reg17_Caps</font>
         <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
         <shadowcolor>bcshadow</shadowcolor>
         <scroll>false</scroll>
-        <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">dialogeffect</include>
+        <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">Animation_WindowFade200</include>
     </include>
     <include name="Breadcrumbs_BackBar">
         <control type="group">
@@ -54,7 +53,7 @@
                     <aspectratio>keep</aspectratio>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                     <visible>Player.HasAudio</visible>
-                    <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">dialogeffect</include>
+                    <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 </control>
                 <control type="image">
                     <width>54</width>
@@ -64,7 +63,7 @@
                     <aspectratio>keep</aspectratio>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                     <visible>Player.HasVideo</visible>
-                    <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">dialogeffect</include>
+                    <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                 </control>
                 <control type="grouplist">
                     <orientation>horizontal</orientation>
@@ -77,16 +76,13 @@
                         <height>38</height>
                         <font>Font_Reg17_Caps</font>
                         <label>$INFO[Player.Time]</label>
-                        <aligny>center</aligny>
                         <textcolor>grey</textcolor>
                     </control>
                     <control type="fadelabel">
                         <posx>280</posx>
                         <width>470</width>
                         <height>38</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg17_Caps</font>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
                         <label>[COLOR white3]$INFO[MusicPlayer.Artist][/COLOR]</label>
                         <label>[COLOR white2]$INFO[MusicPlayer.Title][/COLOR]</label>
@@ -97,9 +93,7 @@
                         <posx>310</posx>
                         <width>480</width>
                         <height>38</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg17_Caps</font>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
                         <label>[COLOR white3]$INFO[Videoplayer.TVShowTitle][/COLOR]</label>
                         <label>[COLOR white2]$INFO[Videoplayer.Title][/COLOR]</label>
@@ -110,9 +104,7 @@
                         <posx>310</posx>
                         <width>480</width>
                         <height>38</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg17_Caps</font>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
                         <label>$INFO[Videoplayer.Title]</label>
                         <pauseatend>7000</pauseatend>
@@ -122,9 +114,7 @@
                         <posx>310</posx>
                         <width>480</width>
                         <height>38</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg17_Caps</font>
-                        <textcolor>white2</textcolor>
                         <scroll>true</scroll>
                         <label>$INFO[Videoplayer.Title]</label>
                         <label>$INFO[Videoplayer.ChannelName]</label>
@@ -221,7 +211,7 @@
                     <aspectratio>keep</aspectratio>
                     <texture>breadcrumbs/items.png</texture>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                    <include>dialogeffect</include>
+                    <include>Animation_WindowFade200</include>
                 </control>
                 <control type="label">
                     <include>BreadcrumbsLabel</include>
@@ -233,7 +223,7 @@
                     <aspectratio>keep</aspectratio>
                     <texture>breadcrumbs/pages.png</texture>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
-                    <include>dialogeffect</include>
+                    <include>Animation_WindowFade200</include>
                     <visibe>!Control.IsVisible(516)</visibe>
                 </control>
                 <control type="label">
@@ -244,12 +234,11 @@
                 <control type="label">
                     <textcolor>time</textcolor>
                     <height>38</height>
-                    <aligny>center</aligny>
                     <width>40</width>
                     <font>Font_Reg17_Caps</font>
                     <shadowcolor>bcshadow</shadowcolor>
                     <scroll>false</scroll>
-                    <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">dialogeffect</include>
+                    <include condition="![Window.IsActive(1111) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(7) | Window.IsActive(settings)]">Animation_WindowFade200</include>
                     <animation effect="fade" start="100" end="0" time="500" delay="500" condition="Control.IsVisible(4051)">Conditional</animation>
                     <label>$INFO[ListItem.SortLetter]</label>
                     <visible>[SubString(Container.SortMethod,$LOCALIZE[551]) | SubString(Container.SortMethod,$LOCALIZE[561]) | SubString(Container.SortMethod,$LOCALIZE[558]) | SubString(Container.SortMethod,$LOCALIZE[557]) | SubString(Container.SortMethod,$LOCALIZE[556])]</visible>
@@ -271,7 +260,6 @@
                     </control>
                     <control type="label">
                         <height>38</height>
-                        <aligny>center</aligny>
                         <width min="15" max="1920">auto</width>
                         <font>Font_Reg17_Caps</font>
                         <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>
@@ -284,7 +272,6 @@
                     </control>
                     <control type="label">
                         <height>38</height>
-                        <aligny>center</aligny>
                         <width min="15" max="1920">auto</width>
                         <font>Font_Reg17_Caps</font>
                         <textcolor>$VAR[BreadCrumbsContentColorVar]</textcolor>

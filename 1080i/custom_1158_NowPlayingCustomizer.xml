@@ -13,13 +13,12 @@
                 <imagepath background="true">$VAR[NowPlayingBackGroundVar]</imagepath>
                 <aspectratio align="center" aligny="top">keep</aspectratio>
                 <include>Animation_VisibleChange400</include>
-                <randomize>true</randomize>
                 <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             </control>
             <control type="image">
                 <include>FullscreenDimensions</include>
-                <texture background="true">$INFO[MusicPlayer.Property(Fanart_Image)]</texture>
+                <texture background="true">$INFO[Player.Art(fanart)]</texture>
                 <include>Animation_VisibleChangeDelayed</include>
                 <visible>Player.HasAudio + Skin.HasSetting(musicfanarthome)</visible>
                 <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
@@ -79,7 +78,6 @@
                 <font>Font_Reg20</font>
                 <label>31501</label>
                 <align>center</align>
-                <aligny>center</aligny>
             </control>
             <control type="label">
                 <posx>990</posx>
@@ -88,7 +86,6 @@
                 <height>60</height>
                 <font>Font_Reg20</font>
                 <align>center</align>
-                <textoffsetx>45</textoffsetx>
                 <textoffsety>10</textoffsety>
                 <textcolor>$VAR[TitleColorVar]</textcolor>
                 <label>31504</label>
@@ -162,7 +159,6 @@
                 <posy>312</posy>
                 <width>1172</width>
                 <height>540</height>
-                <itemgap>0</itemgap>
                 <aligny>center</aligny>
                 <onup>440</onup>
                 <ondown>450</ondown>
@@ -191,12 +187,6 @@
                     <onclick condition="Skin.HasSetting(artistslideshowhome)">Skin.Reset(artistslideshowhome)</onclick>
                     <onclick condition="Skin.HasSetting(musicfanarthome)">Skin.Reset(musicfanarthome)</onclick>
                 </control>
-                <!--                <control type="radiobutton" id="322">
-                    <include>Objects_NowPlayingSettingsButton</include>
-                    <label>42200</label>
-                    <onclick>Skin.ToggleSetting(FadeHomeBGMusic)</onclick>
-                    <selected>!Skin.HasSetting(FadeHomeBGMusic)</selected>
-                </control> -->
                 <control type="radiobutton" id="453">
                     <include>Objects_NowPlayingSettingsButton</include>
                     <label>31425</label>
@@ -237,17 +227,13 @@
                 <posy>312</posy>
                 <width>1172</width>
                 <height>540</height>
-                <itemgap>0</itemgap>
                 <aligny>center</aligny>
                 <scrolltime>0</scrolltime>
                 <onleft>450</onleft>
                 <onright>450</onright>
                 <onup>441</onup>
                 <orientation>vertical</orientation>
-                <animation effect="fade" time="200">Visible</animation>
-                <animation effect="fade" time="200">Hidden</animation>
-                <animation effect="fade" time="200">WindowOpen</animation>
-                <animation effect="fade" time="200">WindowClose</animation>
+                <include>Animation_WindowFade250</include>
                 <control type="radiobutton" id="202">
                     <include>Objects_NowPlayingSettingsButton</include>
                     <label>20176</label>

@@ -31,7 +31,7 @@
     <onload condition="!IsEmpty(Skin.String(SmartPlaylist11.Call))">$INFO[Skin.String(SmartPlaylist11.Call)]</onload>
     <onload condition="!IsEmpty(Skin.String(SmartPlaylist12.Call))">$INFO[Skin.String(SmartPlaylist12.Call)]</onload>
     <onload condition="System.HasAddon(script.xbmc.intro.movie)">RunScript(script.xbmc.intro.movie)</onload>
-    <onload>AlarmClock(GotToHome,SetFocus(9000),00:03,silent)</onload>
+    <onload>AlarmClock(GotToHome,SetFocus(9000),00:04,silent)</onload>
     <onload>ClearProperty(FocusOnSubmenu,home)</onload>
     <onunload>CancelAlarm(GotToHome,true)</onunload>
     <onunload>Skin.SetString(widgetlist,$INFO[Control.GetLabel(11111)])</onunload>
@@ -94,8 +94,7 @@
             <width>74</width>
             <height>74</height>
             <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
-            <texture>dialogs/busy.png</texture>
-            <animation effect="rotate" start="360" end="0" center="auto" time="2500" loop="true" condition="true">conditional</animation>
+            <texture>loader.gif</texture>
             <animation effect="fade" start="70" time="1500" condition="true" pulse="true">Conditional</animation>
         </control>
         <control type="image">
@@ -112,10 +111,8 @@
             <posy>900</posy>
             <width>1600</width>
             <height>50</height>
-            <aligny>center</aligny>
             <align>center</align>
             <font>Font_MainClassic4</font>
-            <textcolor>white2</textcolor>
             <label>42283</label>
             <textoffsetx>15</textoffsetx>
             <visible>![Stringcompare(Skin.String(startupcount),3) | Skin.HasTheme(White)]</visible>

@@ -122,7 +122,7 @@
     <include name="MusicMediaFlags">
         <control type="group">
             <visible>[Control.IsVisible(50) | Control.IsVisible(509) | Control.IsVisible(513) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(57)] + [Container.Content(Albums) | Container.Content(Songs)]</visible>
-            <include>dialogeffect</include>
+            <include>Animation_WindowFade200</include>
             <posy>8</posy>
             <!-- Rating -->
             <control type="image">
@@ -161,6 +161,7 @@
                     <height>88</height>
                     <font>Font_Reg21</font>
                     <textcolor>floor</textcolor>
+                    <aligny>bottom</aligny>
                     <colordiffuse>floor</colordiffuse>
                     <label>$INFO[ListItem.Genre]</label>
                 </control>
@@ -306,7 +307,6 @@
                     <width>135</width>
                     <height>38</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <font>Font_Bold24</font>
                     <textcolor>floor</textcolor>
                     <label>$INFO[ListItem.Top250]</label>
@@ -329,7 +329,6 @@
                         <width>135</width>
                         <height>38</height>
                         <align>center</align>
-                        <aligny>center</aligny>
                         <font>Font_Bold24</font>
                         <textcolor>floor</textcolor>
                         <label fallback="?">$INFO[ListItem.Rating]</label>
@@ -375,7 +374,6 @@
                 <width>450</width>
                 <height>38</height>
                 <align>right</align>
-                <aligny>center</aligny>
                 <font>Font_Bold24</font>
                 <textcolor>floor</textcolor>
                 <label>$INFO[ListItem.Label]$INFO[ListItem.Property(WatchedEpisodes), (,/]$INFO[ListItem.Property(TotalEpisodes),,)]</label>
