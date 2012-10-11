@@ -60,7 +60,6 @@
             <control type="image" id="199">
                 <width>0</width>
                 <height>0</height>
-                <texture>-</texture>
                 <visible>!Container.OnNext + !Container.OnPrevious + StringCompare(Control.GetLabel(4421),infopanelonauto)</visible>
                 <visible>Control.IsVisible(513) | Control.IsVisible(509) | Control.IsVisible(503) | Control.IsVisible(57)</visible>
                 <include>DelayAnimations</include>
@@ -153,7 +152,6 @@
                         <include condition="Skin.HasSetting(ClassicTopBar)">ClassicTopBarWidthLeftSide</include>
                         <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                         <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                        <itemgap>0</itemgap>
                         <orientation>horizontal</orientation>
                         <control type="image">
                             <width>54</width>

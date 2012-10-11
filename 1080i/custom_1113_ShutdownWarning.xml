@@ -2,11 +2,11 @@
 <window id="1113" type="dialog">
     <defaultcontrol>11</defaultcontrol>
     <zorder>4</zorder>
-	<coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
     <include>Animation_DialogPopup</include>
     <controls>
         <include>DialogBackFade</include>
@@ -17,6 +17,7 @@
                 <width>780</width>
                 <height>330</height>
                 <texture>dialogs/dialog_back_shadow.png</texture>
+                <include>PanelGlowFade</include>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             </control>
@@ -37,9 +38,7 @@
                 <height>78</height>
                 <textcolor>$VAR[FontColorVar]</textcolor>
                 <align>center</align>
-                <aligny>center</aligny>
                 <scroll>true</scroll>
-                <textoffsetx>45</textoffsetx>
             </control>
             <control type="label" id="4">
                 <posy>88</posy>
@@ -49,7 +48,6 @@
                 <align>center</align>
                 <label>31149</label>
                 <scroll>true</scroll>
-                <textoffsetx>45</textoffsetx>
             </control>
             <control type="button" id="10">
                 <posx>390</posx>
@@ -59,7 +57,6 @@
                 <label>106</label>
                 <textcolor>grey2</textcolor>
                 <focusedcolor>white3</focusedcolor>
-                <disabledcolor>80FFFFFF</disabledcolor>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <onclick>Dialog.Close(1113)</onclick>
                 <align>center</align>
@@ -79,7 +76,6 @@
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <textcolor>grey2</textcolor>
                 <focusedcolor>white3</focusedcolor>
-                <disabledcolor>80FFFFFF</disabledcolor>
                 <align>center</align>
                 <textoffsetx>30</textoffsetx>
                 <textoffsety />

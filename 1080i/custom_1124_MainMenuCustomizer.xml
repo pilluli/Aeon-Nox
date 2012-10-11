@@ -26,11 +26,11 @@
     <onunload>Skin.SetString(widget2list,$INFO[Control.GetLabel(11112)])</onunload>
     <onunload>Skin.SetString(backgroundlist,$INFO[Control.GetLabel(11113)])</onunload>
     <onunload>Skin.SetString(submenulist,$INFO[Control.GetLabel(11114)])</onunload>
-	<coordinates>
-		<system>1</system>
-		<posx>0</posx>
-		<posy>0</posy>
-	</coordinates>
+    <coordinates>
+        <system>1</system>
+        <posx>0</posx>
+        <posy>0</posy>
+    </coordinates>
     <controls>
         <include>MainMenuCommonContent</include>
         <control type="label" id="11111">
@@ -61,7 +61,6 @@
             <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
             <aspectratio align="center" aligny="top">keep</aspectratio>
             <include>Animation_VisibleChange400</include>
-            <randomize>true</randomize>
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),dailybabe)</visible>
@@ -202,17 +201,16 @@
                     <colordiffuse>$VAR[HomeMenuWidgetTextVar]</colordiffuse>
                     <aspectratio>keep</aspectratio>
                     <include>Animation_VisibleChangeDelayed</include>
-                    <include>dialogeffect</include>
+                    <include>Animation_WindowFade200</include>
                     <animation effect="slide" start="0,0" end="0,5" time="200" tween="quadratic" easing="out" condition="true">Conditional</animation>
                 </control>
                 <control type="label">
                     <height>36</height>
-                    <aligny>center</aligny>
                     <width min="15" max="1920">auto</width>
                     <font>Font_Info_Caps</font>
                     <textcolor>grey</textcolor>
                     <scroll>false</scroll>
-                    <include>dialogeffect</include>
+                    <include>Animation_WindowFade200</include>
                     <label>$LOCALIZE[31176]</label>
                     <include>Animation_VisibleChangeDelayed</include>
                 </control>
@@ -248,8 +246,8 @@
                     <texture>home/submenubar.png</texture>
                     <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
                 </control>
-                <include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList1124</include>
-                <include condition="!Skin.HasSetting(submenufixedlist)">SubMenuWrapList1124</include>
+                <include condition="Skin.HasSetting(submenufixedlist)">SubMenuFixedList</include>
+                <include condition="!Skin.HasSetting(submenufixedlist)">SubMenuWrapList</include>
             </control>
             <!-- Home Menu Bar -->
             <control type="image">
@@ -261,8 +259,8 @@
                 <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
             </control>
             <!-- Home Menu -->
-            <include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList1124</include>
-            <include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList1124</include>
+            <include condition="Skin.HasSetting(mainmenufixedlist)">MainMenuFixedList</include>
+            <include condition="!Skin.HasSetting(mainmenufixedlist)">MainMenuWrapList</include>
             <control type="group">
                 <animation effect="zoom" end="125,100" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(smallermainmenu)">Conditional</animation>
                 <include>Furniture_ClassicHomeGradient</include>

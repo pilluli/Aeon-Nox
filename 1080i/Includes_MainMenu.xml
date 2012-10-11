@@ -1251,7 +1251,6 @@
     <include name="MainMenuLabels">
         <height>225</height>
         <align>center</align>
-        <aligny>center</aligny>
         <label>$INFO[ListItem.Label]</label>
         <include>Animation_VisibleChange200</include>
         <posy>-5</posy>
@@ -1274,7 +1273,6 @@
         <ondown condition="IsEmpty(Window(home).Property(DisableWidgets)) + !IntegerGreaterThan(Container(9010).NumItems,0) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
         <onback condition="!Skin.HasSetting(DisableWidgetToggle) + IsEmpty(Window(home).Property(DisableWidgets))">SetProperty(DisableWidgets,1,home)</onback>
         <onback condition="!Skin.HasSetting(DisableWidgetToggle) + !IsEmpty(Window(home).Property(DisableWidgets))">ClearProperty(DisableWidgets,home)</onback>
-        <pagecontrol>-</pagecontrol>
         <scrolltime tween="quadratic" easing="out">300</scrolltime>
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
         <include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
@@ -1299,7 +1297,6 @@
                 <textcolor>white4</textcolor>
                 <height>225</height>
                 <align>center</align>
-                <aligny>center</aligny>
                 <label>$INFO[ListItem.Label]</label>
                 <font>Font_Reg17_Caps</font>
             </control>
@@ -1323,7 +1320,6 @@
                     <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
                     <height>225</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <label>[B]$INFO[ListItem.Label][/B]</label>
                     <font>Font_Reg17_Caps</font>
                 </control>
@@ -1345,7 +1341,6 @@
                     <textcolor>white4</textcolor>
                     <height>225</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <label>[B]$INFO[ListItem.Label][/B]</label>
                     <font>Font_Reg17_Caps</font>
                 </control>
@@ -1538,7 +1533,7 @@
         <posx>145</posx>
         <posy>-4</posy>
         <height>50</height>
-        <width>1125</width>
+        <width>1150</width>
         <onleft>9010</onleft>
         <onright>9010</onright>
         <viewtype>list</viewtype>
@@ -1558,7 +1553,6 @@
                 <height>50</height>
                 <width>224</width>
                 <align>center</align>
-                <aligny>center</aligny>
                 <font>Font_Info_Caps</font>
                 <label>$INFO[ListItem.Label]</label>
                 <textcolor>grey2</textcolor>
@@ -1570,7 +1564,6 @@
                 <height>50</height>
                 <width>224</width>
                 <align>center</align>
-                <aligny>center</aligny>
                 <font>Font_Reg19_Caps</font>
                 <scroll>true</scroll>
                 <label>$INFO[ListItem.Label]</label>
@@ -1581,7 +1574,6 @@
                 <height>50</height>
                 <width>224</width>
                 <align>center</align>
-                <aligny>center</aligny>
                 <font>Font_Reg19_Caps</font>
                 <scroll>true</scroll>
                 <label>$INFO[ListItem.Label]</label>
@@ -1623,42 +1615,26 @@
     </include>
     <include name="MainMenuFixedList">
         <control type="fixedlist" id="9000">
-            <include>MainMenuListContent</include>
-        </control>
-    </include>
-    <include name="MainMenuFixedList1124">
-        <control type="fixedlist" id="9000">
-            <include>MainMenuListContent1124</include>
+            <include condition="Window.IsActive(home)">MainMenuListContent</include>
+            <include condition="Window.IsActive(1124)">MainMenuListContent1124</include>
         </control>
     </include>
     <include name="MainMenuWrapList">
         <control type="wraplist" id="9000">
-            <include>MainMenuListContent</include>
-        </control>
-    </include>
-    <include name="MainMenuWrapList1124">
-        <control type="wraplist" id="9000">
-            <include>MainMenuListContent1124</include>
+            <include condition="Window.IsActive(home)">MainMenuListContent</include>
+            <include condition="Window.IsActive(1124)">MainMenuListContent1124</include>
         </control>
     </include>
     <include name="SubMenuFixedList">
         <control type="fixedlist" id="9010">
-            <include>SubMenuListContent</include>
-        </control>
-    </include>
-    <include name="SubMenuFixedList1124">
-        <control type="fixedlist" id="9010">
-            <include>SubMenuListContent1124</include>
+            <include condition="Window.IsActive(home)">SubMenuListContent</include>
+            <include condition="Window.IsActive(1124)">SubMenuListContent1124</include>
         </control>
     </include>
     <include name="SubMenuWrapList">
         <control type="wraplist" id="9010">
-            <include>SubMenuListContent</include>
-        </control>
-    </include>
-    <include name="SubMenuWrapList1124">
-        <control type="wraplist" id="9010">
-            <include>SubMenuListContent1124</include>
+            <include condition="Window.IsActive(home)">SubMenuListContent</include>
+            <include condition="Window.IsActive(1124)">SubMenuListContent1124</include>
         </control>
     </include>
     <include name="MainMenuListContent1124">
@@ -1672,7 +1648,6 @@
         <onup>ActivateWindow(1120)</onup>
         <ondown condition="IntegerGreaterThan(Container(9010).NumItems,0)">SetProperty(FocusOnSubmenu,true,home)</ondown>
         <ondown>9010</ondown>
-        <pagecontrol>-</pagecontrol>
         <scrolltime tween="quadratic" easing="out">300</scrolltime>
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
         <include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
@@ -1774,7 +1749,6 @@
                 <textcolor>white4</textcolor>
                 <height>225</height>
                 <align>center</align>
-                <aligny>center</aligny>
                 <label>[B]$INFO[ListItem.Label][/B]</label>
                 <font>Font_Reg17_Caps</font>
             </control>
@@ -1806,7 +1780,6 @@
                     <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
                     <height>225</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <label>[B]$INFO[ListItem.Label][/B]</label>
                     <font>Font_Reg17_Caps</font>
                 </control>
@@ -1828,7 +1801,6 @@
                     <textcolor>white4</textcolor>
                     <height>225</height>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <label>[B]$INFO[ListItem.Label][/B]</label>
                     <font>Font_Reg17_Caps</font>
                 </control>
@@ -2153,7 +2125,6 @@
                 <height>50</height>
                 <width>224</width>
                 <align>center</align>
-                <aligny>center</aligny>
                 <font>Font_Info_Caps</font>
                 <label>$INFO[ListItem.Label]</label>
                 <textcolor>grey</textcolor>
@@ -2173,7 +2144,6 @@
                 <height>50</height>
                 <width>224</width>
                 <align>center</align>
-                <aligny>center</aligny>
                 <font>Font_Reg19_Caps</font>
                 <scroll>true</scroll>
                 <label>$INFO[ListItem.Label]</label>
@@ -2185,7 +2155,6 @@
                 <height>50</height>
                 <width>224</width>
                 <align>center</align>
-                <aligny>center</aligny>
                 <font>Font_Reg19_Caps</font>
                 <label>$INFO[ListItem.Label]</label>
                 <textcolor>grey</textcolor>
@@ -4019,7 +3988,7 @@
     <include name="WorldWeatherIcons">
         <control type="group">
             <visible>StringCompare(Control.GetLabel(4322),googleweather2)</visible>
-            <include>VisibleFadeEffect</include>
+            <include>Animation_VisibleChange200</include>
             <include>Animation_WindowFade200</include>
             <include>WeatherWorldGroup2601</include>
             <include>WeatherWorldGroup2602</include>

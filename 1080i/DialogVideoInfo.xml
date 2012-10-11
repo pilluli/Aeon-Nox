@@ -44,7 +44,7 @@
                 <width>1192</width>
                 <height>1080</height>
                 <texture>info/info_rightpanelbottom.png</texture>
-                <visible>IsEmpty(listitem.property(fanart_image))</visible>
+                <visible>IsEmpty(ListItem.Art(fanart))</visible>
             </control>
             <control type="image">
                 <posx>729</posx>
@@ -52,7 +52,7 @@
                 <height>1080</height>
                 <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
-                <texture background="true">$INFO[listitem.property(fanart_image)]</texture>
+                <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
             </control>
             <control type="image">
                 <posx>729</posx>
@@ -139,7 +139,6 @@
                     <font>Font_Reg38_Caps</font>
                     <label>$INFO[ListItem.Title]</label>
                     <scroll>true</scroll>
-                    <textcolor>white2</textcolor>
                     <animation effect="slide" start="0,-38" end="0,-38" time="0" condition="[!IsEmpty(ListItem.Tagline) + Container.Content(movies)] | Container.Content(episodes) | Container.Content(musicvideos)">Conditional</animation>
                 </control>
                 <control type="label">
@@ -199,7 +198,6 @@
                     <align>center</align>
                     <width>164</width>
                     <height>85</height>
-                    <aligny>center</aligny>
                     <font>Font_OSDTitle2</font>
                     <label fallback="-">$INFO[ListItem.Year]</label>
                     <textcolor>grey</textcolor>
@@ -209,7 +207,6 @@
                     <posx>465</posx>
                     <posy>87</posy>
                     <width>555</width>
-                    <aligny>center</aligny>
                     <font>Font_Reg20_Caps</font>
                     <label fallback="312577">$INFO[ListItem.Genre]</label>
                     <scroll>true</scroll>
@@ -239,7 +236,6 @@
                         <posx>591</posx>
                         <posy>87</posy>
                         <width>500</width>
-                        <aligny>center</aligny>
                         <font>Font_Reg20</font>
                         <label fallback="-">$LOCALIZE[20416]:[CR]$INFO[ListItem.Premiered]</label>
                         <textcolor>grey</textcolor>
@@ -251,7 +247,6 @@
                         <align>center</align>
                         <width>164</width>
                         <height>85</height>
-                        <aligny>center</aligny>
                         <font>Font_Bold28</font>
                         <label fallback="-">$VAR[ListItemSeasonVar,S]$VAR[ListItemEpisodeVar,E]</label>
                         <textcolor>grey</textcolor>
@@ -266,7 +261,6 @@
                         <posx>4</posx>
                         <width>165</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <label>$LOCALIZE[20339]:</label>
@@ -276,10 +270,8 @@
                         <posx>180</posx>
                         <width>840</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
                         <label fallback="312577">$INFO[ListItem.Director]</label>
                     </control>
                 </control>
@@ -291,7 +283,6 @@
                         <posx>4</posx>
                         <width>165</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <label>$LOCALIZE[312576]:</label>
@@ -301,9 +292,7 @@
                         <posx>180</posx>
                         <width>840</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
-                        <textcolor>white2</textcolor>
                         <label fallback="312577">$INFO[ListItem.Premiered]</label>
                     </control>
                 </control>
@@ -316,7 +305,6 @@
                         <posx>4</posx>
                         <width>165</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <label>$LOCALIZE[20417]:</label>
@@ -326,10 +314,8 @@
                         <posx>180</posx>
                         <width>840</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <scroll>true</scroll>
-                        <textcolor>white2</textcolor>
                         <label fallback="312577">$INFO[ListItem.Writer]</label>
                     </control>
                 </control>
@@ -341,7 +327,6 @@
                         <posx>4</posx>
                         <width>165</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <label>$LOCALIZE[31188]:</label>
@@ -352,7 +337,6 @@
                         <posx>4</posx>
                         <width>165</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <label>$LOCALIZE[13279]:</label>
@@ -363,9 +347,7 @@
                         <posx>180</posx>
                         <width>840</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
-                        <textcolor>white2</textcolor>
                         <label fallback="31397">$VAR[ShowStatusVar]</label>
                         <visible>!Skin.HasSetting(NextAiredInfo)</visible>
                     </control>
@@ -374,9 +356,7 @@
                         <posx>180</posx>
                         <width>840</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
-                        <textcolor>white2</textcolor>
                         <label fallback="31397">$INFO[ListItem.Studio]</label>
                         <visible>Skin.HasSetting(NextAiredInfo)</visible>
                     </control>
@@ -390,7 +370,6 @@
                         <posx>4</posx>
                         <width>165</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <label>$LOCALIZE[2050]:</label>
@@ -400,9 +379,7 @@
                         <posx>180</posx>
                         <width>300</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
-                        <textcolor>white2</textcolor>
                         <label fallback="312577">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
                     </control>
                 </control>
@@ -414,7 +391,6 @@
                         <posx>4</posx>
                         <width>300</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <label>$LOCALIZE[31051]:</label>
@@ -425,7 +401,6 @@
                         <posx>4</posx>
                         <width>300</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <label>$LOCALIZE[31050]:</label>
@@ -436,9 +411,7 @@
                         <posx>180</posx>
                         <width>750</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
-                        <textcolor>white2</textcolor>
                         <label>$VAR[NextEpisodeVar]</label>
                         <visible>!IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
                     </control>
@@ -447,9 +420,7 @@
                         <posx>180</posx>
                         <width>750</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
-                        <textcolor>white2</textcolor>
                         <label>$VAR[LastEpisodeVar]</label>
                         <visible>IsEmpty(Window(Home).Property(NextAired.NextDate))</visible>
                     </control>
@@ -462,7 +433,6 @@
                         <posx>4</posx>
                         <width>165</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
                         <textcolor>grey</textcolor>
                         <label>$LOCALIZE[563]:</label>
@@ -472,9 +442,7 @@
                         <posx>180</posx>
                         <width>750</width>
                         <height>44</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg32</font>
-                        <textcolor>white2</textcolor>
                         <label fallback="-">$INFO[ListItem.RatingAndVotes]</label>
                     </control>
                 </control>
@@ -497,7 +465,6 @@
                             <width>165</width>
                             <height>44</height>
                             <align>right</align>
-                            <aligny>center</aligny>
                             <font>Font_Reg32</font>
                             <textcolor>grey</textcolor>
                             <label>$LOCALIZE[31095]:</label>
@@ -509,7 +476,6 @@
                             <width>165</width>
                             <height>44</height>
                             <align>right</align>
-                            <aligny>center</aligny>
                             <font>Font_Reg32</font>
                             <textcolor>grey</textcolor>
                             <label>$LOCALIZE[563]:</label>
@@ -520,9 +486,7 @@
                             <posx>585</posx>
                             <width>750</width>
                             <height>44</height>
-                            <aligny>center</aligny>
                             <font>Font_Reg32</font>
-                            <textcolor>white2</textcolor>
                             <label fallback="-">$INFO[ListItem.RatingAndVotes]$INFO[ListItem.Top250, / $LOCALIZE[13409] #]</label>
                         </control>
                     </control>
@@ -532,7 +496,6 @@
                     <posx>4</posx>
                     <width>165</width>
                     <height>44</height>
-                    <aligny>center</aligny>
                     <font>Font_Reg32</font>
                     <textcolor>grey</textcolor>
                     <label>$LOCALIZE[206]:</label>
@@ -686,7 +649,6 @@
                         <width>135</width>
                         <height>60</height>
                         <align>center</align>
-                        <aligny>center</aligny>
                         <font>Font_Bold24</font>
                         <textcolor>grey</textcolor>
                         <label>$INFO[ListItem.Property(TotalSeasons)]</label>
@@ -699,7 +661,6 @@
                             <width>135</width>
                             <height>30</height>
                             <align>center</align>
-                            <aligny>center</aligny>
                             <font>Font_Reg15</font>
                             <textcolor>grey</textcolor>
                             <label>[LOWERCASE]$VAR[OneOrMoreSeasonsVar][/LOWERCASE]</label>
@@ -718,7 +679,6 @@
                             <width>135</width>
                             <height>60</height>
                             <align>center</align>
-                            <aligny>center</aligny>
                             <font>Font_Bold24</font>
                             <textcolor>grey</textcolor>
                             <label>$INFO[ListItem.Property(TotalEpisodes)]</label>
@@ -729,7 +689,6 @@
                             <width>135</width>
                             <height>30</height>
                             <align>center</align>
-                            <aligny>center</aligny>
                             <font>Font_Reg15</font>
                             <textcolor>grey</textcolor>
                             <label>[LOWERCASE]$VAR[OneOrMoreEpisodesVar][/LOWERCASE]</label>
@@ -745,7 +704,6 @@
                             <width>135</width>
                             <height>60</height>
                             <align>center</align>
-                            <aligny>center</aligny>
                             <font>Font_Bold24</font>
                             <textcolor>grey</textcolor>
                             <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
@@ -756,7 +714,6 @@
                             <width>135</width>
                             <height>30</height>
                             <align>center</align>
-                            <aligny>center</aligny>
                             <font>Font_Reg15</font>
                             <textcolor>grey</textcolor>
                             <label>[LOWERCASE]$LOCALIZE[16101][/LOWERCASE]</label>
@@ -769,14 +726,10 @@
                 <posy>584</posy>
                 <width>50</width>
                 <height>88</height>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <subtype>page</subtype>
-                <font>-</font>
                 <onup>5000</onup>
                 <onleft>5000</onleft>
                 <onright>5000</onright>
                 <ondown>5000</ondown>
-                <align>left</align>
                 <visible>![ControlGroup(5000).HasFocus(10) | ControlGroup(5000).HasFocus(12) | ControlGroup(5000).HasFocus(21) | ControlGroup(5000).HasFocus(22) | ControlGroup(5000).HasFocus(24)]</visible>
             </control>
             <control type="panel" id="50">
@@ -799,8 +752,6 @@
                         <width>555</width>
                         <height>30</height>
                         <font>Font_Reg32</font>
-                        <aligny>center</aligny>
-                        <textcolor>white2</textcolor>
                         <textoffsetx>15</textoffsetx>
                         <info>ListItem.Label</info>
                     </control>
@@ -817,8 +768,6 @@
                         <width>555</width>
                         <height>30</height>
                         <font>Font_Reg32</font>
-                        <aligny>center</aligny>
-                        <textcolor>white2</textcolor>
                         <textoffsetx>15</textoffsetx>
                         <info>ListItem.Label</info>
                     </control>
@@ -834,7 +783,6 @@
                 <onup>50</onup>
                 <ondown>5055</ondown>
                 <orientation>horizontal</orientation>
-                <itemgap>0</itemgap>
                 <scrolltime tween="quadratic" easing="out">200</scrolltime>
                 <control type="button" id="8">
                     <label>$LOCALIZE[208]</label>
@@ -865,12 +813,7 @@
                     <visible>!Skin.HasSetting(kioskmode) + !substring(Container.FolderPath,plugin://)</visible>
                 </control>
                 <control type="button" id="10">
-                    <label>$LOCALIZE[13405]</label>
-                    <include>DialogVideoInfoButton</include>
-                    <visible>!Skin.HasSetting(kioskmode) + !substring(Container.FolderPath,plugin://)</visible>
-                </control>
-                <control type="button" id="12">
-                    <label>$LOCALIZE[20413]</label>
+                    <label>$LOCALIZE[13511]</label>
                     <include>DialogVideoInfoButton</include>
                     <visible>!Skin.HasSetting(kioskmode) + !substring(Container.FolderPath,plugin://)</visible>
                 </control>
@@ -911,10 +854,10 @@
                 <height>318</height>
                 <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
-                <texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+                <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
-                <visible>!IsEmpty(ListItem.Property(Fanart_Image)) + ControlGroup(5000).HasFocus(12) + !Control.HasFocus(5055)</visible>
+                <visible>!IsEmpty(ListItem.Art(fanart)) + ControlGroup(5000).HasFocus(12) + !Control.HasFocus(5055)</visible>
             </control>
             <control type="multiimage" id="5057">
                 <posx>1072</posx>
@@ -923,7 +866,6 @@
                 <height>304</height>
                 <fadetime>500</fadetime>
                 <timeperimage>4000</timeperimage>
-                <randomize>true</randomize>
                 <aspectratio align="center">scale</aspectratio>
                 <imagepath background="true">$VAR[ExtraFanartPreviewVar]</imagepath>
                 <visible>ControlGroup(5000).HasFocus(21) | ControlGroup(5000).HasFocus(24)</visible>
@@ -1054,7 +996,7 @@
                     <height>315</height>
                     <fadetime>500</fadetime>
                     <aspectratio align="top">keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.FileNameAndPath,,/banner.jpg]</texture>
+                    <texture background="true">$INFO[ListItem.Art(banner)]</texture>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                     <bordersize>7</bordersize>
                 </control>
@@ -1086,7 +1028,6 @@
                 <scroll>true</scroll>
                 <haspath>true</haspath>
                 <font>Font_Info</font>
-                <aligny>center</aligny>
                 <label>$INFO[ListItem.FileNameAndPath]</label>
                 <textcolor>grey</textcolor>
             </control>
@@ -1128,10 +1069,8 @@
                     <height>78</height>
                     <textcolor>$VAR[FontColorVar]</textcolor>
                     <align>center</align>
-                    <aligny>center</aligny>
                     <font>Font_Reg32</font>
                     <scroll>true</scroll>
-                    <textoffsetx>45</textoffsetx>
                     <label>$INFO[System.AddonTitle(script.artwork.downloader)]</label>
                 </control>
                 <control type="label" id="2">
@@ -1140,7 +1079,6 @@
                     <height>45</height>
                     <textcolor>white3</textcolor>
                     <font>Font_Reg32</font>
-                    <textoffsetx>45</textoffsetx>
                     <wrapmultiline>true</wrapmultiline>
                     <label>31646</label>
                 </control>
@@ -1153,7 +1091,6 @@
                     <label>106</label>
                     <textcolor>grey2</textcolor>
                     <focusedcolor>white3</focusedcolor>
-                    <disabledcolor>80FFFFFF</disabledcolor>
                     <align>center</align>
                     <textoffsetx>30</textoffsetx>
                     <textoffsety></textoffsety>
@@ -1176,7 +1113,6 @@
                     <label>107</label>
                     <textcolor>grey2</textcolor>
                     <focusedcolor>white3</focusedcolor>
-                    <disabledcolor>80FFFFFF</disabledcolor>
                     <align>center</align>
                     <textoffsetx>30</textoffsetx>
                     <textoffsety></textoffsety>
@@ -1209,7 +1145,6 @@
                 <height>304</height>
                 <fadetime>500</fadetime>
                 <timeperimage>4000</timeperimage>
-                <randomize>true</randomize>
                 <aspectratio align="center">scale</aspectratio>
                 <imagepath background="true">$VAR[ExtraFanartPreviewVar]</imagepath>
                 <animation effect="zoom" start="1072,606,540,304" end="0,0,1920,1080" time="800" tween="cubic" easing="out" reversible="true" condition="!IsEmpty(Window(movieinformation).Property(FanartZoom))">Conditional</animation>
@@ -1222,9 +1157,9 @@
                 <height>304</height>
                 <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
-                <texture background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+                <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
                 <animation effect="zoom" start="1072,606,540,304" end="0,0,1920,1080" time="800" tween="cubic" easing="out" reversible="true" condition="!IsEmpty(Window(movieinformation).Property(FanartZoom))">Conditional</animation>
-                <visible>!IsEmpty(ListItem.Property(Fanart_Image)) + ControlGroup(5000).HasFocus(12) + Control.HasFocus(5055)</visible>
+                <visible>!IsEmpty(ListItem.Art(fanart)) + ControlGroup(5000).HasFocus(12) + Control.HasFocus(5055)</visible>
             </control>
         </control>
     </controls>

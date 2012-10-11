@@ -16,7 +16,6 @@
                     <width>750</width>
                     <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                     <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
-                    <itemgap>0</itemgap>
                     <orientation>horizontal</orientation>
                     <control type="image">
                         <width>54</width>
@@ -62,7 +61,6 @@
                 <shadowcolor>black</shadowcolor>
                 <scroll>false</scroll>
                 <align>right</align>
-                <aligny>center</aligny>
                 <label>[COLOR=grey]Remaining Cities: [/COLOR]$INFO[Window.Property(totals)]</label>
             </control>
             <control type="label">
@@ -74,7 +72,6 @@
                 <shadowcolor>black</shadowcolor>
                 <scroll>false</scroll>
                 <align>right</align>
-                <aligny>center</aligny>
                 <label>[COLOR=grey]$LOCALIZE[2050] [/COLOR]$INFO[Window.Property(runningtime)]</label>
             </control>
         </control>
@@ -105,7 +102,6 @@
                     </animation>
                     <width>450</width>
                     <height>1080</height>
-                    <itemgap>0</itemgap>
                     <orientation>vertical</orientation>
                     <scroll>true</scroll>
                     <onleft>10</onleft>
@@ -120,7 +116,6 @@
                         <label>31006</label>
                         <textcolor>blue</textcolor>
                         <align>center</align>
-                        <aligny>center</aligny>
                     </control>
                     <control type="radiobutton" id="20">
                         <include>Objects_MediaMenuButtonAround</include>

@@ -151,7 +151,7 @@
                         <height>360</height>
                         <aspectratio>scale</aspectratio>
                         <fadetime>400</fadetime>
-                        <texture background="true">$INFO[ListItem.property(fanart_image)]</texture>
+                        <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                         <bordersize>7</bordersize>
                         <visible>!Container.Content(episodes)</visible>
@@ -176,7 +176,6 @@
                         <aspectratio>scale</aspectratio>
                         <imagepath background="true">$INFO[ListItem.Path]/extrathumbs/</imagepath>
                         <timeperimage>8000</timeperimage>
-                        <randomize>true</randomize>
                         <fadetime>1000</fadetime>
                         <visible>!Container.Content(episodes)</visible>
                     </control>
@@ -190,7 +189,6 @@
                         <width>1465</width>
                         <font>Font_Reg25_Caps</font>
                         <align>center</align>
-                        <aligny>center</aligny>
                         <textcolor>white3</textcolor>
                         <label>$INFO[ListItem.Tagline]</label>
                     </control>
@@ -200,7 +198,6 @@
                         <height>105</height>
                         <width>818</width>
                         <font>Font_OSDTitle2_Caps</font>
-                        <aligny>center</aligny>
                         <textcolor>white3</textcolor>
                         <label>$INFO[ListItem.Title]</label>
                     </control>
@@ -209,7 +206,6 @@
                         <posy>600</posy>
                         <height>38</height>
                         <width>398</width>
-                        <aligny>center</aligny>
                         <textcolor>grey2</textcolor>
                         <scroll>true</scroll>
                         <label>$VAR[FanartPanelDetail1Var]</label>
@@ -231,7 +227,6 @@
                         <height>38</height>
                         <width>398</width>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                         <textcolor>grey2</textcolor>
                         <label>$VAR[FanartPanelDetail2Var]</label>
                     </control>
@@ -252,7 +247,6 @@
                         <height>38</height>
                         <width>398</width>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                         <textcolor>grey2</textcolor>
                         <label>$VAR[FanartPanelDetail4Var]</label>
                     </control>
@@ -283,7 +277,6 @@
                         <posy>825</posy>
                         <height>38</height>
                         <width>398</width>
-                        <aligny>center</aligny>
                         <scroll>true</scroll>
                         <textcolor>grey2</textcolor>
                         <label>$VAR[FanartPanelDetail5Var]</label>
@@ -304,7 +297,6 @@
                         <height>38</height>
                         <width>398</width>
                         <scroll>true</scroll>
-                        <aligny>center</aligny>
                         <textcolor>grey2</textcolor>
                         <label>$VAR[FanartPanelDetail6Var]</label>
                     </control>
@@ -603,7 +595,6 @@
                         <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
                         <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                         <bordersize>19.5</bordersize>
-                        <fadetime>400</fadetime>
                     </control>
                     <control type="image">
                         <posy>472</posy>
@@ -645,7 +636,6 @@
                         <height>720</height>
                         <aspectratio scalediffuse="false">stretch</aspectratio>
                         <texture>thumbs/boxes/case_overlay.png</texture>
-                        <fadetime>400</fadetime>
                     </control>
                 </control>
                 <control type="group">
@@ -682,7 +672,7 @@
                             <posy>-135</posy>
                             <width>420</width>
                             <height>90</height>
-                            <aspectratio scalediffuse="false">scale</aspectratio>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
                             <fadetime>400</fadetime>
                             <visible>Skin.HasSetting(lowlistbanner)</visible>
                             <texture diffuse="thumbs/banner_mask.png" background="true" fallback="empty.png">$INFO[ListItem.Path,,../banner.jpg]</texture>
@@ -691,7 +681,6 @@
                             <posy>-135</posy>
                             <width>420</width>
                             <height>90</height>
-                            <fadetime>400</fadetime>
                             <texture diffuse="thumbs/banner_mask.png">featured/panel_featured_overlay.png</texture>
                             <visible>Skin.HasSetting(lowlistbanner)</visible>
                             <visible>!StringCompare(Control.GetLabel(2244),empty.png)</visible>
@@ -741,7 +730,6 @@
                         <posx>30</posx>
                         <width>645</width>
                         <height>66</height>
-                        <aligny>center</aligny>
                         <textcolor>grey2</textcolor>
                         <font>Font_Bold16_Caps</font>
                         <label>$INFO[ListItem.Label]</label>
@@ -751,7 +739,6 @@
                         <width>80</width>
                         <height>66</height>
                         <align>center</align>
-                        <aligny>center</aligny>
                         <textcolor>$VAR[SubTitleColorVar]</textcolor>
                         <font>Font_Bold16</font>
                         <label>$INFO[ListItem.Rating]</label>
@@ -784,8 +771,6 @@
                         <posx>30</posx>
                         <width>645</width>
                         <height>33</height>
-                        <aligny>center</aligny>
-                        <textcolor>white2</textcolor>
                         <font>Font_Bold16_Caps</font>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
@@ -794,8 +779,6 @@
                         <posy>30</posy>
                         <width>645</width>
                         <height>33</height>
-                        <aligny>center</aligny>
-                        <textcolor>white2</textcolor>
                         <font>Font_Info</font>
                         <label>$VAR[LowListSubTitleVar]</label>
                     </control>
@@ -804,8 +787,6 @@
                         <width>80</width>
                         <height>33</height>
                         <align>center</align>
-                        <aligny>center</aligny>
-                        <textcolor>white2</textcolor>
                         <font>Font_Bold16</font>
                         <label>$INFO[ListItem.Year]</label>
                     </control>
@@ -815,8 +796,6 @@
                         <width>80</width>
                         <height>33</height>
                         <align>center</align>
-                        <aligny>center</aligny>
-                        <textcolor>white2</textcolor>
                         <font>Font_Info</font>
                         <label>$INFO[ListItem.Rating]</label>
                     </control>
@@ -843,7 +822,6 @@
                             <posy>8</posy>
                             <width>816</width>
                             <height>146</height>
-                            <aligny>center</aligny>
                             <align>center</align>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font_Bold24</font>
@@ -890,7 +868,6 @@
                             <posy>8</posy>
                             <width>816</width>
                             <height>146</height>
-                            <aligny>center</aligny>
                             <align>center</align>
                             <label>$INFO[ListItem.Label]</label>
                             <font>Font_Bold24</font>

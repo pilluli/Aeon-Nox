@@ -37,7 +37,7 @@
                 <width>1850</width>
                 <height>1010</height>
                 <texture background="true">settings/settings_intframe_bottom.png</texture>
-                <include>Animation_SettingsInternalPanel</include>
+                <include>Animation_WindowFade250</include>
                 <visible>![Skin.HasSetting(panelinfo) + Container.Content(movies)]</visible>
             </control>
             <control type="group">
@@ -77,7 +77,6 @@
                     <posy>85</posy>
                     <width>1260</width>
                     <height>1</height>
-                    <fadetime>200</fadetime>
                     <texture>common/white.png</texture>
                     <colordiffuse>88000000</colordiffuse>
                 </control>
@@ -86,7 +85,6 @@
                     <posy>86</posy>
                     <width>1260</width>
                     <height>1</height>
-                    <fadetime>200</fadetime>
                     <texture>common/white.png</texture>
                     <colordiffuse>22ffffff</colordiffuse>
                 </control>
@@ -95,7 +93,6 @@
                     <posy>683</posy>
                     <width>1260</width>
                     <height>1</height>
-                    <fadetime>200</fadetime>
                     <texture>common/white.png</texture>
                     <colordiffuse>88000000</colordiffuse>
                 </control>
@@ -104,7 +101,6 @@
                     <posy>684</posy>
                     <width>1260</width>
                     <height>1</height>
-                    <fadetime>200</fadetime>
                     <texture>common/white.png</texture>
                     <colordiffuse>22ffffff</colordiffuse>
                 </control>
@@ -118,8 +114,6 @@
                         <width>800</width>
                         <font>Font_ShowcaseMainLabel2_Caps</font>
                         <label>$INFO[ListItem.Label]</label>
-                        <align>left</align>
-                        <aligny>center</aligny>
                         <scroll>true</scroll>
                     </control>
                     <control type="grouplist">
@@ -339,7 +333,6 @@
                 <posy>87</posy>
                 <width>570</width>
                 <height>888</height>
-                <itemgap>0</itemgap>
                 <onleft>9000</onleft>
                 <onright>60</onright>
                 <onup>550</onup>
@@ -353,8 +346,6 @@
                         <width>389</width>
                         <height>74</height>
                         <font>Font_Reg24</font>
-                        <textcolor>white2</textcolor>
-                        <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                         <animation effect="fade" start="50" end="50" time="50" delay="0" condition="StringCompare(ListItem.Overlay,OverlayWatched.png)">Conditional</animation>
                     </control>
@@ -373,7 +364,6 @@
                         <width>389</width>
                         <height>74</height>
                         <font>Font_Reg24</font>
-                        <aligny>center</aligny>
                         <label>$INFO[ListItem.Label]</label>
                     </control>
                 </focusedlayout>
@@ -419,13 +409,6 @@
                 <posy>87</posy>
                 <width>40</width>
                 <height>888</height>
-                <texturesliderbackground>-</texturesliderbackground>
-                <texturesliderbar>-</texturesliderbar>
-                <texturesliderbarfocus>-</texturesliderbarfocus>
-                <textureslidernib>views/scrollbarnub-nofocus.png</textureslidernib>
-                <textureslidernibfocus>views/scrollbarnub-focus.png</textureslidernibfocus>
-                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                <orientation>vertical</orientation>
                 <onleft>550</onleft>
                 <onright>9000</onright>
             </control>
@@ -435,7 +418,7 @@
                 <width>1850</width>
                 <height>1010</height>
                 <texture border="50">settings/settings_intframe_top.png</texture>
-                <include>Animation_SettingsInternalPanel</include>
+                <include>Animation_WindowFade250</include>
                 <animation effect="fade" start="100" end="0" time="50" delay="0" condition="Player.HasVideo">Conditional</animation>
                 <visible>![Skin.HasSetting(panelinfo) + Container.Content(movies)]</visible>
             </control>

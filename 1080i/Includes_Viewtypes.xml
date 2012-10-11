@@ -16,6 +16,7 @@
                     <posy>-4</posy>
                     <height>20</height>
                     <width>420</width>
+                    <aligny>top</aligny>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[FanartPanelDetail1Var]</label>
                 </control>
@@ -23,7 +24,7 @@
                     <posy>30</posy>
                     <height>20</height>
                     <width>300</width>
-                    <textcolor>white2</textcolor>
+                    <aligny>top</aligny>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[FanartPanelValue1Var]</label>
                 </control>
@@ -31,6 +32,7 @@
                     <posx>352</posx>
                     <posy>-4</posy>
                     <height>20</height>
+                    <aligny>top</aligny>
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[FanartPanelDetail2Var]</label>
@@ -40,7 +42,7 @@
                     <posy>30</posy>
                     <height>20</height>
                     <width>300</width>
-                    <textcolor>white2</textcolor>
+                    <aligny>top</aligny>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[FanartPanelValue2Var]</label>
                 </control>
@@ -50,14 +52,15 @@
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[FanartPanelDetail3Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>101</posy>
                     <height>20</height>
                     <width>300</width>
-                    <textcolor>white2</textcolor>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[FanartPanelValue3Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posx>352</posx>
@@ -66,28 +69,29 @@
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[FanartPanelDetail4Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="fadelabel">
                     <posx>352</posx>
                     <posy>101</posy>
                     <height>20</height>
                     <width>300</width>
-                    <textcolor>white2</textcolor>
                     <scrollspeed>200</scrollspeed>
                     <pauseatend>3000</pauseatend>
                     <label>$INFO[ListItem.RatingAndVotes]</label>
                     <label>$LOCALIZE[13409] #$INFO[ListItem.Top250]</label>
                     <visible>!IsEmpty(ListItem.Top250)</visible>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posx>352</posx>
                     <posy>101</posy>
                     <height>20</height>
                     <width>300</width>
-                    <textcolor>white2</textcolor>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[FanartPanelValue4Var]</label>
                     <visible>IsEmpty(ListItem.Top250)</visible>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>138</posy>
@@ -95,14 +99,15 @@
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[FanartPanelDetail5Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>174</posy>
                     <height>20</height>
                     <width>300</width>
-                    <textcolor>white2</textcolor>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[FanartPanelValue5Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posx>352</posx>
@@ -111,15 +116,16 @@
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[FanartPanelDetail6Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posx>352</posx>
                     <posy>174</posy>
                     <height>20</height>
                     <width>300</width>
-                    <textcolor>white2</textcolor>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[FanartPanelValue6Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="textbox">
                     <posy>226</posy>
@@ -128,6 +134,7 @@
                     <label>$VAR[FanartPanelPlotVar]</label>
                     <textcolor>white6</textcolor>
                     <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <aligny>top</aligny>
                 </control>
             </control>
         </control>
@@ -222,7 +229,7 @@
                     <height>220</height>
                     <aspectratio aligny="top">scale</aspectratio>
                     <fadetime>400</fadetime>
-                    <texture fallback="fallback.png" background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+                    <texture fallback="fallback.png" background="true">$INFO[ListItem.Art(fanart)]</texture>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                     <bordersize>7</bordersize>
                 </control>
@@ -277,7 +284,6 @@
                 <posy>50.5</posy>
                 <width>348</width>
                 <height>495</height>
-                <fadetime>200</fadetime>
                 <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
                 <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                 <bordersize>19.5</bordersize>
@@ -292,6 +298,7 @@
                     <height>20</height>
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
+                    <aligny>top</aligny>
                     <label>$VAR[FanartPanelDetail1Var]</label>
                 </control>
                 <control type="label">
@@ -300,6 +307,7 @@
                     <width>420</width>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[FanartPanelValue1Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>64</posy>
@@ -307,6 +315,7 @@
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[FanartPanelDetail2Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>98</posy>
@@ -314,6 +323,7 @@
                     <width>420</width>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[FanartPanelValue2Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>132</posy>
@@ -321,6 +331,7 @@
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[PosterPanelDetail3Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>166</posy>
@@ -328,6 +339,7 @@
                     <width>420</width>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[PosterPanelValue3Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>198</posy>
@@ -335,6 +347,7 @@
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[FanartPanelDetail4Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="fadelabel">
                     <posy>228</posy>
@@ -342,6 +355,7 @@
                     <width>422</width>
                     <pauseatend>3000</pauseatend>
                     <label fallback="312577">$VAR[PosterPanelValue4Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>264</posy>
@@ -349,6 +363,7 @@
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[PosterPanelDetail5Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>298</posy>
@@ -356,6 +371,7 @@
                     <width>300</width>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[PosterPanelValue5Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>330</posy>
@@ -363,6 +379,7 @@
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[PosterPanelDetail6Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>364</posy>
@@ -370,6 +387,7 @@
                     <width>420</width>
                     <scroll>true</scroll>
                     <label fallback="312577">$VAR[PosterPanelValue6Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>400</posy>
@@ -377,6 +395,7 @@
                     <width>420</width>
                     <textcolor>$VAR[SubTitleColorVar]</textcolor>
                     <label>$VAR[PosterPanelDetail7Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="label">
                     <posy>434</posy>
@@ -384,6 +403,7 @@
                     <width>420</width>
                     <scroll>true</scroll>
                     <label fallback="31452">$VAR[PosterPanelValue7Var]</label>
+                    <aligny>top</aligny>
                 </control>
                 <control type="textbox">
                     <posx>480</posx>
@@ -561,7 +581,6 @@
             <posy>1050</posy>
             <width>900</width>
             <align>center</align>
-            <aligny>center</aligny>
             <font>Font_Info_Caps</font>
             <textcolor>floor</textcolor>
             <shadowcolor>floorshadow</shadowcolor>
@@ -576,7 +595,6 @@
             <posy>1016</posy>
             <width>900</width>
             <align>center</align>
-            <aligny>center</aligny>
             <font>Font_ShowcaseMainLabel2_Caps</font>
             <scroll>true</scroll>
             <scrollspeed>30</scrollspeed>
@@ -588,7 +606,7 @@
     <include name="FloorLabels">
         <control type="group">
             <visible>[Control.IsVisible(503) + Skin.HasSetting(landscapeonelogo) + !Container.Content(episodes)] | Control.IsVisible(509) | [Control.IsVisible(500) + !StringCompare(Container.FolderName,youtube)] | Control.IsVisible(508) | Control.IsVisible(513) | Control.IsVisible(504) | Control.IsVisible(501)</visible>
-            <include>dialogeffect</include>
+            <include>Animation_WindowFade200</include>
             <control type="group">
                 <animation effect="fade" start="0" end="100" time="100" delay="100" reversible="false">Visible</animation>
                 <animation effect="fade" start="100" end="0" time="0" delay="0" reversible="false">Hidden</animation>
@@ -610,20 +628,22 @@
             <animation effect="slide" time="200" start="0" end="-770" tween="cubic" easing="out" condition="Control.IsVisible(512)">Conditional</animation>
         </control>
         <control type="image" id="4050">
-            <texture>-</texture>
             <visible>Container.Scrolling</visible>
             <animation effect="fade" start="0" end="100" time="0" delay="3000">Visible</animation>
             <animation effect="fade" time="1000">Hidden</animation>
         </control>
         <control type="scrollbar" id="61">
             <posx>458</posx>
-            <posy>1065</posy>
+            <posy>1050</posy>
             <visible>Control.IsVisible(509) | Control.IsVisible(500) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(513) | Control.IsVisible(504) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
-            <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-            <!--             <showonepage>true</showonepage>
- -->
             <animation effect="fade" start="100" end="0" time="500" condition="![Control.HasFocus(61) | Control.IsVisible(4050)]">Conditional</animation>
             <onup>50</onup>
+            <textureslidernib>-</textureslidernib>
+            <textureslidernibfocus>-</textureslidernibfocus>
+            <orientation>horizontal</orientation>
+            <texturesliderbackground>-</texturesliderbackground>
+            <texturesliderbar border="6,0,6,0">views/texturesliderbar_hor.png</texturesliderbar>
+            <texturesliderbarfocus border="6,0,6,0">views/texturesliderbarfocus_hor.png</texturesliderbarfocus>
             <ondown condition="!Control.IsVisible(500)">109</ondown>
             <ondown condition="Control.IsVisible(500)">50</ondown>
         </control>
@@ -684,7 +704,6 @@
                 <height>74</height>
                 <font>Font_Reg12</font>
                 <textcolor>grey2</textcolor>
-                <aligny>center</aligny>
                 <align>center</align>
                 <label>42288</label>
                 <fontcolor>white</fontcolor>

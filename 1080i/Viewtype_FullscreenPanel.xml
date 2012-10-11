@@ -114,9 +114,7 @@
                                 <posy>30</posy>
                                 <width>1550</width>
                                 <height>50</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg38_Caps</font>
-                                <textcolor>white2</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                                 <textoffsetx>15</textoffsetx>
                             </control>
@@ -125,7 +123,6 @@
                                 <posy>84</posy>
                                 <width>1495</width>
                                 <height>30</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg19</font>
                                 <textcolor>grey2</textcolor>
                                 <label>$VAR[InfoWallSubTitleVar]</label>
@@ -181,9 +178,7 @@
                                 <posy>30</posy>
                                 <width>1550</width>
                                 <height>50</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg38_Caps</font>
-                                <textcolor>white2</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                                 <textoffsetx>15</textoffsetx>
                             </control>
@@ -192,7 +187,6 @@
                                 <posy>84</posy>
                                 <width>1495</width>
                                 <height>30</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg19</font>
                                 <textcolor>grey2</textcolor>
                                 <label>$VAR[InfoWallSubTitleVar]</label>
@@ -224,7 +218,6 @@
                             <width>700</width>
                             <height>500</height>
                             <aspectratio aligny="top">keep</aspectratio>
-                            <fadetime>400</fadetime>
                             <animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
                             <animation effect="slide" start="0" end="-60" time="0" condition="!Skin.HasSetting(fspanelcdart)">Conditional</animation>
                             <texture background="true">$INFO[ListItem.Path,,/logo.png]</texture>
@@ -236,7 +229,6 @@
                                 <posy>25</posy>
                                 <width>300</width>
                                 <height>300</height>
-                                <fadetime>300</fadetime>
                                 <aspectratio align="right">keep</aspectratio>
                                 <!--                    <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
  -->
@@ -249,7 +241,6 @@
                                 <posy>25</posy>
                                 <width>300</width>
                                 <height>300</height>
-                                <fadetime>300</fadetime>
                                 <aspectratio align="right">keep</aspectratio>
                                 <!--                    <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
  -->
@@ -262,7 +253,6 @@
                                 <posy>25</posy>
                                 <width>300</width>
                                 <height>300</height>
-                                <fadetime>300</fadetime>
                                 <aspectratio align="right">keep</aspectratio>
                                 <!--                         <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
  -->
@@ -276,7 +266,6 @@
                             <posy>22</posy>
                             <width>223</width>
                             <height>335</height>
-                            <fadetime>IconCrossfadeTime</fadetime>
                             <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
                             <aspectratio scalediffuse="false">scale</aspectratio>
                         </control>
@@ -298,9 +287,7 @@
                                 <posy>30</posy>
                                 <width>1500</width>
                                 <height>50</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg38_Caps</font>
-                                <textcolor>white2</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                                 <textoffsetx>15</textoffsetx>
                             </control>
@@ -318,7 +305,6 @@
                                 <posy>84</posy>
                                 <width>1500</width>
                                 <height>30</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg20</font>
                                 <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -344,9 +330,7 @@
                                 <posy>30</posy>
                                 <width>1650</width>
                                 <height>50</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg38_Caps</font>
-                                <textcolor>white2</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                                 <textoffsetx>15</textoffsetx>
                             </control>
@@ -364,7 +348,6 @@
                                 <posy>84</posy>
                                 <width>1500</width>
                                 <height>30</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg19</font>
                                 <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -398,7 +381,6 @@
                             <width>700</width>
                             <height>500</height>
                             <aspectratio aligny="top">keep</aspectratio>
-                            <fadetime>400</fadetime>
                             <animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
                             <animation effect="slide" start="0" end="-60" time="0" condition="!Skin.HasSetting(fspanelcdart)">Conditional</animation>
                             <texture background="true">$INFO[ListItem.Path,,/logo.png]</texture>
@@ -410,7 +392,6 @@
                                 <posy>25</posy>
                                 <width>300</width>
                                 <height>300</height>
-                                <fadetime>300</fadetime>
                                 <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
                                 <aspectratio align="right">keep</aspectratio>
                                 <!--                    <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
@@ -424,7 +405,6 @@
                                 <posy>25</posy>
                                 <width>300</width>
                                 <height>300</height>
-                                <fadetime>300</fadetime>
                                 <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
                                 <aspectratio align="right">keep</aspectratio>
                                 <!--                    <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
@@ -438,7 +418,6 @@
                                 <posy>25</posy>
                                 <width>300</width>
                                 <height>300</height>
-                                <fadetime>300</fadetime>
                                 <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
                                 <aspectratio align="right">keep</aspectratio>
                                 <!--                         <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
@@ -455,7 +434,6 @@
                                 <posy>22</posy>
                                 <width>223</width>
                                 <height>335</height>
-                                <fadetime>IconCrossfadeTime</fadetime>
                                 <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
                                 <aspectratio scalediffuse="false">scale</aspectratio>
                             </control>
@@ -478,9 +456,7 @@
                                 <posy>30</posy>
                                 <width>1500</width>
                                 <height>50</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg38_Caps</font>
-                                <textcolor>white2</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                                 <textoffsetx>15</textoffsetx>
                             </control>
@@ -498,7 +474,6 @@
                                 <posy>84</posy>
                                 <width>1500</width>
                                 <height>30</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg19</font>
                                 <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -524,9 +499,7 @@
                                 <posy>30</posy>
                                 <width>1650</width>
                                 <height>50</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg38_Caps</font>
-                                <textcolor>white2</textcolor>
                                 <label>$INFO[ListItem.Label]</label>
                                 <textoffsetx>15</textoffsetx>
                             </control>
@@ -544,7 +517,6 @@
                                 <posy>84</posy>
                                 <width>1500</width>
                                 <height>30</height>
-                                <aligny>center</aligny>
                                 <font>Font_Reg19</font>
                                 <textcolor>grey2</textcolor>
                                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -580,7 +552,7 @@
                             <width>374</width>
                             <height>210</height>
                             <bordersize>5</bordersize>
-                            <texture background="true" border="5">$INFO[ListItem.Property(Fanart_Image)]</texture>
+                            <texture background="true" border="5">$INFO[ListItem.Art(fanart)]</texture>
                             <aspectratio>scale</aspectratio>
                             <visible>Container.Content(tvshows)</visible>
                         </control>
@@ -626,7 +598,6 @@
                             <height>45</height>
                             <width>1240</width>
                             <label>$INFO[ListItem.Label]</label>
-                            <aligny>center</aligny>
                             <font>Font_Bold24</font>
                             <textcolor>grey2</textcolor>
                             <textoffsetx>10</textoffsetx>
@@ -637,7 +608,6 @@
                             <height>30</height>
                             <width>1240</width>
                             <label>$INFO[ListItem.Label2,• ]</label>
-                            <aligny>center</aligny>
                             <font>Font_Reg20</font>
                             <textcolor>grey2</textcolor>
                             <visible>Container.Content(tvshows)</visible>
@@ -658,7 +628,6 @@
                             <width>1470</width>
                             <height>116</height>
                             <textcolor>grey2</textcolor>
-                            <pagecontrol>-</pagecontrol>
                             <label>$INFO[ListItem.Plot]</label>
                         </control>
                         <control type="image">
@@ -668,7 +637,6 @@
                             <animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
                             <height>210</height>
                             <aspectratio align="center">keep</aspectratio>
-                            <fadetime>400</fadetime>
                             <texture background="true">$INFO[ListItem.Path,,character.png]</texture>
                         </control>
                     </itemlayout>
@@ -696,7 +664,7 @@
                             <width>374</width>
                             <height>210</height>
                             <bordersize>5</bordersize>
-                            <texture background="true" border="5">$INFO[ListItem.Property(Fanart_Image)]</texture>
+                            <texture background="true" border="5">$INFO[ListItem.Art(fanart)]</texture>
                             <aspectratio>scale</aspectratio>
                             <visible>Container.Content(tvshows)</visible>
                         </control>
@@ -733,9 +701,7 @@
                             <height>45</height>
                             <width>1240</width>
                             <label>$INFO[ListItem.Label]</label>
-                            <aligny>center</aligny>
                             <font>Font_Bold24</font>
-                            <textcolor>white2</textcolor>
                             <textoffsetx>10</textoffsetx>
                         </control>
                         <control type="label">
@@ -744,9 +710,7 @@
                             <height>30</height>
                             <width>1240</width>
                             <label>$INFO[ListItem.Label2,• ]</label>
-                            <aligny>center</aligny>
                             <font>Font_Reg20</font>
-                            <textcolor>white2</textcolor>
                             <visible>Container.Content(tvshows)</visible>
                             <textoffsetx>10</textoffsetx>
                         </control>
@@ -764,7 +728,6 @@
                             <posy>90</posy>
                             <width>1470</width>
                             <height>116</height>
-                            <pagecontrol>-</pagecontrol>
                             <label>$INFO[ListItem.Plot]</label>
                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                         </control>
@@ -775,7 +738,6 @@
                             <height>210</height>
                             <animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
                             <aspectratio align="center">keep</aspectratio>
-                            <fadetime>400</fadetime>
                             <texture background="true">$INFO[ListItem.Path,,character.png]</texture>
                         </control>
                     </focusedlayout>
@@ -837,7 +799,6 @@
             <width>550</width>
             <height>500</height>
             <aspectratio aligny="top">keep</aspectratio>
-            <fadetime>400</fadetime>
             <animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
             <animation effect="slide" start="0" end="-60" time="0" condition="!Skin.HasSetting(fspanelcdart)">Conditional</animation>
             <texture background="true">$INFO[ListItem.Path,,/logo.png]</texture>
@@ -849,11 +810,8 @@
                 <posy>25</posy>
                 <width>300</width>
                 <height>300</height>
-                <fadetime>300</fadetime>
                 <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
                 <aspectratio align="right">keep</aspectratio>
-                <!--                    <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
- -->
                 <texture background="true">common/cdart/default.png</texture>
                 <visible>Container.Content(movies)</visible>
                 <bordersize>7</bordersize>
@@ -863,11 +821,8 @@
                 <posy>25</posy>
                 <width>300</width>
                 <height>300</height>
-                <fadetime>300</fadetime>
                 <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
                 <aspectratio align="right">keep</aspectratio>
-                <!--                    <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
- -->
                 <texture background="true">common/cdart/bd.png</texture>
                 <visible>Container.Content(movies) + IntegerGreaterThan(ListItem.VideoResolution,719)</visible>
                 <bordersize>7</bordersize>
@@ -877,7 +832,6 @@
                 <posy>25</posy>
                 <width>300</width>
                 <height>300</height>
-                <fadetime>300</fadetime>
                 <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="true" reversible="false" tween="cubic" easing="inout">Focus</animation>
                 <aspectratio align="right">keep</aspectratio>
                 <!--                         <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
@@ -894,7 +848,6 @@
                 <posy>22</posy>
                 <width>223</width>
                 <height>335</height>
-                <fadetime>IconCrossfadeTime</fadetime>
                 <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
                 <aspectratio scalediffuse="false">scale</aspectratio>
             </control>
@@ -918,9 +871,7 @@
                 <width>600</width>
                 <height>50</height>
                 <align>center</align>
-                <aligny>center</aligny>
                 <font>Font_Reg24</font>
-                <textcolor>white2</textcolor>
                 <label>$INFO[ListItem.Label]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
@@ -930,7 +881,6 @@
                 <width>600</width>
                 <height>30</height>
                 <align>right</align>
-                <aligny>center</aligny>
                 <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <label>$INFO[ListItem.Year,, • ]</label>
@@ -949,8 +899,6 @@
                 <posy>74</posy>
                 <width>600</width>
                 <height>30</height>
-                <align>left</align>
-                <aligny>center</aligny>
                 <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <label>$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -976,9 +924,7 @@
                 <posy>30</posy>
                 <width>660</width>
                 <height>50</height>
-                <aligny>center</aligny>
                 <font>Font_Reg38_Caps</font>
-                <textcolor>white2</textcolor>
                 <label>$INFO[ListItem.Label]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
@@ -996,7 +942,6 @@
                 <posy>84</posy>
                 <width>570</width>
                 <height>30</height>
-                <aligny>center</aligny>
                 <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -1022,7 +967,6 @@
             <width>550</width>
             <height>500</height>
             <aspectratio aligny="top">keep</aspectratio>
-            <fadetime>400</fadetime>
             <animation effect="fade" end="15" time="0" condition="true">Conditional</animation>
             <animation effect="slide" start="0" end="-60" time="0" condition="!Skin.HasSetting(fspanelcdart)">Conditional</animation>
             <texture background="true">$INFO[ListItem.Path,,/logo.png]</texture>
@@ -1034,10 +978,7 @@
                 <posy>25</posy>
                 <width>300</width>
                 <height>300</height>
-                <fadetime>300</fadetime>
                 <aspectratio align="right">keep</aspectratio>
-                <!--                    <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
- -->
                 <texture background="true">common/cdart/default.png</texture>
                 <visible>Container.Content(movies)</visible>
                 <bordersize>7</bordersize>
@@ -1047,10 +988,7 @@
                 <posy>25</posy>
                 <width>300</width>
                 <height>300</height>
-                <fadetime>300</fadetime>
                 <aspectratio align="right">keep</aspectratio>
-                <!--                    <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
- -->
                 <texture background="true">common/cdart/bd.png</texture>
                 <visible>Container.Content(movies) + IntegerGreaterThan(ListItem.VideoResolution,719)</visible>
                 <bordersize>7</bordersize>
@@ -1060,7 +998,6 @@
                 <posy>25</posy>
                 <width>300</width>
                 <height>300</height>
-                <fadetime>300</fadetime>
                 <aspectratio align="right">keep</aspectratio>
                 <!--                         <animation effect="rotate" end="-360" center="auto" time="26000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
  -->
@@ -1074,7 +1011,6 @@
             <posy>22</posy>
             <width>223</width>
             <height>335</height>
-            <fadetime>IconCrossfadeTime</fadetime>
             <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
             <aspectratio scalediffuse="false">scale</aspectratio>
         </control>
@@ -1097,9 +1033,7 @@
                 <width>600</width>
                 <height>50</height>
                 <align>center</align>
-                <aligny>center</aligny>
                 <font>Font_Reg24</font>
-                <textcolor>white2</textcolor>
                 <label>$INFO[ListItem.Label]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
@@ -1109,7 +1043,6 @@
                 <width>600</width>
                 <height>30</height>
                 <align>right</align>
-                <aligny>center</aligny>
                 <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <label>$INFO[ListItem.Year,, • ]</label>
@@ -1128,8 +1061,6 @@
                 <posy>74</posy>
                 <width>600</width>
                 <height>30</height>
-                <align>left</align>
-                <aligny>center</aligny>
                 <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <label>$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -1155,9 +1086,7 @@
                 <posy>30</posy>
                 <width>660</width>
                 <height>50</height>
-                <aligny>center</aligny>
                 <font>Font_Reg38_Caps</font>
-                <textcolor>white2</textcolor>
                 <label>$INFO[ListItem.Label]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
@@ -1175,7 +1104,6 @@
                 <posy>84</posy>
                 <width>570</width>
                 <height>30</height>
-                <aligny>center</aligny>
                 <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <label>$INFO[ListItem.Year, • ]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]</label>
@@ -1231,9 +1159,7 @@
                 <posy>30</posy>
                 <width>590</width>
                 <height>50</height>
-                <aligny>center</aligny>
                 <font>Font_Reg38_Caps</font>
-                <textcolor>white2</textcolor>
                 <label>$INFO[ListItem.Label]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
@@ -1242,7 +1168,6 @@
                 <posy>84</posy>
                 <width>555</width>
                 <height>30</height>
-                <aligny>center</aligny>
                 <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <label>$VAR[InfoWallSubTitleVar]</label>
@@ -1290,9 +1215,7 @@
                 <posy>30</posy>
                 <width>590</width>
                 <height>50</height>
-                <aligny>center</aligny>
                 <font>Font_Reg38_Caps</font>
-                <textcolor>white2</textcolor>
                 <label>$INFO[ListItem.Label]</label>
                 <textoffsetx>15</textoffsetx>
             </control>
@@ -1301,7 +1224,6 @@
                 <posy>84</posy>
                 <width>570</width>
                 <height>30</height>
-                <aligny>center</aligny>
                 <font>Font_Reg19</font>
                 <textcolor>grey2</textcolor>
                 <label>$VAR[InfoWallSubTitleVar]</label>
@@ -1355,7 +1277,7 @@
             <width>374</width>
             <height>210</height>
             <bordersize>5</bordersize>
-            <texture background="true" border="5">$INFO[ListItem.Property(Fanart_Image)]</texture>
+            <texture background="true" border="5">$INFO[ListItem.Art(fanart)]</texture>
             <aspectratio>scale</aspectratio>
             <visible>Container.Content(tvshows)</visible>
         </control>
@@ -1382,9 +1304,7 @@
             <height>45</height>
             <width>1240</width>
             <label>$INFO[ListItem.Label]</label>
-            <aligny>center</aligny>
             <font>Font_Bold24</font>
-            <textcolor>white2</textcolor>
             <textoffsetx>10</textoffsetx>
         </control>
         <control type="label">
@@ -1393,9 +1313,7 @@
             <height>30</height>
             <width>1240</width>
             <label>$INFO[ListItem.Label2,• ]</label>
-            <aligny>center</aligny>
             <font>Font_Reg20</font>
-            <textcolor>white2</textcolor>
             <textoffsetx>10</textoffsetx>
             <visible>Container.Content(tvshows)</visible>
         </control>
@@ -1413,7 +1331,6 @@
             <posy>90</posy>
             <width>500</width>
             <height>116</height>
-            <pagecontrol>-</pagecontrol>
             <label>$INFO[ListItem.Plot]</label>
             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
         </control>
@@ -1435,7 +1352,7 @@
             <width>374</width>
             <height>210</height>
             <bordersize>5</bordersize>
-            <texture border="5" background="true">$INFO[ListItem.Property(Fanart_Image)]</texture>
+            <texture border="5" background="true">$INFO[ListItem.Art(fanart)]</texture>
             <aspectratio>scale</aspectratio>
             <visible>Container.Content(tvshows)</visible>
         </control>
@@ -1481,7 +1398,6 @@
             <height>45</height>
             <width>1240</width>
             <label>$INFO[ListItem.Label]</label>
-            <aligny>center</aligny>
             <font>Font_Bold24</font>
             <textcolor>grey2</textcolor>
             <textoffsetx>10</textoffsetx>
@@ -1492,7 +1408,6 @@
             <height>30</height>
             <width>1240</width>
             <label>$INFO[ListItem.Label2,• ]</label>
-            <aligny>center</aligny>
             <font>Font_Reg20</font>
             <textcolor>grey2</textcolor>
             <textoffsetx>10</textoffsetx>
@@ -1513,7 +1428,6 @@
             <width>500</width>
             <height>116</height>
             <textcolor>grey2</textcolor>
-            <pagecontrol>-</pagecontrol>
             <label>$INFO[ListItem.Plot]</label>
         </control>
     </include>

@@ -100,7 +100,6 @@
                     <width>502</width>
                     <height>739</height>
                     <aspectratio scalediffuse="false">stretch</aspectratio>
-                    <fadetime>400</fadetime>
                     <texture background="true" diffuse="thumbs/movieposter_mask.png">$VAR[EpisodePosterVar]</texture>
                     <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                     <bordersize>19</bordersize>
@@ -116,10 +115,8 @@
                 <width>126</width>
                 <height>90</height>
                 <align>center</align>
-                <aligny>center</aligny>
                 <label>$INFO[ListItem.TrackNumber]</label>
                 <font>Font_Reg25_Caps</font>
-                <textcolor>white2</textcolor>
                 <visible>Container.Content(songs)</visible>
             </control>
             <control type="label">
@@ -130,7 +127,6 @@
                 <textcolor>$VAR[TitleColorVar]</textcolor>
                 <label>$VAR[EpisodeTitleVar]</label>
                 <font>Font_Reg25_Caps</font>
-                <textcolor>white2</textcolor>
             </control>
             <control type="label">
                 <posx>1280</posx>
@@ -184,7 +180,6 @@
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <font>Font_Reg25_Caps</font>
                     <visible>!Container.Content(songs)</visible>
-                    <textcolor>white2</textcolor>
                 </control>
                 <control type="label">
                     <posx>838</posx>
@@ -195,7 +190,6 @@
                     <label>$INFO[ListItem.Title]</label>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <font>Font_Reg25_Caps</font>
-                    <textcolor>white2</textcolor>
                     <visible>Container.Content(songs)</visible>
                 </control>
                 <control type="label">
@@ -228,16 +222,17 @@
                 <width>690</width>
                 <height>45</height>
                 <align>right</align>
+                <aligny>bottom</aligny>
                 <textcolor>$VAR[TitleColorVar]</textcolor>
                 <label>$VAR[EpisodeTitleVar]</label>
                 <font>Font_Reg25_Caps</font>
-                <textcolor>white2</textcolor>
             </control>
             <control type="label">
                 <posx>1280</posx>
                 <posy>50</posy>
                 <width>950</width>
                 <height>45</height>
+                <aligny>bottom</aligny>
                 <align>right</align>
                 <label>$VAR[EpisodeSubTitleVar]</label>
                 <font>Font_Reg17</font>
@@ -289,7 +284,6 @@
                     <posy>8</posy>
                     <width>528</width>
                     <height>105</height>
-                    <aligny>center</aligny>
                     <align>center</align>
                     <label>$INFO[ListItem.Label]</label>
                     <font>Font_Bold24</font>
@@ -359,7 +353,6 @@
                     <posy>130.5</posy>
                     <width>189</width>
                     <height>264</height>
-                    <fadetime>200</fadetime>
                     <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
                     <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
                     <bordersize>19.5</bordersize>
@@ -394,7 +387,7 @@
                     <label>$INFO[ListItem.Title]</label>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <font>Font_Reg25_Caps</font>
-                    <textcolor>white2</textcolor>
+                    <aligny>bottom</aligny>
                     <visible>!IsEmpty(ListItem.Title)</visible>
                 </control>
                 <control type="label">
@@ -405,6 +398,7 @@
                     <align>right</align>
                     <label>$INFO[ListItem.Year]$INFO[ListItem.Duration, • , $LOCALIZE[12391]]$INFO[ListItem.RatingAndVotes, • ]</label>
                     <font>Font_Reg17</font>
+                    <aligny>top</aligny>
                     <textcolor>grey</textcolor>
                     <visible>!IsEmpty(ListItem.Title)</visible>
                 </control>
@@ -473,7 +467,6 @@
                     <label>$INFO[ListItem.Title]</label>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <font>Font_Reg25_Caps</font>
-                    <textcolor>white2</textcolor>
                     <visible>!IsEmpty(ListItem.Title)</visible>
                 </control>
                 <control type="label">

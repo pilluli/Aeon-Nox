@@ -30,7 +30,6 @@
                 <height>32</height>
                 <width>64</width>
                 <label>$INFO[Window.Property(12.RSS.1.Title)] Retour</label>
-                <aligny>center</aligny>
                 <font>font12_title</font>
                 <shadowcolor>black</shadowcolor>
                 <onclick>Skin.Reset(SearchArtistConcertRss)</onclick>
@@ -60,7 +59,6 @@
                 <onleft>Dialog.Close(1139)</onleft>
                 <onright>450</onright>
                 <ondown>450</ondown>
-                <pagecontrol>-</pagecontrol>
                 <scrolltime>200</scrolltime>
                 <itemlayout height="110" width="340">
                     <control type="image">
@@ -73,7 +71,6 @@
                         <width>320</width>
                         <height>40</height>
                         <font>Font_Reg15</font>
-                        <aligny>center</aligny>
                         <info>ListItem.Label</info>
                         <shadowcolor>black</shadowcolor>
                     </control>
@@ -82,7 +79,6 @@
                         <posy>30</posy>
                         <width>320</width>
                         <height>40</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg15</font>
                         <info>ListItem.Label2</info>
                         <textcolor>grey</textcolor>
@@ -93,7 +89,6 @@
                         <posy>60</posy>
                         <width>320</width>
                         <height>40</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg15</font>
                         <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
                         <textcolor>grey</textcolor>
@@ -119,7 +114,6 @@
                         <width>320</width>
                         <height>40</height>
                         <font>Font_Reg15</font>
-                        <aligny>center</aligny>
                         <info>ListItem.Label</info>
                         <shadowcolor>black</shadowcolor>
                     </control>
@@ -128,7 +122,6 @@
                         <posy>30</posy>
                         <width>320</width>
                         <height>40</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg15</font>
                         <info>ListItem.Label2</info>
                         <textcolor>grey</textcolor>
@@ -139,7 +132,6 @@
                         <posy>60</posy>
                         <width>320</width>
                         <height>40</height>
-                        <aligny>center</aligny>
                         <font>Font_Reg15</font>
                         <label>$INFO[ListItem.Property(City)] - $INFO[ListItem.Property(Name)]</label>
                         <textcolor>grey</textcolor>
