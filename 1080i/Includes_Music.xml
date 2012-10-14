@@ -7,7 +7,7 @@
             <animation effect="slide" start="0,-1200" end="0,0" time="700" easing="out" tween="cubic">VisibleChange</animation>
             <animation effect="slide" start="0,-1200" end="0,0" time="550" delay="800" easing="out" tween="cubic">WindowOpen</animation>
             <animation effect="slide" start="0,0" end="0,-52" time="550" easing="out" tween="cubic" condition="Control.IsVisible(57)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="0,102" time="550" easing="out" tween="cubic" condition="Control.IsVisible(503)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="0,80" time="550" easing="out" tween="cubic" condition="Control.IsVisible(503)">Conditional</animation>
             <animation effect="slide" start="0,0" end="0,-1200" time="400" easing="out" tween="cubic">WindowClose</animation>
             <control type="group">
                 <!-- info pane -->
@@ -91,6 +91,7 @@
                         <height>20</height>
                         <width>600</width>
                         <textcolor>white3</textcolor>
+                        <aligny>bottom</aligny>
                         <label>$VAR[MusicPanelDetailLabel1Var]</label>
                     </control>
                     <control type="label">
@@ -98,6 +99,7 @@
                         <height>20</height>
                         <width>735</width>
                         <scroll>true</scroll>
+                        <aligny>bottom</aligny>
                         <label fallback="312577">$VAR[MusicPanelValueLabel1Var]</label>
                     </control>
                     <control type="label">
@@ -105,6 +107,7 @@
                         <height>20</height>
                         <width>420</width>
                         <textcolor>white3</textcolor>
+                        <aligny>bottom</aligny>
                         <label>$VAR[MusicPanelDetailLabel2Var]</label>
                     </control>
                     <control type="label">
@@ -112,6 +115,7 @@
                         <height>20</height>
                         <width>735</width>
                         <scroll>true</scroll>
+                        <aligny>bottom</aligny>
                         <label fallback="312577">$VAR[MusicPanelValueLabel2Var]</label>
                     </control>
                     <control type="label">
@@ -119,6 +123,7 @@
                         <height>20</height>
                         <width>420</width>
                         <textcolor>white3</textcolor>
+                        <aligny>bottom</aligny>
                         <label>$VAR[MusicPanelDetailLabel3Var]</label>
                     </control>
                     <control type="label">
@@ -126,6 +131,7 @@
                         <height>20</height>
                         <width>735</width>
                         <scroll>true</scroll>
+                        <aligny>bottom</aligny>
                         <label fallback="312577">$VAR[MusicPanelValueLabel3Var]</label>
                     </control>
                     <control type="textbox">
