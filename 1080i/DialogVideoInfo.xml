@@ -138,36 +138,40 @@
                     <width>1018</width>
                     <font>Font_Reg38_Caps</font>
                     <label>$INFO[ListItem.Title]</label>
+            <aligny>bottom</aligny>
                     <scroll>true</scroll>
                     <animation effect="slide" start="0,-38" end="0,-38" time="0" condition="[!IsEmpty(ListItem.Tagline) + Container.Content(movies)] | Container.Content(episodes) | Container.Content(musicvideos)">Conditional</animation>
                 </control>
                 <control type="label">
                     <posx>2</posx>
-                    <posy>40</posy>
+                    <posy>36</posy>
                     <width>1018</width>
-                    <font>Font_Reg22</font>
+                    <font>Font_Reg20</font>
                     <label>$INFO[ListItem.Tagline]</label>
                     <scroll>true</scroll>
+            <aligny>bottom</aligny>
                     <textcolor>grey</textcolor>
                     <visible>Container.Content(movies)</visible>
                 </control>
                 <control type="label">
                     <posx>2</posx>
-                    <posy>40</posy>
+                    <posy>36</posy>
                     <width>1018</width>
-                    <font>Font_Reg22</font>
+                    <font>Font_Reg20</font>
                     <label>$INFO[ListItem.Artist]</label>
                     <scroll>true</scroll>
                     <textcolor>grey</textcolor>
-                    <visible>Container.Content(musicvideos)</visible>
+             <aligny>bottom</aligny>
+                   <visible>Container.Content(musicvideos)</visible>
                 </control>
                 <control type="label">
                     <posx>2</posx>
-                    <posy>40</posy>
+                    <posy>36</posy>
                     <width>1018</width>
-                    <font>Font_Reg22</font>
+                    <font>Font_Reg20</font>
                     <label>$INFO[ListItem.TvShowTitle]</label>
-                    <textcolor>grey</textcolor>
+             <aligny>bottom</aligny>
+                   <textcolor>grey</textcolor>
                     <visible>Container.Content(episodes)</visible>
                 </control>
                 <!-- First Row -->
@@ -820,8 +824,8 @@
                 <control type="button" id="21">
                     <label>$LOCALIZE[31467]</label>
                     <include>DialogVideoInfoButton</include>
-                    <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,medianame=$ESCINFO[ListItem.Title],mediapath=$INFO[ListItem.Path],extrafanart)</onclick>
-                    <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,medianame=$ESCINFO[ListItem.TVShowTitle],extrafanart)</onclick>
+                    <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
+                    <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
                     <visible>!Skin.HasSetting(kioskmode)</visible>
                     <visible>[Container.Content(movies) | Container.Content(tvshows)] + system.hasaddon(script.artwork.downloader) + !substring(Container.FolderPath,plugin://)</visible>
                 </control>
@@ -842,7 +846,7 @@
                 <control type="button" id="24">
                     <label>$LOCALIZE[31468]</label>
                     <include>DialogVideoInfoButton</include>
-                    <onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,medianame=$ESCINFO[ListItem.Title],mediapath=$ESCINFO[ListItem.Path],extrathumbs)</onclick>
+                    <onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrathumbs)</onclick>
                     <visible>!Skin.HasSetting(kioskmode)</visible>
                     <visible>Container.Content(movies) + system.hasaddon(script.artwork.downloader)+ !substring(Container.FolderPath,plugin://)</visible>
                 </control>
@@ -1072,6 +1076,7 @@
                     <font>Font_Reg32</font>
                     <scroll>true</scroll>
                     <label>$INFO[System.AddonTitle(script.artwork.downloader)]</label>
+                    <textoffsetx>45</textoffsetx>
                 </control>
                 <control type="label" id="2">
                     <posy>68</posy>
@@ -1081,6 +1086,7 @@
                     <font>Font_Reg32</font>
                     <wrapmultiline>true</wrapmultiline>
                     <label>31646</label>
+                    <textoffsetx>45</textoffsetx>
                 </control>
                 <control type="button" id="5052">
                     <posx>390</posx>
@@ -1099,8 +1105,8 @@
                     <onup>5053</onup>
                     <ondown>5053</ondown>
                     <onback>5000</onback>
-                    <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader,mode=gui, mediatype=tvshow, medianame=$ESCINFO[ListItem.TVShowTitle])</onclick>
-                    <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader,mode=gui,mediatype=movie,medianame=$ESCINFO[ListItem.Title],mediapath=$ESCINFO[ListItem.Path])</onclick>
+                    <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader,mode=gui, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
+                    <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader,mode=gui,mediatype=movie,dbid=$INFO[ListItem.DBID])</onclick>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <onclick>SetFocus(5000)</onclick>
                 </control>
@@ -1121,8 +1127,8 @@
                     <onback>5000</onback>
                     <onleft>5052</onleft>
                     <onright>5052</onright>
-                    <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mediatype=tvshow, medianame=$ESCINFO[ListItem.TVShowTitle])</onclick>
-                    <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mediatype=movie, medianame=$ESCINFO[ListItem.Title],mediapath=$ESCINFO[ListItem.Path])</onclick>
+                    <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader, mediatype=tvshow, dbid=$INFO[ListItem.DBID])</onclick>
+                    <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader, mediatype=movie, dbid=$INFO[ListItem.DBID])</onclick>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <onclick>SetFocus(5000)</onclick>
                 </control>

@@ -8,6 +8,7 @@
                 <visible>!Skin.HasSetting(SwitchTriPanel)</visible>
                 <include>Animation_TriPanelRight</include>
                 <visible>Control.IsVisible(52)</visible>
+                <visible>!StringCompare(Container.FolderPath,videodb://1/7/)</visible>
                 <visible>!StringCompare(ListItem.Label,..)</visible>
                 <visible>![IsEmpty(Container.FolderPath) | Container.Content(years)] | Window.IsActive(programs)</visible>
                 <control type="image">
@@ -28,6 +29,7 @@
                     <posx>140</posx>
                     <posy>135</posy>
                     <width>445</width>
+                    <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
                     <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
@@ -48,6 +50,7 @@
                     <posx>140</posx>
                     <posy>180</posy>
                     <width>445</width>
+                    <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
                     <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
@@ -69,6 +72,7 @@
                     <posy>225</posy>
                     <width>445</width>
                     <orientation>horizontal</orientation>
+                    <itemgap>10</itemgap>
                     <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
                         <width min="50" max="400">auto</width>
@@ -235,6 +239,7 @@
                 <visible>Control.IsVisible(52)</visible>
                 <visible>Skin.HasSetting(SwitchTriPanel)</visible>
                 <visible>!StringCompare(ListItem.Label,..)</visible>
+                <visible>!StringCompare(Container.FolderPath,videodb://1/7/)</visible>
                 <visible>![IsEmpty(Container.FolderPath) | Container.Content(years)] | Window.IsActive(programs)</visible>
                 <control type="image">
                     <texture>views/tripanel/info_panel_glow.png</texture>
@@ -255,6 +260,7 @@
                     <posx>100</posx>
                     <posy>121</posy>
                     <width>480</width>
+                    <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
                     <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
@@ -275,6 +281,7 @@
                     <posx>100</posx>
                     <posy>170</posy>
                     <width>485</width>
+                    <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
                     <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
@@ -295,6 +302,7 @@
                     <posx>100</posx>
                     <posy>219</posy>
                     <width>485</width>
+                    <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
                     <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
