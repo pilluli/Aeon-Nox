@@ -321,7 +321,7 @@
                     <include>Animation_VisibleChange200</include>
                     <control type="button">
                         <include>Objects_CustomizerInfoButton</include>
-                        <label>$LOCALIZE[564]:</label>
+                        <label>$LOCALIZE[42302]:</label>
                         <label2>[COLOR white]$VAR[CustomItemTypeNameVar][/COLOR]</label2>
                     </control>
                     <control type="button">
@@ -351,7 +351,7 @@
                     </control>
                     <control type="button">
                         <include>Objects_CustomizerInfoButton</include>
-                        <visible>![Substring(Skin.String(ItemToEdit.MultiFanart),recent,left) | Substring(Skin.String(ItemToEdit.MultiFanart),widgetfanart,left) | Substring(Skin.String(ItemToEdit.MultiFanart),random,left) | Substring(Skin.String(ItemToEdit.MultiFanart),dvdcase,left) | Substring(Skin.String(ItemToEdit.MultiFanart),nocase,left) | Substring(Skin.String(ItemToEdit.MultiFanart),case,left) | Substring(Skin.String(ItemToEdit.MultiFanart),watchlist,left) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),inprogressmovies) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),special://profile/Thumbnails/Music/Fanart) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),special://profile/Thumbnails/Video/Fanart) | IsEmpty(Skin.String(ItemToEdit.MultiFanart))]</visible>
+                        <visible>![Substring(Skin.String(ItemToEdit.MultiFanart),recent,left) | Substring(Skin.String(ItemToEdit.MultiFanart),widgetfanart,left) | Substring(Skin.String(ItemToEdit.MultiFanart),random,left) | Substring(Skin.String(ItemToEdit.MultiFanart),dvdcase,left) | Substring(Skin.String(ItemToEdit.MultiFanart),nocase,left) | Substring(Skin.String(ItemToEdit.MultiFanart),case,left) | Substring(Skin.String(ItemToEdit.MultiFanart),watchlist,left) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),special://profile/Thumbnails/Music/Fanart) | Stringcompare(Skin.String(ItemToEdit.MultiFanart),special://profile/Thumbnails/Video/Fanart) | IsEmpty(Skin.String(ItemToEdit.MultiFanart))]</visible>
                         <label>$LOCALIZE[31102] [LOWERCASE]$LOCALIZE[573][/LOWERCASE]:</label>
                         <label2>[COLOR white]$INFO[Skin.String(ItemToEdit.MultiFanart)][/COLOR]</label2>
                     </control>
@@ -429,12 +429,12 @@
                         </control>
                         <control type="button" id="27">
                             <include>Objects_CustomizerSettingsButton</include>
-                            <label>Set InfoLine</label>
+                            <label>42303</label>
                             <onclick>ActivateWindow(1161)</onclick>
                         </control>
                         <control type="button" id="270">
                             <include>Objects_CustomizerSettingsButton</include>
-                            <label>Set Submenu</label>
+                            <label>42304</label>
                             <onclick>ActivateWindow(1150)</onclick>
                         </control>
                         <control type="button" id="28">
@@ -445,7 +445,7 @@
                         </control>
                         <control type="button" id="29">
                             <include>Objects_CustomizerSettingsButton</include>
-                            <label>Move Item</label>
+                            <label>42305</label>
                             <onclick>ActivateWindow(1147)</onclick>
                             <visible>Substring(Skin.String(MenuItem),CustomHomeItem)</visible>
                         </control>
