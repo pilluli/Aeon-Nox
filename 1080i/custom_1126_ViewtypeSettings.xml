@@ -39,7 +39,7 @@
             <control type="button" id="1672">
                 <!-- Toggle Fanart -->
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>Background Customizer</label>
+                <label>42308</label>
                 <onclick condition="Container.Content(movies)">SetProperty(BackgroundArea,MoviesBackground,home)</onclick>
                 <onclick condition="Container.Content(tvshows)">SetProperty(BackgroundArea,TVShowsBackground,home)</onclick>
                 <onclick condition="Container.Content(seasons)">SetProperty(BackgroundArea,SeasonBackground,home)</onclick>
@@ -73,17 +73,17 @@
                 <onclick condition="stringcompare(Control.GetLabel(4421),infopaneloff)">Skin.SetString(InfoPanel$INFO[Window.Property(Area)],infopanelonmanual)</onclick>
                 <onclick condition="stringcompare(Control.GetLabel(4421),infopanelon)">Skin.SetString(InfoPanel$INFO[Window.Property(Area)],infopaneloff)</onclick>
                 <onclick condition="stringcompare(Control.GetLabel(4421),infopanelonauto)">Skin.SetString(InfoPanel$INFO[Window.Property(Area)],infopanelon)</onclick>
-                <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare)</visible>
+                <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare) | stringcompare(Skin.String(actualViewtype),showcasecd)</visible>
             </control>
             <control type="button" id="1615">
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>Set Delay</label>
+                <label>42309</label>
                 <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(InfopanelDelay)] seconds[/COLOR]</label2>
                 <onclick>Dialog.Close(1126)</onclick>
                 <onclick>SetFocus(50)</onclick>
                 <onclick>ActivateWindow(1114)</onclick>
                 <enable>stringcompare(Control.GetLabel(4421),infopanelonauto)</enable>
-                <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare)</visible>
+                <visible>stringcompare(Skin.String(actualViewtype),showcasemovies) | Stringcompare(Skin.String(actualViewtype),shift) | Stringcompare(Skin.String(actualViewtype),showcasedvd) | Stringcompare(Skin.String(actualViewtype),landscape) | Stringcompare(Skin.String(actualViewtype),showcasesquare) | stringcompare(Skin.String(actualViewtype),showcasecd)</visible>
             </control>
             <control type="button" id="1624">
                 <include>Objects_MediaMenuButtonAlt2</include>
@@ -218,7 +218,7 @@
             </control>
             <control type="radiobutton" id="1689">
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>Show ExtraFanart</label>
+                <label>42310</label>
                 <onclick>Skin.ToggleSetting(bigfanextrafanart)</onclick>
                 <selected>Skin.HasSetting(bigfanextrafanart)</selected>
                 <visible>stringcompare(Skin.String(actualViewtype),bigfan) + [Container.Content(tvshows) | Container.Content(movies)]</visible>
@@ -358,7 +358,7 @@
             </control>
             <control type="radiobutton" id="16443">
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>Activate Info Panel</label>
+                <label>42311</label>
                 <onclick>Skin.ToggleSetting(posterviewinfopane)</onclick>
                 <selected>Skin.HasSetting(posterviewinfopane)</selected>
                 <visible>stringcompare(Skin.String(actualViewtype),posters)</visible>
@@ -622,12 +622,19 @@
                 <selected>Skin.HasSetting(wallfullscreen)</selected>
                 <visible>stringcompare(Skin.String(actualViewtype),wall)</visible>
             </control>
-            <control type="radiobutton" id="1644">
+            <control type="radiobutton" id="16442">
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>$LOCALIZE[31454]</label>
                 <onclick>Skin.ToggleSetting(TVWallBanner)</onclick>
                 <selected>Skin.HasSetting(TVWallBanner)</selected>
-                <visible>stringcompare(Skin.String(actualViewtype),wall) + [Container.Content(tvshows) | Container.Content(movies)]</visible>
+                <visible>stringcompare(Skin.String(actualViewtype),wall) + Container.Content(tvshows)</visible>
+            </control>
+            <control type="radiobutton" id="1644">
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <label>$LOCALIZE[31454]</label>
+                <onclick>Skin.ToggleSetting(MovieWallBanner)</onclick>
+                <selected>Skin.HasSetting(MovieWallBanner)</selected>
+                <visible>stringcompare(Skin.String(actualViewtype),wall) + Container.Content(movies)</visible>
             </control>
             <control type="button" id="1696">
                 <include>Objects_MediaMenuButtonAlt2</include>
