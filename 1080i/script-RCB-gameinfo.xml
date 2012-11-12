@@ -18,8 +18,7 @@
         <!-- gameinfoviewgamelist -->
         <control type="group" id="1000">
             <control type="wraplist" id="59">
-                <width>0</width>
-                <height>0</height>
+                <include>HiddenObject</include>
                 <onleft>3000</onleft>
                 <onright>3000</onright>
                 <onup>3000</onup>
@@ -31,7 +30,6 @@
         </control>
         <control type="image">
             <include>FullscreenDimensions</include>
-            <fadetime>600</fadetime>
             <texture background="true">$INFO[ListItem.Property(background)]</texture>
             <aspectratio>scale</aspectratio>
         </control>
@@ -68,7 +66,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfoupperleft)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -78,7 +75,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfolowerleft)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -90,7 +86,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfoupperright)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -100,7 +95,6 @@
                 <width>445</width>
                 <height>250</height>
                 <aspectratio>keep</aspectratio>
-                <fadetime>400</fadetime>
                 <texture background="true">$INFO[ListItem.Property(gameinfolowerright)]</texture>
                 <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                 <bordersize>7</bordersize>
@@ -130,10 +124,6 @@
             </control>
         </control>
         <control type="grouplist" id="5000">
-            <posx>-100</posx>
-            <posy>-150</posy>
-            <width>0</width>
-            <height>0</height>
             <onleft>5000</onleft>
             <onright>50</onright>
             <onup>IncreaseRating</onup>
@@ -147,7 +137,7 @@
             <control type="button" id="3001">
                 <label>Play video</label>
                 <include>HiddenObject</include>
-                <onclick>XBMC.PlayMedia($INFO[ListItem.Property(gameplayinfo)],1)</onclick>
+                <onclick>PlayMedia($INFO[ListItem.Property(gameplayinfo)],1)</onclick>
                 <visible>!IsEmpty(ListItem.Property(autoplayvideoinfo)) + !IsEmpty(ListItem.Property(gameplayinfo))</visible>
             </control>
         </control>

@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="25">
+<window>
     <defaultcontrol always="true">50</defaultcontrol>
     <onload condition="System.HasAddon(script.metadata.actors) + !IsEmpty(Window(home).Property(BrowseActors))">RunScript(script.metadata.actors,backend)</onload>
-    <onload condition="System.HasAddon(script.tvtunes) + IsEmpty(Window(Home).Property(DontRunTVShowScripts))">XBMC.RunScript(script.tvtunes,backend=True)</onload>
+    <onload condition="System.HasAddon(script.tvtunes) + IsEmpty(Window(Home).Property(DontRunTVShowScripts))">RunScript(script.tvtunes,backend=True)</onload>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <onload condition="System.HasAddon(script.tv.show.next.aired) + IsEmpty(Window(Home).Property(DontRunTVShowScripts)) + !Skin.HasSetting(NextAiredInfo)">RunScript(script.tv.show.next.aired,backend=True)</onload>
     <onload>ClearProperty(BrowseActors,home)</onload>
@@ -44,7 +44,7 @@
                 <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
                 <imagepath background="true">$VAR[VideoExtraFanartVar]</imagepath>
-                <visible>[Container.Content(movies) + Skin.HasSetting(extrafanartmovies)] | [Container.Content(tvshows) + Skin.HasSetting(extrafanartseries)] | [Container.Content(seasons) + [Skin.HasSetting(extrafanartseasons) | Skin.HasSetting(SeasonFanart)]] | [Container.Content(episodes) + [Skin.HasSetting(extrafanartepisodes) | Skin.HasSetting(SeasonFanart)]]</visible>
+                <visible>[Container.Content(movies) + Skin.HasSetting(extrafanartmovies)] | [Container.Content(tvshows) + Skin.HasSetting(extrafanartseries)] | [Container.Content(seasons) + Skin.HasSetting(extrafanartseasons)] | [Container.Content(episodes) + Skin.HasSetting(extrafanartepisodes)]</visible>
                 <visible>!SubString(ListItem.Label,*,left) + [Substring(Container.FolderPath,videodb://,left) | Substring(Container.FolderPath,special://profile/playlist,left)]</visible>
             </control>
         </control>
@@ -139,6 +139,7 @@
                     <onclick condition="Container.Content(tvshows) | Container.Content(seasons)">SetFocus(50)</onclick>
                     <onclick condition="Container.Content(tvshows) | Container.Content(seasons)">Select</onclick>
                     <visible>!StringCompare(ListItem.Label,..) + !Stringcompare(Control.GetLabel(4421),infopaneloff)</visible>
+                    <visible>!Container.Content(sets)</visible>
                 </control>
                 <control type="button" id="7002">
                     <include>HiddenObject</include>
@@ -191,7 +192,7 @@
                     <height>105</height>
                     <fadetime>200</fadetime>
                     <animation effect="fade" delay="300" time="300" reversible="false">Hidden</animation>
-                    <texture background="true" fallback="empty.png">$INFO[ListItem.Path,,logo.png]</texture>
+                    <texture background="true" fallback="empty.png">$INFO[ListItem.Art(clearlogo)]</texture>
                     <aspectratio>keep</aspectratio>
                     <visible>[[Skin.HasSetting(movielogosfloor) + Container.Content(movies)] | [Skin.HasSetting(tvshowlogosfloor) + Container.Content(tvshows)]]</visible>
                 </control>

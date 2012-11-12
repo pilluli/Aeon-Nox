@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="151">
+<window>
     <defaultcontrol always="true">5</defaultcontrol>
     <coordinates>
         <system>1</system>
@@ -12,7 +12,7 @@
             <posx>23</posx>
             <width>744</width>
             <height>650</height>
-            <texture>dialogs/dialog_back_shadow.png</texture>
+            <texture border="50">dialogs/dialog_back_shadow.png</texture>
             <include>PanelGlowFade</include>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
@@ -21,7 +21,7 @@
             <posx>23</posx>
             <width>744</width>
             <height>650</height>
-            <texture>dialogs/dialog_back.png</texture>
+            <texture border="50">dialogs/dialog_back.png</texture>
             <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
         </control>
         <control type="grouplist" id="5">
@@ -72,8 +72,8 @@
             <height>50</height>
             <font>Font_Reg18</font>
             <textcolor>grey2</textcolor>
-             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-           <texturenofocus border="5">button-nofocus.png</texturenofocus>
+            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+            <texturenofocus border="5">button-nofocus.png</texturenofocus>
             <texturefocus border="5">views/tripanel/listselect_fo.png</texturefocus>
         </control>
         <control type="group" id="9001">

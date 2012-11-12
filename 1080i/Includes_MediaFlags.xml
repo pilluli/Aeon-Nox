@@ -184,7 +184,7 @@
                 <control type="label">
                     <include>Animation_CommonFade</include>
                     <posx>285</posx>
-                    <posy>1001</posy>
+                    <posy>1000</posy>
                     <width>135</width>
                     <height>88</height>
                     <font>Font_Reg21</font>
@@ -193,7 +193,6 @@
                     <aligny>bottom</aligny>
                     <colordiffuse>floor</colordiffuse>
                     <label>$INFO[ListItem.Year]</label>
-                    <fadetime>250</fadetime>
                 </control>
             </control>
             <!-- Label -->
@@ -368,7 +367,7 @@
                 <height>70</height>
                 <aspectratio>keep</aspectratio>
                 <texture fallback="rating0.png">$INFO[ListItem.Rating,stars/,.png]</texture>
-                <colordiffuse>FF7c7c7c</colordiffuse>
+                <colordiffuse>$VAR[FlagDiffuseVar]</colordiffuse>
                 <visible>Container.Content(tvshows)</visible>
             </control>
             <control type="label">
@@ -419,14 +418,14 @@
                 </control>
                 <control type="label">
                     <include>Animation_CommonFade</include>
-                    <posy>23</posy>
+                    <posy>24</posy>
                     <width>135</width>
                     <height>88</height>
                     <font>Font_Reg19</font>
                     <textcolor>floor</textcolor>
                     <align>center</align>
                     <label>[B]$INFO[ListItem.Year][/B]</label>
-                    <fadetime>250</fadetime>
+                    <aligny>bottom</aligny>
                 </control>
             </control>
         </control>

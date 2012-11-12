@@ -421,14 +421,15 @@
             <control type="label">
                 <posx>120</posx>
                 <posy>12</posy>
-                <width>470</width>
+                <width>460</width>
                 <height>40</height>
                 <font>Font_Reg20</font>
-                <label>[B]$INFO[ListItem.Label][/B][COLOR $VAR[FontColorVar]]$INFO[ListItem.Title, - ][/COLOR]</label>
+                <textcolor>$VAR[FontColorVar]</textcolor>
+                <label>[B][COLOR white]$INFO[ListItem.Label][/COLOR][/B]$INFO[ListItem.Title, - ]</label>
             </control>
             <control type="label">
                 <posx>590</posx>
-                <posy>11</posy>
+                <posy>12</posy>
                 <width>120</width>
                 <height>40</height>
                 <font>Font_Reg15</font>
@@ -446,7 +447,7 @@
             </control>
             <control type="label">
                 <posx>810</posx>
-                <posy>11</posy>
+                <posy>12</posy>
                 <width>120</width>
                 <height>40</height>
                 <font>Font_Reg15</font>
@@ -499,14 +500,15 @@
             <control type="label">
                 <posx>120</posx>
                 <posy>12</posy>
-                <width>470</width>
+                <width>460</width>
                 <height>40</height>
                 <font>Font_Reg20</font>
-                <label>[B]$INFO[ListItem.Label][/B][COLOR $VAR[FontColorVar]]$INFO[ListItem.Title, - ][/COLOR]</label>
+                <textcolor>$VAR[FontColorVar]</textcolor>
+                <label>[B][COLOR white]$INFO[ListItem.Label][/COLOR][/B]$INFO[ListItem.Title, - ]</label>
             </control>
             <control type="label">
                 <posx>590</posx>
-                <posy>11</posy>
+                <posy>12</posy>
                 <width>120</width>
                 <height>40</height>
                 <font>Font_Reg15</font>
@@ -524,7 +526,7 @@
             </control>
             <control type="label">
                 <posx>810</posx>
-                <posy>11</posy>
+                <posy>12</posy>
                 <width>120</width>
                 <height>40</height>
                 <font>Font_Reg15</font>
@@ -539,35 +541,62 @@
             <visible>Control.IsVisible(13)</visible>
             <include>Animation_VisibleChange200</include>
             <control type="group">
-                <posx>100</posx>
-                <posy>565</posy>
+                <posx>105</posx>
+                <posy>480</posy>
+                <include>Animation_OpenCloseZoom_New</include>
+                <include>Animation_VisibleChange200</include>
+                <visible>!IsEmpty(Container(13).ListItem.Title)</visible>
+                <control type="image">
+                    <animation effect="fade" end="60" condition="true">conditional</animation>
+                    <width>804</width>
+                    <height>80</height>
+                    <texture>common/black.png</texture>
+                </control>
                 <control type="label">
-                    <posx>0</posx>
-                    <posy>10</posy>
-                    <width>800</width>
+                    <posx>20</posx>
+                    <posy>5</posy>
+                    <width>764</width>
                     <height>30</height>
-                    <font>Font_Bold22_Caps</font>
+                    <textcolor>$VAR[FontColorVar]</textcolor>
+                    <font>Font_Bold20</font>
                     <align>center</align>
                     <label>$INFO[Container(13).ListItem.Title]</label>
                     <scroll>yes</scroll>
                 </control>
                 <control type="label">
-                    <posx>0</posx>
-                    <posy>45</posy>
+                    <posy>35</posy>
                     <width>800</width>
                     <height>30</height>
                     <font>Font_Reg15</font>
-                    <textcolor>grey</textcolor>
                     <align>center</align>
-                    <label>$INFO[ListItem.StartDate] - $INFO[ListItem.StartTime]</label>
-                    <visible>!IsEmpty(ListItem.StartDate) + !IsEmpty(ListItem.StartTime)</visible>
+                    <label>$LOCALIZE[19031]: $INFO[Container(13).ListItem.NextTitle]</label>
+                    <scroll>yes</scroll>
+                    <visible>!IsEmpty(Container(13).ListItem.NextTitle)</visible>
                 </control>
-                <control type="textbox">
-                    <posx>0</posx>
-                    <posy>85</posy>
+                <control type="label">
+                    <posx>10</posx>
+                    <posy>43</posy>
                     <width>800</width>
-                    <height>260</height>
+                    <height>30</height>
+                    <font>Font_Reg14</font>
+                    <textcolor>white</textcolor>
+                    <align>center</align>
+                    <visible>Container(13).ListItem.HasEpg | !IsEmpty(Container(13).ListItem.StartTime)</visible>
+                    <label>$INFO[Container(13).ListItem.StartDate] - $INFO[Container(13).ListItem.StartTime]</label>
+                </control>
+            </control>
+            <control type="group">
+                <posx>100</posx>
+                <posy>565</posy>
+                <include>Animation_OpenCloseZoom_New</include>
+                <include>Animation_VisibleChange200</include>
+                <control type="textbox">
+                    <posy>10</posy>
+                    <width>800</width>
+                    <height>330</height>
                     <shadowcolor>black</shadowcolor>
+                    <textcolor>white6</textcolor>
+                    <font>Font_Reg19</font>
                     <label>$INFO[Container(13).ListItem.Plot]</label>
                     <autoscroll time="5000" delay="3000" repeat="5000">true</autoscroll>
                 </control>
@@ -595,7 +624,7 @@
                         <width>104</width>
                         <height>104</height>
                         <bordersize>8</bordersize>
-                        <texture>DefaultVideo.png</texture>
+                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="label">
@@ -643,7 +672,7 @@
                         <width>104</width>
                         <height>104</height>
                         <bordersize>8</bordersize>
-                        <texture>DefaultVideo.png</texture>
+                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="label">
@@ -685,7 +714,7 @@
                         <width>60</width>
                         <height>60</height>
                         <bordersize>8</bordersize>
-                        <texture>DefaultVideo.png</texture>
+                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="label">
@@ -694,11 +723,12 @@
                         <width>550</width>
                         <height>40</height>
                         <font>Font_Reg20</font>
-                        <label>[B]$INFO[ListItem.ChannelName][/B] - [COLOR $VAR[FontColorVar]]$INFO[ListItem.Title][/COLOR]</label>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
+                        <label>[B][COLOR white]$INFO[ListItem.Label][/COLOR][/B]$INFO[ListItem.Title, - ]</label>
                     </control>
                     <control type="label">
                         <posx>630</posx>
-                        <posy>11</posy>
+                        <posy>14</posy>
                         <width>300</width>
                         <height>40</height>
                         <font>Font_Reg12</font>
@@ -727,7 +757,7 @@
                         <width>60</width>
                         <height>60</height>
                         <bordersize>8</bordersize>
-                        <texture>DefaultVideo.png</texture>
+                        <texture fallback="DefaultVideo.png">$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
                     </control>
                     <control type="label">
@@ -736,11 +766,12 @@
                         <width>550</width>
                         <height>40</height>
                         <font>Font_Reg20</font>
-                        <label>[B]$INFO[ListItem.ChannelName][/B] - [COLOR $VAR[FontColorVar]]$INFO[ListItem.Title][/COLOR]</label>
+                        <textcolor>$VAR[FontColorVar]</textcolor>
+                        <label>[B][COLOR white]$INFO[ListItem.Label][/COLOR][/B]$INFO[ListItem.Title, - ]</label>
                     </control>
                     <control type="label">
                         <posx>630</posx>
-                        <posy>11</posy>
+                        <posy>14</posy>
                         <width>300</width>
                         <height>40</height>
                         <font>Font_Reg12</font>
@@ -818,7 +849,7 @@
                         <posy>0</posy>
                         <width>120</width>
                         <height>120</height>
-                        <texture >$INFO[ListItem.Icon]</texture>
+                        <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
                         <visible>!IsEmpty(ListItem.Icon)</visible>
                     </control>
@@ -853,7 +884,7 @@
                         <posy>0</posy>
                         <width>120</width>
                         <height>120</height>
-                        <texture >$INFO[ListItem.Icon]</texture>
+                        <texture>$INFO[ListItem.Icon]</texture>
                         <aspectratio>keep</aspectratio>
                         <visible>!IsEmpty(ListItem.Icon)</visible>
                     </control>
@@ -1216,7 +1247,7 @@
                     <pagecontrol>77</pagecontrol>
                     <scrolltime>200</scrolltime>
                     <itemlayout height="60">
-                       	<control type="image">
+                        <control type="image">
                             <posx>-45</posx>
                             <width>1760</width>
                             <height>60</height>
@@ -1242,69 +1273,69 @@
                         </control>
                         <control type="group">
                             <visible>!IsEmpty(ListItem.Date)</visible>
-	                        <control type="image">
-	                            <posx>3</posx>
-	                            <posy>8</posy>
-	                            <width>45</width>
-	                            <height>45</height>
-	                            <texture>$INFO[ListItem.Icon]</texture>
-	                            <aspectratio>keep</aspectratio>
-	                        </control>
-	                        <control type="label">
-	                            <posx>60</posx>
-	                            <width>285</width>
-	                            <height>52</height>
-	                            <font>Font_Reg20</font>
-	                            <textcolor>white6</textcolor>
-	                            <info>ListItem.ChannelName</info>
-	                        </control>
-	                        <control type="label">
-	                            <posx>378</posx>
-	                            <width>435</width>
-	                            <height>52</height>
-	                            <font>Font_Reg20</font>
-	                            <info>ListItem.Label</info>
-	                        </control>
-	                        <control type="label">
-	                            <posx>880</posx>
-	                            <width>600</width>
-	                            <height>52</height>
-	                            <font>Font_Reg20</font>
-	                            <info>ListItem.Date</info>
-	                        </control>
-	                        <control type="image">
-	                            <posx>1598</posx>
-	                            <posy>28</posy>
-	                            <width>35</width>
-	                            <height>35</height>
-	                            <texture>PVR/PVR-IsRecording.png</texture>
-	                            <visible>ListItem.IsRecording</visible>
-	                        </control>
-	                        <control type="label">
-	                            <posx>1455</posx>
-	                            <width>120</width>
-	                            <height>52</height>
-	                            <font>Font_Reg20</font>
-	                            <label>19043</label>
-	                            <visible>ListItem.IsRecording</visible>
-	                        </control>
-	                        <control type="image">
-	                            <posx>1605</posx>
-	                            <posy>28</posy>
-	                            <width>35</width>
-	                            <height>35</height>
-	                            <texture>PVR/PVR-HasTimer.png</texture>
-	                            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-	                        </control>
-	                        <control type="label">
-	                            <posx>1470</posx>
-	                            <width>120</width>
-	                            <height>52</height>
-	                            <font>Font_Reg20</font>
-	                            <label>52022</label>
-	                            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-	                        </control>
-	                	</control>
+                            <control type="image">
+                                <posx>3</posx>
+                                <posy>8</posy>
+                                <width>45</width>
+                                <height>45</height>
+                                <texture>$INFO[ListItem.Icon]</texture>
+                                <aspectratio>keep</aspectratio>
+                            </control>
+                            <control type="label">
+                                <posx>60</posx>
+                                <width>285</width>
+                                <height>52</height>
+                                <font>Font_Reg20</font>
+                                <textcolor>white6</textcolor>
+                                <info>ListItem.ChannelName</info>
+                            </control>
+                            <control type="label">
+                                <posx>378</posx>
+                                <width>435</width>
+                                <height>52</height>
+                                <font>Font_Reg20</font>
+                                <info>ListItem.Label</info>
+                            </control>
+                            <control type="label">
+                                <posx>880</posx>
+                                <width>600</width>
+                                <height>52</height>
+                                <font>Font_Reg20</font>
+                                <info>ListItem.Date</info>
+                            </control>
+                            <control type="image">
+                                <posx>1598</posx>
+                                <posy>28</posy>
+                                <width>35</width>
+                                <height>35</height>
+                                <texture>PVR/PVR-IsRecording.png</texture>
+                                <visible>ListItem.IsRecording</visible>
+                            </control>
+                            <control type="label">
+                                <posx>1455</posx>
+                                <width>120</width>
+                                <height>52</height>
+                                <font>Font_Reg20</font>
+                                <label>19043</label>
+                                <visible>ListItem.IsRecording</visible>
+                            </control>
+                            <control type="image">
+                                <posx>1605</posx>
+                                <posy>28</posy>
+                                <width>35</width>
+                                <height>35</height>
+                                <texture>PVR/PVR-HasTimer.png</texture>
+                                <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+                            </control>
+                            <control type="label">
+                                <posx>1470</posx>
+                                <width>120</width>
+                                <height>52</height>
+                                <font>Font_Reg20</font>
+                                <label>52022</label>
+                                <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+                            </control>
+                        </control>
                     </itemlayout>
                     <focusedlayout height="60">
                         <control type="image">
@@ -1340,69 +1371,69 @@
                         </control>
                         <control type="group">
                             <visible>!IsEmpty(ListItem.Date)</visible>
-	                        <control type="image">
-	                            <posx>3</posx>
-	                            <posy>8</posy>
-	                            <width>45</width>
-	                            <height>45</height>
-	                            <texture>$INFO[ListItem.Icon]</texture>
-	                            <aspectratio>keep</aspectratio>
-	                        </control>
-	                        <control type="label">
-	                            <posx>60</posx>
-	                            <width>285</width>
-	                            <height>52</height>
-	                            <font>Font_Reg20</font>
-	                            <textcolor>white6</textcolor>
-	                            <info>ListItem.ChannelName</info>
-	                        </control>
-	                        <control type="label">
-	                            <posx>378</posx>
-	                            <width>435</width>
-	                            <height>52</height>
-	                            <font>Font_Reg20</font>
-	                            <info>ListItem.Label</info>
-	                        </control>
-	                        <control type="label">
-	                            <posx>880</posx>
-	                            <width>600</width>
-	                            <height>52</height>
-	                            <font>Font_Reg20</font>
-	                            <info>ListItem.Date</info>
-	                        </control>
-	                        <control type="image">
-	                            <posx>1598</posx>
-	                            <posy>28</posy>
-	                            <width>35</width>
-	                            <height>35</height>
-	                            <texture>PVR/PVR-IsRecording.png</texture>
-	                            <visible>ListItem.IsRecording</visible>
-	                        </control>
-	                        <control type="label">
-	                            <posx>1455</posx>
-	                            <width>120</width>
-	                            <height>52</height>
-	                            <font>Font_Reg20</font>
-	                            <label>19043</label>
-	                            <visible>ListItem.IsRecording</visible>
-	                        </control>
-	                        <control type="image">
-	                            <posx>1605</posx>
-	                            <posy>28</posy>
-	                            <width>35</width>
-	                            <height>35</height>
-	                            <texture>PVR/PVR-HasTimer.png</texture>
-	                            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-	                        </control>
-	                        <control type="label">
-	                            <posx>1470</posx>
-	                            <width>120</width>
-	                            <height>52</height>
-	                            <font>Font_Reg20</font>
-	                            <label>52022</label>
-	                            <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
-	                        </control>
-	                	</control>
+                            <control type="image">
+                                <posx>3</posx>
+                                <posy>8</posy>
+                                <width>45</width>
+                                <height>45</height>
+                                <texture>$INFO[ListItem.Icon]</texture>
+                                <aspectratio>keep</aspectratio>
+                            </control>
+                            <control type="label">
+                                <posx>60</posx>
+                                <width>285</width>
+                                <height>52</height>
+                                <font>Font_Reg20</font>
+                                <textcolor>white6</textcolor>
+                                <info>ListItem.ChannelName</info>
+                            </control>
+                            <control type="label">
+                                <posx>378</posx>
+                                <width>435</width>
+                                <height>52</height>
+                                <font>Font_Reg20</font>
+                                <info>ListItem.Label</info>
+                            </control>
+                            <control type="label">
+                                <posx>880</posx>
+                                <width>600</width>
+                                <height>52</height>
+                                <font>Font_Reg20</font>
+                                <info>ListItem.Date</info>
+                            </control>
+                            <control type="image">
+                                <posx>1598</posx>
+                                <posy>28</posy>
+                                <width>35</width>
+                                <height>35</height>
+                                <texture>PVR/PVR-IsRecording.png</texture>
+                                <visible>ListItem.IsRecording</visible>
+                            </control>
+                            <control type="label">
+                                <posx>1455</posx>
+                                <width>120</width>
+                                <height>52</height>
+                                <font>Font_Reg20</font>
+                                <label>19043</label>
+                                <visible>ListItem.IsRecording</visible>
+                            </control>
+                            <control type="image">
+                                <posx>1605</posx>
+                                <posy>28</posy>
+                                <width>35</width>
+                                <height>35</height>
+                                <texture>PVR/PVR-HasTimer.png</texture>
+                                <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+                            </control>
+                            <control type="label">
+                                <posx>1470</posx>
+                                <width>120</width>
+                                <height>52</height>
+                                <font>Font_Reg20</font>
+                                <label>52022</label>
+                                <visible>ListItem.HasTimer + !ListItem.IsRecording</visible>
+                            </control>
+                        </control>
                     </focusedlayout>
                 </control>
                 <control type="scrollbar" id="77">

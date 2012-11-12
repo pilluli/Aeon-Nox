@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="101">
+<window>
     <defaultcontrol always="true">10</defaultcontrol>
     <zorder>1</zorder>
     <coordinates>
@@ -36,9 +36,6 @@
                 <texture>osd/osd_settings_buttonnf.png</texture>
             </control>
             <control type="label" id="1">
-                <width>0</width>
-                <height>0</height>
-                <font>-</font>
                 <visible>false</visible>
             </control>
             <control type="label">
@@ -58,7 +55,7 @@
                     <textcolor>white3</textcolor>
                     <scroll>true</scroll>
                     <textoffsetx>45</textoffsetx>
-				</control>
+                </control>
                 <control type="label" id="3">
                     <width>780</width>
                     <height>45</height>

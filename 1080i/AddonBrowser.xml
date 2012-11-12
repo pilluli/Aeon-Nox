@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="20">
+<window>
     <defaultcontrol>50</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <views>50,57,500,505,509,511,512,53,518</views>
@@ -70,13 +70,13 @@
                     <width>750</width>
                     <visible>Skin.HasSetting(breadcrumbslabel)</visible>
                     <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)]</visible>
+                    <usecontrolcoords>true</usecontrolcoords>
                     <orientation>horizontal</orientation>
                     <control type="image">
                         <width>54</width>
                         <height>38</height>
                         <texture>common/puzzle_icon.png</texture>
                         <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0" end="-9" time="0" condition="true">Conditional</animation>
                     </control>
                     <control type="label">
                         <include>BreadcrumbsLabel</include>

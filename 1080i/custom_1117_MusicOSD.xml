@@ -63,13 +63,6 @@
                     <onclick>SetProperty(MusicVizBG,True,visualisation)</onclick>
                     <onclick>ActivateWindow(1134)</onclick>
                 </control>
-                <control type="button" id="459">
-                    <label>$LOCALIZE[31039] $LOCALIZE[31456]</label>
-                    <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(CDWall_Folder_Path)][/COLOR]</label2>
-                    <include>Objects_CommonSettingsButton</include>
-                    <onclick>Skin.SetPath(CDWall_Folder_Path)</onclick>
-                    <visible>SubString(Skin.String(MusicViz.MultiFanart),cd-wall)</visible>
-                </control>
                 <control type="radiobutton" id="460">
                     <label>42200</label>
                     <include>Objects_CommonSettingsButton</include>
@@ -99,7 +92,6 @@
                     <label>$LOCALIZE[31632]:</label>
                     <label2>[COLOR $VAR[FontColorVar]]$VAR[VisPanelLabelVar][/COLOR]</label2>
                     <include>Objects_CommonSettingsButton</include>
-                    <selected>Skin.HasSetting(activatepanelrotation)</selected>
                     <onclick condition="!Skin.HasSetting(DisablePanelWidgetVis) + !Skin.HasSetting(activatepanelrotation)">Skin.SetBool(activatepanelrotation)</onclick>
                     <onclick condition="!Skin.HasSetting(DisablePanelWidgetVis) + !Skin.HasSetting(activatepanelrotation)">Notification($LOCALIZE[42002],$LOCALIZE[42016],10000)</onclick>
                     <onclick condition="Skin.HasSetting(activatepanelrotation)">Skin.SetBool(DisablePanelWidgetVis)</onclick>

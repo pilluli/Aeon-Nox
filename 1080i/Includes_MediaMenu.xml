@@ -122,10 +122,6 @@
             <selected>Window.IsVisible(MusicLibrary)</selected>
             <visible>Window.IsActive(MusicLibrary)</visible>
         </control>
-        <control type="button" id="17">
-            <include>Objects_MediaMenuButtonIcons</include>
-            <label>527</label>
-        </control>
     </include>
     <include name="VideoLibraryAltButtons_Left">
         <control type="radiobutton" id="16">
@@ -189,10 +185,10 @@
             <selected>Window.IsVisible(MusicLibrary)</selected>
             <visible>Window.IsActive(MusicFiles)</visible>
         </control>
-        <control type="button" id="11">
+               <control type="button" id="17">
             <include>Objects_MediaMenuButtonIcons</include>
-            <label>600</label>
-        </control>
+            <label>527</label>
+        </control> 
     </include>
     <include name="PicturesButtons">
         <control type="button" id="6">
@@ -212,25 +208,34 @@
         <control type="button" id="1665">
             <include>Objects_MediaMenuButtonIcons</include>
             <label>$LOCALIZE[31171]</label>
-            <onclick condition="Control.IsVisible(50)">Skin.SetString(actualViewtype,list)</onclick>
-            <onclick condition="Control.IsVisible(52) | Control.IsVisible(53)">Skin.SetString(actualViewtype,tripanel)</onclick>
-            <onclick condition="Control.IsVisible(57)">Skin.SetString(actualViewtype,shift)</onclick>
-            <onclick condition="Control.IsVisible(500)">Skin.SetString(actualViewtype,wall)</onclick>
-            <onclick condition="Control.IsVisible(501)">Skin.SetString(actualViewtype,showcasemovies)</onclick>
-            <onclick condition="Control.IsVisible(503)">Skin.SetString(actualViewtype,landscape)</onclick>
-            <onclick condition="Control.IsVisible(504)">Skin.SetString(actualViewtype,showcasedvd)</onclick>
-            <onclick condition="Control.IsVisible(506)">Skin.SetString(actualViewtype,lowlistmusic)</onclick>
-            <onclick condition="Control.IsVisible(508)">Skin.SetString(actualViewtype,banners)</onclick>
-            <onclick condition="Control.IsVisible(509)">Skin.SetString(actualViewtype,showcasesquare)</onclick>
-            <onclick condition="Control.IsVisible(510)">Skin.SetString(actualViewtype,posters)</onclick>
-            <onclick condition="Control.IsVisible(511)">Skin.SetString(actualViewtype,lowlist)</onclick>
-            <onclick condition="Control.IsVisible(512)">Skin.SetString(actualViewtype,addonwall)</onclick>
-            <onclick condition="Control.IsVisible(513)">Skin.SetString(actualViewtype,showcasecd)</onclick>
-            <onclick condition="Control.IsVisible(514)">Skin.SetString(actualViewtype,episode)</onclick>
-            <onclick condition="Control.IsVisible(516)">Skin.SetString(actualViewtype,bigfan)</onclick>
-            <onclick condition="Control.IsVisible(517)">Skin.SetString(actualViewtype,stripshow)</onclick>
-            <onclick condition="Control.IsVisible(518)">Skin.SetString(actualViewtype,fspanel)</onclick>
-            <onclick condition="Control.IsVisible(550)">Skin.SetString(actualViewtype,panel)</onclick>
+            <onclick condition="Control.IsVisible(50)">SetProperty(actualViewtype,List,home)</onclick>
+            <onclick condition="Control.IsVisible(52)">SetProperty(actualViewtype,Tripanel,home)</onclick>
+            <onclick condition="Control.IsVisible(53)">SetProperty(actualViewtype,TripanelSquare,home)</onclick>
+            <onclick condition="Control.IsVisible(57)">SetProperty(actualViewtype,Shift,home)</onclick>
+            <onclick condition="Control.IsVisible(500)">SetProperty(actualViewtype,Wall,home)</onclick>
+            <onclick condition="Control.IsVisible(501)">SetProperty(actualViewtype,ShowcaseMovies,home)</onclick>
+            <onclick condition="Control.IsVisible(503)">SetProperty(actualViewtype,Landscape,home)</onclick>
+            <onclick condition="Control.IsVisible(504)">SetProperty(actualViewtype,ShowcaseDVD,home)</onclick>
+            <onclick condition="Control.IsVisible(506)">SetProperty(actualViewtype,LowlistMusic,home)</onclick>
+            <onclick condition="Control.IsVisible(508)">SetProperty(actualViewtype,Banners,home)</onclick>
+            <onclick condition="Control.IsVisible(509)">SetProperty(actualViewtype,showcaseSquare,home)</onclick>
+            <onclick condition="Control.IsVisible(510)">SetProperty(actualViewtype,Posters,home)</onclick>
+            <onclick condition="Control.IsVisible(511)">SetProperty(actualViewtype,Lowlist,home)</onclick>
+            <onclick condition="Control.IsVisible(512)">SetProperty(actualViewtype,AddonWall,home)</onclick>
+            <onclick condition="Control.IsVisible(513)">SetProperty(actualViewtype,ShowcaseCD,home)</onclick>
+            <onclick condition="Control.IsVisible(514)">SetProperty(actualViewtype,Episode,home)</onclick>
+            <onclick condition="Control.IsVisible(516)">SetProperty(actualViewtype,BigFan,home)</onclick>
+            <onclick condition="Control.IsVisible(517)">SetProperty(actualViewtype,Stripshow,home)</onclick>
+            <onclick condition="Control.IsVisible(518)">SetProperty(actualViewtype,InfoPanel,home)</onclick>
+            <onclick condition="Control.IsVisible(550)">SetProperty(actualViewtype,Panel,home)</onclick>
+            <onclick condition="Container.Content(episodes)">SetProperty(Area,Episodes,home)</onclick>
+            <onclick condition="Container.Content(movies)">SetProperty(Area,Movies,home)</onclick>
+            <onclick condition="Container.Content(TVShows)">SetProperty(Area,TVShows,home)</onclick>
+            <onclick condition="Container.Content(seasons)">SetProperty(Area,Seasons,home)</onclick>
+            <onclick condition="Container.Content(musicvideos)">SetProperty(Area,MusicVideos,home)</onclick>
+            <onclick condition="Container.Content(albums)">SetProperty(Area,Albums,home)</onclick>
+            <onclick condition="Container.Content(artists)">SetProperty(Area,Artists,home)</onclick>
+            <onclick condition="Container.Content(addons)">SetProperty(Area,Addons,home)</onclick>
             <onclick>ActivateWindow(1126)</onclick>
             <!--             <ondown condition="!Control.IsVisible(1801) + !Control.IsVisible(1800) + Control.IsVisible(3000)">3000</ondown>
  -->
@@ -360,10 +365,10 @@
                     <onback>50</onback>
                     <control type="button" id="1802">
                         <include>Objects_MediaMenuButtonIcons</include>
-                        <onleft>Skin.Reset(viewtypeselect)</onleft>
+                        <onleft>ClearProperty(viewtypeselect,home)</onleft>
                         <onleft>ActivateWindow(1121)</onleft>
                         <label>[B]$INFO[Container.Viewmode][/B]</label>
-                        <onclick>Skin.SetBool(viewtypeselect)</onclick>
+                        <onclick>SetProperty(viewtypeselect,1,home)</onclick>
                         <onclick>ActivateWindow(1121)</onclick>
                         <visible>!Window.IsActive(musicplaylisteditor)</visible>
                     </control>
@@ -383,7 +388,7 @@
                     </control>
                     <control type="button" id="3">
                         <include>Objects_MediaMenuButtonIcons</include>
-                        <onleft>Skin.Reset(viewtypeselect)</onleft>
+                        <onleft>ClearProperty(viewtypeselect,home)</onleft>
                         <onleft>ActivateWindow(1121)</onleft>
                         <onright>SetFocus(4)</onright>
                         <label>103</label>
@@ -405,7 +410,8 @@
                 </control>
                 <control type="grouplist">
                     <posy>15</posy>
-                    <itemgap>15</itemgap>
+                    <posx>3</posx>
+                    <itemgap>20</itemgap>
                     <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(1802)">Conditional</animation>
                         <include>MediaMenuIcons</include>
@@ -498,12 +504,6 @@
                         <visible>!Window.IsActive(musicplaylisteditor)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(17)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                        <texture>special://skin/extras/BigIcons/flpp.png</texture>
-                        <visible>Control.IsVisible(17) + Window.IsActive(musiclibrary)</visible>
-                    </control>
-                    <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(6)]">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/Paperclip.png</texture>
@@ -546,10 +546,10 @@
                         <visible>Control.IsVisible(22) + [Window.IsActive(musicplaylist) | Window.IsActive(videoplaylist)]</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(11)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(17)">Conditional</animation>
                         <include>MediaMenuIcons</include>
-                        <texture>special://skin/extras/BigIcons/CD-DVD.png</texture>
-                        <visible>Control.IsVisible(11)</visible>
+                        <texture>special://skin/extras/BigIcons/flpp.png</texture>
+                        <visible>Control.IsVisible(17) + Window.IsActive(musicfiles)</visible>
                     </control>
                     <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(10)]">Conditional</animation>
@@ -646,8 +646,8 @@
         </control>
     </include>
     <include name="MediaMenuIcons">
-        <width>85</width>
-        <height>85</height>
+        <width>80</width>
+        <height>80</height>
         <posx>10</posx>
         <colordiffuse>white</colordiffuse>
     </include>

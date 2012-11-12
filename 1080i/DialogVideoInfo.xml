@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="2003">
+<window>
     <defaultcontrol always="true">5000</defaultcontrol>
     <onload>AlarmClock(ActorIconMove,Control.Move(50,3),00:07,silent,loop)</onload>
     <onunload>CancelAlarm(ActorIconMove,true)</onunload>
@@ -50,7 +50,6 @@
                 <posx>729</posx>
                 <width>1192</width>
                 <height>1080</height>
-                <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
                 <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
             </control>
@@ -58,7 +57,6 @@
                 <posx>729</posx>
                 <width>1192</width>
                 <height>1080</height>
-                <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
                 <texture background="true">$INFO[ListItem.FileNameAndPath]season$INFO[ListItem.Season]-fanart.jpg</texture>
                 <visible>Container.Content(tvshows)</visible>
@@ -67,7 +65,6 @@
                 <posx>729</posx>
                 <width>1192</width>
                 <height>1080</height>
-                <fadetime>500</fadetime>
                 <aspectratio align="center">scale</aspectratio>
                 <texture background="true">$INFO[ListItem.Path]../season$INFO[ListItem.Season]-fanart.jpg</texture>
                 <visible>Container.Content(episodes)</visible>
@@ -138,7 +135,7 @@
                     <width>1018</width>
                     <font>Font_Reg38_Caps</font>
                     <label>$INFO[ListItem.Title]</label>
-            <aligny>bottom</aligny>
+                    <aligny>bottom</aligny>
                     <scroll>true</scroll>
                     <animation effect="slide" start="0,-38" end="0,-38" time="0" condition="[!IsEmpty(ListItem.Tagline) + Container.Content(movies)] | Container.Content(episodes) | Container.Content(musicvideos)">Conditional</animation>
                 </control>
@@ -149,7 +146,7 @@
                     <font>Font_Reg20</font>
                     <label>$INFO[ListItem.Tagline]</label>
                     <scroll>true</scroll>
-            <aligny>bottom</aligny>
+                    <aligny>bottom</aligny>
                     <textcolor>grey</textcolor>
                     <visible>Container.Content(movies)</visible>
                 </control>
@@ -161,8 +158,8 @@
                     <label>$INFO[ListItem.Artist]</label>
                     <scroll>true</scroll>
                     <textcolor>grey</textcolor>
-             <aligny>bottom</aligny>
-                   <visible>Container.Content(musicvideos)</visible>
+                    <aligny>bottom</aligny>
+                    <visible>Container.Content(musicvideos)</visible>
                 </control>
                 <control type="label">
                     <posx>2</posx>
@@ -170,8 +167,8 @@
                     <width>1018</width>
                     <font>Font_Reg20</font>
                     <label>$INFO[ListItem.TvShowTitle]</label>
-             <aligny>bottom</aligny>
-                   <textcolor>grey</textcolor>
+                    <aligny>bottom</aligny>
+                    <textcolor>grey</textcolor>
                     <visible>Container.Content(episodes)</visible>
                 </control>
                 <!-- First Row -->
@@ -802,7 +799,7 @@
                     <include>DialogVideoInfoButton</include>
                     <onclick>Playlist.Clear</onclick>
                     <onclick>Dialog.Close(MovieInformation)</onclick>
-                    <onclick>XBMC.RunScript(script.cinema.experience)</onclick>
+                    <onclick>RunScript(script.cinema.experience)</onclick>
                     <visible>Container.Content(Movies) + system.hasaddon(script.cinema.experience) + !SubString(Container.FolderPath,plugin)</visible>
                 </control>
                 <control type="button" id="11">
@@ -824,8 +821,8 @@
                 <control type="button" id="21">
                     <label>$LOCALIZE[31467]</label>
                     <include>DialogVideoInfoButton</include>
-                    <onclick condition="Container.Content(movies)">XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
-                    <onclick condition="Container.Content(tvshows)">XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
+                    <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
+                    <onclick condition="Container.Content(tvshows)">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,dbid=$INFO[ListItem.DBID],extrafanart)</onclick>
                     <visible>!Skin.HasSetting(kioskmode)</visible>
                     <visible>[Container.Content(movies) | Container.Content(tvshows)] + system.hasaddon(script.artwork.downloader) + !substring(Container.FolderPath,plugin://)</visible>
                 </control>
@@ -839,14 +836,14 @@
                 <control type="button" id="23">
                     <label>$LOCALIZE[31365]</label>
                     <include>DialogVideoInfoButton</include>
-                    <onclick>XBMC.RunScript(script.tvtunes,mode=solo&amp;tvpath=$INFO[ListItem.FilenameAndPath]&amp;tvname=$INFO[ListItem.TVShowTitle])</onclick>
+                    <onclick>RunScript(script.tvtunes,mode=solo&amp;tvpath=$INFO[ListItem.FilenameAndPath]&amp;tvname=$INFO[ListItem.TVShowTitle])</onclick>
                     <visible>!Skin.HasSetting(kioskmode)</visible>
                     <visible>Container.Content(tvshows) + system.hasaddon(script.tvtunes)</visible>
                 </control>
                 <control type="button" id="24">
                     <label>$LOCALIZE[31468]</label>
                     <include>DialogVideoInfoButton</include>
-                    <onclick>XBMC.RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrathumbs)</onclick>
+                    <onclick>RunScript(script.artwork.downloader,mode=custom,mediatype=movie,dbid=$INFO[ListItem.DBID],extrathumbs)</onclick>
                     <visible>!Skin.HasSetting(kioskmode)</visible>
                     <visible>Container.Content(movies) + system.hasaddon(script.artwork.downloader)+ !substring(Container.FolderPath,plugin://)</visible>
                 </control>
@@ -858,27 +855,24 @@
                 <control type="image">
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="bottom">keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.Path,,logo.png]</texture>
+                    <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
                     <bordersize>7</bordersize>
                 </control>
                 <control type="image">
                     <posx>341</posx>
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="bottom">keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.Path,,clearart.png]</texture>
+                    <texture background="true">$INFO[ListItem.Art(clearart)]</texture>
                     <bordersize>7</bordersize>
                 </control>
                 <control type="image">
                     <posx>682</posx>
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="bottom">keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.Path,,disc.png]</texture>
+                    <texture background="true">$INFO[ListItem.Art(discart)]</texture>
                     <bordersize>7</bordersize>
                 </control>
             </control>
@@ -952,9 +946,8 @@
                     <posy>678</posy>
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="center">keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.FileNameAndPath,,/landscape.jpg]</texture>
+                    <texture background="true">$INFO[ListItem.Art(landscape)]</texture>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                     <bordersize>7</bordersize>
                 </control>
@@ -963,7 +956,6 @@
                     <posy>513</posy>
                     <width>615</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="top">keep</aspectratio>
                     <texture background="true">$INFO[ListItem.Art(banner)]</texture>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -974,9 +966,8 @@
                     <posy>678</posy>
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="bottom">keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.FileNameAndPath,,/logo.png]</texture>
+                    <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
                     <bordersize>7</bordersize>
                 </control>
                 <control type="image">
@@ -984,9 +975,8 @@
                     <posy>678</posy>
                     <width>315</width>
                     <height>315</height>
-                    <fadetime>500</fadetime>
                     <aspectratio align="bottom">keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.FileNameAndPath,,/clearart.png]</texture>
+                    <texture background="true">$INFO[ListItem.Art(clearart)]</texture>
                     <bordersize>7</bordersize>
                 </control>
             </control>
@@ -1012,8 +1002,8 @@
             <control type="group">
                 <control type="image">
                     <posy>608</posy>
-                    <posx>700</posx>
-                    <width>555</width>
+                    <posx>750</posx>
+                    <width>450</width>
                     <height>318</height>
                     <fadetime>500</fadetime>
                     <aspectratio align="center">keep</aspectratio>
@@ -1059,10 +1049,36 @@
                     <animation effect="slide" start="0" end="-200" reversible="true" condition="ControlGroup(5000).HasFocus(21) | ControlGroup(5000).HasFocus(24)">Conditional</animation>
                     <animation type="Conditional" reversible="true" condition="!IsEmpty(Window(movieinformation).Property(FanartZoom))">
                         <effect type="zoom" start="1267,610,550,314" end="-5,-5,1930,1090" time="800" tween="cubic" easing="out" />
-                        <effect type="fade" start="100" end="0" time="200"/>
+                        <effect type="fade" start="100" end="0" time="200" />
                     </animation>
                 </control>
             </control>
+            
+                <control type="image">
+                    <posx>780</posx>
+                    <posy>555</posy>
+                    <width>30</width>
+                    <height>30</height>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texture flipx="true">arrowright.png</texture>
+                    <include>Animation_VisibleChange200</include>
+                    <colordiffuse>white2</colordiffuse>
+                    <animation effect="slide" start="-150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
+                    <visible>Container(5000).HasPrevious+ ControlGroup(5000).HasFocus</visible>
+                </control>
+                <control type="image">
+                    <posx>1860</posx>
+                    <posy>555</posy>
+                    <width>30</width>
+                    <height>30</height>
+                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                    <texture>arrowright.png</texture>
+                    <colordiffuse>white2</colordiffuse>
+                    <include>Animation_VisibleChange200</include>
+                    <animation effect="slide" start="150" end="0" delay="800" time="400" easing="out" tween="cubic">WindowOpen</animation>
+                    <visible>Container(5000).HasNext+ ControlGroup(5000).HasFocus</visible>
+                </control>
+            
         </control>
     </controls>
 </window>

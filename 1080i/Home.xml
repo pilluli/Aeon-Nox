@@ -1,14 +1,16 @@
-<?xml version="1.0" encoding="utf-8"?>
-<window id="0">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<window>
     <defaultcontrol always="true">9000</defaultcontrol>
     <onload>XBMC.RunScript(script.video.bookmarks.browser,limit=5)</onload>
     <onunload>XBMC.RunScript(script.video.bookmarks.browser,limit=5)</onunload>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
     <onload condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset))">Control.Move(9000,$INFO[Skin.String(CustomFocusOffset)])</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),recentpics) | Substring(Skin.String(widget2list),recentpics) | Substring(Skin.String(backgroundlist),recentpics)]">XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),randompics) | Substring(Skin.String(widget2list),randompics) | Substring(Skin.String(backgroundlist),randompics)]">XBMC.RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),recentpics) | Substring(Skin.String(widget2list),recentpics) | Substring(Skin.String(backgroundlist),recentpics)]">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),randompics) | Substring(Skin.String(widget2list),randompics) | Substring(Skin.String(backgroundlist),randompics)]">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + [Substring(Skin.String(widgetlist),random) | Substring(Skin.String(widget2list),random) | Substring(Skin.String(backgroundlist),random)]">SetProperty(SkinWidgets_RandomItems_Update,true)</onload>
     <onload>ClearProperty(DontRunTVShowScripts,Home)</onload>
+    <onload>ClearProperty(FocusOnSubmenu,home)</onload>
     <onload>AlarmClock(BGMove,Control.Move(4324,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(WidgetMove,Control.Move(8000,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(Widget2Move,Control.Move(7000,1),00:07,silent,loop)</onload>
@@ -72,13 +74,14 @@
             <include condition="SubString(Skin.String(backgroundlist),dvdcase)">InteractiveCasesBackground</include>
             <include condition="SubString(Skin.String(backgroundlist), case)">LiveCDCasesbackground</include>
             <include condition="SubString(Skin.String(backgroundlist), nocase)">LiveNoCasesbackground</include>
-            <include condition="Skin.HasSetting(homecdwall)">cdwall-musicvisualisation</include>
+            <include condition="[Skin.HasSetting(homecdwall) | SubString(Skin.String(backgroundlist),cdwall)] + !IsEmpty(Skin.String(CDWall_Folder_Path))">cdwall-musicvisualisation</include>
+            <include condition="SubString(Skin.String(backgroundlist),moviewall) + !IsEmpty(Skin.String(MovieWall_Folder_Path))">MovieWall</include>
             <control type="image">
                 <fadetime>600</fadetime>
                 <include>FullscreenDimensions</include>
                 <aspectratio align="center" aligny="top">scale</aspectratio>
                 <texture background="true">$VAR[HomeWidgetFanartVar]</texture>
-                <visible>[Control.HasFocus(8000) | Control.HasFocus(7000) | Control.HasFocus(5010) | Control.HasFocus(5012) | ControlGroup(5014).HasFocus | ControlGroup(5020).HasFocus | ControlGroup(5021).HasFocus | ControlGroup(5030).HasFocus | Control.HasFocus(6010) | Control.HasFocus(6012) | ControlGroup(6014).HasFocus | ControlGroup(6020).HasFocus | ControlGroup(6021).HasFocus | ControlGroup(6030).HasFocus] | [Player.HasAudio + Skin.HasSetting(musicfanarthome)]</visible>
+                <visible>[Control.HasFocus(8000) | Control.HasFocus(7000) | ControlGroup(5000).HasFocus | ControlGroup(6000).HasFocus] | [Player.HasAudio + Skin.HasSetting(musicfanarthome)]</visible>
                 <animation effect="fade" time="600">Visible</animation>
                 <animation effect="fade" time="600">Hidden</animation>
                 <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
@@ -259,18 +262,16 @@
                     <visible>!Skin.HasSetting(DisableGlowbar) | [Skin.HasSetting(ExtendedGlowMode) + Skin.HasSetting(glasshome)] | Skin.HasSetting(classichome)</visible>
                 </control>
                 <!-- Home OSD -->
-                <control type="group">
+               <control type="label">
+                    <posy>445</posy>
+                    <width>1920</width>
+                    <height>225</height>
+                    <align>center</align>
+                    <font>Font_MainClassic</font>
+                    <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
+                    <label>$VAR[HomeOSDLabelVar]</label>
                     <visible>Player.HasMedia + System.IdleTime(8)</visible>
                     <animation effect="fade" start="0" end="100" time="1050">Visible</animation>
-                    <control type="label">
-                        <posy>448</posy>
-                        <width>1920</width>
-                        <height>225</height>
-                        <align>center</align>
-                        <font>Font_MainClassic</font>
-                        <textcolor>$VAR[HomeMenuTextFocusVar]</textcolor>
-                        <label>$VAR[HomeOSDLabelVar]</label>
-                    </control>
                 </control>
                 <!-- Home Menu -->
                 <control type="button" id="8993">

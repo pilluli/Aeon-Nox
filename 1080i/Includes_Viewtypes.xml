@@ -220,7 +220,7 @@
                     <height>220</height>
                     <aspectratio align="center">keep</aspectratio>
                     <fadetime>400</fadetime>
-                    <texture fallback="empty.png" background="true">$INFO[ListItem.Path,,character.png]</texture>
+                    <texture fallback="empty.png" background="true">$INFO[ListItem.Art(characterart)]</texture>
                 </control>
                 <control type="image">
                     <posx>-6</posx>
@@ -244,7 +244,7 @@
                     <height>220</height>
                     <aspectratio aligny="top">keep</aspectratio>
                     <fadetime>400</fadetime>
-                    <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,clearart.png]</texture>
+                    <texture fallback="fallback.png" background="true">$INFO[ListItem.Art(clearart)]</texture>
                     <bordersize>7</bordersize>
                 </control>
                 <control type="image">
@@ -254,7 +254,7 @@
                     <height>220</height>
                     <aspectratio aligny="top">keep</aspectratio>
                     <fadetime>400</fadetime>
-                    <texture fallback="fallback.png" background="true">$INFO[ListItem.Path,,landscape.jpg]</texture>
+                    <texture fallback="fallback.png" background="true">$INFO[ListItem.Art(landscape)]</texture>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                     <bordersize>7</bordersize>
                 </control>
@@ -459,7 +459,7 @@
             <include>Animation_OpenClose_Furniture</include>
             <include>Animation_VisibleChange400</include>
             <animation effect="slide" start="0,0" end="0,400" time="700" easing="out" tween="quadratic" condition="Control.HasFocus(109)">Conditional</animation>
-            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | [Control.IsVisible(518) + Skin.HasSetting(fspanelbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
+            <visible>![Control.IsVisible(516) | Control.IsVisible(514) | [Control.IsVisible(518) + Skin.HasSetting(infopanelbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | Control.IsVisible(511) | Control.IsVisible(506) | Control.IsVisible(8858) | [Skin.HasSetting(addonwallaltbackground) + Control.IsVisible(512)]]</visible>
             <control type="image">
                 <posy>472</posy>
                 <width>1920</width>
@@ -540,7 +540,7 @@
                 </control>
                 <control type="group">
                     <include>Animation_OpenClose_Furniture</include>
-                    <visible>[Control.IsVisible(518) + !Skin.HasSetting(fspanelfanart)]| Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(500) | [Control.IsVisible(512) + !Skin.HasSetting(addonwallaltbackground)] | Control.IsVisible(500) | Control.IsVisible(550)| Control.IsVisible(508)</visible>
+                    <visible>[Control.IsVisible(518) + !Skin.HasSetting(infopanelfanart)]| Control.IsVisible(52) | Control.IsVisible(53) | Control.IsVisible(50) | Control.IsVisible(500) | [Control.IsVisible(512) + !Skin.HasSetting(addonwallaltbackground)] | Control.IsVisible(500) | Control.IsVisible(550)| Control.IsVisible(508)</visible>
                     <control type="image">
                         <width>1920</width>
                         <height>206</height>
@@ -635,33 +635,20 @@
         <control type="scrollbar" id="61">
             <posx>458</posx>
             <posy>1035</posy>
-            <visible>Control.IsVisible(509) | Control.IsVisible(500) | [Control.IsVisible(508) + !Skin.HasSetting(BannerPlexVertical)] | Control.IsVisible(500) | Control.IsVisible(513) | Control.IsVisible(504) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
+            <visible>Control.IsVisible(509) | Control.IsVisible(500) | Control.IsVisible(508) | Control.IsVisible(500) | Control.IsVisible(513) | Control.IsVisible(504) | Control.IsVisible(501) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(503)</visible>
             <animation effect="fade" start="100" end="0" time="400" condition="![Control.HasFocus(61) | Control.IsVisible(4050)]">Conditional</animation>
             <onup>50</onup>
             <height>40</height>
             <textureslidernib>-</textureslidernib>
             <textureslidernibfocus>-</textureslidernibfocus>
             <orientation>horizontal</orientation>
-                <animation effect="zoom" start="70" end="100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(61) | Control.IsVisible(4050)">Conditional</animation>
+            <animation effect="zoom" start="70" end="100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(61) | Control.IsVisible(4050)">Conditional</animation>
             <texturesliderbar border="20,0,20,0">views/scrollbarnub-nofocus.png</texturesliderbar>
             <texturesliderbarfocus border="20,0,20,0">views/scrollbarnub-focus.png</texturesliderbarfocus>
             <texturesliderbackground border="12,0,12,0">views/scrollbarbacklist2.png</texturesliderbackground>
             <ondown condition="!Control.IsVisible(500)">109</ondown>
             <ondown condition="Control.IsVisible(500)">50</ondown>
         </control>
-            <control type="scrollbar" id="61">
-                <posx>1800</posx>
-                <posy>630</posy>
-                <width>46</width>
-                <height>350</height>
-                <animation effect="zoom" start="70" end="100" center="auto" easing="out" tween="back" time="400" condition="Control.HasFocus(61) | Control.IsVisible(4050)">Conditional</animation>
-                <animation effect="fade" start="100" end="0" time="300" condition="!Control.HasFocus(61)">Conditional</animation>
-                <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
-                <orientation>vertical</orientation>
-                <visible>Control.IsVisible(508) + Skin.HasSetting(BannerPlexVertical)</visible>
-                <onleft>50</onleft>
-                <onright>109</onright>
-            </control>
         <control type="image">
             <posy>924</posy>
             <width>1920</width>
@@ -738,13 +725,19 @@
             <texture flipy="true">views/showcase_glow.png</texture>
             <colordiffuse>$VAR[ExtendedColorDiffuseVar]</colordiffuse>
             <include>Animation_VisibleChange400</include>
-            <visible>Skin.HasSetting(ExtendedGlowMode) + ![Control.IsVisible(518) + Skin.HasSetting(fspanelbackground)]</visible>
+            <visible>Skin.HasSetting(ExtendedGlowMode) + ![Control.IsVisible(518) + Skin.HasSetting(infopanelbackground)]</visible>
         </control>
     </include>
     <include name="WallPanel">
         <control type="group">
             <include>Animation_Widgets</include>
-            <visible>[Control.IsVisible(512) + !Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | [Control.IsVisible(518) + !Skin.HasSetting(fspanelbackground)]</visible>
+            <animation effect="fade" start="0" end="100" time="200">Visible</animation>
+            <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
+            <animation type="Conditional" condition="Control.IsVisible(518) + Skin.HasSetting(infopanelfanart)">
+                <effect type="zoom" end="50,100" time="400" easing="in" tween="cubic" />
+                <effect type="slide" end="148" time="400" easing="in" tween="cubic" />
+            </animation>
+            <visible>[Control.IsVisible(512) + !Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + !Skin.HasSetting(wallfullscreen)] | [Control.IsVisible(518) + !Skin.HasSetting(infopanelbackground)]</visible>
             <control type="image">
                 <posx>112</posx>
                 <posy>68</posy>

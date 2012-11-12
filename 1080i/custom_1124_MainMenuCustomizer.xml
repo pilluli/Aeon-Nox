@@ -56,6 +56,9 @@
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <visible>!Substring(Control.GetLabel(4322),dailybabe)</visible>
         </control>
+            <include condition="!IsEmpty(Skin.String(CDWall_Folder_Path))">cdwall-musicvisualisation</include>
+            <include condition="!IsEmpty(Skin.String(MovieWall_Folder_Path))">MovieWall</include>
+
         <control type="multiimage">
             <fadetime>600</fadetime>
             <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
@@ -166,15 +169,11 @@
             <animation effect="slide" start="0,0" end="0,338" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" start="0,45" end="0,0" time="300" tween="quadratic" easing="out">Visible</animation>
             <animation effect="slide" start="0,0" end="0,45" time="300" tween="quadratic" easing="out">Hidden</animation>
-            <animation type="WindowClose" reversible="false">
+            <animation type="WindowClose">
                 <effect type="fade" start="100" end="0" time="250" tween="quadratic" easing="out" />
                 <effect type="slide" start="0,0" end="0,45" time="250" tween="quadratic" easing="out" />
             </animation>
-            <animation type="WindowOpen" reversible="false" condition="Window.Previous(Startup)">
-                <effect type="slide" start="0,80" end="0,0" delay="2000" time="400" tween="cubic" easing="out" />
-                <effect type="fade" start="0" end="100" delay="2000" time="500" />
-            </animation>
-            <animation type="WindowOpen" reversible="false" condition="!Window.Previous(Startup)">
+            <animation type="WindowOpen">
                 <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
                 <effect type="fade" start="50" end="100" time="300" />
             </animation>
@@ -193,26 +192,22 @@
                 <aligny>center</aligny>
                 <itemgap>10</itemgap>
                 <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
                 <scrolltime tween="quadratic" easing="out">200</scrolltime>
                 <control type="image">
                     <width>30</width>
                     <height>30</height>
                     <texture>common/arrowup.png</texture>
                     <colordiffuse>$VAR[HomeMenuWidgetTextVar]</colordiffuse>
-                    <aspectratio>keep</aspectratio>
                     <include>Animation_VisibleChangeDelayed</include>
-                    <include>Animation_WindowFade200</include>
-                    <animation effect="slide" start="0,0" end="0,5" time="200" tween="quadratic" easing="out" condition="true">Conditional</animation>
-                </control>
+                    <posy>5</posy>
+                    </control>
                 <control type="label">
                     <height>36</height>
                     <width min="15" max="1920">auto</width>
                     <font>Font_Info_Caps</font>
                     <textcolor>grey</textcolor>
-                    <scroll>false</scroll>
-                    <include>Animation_WindowFade200</include>
                     <label>$LOCALIZE[31176]</label>
-                    <include>Animation_VisibleChangeDelayed</include>
                 </control>
             </control>
         </control>

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<window id="2005">
+<window>
     <defaultcontrol>-</defaultcontrol>
     <controls>
         <control type="group">
@@ -64,6 +64,7 @@
                 <effect type="slide" time="200" start="0,0" end="0,-98" easing="in" tween="cubic" />
             </animation>
             <visible>![Player.Forwarding|Player.Seeking] + ![Window.IsVisible(seekbar) | Window.IsVisible(fullscreeninfo)]</visible>
+            <visible>VideoPlayer.Content(LiveTV)</visible>
             <control type="image" id="1">
                 <posx>704</posx>
                 <width>513</width>
@@ -84,7 +85,7 @@
             </control>
         </control>
         <control type="group" id="1">
-            <visible>[Player.ShowInfo] + ![Window.IsVisible(123) | Window.IsVisible(124) | Window.IsVisible(125) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
+            <visible>[Player.ShowInfo] + ![Window.IsVisible(osdvideosettings) | Window.IsVisible(osdaudiosettings) | Window.IsVisible(videobookmarks) | Window.IsVisible(PVROSDChannels) | Window.IsVisible(PVROSDGuide)]</visible>
             <visible>VideoPlayer.Content(LiveTV) + !IsEmpty(VideoPlayer.ChannelName)</visible>
             <animation type="Visible">
                 <effect type="fade" time="400" start="0" end="100" />

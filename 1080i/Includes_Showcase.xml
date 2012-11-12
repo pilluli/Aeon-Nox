@@ -35,16 +35,19 @@
         <height>420</height>
         <align>center</align>
         <bordertexture border="18">thumbs/poster_shadow.png</bordertexture>
+        <fadetime>0</fadetime>
         <bordersize>18</bordersize>
         <aspectratio scalediffuse="false">scale</aspectratio>
     </include>
     <include name="MovieShowcaseThumbReflectionMain">
         <include>MovieShowcaseThumbReflectionDimensions</include>
+        <fadetime>0</fadetime>
         <colordiffuse>52FFFFFF</colordiffuse>
         <aspectratio scalediffuse="false">scale</aspectratio>
     </include>
     <include name="MovieShowcaseThumbReflection">
         <include>MovieShowcaseThumbReflectionDimensions</include>
+        <fadetime>0</fadetime>
         <colordiffuse>d1FFFFFF</colordiffuse>
         <aspectratio scalediffuse="false">scale</aspectratio>
         <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
@@ -85,6 +88,7 @@
     </include>
     <include name="MusicShowcasePhotoReflection">
         <colordiffuse>d1FFFFFF</colordiffuse>
+        <fadetime>0</fadetime>
         <include>MusicShowcaseThumbReflectionDimensions</include>
         <visible>Container.Content(artists)</visible>
     </include>
@@ -96,6 +100,7 @@
     </include>
     <include name="MusicShowcaseThumb">
         <include>MusicShowcaseThumbDimensions</include>
+        <fadetime>0</fadetime>
         <bordertexture border="16">thumbs/cd_shadow.png</bordertexture>
         <aspectratio scalediffuse="false">scale</aspectratio>
     </include>
@@ -115,10 +120,12 @@
     <include name="MusicShowcaseThumbReflection">
         <include>MusicShowcaseThumbReflectionDimensions</include>
         <colordiffuse>d1FFFFFF</colordiffuse>
+        <fadetime>0</fadetime>
         <aspectratio scalediffuse="false">scale</aspectratio>
         <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
     </include>
     <include name="MusicShowcaseThumbReflectionMain">
+        <fadetime>0</fadetime>
         <include>MusicShowcaseThumbReflectionDimensions</include>
         <colordiffuse>52FFFFFF</colordiffuse>
         <aspectratio scalediffuse="false">scale</aspectratio>
@@ -650,13 +657,15 @@
         <control type="group" id="7550">
             <visible>Control.IsVisible(197) | Control.HasFocus(7000) | Stringcompare(Control.GetLabel(4421),infopanelon)</visible>
             <visible>!StringCompare(ListItem.Label,..)</visible>
+            <visible>!Container.Content(sets)</visible>
             <visible>!Control.HasFocus(109)</visible>
-            <visible>Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(509) | Control.IsVisible(504) | Control.IsVisible(501)</visible>
+            <visible>Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(509) | Control.IsVisible(504) | Control.IsVisible(501) | [Control.IsVisible(57) + Skin.HasSetting(smallshiftview)]</visible>
             <animation effect="slide" start="0,-1200" end="0,0" time="750" easing="out" tween="cubic">VisibleChange</animation>
             <animation effect="slide" end="0,45" time="400" easing="inout" tween="cubic" condition="Control.IsVisible(503) | Control.IsVisible(508)">Conditional</animation>
             <animation effect="fade" time="250">WindowOpen</animation>
             <animation effect="slide" start="0,0" end="0,-1000" time="300" easing="in" tween="cubic">WindowClose</animation>
             <animation effect="slide" start="0,0" end="0,35" time="500" easing="in" tween="cubic" condition="!Skin.HasSetting(no_infopane_panel) + Control.IsVisible(503)">Conditional</animation>
+            <animation effect="slide" start="0,0" end="0,60" time="500" easing="in" tween="cubic" condition="[Control.IsVisible(57) + Skin.HasSetting(smallshiftview)]">Conditional</animation>
             <animation effect="slide" start="0,0" end="0,65" time="500" easing="in" tween="cubic" condition="!Skin.HasSetting(no_infopane_panel) + Control.IsVisible(503) + [Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)] + [Container.Content(tvshows) | Container.Content(movies)]">Conditional</animation>
             <animation effect="zoom" end="113" center="960,500" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(no_infopane_panel)">Conditional</animation>
             <control type="group">
@@ -682,6 +691,7 @@
                         <texture>wall/wall_bg.png</texture>
                         <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
+                </control>
                     <control type="image">
                         <posy>8</posy>
                         <posx>112</posx>
@@ -690,7 +700,6 @@
                         <fadetime>400</fadetime>
                         <texture>$VAR[InfoPanelLayoutVar]</texture>
                     </control>
-                </control>
                 <control type="image">
                     <posx>165</posx>
                     <posy>100</posy>
