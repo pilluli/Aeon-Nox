@@ -708,8 +708,6 @@
                         <include>Default_SettingRadioButton</include>
                     </control>
                 </control>
-                
-                
                 <control type="grouplist" id="9009">
                     <visible>Container(9000).Hasfocus(10)</visible>
                     <posx>387</posx>
@@ -756,7 +754,7 @@
                         <onclick condition="Stringcompare(Skin.String(LibraryStructure),2)">Skin.SetString(LibraryStructure,3)</onclick>
                         <onclick condition="Stringcompare(Skin.String(LibraryStructure),1)">Skin.SetString(LibraryStructure,2)</onclick>
                     </control>
-                </control>    
+                </control>
             </control>
             <control type="group">
                 <visible>Container(9000).Hasfocus(9)</visible>
@@ -789,29 +787,7 @@
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>750</width>
-                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying)] + Skin.HasSetting(breadcrumbslabel)</visible>
-                    <orientation>horizontal</orientation>
-                    <control type="image">
-                        <width>54</width>
-                        <height>34</height>
-                        <texture>common/settings_logo.png</texture>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0,0" end="-9,2" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$LOCALIZE[5]</label>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label> / $LOCALIZE[20077]</label>
-                    </control>
-                </control>
-            </control>
+            <include>BreadcrumbsContent</include>
             <include>Breadcrumbs_Furniture</include>
         </control>
         <include>Furniture_NowPlayingWidget</include>

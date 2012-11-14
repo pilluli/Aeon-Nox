@@ -239,6 +239,13 @@
         <value condition="SubString(Player.Filenameandpath,dvd) | SubString(Player.Filenameandpath,.iso,Right) | SubString(Player.Filenameandpath,.ifo,Right)">dvd</value>
         <value>$INFO[VideoPlayer.VideoCodec]</value>
     </variable>
+    <variable name="VideoPlayerSubTitleVar">
+        <value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Tagline]</value>
+        <value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.Artist]</value>
+        <value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TVShowTitle]</value>
+        <value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.ChannelName]</value>
+	</variable>
+	
     <variable name="RatingFlagVar">
         <value condition="substring(ListItem.mpaa,TV-G)">TV-G_Certificate_US</value>
         <value condition="substring(ListItem.mpaa,TV-PG)">TV-PG_Certificate_US</value>
@@ -764,11 +771,11 @@
         <value condition="Substring(Control.GetLabel(4325),clearart,right)">$INFO[ListItem.Property(Clearart)]</value>
     </variable>
     <variable name="Widget1SubTitleVar">
-        <value condition="Substring(Control.GetLabel(4321),movies)">$INFO[ListItem.Property(Tagline)]</value>
+        <value condition="Substring(Control.GetLabel(4321),movie)">$INFO[ListItem.Property(Tagline)]</value>
         <value condition="Substring(Control.GetLabel(4321),tv)">$INFO[ListItem.Property(EpisodeNumber)]: $INFO[ListItem.Label]</value>
     </variable>
     <variable name="Widget2SubTitleVar">
-        <value condition="Substring(Control.GetLabel(4325),movies)">$INFO[ListItem.Property(Tagline)]</value>
+        <value condition="Substring(Control.GetLabel(4325),movie)">$INFO[ListItem.Property(Tagline)]</value>
         <value condition="Substring(Control.GetLabel(4325),tv)">$INFO[ListItem.Property(EpisodeNumber)]: $INFO[ListItem.Label]</value>
     </variable>
     <variable name="WidgetTypeLabelVar">
@@ -1238,7 +1245,40 @@
         <value condition="Container.Content(musicvideos)">$LOCALIZE[20389]</value>
         <value condition="Container.Content(tvshows) | Container.Content(seasons) | [Container.Content(episodes) + !SubString(Container.FolderName,$LOCALIZE[20373])]">$LOCALIZE[20343]</value>
         <value condition="Container.Content(episodes) + !SubString(Container.FolderPath,videodb://5/) + SubString(Container.FolderName,$LOCALIZE[20373])">$INFO[ListItem.TVShowTitle,$LOCALIZE[20343] / ]</value>
+        <value condition="Window.IsActive(addonbrower)">$LOCALIZE[24001]</value>
+        <value condition="Window.IsActive(programs)">$LOCALIZE[10001]</value>
+        <value condition="Window.IsActive(videoplaylist)">$LOCALIZE[10522]</value>
+        <value condition="Window.IsActive(musicplaylisteditor)">$LOCALIZE[10503]</value>
+        <value condition="Window.IsActive(musiclibrary)">$LOCALIZE[10516]</value>
+        <value condition="Window.IsActive(musicfiles)">$LOCALIZE[31022]</value>
+        <value condition="Window.IsActive(musicplaylist)">$LOCALIZE[10517]</value>
+        <value condition="Window.IsActive(settings)">$LOCALIZE[5]</value>
+        <value condition="Window.IsActive(skinsettings)">$LOCALIZE[5] / $LOCALIZE[20077]</value>
+        <value condition="Window.IsActive(systeminfo)">$LOCALIZE[5] / $LOCALIZE[130]</value>
+        <value condition="Window.IsActive(profilesettings)">$LOCALIZE[5] / $LOCALIZE[13200]</value>
+        <value condition="Window.IsActive(SettingsCategory.xml)">$LOCALIZE[5]$INFO[Control.GetLabel(2), / ]</value>
+        <value condition="Window.IsActive(loginscreen)">$INFO[Control.GetLabel(2)]</value>
+        <value condition="Window.IsActive(weather) | Window.IsActive(1153)">$LOCALIZE[8]</value>
+        <value condition="Window.IsActive(pictures)">$LOCALIZE[1213]</value>
+        <value condition="Window.IsActive(filemanager)">$LOCALIZE[10003]</value>
+        <value condition="Window.IsActive(PVR)">$LOCALIZE[52502]$INFO[Control.GetLabel(29), / ]$INFO[Control.GetLabel(30), / ]</value>
+        <value condition="Window.IsActive(script-NextAired-TVGuide.xml)">$LOCALIZE[31290]</value>
+        <value condition="Window.IsActive(script-globalsearch-main.xml)">$LOCALIZE[283]</value>
+        <value condition="Window.IsActive(script-Rom_Collection_Browser-main.xml)">Rom Collection Browser $INFO[ListItem.Property(romcollection), / ]</value>
         <value>$LOCALIZE[3]</value>
+    </variable>
+    <variable name="BreadcrumbsIconVar">
+        <value condition="Container.Content(seasons) | Container.Content(tvshows) | Container.Content(episodes) | Window.IsActive(script-NextAired-TVGuide.xml)">common/tv_icon.png</value>
+        <value condition="Window.IsActive(videos) | Window.IsActive(videoplaylist)">common/logo_movies.png</value>
+        <value condition="Window.IsActive(addonbrower)">common/puzzle_icon.png</value>
+        <value condition="Window.IsActive(musicplaylisteditor) | Window.IsActive(musiclibrary) | Window.IsActive(musicfiles) | Window.IsActive(musicplaylist)">common/logo_music.png</value>
+        <value condition="Window.IsActive(programs) | Window.IsActive(script-Rom_Collection_Browser-main.xml)">common/logo_games.png</value>
+        <value condition="Window.IsActive(filemanager)">common/logo_playlist.png</value>
+        <value condition="Window.IsActive(settings) | Window.IsActive(skinsettings) | Window.IsActive(systeminfo) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(profilesettings) | Window.IsActive(loginscreen)">common/settings_logo.png</value>
+        <value condition="Window.IsActive(weather) | Window.IsActive(pictures) | Window.IsActive(1153)">common/logo_pics.png</value>
+        <value condition="Window.IsActive(script-globalsearch-main.xml)">featured/icons/DefaultSearch.png</value>
+        <value condition="Window.IsActive(PVR)">PVR/TVIcon.png</value>
+        <value>common/puzzle_icon.png</value>
     </variable>
     <variable name="PosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
@@ -1250,15 +1290,6 @@
         <value condition="Stringcompare(Skin.String(LibraryStructure),1)">ARTIST/ALBUMNAME/</value>
         <value condition="Stringcompare(Skin.String(LibraryStructure),2)">ARTIST/YEAR - ALBUMNAME/</value>
         <value condition="Stringcompare(Skin.String(LibraryStructure),3)">ARTIST/ALBUMNAME (YEAR)/</value>
-    
-    </variable>
-    <variable name="PosterVar2">
-        <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
-        <value condition="Container.Content(genres)">$INFO[ListItem.Label,special://skin/extras/genre/video/icons/,.jpg]</value>
-        <value condition="Container.Content(tvshows) + !IsEmpty(ListItem.Art(poster))">$INFO[ListItem.Art(poster)]</value>
-        <value condition="Container.Content(episodes) + !IsEmpty(ListItem.Art(season.poster))">$INFO[ListItem.Art(season.poster)]</value>
-        <value condition="Container.Content(episodes)">$INFO[ListItem.Art(tvshow.poster)]</value>
-        <value>$INFO[ListItem.Thumb]</value>
     </variable>
     <variable name="ListPosterVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
@@ -1269,8 +1300,8 @@
         <value>$INFO[ListItem.Icon]</value>
     </variable>
     <variable name="EpisodePosterVar">
-        <value condition="Skin.HasSetting(EpisodeMoviePoster) + Container.Content(movies)">$VAR[PosterVar2]</value>
-        <value condition="Skin.HasSetting(EpisodeViewIcon) + !Skin.HasSetting(disableepisodeposter)">$VAR[PosterVar2]</value>
+        <value condition="Skin.HasSetting(EpisodeMoviePoster) + Container.Content(movies)">$VAR[ListPosterVar]</value>
+        <value condition="Skin.HasSetting(EpisodeViewIcon) + !Skin.HasSetting(disableepisodeposter)">$VAR[ListPosterVar]</value>
         <value condition="!Skin.HasSetting(EpisodeViewIcon) + !Skin.HasSetting(disableepisodeposter)">$INFO[ListItem.Art(season.poster)]</value>
         <value></value>
     </variable>
@@ -1670,7 +1701,7 @@
     <variable name="CustomItemSubmenuLabelVar">
         <value condition="IsEmpty(Skin.String(ItemToEdit.Submenu))">$LOCALIZE[106]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Submenu),video,left)">$LOCALIZE[31504]</value>
-        <value condition="Substring(Skin.String(ItemToEdit.Submenu),movies,left)">$LOCALIZE[31502]</value>
+        <value condition="Substring(Skin.String(ItemToEdit.Submenu),movie,left)">$LOCALIZE[31502]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Submenu),tv,left)">$LOCALIZE[31503]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Submenu),pvr,left)">$LOCALIZE[52502]</value>
         <value condition="Substring(Skin.String(ItemToEdit.Submenu),shutdown,left)">$LOCALIZE[31508]</value>
@@ -2249,14 +2280,13 @@
     <variable name="VideoInfoThumbPreviewVar">
         <value condition="!IsEmpty(ListItem.Art(poster))">$INFO[listItem.Art(poster)]</value>
         <value>$INFO[ListItem.Art(thumb))]</value>
-    </variable>  
+    </variable>
     <variable name="PVRThumbVar">
         <value condition="Control.IsVisible(11)">special://skin/backgrounds/fallback_livetv.jpg</value>
         <value condition="Control.IsVisible(12)">special://skin/backgrounds/fallback_radio.jpg</value>
         <value condition="Control.IsVisible(13) + !StringCompare(Container(13).ListItem.Icon,DefaultVideo.png)">$INFO[Container(13).ListItem.Icon]</value>
         <value>special://skin/backgrounds/fallback_record.jpg</value>
     </variable>
-
     <variable name="PlayerArtworkVar">
         <value condition="VideoPlayer.Content(episodes) + !IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
         <value condition="VideoPlayer.Content(episodes)">$INFO[Player.Art(tvshow.clearlogo)]</value>

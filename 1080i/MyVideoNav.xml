@@ -75,9 +75,7 @@
             <visible>[Control.IsVisible(512) + Skin.HasSetting(addonwallaltbackground)] | [Control.IsVisible(500) + Skin.HasSetting(wallfullscreen)] | [Skin.HasSetting(no_infopane_panel) + Control.IsVisible(7550)] | Control.IsVisible(5999)</visible>
         </control>
         <include>Furniture_Glow</include>
-        <control type="group">
-            <include>ShowcaseInfoPaneMovies</include>
-        </control>
+        <include>ShowcaseInfoPaneMovies</include>
         <include>Furniture_Showcase</include>
         <include condition="!Skin.HasSetting(DisableInfoWallVL) | !Skin.HasSetting(DisableWallVL)">WallPanel</include>
         <control type="group">
@@ -202,31 +200,7 @@
         <control type="group">
             <include>Animation_HideBreadCrumbs</include>
             <include>Breadcrumbs_BackBar</include>
-            <control type="group">
-                <control type="grouplist">
-                    <posx>22</posx>
-                    <width>750</width>
-                    <visible></visible>
-                    <orientation>horizontal</orientation>
-                    <visible>Skin.HasSetting(breadcrumbslabel)</visible>
-                    <visible>![Player.HasMedia + Skin.HasSetting(GlobalNowPlaying) + IsEmpty(Window(videolibrary).Property(tvtunesIsAlive))]</visible>
-                    <control type="image">
-                        <width>54</width>
-                        <height>38</height>
-                        <texture>common/logo_movies.png</texture>
-                        <include>BreadcrumbsIcon</include>
-                        <animation effect="slide" start="0,0" end="-9,0" time="0" condition="true">Conditional</animation>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$VAR[BreadcrumbsVideoVar]</label>
-                    </control>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$INFO[Container.FolderName, / ]</label>
-                    </control>
-                </control>
-            </control>
+            <include>BreadcrumbsContent</include>
             <include>Breadcrumbs_Furniture</include>
         </control>
         <include>Furniture_NowPlayingWidget</include>

@@ -740,14 +740,14 @@
             <label>$LOCALIZE[31284]</label>
             <onclick>SetProperty(DontRunTVShowScripts,True,Home)</onclick>
             <onclick>RunScript(script.cinema.experience,movietitles)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies)</visible>
+            <visible>Substring(Control.GetLabel(4327),movie)</visible>
         </item>
     </include>
     <include name="RandomMovieScriptButton">
         <item>
             <label>590</label>
             <onclick>RunScript(script.randommovie, prompt=True)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies)</visible>
+            <visible>Substring(Control.GetLabel(4327),movie)</visible>
         </item>
     </include>
     <include name="DefaultMoviesSubMenu">
@@ -757,57 +757,57 @@
             <onclick>SetProperty(DontRunTVShowScripts,True,Home)</onclick>
             <onclick condition="!IsEmpty(Skin.String(HomeMenuSubMoviesTrailer))">RunAddon($INFO[Skin.String(HomeMenuSubMoviesTrailer)])</onclick>
             <onclick condition="IsEmpty(Skin.String(HomeMenuSubMoviesTrailer))">Skin.SetAddon(HomeMenuSubMoviesTrailer,xbmc.addon.video)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies) + IsEmpty(Skin.String(MoviesSub2))</visible>
+            <visible>Substring(Control.GetLabel(4327),movie) + IsEmpty(Skin.String(MoviesSub2))</visible>
         </item>
         <item>
             <label>369</label>
             <onclick>SetProperty(DontRunTVShowScripts,True,Home)</onclick>
             <onclick>ActivateWindow(Videos,MovieTitles,return)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies) + IsEmpty(Skin.String(MoviesSub4))</visible>
+            <visible>Substring(Control.GetLabel(4327),movie) + IsEmpty(Skin.String(MoviesSub4))</visible>
         </item>
         <item>
             <label>31334</label>
             <onclick>SetProperty(DontRunTVShowScripts,True,Home)</onclick>
             <onclick>ActivateWindow(Videos,RecentlyAddedMovies,return)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies) + IsEmpty(Skin.String(MoviesSub3))</visible>
+            <visible>Substring(Control.GetLabel(4327),movie) + IsEmpty(Skin.String(MoviesSub3))</visible>
         </item>
         <item>
             <label>135</label>
             <onclick>SetProperty(DontRunTVShowScripts,True,Home)</onclick>
             <onclick>ActivateWindow(Videos,MovieGenres,return)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies) + IsEmpty(Skin.String(MoviesSub5))</visible>
+            <visible>Substring(Control.GetLabel(4327),movie) + IsEmpty(Skin.String(MoviesSub5))</visible>
         </item>
         <item>
             <label>652</label>
             <onclick>SetProperty(DontRunTVShowScripts,True,Home)</onclick>
             <onclick>ActivateWindow(Videos,MovieYears,return)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies) + IsEmpty(Skin.String(MoviesSub6))</visible>
+            <visible>Substring(Control.GetLabel(4327),movie) + IsEmpty(Skin.String(MoviesSub6))</visible>
         </item>
         <item>
             <label>344</label>
             <onclick>SetProperty(DontRunTVShowScripts,True,Home)</onclick>
             <onclick>SetProperty(BrowseActors,true,home)</onclick>
             <onclick>ActivateWindow(Videos,MovieActors,return)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies) + IsEmpty(Skin.String(MoviesSub7))</visible>
+            <visible>Substring(Control.GetLabel(4327),movie) + IsEmpty(Skin.String(MoviesSub7))</visible>
         </item>
         <item>
             <label>20348</label>
             <onclick>SetProperty(BrowseActors,true,home)</onclick>
             <onclick>SetProperty(DontRunTVShowScripts,True,Home)</onclick>
             <onclick>ActivateWindow(Videos,MovieDirectors,return)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies) + IsEmpty(Skin.String(MoviesSub8))</visible>
+            <visible>Substring(Control.GetLabel(4327),movie) + IsEmpty(Skin.String(MoviesSub8))</visible>
         </item>
         <item>
             <label>24069</label>
             <onclick>UpdateLibrary(video)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies) + IsEmpty(Skin.String(MoviesSub9))</visible>
+            <visible>Substring(Control.GetLabel(4327),movie) + IsEmpty(Skin.String(MoviesSub9))</visible>
         </item>
         <item>
             <label>42245</label>
             <onclick>SetProperty(DontRunTVShowScripts,True,Home)</onclick>
             <onclick condition="!System.HasAddon(plugin.moviesets)">ActivateWindow(Videos,MovieSets,return)</onclick>
             <onclick condition="System.HasAddon(plugin.moviesets)">RunAddon(plugin.moviesets)</onclick>
-            <visible>Substring(Control.GetLabel(4327),movies) + IsEmpty(Skin.String(MoviesSub11))</visible>
+            <visible>Substring(Control.GetLabel(4327),movie) + IsEmpty(Skin.String(MoviesSub11))</visible>
         </item>
         <include condition="System.HasAddon(script.randommovie) + IsEmpty(Skin.String(MoviesSub10))">RandomMovieScriptButton</include>
     </include>
@@ -1388,7 +1388,7 @@
                 <height>88</height>
                 <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
                 <colordiffuse>white5</colordiffuse>
-                    <visible>SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))</visible>
+                <visible>SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))</visible>
             </control>
             <control type="image">
                 <posx>252</posx>
@@ -1397,8 +1397,8 @@
                 <height>60</height>
                 <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
                 <colordiffuse>white5</colordiffuse>
-                    <visible>![SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))]</visible>
-                    <aspectratio>keep</aspectratio>
+                <visible>![SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))]</visible>
+                <aspectratio>keep</aspectratio>
             </control>
             <control type="label">
                 <posx>297</posx>
@@ -1412,35 +1412,35 @@
             </control>
         </itemlayout>
         <focusedlayout height="225" width="250" condition="Skin.HasSetting(mainmenuicons)">
-                <control type="image">
-                    <posx>252</posx>
-                    <posy>64</posy>
-                    <width>88</width>
-                    <height>88</height>
-                    <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
-                    <colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse>
-                    <visible>SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))</visible>
-                </control>
-                <control type="image">
-                    <posx>252</posx>
-                    <posy>66</posy>
-                    <width>88</width>
-                    <height>60</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
-                    <colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse>
-                    <visible>![SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))]</visible>
-                </control>
-                <control type="label">
-                    <posx>297</posx>
-                    <posy>29</posy>
-                    <width>250</width>
-                    <textcolor>$VAR[MainMenuFontColorVar]</textcolor>
-                    <height>225</height>
-                    <align>center</align>
-                    <label>[B]$INFO[ListItem.Label][/B]</label>
-                    <font>Font_Reg17_Caps</font>
-                </control>
+            <control type="image">
+                <posx>252</posx>
+                <posy>64</posy>
+                <width>88</width>
+                <height>88</height>
+                <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
+                <colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse>
+                <visible>SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))</visible>
+            </control>
+            <control type="image">
+                <posx>252</posx>
+                <posy>66</posy>
+                <width>88</width>
+                <height>60</height>
+                <aspectratio>keep</aspectratio>
+                <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
+                <colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse>
+                <visible>![SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))]</visible>
+            </control>
+            <control type="label">
+                <posx>297</posx>
+                <posy>29</posy>
+                <width>250</width>
+                <textcolor>$VAR[MainMenuFontColorVar]</textcolor>
+                <height>225</height>
+                <align>center</align>
+                <label>[B]$INFO[ListItem.Label][/B]</label>
+                <font>Font_Reg17_Caps</font>
+            </control>
         </focusedlayout>
         <itemlayout height="225" width="519" condition="!Skin.HasSetting(biggergap) + !Skin.HasSetting(mainmenuicons)">
             <control type="label">
@@ -1677,7 +1677,7 @@
             <include condition="Substring(Skin.String(submenulist),pvr)">DefaultSubLiveTV</include>
             <!--Custom-->
             <!--Movies-->
-            <include condition="Substring(Skin.String(submenulist),movies)">DefaultMoviesSubMenu</include>
+            <include condition="Substring(Skin.String(submenulist),movie)">DefaultMoviesSubMenu</include>
             <!--settings-->
             <!--TV Shows-->
             <include condition="Substring(Skin.String(submenulist),tv)">DefaultTVShowsSubMenu</include>
@@ -1811,7 +1811,7 @@
                 <height>88</height>
                 <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
                 <colordiffuse>white5</colordiffuse>
-                    <visible>SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))</visible>
+                <visible>SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))</visible>
             </control>
             <control type="image">
                 <posx>252</posx>
@@ -1820,8 +1820,8 @@
                 <height>60</height>
                 <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
                 <colordiffuse>white5</colordiffuse>
-                    <visible>![SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))]</visible>
-                    <aspectratio>keep</aspectratio>
+                <visible>![SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))]</visible>
+                <aspectratio>keep</aspectratio>
             </control>
             <control type="label">
                 <posx>297</posx>
@@ -1843,35 +1843,35 @@
             </control>
         </itemlayout>
         <focusedlayout height="225" width="250" condition="Skin.HasSetting(mainmenuicons)">
-                <control type="image">
-                    <posx>252</posx>
-                    <posy>64</posy>
-                    <width>88</width>
-                    <height>88</height>
-                    <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
-                    <colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse>
-                    <visible>SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))</visible>
-                </control>
-                <control type="image">
-                    <posx>252</posx>
-                    <posy>66</posy>
-                    <width>88</width>
-                    <height>60</height>
-                    <aspectratio>keep</aspectratio>
-                    <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
-                    <colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse>
-                    <visible>![SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))]</visible>
-                </control>
-                <control type="label">
-                    <posx>297</posx>
-                    <posy>29</posy>
-                    <width>250</width>
-                    <textcolor>$VAR[MainMenuFontColorVar]</textcolor>
-                    <height>225</height>
-                    <align>center</align>
-                    <label>[B]$INFO[ListItem.Label][/B]</label>
-                    <font>Font_Reg17_Caps</font>
-                </control>
+            <control type="image">
+                <posx>252</posx>
+                <posy>64</posy>
+                <width>88</width>
+                <height>88</height>
+                <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
+                <colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse>
+                <visible>SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))</visible>
+            </control>
+            <control type="image">
+                <posx>252</posx>
+                <posy>66</posy>
+                <width>88</width>
+                <height>60</height>
+                <aspectratio>keep</aspectratio>
+                <texture background="true">$INFO[ListItem.Property(BigIcon)]</texture>
+                <colordiffuse>$VAR[MainMenuFontColorVar]</colordiffuse>
+                <visible>![SubString(ListItem.Property(BigIcon),/BigIcons/) | IsEmpty(ListItem.Property(BigIcon))]</visible>
+            </control>
+            <control type="label">
+                <posx>297</posx>
+                <posy>29</posy>
+                <width>250</width>
+                <textcolor>$VAR[MainMenuFontColorVar]</textcolor>
+                <height>225</height>
+                <align>center</align>
+                <label>[B]$INFO[ListItem.Label][/B]</label>
+                <font>Font_Reg17_Caps</font>
+            </control>
             <control type="image">
                 <posx>266</posx>
                 <posy>67</posy>
@@ -2546,7 +2546,7 @@
                 <onclick condition="IsEmpty(Skin.String(MoviesSub1))">Skin.SetString(MoviesSub1,1)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub1))">Skin.Reset(MoviesSub1)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub1)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label>$LOCALIZE[31162]</label>
@@ -2554,63 +2554,63 @@
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub2))">Skin.Reset(MoviesSub2)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub2))">Skin.SetAddon(HomeMenuSubMoviesTrailer,xbmc.addon.video)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub2)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label>31334</label>
                 <onclick condition="IsEmpty(Skin.String(MoviesSub3))">Skin.SetString(MoviesSub3,1)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub3))">Skin.Reset(MoviesSub3)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub3)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label>369</label>
                 <onclick condition="IsEmpty(Skin.String(MoviesSub4))">Skin.SetString(MoviesSub4,1)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub4))">Skin.Reset(MoviesSub4)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub4)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label>135</label>
                 <onclick condition="IsEmpty(Skin.String(MoviesSub5))">Skin.SetString(MoviesSub5,1)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub5))">Skin.Reset(MoviesSub5)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub5)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label>652</label>
                 <onclick condition="IsEmpty(Skin.String(MoviesSub6))">Skin.SetString(MoviesSub6,1)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub6))">Skin.Reset(MoviesSub6)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub6)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label>344</label>
                 <onclick condition="IsEmpty(Skin.String(MoviesSub7))">Skin.SetString(MoviesSub7,1)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub7))">Skin.Reset(MoviesSub7)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub7)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label>20348</label>
                 <onclick condition="IsEmpty(Skin.String(MoviesSub8))">Skin.SetString(MoviesSub8,1)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub8))">Skin.Reset(MoviesSub8)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub8)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label>24069</label>
                 <onclick condition="IsEmpty(Skin.String(MoviesSub9))">Skin.SetString(MoviesSub9,1)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub9))">Skin.Reset(MoviesSub9)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub9)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label>42245</label>
                 <onclick condition="IsEmpty(Skin.String(MoviesSub11))">Skin.SetString(MoviesSub11,1)</onclick>
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub11))">Skin.Reset(MoviesSub11)</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub11)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label>590</label>
@@ -2618,7 +2618,7 @@
                 <onclick condition="!IsEmpty(Skin.String(MoviesSub10))">Skin.Reset(MoviesSub10)</onclick>
                 <onclick condition="!System.HasAddon(script.randommovie)">Notification($LOCALIZE[42000],$LOCALIZE[42006]</onclick>
                 <property name="DisableIcon">$INFO[Skin.String(MoviesSub10)]</property>
-                <visible>Substring(Control.GetLabel(4327),movies)</visible>
+                <visible>Substring(Control.GetLabel(4327),movie)</visible>
             </item>
             <item>
                 <label fallback="CUSTOM 41">$INFO[Skin.String(CustomSub9_1.Label)]</label>
