@@ -910,7 +910,6 @@
                     <control type="group">
                         <posx>158</posx>
                         <posy>60</posy>
-                        <include>Animation_VisibleChange200</include>
                         <control type="label">
                             <posy>-6</posy>
                             <height>20</height>
@@ -1129,7 +1128,7 @@
                             <height>220</height>
                             <aspectratio align="center">keep</aspectratio>
                             <fadetime>400</fadetime>
-                            <texture fallback="empty.png" background="true">$INFO[ListItem.Art(characterart)]</texture>
+                            <texture>$VAR[InfoPanelCharacterArtVar]</texture>
                         </control>
                         <control type="image">
                             <posy>315</posy>

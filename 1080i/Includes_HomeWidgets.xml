@@ -404,7 +404,7 @@
             <include>Animation_CommonFade</include>
             <control type="group">
                 <visible>Skin.HasSetting(ShowBackgroundVideo)</visible>
-                <include>Animation_CommonFade</include>
+                <include>Animation_VisibleChange400</include>
                 <control type="image">
                     <posx>37</posx>
                     <posy>691</posy>
@@ -427,7 +427,7 @@
                 <visible>!Skin.HasSetting(ShowBackgroundVideo)</visible>
                 <control type="group">
                     <visible>VideoPlayer.Content(movies) | VideoPlayer.Content(musicvideos) | VideoPlayer.Content(episodes)</visible>
-                    <include>Animation_CommonFade</include>
+                    <include>Animation_VisibleChange400</include>
                     <control type="image">
                         <animation effect="rotate" end="-360" center="auto" time="6000" loop="true" reversible="false" condition="!Player.Paused">Conditional</animation>
                         <width>300</width>
@@ -462,7 +462,7 @@
                 <control type="group">
                     <visible>VideoPlayer.Content(files) | VideoPlayer.Content(livetv)</visible>
                     <animation effect="slide" end="0" time="800" easing="inout" tween="circle" condition="Skin.HasSetting(nowplayingpanel)">Conditional</animation>
-                    <include>Animation_CommonFade</include>
+                    <include>Animation_VisibleChange400</include>
                     <control type="image">
                         <animation effect="fade" end="30" condition="true">conditional</animation>
                         <posx>15</posx>
@@ -802,16 +802,10 @@
                 <height>1080</height>
                 <width>1920</width>
                 <animation type="Conditional" condition="Skin.HasSetting(rotationtimer) + Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))" reversible="false">
-                    <effect type="rotatex" center="201" start="0" end="90" time="550" tween="cubic" easing="in" />
-                    <effect type="rotatex" center="201" start="90" end="-90" time="0" delay="550" />
-                    <effect type="fade" start="100" end="0" time="0" delay="550" />
-                    <effect type="rotatex" center="201" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                    <include>Animation_PanelFlipUp2</include>
                 </animation>
                 <animation type="Conditional" condition="!Skin.HasSetting(rotationtimer) + Skin.HasSetting(rotatenowplayingpanel) + Skin.HasSetting(nowplayingpanel) + !IsEmpty(Window(Visualisation).Property(ArtistSlideshow.1.SimilarName))" reversible="false">
-                    <effect type="rotatex" center="201" start="0" end="-90" time="550" tween="cubic" easing="in" />
-                    <effect type="rotatex" center="201" start="-90" end="90" time="0" delay="550" />
-                    <effect type="fade" start="0" end="100" time="0" delay="550" />
-                    <effect type="rotatex" center="201" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                    <include>Animation_PanelFlipUp1</include>
                 </animation>
                 <animation type="Visible" reversible="true">
                     <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
@@ -843,6 +837,7 @@
                         <width>1650</width>
                         <height>402</height>
                         <animation effect="fade" start="100" end="55" time="0" condition="Skin.HasSetting(nowplayingpanel)">Conditional</animation>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                         <texture border="50">featured/panel_featured.png</texture>
                     </control>
                 </control>
@@ -933,16 +928,10 @@
                 <animation effect="fade" time="200">WindowClose</animation>
                 <animation effect="zoom" start="100" end="95" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
                 <animation type="Visible" reversible="false">
-                    <effect type="rotatex" center="201" start="0" end="90" time="550" tween="cubic" easing="in" />
-                    <effect type="rotatex" center="201" start="90" end="-90" time="0" delay="550" />
-                    <effect type="fade" start="0" end="100" time="0" delay="550" />
-                    <effect type="rotatex" center="201" start="-90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                    <include>Animation_PanelFlipUp1</include>
                 </animation>
                 <animation type="Hidden" reversible="false">
-                    <effect type="rotatex" center="201" start="0" end="-90" time="550" tween="cubic" easing="in" />
-                    <effect type="rotatex" center="201" start="-90" end="90" time="0" delay="550" />
-                    <effect type="fade" start="100" end="0" time="0" delay="550" />
-                    <effect type="rotatex" center="201" start="90" end="0" time="550" delay="550" tween="cubic" easing="out" />
+                    <include>Animation_PanelFlipUp2</include>
                 </animation>
                 <control type="image">
                     <posx>120</posx>
@@ -962,6 +951,7 @@
                     <height>402</height>
                     <animation effect="fade" start="100" end="60" time="0" condition="true">Conditional</animation>
                     <texture border="50">featured/panel_featured.png</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
                 <control type="group">
                     <animation effect="zoom" start="100" end="85" time="800" easing="inout" tween="circle" center="960,500" condition="true">Conditional</animation>
@@ -1010,7 +1000,6 @@
                         <texture>thumbs/boxes/cd_shadow_light.png</texture>
                     </control>
                     <control type="list" id="5222">
-                        <include>Animation_VisibleChange400</include>
                         <posx>-543</posx>
                         <posy>623</posy>
                         <width>800</width>
@@ -1486,6 +1475,7 @@
                             <effect type="fade" start="100" end="75" time="500" tween="cubic" easing="inout" />
                         </animation>
                         <texture border="50">featured/panel_featured.png</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                     </control>
                 </control>
                 <include>5010List</include>
@@ -2453,6 +2443,7 @@
                     <width>1650</width>
                     <height>402</height>
                     <texture border="50">featured/panel_featured.png</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
                 <control type="button" id="5014">
                     <include>HiddenObject</include>

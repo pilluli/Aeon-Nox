@@ -246,7 +246,6 @@
         <onleft>ClearProperty(viewtypeselect,home)</onleft>
         <onleft>ActivateWindow(1121)</onleft>
         <font>Font_Reg19</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>308</radioposx>
     </include>
@@ -266,7 +265,6 @@
         <onleft>ActivateWindow(1121)</onleft>
         <aligny>top</aligny>
         <font>Font_Reg18</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>308</radioposx>
     </include>
@@ -283,7 +281,6 @@
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
         <font>Font_Reg19</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>308</radioposx>
     </include>
@@ -303,7 +300,6 @@
         <onright>Dialog.Close(1126)</onright>
         <onright>SetFocus(50)</onright>
         <font>Font_Reg19</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>378</radioposx>
     </include>
@@ -324,7 +320,6 @@
         <onright>Dialog.Close(1126)</onright>
         <onright>SetFocus(50)</onright>
         <font>Font_Bold15_Caps</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>508</radioposx>
     </include>
@@ -703,7 +698,7 @@
         <width>150</width>
         <height>58</height>
         <aspectratio>keep</aspectratio>
-        <texture background="true" fallback="fallback.png">$INFO[ListItem.Property(Path),,logo.png]</texture>
+        <texture background="true" fallback="XBMC_Logo.png">$INFO[ListItem.Property(Path),,logo.png]</texture>
         <visible>StringCompare(Window(Home).Property(TVGuide.ThumbType),2)</visible>
     </include>
     <include name="NextAiredThumbVars">
@@ -1001,7 +996,6 @@
                 <height>35</height>
                 <texture>common/circle.png</texture>
                 <aspectratio>keep</aspectratio>
-                <include>Animation_VisibleChange200</include>
             </control>
             <control type="label">
                 <label>$INFO[ListItem.Property(UnWatchedEpisodes)]</label>
@@ -1029,7 +1023,6 @@
         <textoffsetx>15</textoffsetx>
         <textoffsety>2</textoffsety>
         <font>Font_Reg19</font>
-        <include>Animation_CommonFade</include>
         <radiowidth>98</radiowidth>
         <radioposx>508</radioposx>
     </include>
@@ -2183,7 +2176,6 @@
         </control>
     </include>
     <include name="LiveTVVideoOSD">
-        <!-- LiveTV -->
         <control type="group">
             <visible>!Skin.HasSetting(ClassicOSD)</visible>
             <animation effect="fade" end="50" time="0" condition="true">Conditional</animation>
@@ -2514,7 +2506,7 @@
         <control type="group" id="703">
             <visible>Skin.HasSetting(ClassicOSD)</visible>
             <control type="grouplist" id="70030">
-                <posx>375</posx>
+                <posx>355</posx>
                 <posy>11</posy>
                 <width>960</width>
                 <height>135</height>
@@ -2541,7 +2533,7 @@
                 </control>
             </control>
             <control type="grouplist" id="70033">
-                <posx>480</posx>
+                <posx>460</posx>
                 <posy>11</posy>
                 <width>960</width>
                 <height>135</height>
@@ -2557,16 +2549,16 @@
                     <width>100</width>
                     <height>100</height>
                     <colordiffuse>white</colordiffuse>
-                    <texturenofocus>PVR/buttons/UPNOFO.png</texturenofocus>
-                    <texturefocus>PVR/buttons/UPFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDUpNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDUpFO.png</texturefocus>
                     <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
                     <onclick>PlayerControl(Next)</onclick>
                 </control>
                 <control type="button" id="70035">
                     <width>100</width>
                     <height>100</height>
-                    <texturenofocus>PVR/buttons/DOWNNOFO.png</texturenofocus>
-                    <texturefocus>PVR/buttons/DOWNFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDDownNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDDownFO.png</texturefocus>
                     <visible>![Window.IsVisible(SliderDialog) | Window.IsVisible(OSDVideoSettings) | Window.IsVisible(OSDAudioSettings) | Window.IsVisible(VideoBookmarks)]</visible>
                     <onclick>PlayerControl(Previous)</onclick>
                 </control>
@@ -2592,15 +2584,15 @@
                 <control type="button" id="70038">
                     <width>100</width>
                     <height>100</height>
-                    <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
                     <texturenofocus>osd/buttons/OSDStopNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDStopFO.png</texturefocus>
                     <onclick>PlayerControl(Stop)</onclick>
                 </control>
                 <control type="button" id="70039">
                     <width>100</width>
                     <height>100</height>
-                    <texturefocus>osd/buttons/OSDForwardFO.png</texturefocus>
                     <texturenofocus>osd/buttons/OSDForwardNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDForwardFO.png</texturefocus>
                     <onclick>PlayerControl(Forward)</onclick>
                     <enable>Player.SeekEnabled</enable>
                     <animation effect="fade" start="100" end="50" time="100" condition="!Player.SeekEnabled">Conditional</animation>
@@ -2608,16 +2600,16 @@
                 <control type="button" id="70040">
                     <width>100</width>
                     <height>100</height>
-                    <texturefocus>PVR/buttons/OSDPVRChFO.png</texturefocus>
-                    <texturenofocus>PVR/buttons/OSDPVRChNF.png</texturenofocus>
+                    <texturenofocus>osd/buttons/OSDPlaylistNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDPlaylistFO.png</texturefocus>
                     <onclick>ActivateWindow(PVROSDChannels)</onclick>
                     <onclick>Dialog.Close(VideoOSD)</onclick>
                 </control>
                 <control type="button" id="70041">
                     <width>100</width>
                     <height>100</height>
-                    <texturefocus>PVR/buttons/OSDEPGFO.png</texturefocus>
-                    <texturenofocus>PVR/buttons/OSDEPGNOFO.png</texturenofocus>
+                    <texturenofocus>osd/buttons/OSDEpgNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDEpgFO.png</texturefocus>
                     <onclick>ActivateWindow(PVROSDGuide)</onclick>
                     <onclick>Dialog.Close(VideoOSD)</onclick>
                 </control>
@@ -2639,19 +2631,17 @@
                 <control type="button" id="70043">
                     <width>100</width>
                     <height>100</height>
-                    <texturenofocus>PVR/buttons/TXTNOFO.png</texturenofocus>
-                    <texturefocus>PVR/buttons/TXTFO.png</texturefocus>
+                    <texturenofocus>osd/buttons/OSDTxtNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDTxtFO.png</texturefocus>
                     <onclick>ActivateWindow(Teletext)</onclick>
                     <onclick>Dialog.Close(VideoOSD)</onclick>
                 </control>
                 <control type="togglebutton" id="70044">
                     <width>100</width>
                     <height>100</height>
-                    <texturefocus>PVR/buttons/RECFO.png</texturefocus>
-                    <texturenofocus>PVR/buttons/RECNOFO.png</texturenofocus>
+                    <texturenofocus>osd/buttons/OSDRecordNF.png</texturenofocus>
+                    <texturefocus>osd/buttons/OSDRecordFO.png</texturefocus>
                     <usealttexture>Player.Recording</usealttexture>
-                    <alttexturenofocus>PVR/buttons/RECONNOFO.png</alttexturenofocus>
-                    <alttexturefocus>PVR/buttons/RECONFO.png</alttexturefocus>
                     <onclick>PlayerControl(Record)</onclick>
                     <enable>Player.CanRecord</enable>
                     <animation effect="fade" start="100" end="50" time="100" condition="!Player.CanRecord">Conditional</animation>

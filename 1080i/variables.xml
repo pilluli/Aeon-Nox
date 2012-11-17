@@ -240,10 +240,24 @@
         <value>$INFO[VideoPlayer.VideoCodec]</value>
     </variable>
     <variable name="VideoPlayerSubTitleVar">
+        <value condition="!IsEmpty(Player.ChapterName) + !SubString(Player.ChapterName,0,left)">$INFO[Player.ChapterName]</value>
         <value condition="VideoPlayer.Content(movies)">$INFO[VideoPlayer.Tagline]</value>
         <value condition="VideoPlayer.Content(musicvideos)">$INFO[VideoPlayer.Artist]</value>
         <value condition="VideoPlayer.Content(episodes)">$INFO[VideoPlayer.TVShowTitle]</value>
         <value condition="VideoPlayer.Content(LiveTV)">$INFO[VideoPlayer.ChannelName]</value>
+	</variable>
+    <variable name="VideoPlayerSeekVar">
+        <value condition="[Player.Paused + !Player.Caching] + !Player.Seeking + !Player.DisplayAfterSeek">$LOCALIZE[31043]</value>
+        <value condition="[Player.Paused + Player.Caching] + !Player.Seeking">$LOCALIZE[15107] $INFO[Player.CacheLevel]%</value>
+        <value condition="Player.Seeking">$LOCALIZE[773]</value>
+        <value condition="Player.DisplayAfterSeek + ![player.forwarding | player.rewinding] + !IsEmpty(Player.SeekOffset)">$LOCALIZE[773] $INFO[Player.SeekOffset]</value>
+	</variable>
+    <variable name="VideoPlayerForwardRewindVar">
+        <value condition="Player.Forwarding2x | Player.Rewinding2x">2x</value>
+        <value condition="Player.Forwarding4x | Player.Rewinding4x">4x</value>
+        <value condition="Player.Forwarding8x | Player.Rewinding8x">8x</value>
+        <value condition="Player.Forwarding16x | Player.Rewinding16x">16x</value>
+        <value condition="Player.Forwarding32x | Player.Rewinding32x">32x</value>
 	</variable>
 	
     <variable name="RatingFlagVar">
@@ -605,7 +619,12 @@
         <value>$INFO[VideoPlayer.Cover]</value>
     </variable>
     <variable name="TVShowClearArtVar">
-        <value>$INFO[ListItem.Art(clearart)]</value>
+        <value condition="!IsEmpty(ListItem.Art(clearart)">$INFO[ListItem.Art(clearart)]</value>
+        <value condition="!IsEmpty(ListItem.Art(clearlogo)">$INFO[ListItem.Art(clearlogo)]</value>
+    </variable>
+    <variable name="InfoPanelCharacterArtVar">
+        <value condition="!IsEmpty(ListItem.Art(characterart))">$INFO[ListItem.Art(characterart)]</value>
+        <value>$INFO[ListItem.Art(clearlogo)]</value>
     </variable>
     <variable name="TVGuideInfoFanart">
         <value condition="Control.HasFocus(200)">$INFO[Container(200).ListItem.Property(Fanart)]</value>
@@ -763,12 +782,12 @@
         <value condition="!IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
     </variable>
     <variable name="Widget1RootPathVar">
-        <value condition="Substring(Control.GetLabel(4321),logo,right)">$INFO[ListItem.Property(Logo)]</value>
-        <value condition="Substring(Control.GetLabel(4321),clearart,right)">$INFO[ListItem.Property(Clearart)]</value>
+        <value condition="Substring(Control.GetLabel(4321),clearart,right) + !IsEmpty(ListItem.Property(Clearart))">$INFO[ListItem.Property(Clearart)]</value>
+        <value>$INFO[ListItem.Property(Logo)]</value>
     </variable>
     <variable name="Widget2RootPathVar">
-        <value condition="Substring(Control.GetLabel(4325),logo,right)">$INFO[ListItem.Property(Logo)]</value>
-        <value condition="Substring(Control.GetLabel(4325),clearart,right)">$INFO[ListItem.Property(Clearart)]</value>
+        <value condition="Substring(Control.GetLabel(4325),clearart,right) + !IsEmpty(ListItem.Property(Clearart))">$INFO[ListItem.Property(Clearart)]</value>
+        <value>$INFO[ListItem.Property(Logo)]</value>
     </variable>
     <variable name="Widget1SubTitleVar">
         <value condition="Substring(Control.GetLabel(4321),movie)">$INFO[ListItem.Property(Tagline)]</value>
@@ -1277,7 +1296,7 @@
         <value condition="Window.IsActive(settings) | Window.IsActive(skinsettings) | Window.IsActive(systeminfo) | Window.IsActive(SettingsCategory.xml) | Window.IsActive(profilesettings) | Window.IsActive(loginscreen)">common/settings_logo.png</value>
         <value condition="Window.IsActive(weather) | Window.IsActive(pictures) | Window.IsActive(1153)">common/logo_pics.png</value>
         <value condition="Window.IsActive(script-globalsearch-main.xml)">featured/icons/DefaultSearch.png</value>
-        <value condition="Window.IsActive(PVR)">PVR/TVIcon.png</value>
+        <value condition="Window.IsActive(PVR)">pvr/TVIcon.png</value>
         <value>common/puzzle_icon.png</value>
     </variable>
     <variable name="PosterVar">
@@ -1320,12 +1339,20 @@
         <value condition="Window.IsActive(videos) + Container.Content(years)">$INFO[ListItem.Label,special://skin/extras/year/video/icons/,.jpg]</value>
         <value>$INFO[ListItem.Icon]</value>
     </variable>
+    <variable name="PVRManagerHeaderVar">
+        <value condition="IsEmpty(Window.Property(IsRadio))">$LOCALIZE[19199] - $LOCALIZE[19023]</value>
+        <value>$LOCALIZE[19199] - $LOCALIZE[19024]</value>
+    </variable>
     <variable name="LandscapeThumbVar">
         <value condition="Stringcompare(ListItem.label,..)">DefaultFolderBack.png</value>
         <value condition="Container.Content(seasons) + Skin.HasSetting(SeasonLandscape)">$INFO[ListItem.Path,,season]$INFO[ListItem.Season,,-landscape.jpg]</value>
         <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Icon]</value>
         <value condition="[Container.Content(tvshows) | Container.Content(movies)] + !IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
         <value>$INFO[ListItem.Art(fanart)]</value>
+    </variable>
+    <variable name="ListBottomLabelVar">
+        <value condition="Container.Content(movies) + Skin.HasSetting(ClassicTopBar)">$INFO[Container(50).NumItems] $VAR[ItemLabelVar]</value>
+        <value condition="!Container.Content(movies)">$INFO[Container(50).NumItems] $VAR[ItemLabelVar]$INFO[Container(50).Totaltime, (,)]</value>
     </variable>
     <!-- VideoInfo-->
     <variable name="ExtraFanartPreviewVar">

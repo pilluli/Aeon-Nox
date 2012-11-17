@@ -79,10 +79,9 @@
                         <height>155</height>
                         <aspectratio>keep</aspectratio>
                         <fadetime>400</fadetime>
-                        <visible>!Skin.HasSetting(lowlistclearart) | StringCompare(Control.GetLabel(8856),empty.png)</visible>
                         <include>Animation_VisibleChange400</include>
                         <texture background="true">$VAR[TVShowLogoVar]</texture>
-                        <visible>Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)</visible>
+                        <visible>!Skin.HasSetting(lowlistclearart) + [Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)]</visible>
                     </control>
                     <include>Neon_LowList</include>
                     <control type="image">
@@ -572,7 +571,6 @@
                     <height>400</height>
                     <animation effect="rotate" end="-360" center="auto" time="8000" delay="1000" loop="false" reversible="false" tween="cubic" easing="inout" condition="!Container.OnNext + !Container.OnPrevious">Conditional</animation>
                     <aspectratio align="right">keep</aspectratio>
-                    <include>Animation_VisibleChange200</include>
                     <texture background="true">$VAR[cdArtVar]</texture>
                     <bordersize>7</bordersize>
                 </control>
