@@ -4363,7 +4363,7 @@
       <height>60</height>
       <align>center</align>
       <aligny>center</aligny>
-      <label>[UPPERCASE]$LOCALIZE[31335][/UPPERCASE]</label>
+      <label>[UPPERCASE]$LOCALIZE[800335][/UPPERCASE]</label>
       <font>Font_Bold18_Caps</font>
       <textcolor>white</textcolor>
       <shadowcolor>-</shadowcolor>
