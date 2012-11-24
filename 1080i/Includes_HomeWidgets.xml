@@ -4236,7 +4236,7 @@
       <width>700</width>
       <height>668</height>
       <texture border="20,70,20,38">home/videoinprogress.png</texture>
-      <visible>!IsEmpty(Window.Property(VideoBookmark.5.Type))+!IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
+      <visible>!IsEmpty(Window.Property(InProgress.5.Type))+!IsEmpty(Window.Property(InProgress.4.Type))+!IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))</visible>
     </control>
     <control type="image">
       <posx>0</posx>
@@ -4244,7 +4244,7 @@
       <width>700</width>
       <height>556</height>
       <texture border="20,70,20,38">home/videoinprogress.png</texture>
-      <visible>IsEmpty(Window.Property(VideoBookmark.5.Type))+!IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
+      <visible>IsEmpty(Window.Property(InProgress.5.Type))+!IsEmpty(Window.Property(InProgress.4.Type))+!IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))</visible>
     </control>
     <control type="image">
       <posx>0</posx>
@@ -4252,7 +4252,7 @@
       <width>700</width>
       <height>444</height>
       <texture border="20,70,20,38">home/videoinprogress.png</texture>
-      <visible>IsEmpty(Window.Property(VideoBookmark.5.Type))+IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
+      <visible>IsEmpty(Window.Property(InProgress.5.Type))+IsEmpty(Window.Property(InProgress.4.Type))+!IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))</visible>
     </control>
     <control type="image">
       <posx>0</posx>
@@ -4260,7 +4260,7 @@
       <width>700</width>
       <height>332</height>
       <texture border="20,70,20,38">home/videoinprogress.png</texture>
-      <visible>IsEmpty(Window.Property(VideoBookmark.5.Type))+IsEmpty(Window.Property(VideoBookmark.4.Type))+IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
+      <visible>IsEmpty(Window.Property(InProgress.5.Type))+IsEmpty(Window.Property(InProgress.4.Type))+IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))</visible>
     </control>
    <control type="image">
       <description>background</description>
@@ -4269,7 +4269,7 @@
       <width>700</width>
       <height>220</height>
       <texture border="20,70,20,38">home/videoinprogress.png</texture>
-      <visible>IsEmpty(Window.Property(VideoBookmark.5.Type))+IsEmpty(Window.Property(VideoBookmark.4.Type))+IsEmpty(Window.Property(VideoBookmark.3.Type))+IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
+      <visible>IsEmpty(Window.Property(InProgress.5.Type))+IsEmpty(Window.Property(InProgress.4.Type))+IsEmpty(Window.Property(InProgress.3.Type))+IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))</visible>
     </control>
   </include>
   <include name="VideoBookmarks_common_title">
@@ -4286,7 +4286,7 @@
       <textcolor>white</textcolor>
       <shadowcolor>-</shadowcolor>
       <include>Animation_HomeWidget</include>
-      <visible>!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
+      <visible>!IsEmpty(Window.Property(InProgress.1.Type))</visible>
     </control>
   </include>
 
@@ -4304,10 +4304,10 @@
             <include>VisibleFadeEffect</include>
       <animation effect="slide" start="0,0" end="-570,0" time="500" easing="inout" tween="cubic" condition="Control.HasFocus(8000)">Conditional</animation>
 
-      <animation effect="slide" start="0,0" end="0,-448" time="1" condition="!IsEmpty(Window.Property(VideoBookmark.5.Type))+!IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))">Conditional</animation>
-      <animation effect="slide" start="0,0" end="0,-336" time="1" condition="IsEmpty(Window.Property(VideoBookmark.5.Type))+!IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))">Conditional</animation>
-      <animation effect="slide" start="0,0" end="0,-224" time="1" condition="IsEmpty(Window.Property(VideoBookmark.5.Type))+IsEmpty(Window.Property(VideoBookmark.4.Type))+!IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))">Conditional</animation>
-      <animation effect="slide" start="0,0" end="0,-112" time="1" condition="IsEmpty(Window.Property(VideoBookmark.5.Type))+IsEmpty(Window.Property(VideoBookmark.4.Type))+IsEmpty(Window.Property(VideoBookmark.3.Type))+!IsEmpty(Window.Property(VideoBookmark.2.Type))+!IsEmpty(Window.Property(VideoBookmark.1.Type))">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,-448" time="1" condition="!IsEmpty(Window.Property(InProgress.5.Type))+!IsEmpty(Window.Property(InProgress.4.Type))+!IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,-336" time="1" condition="IsEmpty(Window.Property(InProgress.5.Type))+!IsEmpty(Window.Property(InProgress.4.Type))+!IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,-224" time="1" condition="IsEmpty(Window.Property(InProgress.5.Type))+IsEmpty(Window.Property(InProgress.4.Type))+!IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))">Conditional</animation>
+      <animation effect="slide" start="0,0" end="0,-112" time="1" condition="IsEmpty(Window.Property(InProgress.5.Type))+IsEmpty(Window.Property(InProgress.4.Type))+IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))">Conditional</animation>
 
       <!--<animation effect="slide" start="-400" end="0" time="300" tween="quadratic" easing="out">VisibleChange</animation>-->
       <posx>15</posx>
@@ -4321,6 +4321,7 @@
         <height>448</height>
         <onleft>9000</onleft>
         <onback>9000</onback>
+        <onup condition="Container(9000).Hasfocus(2)">SetFocus(6010)</onup>
         <onright condition="Control.isVisible(8997)">8003</onright>
         <onright condition="Control.IsVisible(8998)">8000</onright>
         <onright condition="!Control.IsVisible(8997) + !Control.IsVisible(8998)">9000</onright>
@@ -4373,7 +4374,7 @@
             <shadowcolor>FFAAAAA</shadowcolor>
             <selectedcolor>selected</selectedcolor>
             <scroll>true</scroll>
-            <label>$INFO[ListItem.Label2]</label>
+            <label>$INFO[ListItem.Property(Title2)]</label>
           </control>
           <control type="label">
             <posx>640</posx>
@@ -4385,7 +4386,7 @@
             <font>Font_Reg14</font>
             <textcolor>c0FFFFFF</textcolor>
             <selectedcolor>selected</selectedcolor>
-            <label>$INFO[ListItem.Property(TimeRemaining)]</label>
+            <label>$INFO[ListItem.Label2]</label>
           </control>
         </itemlayout>
         <focusedlayout height="112" width="700">
@@ -4442,7 +4443,7 @@
             <shadowcolor>FFAAAAA</shadowcolor>
             <selectedcolor>selected</selectedcolor>
             <scroll>true</scroll>
-            <label>$INFO[ListItem.Label2]</label>
+            <label>$INFO[ListItem.Property(Title2)]</label>
           </control>
           <control type="label">
             <posx>640</posx>
@@ -4454,69 +4455,54 @@
             <font>Font_Reg14</font>
             <textcolor>c0FFFFFF</textcolor>
             <selectedcolor>selected</selectedcolor>
-            <label>$INFO[ListItem.Property(TimeRemaining)]</label>
+            <label>$INFO[ListItem.Label2]</label>
           </control>
         </focusedlayout>
         <content>
           <item id="1">
-            <label>$INFO[Window.Property(VideoBookmark.1.Title)]</label>
-            <label2>$INFO[Window.Property(VideoBookmark.1.Extra)]</label2>
-            <property name="TimeRemaining">$INFO[Window.Property(VideoBookmark.1.RemainingTime)]</property>
-            <property name="Date">$INFO[Window.Property(VideoBookmark.1.Date)]</property>
-            <property name="Fanart">$INFO[Window.Property(VideoBookmark.1.Fanart)]</property>
-            <property name="Type">$INFO[Window.Property(VideoBookmark.1.Type)]</property>
-	      <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.1.EpisodeNo)]</property>
-            <thumb>$INFO[Window.Property(VideoBookmark.1.Thumb)]</thumb>
-            <onclick>PlayMedia($INFO[Window.Property(VideoBookmark.1.Path)],resume)</onclick>
-            <visible>!IsEmpty(Window.Property(VideoBookmark.1.Type))</visible>
+            <label>$INFO[Window.Property(InProgress.1.Title)]</label>
+            <label2>$INFO[Window.Property(InProgress.1.RemainingTime)]</label2>
+            <property name="Title2">$INFO[Window.Property(InProgress.1.Title2)]</property>
+            <property name="Fanart">$INFO[Window.Property(InProgress.1.Art(fanart))]</property>
+            <property name="Type">$INFO[Window.Property(InProgress.1.Type)]</property>
+            <onclick>$INFO[Window.Property(InProgress.1.Play)]</onclick>
+            <visible>!IsEmpty(Window.Property(InProgress.1.Type))</visible>
           </item>
           <item id="2">
-            <label>$INFO[Window.Property(VideoBookmark.2.Title)]</label>
-            <label2>$INFO[Window.Property(VideoBookmark.2.Extra)]</label2>
-            <property name="TimeRemaining">$INFO[Window.Property(VideoBookmark.2.RemainingTime)]</property>
-            <property name="Date">$INFO[Window.Property(VideoBookmark.2.Date)]</property>
-            <property name="Fanart">$INFO[Window.Property(VideoBookmark.2.Fanart)]</property>
-            <property name="Type">$INFO[Window.Property(VideoBookmark.2.Type)]</property>
-	      <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.2.EpisodeNo)]</property>
-            <thumb>$INFO[Window.Property(VideoBookmark.2.Thumb)]</thumb>
-            <onclick>PlayMedia($INFO[Window.Property(VideoBookmark.2.Path)],resume)</onclick>
-            <visible>!IsEmpty(Window.Property(VideoBookmark.2.Type))</visible>
+            <label>$INFO[Window.Property(InProgress.2.Title)]</label>
+            <label2>$INFO[Window.Property(InProgress.2.RemainingTime)]</label2>
+            <property name="Title2">$INFO[Window.Property(InProgress.2.Title2)]</property>
+            <property name="Fanart">$INFO[Window.Property(InProgress.2.Art(fanart))]</property>
+            <property name="Type">$INFO[Window.Property(InProgress.2.Type)]</property>
+            <onclick>$INFO[Window.Property(InProgress.2.Play)]</onclick>
+            <visible>!IsEmpty(Window.Property(InProgress.2.Type))</visible>
           </item>
           <item id="3">
-            <label>$INFO[Window.Property(VideoBookmark.3.Title)]</label>
-            <label2>$INFO[Window.Property(VideoBookmark.3.Extra)]</label2>
-            <property name="TimeRemaining">$INFO[Window.Property(VideoBookmark.3.RemainingTime)]</property>
-            <property name="Date">$INFO[Window.Property(VideoBookmark.3.Date)]</property>
-            <property name="Fanart">$INFO[Window.Property(VideoBookmark.3.Fanart)]</property>
-            <property name="Type">$INFO[Window.Property(VideoBookmark.3.Type)]</property>
-	      <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.3.EpisodeNo)]</property>
-            <thumb>$INFO[Window.Property(VideoBookmark.3.Thumb)]</thumb>
-            <onclick>PlayMedia($INFO[Window.Property(VideoBookmark.3.Path)],resume)</onclick>
-            <visible>!IsEmpty(Window.Property(VideoBookmark.3.Type))</visible>
+            <label>$INFO[Window.Property(InProgress.3.Title)]</label>
+            <label2>$INFO[Window.Property(InProgress.3.RemainingTime)]</label2>
+            <property name="Title2">$INFO[Window.Property(InProgress.3.Title2)]</property>
+            <property name="Fanart">$INFO[Window.Property(InProgress.3.Art(fanart))]</property>
+            <property name="Type">$INFO[Window.Property(InProgress.3.Type)]</property>
+            <onclick>$INFO[Window.Property(InProgress.3.Play)]</onclick>
+            <visible>!IsEmpty(Window.Property(InProgress.3.Type))</visible>
           </item>
           <item id="4">
-            <label>$INFO[Window.Property(VideoBookmark.4.Title)]</label>
-            <label2>$INFO[Window.Property(VideoBookmark.4.Extra)]</label2>
-            <property name="TimeRemaining">$INFO[Window.Property(VideoBookmark.4.RemainingTime)]</property>
-            <property name="Date">$INFO[Window.Property(VideoBookmark.4.Date)]</property>
-            <property name="Fanart">$INFO[Window.Property(VideoBookmark.4.Fanart)]</property>
-            <property name="Type">$INFO[Window.Property(VideoBookmark.4.Type)]</property>
-	      <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.4.EpisodeNo)]</property>
-            <thumb>$INFO[Window.Property(VideoBookmark.4.Thumb)]</thumb>
-            <onclick>PlayMedia($INFO[Window.Property(VideoBookmark.4.Path)],resume)</onclick>
-            <visible>!IsEmpty(Window.Property(VideoBookmark.4.Type))</visible>
+            <label>$INFO[Window.Property(InProgress.4.Title)]</label>
+            <label2>$INFO[Window.Property(InProgress.4.RemainingTime)]</label2>
+            <property name="Title2">$INFO[Window.Property(InProgress.4.Title2)]</property>
+            <property name="Fanart">$INFO[Window.Property(InProgress.4.Art(fanart))]</property>
+            <property name="Type">$INFO[Window.Property(InProgress.4.Type)]</property>
+            <onclick>$INFO[Window.Property(InProgress.4.Play)]</onclick>
+            <visible>!IsEmpty(Window.Property(InProgress.4.Type))</visible>
           </item>
           <item id="5">
-            <label>$INFO[Window.Property(VideoBookmark.5.Title)]</label>
-            <label2>$INFO[Window.Property(VideoBookmark.5.Extra)]</label2>
-            <property name="TimeRemaining">$INFO[Window.Property(VideoBookmark.5.RemainingTime)]</property>
-            <property name="Date">$INFO[Window.Property(VideoBookmark.5.Date)]</property>
-            <property name="Fanart">$INFO[Window.Property(VideoBookmark.5.Fanart)]</property>
-            <property name="Type">$INFO[Window.Property(VideoBookmark.5.Type)]</property>
-	      <property name="EpisodeNo">$INFO[Window.Property(VideoBookmark.5.EpisodeNo)]</property>
-            <thumb>$INFO[Window.Property(VideoBookmark.5.Thumb)]</thumb>
-            <onclick>PlayMedia($INFO[Window.Property(VideoBookmark.5.Path)],resume)</onclick>
-            <visible>!IsEmpty(Window.Property(VideoBookmark.5.Type))</visible>
+            <label>$INFO[Window.Property(InProgress.5.Title)]</label>
+            <label2>$INFO[Window.Property(InProgress.5.RemainingTime)]</label2>
+            <property name="Title2">$INFO[Window.Property(InProgress.5.Title2)]</property>
+            <property name="Fanart">$INFO[Window.Property(InProgress.5.Art(fanart))]</property>
+            <property name="Type">$INFO[Window.Property(InProgress.5.Type)]</property>
+            <onclick>$INFO[Window.Property(InProgress.5.Play)]</onclick>
+            <visible>!IsEmpty(Window.Property(InProgress.5.Type))</visible>
           </item>
         </content>
       </control>

@@ -1,8 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">9000</defaultcontrol>
-    <onload>XBMC.RunScript(script.video.bookmarks.browser,limit=5)</onload>
-    <onunload>XBMC.RunScript(script.video.bookmarks.browser,limit=5)</onunload>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
     <onload condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset))">Control.Move(9000,$INFO[Skin.String(CustomFocusOffset)])</onload>
