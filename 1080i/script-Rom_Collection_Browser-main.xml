@@ -2488,14 +2488,8 @@
         <include>Furniture_NowPlayingWidget</include>
         <!-- Media Menu -->
         <control type="group" id="9000">
-            <visible>!Skin.HasSetting(kioskmode)</visible>
             <control type="group">
-                <animation type="Conditional" condition="![ControlGroup(9000).HasFocus | ControlGroup(100).HasFocus]">
-                    <effect type="slide" end="-420" time="400" easing="in" tween="cubic" />
-                </animation>
-                <animation type="Conditional" condition="Window.IsActive(1126)">
-                    <effect type="slide" end="202" time="400" easing="in" tween="cubic" />
-                </animation>
+                <posx>-400</posx>
                 <animation type="WindowClose">
                     <effect type="slide" end="-450" time="400" easing="in" tween="cubic" />
                 </animation>
@@ -2506,15 +2500,6 @@
                     <control type="group">
                         <posx>-12</posx>
                         <posy>-38</posy>
-                        <animation type="Visible">
-                            <effect type="fade" time="400" start="0" end="100" />
-                            <effect type="slide" time="400" start="-90,0" end="0,0" easing="out" tween="cubic" />
-                        </animation>
-                        <animation type="Hidden">
-                            <effect type="fade" time="400" start="100" end="0" />
-                            <effect type="slide" time="400" start="0,0" end="-90,0" easing="in" tween="cubic" />
-                        </animation>
-                        <animation effect="slide" start="0" end="20" time="400" easing="in" tween="cubic" reversible="true" condition="![ControlGroup(9000).HasFocus | ControlGroup(100).HasFocus]">Conditional</animation>
                         <control type="image">
                             <posx>404</posx>
                             <posy>434</posy>
@@ -2527,7 +2512,7 @@
                         <control type="group">
                             <control type="image">
                                 <posx>415</posx>
-                                <posy>527</posy>
+                                <posy>538</posy>
                                 <width>25</width>
                                 <height>25</height>
                                 <animation effect="rotate" start="0" end="-180" center="auto" delay="300" time="800" condition="[ControlGroup(9000).HasFocus | ControlGroup(100).HasFocus]">Conditional</animation>
@@ -2539,45 +2524,17 @@
                         </control>
                         <control type="image">
                             <posx>415</posx>
-                            <posy>527</posy>
+                            <posy>538</posy>
                             <width>25</width>
                             <height>25</height>
-                            <texture>common/arrowright.png</texture>
+                            <texture>common/arrowup.png</texture>
                             <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
                             <include>Animation_VisibleChange400</include>
                             <visible>ControlGroup(9000).HasFocus</visible>
                         </control>
                     </control>
                 </control>
-                <control type="image">
-                    <posx>-42</posx>
-                    <width>462</width>
-                    <height>1080</height>
-                    <texture>dialogs/context_middle.png</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
-                    <animation type="Conditional" condition="Window.IsActive(1126)">
-                        <effect type="zoom" end="150,100" time="400" easing="in" tween="cubic" />
-                        <effect type="slide" end="-149" time="400" easing="in" tween="cubic" />
-                    </animation>
-                    <animation type="Conditional" condition="Window.IsActive(1121)">
-                        <effect type="zoom" end="66,100" time="400" easing="in" tween="cubic" />
-                        <effect type="slide" end="-49" time="400" easing="in" tween="cubic" />
-                    </animation>
-                    <animation type="Conditional" condition="Window.IsActive(1119)">
-                        <effect type="zoom" end="66,100" time="400" easing="in" tween="cubic" />
-                        <effect type="slide" end="43" time="400" easing="in" tween="cubic" />
-                    </animation>
-                </control>
-                <control type="group">
-                    <posx>380</posx>
-                    <animation type="Conditional" condition="Window.IsActive(1121)">
-                        <effect type="slide" end="-180" time="400" easing="in" tween="cubic" />
-                    </animation>
-                    <animation type="Conditional" condition="Window.IsActive(1119)">
-                        <effect type="slide" end="-117" time="400" easing="in" tween="cubic" />
-                    </animation>
-                    <include>Neon_VerticalBar</include>
-                </control>
+
             </control>
             <control type="group">
                 <animation type="Conditional" condition="![ControlGroup(9000).HasFocus | ControlGroup(100).HasFocus]">
@@ -2608,6 +2565,7 @@
                         <width>300</width>
                         <height>45</height>
                         <font>Font_Reg18</font>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <label>Favorites</label>
                         <textcolor>white2</textcolor>
                         <focusedcolor>white2</focusedcolor>
@@ -2625,9 +2583,9 @@
                         <width>300</width>
                         <height>45</height>
                         <visible>true</visible>
-                        <colordiffuse>white2</colordiffuse>
                         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>button-nofocus.png</texturenofocus>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <label>Search</label>
                         <textcolor>white2</textcolor>
                         <align>left</align>
@@ -2679,6 +2637,7 @@
                                     <posx>0</posx>
                                     <posy>0</posy>
                                     <texture border="5">button-nofocus.png</texture>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                 </control>
                                 <control type="label">
                                     <posx>8</posx>
@@ -2700,6 +2659,7 @@
                                     <posx>0</posx>
                                     <posy>0</posy>
                                     <visible>Control.HasFocus(500)</visible>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <texture border="5">views/tripanel/listselect_fo.png</texture>
                                 </control>
                                 <control type="image">
@@ -2708,7 +2668,8 @@
                                     <posx>0</posx>
                                     <posy>0</posy>
                                     <visible>!Control.HasFocus(500)</visible>
-                                    <texture border="5">button-nofocus.png</texture>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                                    <texture border="10">views/addonwall_select.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>8</posx>
@@ -2751,6 +2712,7 @@
                                     <width>300</width>
                                     <height>45</height>
                                     <posx>0</posx>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <posy>0</posy>
                                     <texture border="5">button-nofocus.png</texture>
                                 </control>
@@ -2770,6 +2732,7 @@
                             <focusedlayout height="48">
                                 <control type="image">
                                     <width>300</width>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <height>45</height>
                                     <posx>0</posx>
                                     <posy>0</posy>
@@ -2780,9 +2743,10 @@
                                     <width>300</width>
                                     <height>45</height>
                                     <posx>0</posx>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <posy>0</posy>
                                     <visible>!Control.HasFocus(600)</visible>
-                                    <texture border="5">button-nofocus.png</texture>
+                                    <texture border="10">views/addonwall_select.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>8</posx>
@@ -2823,6 +2787,7 @@
                             <itemlayout height="48">
                                 <control type="image">
                                     <width>300</width>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <height>45</height>
                                     <posx>0</posx>
                                     <posy>0</posy>
@@ -2847,6 +2812,7 @@
                                     <height>45</height>
                                     <posx>0</posx>
                                     <posy>0</posy>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <visible>Control.HasFocus(700)</visible>
                                     <texture border="5">views/tripanel/listselect_fo.png</texture>
                                 </control>
@@ -2855,8 +2821,9 @@
                                     <height>45</height>
                                     <posx>0</posx>
                                     <posy>0</posy>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <visible>!Control.HasFocus(700)</visible>
-                                    <texture border="5">button-nofocus.png</texture>
+                                    <texture border="10">views/addonwall_select.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>8</posx>
@@ -2898,6 +2865,7 @@
                                 <control type="image">
                                     <width>300</width>
                                     <height>45</height>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <posx>0</posx>
                                     <posy>0</posy>
                                     <texture border="5">button-nofocus.png</texture>
@@ -2920,6 +2888,7 @@
                                     <width>300</width>
                                     <height>45</height>
                                     <posx>0</posx>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <posy>0</posy>
                                     <visible>Control.HasFocus(800)</visible>
                                     <texture border="5">views/tripanel/listselect_fo.png</texture>
@@ -2928,9 +2897,10 @@
                                     <width>300</width>
                                     <height>45</height>
                                     <posx>0</posx>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <posy>0</posy>
                                     <visible>!Control.HasFocus(800)</visible>
-                                    <texture border="5">button-nofocus.png</texture>
+                                    <texture border="10">views/addonwall_select.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>8</posx>
@@ -2972,6 +2942,7 @@
                                 <control type="image">
                                     <width>90</width>
                                     <height>45</height>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <posx>0</posx>
                                     <posy>0</posy>
                                     <texture border="5">button-nofocus.png</texture>
@@ -2994,6 +2965,7 @@
                                     <width>90</width>
                                     <height>45</height>
                                     <posx>0</posx>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <posy>0</posy>
                                     <visible>Control.HasFocus(900)</visible>
                                     <texture border="5">views/tripanel/listselect_fo.png</texture>
@@ -3002,9 +2974,10 @@
                                     <width>90</width>
                                     <height>45</height>
                                     <posx>0</posx>
+                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                                     <posy>0</posy>
                                     <visible>!Control.HasFocus(900)</visible>
-                                    <texture border="5">button-nofocus.png</texture>
+                                    <texture border="10">views/addonwall_select.png</texture>
                                 </control>
                                 <control type="label">
                                     <posx>0</posx>

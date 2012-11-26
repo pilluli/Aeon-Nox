@@ -1,7 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <window>
     <allowoverlay>no</allowoverlay>
-    <defaultcontrol always="true">9000</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <coordinates>
         <system>1</system>
@@ -57,14 +56,14 @@
             </control>
             <!-- Furniture -->
             <control type="group">
-                <animation effect="fade" time="250" condition="[Window.Previous(home) | Window.Previous(fullscreenvideo) | Window.Previous(visualisation) | Window.Previous(slideshow)]">WindowOpen</animation>
+                <animation effect="fade" time="350" delay="1000">WindowOpen</animation>
                 <animation effect="fade" time="250" condition="[Window.Next(home) | Window.Next(fullscreenvideo) | Window.Next(visualisation) | Window.Next(slideshow)]">WindowClose</animation>
                 <animation effect="fade" time="250" delay="1400" condition="Control.IsVisible(510) + [Window.Next(home) | Window.Next(fullscreenvideo) | Window.Next(visualisation) | Window.Next(slideshow)]">WindowClose</animation>
                 <include>CommonMediaPlayingBackground</include>
                 <include>Furniture_SettingsFloor</include>
             </control>
             <control type="group">
-                <animation effect="fade" time="250" delay="2000">WindowOpen</animation>
+                <animation effect="fade" time="350" delay="1000">WindowOpen</animation>
                 <animation effect="fade" time="250">WindowClose</animation>
                 <animation effect="zoom" end="91" center="960,360" time="400" tween="cubic" easing="inout" condition="true">Conditional</animation>
                 <include>Furniture_SettingsBackPanel2</include>
@@ -255,7 +254,7 @@
                                             <font>Font_Reg20</font>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
-                                            <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
+                                            <visible>IsEmpty(ListItem.Property(Plotoutline))</visible>
                                         </control>
                                         <control type="textbox">
                                             <posx>22</posx>
@@ -330,7 +329,7 @@
                                             <font>Font_Reg20</font>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(111)</autoscroll>
-                                            <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
+                                            <visible>IsEmpty(ListItem.Property(Plotoutline))</visible>
                                         </control>
                                         <control type="textbox">
                                             <posx>22</posx>
@@ -417,7 +416,7 @@
                                             <font>Font_Reg20</font>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll>false</autoscroll>
-                                            <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
+                                            <visible>IsEmpty(ListItem.Property(Plotoutline))</visible>
                                         </control>
                                         <control type="textbox">
                                             <posx>22</posx>
@@ -492,7 +491,7 @@
                                             <font>Font_Reg20</font>
                                             <label>$INFO[ListItem.Property(Plot)]</label>
                                             <autoscroll delay="8000" time="5000" repeat="8000">Skin.HasSetting(AutoScroll) + Control.HasFocus(121)</autoscroll>
-                                            <visible>IsEmpty(ListItem.Property(Plotoutline)</visible>
+                                            <visible>IsEmpty(ListItem.Property(Plotoutline))</visible>
                                         </control>
                                         <control type="textbox">
                                             <posx>22</posx>
@@ -1405,40 +1404,7 @@
                     </control>
                 </control>
             </control>
-            <control type="group">
-                <include>Animation_WindowFade250</include>
-                <animation effect="fade" start="100" end="0" time="500" tween="sine" easing="inout" condition="IsEmpty(Control.GetLabel(190)) + IsEmpty(Control.GetLabel(191))" reversible="false">Conditional</animation>
-                <control type="image">
-                    <fadetime>600</fadetime>
-                    <include>FullscreenDimensions</include>
-                    <aspectratio align="center" aligny="top">scale</aspectratio>
-                    <texture background="true">special://skin/backgrounds/search/search.jpg</texture>
-                </control>
-                <control type="image">
-                    <include>FullscreenDimensions</include>
-                    <texture>common/bgcolor.png</texture>
-                    <animation effect="fade" start="100" end="50" time="50" condition="true">Conditional</animation>
-                </control>
-                <control type="image">
-                    <posx>772</posx>
-                    <posy>210</posy>
-                    <width>420</width>
-                    <height>420</height>
-                    <fadetime>FanartCrossfadeTime</fadetime>
-                    <texture>dialogs/search.png</texture>
-                    <aspectratio>keep</aspectratio>
-                </control>
-                <control type="image">
-                    <animation effect="rotate" end="-3600" center="auto" time="20000" loop="true" reversible="false" condition="!IsEmpty(Control.GetLabel(190)) + !IsEmpty(Control.GetLabel(191))">Conditional</animation>
-                    <posx>783</posx>
-                    <posy>225</posy>
-                    <width>213</width>
-                    <height>213</height>
-                    <fadetime>FanartCrossfadeTime</fadetime>
-                    <texture>dialogs/globe.png</texture>
-                    <aspectratio>keep</aspectratio>
-                </control>
-            </control>
+
             <!-- Breadcrumbs -->
             <control type="group">
                 <include>Animation_HideBreadCrumbs</include>
@@ -1452,10 +1418,7 @@
                     <orientation>horizontal</orientation>
                     <animation effect="fade" time="400" delay="400">Visible</animation>
                     <animation effect="fade" time="400">Hidden</animation>
-                    <control type="label">
-                        <include>BreadcrumbsLabel</include>
-                        <label>$INFO[Control.GetLabel(190)]$INFO[Control.GetLabel(191), ]</label>
-                    </control>
+
                     <control type="label" id="199">
                         <include>BreadcrumbsLabel</include>
                         <label>$LOCALIZE[284]</label>
