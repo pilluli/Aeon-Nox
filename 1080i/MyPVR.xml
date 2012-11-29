@@ -9,7 +9,7 @@
         <control type="multiimage">
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/livetv/" background="true">$INFO[Skin.String(LiveTVHomeItem.MultiFanart)]</imagepath>
+            <imagepath background="true">$VAR[LiveTVFanartVar]</imagepath>
         </control>
         <control type="group">
             <include>Animation_OpenClose_Furniture</include>
@@ -86,25 +86,25 @@
                     <texture>wall/wall_bg_reflection.png</texture>
                 </control>
                 <control type="group">
-                	<visible>Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)</visible>
-	                <control type="image">
-		                <posx>0</posx>
-		                <posy>95</posy>
-		                <width>940</width>
-		                <height>830</height>
-		                <texture>views/listpanel_detailwide.png</texture>
-		                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-		            </control>
-		            <control type="image">
-		            	<posx>938</posx>
-		                <posy>95</posy>
-			            <width>2</width>
-				        <height>830</height>
-				        <texture>views/tripanel/upright.png</texture>
-				        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-				        <animation effect="fade" end="50" condition="true">Conditional</animation>
-				    </control>
-			    </control>
+                    <visible>Control.IsVisible(11) | Control.IsVisible(12) | Control.IsVisible(13)</visible>
+                    <control type="image">
+                        <posx>0</posx>
+                        <posy>95</posy>
+                        <width>940</width>
+                        <height>830</height>
+                        <texture>views/listpanel_detailwide.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>938</posx>
+                        <posy>95</posy>
+                        <width>2</width>
+                        <height>830</height>
+                        <texture>views/tripanel/upright.png</texture>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                        <animation effect="fade" end="50" condition="true">Conditional</animation>
+                    </control>
+                </control>
             </control>
         </control>
         <control type="group">

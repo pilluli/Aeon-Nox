@@ -120,7 +120,6 @@
                 <animation effect="zoom" center="auto" start="100" end="122" time="600" tween="back" easing="out" reversible="false">Focus</animation>
                 <animation effect="zoom" center="auto" start="122" end="100" time="200" tween="back" easing="out" reversible="false">UnFocus</animation>
                 <include>LandscapeClearArtLayout</include>
-
             </control>
         </focusedlayout>
     </include>
@@ -223,97 +222,104 @@
                     <visible>Skin.HasSetting(landscapeonelogo) + [Container.Content(tvshows) | Container.Content(movies)]  + !Control.HasFocus(61)</visible>
                 </control>
             </control>
+                        <control type="image">
+                <posx>200r</posx>
+                <posy>0</posy>
+                <width>200</width>
+                <height>200</height>
+                <visible>[Skin.HasSetting(landscapeclearart) | Skin.HasSetting(landscapelogo) | Skin.HasSetting(landscapeonelogo)]</visible>
+                        <visible>[Skin.HasSetting(watchedoverlay) + SubString(ListItem(0).Overlay,OverlayWatched.png)] | [Skin.HasSetting(newstatus) + SubString(ListItem(0).Overlay,OverlayUnWatched.png) + [[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem(0).Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem(0).Label)]] | [[Container.Content(tvshows) | Container.Content(seasons)] + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem(0).TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem(0).TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem(0).Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem(0).Title)]]]]</visible>
+                <include>Animation_VisibleChange200</include>
+                <texture>$INFO[ListItem.Overlay,thumbs/]</texture>
+            </control>
         </control>
     </include>
     <include name="LandscapeLogoLayout">
-    
-             <control type="image">
-                    <posx>52</posx>
-                    <posy>178</posy>
-                    <width>390</width>
-                    <height>164</height>
-                    <aspectratio aligny="bottom">keep</aspectratio>
-                <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
-                </control>
-                <control type="image">
-                    <posx>52</posx>
-                    <posy>345</posy>
-                    <width>390</width>
-                    <height>164</height>
-                    <aspectratio aligny="top">keep</aspectratio>
-                <texture background="true" flipy="true">$INFO[ListItem.Art(clearlogo)]</texture>
-                    <animation effect="fade" start="10" end="10" time="200" tween="cubic" easing="inout" condition="true">Conditional</animation>
-                </control>
-            <control type="group">
-                <visible>IsEmpty(ListItem.Art(clearlogo))</visible>
-           	<control type="label">
-					<posx>248</posx>
-					<posy>330</posy>
-					<width>470</width>
-					<align>center</align>
-					<font>Font_Info_Caps</font>
-					<textcolor>white2</textcolor>
-					<shadowcolor>floorshadow</shadowcolor>
-					<label>$VAR[SecondLabelVar]</label>
-				</control>
-				<control type="label">
-					<posx>248</posx>
-					<posy>296</posy>
-					<width>470</width>
-					<align>center</align>
-					<font>Font_MainClassic4</font>
-					<scroll>true</scroll>
-					<scrollspeed>30</scrollspeed>
-					<textcolor>white2</textcolor>
-					<shadowcolor>floorshadow</shadowcolor>
-					<label>$VAR[FirstLabelVar]</label>
-				</control>
+        <control type="image">
+            <posx>52</posx>
+            <posy>178</posy>
+            <width>390</width>
+            <height>164</height>
+            <aspectratio aligny="bottom">keep</aspectratio>
+            <texture background="true">$INFO[ListItem.Art(clearlogo)]</texture>
+        </control>
+        <control type="image">
+            <posx>52</posx>
+            <posy>345</posy>
+            <width>390</width>
+            <height>164</height>
+            <aspectratio aligny="top">keep</aspectratio>
+            <texture background="true" flipy="true">$INFO[ListItem.Art(clearlogo)]</texture>
+            <animation effect="fade" start="10" end="10" time="200" tween="cubic" easing="inout" condition="true">Conditional</animation>
+        </control>
+        <control type="group">
+            <visible>IsEmpty(ListItem.Art(clearlogo))</visible>
+            <control type="label">
+                <posx>248</posx>
+                <posy>330</posy>
+                <width>470</width>
+                <align>center</align>
+                <font>Font_Info_Caps</font>
+                <textcolor>white2</textcolor>
+                <shadowcolor>floorshadow</shadowcolor>
+                <label>$VAR[SecondLabelVar]</label>
             </control>
+            <control type="label">
+                <posx>248</posx>
+                <posy>296</posy>
+                <width>470</width>
+                <align>center</align>
+                <font>Font_MainClassic4</font>
+                <scroll>true</scroll>
+                <scrollspeed>30</scrollspeed>
+                <textcolor>white2</textcolor>
+                <shadowcolor>floorshadow</shadowcolor>
+                <label>$VAR[FirstLabelVar]</label>
+            </control>
+        </control>
     </include>
     <include name="LandscapeClearArtLayout">
-    
-          <control type="image">
-                <posx>38</posx>
-                <posy>-82</posy>
-                <width>450</width>
-                <height>400</height>
-                <aspectratio aligny="bottom">keep</aspectratio>
-                <texture background="true">$VAR[TVShowClearArtVar]</texture>
+        <control type="image">
+            <posx>38</posx>
+            <posy>-82</posy>
+            <width>450</width>
+            <height>400</height>
+            <aspectratio aligny="bottom">keep</aspectratio>
+            <texture background="true">$VAR[TVShowClearArtVar]</texture>
+        </control>
+        <control type="image">
+            <posx>38</posx>
+            <posy>295</posy>
+            <width>450</width>
+            <height>400</height>
+            <aspectratio aligny="top">keep</aspectratio>
+            <texture background="true" flipy="true">$VAR[TVShowClearArtVar]</texture>
+            <animation effect="fade" start="10" end="10" time="200" tween="cubic" easing="inout" condition="true">Conditional</animation>
+        </control>
+        <control type="group">
+            <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(clearart))</visible>
+            <control type="label">
+                <posx>248</posx>
+                <posy>330</posy>
+                <width>470</width>
+                <align>center</align>
+                <font>Font_Info_Caps</font>
+                <textcolor>white2</textcolor>
+                <shadowcolor>floorshadow</shadowcolor>
+                <label>$VAR[SecondLabelVar]</label>
             </control>
-            <control type="image">
-                <posx>38</posx>
-                <posy>295</posy>
-                <width>450</width>
-                <height>400</height>
-                <aspectratio aligny="top">keep</aspectratio>
-                <texture background="true" flipy="true">$VAR[TVShowClearArtVar]</texture>
-                <animation effect="fade" start="10" end="10" time="200" tween="cubic" easing="inout" condition="true">Conditional</animation>
+            <control type="label">
+                <posx>248</posx>
+                <posy>296</posy>
+                <width>470</width>
+                <align>center</align>
+                <font>Font_MainClassic4</font>
+                <scroll>true</scroll>
+                <scrollspeed>30</scrollspeed>
+                <textcolor>white2</textcolor>
+                <shadowcolor>floorshadow</shadowcolor>
+                <label>$VAR[FirstLabelVar]</label>
             </control>
-            <control type="group">
-                <visible>IsEmpty(ListItem.Art(clearlogo)) + IsEmpty(ListItem.Art(clearart))</visible>
-           	<control type="label">
-					<posx>248</posx>
-					<posy>330</posy>
-					<width>470</width>
-					<align>center</align>
-					<font>Font_Info_Caps</font>
-					<textcolor>white2</textcolor>
-					<shadowcolor>floorshadow</shadowcolor>
-					<label>$VAR[SecondLabelVar]</label>
-				</control>
-				<control type="label">
-					<posx>248</posx>
-					<posy>296</posy>
-					<width>470</width>
-					<align>center</align>
-					<font>Font_MainClassic4</font>
-					<scroll>true</scroll>
-					<scrollspeed>30</scrollspeed>
-					<textcolor>white2</textcolor>
-					<shadowcolor>floorshadow</shadowcolor>
-					<label>$VAR[FirstLabelVar]</label>
-				</control>
-            </control>
-    
+        </control>
     </include>
 </includes>

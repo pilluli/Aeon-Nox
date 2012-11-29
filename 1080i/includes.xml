@@ -78,51 +78,14 @@
         <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
         <aspectratio align="center" aligny="top">scale</aspectratio>
-        <animation effect="fade" time="250">WindowOpen</animation>
-        <animation effect="fade" time="250">WindowClose</animation>
-        <animation effect="fade" time="250">Visible</animation>
-        <animation effect="fade" time="250">Hidden</animation>
-    </include>
-    <include name="CommonPictureBackground">
-        <control type="multiimage">
-            <imagepath background="true">special://skin/backgrounds/pictures/</imagepath>
-            <include>CommonFanartVarsSingle</include>
-            <visible>![Substring(Skin.String(PicturesHomeItem.MultiFanart),/) | Substring(Skin.String(PicturesHomeItem.MultiFanart),\)]</visible>
-        </control>
-        <control type="multiimage">
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/pictures/" background="true">$INFO[Skin.String(PicturesHomeItem.MultiFanart)]</imagepath>
-            <aspectratio align="center" aligny="top">scale</aspectratio>
-            <visible>Substring(Skin.String(PicturesHomeItem.MultiFanart),/) | Substring(Skin.String(PicturesHomeItem.MultiFanart),\)</visible>
-        </control>
-    </include>
-    <include name="CommonComicsBackground">
-        <control type="multiimage">
-            <imagepath background="true">special://skin/backgrounds/comics/</imagepath>
-            <include>CommonFanartVarsSingle</include>
-            <visible>![Substring(Skin.String(ComicsHomeItem.MultiFanart),/) | Substring(Skin.String(ComicsHomeItem.MultiFanart),\)]</visible>
-        </control>
-        <control type="multiimage">
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/comics/" background="true">$INFO[Skin.String(ComicsHomeItem.MultiFanart)]</imagepath>
-            <aspectratio align="center" aligny="top">scale</aspectratio>
-            <visible>Substring(Skin.String(ComicsHomeItem.MultiFanart),/) | Substring(Skin.String(ComicsHomeItem.MultiFanart),\)</visible>
-        </control>
+        <include>Animation_WindowFade250</include>
     </include>
     <include name="CommonSettingsBackground">
         <control type="multiimage">
-            <imagepath background="true">special://skin/backgrounds/system/</imagepath>
-            <include>CommonFanartVarsSingle</include>
-            <visible>![Substring(Skin.String(SettingsHomeItem.MultiFanart),/) | Substring(Skin.String(SettingsHomeItem.MultiFanart),\)]</visible>
-        </control>
-        <control type="multiimage">
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/system/" background="true">$INFO[Skin.String(SettingsHomeItem.MultiFanart)]</imagepath>
+            <imagepath background="true">$VAR[SettingsFanartVar]</imagepath>
             <aspectratio align="center" aligny="top">scale</aspectratio>
-            <visible>Substring(Skin.String(SettingsHomeItem.MultiFanart),/) | Substring(Skin.String(SettingsHomeItem.MultiFanart),\)</visible>
         </control>
     </include>
     <include name="MusicExtraFanartHome">
@@ -251,7 +214,7 @@
     </include>
     <include name="Objects_MediaMenuButtonIcons">
         <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-        <height>100</height>
+        <height>95</height>
         <width>500</width>
         <texturenofocus>settings/listselect_nf2.png</texturenofocus>
         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
@@ -381,7 +344,7 @@
         <height>63</height>
         <width>67</width>
         <aspectratio aligny="top">scale</aspectratio>
-		<colordiffuse>white2</colordiffuse>
+        <colordiffuse>white2</colordiffuse>
     </include>
     <include name="HiddenObject">
         <posx>-300</posx>
@@ -3114,17 +3077,17 @@
         </control>
     </include>
     <include name="InvisibleIncludeLabels">
-            <control type="label" id="11111">
-                <label> $INFO[Skin.String(MusicVideosHomeItem.Widget)] $INFO[Skin.String(MusicHomeItem.Widget)] $INFO[Skin.String(TVShowHomeItem.Widget)] $INFO[Skin.String(MovieHomeItem.Widget)] $INFO[Skin.String(LiveTVHomeItem.Widget)] $INFO[Skin.String(PicturesHomeItem.Widget)] $INFO[Skin.String(TVGuideHomeItem.Widget)] $INFO[Skin.String(FeaturedHomeItem.Widget)] $INFO[Skin.String(CustomHomeItem1.Widget)] $INFO[Skin.String(CustomHomeItem2.Widget)] $INFO[Skin.String(CustomHomeItem3.Widget)] $INFO[Skin.String(CustomHomeItem4.Widget)] $INFO[Skin.String(CustomHomeItem5.Widget)] $INFO[Skin.String(CustomHomeItem6.Widget)] $INFO[Skin.String(VideosHomeItem.Widget)] $INFO[Skin.String(ProgramsHomeItem.Widget)] $INFO[Skin.String(SettingsHomeItem.Widget)] $INFO[Skin.String(SearchHomeItem.Widget)] $INFO[Skin.String(ShutdownHomeItem.Widget)] $INFO[Skin.String(FavouritesHomeItem.Widget)] $INFO[Skin.String(PlayDiscHomeItem.Widget)] $INFO[Skin.String(WeatherHomeItem.Widget)] $INFO[Skin.String(ComicsHomeItem.Widget)] $INFO[Skin.String(FullscreenHomeItem.Widget)] $INFO[Skin.String(CustomSub9_1.Widget)] $INFO[Skin.String(CustomSub9_2.Widget)] $INFO[Skin.String(CustomSub9_4.Widget)] $INFO[Skin.String(CustomSub9_5.Widget)] $INFO[Skin.String(CustomSub8_1.Widget)] $INFO[Skin.String(CustomSub8_2.Widget)] $INFO[Skin.String(CustomSub8_3.Widget)] $INFO[Skin.String(CustomSub8_4)] $INFO[Skin.String(CustomSub8_5.Widget)] $INFO[Skin.String(CustomSub11_1.Widget)] $INFO[Skin.String(CustomSub11_2.Widget)] $INFO[Skin.String(CustomSub11_3.Widget)] $INFO[Skin.String(CustomSub11_4.Widget)] $INFO[Skin.String(CustomSub11_5.Widget)] $INFO[Skin.String(CustomSub11_6.Widget)] $INFO[Skin.String(CustomSub11_7.Widget)] $INFO[Skin.String(CustomSub11_8.Widget)] </label>
-            </control>
-            <control type="label" id="11112">
-                <label> $INFO[Skin.String(MusicVideosHomeItem.Widget2)] $INFO[Skin.String(MusicHomeItem.Widget2)] $INFO[Skin.String(TVShowHomeItem.Widget2)] $INFO[Skin.String(MovieHomeItem.Widget2)] $INFO[Skin.String(LiveTVHomeItem.Widget2)] $INFO[Skin.String(PicturesHomeItem.Widget2)] $INFO[Skin.String(TVGuideHomeItem.Widget2)] $INFO[Skin.String(FeaturedHomeItem.Widget2)] $INFO[Skin.String(CustomHomeItem1.Widget2)] $INFO[Skin.String(CustomHomeItem2.Widget2)] $INFO[Skin.String(CustomHomeItem3.Widget2)] $INFO[Skin.String(CustomHomeItem4.Widget2)] $INFO[Skin.String(CustomHomeItem5.Widget2)] $INFO[Skin.String(CustomHomeItem6.Widget2)] $INFO[Skin.String(VideosHomeItem.Widget2)] $INFO[Skin.String(ProgramsHomeItem.Widget2)] $INFO[Skin.String(SettingsHomeItem.Widget2)] $INFO[Skin.String(SearchHomeItem.Widget2)] $INFO[Skin.String(ShutdownHomeItem.Widget2)] $INFO[Skin.String(FavouritesHomeItem.Widget2)] $INFO[Skin.String(PlayDiscHomeItem.Widget2)] $INFO[Skin.String(WeatherHomeItem.Widget2)] $INFO[Skin.String(ComicsHomeItem.Widget2)] $INFO[Skin.String(FullscreenHomeItem.Widget2)] </label>
-            </control>
-            <control type="label" id="11113">
-                <label> $INFO[Skin.String(MusicVideosHomeItem.MultiFanart)] $INFO[Skin.String(MusicHomeItem.MultiFanart)] $INFO[Skin.String(TVShowHomeItem.MultiFanart)] $INFO[Skin.String(MovieHomeItem.MultiFanart)] $INFO[Skin.String(LiveTVHomeItem.MultiFanart)] $INFO[Skin.String(PicturesHomeItem.MultiFanart)] $INFO[Skin.String(TVGuideHomeItem.MultiFanart)] $INFO[Skin.String(FeaturedHomeItem.MultiFanart)] $INFO[Skin.String(CustomHomeItem1.MultiFanart)] $INFO[Skin.String(CustomHomeItem2.MultiFanart)] $INFO[Skin.String(CustomHomeItem3.MultiFanart)] $INFO[Skin.String(CustomHomeItem4.MultiFanart)] $INFO[Skin.String(CustomHomeItem5.MultiFanart)] $INFO[Skin.String(CustomHomeItem6.MultiFanart)] $INFO[Skin.String(VideosHomeItem.MultiFanart)] $INFO[Skin.String(ProgramsHomeItem.MultiFanart)] $INFO[Skin.String(SettingsHomeItem.MultiFanart)] $INFO[Skin.String(SearchHomeItem.MultiFanart)] $INFO[Skin.String(ShutdownHomeItem.MultiFanart)] $INFO[Skin.String(FavouritesHomeItem.MultiFanart)] $INFO[Skin.String(PlayDiscHomeItem.MultiFanart)] $INFO[Skin.String(WeatherHomeItem.MultiFanart)] $INFO[Skin.String(ComicsHomeItem.MultiFanart)] $INFO[Skin.String(FullscreenHomeItem.MultiFanart)] </label>
-            </control>
-            <control type="label" id="11114">
-                <label> $INFO[Skin.String(MusicVideosHomeItem.Submenu)] $INFO[Skin.String(MusicHomeItem.Submenu)] $INFO[Skin.String(TVShowHomeItem.Submenu)] $INFO[Skin.String(MovieHomeItem.Submenu)] $INFO[Skin.String(LiveTVHomeItem.Submenu)] $INFO[Skin.String(PicturesHomeItem.Submenu)] $INFO[Skin.String(TVGuideHomeItem.Submenu)] $INFO[Skin.String(FeaturedHomeItem.Submenu)] $INFO[Skin.String(CustomHomeItem1.Submenu)] $INFO[Skin.String(CustomHomeItem2.Submenu)] $INFO[Skin.String(CustomHomeItem3.Submenu)] $INFO[Skin.String(CustomHomeItem4.Submenu)] $INFO[Skin.String(CustomHomeItem5.Submenu)] $INFO[Skin.String(CustomHomeItem6.Submenu)] $INFO[Skin.String(VideosHomeItem.Submenu)] $INFO[Skin.String(ProgramsHomeItem.Submenu)] $INFO[Skin.String(SettingsHomeItem.Submenu)] $INFO[Skin.String(SearchHomeItem.Submenu)] $INFO[Skin.String(ShutdownHomeItem.Submenu)] $INFO[Skin.String(FavouritesHomeItem.Submenu)] $INFO[Skin.String(PlayDiscHomeItem.Submenu)] $INFO[Skin.String(WeatherHomeItem.Submenu)] $INFO[Skin.String(ComicsHomeItem.Submenu)] $INFO[Skin.String(FullscreenHomeItem.Submenu)] </label>
-            </control>
+        <control type="label" id="11111">
+            <label> $INFO[Skin.String(MusicVideosHomeItem.Widget)] $INFO[Skin.String(MusicHomeItem.Widget)] $INFO[Skin.String(TVShowHomeItem.Widget)] $INFO[Skin.String(MovieHomeItem.Widget)] $INFO[Skin.String(LiveTVHomeItem.Widget)] $INFO[Skin.String(PicturesHomeItem.Widget)] $INFO[Skin.String(TVGuideHomeItem.Widget)] $INFO[Skin.String(FeaturedHomeItem.Widget)] $INFO[Skin.String(CustomHomeItem1.Widget)] $INFO[Skin.String(CustomHomeItem2.Widget)] $INFO[Skin.String(CustomHomeItem3.Widget)] $INFO[Skin.String(CustomHomeItem4.Widget)] $INFO[Skin.String(CustomHomeItem5.Widget)] $INFO[Skin.String(CustomHomeItem6.Widget)] $INFO[Skin.String(VideosHomeItem.Widget)] $INFO[Skin.String(ProgramsHomeItem.Widget)] $INFO[Skin.String(SettingsHomeItem.Widget)] $INFO[Skin.String(SearchHomeItem.Widget)] $INFO[Skin.String(ShutdownHomeItem.Widget)] $INFO[Skin.String(FavouritesHomeItem.Widget)] $INFO[Skin.String(PlayDiscHomeItem.Widget)] $INFO[Skin.String(WeatherHomeItem.Widget)] $INFO[Skin.String(ComicsHomeItem.Widget)] $INFO[Skin.String(FullscreenHomeItem.Widget)] $INFO[Skin.String(CustomSub9_1.Widget)] $INFO[Skin.String(CustomSub9_2.Widget)] $INFO[Skin.String(CustomSub9_4.Widget)] $INFO[Skin.String(CustomSub9_5.Widget)] $INFO[Skin.String(CustomSub8_1.Widget)] $INFO[Skin.String(CustomSub8_2.Widget)] $INFO[Skin.String(CustomSub8_3.Widget)] $INFO[Skin.String(CustomSub8_4)] $INFO[Skin.String(CustomSub8_5.Widget)] $INFO[Skin.String(CustomSub11_1.Widget)] $INFO[Skin.String(CustomSub11_2.Widget)] $INFO[Skin.String(CustomSub11_3.Widget)] $INFO[Skin.String(CustomSub11_4.Widget)] $INFO[Skin.String(CustomSub11_5.Widget)] $INFO[Skin.String(CustomSub11_6.Widget)] $INFO[Skin.String(CustomSub11_7.Widget)] $INFO[Skin.String(CustomSub11_8.Widget)] </label>
+        </control>
+        <control type="label" id="11112">
+            <label> $INFO[Skin.String(MusicVideosHomeItem.Widget2)] $INFO[Skin.String(MusicHomeItem.Widget2)] $INFO[Skin.String(TVShowHomeItem.Widget2)] $INFO[Skin.String(MovieHomeItem.Widget2)] $INFO[Skin.String(LiveTVHomeItem.Widget2)] $INFO[Skin.String(PicturesHomeItem.Widget2)] $INFO[Skin.String(TVGuideHomeItem.Widget2)] $INFO[Skin.String(FeaturedHomeItem.Widget2)] $INFO[Skin.String(CustomHomeItem1.Widget2)] $INFO[Skin.String(CustomHomeItem2.Widget2)] $INFO[Skin.String(CustomHomeItem3.Widget2)] $INFO[Skin.String(CustomHomeItem4.Widget2)] $INFO[Skin.String(CustomHomeItem5.Widget2)] $INFO[Skin.String(CustomHomeItem6.Widget2)] $INFO[Skin.String(VideosHomeItem.Widget2)] $INFO[Skin.String(ProgramsHomeItem.Widget2)] $INFO[Skin.String(SettingsHomeItem.Widget2)] $INFO[Skin.String(SearchHomeItem.Widget2)] $INFO[Skin.String(ShutdownHomeItem.Widget2)] $INFO[Skin.String(FavouritesHomeItem.Widget2)] $INFO[Skin.String(PlayDiscHomeItem.Widget2)] $INFO[Skin.String(WeatherHomeItem.Widget2)] $INFO[Skin.String(ComicsHomeItem.Widget2)] $INFO[Skin.String(FullscreenHomeItem.Widget2)] </label>
+        </control>
+        <control type="label" id="11113">
+            <label> $INFO[Skin.String(MusicVideosHomeItem.MultiFanart)] $INFO[Skin.String(MusicHomeItem.MultiFanart)] $INFO[Skin.String(TVShowHomeItem.MultiFanart)] $INFO[Skin.String(MovieHomeItem.MultiFanart)] $INFO[Skin.String(LiveTVHomeItem.MultiFanart)] $INFO[Skin.String(PicturesHomeItem.MultiFanart)] $INFO[Skin.String(TVGuideHomeItem.MultiFanart)] $INFO[Skin.String(FeaturedHomeItem.MultiFanart)] $INFO[Skin.String(CustomHomeItem1.MultiFanart)] $INFO[Skin.String(CustomHomeItem2.MultiFanart)] $INFO[Skin.String(CustomHomeItem3.MultiFanart)] $INFO[Skin.String(CustomHomeItem4.MultiFanart)] $INFO[Skin.String(CustomHomeItem5.MultiFanart)] $INFO[Skin.String(CustomHomeItem6.MultiFanart)] $INFO[Skin.String(VideosHomeItem.MultiFanart)] $INFO[Skin.String(ProgramsHomeItem.MultiFanart)] $INFO[Skin.String(SettingsHomeItem.MultiFanart)] $INFO[Skin.String(SearchHomeItem.MultiFanart)] $INFO[Skin.String(ShutdownHomeItem.MultiFanart)] $INFO[Skin.String(FavouritesHomeItem.MultiFanart)] $INFO[Skin.String(PlayDiscHomeItem.MultiFanart)] $INFO[Skin.String(WeatherHomeItem.MultiFanart)] $INFO[Skin.String(ComicsHomeItem.MultiFanart)] $INFO[Skin.String(FullscreenHomeItem.MultiFanart)] </label>
+        </control>
+        <control type="label" id="11114">
+            <label> $INFO[Skin.String(MusicVideosHomeItem.Submenu)] $INFO[Skin.String(MusicHomeItem.Submenu)] $INFO[Skin.String(TVShowHomeItem.Submenu)] $INFO[Skin.String(MovieHomeItem.Submenu)] $INFO[Skin.String(LiveTVHomeItem.Submenu)] $INFO[Skin.String(PicturesHomeItem.Submenu)] $INFO[Skin.String(TVGuideHomeItem.Submenu)] $INFO[Skin.String(FeaturedHomeItem.Submenu)] $INFO[Skin.String(CustomHomeItem1.Submenu)] $INFO[Skin.String(CustomHomeItem2.Submenu)] $INFO[Skin.String(CustomHomeItem3.Submenu)] $INFO[Skin.String(CustomHomeItem4.Submenu)] $INFO[Skin.String(CustomHomeItem5.Submenu)] $INFO[Skin.String(CustomHomeItem6.Submenu)] $INFO[Skin.String(VideosHomeItem.Submenu)] $INFO[Skin.String(ProgramsHomeItem.Submenu)] $INFO[Skin.String(SettingsHomeItem.Submenu)] $INFO[Skin.String(SearchHomeItem.Submenu)] $INFO[Skin.String(ShutdownHomeItem.Submenu)] $INFO[Skin.String(FavouritesHomeItem.Submenu)] $INFO[Skin.String(PlayDiscHomeItem.Submenu)] $INFO[Skin.String(WeatherHomeItem.Submenu)] $INFO[Skin.String(ComicsHomeItem.Submenu)] $INFO[Skin.String(FullscreenHomeItem.Submenu)] </label>
+        </control>
     </include>
 </includes>

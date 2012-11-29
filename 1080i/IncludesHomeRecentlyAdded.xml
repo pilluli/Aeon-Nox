@@ -1937,6 +1937,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.1.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.1.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecommendedMovie.1.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecommendedMovie.1.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecommendedMovie.1.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.1.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.1.PercentPlayed)]</property>
@@ -1963,6 +1964,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.2.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.2.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecommendedMovie.2.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecommendedMovie.2.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecommendedMovie.2.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.2.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.2.PercentPlayed)]</property>
@@ -1989,6 +1991,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.3.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.3.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecommendedMovie.3.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecommendedMovie.3.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecommendedMovie.3.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.3.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.3.PercentPlayed)]</property>
@@ -2015,6 +2018,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.4.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.4.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecommendedMovie.4.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecommendedMovie.4.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecommendedMovie.4.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.4.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.4.PercentPlayed)]</property>
@@ -2041,6 +2045,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.5.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.5.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecommendedMovie.5.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecommendedMovie.5.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecommendedMovie.5.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.5.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.5.PercentPlayed)]</property>
@@ -2067,6 +2072,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.6.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.6.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecommendedMovie.6.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecommendedMovie.6.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecommendedMovie.6.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.6.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.6.PercentPlayed)]</property>
@@ -2093,6 +2099,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.7.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.7.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecommendedMovie.7.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecommendedMovie.7.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecommendedMovie.7.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.7.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.7.PercentPlayed)]</property>
@@ -2119,6 +2126,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.8.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecommendedMovie.8.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecommendedMovie.8.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecommendedMovie.8.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecommendedMovie.8.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.8.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.8.PercentPlayed)]</property>
@@ -2147,6 +2155,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RandomMovie.1.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.1.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.1.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.1.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.1.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.1.PercentPlayed)]</property>
@@ -2172,6 +2181,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.2.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RandomMovie.2.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.2.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.2.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.2.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.2.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.2.PercentPlayed)]</property>
@@ -2197,6 +2207,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.3.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RandomMovie.3.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.3.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.3.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.3.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.3.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.3.PercentPlayed)]</property>
@@ -2222,6 +2233,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.4.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RandomMovie.4.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.4.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.4.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.4.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.4.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.4.PercentPlayed)]</property>
@@ -2247,6 +2259,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.5.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RandomMovie.5.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.5.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.5.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.5.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.5.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.5.PercentPlayed)]</property>
@@ -2272,6 +2285,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.6.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RandomMovie.6.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.6.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.6.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.6.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.6.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.6.PercentPlayed)]</property>
@@ -2297,6 +2311,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.7.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RandomMovie.7.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.7.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.7.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.7.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.7.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.7.PercentPlayed)]</property>
@@ -2322,6 +2337,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.8.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RandomMovie.8.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RandomMovie.8.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RandomMovie.8.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RandomMovie.8.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.8.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.8.PercentPlayed)]</property>
@@ -2349,6 +2365,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.1.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecentMovie.1.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecentMovie.1.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecentMovie.1.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecentMovie.1.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.1.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.1.PercentPlayed)]</property>
@@ -2374,6 +2391,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.2.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecentMovie.2.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecentMovie.2.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecentMovie.2.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecentMovie.2.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.2.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.2.PercentPlayed)]</property>
@@ -2399,6 +2417,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.3.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecentMovie.3.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecentMovie.3.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecentMovie.3.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecentMovie.3.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.3.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.3.PercentPlayed)]</property>
@@ -2424,6 +2443,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.4.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecentMovie.4.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecentMovie.4.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecentMovie.4.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecentMovie.4.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.4.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.4.PercentPlayed)]</property>
@@ -2449,6 +2469,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.5.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecentMovie.5.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecentMovie.5.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecentMovie.5.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecentMovie.5.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.5.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.5.PercentPlayed)]</property>
@@ -2474,6 +2495,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.6.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecentMovie.6.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecentMovie.6.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecentMovie.6.Art(clearart))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecentMovie.6.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.6.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.6.PercentPlayed)]</property>
@@ -2499,6 +2521,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.7.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecentMovie.7.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecentMovie.7.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecentMovie.7.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecentMovie.7.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.7.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.7.PercentPlayed)]</property>
@@ -2524,6 +2547,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.8.Art(fanart))]</property>
             <property name="Logo">$INFO[Window(Home).Property(RecentMovie.8.Art(clearlogo))]</property>
             <property name="Clearart">$INFO[Window(Home).Property(RecentMovie.8.Art(clearart))]</property>
+            <property name="Landscape">$INFO[Window(Home).Property(RecentMovie.8.Art(landscape))]</property>
             <property name="Banner">$INFO[Window(Home).Property(RecentMovie.8.Art(banner))]</property>
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.8.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.8.PercentPlayed)]</property>
@@ -4050,7 +4074,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(MostPlayedROM.1.Console)]</label2>
-            <onclick>System.Exec($INFO[Window(Home).Property(MostPlayedROM.1.LaunchCommand)])</onclick>
+            <onclick>System.Exec($ESCINFO[Window(Home).Property(MostPlayedROM.1.LaunchCommand)])</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.1.Thumb)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MostPlayedROM.1.Fanart)]</property>
             <property name="Plot">$INFO[Window(Home).Property(MostPlayedROM.1.Plot)]</property>
@@ -4063,7 +4087,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(MostPlayedROM.2.Console)]</label2>
-            <onclick>System.Exec($INFO[Window(Home).Property(MostPlayedROM.2.LaunchCommand)])</onclick>
+            <onclick>System.Exec($ESCINFO[Window(Home).Property(MostPlayedROM.2.LaunchCommand)])</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.2.Thumb)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MostPlayedROM.2.Fanart)]</property>
             <property name="Plot">$INFO[Window(Home).Property(MostPlayedROM.2.Plot)]</property>
@@ -4076,7 +4100,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(MostPlayedROM.3.Console)]</label2>
-            <onclick>System.Exec($INFO[Window(Home).Property(MostPlayedROM.3.LaunchCommand)])</onclick>
+            <onclick>System.Exec($ESCINFO[Window(Home).Property(MostPlayedROM.3.LaunchCommand)])</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.3.Thumb)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MostPlayedROM.3.Fanart)]</property>
             <property name="Plot">$INFO[Window(Home).Property(MostPlayedROM.3.Plot)]</property>
@@ -4089,7 +4113,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(MostPlayedROM.4.Console)]</label2>
-            <onclick>System.Exec($INFO[Window(Home).Property(MostPlayedROM.4.LaunchCommand)])</onclick>
+            <onclick>System.Exec($ESCINFO[Window(Home).Property(MostPlayedROM.4.LaunchCommand)])</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.4.Thumb)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MostPlayedROM.4.Fanart)]</property>
             <property name="Plot">$INFO[Window(Home).Property(MostPlayedROM.4.Plot)]</property>
@@ -4102,7 +4126,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(MostPlayedROM.5.Console)]</label2>
-            <onclick>System.Exec($INFO[Window(Home).Property(MostPlayedROM.5.LaunchCommand)])</onclick>
+            <onclick>System.Exec($ESCINFO[Window(Home).Property(MostPlayedROM.5.LaunchCommand)])</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.5.Thumb)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MostPlayedROM.5.Fanart)]</property>
             <property name="Plot">$INFO[Window(Home).Property(MostPlayedROM.5.Plot)]</property>
@@ -4115,7 +4139,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(MostPlayedROM.6.Console)]</label2>
-            <onclick>System.Exec($INFO[Window(Home).Property(MostPlayedROM.6.LaunchCommand)])</onclick>
+            <onclick>System.Exec($ESCINFO[Window(Home).Property(MostPlayedROM.6.LaunchCommand)])</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.6.Thumb)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MostPlayedROM.6.Fanart)]</property>
             <property name="Plot">$INFO[Window(Home).Property(MostPlayedROM.6.Plot)]</property>
@@ -4128,7 +4152,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(MostPlayedROM.7.Console)]</label2>
-            <onclick>System.Exec($INFO[Window(Home).Property(MostPlayedROM.7.LaunchCommand)])</onclick>
+            <onclick>System.Exec($ESCINFO[Window(Home).Property(MostPlayedROM.7.LaunchCommand)])</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.7.Thumb)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MostPlayedROM.7.Fanart)]</property>
             <property name="Plot">$INFO[Window(Home).Property(MostPlayedROM.7.Plot)]</property>
@@ -4141,7 +4165,7 @@
         <item>
             <label>$INFO[Window(Home).Property(MostPlayedROM.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(MostPlayedROM.8.Console)]</label2>
-            <onclick>System.Exec($INFO[Window(Home).Property(MostPlayedROM.8.LaunchCommand)])</onclick>
+            <onclick>System.Exec($ESCINFO[Window(Home).Property(MostPlayedROM.8.LaunchCommand)])</onclick>
             <thumb>$INFO[Window(Home).Property(MostPlayedROM.8.Thumb)]</thumb>
             <property name="Fanart">$INFO[Window(Home).Property(MostPlayedROM.8.Fanart)]</property>
             <property name="Plot">$INFO[Window(Home).Property(MostPlayedROM.8.Plot)]</property>

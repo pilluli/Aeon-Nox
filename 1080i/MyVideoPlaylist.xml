@@ -10,7 +10,7 @@
         <control type="multiimage">
             <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
             <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbg)">Conditional</animation>
-            <imagepath fallback="special://skin/backgrounds/videos/" background="true">$INFO[Skin.String(VideosHomeItem.MultiFanart)]</imagepath>
+            <imagepath background="true">$VAR[VideoFanartVar]</imagepath>
         </control>
         <include>CommonMediaPlayingBackground</include>
         <control type="button" id="197">
@@ -57,7 +57,7 @@
                 <!-- view id = 512-->
                 <include condition="!Skin.HasSetting(DisableInfoWallVL)">AddonWall</include>
             </control>
-                        <control type="group">
+            <control type="group">
                 <visible>Control.IsVisible(550) | Control.IsVisible(508) | Control.IsVisible(503) | Control.IsVisible(504) | Control.IsVisible(501) | Control.IsVisible(500) | Control.IsVisible(512) | Control.IsVisible(516) | Control.IsVisible(514)</visible>
                 <animation effect="slide" start="0" end="705" time="0" easing="inout" tween="cubic" condition="Control.IsVisible(514)">Conditional</animation>
                 <include>FloorFlags</include>

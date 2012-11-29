@@ -2255,6 +2255,7 @@
                                 <height>27</height>
                                 <texture fallback="stars/0.0.png">$INFO[ListItem.Property(rating),stars/,.png]</texture>
                                 <colordiffuse>grey</colordiffuse>
+                                <aspectratio>keep</aspectratio>
                             </control>
                         </itemlayout>
                         <focusedlayout height="98" condition="!Skin.HasSetting(slimlist)">
@@ -2304,6 +2305,7 @@
                                 <height>27</height>
                                 <texture fallback="stars/0.0.png">$INFO[ListItem.Property(rating),stars/,.png]</texture>
                                 <colordiffuse>dcffffff</colordiffuse>
+                                <aspectratio>keep</aspectratio>
                             </control>
                         </focusedlayout>
                         <itemlayout height="60" condition="Skin.HasSetting(slimlist)">
@@ -2534,7 +2536,6 @@
                         </control>
                     </control>
                 </control>
-
             </control>
             <control type="group">
                 <animation type="Conditional" condition="![ControlGroup(9000).HasFocus | ControlGroup(100).HasFocus]">
@@ -2565,7 +2566,7 @@
                         <width>300</width>
                         <height>45</height>
                         <font>Font_Reg18</font>
-                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <label>Favorites</label>
                         <textcolor>white2</textcolor>
                         <focusedcolor>white2</focusedcolor>
@@ -2585,7 +2586,7 @@
                         <visible>true</visible>
                         <texturefocus>views/tripanel/listselect_fo.png</texturefocus>
                         <texturenofocus>button-nofocus.png</texturenofocus>
-                                    <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+                        <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
                         <label>Search</label>
                         <textcolor>white2</textcolor>
                         <align>left</align>
@@ -3009,6 +3010,12 @@
             <textcolor>white6</textcolor>
             <label></label>
             <font>font10</font>
+        </control>
+        <control type="button">
+            <include>HiddenObject</include>
+            <visible>!Skin.HasSetting(kioskmode)</visible>
+            <hitrect x="50" y="0" w="1870" h="10" />
+            <onfocus>SetFocus(9000)</onfocus>
         </control>
         <include>ContextMenuOverlay</include>
     </controls>

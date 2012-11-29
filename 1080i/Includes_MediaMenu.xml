@@ -410,7 +410,7 @@
                 <control type="grouplist">
                     <posy>15</posy>
                     <posx>3</posx>
-                    <itemgap>20</itemgap>
+                    <itemgap>15</itemgap>
                     <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(1802)">Conditional</animation>
                         <include>MediaMenuIcons</include>
@@ -658,8 +658,8 @@
             <visible>Player.HasAudio</visible>
             <include condition="Window.isActive(videos) + system.hasaddon(script.tvtunes)">TvTunesVisibleCondition</include>
             <control type="group">
-                                <visible>!ControlGroup(3000).HasFocus</visible>
-                    <include>Animation_VisibleChange200</include>
+                <visible>!ControlGroup(3000).HasFocus</visible>
+                <include>Animation_VisibleChange200</include>
                 <control type="label">
                     <posx>15</posx>
                     <posy>-110</posy>
@@ -768,8 +768,8 @@
             <posy>680</posy>
             <posx>10</posx>
             <animation effect="fade" start="100" end="0" time="100" condition="!ControlGroup(3000).HasFocus">Conditional</animation>
-            <onup condition="Control.IsVisible(1800)">1800</onup>
-            <onup condition="Control.IsVisible(1801) + !Control.IsVisible(1800)">1801</onup>
+            <onup condition="Control.IsVisible(1665)">1665</onup>
+            <onup condition="!Control.IsVisible(1665)">9003</onup>
             <itemgap>-17</itemgap>
             <ondown>1802</ondown>
             <onleft>50</onleft>
