@@ -38,7 +38,7 @@
                 <height>206</height>
                 <posy>874</posy>
                 <texture>views/panel_spot.png</texture>
-                <colordiffuse>$VAR[SpotColorVar]</colordiffuse>
+                <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             </control>
             <include>Neon_Floor</include>
         </control>
@@ -284,7 +284,7 @@
                     </control>
                     <control type="button" id="1664">
                         <include>Objects_MediaMenuButtonIcons</include>
-                        <label>31298</label>
+                        <label>42276</label>
                         <onclick>SetFocus(50)</onclick>
                         <onclick>ActivateWindow(1128)</onclick>
                     </control>
