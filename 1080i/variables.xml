@@ -323,10 +323,6 @@
         <value condition="substring(ListItem.AudioCodec,ac3,left) + Stringcompare(ListItem.AudioChannels,2)">dolbypro</value>
         <value>$INFO[ListItem.AudioCodec]</value>
     </variable>
-    <variable name="CaseTypeVar">
-        <value condition="Skin.HasSetting(usecases)">tvshows</value>
-        <value>movies</value>
-    </variable>
     <variable name="NextEpisodeVar">
         <value condition="!IsEmpty(Window(Home).Property(NextAired.Label)) + !IsEmpty(Window(Home).Property(NextAired.NextDate))">$INFO[Window(Home).Property(NextAired.NextDate)]</value>
         <value>$LOCALIZE[312581]</value>
@@ -1105,72 +1101,64 @@
         <value>$INFO[ListItem(9).Icon]</value>
     </variable>
     <variable name="ShowcaseCase-7Var">
-        <value condition="SubString(Container(504).ListItem(-7).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-7).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-7).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-7).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-6Var">
-        <value condition="SubString(Container(504).ListItem(-6).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-6).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-6).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-6).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-5Var">
-        <value condition="SubString(Container(504).ListItem(-5).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-5).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-5).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-5).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-4Var">
-        <value condition="SubString(Container(504).ListItem(-4).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-4).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-4).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-4).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-3Var">
-        <value condition="SubString(Container(504).ListItem(-3).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-3).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-3).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-3).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-2Var">
-        <value condition="SubString(Container(504).ListItem(-2).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-2).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-2).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-2).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase-1Var">
-        <value condition="SubString(Container(504).ListItem(-1).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(-1).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(-1).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(-1).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase0Var">
-        <value condition="SubString(Container(504).ListItem(0).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem.VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(0).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem.VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase1Var">
-        <value condition="SubString(Container(504).ListItem(1).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(1).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(1).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(1).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase2Var">
-        <value condition="SubString(Container(504).ListItem(2).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(2).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(2).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(2).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase3Var">
-        <value condition="SubString(Container(504).ListItem(3).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(3).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(3).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(3).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase4Var">
-        <value condition="SubString(Container(504).ListItem(4).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(4).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(4).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(4).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase5Var">
-        <value condition="SubString(Container(504).ListItem(5).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(5).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(5).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(5).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase6Var">
-        <value condition="SubString(Container(504).ListItem(6).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(6).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(6).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(6).VideoResolution]p.png</value>
     </variable>
     <variable name="ShowcaseCase7Var">
-        <value condition="SubString(Container(504).ListItem(7).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(7).VideoResolution]p.png</value>
-    </variable>
-    <variable name="ShowcaseCase8Var">
-        <value condition="SubString(Container(504).ListItem(8).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(8).VideoResolution]p.png</value>
-    </variable>
-    <variable name="ShowcaseCase9Var">
-        <value condition="SubString(Container(504).ListItem(9).Filename,.3D.)">3d.png</value>
-        <value>$INFO[Container(504).ListItem(9).VideoResolution]p.png</value>
+        <value condition="SubString(Container(501).ListItem(7).Filename,.3D.)">3d.png</value>
+        <value>$INFO[Container(501).ListItem(7).VideoResolution]p.png</value>
     </variable>
     <variable name="GlobalCaseVar">
         <value condition="SubString(ListItem.Filename,.3D.)">3d.png</value>
@@ -2309,11 +2297,9 @@
     <variable name="InfoPanelStyleVar">
         <value condition="Control.IsVisible(501) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShowcaseMovies)]</value>
         <value condition="Control.IsVisible(503) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesLandscape)]</value>
-        <value condition="Control.IsVisible(504) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesShowcaseDVD)]</value>
         <value condition="Control.IsVisible(508) + Container.Content(movies)">$INFO[Skin.String(InfoPanelMoviesBanners)]</value>
         <value condition="Control.IsVisible(501) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsShowcaseMovies)]</value>
         <value condition="Control.IsVisible(503) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsLandscape)]</value>
-        <value condition="Control.IsVisible(504) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsShowcaseDVD)]</value>
         <value condition="Control.IsVisible(508) + Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShowsBanners)]</value>
     </variable>
     <variable name="LandscapeThumbSettingsVar">
@@ -2344,17 +2330,9 @@
         <value condition="Skin.HasSetting(InfoWallTagLine)">$LOCALIZE[351]</value>
         <value>$LOCALIZE[31429]</value>
     </variable>
-    <variable name="posterwrapSettingsVar">
-        <value condition="Skin.HasSetting(posterwrap)">$LOCALIZE[106]</value>
-        <value>$LOCALIZE[107]</value>
-    </variable>
     <variable name="wallgenretvSettingsVar">
         <value condition="Skin.HasSetting(wallgenretv)">$LOCALIZE[515]</value>
         <value>$LOCALIZE[31172]</value>
-    </variable>
-    <variable name="showcasewrapSettingsVar">
-        <value condition="Skin.HasSetting(showcasewrap)">$LOCALIZE[106]</value>
-        <value>$LOCALIZE[107]</value>
     </variable>
     <variable name="VideoInfoThumbPreviewVar">
         <value condition="!IsEmpty(ListItem.Art(poster))">$INFO[listItem.Art(poster)]</value>
@@ -2372,4 +2350,31 @@
         <value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
         <value>$INFO[Player.Art(clearlogo)]</value>
     </variable>
+
+  <variable name="HomeCustomStartupFocus">
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(1).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,1)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(2).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,2)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(3).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,3)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(4).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,4)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(5).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,5)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(6).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,6)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(7).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,7)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(8).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,8)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(9).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,9)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(10).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,10)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(11).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,11)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(12).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,12)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(13).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,13)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(14).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,14)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(15).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,15)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(16).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,16)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(17).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,17)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(18).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,18)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(19).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,19)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(20).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,20)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(21).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,21)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(22).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,22)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(23).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,23)</value>
+    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(24).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,24)</value>
+  </variable>
 </includes>

@@ -3,7 +3,7 @@
     <defaultcontrol always="true">50</defaultcontrol>
     <allowoverlay>no</allowoverlay>
     <backgroundcolor>backgroundcolor</backgroundcolor>
-    <views>50,509,500,501,504,505,511,512,517,560</views>
+    <views>50,509,500,501,505,511,512,517,560</views>
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
     <onload condition="!Skin.HasSetting(ExplainMediaMenu)">ActivateWindow(1123)</onload>
     <controls>
@@ -46,12 +46,11 @@
                 <visible>Substring(Container.FolderPath,\comics\)</visible>
                 <!-- view id = 500 -->
                 <include>Showcase</include>
-                <include>ShowcaseDVD</include>
             </control>
             <control type="button" id="7000">
                 <include>HiddenObject</include>
                 <onfocus>SetFocus(9000)</onfocus>
-                <visible>Control.IsVisible(509) | Control.IsVisible(517) | Control.IsVisible(501) | Control.IsVisible(504)</visible>
+                <visible>Control.IsVisible(509) | Control.IsVisible(517) | Control.IsVisible(501)</visible>
             </control>
             <include>FloorLabels</include>
             <control type="group">
