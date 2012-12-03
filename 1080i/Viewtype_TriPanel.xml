@@ -8,9 +8,7 @@
                 <visible>!Skin.HasSetting(SwitchTriPanel)</visible>
                 <include>Animation_TriPanelRight</include>
                 <visible>Control.IsVisible(52)</visible>
-                <visible>!StringCompare(Container.FolderPath,videodb://1/7/)</visible>
-                <visible>!StringCompare(ListItem.Label,..)</visible>
-                <visible>![IsEmpty(Container.FolderPath) | Container.Content(years)] | Window.IsActive(programs)</visible>
+                <visible>Control.IsVisible(9900)</visible>
                 <control type="image">
                     <texture>views/tripanel/info_panel_alt_glow.png</texture>
                     <include>PanelGlowFade</include>
@@ -31,7 +29,6 @@
                     <width>445</width>
                     <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
-                    <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
                         <width min="50" max="400">auto</width>
                         <label>$VAR[TriPanelDetail1Var]</label>
@@ -52,7 +49,6 @@
                     <width>445</width>
                     <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
-                    <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
                         <width min="50" max="400">auto</width>
                         <label>$VAR[TriPanelDetail2Var]</label>
@@ -73,7 +69,6 @@
                     <width>445</width>
                     <orientation>horizontal</orientation>
                     <itemgap>10</itemgap>
-                    <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
                         <width min="50" max="400">auto</width>
                         <label>$VAR[TriPanelDetail3Var]</label>
@@ -238,9 +233,7 @@
                 <include>Animation_TriPanelMid</include>
                 <visible>Control.IsVisible(52)</visible>
                 <visible>Skin.HasSetting(SwitchTriPanel)</visible>
-                <visible>!StringCompare(ListItem.Label,..)</visible>
-                <visible>!StringCompare(Container.FolderPath,videodb://1/7/)</visible>
-                <visible>![IsEmpty(Container.FolderPath) | Container.Content(years)] | Window.IsActive(programs)</visible>
+                <visible>Control.IsVisible(9900)</visible>
                 <control type="image">
                     <texture>views/tripanel/info_panel_glow.png</texture>
                     <width>650</width>
@@ -262,7 +255,6 @@
                     <width>480</width>
                     <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
-                    <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
                         <width min="50" max="400">auto</width>
                         <label>$VAR[TriPanelDetail1Var]</label>
@@ -283,7 +275,6 @@
                     <width>485</width>
                     <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
-                    <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
                         <width min="50" max="400">auto</width>
                         <label>$VAR[TriPanelDetail2Var]</label>
@@ -304,7 +295,6 @@
                     <width>485</width>
                     <itemgap>10</itemgap>
                     <orientation>horizontal</orientation>
-                    <visible>!SubString(ListItem.Path,videodb://1/7/)</visible>
                     <control type="label">
                         <width min="50" max="400">auto</width>
                         <label>$VAR[TriPanelDetail3Var]</label>
@@ -382,7 +372,7 @@
             </control>
             <control type="group">
                 <animation effect="slide" time="700" start="-1275,0" end="0,0" tween="cubic" easing="out">WindowOpen</animation>
-                <animation effect="slide" time="300" start="0,0" end="-1275,0" tween="cubic" easing="in" delay="150">WindowClose</animation>
+                <animation effect="slide" time="300" end="-1275,0" tween="cubic" easing="in" delay="150">WindowClose</animation>
                 <visible>Control.IsVisible(52)</visible>
                 <animation effect="slide" time="700" start="-1275,0" end="0,0" tween="cubic" easing="out">VisibleChange</animation>
                 <animation effect="fade" time="200" start="100" end="0">Hidden</animation>

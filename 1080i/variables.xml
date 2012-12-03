@@ -417,7 +417,6 @@
         <value condition="Container.Content(addons)">special://skin/backgrounds/programs/</value>
         <value>special://skin/backgrounds/videos/</value>
     </variable>
-    
     <variable name="MovieFanartVar">
         <value condition="Skin.HasSetting(NoVideoLibraryFanart) + !IsEmpty(Skin.String(MoviesBackground))">$INFO[Skin.String(MoviesBackground)]</value>
         <value condition="Skin.HasSetting(NoVideoLibraryFanart)">special://skin/backgrounds/movies/</value>
@@ -618,13 +617,62 @@
         <value>$INFO[VideoPlayer.Cover]</value>
     </variable>
     <variable name="WatchedIconVar">
-        <value condition="Container.ListItem.IsResumable">OverlayWatching.png</value>
+        <value condition="Container.Content(movies) + ListItem.IsFolder + !Stringcompare(ListItem.Label,..)">common/logo_set.png</value>
+        <value condition="Container.ListItem.IsResumable">dialogs/circle/$INFO[ListItem.PercentPlayed].png</value>
+        <value condition="[[Container.Content(movies) + [StringCompare(Window(Home).Property(LatestMovie.1.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.2.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.3.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.4.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.5.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.6.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.7.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.8.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.9.Title),ListItem.Label) | StringCompare(Window(Home).Property(LatestMovie.10.Title),ListItem.Label)]] | [Container.Content(tvshows) + [StringCompare(Window(Home).Property(LatestEpisode.1.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.2.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.3.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.4.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.5.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.6.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.7.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.8.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.9.ShowTitle),ListItem.TvShowTitle) | StringCompare(Window(Home).Property(LatestEpisode.10.ShowTitle),ListItem.TvShowTitle)]] | [Container.Content(episodes) + [StringCompare(Window(Home).Property(LatestEpisode.1.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.2.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.3.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.4.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.5.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.6.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.7.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.8.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.9.EpisodeTitle),ListItem.Title) | StringCompare(Window(Home).Property(LatestEpisode.10.EpisodeTitle),ListItem.Title)]]]">common/star.png</value>
+        <value condition="!IsEmpty(ListItem.Top250)">common/imdb.png</value>
         <value>$INFO[ListItem.Overlay]</value>
     </variable>
-    <variable name="AltWatchedIconVar">
-        <value condition="Container.ListItem.IsResumable">OverlayWatching.png</value>
-        <value>$INFO[ListItem.Overlay,thumbs/Alt]</value>
+    <variable name="VolumeColorVar">
+        <value condition="Stringcompare(Control.GetLabel(20),100)">red</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),95)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),90)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),85)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),80)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),75)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),70)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),65)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),60)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),55)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),50)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),45)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),40)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),35)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),30)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),25)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),20)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),15)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),10)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),5)">blue</value>
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),1)">blue</value>
+        <value>blue</value>
     </variable>
+    <variable name="VolumeIconVar">
+        <value condition="IntegerGreaterThan(Control.GetLabel(20),9)">dialogs/circle/$INFO[Control.GetLabel(20)].png</value>
+        <value condition="Substring(Control.GetLabel(20),9)">dialogs/circle/9.png</value>
+        <value condition="Substring(Control.GetLabel(20),8)">dialogs/circle/8.png</value>
+        <value condition="Substring(Control.GetLabel(20),7)">dialogs/circle/7.png</value>
+        <value condition="Substring(Control.GetLabel(20),6)">dialogs/circle/6.png</value>
+        <value condition="Substring(Control.GetLabel(20),5)">dialogs/circle/5.png</value>
+        <value condition="Substring(Control.GetLabel(20),4)">dialogs/circle/4.png</value>
+        <value condition="Substring(Control.GetLabel(20),3)">dialogs/circle/3.png</value>
+        <value condition="Substring(Control.GetLabel(20),2)">dialogs/circle/2.png</value>
+        <value condition="Substring(Control.GetLabel(20),1)">dialogs/circle/1.png</value>
+        <value>-</value>
+    </variable>
+<!--     <variable name="ProgressIconVar">
+        <value condition="IntegerGreaterThan(Control.GetLabel(8309),9)">dialogs/circle/$INFO[Control.GetLabel(8309)].png</value>
+        <value condition="Substring(Control.GetLabel(8309),9)">dialogs/circle/9.png</value>
+        <value condition="Substring(Control.GetLabel(8309),8)">dialogs/circle/8.png</value>
+        <value condition="Substring(Control.GetLabel(8309),7)">dialogs/circle/7.png</value>
+        <value condition="Substring(Control.GetLabel(8309),6)">dialogs/circle/6.png</value>
+        <value condition="Substring(Control.GetLabel(8309),5)">dialogs/circle/5.png</value>
+        <value condition="Substring(Control.GetLabel(8309),4)">dialogs/circle/4.png</value>
+        <value condition="Substring(Control.GetLabel(8309),3)">dialogs/circle/3.png</value>
+        <value condition="Substring(Control.GetLabel(8309),2)">dialogs/circle/2.png</value>
+        <value condition="Substring(Control.GetLabel(8309),1)">dialogs/circle/1.png</value>
+        <value>dialogs/circle/1.png</value>
+    </variable> -->
     <variable name="TVShowClearArtVar">
         <value condition="Container.Content(episodes) | Container.Content(seasons)">$INFO[ListItem.Art(tvshow.clearart)]</value>
         <value condition="!IsEmpty(ListItem.Art(clearart))">$INFO[ListItem.Art(clearart)]</value>
@@ -740,7 +788,6 @@
         <value condition="Stringcompare(Window.Property(actualItem),LibraryStats) + Skin.HasSetting(totalshomehigh)">$LOCALIZE[31617]</value>
         <value condition="Stringcompare(Window.Property(actualItem),MainMenu) + Skin.HasSetting(lowermainmenu)">$LOCALIZE[31616]</value>
         <value condition="Stringcompare(Window.Property(actualItem),RSS) + Skin.HasSetting(rsshomelow)">$LOCALIZE[31616]</value>
-        <value condition="Stringcompare(Window.Property(actualItem),NavHelp) + Skin.HasSetting(highnavhelp)">$LOCALIZE[31617]</value>
         <value>$LOCALIZE[571]</value>
     </variable>
     <!--InfoWall variables-->
@@ -809,8 +856,17 @@
     </variable>
     <variable name="WidgetTypeLabelVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.WidgetTitle)]</value>
-        <value condition="!IsEmpty(Container(9010).ListItem.Property(WidgetTitle)) + !IsEmpty(Window(home).Property(FocusOnSubmenu))">$INFO[Container(9010).ListItem.Property(WidgetTitle)]</value>
         <value>$INFO[Container(9000).ListItem.Property(WidgetTitle)]</value>
+    </variable>
+    <variable name="ClassicWidgetImageVar">
+        <value condition="[Substring(Control.GetLabel(4321),tv) | Substring(Control.GetLabel(4321),movie)] + !IsEmpty(Container(8000).ListItem.Property(Landscape))">$INFO[Container(8000).ListItem.Property(Landscape)]</value>
+        <value condition="[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + !IsEmpty(Container(8000).ListItem.Property(Fanart))">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
+        <value>$INFO[Container(8000).ListItem.Icon]</value>
+    </variable>
+    <variable name="ClassicWidget2ImageVar">
+        <value condition="[Substring(Control.GetLabel(4325),tv) | Substring(Control.GetLabel(4325),movie)] + !IsEmpty(Container(7000).ListItem.Property(Landscape))">$INFO[Container(7000).ListItem.Property(Landscape)]</value>
+        <value condition="[Substring(Control.GetLabel(4325),movie) | Substring(Control.GetLabel(4325),musicvideo)] + !IsEmpty(Container(7000).ListItem.Property(Fanart))">$INFO[Container(7000).ListItem.Property(Fanart)]</value>
+        <value>$INFO[Container(7000).ListItem.Icon]</value>
     </variable>
     <variable name="Widget2TypeLabelVar">
         <value condition="Window.IsActive(1122)">$INFO[Skin.String(ItemToEdit.Widget2Title)]</value>
@@ -847,8 +903,8 @@
         <value>$LOCALIZE[20359]</value>
     </variable>
     <variable name="HomeWidgetFanartVar">
-        <value condition="Control.HasFocus(8000) + !IsEmpty(Container(8000).ListItem.Property(Fanart))">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
-        <value condition="Control.HasFocus(7000) + !IsEmpty(Container(7000).ListItem.Property(Fanart))">$INFO[Container(7000).ListItem.Property(Fanart)]</value>
+        <value condition="[Control.HasFocus(8000) | ControlGroup(8020).HasFocus] + !IsEmpty(Container(8000).ListItem.Property(Fanart))">$INFO[Container(8000).ListItem.Property(Fanart)]</value>
+        <value condition="[Control.HasFocus(7000) | ControlGroup(7020).HasFocus] + !IsEmpty(Container(7000).ListItem.Property(Fanart))">$INFO[Container(7000).ListItem.Property(Fanart)]</value>
         <value condition="[Control.HasFocus(5010) | ControlGroup(5014).HasFocus | ControlGroup(5020).HasFocus | ControlGroup(5021).HasFocus | ControlGroup(5030).HasFocus] + !IsEmpty(Container(5010).ListItem.Property(Fanart))">$INFO[Container(5010).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(5010) + Substring(Container(9000).ListItem.Property(Widget),featured) + !IsEmpty(Container(5001).ListItem.Property(Fanart))">$INFO[Container(5001).ListItem.Property(Fanart)]</value>
         <value condition="Control.HasFocus(5012) + !IsEmpty(Container(5003).ListItem.Property(Fanart))">$INFO[Container(5003).ListItem.Property(Fanart)]</value>
@@ -870,7 +926,7 @@
     </variable>
     <variable name="MultiFanartVar">
         <value condition="Window.IsActive(1124) + [Window.IsActive(1122) | Window.IsActive(1136)]">$INFO[Skin.String(ItemToEdit.MultiFanart)]</value>
-        <value condition="!IsEmpty(Window(home).Property(FocusOnSubmenu)) + !IsEmpty(Container(9010).ListItem.Thumb)">$INFO[Container(9010).ListItem.Icon]</value>
+        <value condition="Control.HasFocus(9010) + !IsEmpty(Container(9010).ListItem.Thumb)">$INFO[Container(9010).ListItem.Icon]</value>
         <value condition="!IsEmpty(Container(9000).ListItem.Icon)">$INFO[Container(9000).ListItem.Icon]</value>
         <value condition="Window.IsActive(1128)">special://skin/backgrounds/color.jpg</value>
         <value condition="Window.IsActive(1131)">special://skin/backgrounds/system/</value>
@@ -885,7 +941,6 @@
     </variable>
     <variable name="WidgetTypeVar">
         <value condition="Window.IsActive(1122) | Window.IsActive(1136)">$INFO[Skin.String(ItemToEdit.Widget)]</value>
-        <value condition="!IsEmpty(Container(9010).ListItem.Property(Widget)) + !IsEmpty(Window(home).Property(FocusOnSubmenu))">$INFO[Container(9010).ListItem.Property(Widget)]</value>
         <value>$INFO[Container(9000).ListItem.Property(Widget)]</value>
     </variable>
     <variable name="Widget2TypeVar">
@@ -918,7 +973,6 @@
         <value condition="IsEmpty(Skin.String(MusicBackground))">special://skin/backgrounds/music/</value>
         <value>$INFO[Skin.String(MusicBackground)]</value>
     </variable>
-
     <variable name="SettingsFanartVar">
         <value condition="IsEmpty(Skin.String(SettingsBackground))">special://skin/backgrounds/system/</value>
         <value>$INFO[Skin.String(SettingsBackground)]</value>
@@ -1768,47 +1822,6 @@
         <value condition="!IsEmpty(Skin.String(ItemToEdit.Label))">$INFO[Skin.String(ItemToEdit.Label)]</value>
         <value>$LOCALIZE[571]</value>
     </variable>
-    <variable name="NavHelper1IconVar">
-        <value condition="ControlGroup(5000).HasFocus + [[!Skin.HasSetting(lowermainmenu) + IsEmpty(Window(Home).Property(PanelWidgetInfo))] | [Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(Home).Property(PanelWidgetInfo))]]">common/arrowdown.png</value>
-        <value condition="ControlGroup(5000).HasFocus | [[Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),system)] + Skin.HasSetting(lowermainmenu)] + !Control.HasFocus(8000)">common/arrowup.png</value>
-        <value condition="Control.HasFocus(8000) + SubString(Control.GetLabel(4321),random)">common/arrowright.png</value>
-        <value condition="Control.HasFocus(8000) + !IsEmpty(Container(8000).ListItem.Property(Trailer)) + SubString(Control.GetLabel(4321),recentmovies)">common/arrowright.png</value>
-        <value condition="[[Substring(Control.GetLabel(4321),weather) | Substring(Control.GetLabel(4321),system)] + !Skin.HasSetting(lowermainmenu)] + ![ControlGroup(5000).HasFocus | Control.HasFocus(8000)]">common/arrowdown.png</value>
-        <value condition="ControlGroup(6000).HasFocus + [[!Skin.HasSetting(lowermainmenu) + IsEmpty(Window(Home).Property(PanelWidget2Info))] | [Skin.HasSetting(lowermainmenu) + !IsEmpty(Window(Home).Property(PanelWidget2Info))]]">common/arrowup.png</value>
-        <value condition="ControlGroup(6000).HasFocus | [[Substring(Control.GetLabel(4325),weather) | Substring(Control.GetLabel(4325),system)] + Skin.HasSetting(lowermainmenu)] + !Control.HasFocus(7000)">common/arrowdown.png</value>
-        <value condition="Control.HasFocus(7000) + SubString(Control.GetLabel(4325),random)">common/arrowright.png</value>
-        <value condition="Control.HasFocus(7000) + !IsEmpty(Container(7000).ListItem.Property(Trailer)) + SubString(Control.GetLabel(4325),recentmovies)">common/arrowright.png</value>
-        <value condition="[[Substring(Control.GetLabel(4325),weather) | Substring(Control.GetLabel(4325),system)] + !Skin.HasSetting(lowermainmenu)] + ![ControlGroup(6000).HasFocus | Control.HasFocus(7000)]">common/arrowup.png</value>
-    </variable>
-    <variable name="NavHelper1LabelVar">
-        <value condition="Substring(Control.GetLabel(4321),system)">$LOCALIZE[31506]</value>
-        <value condition="Control.HasFocus(5010) + IsEmpty(Window(Home).Property(PanelWidgetInfo)) + !Substring(Control.GetLabel(4321),iconpanel) + Substring(Control.GetLabel(4321),panel)">$LOCALIZE[31065]</value>
-        <value condition="ControlGroup(5000).HasFocus + !IsEmpty(Window(Home).Property(PanelWidgetInfo))">$LOCALIZE[31066]</value>
-        <value condition="Substring(Control.GetLabel(4321),weather)">$LOCALIZE[31030]</value>
-        <value condition="ControlGroup(5000).HasFocus + !Substring(Control.GetLabel(4321),panel)">$LOCALIZE[31031]</value>
-        <value condition="ControlGroup(5000).HasFocus + Substring(Control.GetLabel(4321),iconpanel)">$LOCALIZE[31027]</value>
-        <value condition="Control.HasFocus(8000) + SubString(Control.GetLabel(4321),random) + IsEmpty(Container(8000).ListItem.Property(Trailer))">$LOCALIZE[31079]</value>
-        <value condition="Control.HasFocus(8000) + !IsEmpty(Container(8000).ListItem.Property(Trailer))">$LOCALIZE[20410]</value>
-        <value condition="Substring(Control.GetLabel(4325),system)">$LOCALIZE[31506]</value>
-        <value condition="Control.HasFocus(6010) + IsEmpty(Window(Home).Property(PanelWidget2Info)) + !Substring(Control.GetLabel(4325),iconpanel) + Substring(Control.GetLabel(4325),panel)">$LOCALIZE[31065]</value>
-        <value condition="ControlGroup(6000).HasFocus + !IsEmpty(Window(Home).Property(PanelWidget2Info))">$LOCALIZE[31066]</value>
-        <value condition="Substring(Control.GetLabel(4325),weather)">$LOCALIZE[31030]</value>
-        <value condition="ControlGroup(6000).HasFocus + !Substring(Control.GetLabel(4325),panel)">$LOCALIZE[31031]</value>
-        <value condition="ControlGroup(6000).HasFocus + Substring(Control.GetLabel(4325),iconpanel)">$LOCALIZE[31027]</value>
-        <value condition="Control.HasFocus(7000) + SubString(Control.GetLabel(4325),random) + IsEmpty(Container(7000).ListItem.Property(Trailer))">$LOCALIZE[31079]</value>
-        <value condition="Control.HasFocus(7000) + !IsEmpty(Container(7000).ListItem.Property(Trailer))">$LOCALIZE[20410]</value>
-    </variable>
-    <variable name="NavHelper2IconVar">
-        <value condition="ControlGroup(5000).HasFocus + !Skin.HasSetting(lowermainmenu)">common/arrowup.png</value>
-        <value condition="Control.HasFocus(8000)">common/arrowleft.png</value>
-        <value condition="Control.HasFocus(7000)">common/arrowleft.png</value>
-        <value>common/arrowdown.png</value>
-    </variable>
-    <variable name="NavHelper2LabelVar">
-        <value condition="ControlGroup(5000).HasFocus | Control.HasFocus(8000)">$LOCALIZE[33061]</value>
-        <value condition="ControlGroup(6000).HasFocus | Control.HasFocus(7000)">$LOCALIZE[33061]</value>
-        <value condition="Control.HasFocus(9000) + IntegerGreaterThan(Container(9010).NumItems,0)">$LOCALIZE[1034]</value>
-    </variable>
     <variable name="ContextMenuLabel2001">
         <value condition="Container.Content(Artists) + Window.IsVisible(MusicLibrary)">$LOCALIZE[31074]</value>
         <value condition="Container.Content(Actors)">$LOCALIZE[31073]</value>
@@ -2350,31 +2363,33 @@
         <value condition="!IsEmpty(Player.Art(clearart))">$INFO[Player.Art(clearart)]</value>
         <value>$INFO[Player.Art(clearlogo)]</value>
     </variable>
-
-  <variable name="HomeCustomStartupFocus">
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(1).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,1)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(2).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,2)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(3).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,3)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(4).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,4)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(5).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,5)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(6).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,6)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(7).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,7)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(8).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,8)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(9).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,9)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(10).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,10)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(11).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,11)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(12).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,12)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(13).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,13)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(14).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,14)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(15).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,15)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(16).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,16)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(17).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,17)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(18).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,18)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(19).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,19)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(20).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,20)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(21).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,21)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(22).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,22)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(23).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,23)</value>
-    <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(24).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,24)</value>
-  </variable>
+    <variable name="Widget1PlayButtonLabelVar">
+        <value condition="VideoPlayer.Content(episodes) + !IsEmpty(Player.Art(tvshow.clearart))">$INFO[Player.Art(tvshow.clearart)]</value>
+        <value>$INFO[Player.Art(clearlogo)]</value>
+    </variable>
+    <variable name="HomeCustomStartupFocus">
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(1).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,1)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(2).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,2)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(3).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,3)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(4).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,4)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(5).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,5)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(6).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,6)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(7).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,7)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(8).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,8)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(9).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,9)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(10).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,10)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(11).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,11)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(12).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,12)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(13).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,13)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(14).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,14)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(15).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,15)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(16).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,16)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(17).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,17)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(18).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,18)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(19).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,19)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(20).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,20)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(21).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,21)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(22).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,22)</value>
+        <value condition="Window.Previous(startup) + !IsEmpty(Skin.String(CustomFocusOffset)) + Stringcompare(Container(9000).ListItem(23).Label,Skin.String(CustomFocusOffset))">Control.Move(9000,23)</value>
+    </variable>
 </includes>

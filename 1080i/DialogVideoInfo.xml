@@ -8,9 +8,9 @@
     <controls>
         <control type="group">
             <animation effect="slide" start="-729,0" end="0,0" time="400" easing="out" tween="quadratic">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="-729,0" time="400" easing="out" tween="quadratic">WindowClose</animation>
+            <animation effect="slide" end="-729,0" time="400" easing="out" tween="quadratic">WindowClose</animation>
             <animation effect="slide" start="-729,0" end="0,0" time="400" easing="out" tween="quadratic" condition="!Window.IsVisible(script-Actors-DialogVideoInfo.xml)|!Window.IsVisible(script-Actors-DialogInfo.xml)|Window.IsVisible(1025)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="-729,0" time="400" easing="out" tween="quadratic" condition="Window.IsVisible(script-Actors-DialogVideoInfo.xml)|Window.IsVisible(script-Actors-DialogInfo.xml)|Window.IsVisible(1025)">Conditional</animation>
+            <animation effect="slide" end="-729,0" time="400" easing="out" tween="quadratic" condition="Window.IsVisible(script-Actors-DialogVideoInfo.xml)|Window.IsVisible(script-Actors-DialogInfo.xml)|Window.IsVisible(1025)">Conditional</animation>
             <control type="image">
                 <width>729</width>
                 <height>1080</height>
@@ -35,9 +35,9 @@
         </control>
         <control type="group">
             <animation effect="slide" start="1192,0" end="0,0" time="400" easing="out" tween="quadratic">WindowOpen</animation>
-            <animation effect="slide" start="0,0" end="1192,0" time="400" easing="out" tween="quadratic">WindowClose</animation>
+            <animation effect="slide" end="1192,0" time="400" easing="out" tween="quadratic">WindowClose</animation>
             <animation effect="slide" start="1192,0" end="0,0" time="400" easing="out" tween="quadratic" condition="!Window.IsVisible(script-Actors-DialogVideoInfo.xml)|!Window.IsVisible(script-Actors-DialogInfo.xml)|Window.IsVisible(1025)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="1192,0" time="400" easing="out" tween="quadratic" condition="Window.IsVisible(script-Actors-DialogVideoInfo.xml)|Window.IsVisible(script-Actors-DialogInfo.xml)|Window.IsVisible(1025)">Conditional</animation>
+            <animation effect="slide" end="1192,0" time="400" easing="out" tween="quadratic" condition="Window.IsVisible(script-Actors-DialogVideoInfo.xml)|Window.IsVisible(script-Actors-DialogInfo.xml)|Window.IsVisible(1025)">Conditional</animation>
             <control type="image">
                 <posx>729</posx>
                 <width>1192</width>
@@ -128,47 +128,49 @@
                     <texture>info/info_panellines_movie.png</texture>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 </control>
-                <control type="label">
-                    <posx>2</posx>
-                    <posy>16</posy>
+                <control type="grouplist">
+                    <posx>0</posx>
+                    <posy>-120</posy>
+                    <height>200</height>
                     <width>1018</width>
-                    <font>Font_Reg38_Caps</font>
-                    <label>$INFO[ListItem.Title]</label>
-                    <aligny>bottom</aligny>
-                    <scroll>true</scroll>
-                    <animation effect="slide" start="0,-38" end="0,-38" time="0" condition="[!IsEmpty(ListItem.Tagline) + Container.Content(movies)] | Container.Content(episodes) | Container.Content(musicvideos)">Conditional</animation>
-                </control>
-                <control type="label">
-                    <posx>2</posx>
-                    <posy>40</posy>
-                    <width>1018</width>
-                    <font>Font_Reg20</font>
-                    <label>$INFO[ListItem.Tagline]</label>
-                    <scroll>true</scroll>
-                    <aligny>bottom</aligny>
-                    <textcolor>grey</textcolor>
-                    <visible>Container.Content(movies)</visible>
-                </control>
-                <control type="label">
-                    <posx>2</posx>
-                    <posy>36</posy>
-                    <width>1018</width>
-                    <font>Font_Reg20</font>
-                    <label>$INFO[ListItem.Artist]</label>
-                    <scroll>true</scroll>
-                    <textcolor>grey</textcolor>
-                    <aligny>bottom</aligny>
-                    <visible>Container.Content(musicvideos)</visible>
-                </control>
-                <control type="label">
-                    <posx>2</posx>
-                    <posy>36</posy>
-                    <width>1018</width>
-                    <font>Font_Reg20</font>
-                    <label>$INFO[ListItem.TvShowTitle]</label>
-                    <aligny>bottom</aligny>
-                    <textcolor>grey</textcolor>
-                    <visible>Container.Content(episodes)</visible>
+                    <itemgap>4</itemgap>
+                    <orientation>vertical</orientation>
+                    <align>bottom</align>
+                    <control type="label">
+                        <width>1018</width>
+                        <height>50</height>
+                        <font>Font_Reg38_Caps</font>
+                        <label>$INFO[ListItem.Title]</label>
+                        <scroll>true</scroll>
+                    </control>
+                    <control type="label">
+                        <width>1018</width>
+                        <height>40</height>
+                        <font>Font_Reg20_Info</font>
+                        <label>$INFO[ListItem.Tagline]</label>
+                        <scroll>true</scroll>
+                        <textcolor>grey</textcolor>
+                        <visible>Container.Content(movies) + !IsEmpty(ListItem.Tagline)</visible>
+                    </control>
+                    <control type="label">
+                        <width>1018</width>
+                        <height>40</height>
+                        <font>Font_Reg20</font>
+                        <label>$INFO[ListItem.Artist]</label>
+                        <scroll>true</scroll>
+                        <textcolor>grey</textcolor>
+                        <aligny>bottom</aligny>
+                        <visible>Container.Content(musicvideos) + !IsEmpty(ListItem.Artist)</visible>
+                    </control>
+                    <control type="label">
+                        <width>1018</width>
+                        <height>40</height>
+                        <font>Font_Reg20</font>
+                        <label>$INFO[ListItem.TvShowTitle]</label>
+                        <aligny>bottom</aligny>
+                        <textcolor>grey</textcolor>
+                        <visible>Container.Content(episodes) + !IsEmpty(ListItem.TvShowTitle)</visible>
+                    </control>
                 </control>
                 <!-- First Row -->
                 <control type="image">
@@ -207,11 +209,12 @@
                     <posx>465</posx>
                     <posy>87</posy>
                     <width>555</width>
-                    <font>Font_Reg20_Caps</font>
+                    <font>Font_Reg20_Caps_Info</font>
                     <label fallback="312577">$INFO[ListItem.Genre]</label>
                     <scroll>true</scroll>
                     <textcolor>grey</textcolor>
                     <height>85</height>
+                    <wrapmultiline>true</wrapmultiline>
                     <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(MusicVideos)</visible>
                 </control>
                 <control type="group">
@@ -534,7 +537,7 @@
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture>$INFO[ListItem.VideoCodec,flags/source/,.png]</texture>
                         <visible>IsEmpty(Control.GetLabel(900011))</visible>
-                        <animation effect="slide" start="0,0" end="0,-10" reversible="true" condition="true">Conditional</animation>
+                        <animation effect="slide" end="0,-10" condition="true">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(900012))</visible>
                     </control>
                     <control type="image">
@@ -548,7 +551,7 @@
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture>$INFO[ListItem.AudioCodec,flags/audio/,.png]</texture>
                         <aspectratio>keep</aspectratio>
-                        <animation effect="slide" start="0,0" end="0,-9" reversible="true" condition="true">Conditional</animation>
+                        <animation effect="slide" end="0,-9" condition="true">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(900013))</visible>
                     </control>
                     <control type="image">
@@ -562,7 +565,7 @@
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture>$INFO[ListItem.AudioChannels,flags/info/channels/,.png]</texture>
                         <aspectratio>keep</aspectratio>
-                        <animation effect="slide" start="0,0" end="0,3" reversible="true" condition="true">Conditional</animation>
+                        <animation effect="slide" end="0,3" condition="true">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(900017))</visible>
                     </control>
                     <control type="image">
@@ -587,7 +590,7 @@
                         <colordiffuse>FF7c7c7c</colordiffuse>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture>$INFO[ListItem.VideoAspect,flags/aspectratio/,.png]</texture>
-                        <animation effect="slide" start="0,0" end="0,-10" reversible="true" condition="true">Conditional</animation>
+                        <animation effect="slide" end="0,-10" condition="true">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(900015))</visible>
                     </control>
                     <control type="image">
@@ -600,7 +603,7 @@
                         <colordiffuse>FF7c7c7c</colordiffuse>
                         <aspectratio aligny="center" align="center">keep</aspectratio>
                         <texture>$INFO[ListItem.Studio,flags/studios/,.png]</texture>
-                        <animation effect="slide" start="0,0" end="0,-4" reversible="true" condition="true">Conditional</animation>
+                        <animation effect="slide" end="0,-4" condition="true">Conditional</animation>
                         <visible>!IsEmpty(Control.GetLabel(900016))</visible>
                     </control>
                     <control type="image">
@@ -672,7 +675,7 @@
                         </control>
                     </control>
                     <control type="group">
-                        <animation effect="slide" start="0" end="-150" reversible="true" condition="IsEmpty(ListItem.Property(TotalSeasons))">Conditional</animation>
+                        <animation effect="slide" end="-150" condition="IsEmpty(ListItem.Property(TotalSeasons))">Conditional</animation>
                         <control type="label">
                             <posx>450</posx>
                             <posy>862</posy>
@@ -1029,7 +1032,7 @@
                     <timeperimage>4000</timeperimage>
                     <aspectratio align="center">scale</aspectratio>
                     <imagepath background="true">$VAR[ExtraFanartPreviewVar]</imagepath>
-                    <animation effect="zoom" start="1072,615,540,304" end="0,0,1920,1080" time="800" tween="cubic" easing="out" reversible="true" condition="!IsEmpty(Window(movieinformation).Property(FanartZoom))">Conditional</animation>
+                    <animation effect="zoom" start="1072,615,540,304" end="0,0,1920,1080" time="800" tween="cubic" easing="out" condition="!IsEmpty(Window(movieinformation).Property(FanartZoom))">Conditional</animation>
                     <visible>ControlGroup(5000).HasFocus(21) | ControlGroup(5000).HasFocus(24)</visible>
                 </control>
                 <control type="image">
@@ -1042,7 +1045,7 @@
                     <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
                     <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
                     <bordersize>7</bordersize>
-                    <animation effect="zoom" start="1265,608,554,318" end="-25,-25,1970,1130" time="800" tween="cubic" easing="out" reversible="true" condition="!IsEmpty(Window(movieinformation).Property(FanartZoom))">Conditional</animation>
+                    <animation effect="zoom" start="1265,608,554,318" end="-25,-25,1970,1130" time="800" tween="cubic" easing="out" condition="!IsEmpty(Window(movieinformation).Property(FanartZoom))">Conditional</animation>
                     <visible>!IsEmpty(ListItem.Art(fanart)) + ControlGroup(5000).HasFocus(10)</visible>
                 </control>
                 <control type="image">
@@ -1054,8 +1057,8 @@
                     <texture border="5">views/addonwall_select.png</texture>
                     <visible>Control.HasFocus(5055)</visible>
                     <animation effect="fade" time="200">VisibleChange</animation>
-                    <animation effect="slide" start="0" end="-200" reversible="true" condition="ControlGroup(5000).HasFocus(21) | ControlGroup(5000).HasFocus(24)">Conditional</animation>
-                    <animation type="Conditional" reversible="true" condition="!IsEmpty(Window(movieinformation).Property(FanartZoom))">
+                    <animation effect="slide" end="-200" condition="ControlGroup(5000).HasFocus(21) | ControlGroup(5000).HasFocus(24)">Conditional</animation>
+                    <animation type="Conditional" condition="!IsEmpty(Window(movieinformation).Property(FanartZoom))">
                         <effect type="zoom" start="1267,610,550,314" end="-5,-5,1930,1090" time="800" tween="cubic" easing="out" />
                         <effect type="fade" start="100" end="0" time="200" />
                     </animation>

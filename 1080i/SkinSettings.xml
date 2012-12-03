@@ -5,7 +5,7 @@
     <include condition="!Skin.HasSetting(firstrun)">AutoConfig</include>
     <animation type="WindowOpen" reversible="false" condition="![Window.Previous(SettingsCategory.xml) | Window.Previous(1116) | Window.Previous(settings)]">
         <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
-        <effect type="fade" start="0" end="100" time="300" />
+        <effect type="fade" end="100" time="300" />
     </animation>
     <animation type="WindowClose" reversible="false" condition="![Window.Next(SettingsCategory.xml) | Window.Next(1116) | Window.Next(settings)]">
         <effect type="fade" start="100" end="0" time="300" />
@@ -148,12 +148,6 @@
                         <include>Default_SettingRadioButton</include>
                         <onclick>Skin.ToggleSetting(effect_bg)</onclick>
                         <selected>Skin.HasSetting(effect_bg)</selected>
-                    </control>
-                    <control type="radiobutton" id="286">
-                        <label>31638</label>
-                        <include>Default_SettingRadioButton</include>
-                        <onclick>Skin.ToggleSetting(NextAiredInfo)</onclick>
-                        <selected>!Skin.HasSetting(NextAiredInfo)</selected>
                     </control>
                     <control type="radiobutton" id="107">
                         <label>21398</label>

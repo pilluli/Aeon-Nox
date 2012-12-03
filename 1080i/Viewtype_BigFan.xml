@@ -66,20 +66,20 @@
         <control type="group">
             <visible>Control.IsVisible(516)</visible>
             <animation type="Visible">
-                <effect type="fade" time="400" start="0" end="100" />
+                <effect type="fade" time="400" end="100" />
                 <effect type="slide" time="400" start="0,135" end="0,0" easing="out" tween="cubic" />
             </animation>
             <animation type="Hidden">
                 <effect type="fade" time="400" start="100" end="0" />
-                <effect type="slide" time="400" start="0,0" end="0,135" easing="in" tween="cubic" />
+                <effect type="slide" time="400" end="0,135" easing="in" tween="cubic" />
             </animation>
             <animation type="WindowOpen">
-                <effect type="fade" time="400" start="0" end="100" />
+                <effect type="fade" time="400" end="100" />
                 <effect type="slide" time="400" start="0,135" end="0,0" easing="out" tween="cubic" />
             </animation>
             <animation type="WindowClose">
                 <effect type="fade" time="300" start="100" end="0" />
-                <effect type="slide" time="300" start="0,0" end="0,135" easing="in" tween="cubic" />
+                <effect type="slide" time="300" end="0,135" easing="in" tween="cubic" />
             </animation>
             <control type="image">
                 <posy>188r</posy>
@@ -150,11 +150,11 @@
                     <height>152</height>
                     <texture background="true">$VAR[BigFanIconVar]</texture>
                     <fadetime>300</fadetime>
-                    <animation effect="slide" start="0,0" end="0,-20" time="0" condition="Skin.HasSetting(bigfanlogo)">Conditional</animation>
+                    <animation effect="slide" end="0,-20" time="0" condition="Skin.HasSetting(bigfanlogo)">Conditional</animation>
                     <aspectratio align="bottom" aligny="bottom">keep</aspectratio>
                     <bordersize>7</bordersize>
                     <animation effect="fade" start="100" end="0" time="200">Hidden</animation>
-                    <animation effect="fade" start="0" end="100" time="400">Visible</animation>
+                    <animation effect="fade" end="100" time="400">Visible</animation>
                 </control>
             </control>
             <control type="grouplist">
@@ -164,8 +164,9 @@
                 <height>60</height>
                 <itemgap>10</itemgap>
                 <orientation>horizontal</orientation>
+                <usecontrolcoords>true</usecontrolcoords>
                 <control type="label">
-                    <width min="200" max="1400">auto</width>
+                    <width min="100" max="1400">auto</width>
                     <height>38</height>
                     <font>Font_ShowcaseMainLabel2_Caps</font>
                     <scroll>true</scroll>
@@ -173,10 +174,21 @@
                     <label>$INFO[ListItem.Label]</label>
                 </control>
                 <control type="image">
-                    <width>60</width>
-                    <height>60</height>
+                    <width>55</width>
+                    <height>55</height>
+                    <fadetime>0</fadetime>
+                    <texture>dialogs/circle/loading-back.png</texture>
+                    <visible>Container.ListItem.IsResumable</visible>
+                    <posy>-4</posy>
+                </control>
+                <control type="image">
+                    <animation effect="slide" end="-65,0" time="0" condition="Container.ListItem.IsResumable">Conditional</animation>
+                    <width>55</width>
+                    <height>55</height>
+                    <fadetime>0</fadetime>
                     <texture>$VAR[WatchedIconVar]</texture>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    <posy>-4</posy>
                 </control>
             </control>
             <control type="label">

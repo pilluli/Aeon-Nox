@@ -244,10 +244,10 @@
         <control type="group">
             <posx>-12</posx>
             <posy>-38</posy>
-            <animation effect="slide" start="0" end="-80" time="300" reversible="true" condition="[IsEmpty(ListItem.Trailer) + Skin.HasSetting(kioskmode)] |Control.HasFocus(109)">Conditional</animation>
-            <animation effect="slide" start="0" end="-181" time="400" reversible="true" easing="in" tween="cubic" condition="Window.IsActive(1121)">Conditional</animation>
-            <animation effect="slide" start="0" end="-123" time="400" reversible="true" easing="in" tween="cubic" condition="Window.IsActive(1119)">Conditional</animation>
-            <animation effect="slide" start="0" end="20" time="400" easing="in" tween="cubic" reversible="true" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
+            <animation effect="slide" end="-80" time="300" condition="[IsEmpty(ListItem.Trailer) + Skin.HasSetting(kioskmode)] |Control.HasFocus(109)">Conditional</animation>
+            <animation effect="slide" end="-181" time="400" easing="in" tween="cubic" condition="Window.IsActive(1121)">Conditional</animation>
+            <animation effect="slide" end="-123" time="400" easing="in" tween="cubic" condition="Window.IsActive(1119)">Conditional</animation>
+            <animation effect="slide" end="20" time="400" easing="in" tween="cubic" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
             <control type="image">
                 <posx>404</posx>
                 <posy>425</posy>
@@ -258,14 +258,14 @@
                 <colordiffuse>$VAR[ExtendedColorVar]</colordiffuse>
             </control>
             <control type="group">
-                <animation effect="slide" start="0,0" end="0,-15" time="400" easing="out" tween="cubic" reversible="true" condition="[[!IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | [!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)]] + !Container.Scrolling">Conditional</animation>
+                <animation effect="slide" end="0,-15" time="400" easing="out" tween="cubic" condition="[[!IsEmpty(ListItem.Trailer) + Window.IsActive(videolibrary)] | [!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)]] + !Container.Scrolling">Conditional</animation>
                 <control type="image">
                     <posx>415</posx>
                     <posy>532</posy>
                     <width>25</width>
                     <height>25</height>
-                    <animation effect="rotate" start="0" end="-90" center="auto" delay="300" time="800" condition="Window.IsActive(musicinformation) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(513) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
-                    <animation effect="rotate" start="0" end="-180" center="auto" delay="300" time="800" condition="ControlGroup(9000).HasFocus">Conditional</animation>
+                    <animation effect="rotate" end="-90" center="auto" delay="300" time="800" condition="Window.IsActive(musicinformation) | Control.HasFocus(7000) | Control.IsVisible(508) | Control.IsVisible(501) | Control.IsVisible(503) | Control.IsVisible(510) | Control.IsVisible(57) | Control.IsVisible(516) | Control.IsVisible(513) | Control.IsVisible(509) | [Control.IsVisible(500) + !Skin.HasSetting(WallVertical)]">Conditional</animation>
+                    <animation effect="rotate" end="-180" center="auto" delay="300" time="800" condition="ControlGroup(9000).HasFocus">Conditional</animation>
                     <animation effect="rotate" start="-90" end="180" center="auto" delay="300" time="800" condition="Control.IsVisible(503) + [Skin.HasSetting(landscapeonelogo) + Container.Content(movies)]">Conditional</animation>
                     <texture>common/arrowleft.png</texture>
                     <colordiffuse>$VAR[TitleColorVar]</colordiffuse>
@@ -343,7 +343,7 @@
             <control type="group">
                 <include>Animation_MediaMenuSlide2</include>
                 <animation type="Conditional" condition="Window.IsActive(1121) | Window.IsActive(1119) | Window.IsActive(1126)">
-                    <effect type="fade" start="100" end="0" time="500" reversible="true" />
+                    <effect type="fade" start="100" end="0" time="500" />
                 </animation>
                 <animation type="Conditional" condition="Window.IsActive(1126)">
                     <effect type="zoom" end="115,100" time="400" easing="in" tween="cubic" />
@@ -423,19 +423,19 @@
                         <visible>Control.IsVisible(1800) | Control.IsVisible(1801)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(3)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(3)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/Format.png</texture>
                         <visible>Control.IsVisible(3)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(4)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(4)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>$VAR[SortImageVar]</texture>
                         <visible>Control.IsVisible(4)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(7)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(7)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/Format.png</texture>
                         <visible>Control.IsVisible(7) + Window.IsActive(musicfiles)</visible>
@@ -489,7 +489,7 @@
                         <visible>Control.IsVisible(19) | [Control.IsVisible(20) + !Window.IsActive(musicplaylist)]</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(8)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(8)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/Search.png</texture>
                         <visible>Control.IsVisible(8) + !Window.IsActive(musicplaylisteditor)</visible>
@@ -508,37 +508,37 @@
                         <visible>Control.IsVisible(6) + Window.IsActive(musicplaylisteditor)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(7)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(7)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/flpp.png</texture>
                         <visible>Control.IsVisible(7) + Window.IsActive(musicplaylisteditor)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(8)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(8)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/tf.png</texture>
                         <visible>Control.IsVisible(8) + Window.IsActive(musicplaylisteditor)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(20)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(20)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/ButtonShuffle.png</texture>
                         <visible>Control.IsVisible(20) + [Window.IsActive(musicplaylist) | Window.IsActive(videoplaylist)]</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(26)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(26)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>$VAR[RepeatImageVar]</texture>
                         <visible>Control.IsVisible(26) + [Window.IsActive(musicplaylist) | Window.IsActive(videoplaylist)]</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(21)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(21)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/flpp.png</texture>
                         <visible>Control.IsVisible(21) + [Window.IsActive(musicplaylist) | Window.IsActive(videoplaylist)]</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(22)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(22)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/tf.png</texture>
                         <visible>Control.IsVisible(22) + [Window.IsActive(musicplaylist) | Window.IsActive(videoplaylist)]</visible>
@@ -550,19 +550,19 @@
                         <visible>Control.IsVisible(17) + Window.IsActive(musicfiles)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(10)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/ButtonCheck.png</texture>
                         <visible>Control.IsVisible(10) + Window.IsActive(videos) + StringCompare(Control.GetLabel(10),$LOCALIZE[16102])</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(10)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/ButtonRemove.png</texture>
                         <visible>Control.IsVisible(10) + Window.IsActive(videos) + StringCompare(Control.GetLabel(10),$LOCALIZE[16101])</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(10)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(10)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/ButtonAdd.png</texture>
                         <visible>Control.IsVisible(10) + Window.IsActive(videos) + StringCompare(Control.GetLabel(10),$LOCALIZE[16100])</visible>
@@ -575,37 +575,37 @@
                         <visible>!SubString(Container.FolderPath,videodb://,left)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(5)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(5)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/AlarmClock.png</texture>
                         <visible>Control.IsVisible(5) + Window.IsActive(addonbrowser)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(6)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(6)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/Message.png</texture>
                         <visible>Control.IsVisible(6) + Window.IsActive(addonbrowser)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(7)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(7)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/CHAT.png</texture>
                         <visible>Control.IsVisible(7) + Window.IsActive(addonbrowser)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(223)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(223)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/Inbox.png</texture>
                         <visible>Control.IsVisible(223) + Window.IsActive(addonbrowser)</visible>
                     </control>
                     <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(224)]">Conditional</animation>
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(224)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/so.png</texture>
                         <visible>Control.IsVisible(224) + Window.IsActive(addonbrowser)</visible>
                     </control>
-                                        <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(1665)]">Conditional</animation>
+                    <control type="image">
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(1665)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/Controlpanel.png</texture>
                         <visible>Control.IsVisible(1665)</visible>

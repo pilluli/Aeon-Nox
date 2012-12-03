@@ -25,20 +25,20 @@
             </control>
             <control type="group">
                 <animation type="WindowOpen">
-                    <effect type="fade" time="200" start="0" end="100" />
+                    <effect type="fade" time="200" end="100" />
                     <effect type="slide" time="200" start="0,-98" end="0,0" easing="out" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
                     <effect type="fade" time="200" start="100" end="0" />
-                    <effect type="slide" time="200" start="0,0" end="0,-98" easing="in" tween="cubic" />
+                    <effect type="slide" time="200" end="0,-98" easing="in" tween="cubic" />
                 </animation>
                 <animation type="Visible">
-                    <effect type="fade" time="200" start="0" end="100" />
+                    <effect type="fade" time="200" end="100" />
                     <effect type="slide" time="200" start="0,-98" end="0,0" easing="out" tween="cubic" />
                 </animation>
                 <animation type="Hidden">
                     <effect type="fade" time="200" start="100" end="0" />
-                    <effect type="slide" time="200" start="0,0" end="0,-98" easing="in" tween="cubic" />
+                    <effect type="slide" time="200" end="0,-98" easing="in" tween="cubic" />
                 </animation>
                 <visible>![Player.Forwarding|Player.Seeking]</visible>
                 <control type="image">
@@ -63,20 +63,20 @@
                 <posy>993</posy>
                 <decscription>bottom bar</decscription>
                 <animation type="Visible">
-                    <effect type="fade" time="200" start="0" end="100" />
+                    <effect type="fade" time="200" end="100" />
                     <effect type="slide" time="200" start="0,98" end="0,0" easing="out" tween="cubic" />
                 </animation>
                 <animation type="Hidden">
                     <effect type="fade" time="200" start="100" end="0" />
-                    <effect type="slide" time="200" start="0,0" end="0,98" easing="in" tween="cubic" />
+                    <effect type="slide" time="200" end="0,98" easing="in" tween="cubic" />
                 </animation>
                 <animation type="WindowOpen">
-                    <effect type="fade" time="200" start="0" end="100" />
+                    <effect type="fade" time="200" end="100" />
                     <effect type="slide" time="200" start="0,98" end="0,0" easing="out" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
                     <effect type="fade" time="200" start="100" end="0" />
-                    <effect type="slide" time="200" start="0,0" end="0,98" easing="in" tween="cubic" />
+                    <effect type="slide" time="200" end="0,98" easing="in" tween="cubic" />
                 </animation>
                 <control type="image">
                     <posx>442</posx>
@@ -178,9 +178,9 @@
                 <width>748</width>
                 <height>42</height>
                 <animation effect="slide" start="-225,0" end="0,0" time="200">WindowOpen</animation>
-                <animation effect="slide" start="0,0" end="-225,0" time="200">WindowClose</animation>
+                <animation effect="slide" end="-225,0" time="200">WindowClose</animation>
                 <animation effect="slide" start="-225,0" end="0,0" time="200">Visible</animation>
-                <animation effect="slide" start="0,0" end="-225,0" time="200">Hidden</animation>
+                <animation effect="slide" end="-225,0" time="200">Hidden</animation>
                 <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
                 <control type="image">
                     <posx>240</posx>
@@ -212,12 +212,12 @@
                     <posy>993</posy>
                     <decscription>bottom bar</decscription>
                     <animation type="WindowOpen">
-                        <effect type="fade" time="200" start="0" end="100" />
+                        <effect type="fade" time="200" end="100" />
                         <effect type="slide" time="200" start="0,98" end="0,0" easing="out" tween="cubic" />
                     </animation>
                     <animation type="WindowClose">
                         <effect type="fade" time="200" start="100" end="0" />
-                        <effect type="slide" time="200" start="0,0" end="0,98" easing="in" tween="cubic" />
+                        <effect type="slide" time="200" end="0,98" easing="in" tween="cubic" />
                     </animation>
                     <control type="image">
                         <posx>450</posx>
@@ -319,9 +319,9 @@
                     <width>748</width>
                     <height>42</height>
                     <animation effect="slide" start="-225,0" end="0,0" time="200">WindowOpen</animation>
-                    <animation effect="slide" start="0,0" end="-225,0" time="200">WindowClose</animation>
+                    <animation effect="slide" end="-225,0" time="200">WindowClose</animation>
                     <animation effect="slide" start="-225,0" end="0,0" time="200">Visible</animation>
-                    <animation effect="slide" start="0,0" end="-225,0" time="200">Hidden</animation>
+                    <animation effect="slide" end="-225,0" time="200">Hidden</animation>
                     <visible>player.chaptercount + ![Player.Forwarding | Player.Rewinding]</visible>
                     <control type="image">
                         <posx>240</posx>
@@ -345,20 +345,20 @@
             </control>
             <control type="group" id="4002">
                 <animation type="WindowOpen">
-                    <effect type="fade" time="200" start="0" end="100" />
+                    <effect type="fade" time="200" end="100" />
                     <effect type="slide" time="200" start="0,-98" end="0,0" easing="out" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
                     <effect type="fade" time="200" start="100" end="0" />
-                    <effect type="slide" time="200" start="0,0" end="0,-98" easing="in" tween="cubic" />
+                    <effect type="slide" time="200" end="0,-98" easing="in" tween="cubic" />
                 </animation>
                 <animation type="Visible">
-                    <effect type="fade" time="200" start="0" end="100" />
+                    <effect type="fade" time="200" end="100" />
                     <effect type="slide" time="200" start="0,-98" end="0,0" easing="out" tween="cubic" />
                 </animation>
                 <animation type="Hidden">
                     <effect type="fade" time="200" start="100" end="0" />
-                    <effect type="slide" time="200" start="0,0" end="0,-98" easing="in" tween="cubic" />
+                    <effect type="slide" time="200" end="0,-98" easing="in" tween="cubic" />
                 </animation>
                 <visible>[Player.Seeking | [Player.DisplayAfterSeek + [!IsEmpty(Player.SeekOffset) | !IsEmpty(Player.Chapter)]] | Player.Forwarding | Player.Rewinding] + ![Player.Paused|[Player.Paused+Player.Seeking] | [Player.Paused+Player.DisplayAfterSeek]]</visible>
                 <visible>!Control.IsVisible(4003) + !Control.IsVisible(4004)</visible>
@@ -387,20 +387,20 @@
                 <visible>Player.Paused|[Player.Paused+Player.Seeking] | [Player.Paused+Player.DisplayAfterSeek]</visible>
                 <visible>!Control.IsVisible(4001) + !Control.IsVisible(4002)</visible>
                 <animation type="Visible">
-                    <effect type="fade" time="400" start="0" end="100" />
+                    <effect type="fade" time="400" end="100" />
                     <effect type="slide" time="400" start="0,-135" end="0,0" easing="out" tween="cubic" />
                 </animation>
                 <animation type="Hidden">
                     <effect type="fade" time="400" start="100" end="0" />
-                    <effect type="slide" time="400" start="0,0" end="0,-135" easing="in" tween="cubic" />
+                    <effect type="slide" time="400" end="0,-135" easing="in" tween="cubic" />
                 </animation>
                 <animation type="WindowOpen">
-                    <effect type="fade" time="400" start="0" end="100" />
+                    <effect type="fade" time="400" end="100" />
                     <effect type="slide" time="400" start="0,-135" end="0,0" easing="out" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
                     <effect type="fade" time="400" start="100" end="0" />
-                    <effect type="slide" time="400" start="0,0" end="0,-135" easing="in" tween="cubic" />
+                    <effect type="slide" time="400" end="0,-135" easing="in" tween="cubic" />
                 </animation>
                 <control type="group">
                     <posy>128</posy>
@@ -480,7 +480,7 @@
                     <posy>12</posy>
                     <include>OSDFlagVars</include>
                     <texture fallback="flags/aspectratio/defaultaspect.png">$INFO[VideoPlayer.VideoAspect,flags/aspectratio/,.png]</texture>
-                    <animation effect="slide" start="0" end="-1305" reversible="true" condition="VideoPlayer.Content(files)">Conditional</animation>
+                    <animation effect="slide" end="-1305" condition="VideoPlayer.Content(files)">Conditional</animation>
                 </control>
                 <control type="image">
                     <posx>1620</posx>
@@ -499,20 +499,20 @@
                 <visible>Player.Paused|[Player.Paused + Player.Seeking] | [Player.Paused + Player.DisplayAfterSeek]</visible>
                 <visible>!Control.IsVisible(4001) + !Control.IsVisible(4002)</visible>
                 <animation type="Visible">
-                    <effect type="fade" time="400" start="0" end="100" />
+                    <effect type="fade" time="400" end="100" />
                     <effect type="slide" time="400" start="0,135" end="0,0" easing="out" tween="cubic" />
                 </animation>
                 <animation type="Hidden">
                     <effect type="fade" time="400" start="100" end="0" />
-                    <effect type="slide" time="400" start="0,0" end="0,135" easing="in" tween="cubic" />
+                    <effect type="slide" time="400" end="0,135" easing="in" tween="cubic" />
                 </animation>
                 <animation type="WindowOpen">
-                    <effect type="fade" time="400" start="0" end="100" />
+                    <effect type="fade" time="400" end="100" />
                     <effect type="slide" time="400" start="0,135" end="0,0" easing="out" tween="cubic" />
                 </animation>
                 <animation type="WindowClose">
                     <effect type="fade" time="400" start="100" end="0" />
-                    <effect type="slide" time="400" start="0,0" end="0,135" easing="in" tween="cubic" />
+                    <effect type="slide" time="400" end="0,135" easing="in" tween="cubic" />
                 </animation>
                 <include>FullScreenInfoBar</include>
             </control>

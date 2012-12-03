@@ -12,9 +12,9 @@
                 <effect type="fade" start="100" end="90" time="500" tween="cubic" easing="inout" />
                 <effect type="zoom" start="100" end="97" center="960,540" time="300" tween="cubic" easing="out" />
             </animation>
-            <animation effect="slide" start="0,0" end="0,-285" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="0,18" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [[Skin.HasSetting(highnavhelp) + !Skin.HasSetting(DisableNavHelp)] | [Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
-            <animation effect="slide" start="0,0" end="0,-31" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
+            <animation effect="slide" end="0,-285" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="slide" end="0,18" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu) + [[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+            <animation effect="slide" end="0,-31" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)">Conditional</animation>
             <control type="group">
                 <control type="group">
                     <include>Animation_VisibleChange200</include>
@@ -38,129 +38,6 @@
                     </control>
                 </control>
                 <include>5010List</include>
-                <control type="group">
-                    <visible>Substring(Control.GetLabel(4321),Icon)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <control type="panel" id="5019">
-                        <posx>27</posx>
-                        <posy>26</posy>
-                        <width>1596</width>
-                        <height>360</height>
-                        <aligny>center</aligny>
-                        <scrolltime>0</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <itemlayout width="319" height="360">
-                            <control type="group">
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <texture background="true">DefaultAddon.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
-                                    <info>ListItem.Icon</info>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <font>Font_Reg17</font>
-                                    <textcolor>grey2</textcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="319" height="360">
-                            <control type="group">
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <texture background="true">DefaultAddon.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
-                                    <info>ListItem.Icon</info>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <font>Font_Reg17</font>
-                                    <textcolor>grey2</textcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                </control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-                            <item>
-                                <label>$INFO[Skin.String(IconPanelItem1.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem1.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4321),IconPanel1)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Skin.String(IconPanelItem2.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem2.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4321),IconPanel1)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Skin.String(IconPanelItem3.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem3.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4321),IconPanel1)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Skin.String(IconPanelItem4.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem4.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4321),IconPanel1)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Skin.String(IconPanelItem5.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem5.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4321),IconPanel1)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Skin.String(IconPanelItem6.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem6.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4321),IconPanel2)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Skin.String(IconPanelItem7.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem7.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4321),IconPanel2)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Skin.String(IconPanelItem8.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem8.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4321),IconPanel2)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Skin.String(IconPanelItem9.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem9.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4321),IconPanel2)</visible>
-                            </item>
-                            <item>
-                                <label>$INFO[Skin.String(IconPanelItem10.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem10.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4321),IconPanel2)</visible>
-                            </item>
-                        </content>
-                    </control>
-                </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4321),concertspanel)</visible>
                     <include>Animation_VisibleChange400</include>
@@ -243,121 +120,6 @@
                         </focusedlayout>
                         <content>
                             <include>ConcertsPanelContent1124</include>
-                        </content>
-                    </control>
-                </control>
-                <control type="group">
-                    <visible>Substring(Control.GetLabel(4321),nextairedpanel)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <control type="panel" id="5010">
-                        <posx>27</posx>
-                        <posy>26</posy>
-                        <width>1595</width>
-                        <height>348</height>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>2</preloaditems>
-                        <scrolltime>200</scrolltime>
-                        <itemlayout height="450" width="532">
-                            <control type="image">
-                                <posx>21</posx>
-                                <posy>42</posy>
-                                <width>183</width>
-                                <height>275</height>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true">DefaultVideoBigPoster.png</texture>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <info>ListItem.Thumb</info>
-                            </control>
-                            <control type="image">
-                                <posx>1.5</posx>
-                                <posy>22.5</posy>
-                                <width>222</width>
-                                <height>313</height>
-                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19.5</bordersize>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                            </control>
-                            <control type="label">
-                                <posx>200</posx>
-                                <posy>31</posy>
-                                <width>340</width>
-                                <height>50</height>
-                                <font>Font_ShowcaseMainLabel2</font>
-                                <label>$INFO[ListItem.Label]</label>
-                                <textoffsetx>15</textoffsetx>
-                            </control>
-                            <control type="label">
-                                <posx>200</posx>
-                                <posy>70</posy>
-                                <width>340</width>
-                                <height>50</height>
-                                <font>Font_Reg17</font>
-                                <label>$INFO[ListItem.Property(NextNumber)]: $INFO[ListItem.Property(NextTitle)]</label>
-                                <textoffsetx>15</textoffsetx>
-                            </control>
-                            <control type="textbox">
-                                <posx>215</posx>
-                                <posy>140</posy>
-                                <width>300</width>
-                                <height>205</height>
-                                <align>left</align>
-                                <label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391] • ]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
-                                <font>Font_Reg15</font>
-                                <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout height="450" width="532">
-                            <control type="group">
-                                <control type="image">
-                                    <posx>21</posx>
-                                    <posy>42</posy>
-                                    <width>183</width>
-                                    <height>275</height>
-                                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
-                                </control>
-                                <control type="image">
-                                    <posx>1.5</posx>
-                                    <posy>22.5</posy>
-                                    <width>222</width>
-                                    <height>313</height>
-                                    <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                    <bordersize>19.5</bordersize>
-                                    <aspectratio scalediffuse="false">stretch</aspectratio>
-                                </control>
-                            </control>
-                            <control type="label">
-                                <posx>200</posx>
-                                <posy>31</posy>
-                                <width>340</width>
-                                <height>50</height>
-                                <font>Font_ShowcaseMainLabel2</font>
-                                <label>$INFO[ListItem.Label]</label>
-                                <textoffsetx>15</textoffsetx>
-                            </control>
-                            <control type="label">
-                                <posx>200</posx>
-                                <posy>70</posy>
-                                <width>340</width>
-                                <height>50</height>
-                                <font>Font_Reg17</font>
-                                <label>$INFO[ListItem.Property(NextNumber)]: $INFO[ListItem.Property(NextTitle)]</label>
-                                <textoffsetx>15</textoffsetx>
-                            </control>
-                            <control type="textbox">
-                                <posx>215</posx>
-                                <posy>140</posy>
-                                <width>300</width>
-                                <height>205</height>
-                                <align>left</align>
-                                <label>$INFO[ListItem.Label2][CR]$INFO[ListItem.Property(RunningTime),, $LOCALIZE[12391] • ]$INFO[ListItem.Property(Network)][CR][CR]Previous Episode:[CR]$INFO[ListItem.Property(LatestTitle)] $INFO[ListItem.Property(LatestDate), •][CR]</label>
-                                <font>Font_Reg15</font>
-                                <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                            </control>
-                        </focusedlayout>
-                        <content>
-                            <include>NextAiredWidgetContent</include>
                         </content>
                     </control>
                 </control>
@@ -758,8 +520,8 @@
         <control type="group" id="6000">
             <posx>135</posx>
             <posy>-7</posy>
-            <animation effect="slide" start="0,0" end="0,35" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" start="0,0" end="0,25" time="400" tween="cubic" easing="inout" condition="[[Skin.HasSetting(highnavhelp) + !Skin.HasSetting(DisableNavHelp)] | [Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
+            <animation effect="slide" end="0,35" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="slide" end="0,25" time="400" tween="cubic" easing="inout" condition="[[Skin.HasSetting(totalshomehigh) + !Skin.HasSetting(DisableLibraryStats)] | [Skin.HasSetting(timehomehigh) + !Skin.HasSetting(DisableTimePanel)]]">Conditional</animation>
             <width>1920</width>
             <height>825</height>
             <visible>[Substring(Control.GetLabel(4325),featured) | Substring(Control.GetLabel(4325),panel)] + !Window.IsActive(1120)</visible>
@@ -791,129 +553,6 @@
                     </control>
                 </control>
                 <include>6010List</include>
-                <control type="group">
-                    <visible>Substring(Control.GetLabel(4325),Icon)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <control type="panel" id="6019">
-                        <posx>27</posx>
-                        <posy>26</posy>
-                        <width>1596</width>
-                        <height>360</height>
-                        <aligny>center</aligny>
-                        <scrolltime>0</scrolltime>
-                        <orientation>horizontal</orientation>
-                        <itemlayout width="319" height="360">
-                            <control type="group">
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <texture background="true">DefaultAddon.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
-                                    <info>ListItem.Icon</info>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <font>Font_Reg17</font>
-                                    <textcolor>grey2</textcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                </control>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout width="319" height="360">
-                            <control type="group">
-                                <control type="image">
-                                    <posx>5</posx>
-                                    <posy>5</posy>
-                                    <width>309</width>
-                                    <height>309</height>
-                                    <texture background="true">DefaultAddon.png</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
-                                    <info>ListItem.Icon</info>
-                                </control>
-                                <control type="label">
-                                    <posx>159</posx>
-                                    <posy>309</posy>
-                                    <width>309</width>
-                                    <height>50</height>
-                                    <align>center</align>
-                                    <font>Font_Reg17</font>
-                                    <textcolor>grey2</textcolor>
-                                    <label>$INFO[ListItem.Label]</label>
-                                    <textoffsetx>15</textoffsetx>
-                                </control>
-                            </control>
-                        </focusedlayout>
-                        <content>
-                            <item id="1">
-                                <label>$INFO[Skin.String(IconPanelItem11.Label)]</label>
-                                <onclick>-</onclick>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel1)</visible>
-                                <icon>$INFO[Skin.String(IconPanelItem11.Icon)]</icon>
-                            </item>
-                            <item id="2">
-                                <label>$INFO[Skin.String(IconPanelItem12.Label)]</label>
-                                <onclick>-</onclick>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel1)</visible>
-                                <icon>$INFO[Skin.String(IconPanelItem12.Icon)]</icon>
-                            </item>
-                            <item id="3">
-                                <label>$INFO[Skin.String(IconPanelItem13.Label)]</label>
-                                <onclick>-</onclick>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel1)</visible>
-                                <icon>$INFO[Skin.String(IconPanelItem13.Icon)]</icon>
-                            </item>
-                            <item id="4">
-                                <label>$INFO[Skin.String(IconPanelItem14.Label)]</label>
-                                <onclick>-</onclick>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel1)</visible>
-                                <icon>$INFO[Skin.String(IconPanelItem14.Icon)]</icon>
-                            </item>
-                            <item id="5">
-                                <label>$INFO[Skin.String(IconPanelItem15.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem15.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel1)</visible>
-                            </item>
-                            <item id="6">
-                                <label>$INFO[Skin.String(IconPanelItem16.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem16.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel2)</visible>
-                            </item>
-                            <item id="7">
-                                <label>$INFO[Skin.String(IconPanelItem17.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem17.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel2)</visible>
-                            </item>
-                            <item id="8">
-                                <label>$INFO[Skin.String(IconPanelItem18.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem18.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel2)</visible>
-                            </item>
-                            <item id="9">
-                                <label>$INFO[Skin.String(IconPanelItem19.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem19.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel2)</visible>
-                            </item>
-                            <item id="10">
-                                <label>$INFO[Skin.String(IconPanelItem20.Label)]</label>
-                                <onclick>-</onclick>
-                                <icon>$INFO[Skin.String(IconPanelItem20.Icon)]</icon>
-                                <visible>Stringcompare(Control.GetLabel(4325),IconPanel2)</visible>
-                            </item>
-                        </content>
-                    </control>
-                </control>
                 <control type="group">
                     <visible>Substring(Control.GetLabel(4325),concertspanel)</visible>
                     <include>Animation_VisibleChange400</include>
@@ -996,121 +635,6 @@
                         </focusedlayout>
                         <content>
                             <include>ConcertsPanelContent1124</include>
-                        </content>
-                    </control>
-                </control>
-                <control type="group">
-                    <visible>Substring(Control.GetLabel(4325),nextairedpanel)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <control type="panel" id="6010">
-                        <posx>27</posx>
-                        <posy>26</posy>
-                        <width>1595</width>
-                        <height>348</height>
-                        <orientation>horizontal</orientation>
-                        <preloaditems>2</preloaditems>
-                        <scrolltime>200</scrolltime>
-                        <itemlayout height="450" width="532">
-                            <control type="image">
-                                <posx>21</posx>
-                                <posy>42</posy>
-                                <width>183</width>
-                                <height>275</height>
-                                <texture diffuse="thumbs/movieposter_mask.png" background="true">DefaultVideoBigPoster.png</texture>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                                <info>ListItem.Thumb</info>
-                            </control>
-                            <control type="image">
-                                <posx>1.5</posx>
-                                <posy>22.5</posy>
-                                <width>222</width>
-                                <height>313</height>
-                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19.5</bordersize>
-                                <aspectratio scalediffuse="false">scale</aspectratio>
-                            </control>
-                            <control type="label">
-                                <posx>200</posx>
-                                <posy>25</posy>
-                                <width>340</width>
-                                <height>50</height>
-                                <font>Font_Reg24</font>
-                                <label>$INFO[ListItem.Label]</label>
-                                <textoffsetx>15</textoffsetx>
-                            </control>
-                            <control type="label">
-                                <posx>200</posx>
-                                <posy>78</posy>
-                                <width>340</width>
-                                <height>30</height>
-                                <font>Font_Reg19</font>
-                                <textcolor>grey2</textcolor>
-                                <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
-                                <textoffsetx>15</textoffsetx>
-                            </control>
-                            <control type="textbox">
-                                <posx>215</posx>
-                                <posy>112</posy>
-                                <width>300</width>
-                                <height>205</height>
-                                <label>$INFO[ListItem.Label2]</label>
-                                <font>Font_Reg17</font>
-                                <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                            </control>
-                        </itemlayout>
-                        <focusedlayout height="450" width="532">
-                            <control type="group">
-                                <control type="image">
-                                    <posx>21</posx>
-                                    <posy>42</posy>
-                                    <width>183</width>
-                                    <height>275</height>
-                                    <texture diffuse="thumbs/movieposter_mask.png" background="true" fallback="DefaultVideoBigPoster.png">$INFO[ListItem.Icon]</texture>
-                                    <aspectratio scalediffuse="false">scale</aspectratio>
-                                </control>
-                                <control type="image">
-                                    <posx>1.5</posx>
-                                    <posy>22.5</posy>
-                                    <width>222</width>
-                                    <height>313</height>
-                                    <texture background="true" diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass_noreflect.png</texture>
-                                    <bordertexture border="19.5">thumbs/poster_shadow.png</bordertexture>
-                                    <bordersize>19.5</bordersize>
-                                    <aspectratio scalediffuse="false">stretch</aspectratio>
-                                </control>
-                            </control>
-                            <control type="label">
-                                <posx>200</posx>
-                                <posy>25</posy>
-                                <width>340</width>
-                                <height>50</height>
-                                <font>Font_Reg24</font>
-                                <label>$INFO[ListItem.Label]</label>
-                                <textoffsetx>15</textoffsetx>
-                            </control>
-                            <control type="label">
-                                <posx>200</posx>
-                                <posy>78</posy>
-                                <width>340</width>
-                                <height>30</height>
-                                <font>Font_Reg19</font>
-                                <textcolor>grey2</textcolor>
-                                <label>$INFO[ListItem.Property(Year)]$INFO[ListItem.Property(RunningTime), • , $LOCALIZE[12391]]$INFO[ListItem.Property(Rating), • ]</label>
-                                <textoffsetx>15</textoffsetx>
-                            </control>
-                            <control type="textbox">
-                                <posx>215</posx>
-                                <posy>112</posy>
-                                <width>300</width>
-                                <height>205</height>
-                                <label>$INFO[ListItem.Label2]</label>
-                                <font>Font_Reg17</font>
-                                <autoscroll time="3600" delay="6000" repeat="6000">Skin.HasSetting(AutoScroll)</autoscroll>
-                            </control>
-                        </focusedlayout>
-                        <content>
-                            <include>NextAiredWidgetContent</include>
                         </content>
                     </control>
                 </control>
@@ -1517,30 +1041,34 @@
             <posy>678</posy>
             <visible>!Substring(Control.GetLabel(4321),weather) + !Substring(Control.GetLabel(4321),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4321),panel) + !IsEmpty(Control.GetLabel(4321))</visible>
             <include>Animation_Widgets</include>
-            <animation effect="slide" start="0,0" end="0,-270" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <animation effect="slide" time="200" start="0,0" end="0,-38" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow)">Conditional</animation>
+            <animation effect="slide" end="0,-270" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="slide" time="200" end="0,-38" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow)">Conditional</animation>
             <!--Unfocused widget-->
             <control type="group">
                 <visible>!Control.HasFocus(8000)</visible>
                 <animation effect="slide" start="450" end="0" time="300" delay="300" tween="quadratic" easing="out">Visible</animation>
-                <control type="image">
-                    <posx>-12</posx>
-                    <posy>-4</posy>
-                    <width>385</width>
-                    <height>370</height>
-                    <texture border="50">keyboard/keyboard_back_shadow.png</texture>
-                    <include>PanelGlowFade</include>
-                    <visible>!Skin.HasSetting(DisableGlowbar)</visible>
-                    <include>Animation_VisibleChange400</include>
-                    <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
-                </control>
-                <control type="image">
-                    <posx>-12</posx>
-                    <posy>-5</posy>
-                    <width>385</width>
-                    <height>370</height>
-                    <texture border="20">$VAR[WidgetBackVar]</texture>
-                    <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                <control type="group">
+                    <visible>!Substring(Control.GetLabel(4321),transparent)</visible>
+                    <include>Animation_VisibleChange200</include>
+                    <control type="image">
+                        <posx>-12</posx>
+                        <posy>-4</posy>
+                        <width>385</width>
+                        <height>370</height>
+                        <texture border="50">keyboard/keyboard_back_shadow.png</texture>
+                        <include>PanelGlowFade</include>
+                        <visible>!Skin.HasSetting(DisableGlowbar)</visible>
+                        <include>Animation_VisibleChange400</include>
+                        <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
+                    </control>
+                    <control type="image">
+                        <posx>-12</posx>
+                        <posy>-5</posy>
+                        <width>385</width>
+                        <height>370</height>
+                        <texture border="20">$VAR[WidgetBackVar]</texture>
+                        <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                    </control>
                 </control>
                 <control type="label">
                     <posx>15</posx>
@@ -1707,7 +1235,7 @@
             </control>
             <!--Actual list-->
             <control type="group">
-                <animation effect="slide" start="0,0" end="-570,0" time="500" easing="inout" tween="cubic" condition="Control.HasFocus(8000)">Conditional</animation>
+                <animation effect="slide" end="-570,0" time="500" easing="inout" tween="cubic" condition="Control.HasFocus(8000)">Conditional</animation>
                 <posx>513</posx>
                 <posy>-16</posy>
                 <control type="list" id="8000">
@@ -1943,11 +1471,14 @@
         <control type="group" id="7998">
             <posx>1542</posx>
             <posy>18</posy>
-            <animation effect="slide" start="0,0" end="0,40" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
+            <animation effect="slide" end="0,40" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <visible>!Substring(Control.GetLabel(4325),weather) + !Substring(Control.GetLabel(4325),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4325),panel) + !IsEmpty(Control.GetLabel(4325))</visible>
             <include>Animation_Widgets</include>
             <!--Unfocused widget-->
             <control type="group">
+                <control type="group">
+                    <visible>!Substring(Control.GetLabel(4325),transparent)</visible>
+                    <include>Animation_VisibleChange200</include>
                 <control type="image">
                     <posx>-12</posx>
                     <posy>-4</posy>
@@ -1966,6 +1497,7 @@
                     <height>370</height>
                     <texture border="20">$VAR[WidgetBackVar]</texture>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
+                </control>
                 </control>
                 <control type="label">
                     <posx>15</posx>
@@ -2066,7 +1598,7 @@
             </control>
             <!--Actual list-->
             <control type="group">
-                <animation effect="slide" start="0,0" end="-570,0" time="500" easing="inout" tween="cubic" condition="Control.HasFocus(7000)">Conditional</animation>
+                <animation effect="slide" end="-570,0" time="500" easing="inout" tween="cubic" condition="Control.HasFocus(7000)">Conditional</animation>
                 <posx>513</posx>
                 <posy>-16</posy>
                 <control type="list" id="7000">

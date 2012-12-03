@@ -29,7 +29,7 @@
                 <effect type="slide" end="-420" time="400" easing="out" tween="cubic" />
             </animation>
             <animation type="Conditional" condition="Control.HasFocus(9010)">
-                <effect type="fade" start="100" end="0" time="100" reversible="true" />
+                <effect type="fade" start="100" end="0" time="100" />
             </animation>
             <control type="button" id="1601">
                 <include>Objects_MediaMenuLabelAlt2</include>
@@ -181,7 +181,7 @@
                 <selected>Skin.HasSetting(lowlistbanner)</selected>
                 <visible>Stringcompare(Window(home).Property(actualViewtype),LowList) + Container.Content(tvshows)</visible>
             </control>
-             <!--BigFan Options-->
+            <!--BigFan Options-->
             <control type="radiobutton" id="1689">
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>42310</label>
@@ -647,6 +647,13 @@
                 <onclick>Skin.ToggleSetting(preferplot)</onclick>
                 <visible>Window.IsActive(videolibrary) + !Stringcompare(Window(home).Property(actualViewtype),Shift)</visible>
             </control>
+                    <control type="radiobutton" id="286">
+                        <label>31638</label>
+                        <include>Objects_MediaMenuButtonAlt2</include>
+                        <onclick>Skin.ToggleSetting(NextAiredInfo)</onclick>
+                        <selected>!Skin.HasSetting(NextAiredInfo)</selected>
+                        <visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+                    </control>
             <control type="button" id="1664">
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>31298</label>

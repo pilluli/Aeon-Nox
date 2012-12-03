@@ -3,7 +3,7 @@
     <defaultcontrol>5000</defaultcontrol>
     <animation type="WindowOpen" reversible="false">
         <effect type="zoom" start="150" end="100" center="960,540" time="500" tween="cubic" easing="out" />
-        <effect type="fade" start="0" end="100" time="250" />
+        <effect type="fade" end="100" time="250" />
     </animation>
     <animation type="WindowClose" reversible="false">
         <effect type="fade" start="100" end="0" time="300" />
@@ -45,8 +45,8 @@
                 <control type="group">
                     <posy>20</posy>
                     <posx>8</posx>
-                    <animation type="Conditional" reversible="true" condition="Container.Content(artists)">
-                        <effect type="rotatey" center="248" start="0" end="180" time="1500" />
+                    <animation type="Conditional" condition="Container.Content(artists)">
+                        <effect type="rotatey" center="248" end="180" time="1500" />
                     </animation>
                     <control type="image" id="5001">
                         <aspectratio>keep</aspectratio>
@@ -60,10 +60,10 @@
                     <control type="image">
                         <visible>!StringCompare(Control.getLabel(5001),common/cdart/default.png)</visible>
                         <animation effect="slide" start="0,180" end="0,0" time="700" tween="cubic" easing="out" delay="750">Visible</animation>
-                        <animation effect="slide" end="0,180" start="0,0" time="400" tween="cubic" easing="out">Hidden</animation>
+                        <animation effect="slide" end="0,180" time="400" tween="cubic" easing="out">Hidden</animation>
                         <animation effect="slide" start="0,180" end="0,0" time="700" tween="cubic" easing="out" delay="400">WindowOpen</animation>
                         <animation type="WindowClose">
-                            <effect type="slide" start="0" end="0,180" time="400" tween="cubic" easing="in" delay="0" />
+                            <effect type="slide" end="0,180" time="400" tween="cubic" easing="in" delay="0" />
                             <effect type="fade" start="100" end="0" time="0" delay="400" />
                             <condition type="!Player.Playing" />
                         </animation>
@@ -302,7 +302,7 @@
                                 <textcolor>grey2</textcolor>
                                 <align>center</align>
                                 <label>[B]$INFO[ListItem.Year][/B]</label>
-                                <animation effect="slide" start="0,0" end="-145,23" time="0" condition="true">Conditional</animation>
+                                <animation effect="slide" end="-145,23" time="0" condition="true">Conditional</animation>
                                 <aligny>bottom</aligny>
                                 <visible>!IsEmpty(ListItem.Year)</visible>
                             </control>
@@ -314,7 +314,7 @@
                 <colordiffuse>grey2</colordiffuse>
                 <fadetime>IconCrossfadeTime2</fadetime>
                 <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
-                <animation effect="slide" start="0" end="-145" time="0" condition="!IsEmpty(ListItem.Year)">Conditional</animation>
+                <animation effect="slide" end="-145" time="0" condition="!IsEmpty(ListItem.Year)">Conditional</animation>
               </control>-->
                             <!--<control type="image">
                 
@@ -325,7 +325,7 @@
                 <fadetime>400</fadetime>
                 <texture background="true">$INFO[Skin.String(ArtistsLogosPath)]$INFO[ListItem.Artist,,/logo.png]</texture>
                 <visible>!IsEmpty(Skin.String(ArtistsLogosPath))</visible>
-                <animation effect="slide" start="0" end="-145" time="0" condition="!IsEmpty(ListItem.Year)">Conditional</animation>
+                <animation effect="slide" end="-145" time="0" condition="!IsEmpty(ListItem.Year)">Conditional</animation>
               </control>-->
                         </control>
                     </control>
