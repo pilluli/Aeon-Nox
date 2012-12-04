@@ -336,6 +336,7 @@
         <value>$LOCALIZE[31397]</value>
     </variable>
     <variable name="InfoPanelVar">
+        <value condition="Control.HasFocus(109)">infopaneloff</value>
         <value condition="Container.Content(tvshows)">$INFO[Skin.String(InfoPanelTVShows)]</value>
         <value condition="Container.Content(movies)">$INFO[Skin.String(InfoPanelMovies)]</value>
         <value condition="Container.Content(seasons)">$INFO[Skin.String(InfoPanelSeasons)]</value>
@@ -1153,6 +1154,15 @@
         <value condition="Container.Content(episodes)">$INFO[ListItem(9).Art(tvshow.poster)]</value>
         <value condition="!IsEmpty(ListItem(9).Art(poster))">$INFO[ListItem(9).Art(poster)]</value>
         <value>$INFO[ListItem(9).Icon]</value>
+    </variable>
+    <variable name="ShowcaseCasePathVar">
+        <value condition="!Skin.HasSetting(clearcases)">tvshows</value>
+        <value>movies</value>
+    </variable>
+    <variable name="ShowcaseCaseLabelVar">
+        <value condition="Skin.HasSetting(usecases) + Skin.HasSetting(clearcases)">Clear Cases</value>
+        <value condition="Skin.HasSetting(usecases)">BD/DVD Cases</value>
+        <value>No</value>
     </variable>
     <variable name="ShowcaseCase-7Var">
         <value condition="SubString(Container(501).ListItem(-7).Filename,.3D.)">3d.png</value>
