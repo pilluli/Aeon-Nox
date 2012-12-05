@@ -471,6 +471,8 @@
                                 <include>MovieShowcaseThumbReflectionMain</include>
                                 <texture background="true" flipy="true" diffuse="thumbs/movieposter_mask_reflect.png" fallback="DefaultVideoBigPoster.png">$VAR[ShowcaseItem0Var]</texture>
                             </control>
+                                            <include>MovieShowcaseThumbReflectionDVD</include>
+
                             <control type="image">
                                 <include>MovieSchowcaseDVDCoverVars</include>
                                 
@@ -490,8 +492,8 @@
     </include>
     <include name="MovieShowcaseThumbReflectionDVD">
         <control type="image">
-            <posx>-30</posx>
-            <posy>396</posy>
+            <posx>-27</posx>
+            <posy>397</posy>
             <width>325</width>
             <height>180</height>
             <colordiffuse>d1FFFFFF</colordiffuse>
@@ -499,7 +501,7 @@
             <texture background="true">thumbs/boxes/poster_glass_reflect.png</texture>
             <aspectratio scalediffuse="false">scale</aspectratio>
             <animation effect="fade" start="70" end="70" time="0" condition="true">Conditional</animation>
-            <visible>Skin.HasSetting(usecases) + Container.Content(movies)</visible>
+            <visible>Skin.HasSetting(usecases) + Skin.HasSetting(clearcases) + Container.Content(movies)</visible>
         </control>
     </include>
     <include name="MovieSchowcaseDVDCoverVars">
@@ -521,8 +523,9 @@
         <posx>19</posx>
         <posy>397</posy>
         <width>262</width>
-        <height>384</height>
-        <animation effect="slide" start="0,00" end="0,7" time="300" tween="linear" condition="Skin.HasSetting(usecases) + Container.Content(movies)">Conditional</animation>
+        <height>304</height>
+        <animation effect="slide" start="0,00" end="0,2" time="0" tween="linear" condition="Skin.HasSetting(usecases) + Container.Content(movies)">Conditional</animation>
+        <animation effect="slide" start="0,00" end="0,7" time="0" tween="linear" condition="Skin.HasSetting(usecases) + !Skin.HasSetting(clearcases) + Container.Content(movies)">Conditional</animation>
     </include>
     <include name="MovieShowCaseGlow">
         <control type="image">
