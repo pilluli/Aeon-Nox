@@ -12,6 +12,7 @@
     <onload>AlarmClock(HomeTile2Left,Control.Move(6001,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Right,Control.Move(6003,1),00:10,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Mid,Control.Move(6002,1),00:15,silent,loop)</onload>
+    <onload>SetProperty(MenuName,MenuItem,home)</onload>
     <onunload>CancelAlarm(BGMove,true)</onunload>
     <onunload>CancelAlarm(HomeTileLeft,true)</onunload>
     <onunload>CancelAlarm(HomeTileRight,true)</onunload>
@@ -44,6 +45,8 @@
             <onfocus>Skin.Setstring(ItemToEdit.InfoLine,$INFO[Container(9000).ListItem.Property(InfoLine)])</onfocus>
             <onfocus>Skin.Setstring(ItemToEdit.SubMenu,$INFO[Container(9000).ListItem.Property(SubMenu)])</onfocus>
             <onfocus>Skin.Setstring(ItemToEdit.Disable,$INFO[Container(9000).ListItem.Property(DisableIcon)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Type,$INFO[Container(9000).ListItem.Property(Type)])</onfocus>
+            <onfocus>Skin.Setstring(ItemToEdit.Path,$INFO[Container(9000).ListItem.Property(Path)])</onfocus>
             <onfocus>ActivateWindow(1122)</onfocus>
             <onfocus>SetFocus(9000)</onfocus>
         </control>
@@ -250,6 +253,13 @@
                 <include>Furniture_ClassicHomeGradient</include>
                 <include>Neon_Home</include>
             </control>
+        </control>
+                <control type="Label">
+                                    <height>36</height>
+                    <width min="15" max="1920">auto</width>
+                    <font>Font_Info_Caps</font>
+                    <textcolor>grey</textcolor>
+            <label>aaa$INFO[Container(9000).ListItem.Property(Type)]</label>
         </control>
     </controls>
 </window>
