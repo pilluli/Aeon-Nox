@@ -28,8 +28,8 @@
             <ondown>9000</ondown>
         </control>
         <control type="group">
-            <animation effect="slide" start="-729,0" end="0,0" time="400" easing="out" tween="quadratic">WindowOpen</animation>
-            <animation effect="slide" end="-729,0" time="400" easing="out" tween="quadratic">WindowClose</animation>
+            <animation effect="slide" start="-729,0" end="0,0" time="400" tween="quadratic">WindowOpen</animation>
+            <animation effect="slide" end="-729,0" time="400" tween="quadratic">WindowClose</animation>
             <control type="image">
                 <width>729</width>
                 <height>1080</height>
@@ -53,8 +53,8 @@
             </control>
         </control>
         <control type="group">
-            <animation effect="slide" start="1192,0" end="0,0" time="400" easing="out" tween="quadratic">WindowOpen</animation>
-            <animation effect="slide" end="1192,0" time="400" easing="out" tween="quadratic">WindowClose</animation>
+            <animation effect="slide" start="1192,0" end="0,0" time="400" tween="quadratic">WindowOpen</animation>
+            <animation effect="slide" end="1192,0" time="400" tween="quadratic">WindowClose</animation>
             <control type="image">
                 <posx>729</posx>
                 <width>1192</width>
@@ -186,7 +186,7 @@
                     <posy>87</posy>
                     <width>555</width>
                     <font>Font_Reg20_Caps</font>
-                    <label fallback="312577">$INFO[ListItem.Genre]</label>
+                    <label fallback="31006">$INFO[ListItem.Genre]</label>
                     <scroll>true</scroll>
                     <textcolor>grey</textcolor>
                     <height>85</height>
@@ -210,7 +210,7 @@
                         <height>44</height>
                         <font>Font_Reg19</font>
                         <scroll>true</scroll>
-                        <label fallback="312577">$INFO[ListItem.Director]</label>
+                        <label fallback="31006">$INFO[ListItem.Director]</label>
                     </control>
                 </control>
                 <!-- Third Row -->
@@ -232,7 +232,7 @@
                         <height>44</height>
                         <font>Font_Reg19</font>
                         <scroll>true</scroll>
-                        <label fallback="312577">$INFO[ListItem.Writer]</label>
+                        <label fallback="31006">$INFO[ListItem.Writer]</label>
                     </control>
                 </control>
                 <!-- Fourth Row Left-->
@@ -253,7 +253,7 @@
                         <width>750</width>
                         <height>44</height>
                         <font>Font_Reg19</font>
-                        <label fallback="312577">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
+                        <label fallback="31006">$INFO[ListItem.Duration,, $LOCALIZE[12391]]</label>
                     </control>
                 </control>
                 <!-- Fourth Row Right -->
@@ -327,7 +327,7 @@
                     <height>340</height>
                     <font>Font_Reg19</font>
                     <pagecontrol>60</pagecontrol>
-                    <label fallback="312577">$INFO[ListItem.Plot]</label>
+                    <label fallback="31006">$INFO[ListItem.Plot]</label>
                     <autoscroll delay="15000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll) + !Control.HasFocus(60)</autoscroll>
                     <visible>![Control.HasFocus(20) | Control.HasFocus(5055)]</visible>
                 </control>
@@ -513,7 +513,7 @@
                 <height>304</height>
                 <aspectratio align="center">scale</aspectratio>
                 <texture background="true">$INFO[ListItem.Art(fanart)]</texture>
-                <animation effect="zoom" start="1072,606,540,304" end="0,0,1920,1080" time="800" tween="cubic" easing="out" condition="!IsEmpty(Window(home).Property(ActorFanartZoom))">Conditional</animation>
+                <animation effect="zoom" start="1072,606,540,304" end="0,0,1920,1080" time="800" tween="cubic" condition="!IsEmpty(Window(home).Property(ActorFanartZoom))">Conditional</animation>
                 <visible>!IsEmpty(ListItem.Art(fanart)) + [Control.HasFocus(20) | Control.HasFocus(5055)]</visible>
             </control>
         </control>

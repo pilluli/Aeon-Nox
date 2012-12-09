@@ -6,6 +6,7 @@
     <controls>
         <control type="group">
             <posx>280</posx>
+            <include>Animation_OpenCloseZoom</include>
             <control type="image">
                 <posx>30</posx>
                 <posy>100</posy>
@@ -15,7 +16,6 @@
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <include>PanelGlowFade</include>
-                <include>Animation_VisibleChange400</include>
             </control>
             <control type="image">
                 <posx>30</posx>
@@ -25,7 +25,6 @@
                 <height>870</height>
                 <texture border="20">osd/osd_settings_back.png</texture>
             </control>
-            <include>Animation_OpenCloseZoom</include>
             <control type="panel" id="4">
                 <posx>50</posx>
                 <posy>150</posy>
@@ -33,11 +32,10 @@
                 <height>800</height>
                 <aligny>center</aligny>
                 <pagecontrol>60</pagecontrol>
-                <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                <scrolltime tween="quadratic">200</scrolltime>
                 <orientation>vertical</orientation>
                 <onright>60</onright>
                 <onleft>4</onleft>
-                <include>Animation_WindowFade250</include>
                 <itemlayout width="100" height="100">
                     <control type="image">
                         <width>100</width>
@@ -1363,12 +1361,6 @@
                         <onclick>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(IconTarget)],special://skin/extras/BigIcons/ke.png)</onclick>
                     </item>
                     <item>
-                        <label>lo</label>
-                        <thumb>special://skin/extras/BigIcons/lo.png</thumb>
-                        <onclick>Dialog.Close(1145)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(IconTarget)],special://skin/extras/BigIcons/lo.png)</onclick>
-                    </item>
-                    <item>
                         <label>mi</label>
                         <thumb>special://skin/extras/BigIcons/mi.png</thumb>
                         <onclick>Dialog.Close(1145)</onclick>
@@ -1481,12 +1473,6 @@
                         <thumb>special://skin/extras/BigIcons/to.png</thumb>
                         <onclick>Dialog.Close(1145)</onclick>
                         <onclick>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(IconTarget)],special://skin/extras/BigIcons/to.png)</onclick>
-                    </item>
-                    <item>
-                        <label>unin</label>
-                        <thumb>special://skin/extras/BigIcons/unin.png</thumb>
-                        <onclick>Dialog.Close(1145)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(IconTarget)],special://skin/extras/BigIcons/unin.png)</onclick>
                     </item>
                     <item>
                         <label>witcher</label>
@@ -1753,22 +1739,10 @@
                         <onclick>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(IconTarget)],special://skin/extras/BigIcons/SPYBOT.png)</onclick>
                     </item>
                     <item>
-                        <label>TASKBAR</label>
-                        <thumb>special://skin/extras/BigIcons/TASKBAR.png</thumb>
-                        <onclick>Dialog.Close(1145)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(IconTarget)],special://skin/extras/BigIcons/TASKBAR.png)</onclick>
-                    </item>
-                    <item>
                         <label>USB</label>
                         <thumb>special://skin/extras/BigIcons/USB.png</thumb>
                         <onclick>Dialog.Close(1145)</onclick>
                         <onclick>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(IconTarget)],special://skin/extras/BigIcons/USB.png)</onclick>
-                    </item>
-                    <item>
-                        <label>WINAMP</label>
-                        <thumb>special://skin/extras/BigIcons/WINAMP.png</thumb>
-                        <onclick>Dialog.Close(1145)</onclick>
-                        <onclick>Skin.SetString(ItemToEdit.$INFO[Window(1124).Property(IconTarget)],special://skin/extras/BigIcons/WINAMP.png)</onclick>
                     </item>
                     <item>
                         <label>WORLD</label>

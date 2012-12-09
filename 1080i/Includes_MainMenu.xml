@@ -595,7 +595,7 @@
     </include>
     <include name="DefaultShutdownSubMenu">
         <item>
-            <label>$LOCALIZE[52014]</label>
+            <label>$LOCALIZE[31009]</label>
             <onclick>AlarmClock(shutdowntimer,Powerdown())</onclick>
             <visible>Substring(Control.GetLabel(4327),shutdown) + IsEmpty(Skin.String(ShutdownSub1)) + !System.HasAlarm(shutdowntimer)</visible>
         </item>
@@ -842,7 +842,7 @@
                 <property name="InfoLine">$INFO[Skin.String(ShutdownHomeItem.InfoLine)]</property>
                 <property name="SubMenu">$INFO[Skin.String(ShutdownHomeItem.SubMenu)]</property>
                 <property name="Type" fallback="custom">$INFO[Skin.String(ShutdownHomeItem.Type)]</property>
-                <property name="Path" fallback="ActivateWindow(1117)">$INFO[Skin.String(ShutdownHomeItem.Path)]</property>
+                <property name="Path" fallback="ActivateWindow(1113)">$INFO[Skin.String(ShutdownHomeItem.Path)]</property>
             </item>
     </include>
     <include name="SearchMainMenu">
@@ -896,7 +896,7 @@
                 <property name="InfoLine">$INFO[Skin.String(ProgramsHomeItem.InfoLine)]</property>
                 <property name="SubMenu">$INFO[Skin.String(ProgramsHomeItem.SubMenu)]</property>
                 <property name="Type" fallback="custom">$INFO[Skin.String(ProgramsHomeItem.Type)]</property>
-                <property name="Path" fallback="ActivateWindow(programs)">$INFO[Skin.String(ProgramsHomeItem.Path)]</property>
+                <property name="Path" fallback="ActivateWindow(Programs,Addons,return)">$INFO[Skin.String(ProgramsHomeItem.Path)]</property>
             </item>
     </include>
     <include name="VideosMainMenu">
@@ -914,7 +914,7 @@
                 <property name="InfoLine">$INFO[Skin.String(VideosHomeItem.InfoLine)]</property>
                 <property name="SubMenu">$INFO[Skin.String(VideosHomeItem.SubMenu)]</property>
                 <property name="Type" fallback="custom">$INFO[Skin.String(VideosHomeItem.Type)]</property>
-                <property name="Path" fallback="ActivateWindow(videos,return)">$INFO[Skin.String(VideosHomeItem.Path)]</property>
+                <property name="Path" fallback="ActivateWindow(Videos,root)">$INFO[Skin.String(VideosHomeItem.Path)]</property>
             </item>
     </include>
     <include name="TVGuideMainMenu">
@@ -1021,13 +1021,13 @@
                 <property name="InfoLine">$INFO[Skin.String(PicturesHomeItem.InfoLine)]</property>
                 <property name="SubMenu">$INFO[Skin.String(PicturesHomeItem.SubMenu)]</property>
                 <property name="Type" fallback="custom">$INFO[Skin.String(PicturesHomeItem.Type)]</property>
-                <property name="Path" fallback="ActivateWindow(Pictures)">$INFO[Skin.String(PicturesHomeItem.Path)]</property>
+                <property name="Path" fallback="ActivateWindow(Pictures,root)">$INFO[Skin.String(PicturesHomeItem.Path)]</property>
                 <icon fallback="special://skin/backgrounds/pictures/">$INFO[Skin.String(PicturesHomeItem.MultiFanart)]</icon>
             </item>
     </include>
     <include name="TVMainMenu">
             <item id="7">
-                <label fallback="52502">$INFO[Skin.String(LiveTVHomeItem.Label)]</label>
+                <label fallback="31017">$INFO[Skin.String(LiveTVHomeItem.Label)]</label>
                 <onclick>SetProperty($INFO[Window(home).Property(MenuName)],LiveTVHomeItem,home)</onclick>
                 <onclick>SetFocus(9006)</onclick>
                 <property name="Widget">$INFO[Skin.String(LiveTVHomeItem.Widget)]</property>
@@ -1209,7 +1209,7 @@
         <ondown condition="IsEmpty(Window(home).Property(DisableWidgets)) + !IntegerGreaterThan(Container(9010).NumItems,0) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
         <onback condition="!Skin.HasSetting(DisableWidgetToggle) + IsEmpty(Window(home).Property(DisableWidgets))">SetProperty(DisableWidgets,1,home)</onback>
         <onback condition="!Skin.HasSetting(DisableWidgetToggle) + !IsEmpty(Window(home).Property(DisableWidgets))">ClearProperty(DisableWidgets,home)</onback>
-        <scrolltime tween="quadratic" easing="out">300</scrolltime>
+        <scrolltime tween="quadratic">300</scrolltime>
         <include condition="Skin.HasSetting(mainmenuicons)">FocusPosition4</include>
         <include condition="!Skin.HasSetting(mainmenuicons)">FocusPosition2</include>
         <visible>![Player.HasMedia + System.IdleTime(8)]</visible>
@@ -1347,7 +1347,7 @@
         <orientation>horizontal</orientation>
         <focusposition>2</focusposition>
         <hitrect x="-238" y="0" w="2400" h="130" />
-        <scrolltime tween="quadratic" easing="out">300</scrolltime>
+        <scrolltime tween="quadratic">300</scrolltime>
         <onup>9000</onup>
         <onback>SetFocus(9000)</onback>
         <ondown condition="IsEmpty(Window(home).Property(DisableWidgets)) + !Skin.HasSetting(lowermainmenu) + !IsEmpty(Control.GetLabel(4321))">4444</ondown>
@@ -1371,8 +1371,8 @@
                 <width>224</width>
                 <align>center</align>
                 <font>Font_Info_Caps</font>
-                <animation effect="zoom" center="112,25" start="100" end="130" time="200" tween="quadratic" easing="out">Focus</animation>
-                <animation effect="zoom" center="112,25" start="130" end="100" time="200" tween="quadratic" easing="out">Unfocus</animation>
+                <animation effect="zoom" center="112,25" start="100" end="130" time="200" tween="quadratic">Focus</animation>
+                <animation effect="zoom" center="112,25" start="130" end="100" time="200" tween="quadratic">Unfocus</animation>
                 <scroll>true</scroll>
                 <label>$INFO[ListItem.Label]</label>
                 <textcolor>grey2</textcolor>
@@ -1382,8 +1382,8 @@
                 <height>50</height>
                 <width>224</width>
                 <align>center</align>
-                <animation effect="zoom" center="112,25" start="100" end="130" time="200" tween="quadratic" easing="out">Focus</animation>
-                <animation effect="zoom" center="112,25" start="130" end="100" time="200" tween="quadratic" easing="out">Unfocus</animation>
+                <animation effect="zoom" center="112,25" start="100" end="130" time="200" tween="quadratic">Focus</animation>
+                <animation effect="zoom" center="112,25" start="130" end="100" time="200" tween="quadratic">Unfocus</animation>
                 <font>Font_Info_Caps</font>
                 <scroll>true</scroll>
                 <label>$INFO[ListItem.Label]</label>

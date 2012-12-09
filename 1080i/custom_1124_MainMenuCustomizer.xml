@@ -57,8 +57,8 @@
         <control type="multiimage">
             <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
             <aspectratio align="center" aligny="top">scale</aspectratio>
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <visible>!Substring(Control.GetLabel(4322),dailybabe)</visible>
         </control>
         <include condition="!IsEmpty(Skin.String(CDWall_Folder_Path))">cdwall-musicvisualisation</include>
@@ -68,8 +68,8 @@
             <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
             <aspectratio align="center" aligny="top">keep</aspectratio>
             <include>Animation_VisibleChange400</include>
-            <animation effect="zoom" start="110" end="130" center="auto" time="15000" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-            <animation effect="slide" start="-15,-15" end="15,15" time="7500" tween="linear" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
+            <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
             <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),dailybabe)</visible>
         </control>
         <control type="image">
@@ -163,11 +163,11 @@
             <posy>472</posy>
             <animation effect="slide" end="0,338" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation type="WindowClose">
-                <effect type="fade" start="100" end="0" time="250" tween="quadratic" easing="out" />
-                <effect type="slide" end="0,45" time="250" tween="quadratic" easing="out" />
+                <effect type="fade" start="100" end="0" time="250" tween="quadratic" />
+                <effect type="slide" end="0,45" time="250" tween="quadratic" />
             </animation>
             <animation type="WindowOpen">
-                <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
+                <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" />
                 <effect type="fade" start="50" end="100" time="300" />
             </animation>
             <control type="image">
@@ -186,7 +186,7 @@
                 <itemgap>10</itemgap>
                 <orientation>horizontal</orientation>
                 <usecontrolcoords>true</usecontrolcoords>
-                <scrolltime tween="quadratic" easing="out">200</scrolltime>
+                <scrolltime tween="quadratic">200</scrolltime>
                 <control type="image">
                     <width>30</width>
                     <height>30</height>
@@ -253,13 +253,6 @@
                 <include>Furniture_ClassicHomeGradient</include>
                 <include>Neon_Home</include>
             </control>
-        </control>
-                <control type="Label">
-                                    <height>36</height>
-                    <width min="15" max="1920">auto</width>
-                    <font>Font_Info_Caps</font>
-                    <textcolor>grey</textcolor>
-            <label>aaa$INFO[Container(9000).ListItem.Property(Type)]</label>
         </control>
     </controls>
 </window>

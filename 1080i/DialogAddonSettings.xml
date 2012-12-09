@@ -4,7 +4,7 @@
     <controls>
         <control type="group">
             <animation type="WindowOpen" reversible="false" condition="!Window.Previous(addoninformation)">
-                <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" easing="out" />
+                <effect type="zoom" start="150" end="100" center="960,540" time="300" tween="cubic" />
                 <effect type="fade" end="100" time="300" />
             </animation>
             <animation type="WindowClose" reversible="false" condition="!Window.Next(addoninformation)">
@@ -20,7 +20,6 @@
                 <height>1006</height>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
                 <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                <include>Animation_VisibleChange400</include>
                 <texture>settings/settings_panelback_shadow.png</texture>
             </control>
             <control type="image">

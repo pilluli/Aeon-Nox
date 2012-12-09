@@ -17,7 +17,6 @@
             <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
             <visible>!Skin.HasSetting(DisableGlowbar)</visible>
             <include>PanelGlowFade</include>
-            <include>Animation_VisibleChange400</include>
         </control>
         <control type="image">
             <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
@@ -38,7 +37,7 @@
             <width>1275</width>
             <height>105</height>
             <align>center</align>
-            <label>52012</label>
+            <label>31007</label>
             <font>Font_Reg24</font>
             <visible>!pvr.IsPlayingRadio</visible>
         </control>
@@ -47,7 +46,7 @@
             <posy>135</posy>
             <width>270</width>
             <height>38</height>
-            <label>$LOCALIZE[52013]:</label>
+            <label>$LOCALIZE[31008]:</label>
         </control>
         <control type="edit" id="9">
             <posx>82</posx>

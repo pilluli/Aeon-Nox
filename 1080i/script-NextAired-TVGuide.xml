@@ -54,7 +54,7 @@
         </control>
         <control type="group">
             <animation type="WindowOpen" reversible="false">
-                <effect type="zoom" start="150" end="100" center="960,540" time="600" tween="cubic" easing="out" />
+                <effect type="zoom" start="150" end="100" center="960,540" time="600" tween="cubic" />
                 <effect type="fade" end="100" time="100" />
             </animation>
             <animation type="WindowClose" reversible="false">
@@ -801,7 +801,7 @@
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                     </control>
                     <control type="label">
@@ -976,7 +976,7 @@
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                     </control>
                     <control type="label">
@@ -1151,7 +1151,7 @@
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                     </control>
                     <control type="label">
@@ -1326,7 +1326,7 @@
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                     </control>
                     <control type="label">
@@ -1501,7 +1501,7 @@
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                     </control>
                     <control type="label">
@@ -1676,7 +1676,7 @@
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                     </control>
                     <control type="label">
@@ -1851,7 +1851,7 @@
                         <posy>862</posy>
                         <width>450</width>
                         <height>30</height>
-                        <label>$LOCALIZE[312576]:</label>
+                        <label>$LOCALIZE[31005]:</label>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                     </control>
                     <control type="label">
