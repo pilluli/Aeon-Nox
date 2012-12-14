@@ -105,6 +105,9 @@
             <visible>![!IsEmpty(Window(home).Property(DisableWidgets)) + Window.IsActive(home)]</visible>
             <visible>!Substring(Control.GetLabel(4321),weather) + !Substring(Control.GetLabel(4321),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4321),panel) + !IsEmpty(Control.GetLabel(4321))</visible>
             <include>Animation_Widgets</include>
+            <visible>![IsEmpty(Window(Home).Property(NextAired.1.Thumb)) + Substring(Control.GetLabel(4321),nextairedtv)]</visible>
+            <visible>![IsEmpty(Window(Home).Property(RecommendedMovie.1.Title)) + Substring(Control.GetLabel(4321),watchlistmovies)]</visible>
+            <visible>![IsEmpty(Window(Home).Property(RecommendedEpisode.1.Title)) + Substring(Control.GetLabel(4321),watchlisttv)]</visible>
             <animation effect="slide" end="0,-258" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" time="200" end="0,-38" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow)">Conditional</animation>
             <!--Unfocused widget-->
@@ -683,6 +686,8 @@
                         <include condition="Substring(Skin.String(widgetlist),rss2 )">RSS2WidgetContent</include>
                         <include condition="Substring(Skin.String(widgetlist),rss3 )">RSS3WidgetContent1124</include>
                         <include condition="Substring(Skin.String(widgetlist),rss3 )">RSS3WidgetContent</include>
+                        <include condition="Substring(Skin.String(widgetlist),nextairedtv )">NextAiredWidgetContent1124</include>
+                        <include condition="Substring(Skin.String(widgetlist),nextairedtv )">NextAiredWidgetContent</include>
                     </content>
                 </control>
             </control>
@@ -706,7 +711,7 @@
                 <onfocus condition="Substring(Control.GetLabel(4321),randompics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Random'&amp;sort='Added'&amp;limit=10)</onfocus>
                 <onfocus condition="Substring(Control.GetLabel(4321),recentpics)">RunScript(plugin.image.mypicsdb,0,?action='setproperties'&amp;method='Latest'&amp;sort='Added'&amp;limit=10)</onfocus>
             </control>
- -->            
+ -->
             <control type="grouplist" id="8020">
                 <posx>-830</posx>
                 <posy>28</posy>
@@ -746,7 +751,7 @@
                     <onclick>PlayMedia($ESCINFO[Container(8000).ListItem.Property(Trailer)])</onclick>
                     <include>Objects_ContextMenuButton</include>
                     <visible>!IsEmpty(Container(8000).ListItem.Property(Trailer))</visible>
-                </control>                 
+                </control>
                 <control type="button" id="8035">
                     <label>$LOCALIZE[31087]</label>
                     <onclick condition="SubString(Control.GetLabel(4321),1custom)">$INFO[Skin.String(SmartPlaylist1.Call)]</onclick>
@@ -772,7 +777,7 @@
                     <height>40</height>
                     <texture>dialogs/context_bottom.png</texture>
                 </control>
-            </control>            
+            </control>
         </control>
     </include>
     <include name="Custom1Widget">
@@ -1938,7 +1943,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.1.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.1.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecommendedMovie.1.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecommendedMovie.1.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecommendedMovie.1.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecommendedMovie.1.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedMovie.1.VideoAspect)]</property>
@@ -1966,7 +1970,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.2.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.2.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecommendedMovie.2.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecommendedMovie.2.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecommendedMovie.2.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecommendedMovie.2.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedMovie.2.VideoAspect)]</property>
@@ -1994,7 +1997,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.3.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.3.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecommendedMovie.3.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecommendedMovie.3.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecommendedMovie.3.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecommendedMovie.3.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedMovie.3.VideoAspect)]</property>
@@ -2022,7 +2024,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.4.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.4.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecommendedMovie.4.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecommendedMovie.4.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecommendedMovie.4.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecommendedMovie.4.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedMovie.4.VideoAspect)]</property>
@@ -2050,7 +2051,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.5.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.5.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecommendedMovie.5.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecommendedMovie.5.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecommendedMovie.5.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecommendedMovie.5.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedMovie.5.VideoAspect)]</property>
@@ -2078,7 +2078,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.6.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.6.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecommendedMovie.6.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecommendedMovie.6.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecommendedMovie.6.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecommendedMovie.6.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedMovie.6.VideoAspect)]</property>
@@ -2106,7 +2105,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.7.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.7.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecommendedMovie.7.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecommendedMovie.7.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecommendedMovie.7.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecommendedMovie.7.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedMovie.7.VideoAspect)]</property>
@@ -2134,7 +2132,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecommendedMovie.8.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecommendedMovie.8.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecommendedMovie.8.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecommendedMovie.8.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecommendedMovie.8.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecommendedMovie.8.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecommendedMovie.8.VideoAspect)]</property>
@@ -2164,7 +2161,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.1.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.1.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RandomMovie.1.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RandomMovie.1.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RandomMovie.1.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RandomMovie.1.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RandomMovie.1.VideoAspect)]</property>
@@ -2191,7 +2187,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.2.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.2.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RandomMovie.2.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RandomMovie.2.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RandomMovie.2.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RandomMovie.2.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RandomMovie.2.VideoAspect)]</property>
@@ -2218,7 +2213,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.3.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.3.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RandomMovie.3.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RandomMovie.3.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RandomMovie.3.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RandomMovie.3.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RandomMovie.3.VideoAspect)]</property>
@@ -2245,7 +2239,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.4.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.4.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RandomMovie.4.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RandomMovie.4.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RandomMovie.4.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RandomMovie.4.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RandomMovie.4.VideoAspect)]</property>
@@ -2272,7 +2265,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.5.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.5.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RandomMovie.5.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RandomMovie.5.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RandomMovie.5.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RandomMovie.5.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RandomMovie.5.VideoAspect)]</property>
@@ -2299,7 +2291,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.6.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.6.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RandomMovie.6.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RandomMovie.6.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RandomMovie.6.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RandomMovie.6.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RandomMovie.6.VideoAspect)]</property>
@@ -2326,7 +2317,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.7.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.7.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RandomMovie.7.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RandomMovie.7.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RandomMovie.7.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RandomMovie.7.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RandomMovie.7.VideoAspect)]</property>
@@ -2353,7 +2343,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RandomMovie.8.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RandomMovie.8.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RandomMovie.8.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RandomMovie.8.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RandomMovie.8.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RandomMovie.8.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RandomMovie.8.VideoAspect)]</property>
@@ -2382,7 +2371,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.1.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.1.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecentMovie.1.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecentMovie.1.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecentMovie.1.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecentMovie.1.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecentMovie.1.VideoAspect)]</property>
@@ -2409,7 +2397,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.2.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.2.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecentMovie.2.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecentMovie.2.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecentMovie.2.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecentMovie.2.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecentMovie.2.VideoAspect)]</property>
@@ -2436,7 +2423,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.3.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.3.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecentMovie.3.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecentMovie.3.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecentMovie.3.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecentMovie.3.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecentMovie.3.VideoAspect)]</property>
@@ -2463,7 +2449,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.4.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.4.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecentMovie.4.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecentMovie.4.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecentMovie.4.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecentMovie.4.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecentMovie.4.VideoAspect)]</property>
@@ -2490,7 +2475,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.5.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.5.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecentMovie.5.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecentMovie.5.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecentMovie.5.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecentMovie.5.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecentMovie.5.VideoAspect)]</property>
@@ -2517,7 +2501,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.6.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.6.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecentMovie.6.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecentMovie.6.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecentMovie.6.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecentMovie.6.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecentMovie.6.VideoAspect)]</property>
@@ -2544,7 +2527,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.7.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.7.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecentMovie.7.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecentMovie.7.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecentMovie.7.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecentMovie.7.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecentMovie.7.VideoAspect)]</property>
@@ -2571,7 +2553,6 @@
             <property name="Discart">$INFO[Window(Home).Property(RecentMovie.8.Art(discart))]</property>
             <property name="PercentPlayed">$INFO[Window(Home).Property(RecentMovie.8.PercentPlayed)]</property>
             <property name="Studio">$INFO[Window(Home).Property(RecentMovie.8.Studio)]</property>
-            <property name="Watched">$INFO[Window(Home).Property(RecentMovie.8.Watched)]</property>
             <property name="VideoCodec">$INFO[Window(Home).Property(RecentMovie.8.VideoCodec)]</property>
             <property name="VideoResolution">$INFO[Window(Home).Property(RecentMovie.8.VideoResolution)]</property>
             <property name="VideoAspect">$INFO[Window(Home).Property(RecentMovie.8.VideoAspect)]</property>
@@ -2665,7 +2646,7 @@
     </include>
     <include name="RandomAddonsItems">
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.1.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.1.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.1.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.1.Version)]</property>
@@ -2676,7 +2657,7 @@
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.2.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.2.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.2.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.2.Version)]</property>
@@ -2687,7 +2668,7 @@
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.3.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.3.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.3.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.3.Version)]</property>
@@ -2698,7 +2679,7 @@
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.4.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.4.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.4.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.4.Version)]</property>
@@ -2709,7 +2690,7 @@
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.5.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.5.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.5.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.5.Version)]</property>
@@ -2722,7 +2703,7 @@
     </include>
     <include name="RandomAddonsItemsHome">
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.6.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.6.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.6.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.6.Version)]</property>
@@ -2733,7 +2714,7 @@
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.7.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.7.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.7.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.7.Version)]</property>
@@ -2744,7 +2725,7 @@
             <visible>Substring(Control.GetLabel(4321),randomaddons,left)</visible>
         </item>
         <item>
-            <icon>$INFO[Window(Home).Property(RandomAddon.8.Thumb)]</icon>
+            <icon>$INFO[Window(Home).Property(RandomAddon.8.Art(thumb))]</icon>
             <label>$INFO[Window(Home).Property(RandomAddon.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.8.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.8.Version)]</property>
@@ -2760,7 +2741,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.1.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.1.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.1.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.1.Art(thumb))]</thumb>
             <property name="NavItem">item1.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.1.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.1.Rating)]</property>
@@ -2775,7 +2756,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.2.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.2.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.2.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.2.Art(thumb))]</thumb>
             <property name="NavItem">item2.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.2.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.2.Rating)]</property>
@@ -2790,7 +2771,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.3.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.3.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.3.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.3.Art(thumb))]</thumb>
             <property name="NavItem">item3.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.3.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.3.Rating)]</property>
@@ -2805,7 +2786,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.4.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.4.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.4.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.4.Art(thumb))]</thumb>
             <property name="NavItem">item4.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.4.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.4.Rating)]</property>
@@ -2820,7 +2801,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.5.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.5.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.5.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.5.Art(thumb))]</thumb>
             <property name="NavItem">item5.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.5.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.5.Rating)]</property>
@@ -2837,7 +2818,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.6.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.6.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.6.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.6.Art(thumb))]</thumb>
             <property name="NavItem">item6.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.6.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.6.Rating)]</property>
@@ -2852,7 +2833,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.7.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.7.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.7.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.7.Art(thumb))]</thumb>
             <property name="NavItem">item7.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.7.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.7.Rating)]</property>
@@ -2867,7 +2848,7 @@
             <label>$INFO[Window(Home).Property(RecommendedAlbum.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecommendedAlbum.8.Artist)]</label2>
             <property name="Path">$INFO[Window(Home).Property(RecommendedAlbum.8.Play)]</property>
-            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.8.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecommendedAlbum.8.Art(thumb))]</thumb>
             <property name="NavItem">item8.png</property>
             <property name="Description">$INFO[Window(Home).Property(RecommendedAlbum.8.Description)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecommendedAlbum.8.Rating)]</property>
@@ -2882,7 +2863,7 @@
     <include name="RandomAlbumsItems">
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.1.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.1.Rating)]</property>
@@ -2897,7 +2878,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.2.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.2.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.2.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.2.Rating)]</property>
@@ -2912,7 +2893,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.3.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.3.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.3.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.3.Rating)]</property>
@@ -2927,7 +2908,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.4.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.4.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.4.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.4.Rating)]</property>
@@ -2942,7 +2923,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.5.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.5.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.5.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.5.Rating)]</property>
@@ -2959,7 +2940,7 @@
     <include name="RandomAlbumsItemsHome">
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.6.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.6.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.6.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.6.Rating)]</property>
@@ -2974,7 +2955,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.7.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.7.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.7.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.7.Rating)]</property>
@@ -2989,7 +2970,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomAlbum.8.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomAlbum.8.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomAlbum.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAlbum.8.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RandomAlbum.8.Rating)]</property>
@@ -3006,7 +2987,7 @@
     <include name="RandomArtistsItems">
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.1.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.1.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.1.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.1.Artist_Description)]</property>
@@ -3017,7 +2998,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.2.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.2.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.2.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.2.Artist_Description)]</property>
@@ -3028,7 +3009,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.3.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.3.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.3.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.3.Artist_Description)]</property>
@@ -3039,7 +3020,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.4.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.4.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.4.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.4.Artist_Description)]</property>
@@ -3050,7 +3031,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.5.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.5.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.5.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.5.Artist_Description)]</property>
@@ -3063,7 +3044,7 @@
     <include name="RandomArtistsItemsHome">
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.6.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.6.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.6.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.6.Artist_Description)]</property>
@@ -3074,7 +3055,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.7.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.7.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.7.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.7.Artist_Description)]</property>
@@ -3085,7 +3066,7 @@
         </item>
         <item>
             <icon>DefaultArtist.png</icon>
-            <thumb>$INFO[Window(Home).Property(RandomArtist.8.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RandomArtist.8.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RandomArtist.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomArtist.8.Genre)]</label2>
             <property name="Description">$INFO[Window(Home).Property(RandomArtist.8.Artist_Description)]</property>
@@ -3098,7 +3079,7 @@
     <include name="LatestAlbumsItems">
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.1.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.1.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.1.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.1.Rating)]</property>
@@ -3114,7 +3095,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.2.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.2.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.2.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.2.Rating)]</property>
@@ -3130,7 +3111,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.3.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.3.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.3.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.3.Rating)]</property>
@@ -3146,7 +3127,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.4.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.4.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.4.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.4.Rating)]</property>
@@ -3162,7 +3143,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.5.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.5.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.5.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.5.Rating)]</property>
@@ -3180,7 +3161,7 @@
     <include name="LatestAlbumsItemsHome">
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.6.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.6.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.6.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.6.Rating)]</property>
@@ -3196,7 +3177,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.7.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.7.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.7.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.7.Rating)]</property>
@@ -3212,7 +3193,7 @@
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
-            <thumb>$INFO[Window(Home).Property(RecentAlbum.8.Thumb)]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentAlbum.8.Art(thumb))]</thumb>
             <label>$INFO[Window(Home).Property(RecentAlbum.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentAlbum.8.Artist)]</label2>
             <property name="Rating">$INFO[Window(Home).Property(RecentAlbum.8.Rating)]</property>

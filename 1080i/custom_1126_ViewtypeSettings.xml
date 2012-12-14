@@ -64,7 +64,7 @@
                 <onclick condition="Stringcompare(Control.GetLabel(4421),infopaneloff)">Skin.SetString(InfoPanel$INFO[Window(home).Property(Area)],infopanelonmanual)</onclick>
                 <onclick condition="Stringcompare(Control.GetLabel(4421),infopanelon)">Skin.SetString(InfoPanel$INFO[Window(home).Property(Area)],infopaneloff)</onclick>
                 <onclick condition="Stringcompare(Control.GetLabel(4421),infopanelonauto)">Skin.SetString(InfoPanel$INFO[Window(home).Property(Area)],infopanelon)</onclick>
-                <visible>Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseSquare) | Stringcompare(Window(home).Property(actualViewtype),Banners)</visible>
+                <visible>Substring(Window(home).Property(actualViewtype),Showcase) | Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Banners)</visible>
                 <visible>![Stringcompare(Window(home).Property(actualViewtype),Shift) + !Skin.HasSetting(smallshiftview) + Window.IsActive(videos)]</visible>
                 <visible>!Container.Content(sets)</visible>
             </control>
@@ -121,7 +121,7 @@
             </control>
             <control type="button" id="1641">
                 <include>Objects_MediaMenuButtonAlt2</include>
-                <label>$LOCALIZE[31248]</label>                
+                <label>$LOCALIZE[31248]</label>
                 <label2>[COLOR $VAR[FontColorVar]]$VAR[ShowcaseCaseLabelVar][/COLOR]</label2>
                 <onclick condition="!Skin.HasSetting(clearcases) + Skin.HasSetting(usecases)">Skin.SetBool(clearcases)</onclick>
                 <onclick condition="!Skin.HasSetting(clearcases) + !Skin.HasSetting(usecases)">Skin.SetBool(usecases)</onclick>
@@ -334,7 +334,7 @@
                 <label>$LOCALIZE[31631]</label>
                 <onclick>Skin.ToggleSetting(movielogosfloor)</onclick>
                 <selected>Skin.HasSetting(movielogosfloor)</selected>
-                <visible>[[Stringcompare(Window(home).Property(actualViewtype),Shift) | Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Stringcompare(Window(home).Property(actualViewtype),AddonWall)] + Container.Content(movies)]</visible>
+                <visible>[[Stringcompare(Window(home).Property(actualViewtype),Shift) | Substring(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),Banners)] + Container.Content(movies)]</visible>
             </control>
             <control type="radiobutton" id="16441">
                 <include>Objects_MediaMenuButtonAlt2</include>
@@ -576,7 +576,7 @@
                 <onclick>Skin.ToggleSetting(showcasewrap)</onclick>
                 <selected>!Skin.HasSetting(showcasewrap)</selected>
                 <include condition="!Window.IsActive(script-Rom_Collection_Browser-main.xml)">ReloadWindowOnClick</include>
-                <visible>[Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseSquare)]</visible>
+                <visible>Substring(Window(home).Property(actualViewtype),Showcase) | Stringcompare(Window(home).Property(actualViewtype),Landscape)</visible>
             </control>
             <control type="radiobutton" id="1635">
                 <include>Objects_MediaMenuButtonAlt2</include>
@@ -636,7 +636,7 @@
                 <onclick condition="Skin.HasSetting(watchedoverlay) + Skin.HasSetting(newstatus)">Skin.Reset(watchedoverlay)</onclick>
                 <onclick condition="Skin.HasSetting(watchedoverlay) + Skin.HasSetting(newstatus)">Skin.Reset(newstatus)</onclick>
                 <onclick condition="!Skin.HasSetting(watchedoverlay) + !Skin.HasSetting(newstatus)">Skin.SetBool(watchedoverlay)</onclick>
-                <visible>[Stringcompare(Window(home).Property(actualViewtype),Episode) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),posters) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Stringcompare(Window(home).Property(actualViewtype),AddonWall) | Stringcompare(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Shift)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
+                <visible>[Stringcompare(Window(home).Property(actualViewtype),Episode) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Stringcompare(Window(home).Property(actualViewtype),ShowcaseMovies) | Stringcompare(Window(home).Property(actualViewtype),posters) | Stringcompare(Window(home).Property(actualViewtype),Landscape) | Stringcompare(Window(home).Property(actualViewtype),Banners) | Substring(Window(home).Property(actualViewtype),Wall) | Stringcompare(Window(home).Property(actualViewtype),BigFan) | Stringcompare(Window(home).Property(actualViewtype),Shift)] + [Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)]</visible>
             </control>
             <control type="button" id="266">
                 <label>$LOCALIZE[207]:</label>
@@ -645,13 +645,13 @@
                 <onclick>Skin.ToggleSetting(preferplot)</onclick>
                 <visible>Window.IsActive(videolibrary) + !Stringcompare(Window(home).Property(actualViewtype),Shift)</visible>
             </control>
-                    <control type="radiobutton" id="286">
-                        <label>31638</label>
-                        <include>Objects_MediaMenuButtonAlt2</include>
-                        <onclick>Skin.ToggleSetting(NextAiredInfo)</onclick>
-                        <selected>!Skin.HasSetting(NextAiredInfo)</selected>
-                        <visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
-                    </control>
+            <control type="radiobutton" id="286">
+                <label>31638</label>
+                <include>Objects_MediaMenuButtonAlt2</include>
+                <onclick>Skin.ToggleSetting(NextAiredInfo)</onclick>
+                <selected>!Skin.HasSetting(NextAiredInfo)</selected>
+                <visible>Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+            </control>
             <control type="button" id="1664">
                 <include>Objects_MediaMenuButtonAlt2</include>
                 <label>31298</label>

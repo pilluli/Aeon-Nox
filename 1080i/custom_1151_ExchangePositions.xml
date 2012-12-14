@@ -21,6 +21,7 @@
     <onunload condition="!IsEmpty(Window(home).Property(Exchange))">Skin.SetString(ItemToEdit.Type,$INFO[Window(home).Property(TempItemToEdit.Type)])</onunload>
     <onunload condition="!IsEmpty(Window(home).Property(Exchange))">Skin.SetString(ItemToEdit.MultiFanart,$INFO[Window(home).Property(TempItemToEdit.MultiFanart)])</onunload>
     <onunload condition="!IsEmpty(Window(home).Property(Exchange))">Skin.SetString(ItemToEdit.Label,$INFO[Window(home).Property(TempItemToEdit.Label)])</onunload>
+    <onunload condition="!IsEmpty(Window(home).Property(Exchange))">Skin.SetString($INFO[Window(home).Property(MenuItem)].Label,$INFO[Window(home).Property(TempItemToEdit.Label)])</onunload>
     <onunload condition="!IsEmpty(Window(home).Property(Exchange))">Skin.SetString(ItemToEdit.Path,$INFO[Window(home).Property(TempItemToEdit.Path)])</onunload>
     <onunload condition="!IsEmpty(Window(home).Property(Exchange))">Skin.SetString(ItemToEdit.Widget,$INFO[Window(home).Property(TempItemToEdit.Widget)])</onunload>
     <onunload condition="!IsEmpty(Window(home).Property(Exchange))">Skin.SetString(ItemToEdit.Widget2,$INFO[Window(home).Property(TempItemToEdit.Widget2)])</onunload>
@@ -104,20 +105,20 @@
                     <include>CustomizerMenuItems</include>
                 </content>
             </control>
-                    <control type="button" id="9006">
-            <include>HiddenObject</include>
-            <onfocus>SetProperty(TempItemToEdit.Label,$INFO[Container(4).ListItem.Label],home)</onfocus>
-            <onfocus>SetProperty(TempItemToEdit.MultiFanart,$INFO[Container(4).ListItem.Icon],home)</onfocus>
-            <onfocus>SetProperty(TempItemToEdit.Icon,$INFO[Container(4).ListItem.Property(BigIcon)],home)</onfocus>
-            <onfocus>SetProperty(TempItemToEdit.Widget,$INFO[Container(4).ListItem.Property(Widget)],home)</onfocus>
-            <onfocus>SetProperty(TempItemToEdit.Widget2,$INFO[Container(4).ListItem.Property(Widget2)],home)</onfocus>
-            <onfocus>SetProperty(TempItemToEdit.WidgetTitle,$INFO[Container(4).ListItem.Property(WidgetTitle)],home)</onfocus>
-            <onfocus>SetProperty(TempItemToEdit.Widget2Title,$INFO[Container(4).ListItem.Property(Widget2Title)],home)</onfocus>
-            <onfocus>SetProperty(TempItemToEdit.InfoLine,$INFO[Container(4).ListItem.Property(InfoLine)],home)</onfocus>
-            <onfocus>SetProperty(TempItemToEdit.SubMenu,$INFO[Container(4).ListItem.Property(SubMenu)],home)</onfocus>
-            <onfocus>SetProperty(TempItemToEdit.Disable,$INFO[Container(4).ListItem.Property(DisableIcon)],home)</onfocus>
-            <onfocus>Dialog.Close(1151)</onfocus>
-        </control>
+            <control type="button" id="9006">
+                <include>HiddenObject</include>
+                <onfocus>SetProperty(TempItemToEdit.Label,$INFO[Container(4).ListItem.Label],home)</onfocus>
+                <onfocus>SetProperty(TempItemToEdit.MultiFanart,$INFO[Container(4).ListItem.Icon],home)</onfocus>
+                <onfocus>SetProperty(TempItemToEdit.Icon,$INFO[Container(4).ListItem.Property(BigIcon)],home)</onfocus>
+                <onfocus>SetProperty(TempItemToEdit.Widget,$INFO[Container(4).ListItem.Property(Widget)],home)</onfocus>
+                <onfocus>SetProperty(TempItemToEdit.Widget2,$INFO[Container(4).ListItem.Property(Widget2)],home)</onfocus>
+                <onfocus>SetProperty(TempItemToEdit.WidgetTitle,$INFO[Container(4).ListItem.Property(WidgetTitle)],home)</onfocus>
+                <onfocus>SetProperty(TempItemToEdit.Widget2Title,$INFO[Container(4).ListItem.Property(Widget2Title)],home)</onfocus>
+                <onfocus>SetProperty(TempItemToEdit.InfoLine,$INFO[Container(4).ListItem.Property(InfoLine)],home)</onfocus>
+                <onfocus>SetProperty(TempItemToEdit.SubMenu,$INFO[Container(4).ListItem.Property(SubMenu)],home)</onfocus>
+                <onfocus>SetProperty(TempItemToEdit.Disable,$INFO[Container(4).ListItem.Property(DisableIcon)],home)</onfocus>
+                <onfocus>Dialog.Close(1151)</onfocus>
+            </control>
         </control>
     </controls>
 </window>
