@@ -3352,6 +3352,7 @@
       <height>668</height>
       <texture border="20,70,20,38">home/videoinprogress.png</texture>
       <visible>!IsEmpty(Window.Property(InProgress.5.Type))+!IsEmpty(Window.Property(InProgress.4.Type))+!IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))</visible>
+      <include>Animation_HomeWidget</include>
     </control>
     <control type="image">
       <posx>0</posx>
@@ -3360,6 +3361,7 @@
       <height>556</height>
       <texture border="20,70,20,38">home/videoinprogress.png</texture>
       <visible>IsEmpty(Window.Property(InProgress.5.Type))+!IsEmpty(Window.Property(InProgress.4.Type))+!IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))</visible>
+      <include>Animation_HomeWidget</include>
     </control>
     <control type="image">
       <posx>0</posx>
@@ -3368,6 +3370,7 @@
       <height>444</height>
       <texture border="20,70,20,38">home/videoinprogress.png</texture>
       <visible>IsEmpty(Window.Property(InProgress.5.Type))+IsEmpty(Window.Property(InProgress.4.Type))+!IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))</visible>
+      <include>Animation_HomeWidget</include>
     </control>
     <control type="image">
       <posx>0</posx>
@@ -3376,6 +3379,7 @@
       <height>332</height>
       <texture border="20,70,20,38">home/videoinprogress.png</texture>
       <visible>IsEmpty(Window.Property(InProgress.5.Type))+IsEmpty(Window.Property(InProgress.4.Type))+IsEmpty(Window.Property(InProgress.3.Type))+!IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))</visible>
+      <include>Animation_HomeWidget</include>
     </control>
    <control type="image">
       <description>background</description>
@@ -3385,6 +3389,7 @@
       <height>220</height>
       <texture border="20,70,20,38">home/videoinprogress.png</texture>
       <visible>IsEmpty(Window.Property(InProgress.5.Type))+IsEmpty(Window.Property(InProgress.4.Type))+IsEmpty(Window.Property(InProgress.3.Type))+IsEmpty(Window.Property(InProgress.2.Type))+!IsEmpty(Window.Property(InProgress.1.Type))</visible>
+      <include>Animation_HomeWidget</include>
     </control>
   </include>
   <include name="VideoBookmarks_common_title">
@@ -3398,7 +3403,7 @@
       <aligny>center</aligny>
       <label>[UPPERCASE]$LOCALIZE[800335][/UPPERCASE]</label>
       <font>Font_Reg19_Caps</font><!--<font>Font_Bold18_Caps</font>-->
-      <textcolor>white</textcolor>
+      <textcolor>$VAR[HomeMenuWidgetTextVar]</textcolor>
       <shadowcolor>-</shadowcolor>
       <include>Animation_HomeWidget</include>
       <visible>!IsEmpty(Window.Property(InProgress.1.Type))</visible>
@@ -3429,6 +3434,7 @@
       <posy>548</posy>
       <include>VideoBookmarks_widget_back</include>
       <include>VideoBookmarks_common_title</include>
+      <include>Animation_HomeWidget</include>
       <control type="list" id="8005">
         <posx>20</posx>
         <posy>70</posy>
@@ -3444,6 +3450,7 @@
         <pagecontrol>-</pagecontrol>
         <scrolltime>200</scrolltime>
         <focusposition>0</focusposition>
+	<include>Animation_HomeWidget</include>
         <itemlayout height="112" width="365">
           <control type="image">
             <posx>-18</posx>
@@ -3471,9 +3478,6 @@
             <align>left</align>
             <aligny>top</aligny>
             <font>Font_Info_Caps</font>
-            <textcolor>ffCCCCCC</textcolor>
-            <shadowcolor>black</shadowcolor>
-            <selectedcolor>selected</selectedcolor>
             <scroll>true</scroll>
             <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
           </control>
@@ -3485,9 +3489,7 @@
             <align>left</align>
             <aligny>top</aligny>
             <font>Font_Reg15</font>
-            <textcolor>c0AAAAAA</textcolor>
-            <shadowcolor>FFAAAAA</shadowcolor>
-            <selectedcolor>selected</selectedcolor>
+            <textcolor>grey2</textcolor>
             <scroll>true</scroll>
             <label>$INFO[ListItem.Property(Title2)]</label>
           </control>
@@ -3499,8 +3501,7 @@
             <align>right</align>
             <aligny>top</aligny>
             <font>Font_Reg14</font>
-            <textcolor>c0FFFFFF</textcolor>
-            <selectedcolor>selected</selectedcolor>
+            <textcolor>$VAR[FocusTextureColorVar]</textcolor>
             <label>$INFO[ListItem.Label2]</label>
           </control>
         </itemlayout>
@@ -3517,9 +3518,11 @@
           <control type="image">
             <posx>-19</posx>
             <posy>0</posy>
-            <width>694</width>
+            <width>678</width>
             <height>112</height>
-            <texture border="20,0,20,0">dialogs/context_highlight.png</texture>
+            <texture>views/tripanel/listselect_fo.png</texture>
+            <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
+            <!--<texture border="20,0,20,0">dialogs/context_highlight.png</texture>-->
             <include>VisibleFadeEffect</include>
             <visible>Control.HasFocus(8005)</visible>
           </control>
@@ -3540,9 +3543,6 @@
             <align>left</align>
             <aligny>top</aligny>
             <font>Font_Info_Caps</font>
-            <textcolor>ffCCCCCC</textcolor>
-            <shadowcolor>black</shadowcolor>
-            <selectedcolor>selected</selectedcolor>
             <scroll>true</scroll>
             <label>[UPPERCASE]$INFO[ListItem.Label][/UPPERCASE]</label>
           </control>
@@ -3554,9 +3554,7 @@
             <align>left</align>
             <aligny>top</aligny>
             <font>Font_Reg15</font>
-            <textcolor>c0AAAAAA</textcolor>
-            <shadowcolor>FFAAAAA</shadowcolor>
-            <selectedcolor>selected</selectedcolor>
+            <textcolor>grey2</textcolor>
             <scroll>true</scroll>
             <label>$INFO[ListItem.Property(Title2)]</label>
           </control>
@@ -3568,8 +3566,7 @@
             <align>right</align>
             <aligny>top</aligny>
             <font>Font_Reg14</font>
-            <textcolor>c0FFFFFF</textcolor>
-            <selectedcolor>selected</selectedcolor>
+            <textcolor>$VAR[FocusTextureColorVar]</textcolor>
             <label>$INFO[ListItem.Label2]</label>
           </control>
         </focusedlayout>
