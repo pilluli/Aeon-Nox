@@ -2,8 +2,6 @@
 <window type="dialog" id="1149">
     <defaultcontrol always="true">4</defaultcontrol>
     <allowoverlay>no</allowoverlay>
-    <onunload>Skin.SetString($INFO[Window(1124).Property(Playlist)].Type,$INFO[Skin.String(PlaylistType)])</onunload>
-    <onunload>Skin.SetString($INFO[Window(1124).Property(Playlist)].Call,RunScript(script.randomandlastitems, playlist=$INFO[Window(1124).Property(PlaylistPath)], method=Last, limit=10, unwatched=$INFO[Skin.String(IncludeWatchedCVPL)], resume=False, propertie=$INFO[Window(1124).Property(Playlist)]))</onunload>
     <controls>
         <control type="group">
             <posx>280</posx>
@@ -13,7 +11,7 @@
                 <posx>380</posx>
                 <posy>200</posy>
                 <width>640</width>
-                <height>500</height>
+                <height>300</height>
                 <texture border="20">osd/osd_settings_back_glow.png</texture>
                 <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                 <visible>!Skin.HasSetting(DisableGlowbar)</visible>
@@ -24,7 +22,7 @@
                 <posy>200</posy>
                 <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 <width>640</width>
-                <height>500</height>
+                <height>300</height>
                 <texture border="20">osd/osd_settings_back.png</texture>
             </control>
             <control type="panel" id="4">
@@ -89,19 +87,60 @@
                 </focusedlayout>
                 <content>
                     <item>
-                        <label>$LOCALIZE[231]</label>
-                        <onclick>Skin.Reset(PlaylistType)</onclick>
-                        <onclick>Dialog.Close(1149)</onclick>
-                    </item>
-                    <item>
                         <label>31222</label>
-                        <onclick>Skin.SetString(PlaylistType,randommovies)</onclick>
+                        <onclick>SetProperty(Type,Movie,home)</onclick>
+                        <onclick>SetProperty(Method,Random,home)</onclick>
+                        <onclick>SetProperty(Resume,False,home)</onclick>
                         <onclick>Dialog.Close(1149)</onclick>
+                        <onclick>ActivateWindow(1125)</onclick>
                     </item>
                     <item>
                         <label>31323</label>
-                        <onclick>Skin.SetString(PlaylistType,recentmovies)</onclick>
+                        <onclick>SetProperty(Type,Movie,home)</onclick>
+                        <onclick>SetProperty(Method,Latest,home)</onclick>
+                        <onclick>SetProperty(Resume,False,home)</onclick>
                         <onclick>Dialog.Close(1149)</onclick>
+                        <onclick>ActivateWindow(1125)</onclick>
+                    </item>
+                    <item>
+                        <label>Watchlist Movies</label>
+                        <onclick>SetProperty(Type,Movie,home)</onclick>
+                        <onclick>SetProperty(Method,Latest,home)</onclick>
+                        <onclick>SetProperty(Resume,True,home)</onclick>
+                        <onclick>Dialog.Close(1149)</onclick>
+                        <onclick>ActivateWindow(1125)</onclick>
+                    </item>
+                    <item>
+                        <label>Random Episodes</label>
+                        <onclick>SetProperty(Type,Episode,home)</onclick>
+                        <onclick>SetProperty(Method,Random,home)</onclick>
+                        <onclick>SetProperty(Resume,False,home)</onclick>
+                        <onclick>Dialog.Close(1149)</onclick>
+                        <onclick>ActivateWindow(1125)</onclick>
+                    </item>
+                    <item>
+                        <label>Latest Episodes</label>
+                        <onclick>SetProperty(Type,Episode,home)</onclick>
+                        <onclick>SetProperty(Method,Latest,home)</onclick>
+                        <onclick>SetProperty(Resume,False,home)</onclick>
+                        <onclick>Dialog.Close(1149)</onclick>
+                        <onclick>ActivateWindow(1125)</onclick>
+                    </item>
+                    <item>
+                        <label>Random Music</label>
+                        <onclick>SetProperty(Type,Music,home)</onclick>
+                        <onclick>SetProperty(Method,Random,home)</onclick>
+                        <onclick>SetProperty(Resume,False,home)</onclick>
+                        <onclick>Dialog.Close(1149)</onclick>
+                        <onclick>ActivateWindow(1125)</onclick>
+                    </item>
+                    <item>
+                        <label>Latest Music</label>
+                        <onclick>SetProperty(Type,Music,home)</onclick>
+                        <onclick>SetProperty(Method,Latest,home)</onclick>
+                        <onclick>SetProperty(Resume,False,home)</onclick>
+                        <onclick>Dialog.Close(1149)</onclick>
+                        <onclick>ActivateWindow(1125)</onclick>
                     </item>
                 </content>
             </control>

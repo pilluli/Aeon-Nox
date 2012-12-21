@@ -9,9 +9,6 @@
     <onload condition="ControlGroup(7000).HasFocus">AlarmClock(Tile,Control.Move(7002,1),00:04,silent,loop)</onload>
     <onload condition="ControlGroup(8000).HasFocus">AlarmClock(Tile,Control.Move(8002,1),00:04,silent,loop)</onload>
     <onload condition="ControlGroup(9000).HasFocus">AlarmClock(Tile,Control.Move(9002,1),00:04,silent,loop)</onload>
-    <onload condition="ControlGroup(10000).HasFocus">AlarmClock(Tile,Control.Move(10002,1),00:04,silent,loop)</onload>
-    <onload condition="ControlGroup(11000).HasFocus">AlarmClock(Tile,Control.Move(11002,1),00:04,silent,loop)</onload>
-    <onload condition="ControlGroup(11000).HasFocus">AlarmClock(TileTwo,Control.Move(11003,1),00:07,silent,loop)</onload>
     <onload condition="Window.Previous(home)">SetFocus(5012)</onload>
     <onunload>ClearProperty(InfoDialog,1115)</onunload>
     <onload>SetFocus(9000)</onload>
@@ -30,7 +27,7 @@
         <control type="grouplist" id="40">
             <posx>-135</posx>
             <posy>105</posy>
-             <animation effect="slide" end="0,300" time="0" condition="Window.IsActive(1147)">Conditional</animation>
+            <animation effect="slide" end="0,300" time="0" condition="Window.IsActive(1147)">Conditional</animation>
             <width>2325</width>
             <height>780</height>
             <scrolltime tween="cubic" easing="inout">500</scrolltime>
@@ -396,7 +393,6 @@
                             <width>746</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(5002).ListItem.Label2,,: ]$INFO[Container(5002).ListItem.Property(EpisodeNo),, - ]$INFO[Container(5002).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -559,7 +555,6 @@
                             <width>272</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(5003).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -818,7 +813,6 @@
                             <width>746</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(6002).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -970,7 +964,6 @@
                             <width>272</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(6003).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -1221,7 +1214,6 @@
                             <width>746</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(7002).ListItem.Label2,,: ]$INFO[Container(7002).ListItem.Property(EpisodeNumber),, - ]$INFO[Container(7002).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -1993,7 +1985,6 @@
                             <width>402</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(8002).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -2474,7 +2465,6 @@
                             <width>402</width>
                             <height>40</height>
                             <font>Font_Reg15</font>
-                            <textcolor>FFe5e5e5</textcolor>
                             <label>$INFO[Container(9002).ListItem.Label]</label>
                             <textoffsetx>15</textoffsetx>
                         </control>
@@ -3000,28 +2990,24 @@
                         <label>$LOCALIZE[31502]</label>
                         <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!ControlGroup(6000).HasFocus">Conditional</animation>
                         <animation effect="zoom" start="100" end="120" time="300" center="auto" tween="cubic" easing="inout" condition="ControlGroup(6000).HasFocus">Conditional</animation>
-
                     </control>
                     <control type="label">
                         <include>FeaturedTopLabel</include>
                         <label>$LOCALIZE[31503]</label>
                         <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!ControlGroup(7000).HasFocus">Conditional</animation>
                         <animation effect="zoom" start="100" end="120" time="300" center="auto" tween="cubic" easing="inout" condition="ControlGroup(7000).HasFocus">Conditional</animation>
-
                     </control>
                     <control type="label">
                         <include>FeaturedTopLabel</include>
                         <label>$LOCALIZE[132]</label>
                         <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!ControlGroup(8000).HasFocus">Conditional</animation>
                         <animation effect="zoom" start="100" end="120" time="300" center="auto" tween="cubic" easing="inout" condition="ControlGroup(8000).HasFocus">Conditional</animation>
-
                     </control>
                     <control type="label">
                         <include>FeaturedTopLabel</include>
                         <label>$LOCALIZE[31501]</label>
                         <animation effect="fade" start="100" end="50" time="300" tween="cubic" easing="inout" condition="!ControlGroup(9000).HasFocus">Conditional</animation>
                         <animation effect="zoom" start="100" end="120" time="300" center="auto" tween="cubic" easing="inout" condition="ControlGroup(9000).HasFocus">Conditional</animation>
-
                     </control>
                 </control>
             </control>

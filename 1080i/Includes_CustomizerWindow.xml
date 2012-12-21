@@ -229,7 +229,7 @@
                         <width>466</width>
                         <height>40</height>
                         <font>Font_Reg15</font>
-                        <textcolor>FFe5e5e5</textcolor>
+                        <textcolor>white2</textcolor>
                         <label>$INFO[Container(5001).ListItem.Label]$INFO[Container(5001).ListItem.Label2, - ]</label>
                         <textoffsetx>15</textoffsetx>
                     </control>
@@ -319,7 +319,7 @@
                         <width>246</width>
                         <height>40</height>
                         <font>Font_Reg15</font>
-                        <textcolor>FFe5e5e5</textcolor>
+                        <textcolor>white2</textcolor>
                         <label>$INFO[Container(5002).ListItem.Label]</label>
                         <textoffsetx>15</textoffsetx>
                     </control>
@@ -429,7 +429,7 @@
                         <width>466</width>
                         <height>40</height>
                         <font>Font_Reg15</font>
-                        <textcolor>FFe5e5e5</textcolor>
+                        <textcolor>white2</textcolor>
                         <label>$INFO[Container(5003).ListItem.Label]$INFO[Container(5003).ListItem.Label2, - ]</label>
                         <textoffsetx>15</textoffsetx>
                     </control>
@@ -682,7 +682,7 @@
                         <width>466</width>
                         <height>40</height>
                         <font>Font_Reg15</font>
-                        <textcolor>FFe5e5e5</textcolor>
+                        <textcolor>white2</textcolor>
                         <label>$INFO[Container(6001).ListItem.Label]$INFO[Container(6001).ListItem.Label2, - ]</label>
                         <textoffsetx>15</textoffsetx>
                     </control>
@@ -772,7 +772,7 @@
                         <width>246</width>
                         <height>40</height>
                         <font>Font_Reg15</font>
-                        <textcolor>FFe5e5e5</textcolor>
+                        <textcolor>white2</textcolor>
                         <label>$INFO[Container(6002).ListItem.Label]</label>
                         <textoffsetx>15</textoffsetx>
                     </control>
@@ -882,7 +882,7 @@
                         <width>466</width>
                         <height>40</height>
                         <font>Font_Reg15</font>
-                        <textcolor>FFe5e5e5</textcolor>
+                        <textcolor>white2</textcolor>
                         <label>$INFO[Container(6003).ListItem.Label]$INFO[Container(6003).ListItem.Label2, - ]</label>
                         <textoffsetx>15</textoffsetx>
                     </control>
@@ -911,7 +911,7 @@
         <control type="group" id="8998">
             <posx>1542</posx>
             <posy>678</posy>
-            <visible>!Substring(Control.GetLabel(4321),weather) + !Substring(Control.GetLabel(4321),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4321),panel) + !IsEmpty(Control.GetLabel(4321))</visible>
+            <visible>Substring(Control.GetLabel(4321),classic) + !Window.IsActive(1120)</visible>
             <include>Animation_Widgets</include>
             <animation effect="slide" end="0,-270" time="400" tween="cubic" easing="inout" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             <animation effect="slide" time="200" end="0,-38" condition="!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(rsshomelow)">Conditional</animation>
@@ -978,7 +978,7 @@
                     <visible>Substring(Control.GetLabel(4321),tv) + !Substring(Control.GetLabel(4321),featured) + !Substring(Control.GetLabel(4321),panel)</visible>
                 </control>
                 <control type="group">
-                    <visible>!Substring(Control.GetLabel(4321),system)</visible>
+                    <visible>!Stringcompare(Control.GetLabel(4321),systemclassic)</visible>
                     <control type="group" id="8030">
                         <posx>10</posx>
                         <visible>[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + StringCompare(Control.GetLabel(4322),widgetfanart)</visible>
@@ -1081,7 +1081,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <visible>Stringcompare(Control.GetLabel(4321),system)</visible>
+                    <visible>Stringcompare(Control.GetLabel(4321),systemclassic)</visible>
                     <include>HomeSystemWidget</include>
                 </control>
                 <control type="label">
@@ -1118,14 +1118,14 @@
                             <onclick>-</onclick>
                             <thumb>$INFO[Window(Home).Property(RecentMovie.1.Art(poster))]</thumb>
                             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.1.Art(fanart))]</property>
-                            <visible>Substring(Control.GetLabel(4321),recentmovies) + !SubString(Control.GetLabel(4321),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(Home).Property(RandomMovie.1.Title)]</label>
                             <onclick>-</onclick>
                             <thumb>$INFO[Window(Home).Property(RandomMovie.1.Art(poster))]</thumb>
                             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</property>
-                            <visible>Substring(Control.GetLabel(4321),randommovies) + !SubString(Control.GetLabel(4321),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(Home).Property(RecentMusicVideo.1.Title)]</label>
@@ -1152,74 +1152,19 @@
                             <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
                         </item>
                         <item>
-                            <label>$INFO[Window(Home).Property(SmartPlaylist1.1.Title)]$INFO[Window(Home).Property(SmartPlaylist1.1.EpisodeTitle)]$INFO[Window(Home).Property(SmartPlaylist1.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SmartPlaylist1.1.ShowTitle)]$INFO[Window(Home).Property(SmartPlaylist1.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SmartPlaylist1.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist1.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist1.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4321),1custom)</visible>
-                        </item>
-                        <item>
-                            <label>$INFO[Window(Home).Property(SmartPlaylist2.1.Title)]$INFO[Window(Home).Property(SmartPlaylist2.1.EpisodeTitle)]$INFO[Window(Home).Property(SmartPlaylist2.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SmartPlaylist2.1.ShowTitle)]$INFO[Window(Home).Property(SmartPlaylist2.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SmartPlaylist2.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist2.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist2.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4321),2custom)</visible>
-                        </item>
-                        <item>
-                            <label>$INFO[Window(Home).Property(SmartPlaylist3.1.Title)]$INFO[Window(Home).Property(SmartPlaylist3.1.EpisodeTitle)]$INFO[Window(Home).Property(SmartPlaylist3.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SmartPlaylist3.1.ShowTitle)]$INFO[Window(Home).Property(SmartPlaylist3.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SmartPlaylist3.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist3.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist3.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4321),3custom)</visible>
-                        </item>
-                        <item>
-                            <label>$INFO[Window(Home).Property(SmartPlaylist4.1.Title)]$INFO[Window(Home).Property(SmartPlaylist4.1.EpisodeTitle)]$INFO[Window(Home).Property(SmartPlaylist4.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SmartPlaylist4.1.ShowTitle)]$INFO[Window(Home).Property(SmartPlaylist4.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SmartPlaylist4.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist4.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist4.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4321),4custom)</visible>
-                        </item>
-                        <item>
-                            <label>$INFO[Window(Home).Property(SmartPlaylist5.1.Title)]$INFO[Window(Home).Property(SmartPlaylist5.1.EpisodeTitle)]$INFO[Window(Home).Property(SmartPlaylist5.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SmartPlaylist5.1.ShowTitle)]$INFO[Window(Home).Property(SmartPlaylist5.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SmartPlaylist5.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist5.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist5.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4321),5custom)</visible>
-                        </item>
-                        <item>
-                            <label>$INFO[Window(Home).Property(SmartPlaylist6.1.Title)]$INFO[Window(Home).Property(SmartPlaylist6.1.EpisodeTitle)]$INFO[Window(Home).Property(SmartPlaylist6.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SmartPlaylist6.1.ShowTitle)]$INFO[Window(Home).Property(SmartPlaylist6.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SmartPlaylist6.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist6.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist6.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4321),6custom)</visible>
-                        </item>
-                        <item>
                             <icon>DefaultAlbumCover.png</icon>
                             <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Art(thumb))]</thumb>
                             <label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
                             <label2>$INFO[Window(Home).Property(RandomAlbum.1.Artist)]</label2>
                             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Art(fanart))]</property>
                             <onclick>-</onclick>
-                            <visible>Substring(Control.GetLabel(4321),randomalbums) + !SubString(Control.GetLabel(4321),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
                         </item>
                         <item>
                             <icon>DefaultArtist.png</icon>
                             <thumb>$INFO[Window(Home).Property(RandomArtist.1.Art(thumb))]</thumb>
                             <label>$INFO[Window(Home).Property(RandomArtist.1.Title)]</label>
                             <label2>$INFO[Window(Home).Property(RandomArtist.1.Genre)]</label2>
-                            <property name="Description">$INFO[Window(Home).Property(RandomArtist.1.Artist_Description)]</property>
                             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.1.Art(fanart))]</property>
                             <onclick>-</onclick>
                             <visible>Substring(Control.GetLabel(4321),randomartists)</visible>
@@ -1231,7 +1176,7 @@
                             <label2>$INFO[Window(Home).Property(RecentAlbum.1.Artist)]</label2>
                             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.1.Art(fanart))]</property>
                             <onclick>-</onclick>
-                            <visible>Substring(Control.GetLabel(4321),recentalbums) + !SubString(Control.GetLabel(4321),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(Home).Property(RecommendedAlbum.1.Title)]</label>
@@ -1264,7 +1209,7 @@
                             <thumb>$INFO[Window(Home).Property(RecentEpisode.1.Art(thumb))]</thumb>
                             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.1.EpisodeNo)]</property>
                             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
-                            <visible>Substring(Control.GetLabel(4321),recenttv) + !SubString(Control.GetLabel(4321),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(Home).Property(RandomEpisode.1.Title)]</label>
@@ -1273,7 +1218,7 @@
                             <thumb>$INFO[Window(Home).Property(RandomEpisode.1.Art(thumb))]</thumb>
                             <property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisode.1.EpisodeNo)]</property>
                             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
-                            <visible>Substring(Control.GetLabel(4321),randomtv) + !SubString(Control.GetLabel(4321),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4321),randomtv)</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(Home).Property(RecommendedEpisode.1.Title)]</label>
@@ -1331,9 +1276,196 @@
                             <thumb>$INFO[Window(Home).Property(NextAired.1.Art(poster))]</thumb>
                             <label>$INFO[Window(Home).Property(NextAired.1.Label)]</label>
                             <label2>$INFO[Window(Home).Property(NextAired.1.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.1.ShortTime)]</label2>
-                            <onclick>SetFocus(5014)</onclick>
+                            <onclick>-</onclick>
                             <visible>Substring(Control.GetLabel(4321),nextaired)</visible>
                         </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist1.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist1.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist1.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist1.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist1.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist1.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),movies1custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist1.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist1.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist1.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist1.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist1.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist1.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),tv1custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist1.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist1.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist1.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist1.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist1.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist1.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4321),albums1custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist2.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist2.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist2.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist2.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist2.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist2.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),movies2custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist2.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist2.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist2.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist2.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist2.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist2.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),tv2custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist2.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist2.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist2.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist2.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist2.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist2.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4321),albums2custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist3.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist3.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist3.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist3.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist3.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist3.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),movies3custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist3.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist3.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist3.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist3.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist3.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist3.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),tv3custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist3.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist3.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist3.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist3.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist3.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist3.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4321),albums3custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist4.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist4.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist4.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist4.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist4.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist4.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),movies4custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist4.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist4.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist4.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist4.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist4.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist4.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),tv4custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist4.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist4.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist4.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist4.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist4.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist4.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4321),albums4custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist5.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist5.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist5.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist5.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist5.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist5.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),movies5custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist5.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist5.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist5.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist5.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist5.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist5.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),tv5custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist5.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist5.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist5.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist5.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist5.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist5.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4321),albums5custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist6.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist6.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist6.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist6.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist6.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist6.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),movies6custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist6.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist6.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist6.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist6.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist6.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist6.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4321),tv6custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist6.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist6.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist6.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist6.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist6.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist6.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4321),albums6custom)</visible>
+                        </item>
+
                     </content>
                 </control>
             </control>
@@ -1344,7 +1476,7 @@
             <posx>1542</posx>
             <posy>18</posy>
             <animation effect="slide" end="0,40" time="400" tween="cubic" easing="inout" condition="!Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            <visible>!Substring(Control.GetLabel(4325),weather) + !Substring(Control.GetLabel(4325),featured) + !Window.IsActive(1120) + !Substring(Control.GetLabel(4325),panel) + !IsEmpty(Control.GetLabel(4325))</visible>
+            <visible>Substring(Control.GetLabel(4325),classic) + !Window.IsActive(1120)</visible>
             <include>Animation_Widgets</include>
             <!--Unfocused widget-->
             <control type="group">
@@ -1407,7 +1539,7 @@
                     <visible>Substring(Control.GetLabel(4325),tv) + !Substring(Control.GetLabel(4325),featured) + !Substring(Control.GetLabel(4325),panel)</visible>
                 </control>
                 <control type="group">
-                    <visible>!Substring(Control.GetLabel(4325),system)</visible>
+                    <visible>!Stringcompare(Control.GetLabel(4325),systemclassic)</visible>
                     <control type="image">
                         <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(7000).ListItem.Icon]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -1450,7 +1582,7 @@
                     </control>
                 </control>
                 <control type="group">
-                    <visible>Stringcompare(Control.GetLabel(4325),system)</visible>
+                    <visible>Stringcompare(Control.GetLabel(4325),systemclassic)</visible>
                     <include>HomeSystemWidget</include>
                 </control>
                 <control type="label">
@@ -1487,14 +1619,14 @@
                             <onclick>-</onclick>
                             <thumb>$INFO[Window(Home).Property(RecentMovie.1.Art(poster))]</thumb>
                             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.1.Art(fanart))]</property>
-                            <visible>Substring(Control.GetLabel(4325),recentmovies) + !SubString(Control.GetLabel(4325),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4325),recentmovies,left)</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(Home).Property(RandomMovie.1.Title)]</label>
                             <onclick>-</onclick>
                             <thumb>$INFO[Window(Home).Property(RandomMovie.1.Art(poster))]</thumb>
                             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</property>
-                            <visible>Substring(Control.GetLabel(4325),randommovies) + !SubString(Control.GetLabel(4325),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4325),randommovies,left)</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(Home).Property(RecentMusicVideo.1.Title)]</label>
@@ -1521,74 +1653,19 @@
                             <visible>!IsEmpty(Window(Home).Property(RecommendedMovie.1.Title))</visible>
                         </item>
                         <item>
-                            <label>$INFO[Window(Home).Property(SecondSmartPlaylist1.1.Title)]$INFO[Window(Home).Property(SecondSmartPlaylist1.1.EpisodeTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist1.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SecondSmartPlaylist1.1.ShowTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist1.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SecondSmartPlaylist1.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SecondSmartPlaylist1.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondSmartPlaylist1.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4325),1custom)</visible>
-                        </item>
-                        <item>
-                            <label>$INFO[Window(Home).Property(SecondSmartPlaylist2.1.Title)]$INFO[Window(Home).Property(SecondSmartPlaylist2.1.EpisodeTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist2.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SecondSmartPlaylist2.1.ShowTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist2.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SecondSmartPlaylist2.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SecondSmartPlaylist2.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondSmartPlaylist2.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4325),2custom)</visible>
-                        </item>
-                        <item>
-                            <label>$INFO[Window(Home).Property(SecondSmartPlaylist3.1.Title)]$INFO[Window(Home).Property(SecondSmartPlaylist3.1.EpisodeTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist3.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SecondSmartPlaylist3.1.ShowTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist3.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SecondSmartPlaylist3.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SecondSmartPlaylist3.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondSmartPlaylist3.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4325),3custom)</visible>
-                        </item>
-                        <item>
-                            <label>$INFO[Window(Home).Property(SecondSmartPlaylist4.1.Title)]$INFO[Window(Home).Property(SecondSmartPlaylist4.1.EpisodeTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist4.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SecondSmartPlaylist4.1.ShowTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist4.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SecondSmartPlaylist4.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SecondSmartPlaylist4.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondSmartPlaylist4.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4325),4custom)</visible>
-                        </item>
-                        <item>
-                            <label>$INFO[Window(Home).Property(SecondSmartPlaylist5.1.Title)]$INFO[Window(Home).Property(SecondSmartPlaylist5.1.EpisodeTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist5.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SecondSmartPlaylist5.1.ShowTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist5.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SecondSmartPlaylist5.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SecondSmartPlaylist5.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondSmartPlaylist5.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4325),5custom)</visible>
-                        </item>
-                        <item>
-                            <label>$INFO[Window(Home).Property(SecondSmartPlaylist6.1.Title)]$INFO[Window(Home).Property(SecondSmartPlaylist6.1.EpisodeTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist6.1.Album)]</label>
-                            <label2>$INFO[Window(Home).Property(SecondSmartPlaylist6.1.ShowTitle)]$INFO[Window(Home).Property(SecondSmartPlaylist6.1.Artist)]</label2>
-                            <onclick>-</onclick>
-                            <thumb>$INFO[Window(Home).Property(SecondSmartPlaylist6.1.Thumb)]</thumb>
-                            <property name="Fanart">$INFO[Window(Home).Property(SecondSmartPlaylist6.1.Fanart)]</property>
-                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SecondSmartPlaylist6.1.EpisodeNo)]</property>
-                            <visible>Substring(Control.GetLabel(4325),6custom)</visible>
-                        </item>
-                        <item>
                             <icon>DefaultAlbumCover.png</icon>
                             <thumb>$INFO[Window(Home).Property(RandomAlbum.1.Art(thumb))]</thumb>
                             <label>$INFO[Window(Home).Property(RandomAlbum.1.Title)]</label>
                             <label2>$INFO[Window(Home).Property(RandomAlbum.1.Artist)]</label2>
                             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Art(fanart))]</property>
                             <onclick>-</onclick>
-                            <visible>Substring(Control.GetLabel(4325),randomalbums) + !SubString(Control.GetLabel(4325),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4325),randomalbums)</visible>
                         </item>
                         <item>
                             <icon>DefaultArtist.png</icon>
                             <thumb>$INFO[Window(Home).Property(RandomArtist.1.Art(thumb))]</thumb>
                             <label>$INFO[Window(Home).Property(RandomArtist.1.Title)]</label>
                             <label2>$INFO[Window(Home).Property(RandomArtist.1.Genre)]</label2>
-                            <property name="Description">$INFO[Window(Home).Property(RandomArtist.1.Artist_Description)]</property>
                             <property name="Fanart">$INFO[Window(Home).Property(RandomArtist.1.Art(fanart))]</property>
                             <onclick>-</onclick>
                             <visible>Substring(Control.GetLabel(4325),randomartists)</visible>
@@ -1600,7 +1677,7 @@
                             <label2>$INFO[Window(Home).Property(RecentAlbum.1.Artist)]</label2>
                             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.1.Art(fanart))]</property>
                             <onclick>-</onclick>
-                            <visible>Substring(Control.GetLabel(4325),recentalbums) + !SubString(Control.GetLabel(4325),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4325),recentalbums)</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(Home).Property(RecommendedAlbum.1.Title)]</label>
@@ -1632,7 +1709,7 @@
                             <thumb>$INFO[Window(Home).Property(RecentEpisode.1.Art(thumb))]</thumb>
                             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.1.EpisodeNo)]</property>
                             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
-                            <visible>Substring(Control.GetLabel(4325),recenttv) + !SubString(Control.GetLabel(4325),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4325),recenttv)</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(Home).Property(RandomEpisode.1.Title)]</label>
@@ -1641,7 +1718,7 @@
                             <thumb>$INFO[Window(Home).Property(RandomEpisode.1.Art(thumb))]</thumb>
                             <property name="EpisodeNumber">$INFO[Window(Home).Property(RandomEpisode.1.EpisodeNo)]</property>
                             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
-                            <visible>Substring(Control.GetLabel(4325),randomtv) + !SubString(Control.GetLabel(4325),custom)</visible>
+                            <visible>Substring(Control.GetLabel(4325),randomtv)</visible>
                         </item>
                         <item>
                             <label>$INFO[Window(Home).Property(RecommendedEpisode.1.Title)]</label>
@@ -1697,9 +1774,196 @@
                             <thumb>$INFO[Window(Home).Property(NextAired.1.Art(poster))]</thumb>
                             <label>$INFO[Window(Home).Property(NextAired.1.Label)]</label>
                             <label2>$INFO[Window(Home).Property(NextAired.1.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.1.ShortTime)]</label2>
-                            <onclick>SetFocus(5014)</onclick>
+                            <onclick>-</onclick>
                             <visible>Substring(Control.GetLabel(4325),nextaired)</visible>
                         </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist7.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist7.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist7.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist7.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist7.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist7.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),movies7custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist7.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist7.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist7.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist7.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist7.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist7.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),tv7custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist7.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist7.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist7.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist7.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist7.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist7.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4325),albums7custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist8.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist8.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist8.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist8.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist8.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist8.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),movies8custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist8.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist8.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist8.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist8.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist8.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist8.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),tv8custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist8.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist8.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist8.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist8.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist8.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist8.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4325),albums8custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist9.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist9.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist9.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist9.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist9.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist9.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),movies9custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist9.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist9.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist9.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist9.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist9.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist9.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),tv9custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist9.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist9.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist9.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist9.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist9.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist9.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4325),albums9custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist10.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist10.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist10.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist10.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist10.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist10.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),movies10custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist10.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist10.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist10.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist10.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist10.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist10.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),tv10custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist10.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist10.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist10.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist10.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist10.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist10.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4325),albums10custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist11.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist11.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist11.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist11.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist11.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist11.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),movies11custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist11.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist11.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist11.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist11.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist11.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist11.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),tv11custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist11.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist11.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist11.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist11.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist11.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist11.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4325),albums11custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist12.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist12.1.Art(poster))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist12.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist12.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist12.1.Art(fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist12.1.Art(landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),movies12custom)</visible>
+                        </item>
+                        <item>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist12.1.Title)]</label>
+                            <onclick>-</onclick>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist12.1.Art(thumb))]</thumb>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist12.1.Rating)]</property>
+                            <property name="EpisodeNumber">$INFO[Window(Home).Property(SmartPlaylist12.1.EpisodeNo)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist12.1.Art(tvshow.fanart))]</property>
+                            <property name="Landscape">$INFO[Window(Home).Property(SmartPlaylist12.1.Art(tvshow.landscape))]</property>
+                            <visible>Substring(Control.GetLabel(4325),tv12custom)</visible>
+                        </item>
+                        <item>
+                            <icon>DefaultAlbumCover.png</icon>
+                            <thumb>$INFO[Window(Home).Property(SmartPlaylist12.1.Art(thumb))]</thumb>
+                            <label>$INFO[Window(Home).Property(SmartPlaylist12.1.Title)]</label>
+                            <label2>$INFO[Window(Home).Property(SmartPlaylist12.1.Artist)]</label2>
+                            <property name="Rating">$INFO[Window(Home).Property(SmartPlaylist12.1.Rating)]</property>
+                            <property name="Year">$INFO[Window(Home).Property(SmartPlaylist12.1.Year)]</property>
+                            <property name="Fanart">$INFO[Window(Home).Property(SmartPlaylist12.1.Art(fanart))]</property>
+                            <onclick>-</onclick>
+                            <visible>Substring(Control.GetLabel(4325),albums12custom)</visible>
+                        </item>
+
                     </content>
                 </control>
             </control>
