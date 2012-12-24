@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="Custom1Widget">
         <item>
@@ -6826,6 +6826,48 @@
             <onclick>SetFocus(9007)</onclick>
             <icon>$INFO[Skin.String(IconPanelItem10.Icon)]</icon>
             <visible>Substring(Control.GetLabel(4321),IconPanel2)</visible>
+        </item>
+    </include>
+    <include name="FavouritesItems">
+        <item>
+            <label>$INFO[Window(home).Property(favourite.1.name)]</label>
+            <property name="Path">$INFO[Window(home).Property(favourite.1.Path)]</property>
+            <onclick>$INFO[Window(home).Property(favourite.1.Path)]</onclick>
+            <icon>$INFO[Window(home).Property(favourite.1.thumb)]</icon>
+            <visible>!IsEmpty(Window(home).Property(favourite.1.Path))</visible>
+            <visible>Substring(Control.GetLabel(4321),favourite)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(favourite.2.name)]</label>
+            <property name="Path">$INFO[Window(home).Property(favourite.2.Path)]</property>
+            <onclick>$INFO[Window(home).Property(favourite.2.Path)]</onclick>
+            <icon>$INFO[Window(home).Property(favourite.2.thumb)]</icon>
+            <visible>!IsEmpty(Window(home).Property(favourite.2.Path))</visible>
+            <visible>Substring(Control.GetLabel(4321),favourite)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(favourite.3.name)]</label>
+            <property name="Path">$INFO[Window(home).Property(favourite.3.Path)]</property>
+            <onclick>$INFO[Window(home).Property(favourite.3.Path)]</onclick>
+            <icon>$INFO[Window(home).Property(favourite.3.thumb)]</icon>
+            <visible>!IsEmpty(Window(home).Property(favourite.3.Path))</visible>
+            <visible>Substring(Control.GetLabel(4321),favourite)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(favourite.4.name)]</label>
+            <property name="Path">$INFO[Window(home).Property(favourite.4.Path)]</property>
+            <onclick>$INFO[Window(home).Property(favourite.4.Path)]</onclick>
+            <icon>$INFO[Window(home).Property(favourite.4.thumb)]</icon>
+            <visible>!IsEmpty(Window(home).Property(favourite.4.Path))</visible>
+            <visible>Substring(Control.GetLabel(4321),favourite)</visible>
+        </item>
+        <item>
+            <label>$INFO[Window(home).Property(favourite.5.name)]</label>
+            <property name="Path">$INFO[Window(home).Property(favourite.5.Path)]</property>
+            <onclick>$INFO[Window(home).Property(favourite.5.Path)]</onclick>
+            <icon>$INFO[Window(home).Property(favourite.5.thumb)]</icon>
+            <visible>!IsEmpty(Window(home).Property(favourite.5.Path))</visible>
+            <visible>Substring(Control.GetLabel(4321),favourite)</visible>
         </item>
     </include>
 </includes>

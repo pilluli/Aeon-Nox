@@ -235,8 +235,6 @@
             <onclick condition="Container.Content(artists)">SetProperty(Area,Artists,home)</onclick>
             <onclick condition="Container.Content(addons)">SetProperty(Area,Addons,home)</onclick>
             <onclick>ActivateWindow(1126)</onclick>
-            <!--             <ondown condition="!Control.IsVisible(1801) + !Control.IsVisible(1800) + Control.IsVisible(3000)">3000</ondown>
- -->
         </control>
     </include>
     <include name="Media_Menu_Tooltip">
@@ -369,20 +367,6 @@
                         <onclick>ActivateWindow(1121)</onclick>
                         <visible>!Window.IsActive(musicplaylisteditor)</visible>
                     </control>
-                    <control type="button" id="1801">
-                        <include>Objects_MediaMenuButtonIcons</include>
-                        <label>[B]$LOCALIZE[31484][/B]</label>
-                        <onclick condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer],1)</onclick>
-                        <onclick condition="!Skin.HasSetting(fstrailer) + !Control.IsVisible(57) + !Control.IsVisible(510) + !Control.IsVisible(52) + !Control.IsVisible(50) + !Control.IsVisible(500)">SetFocus(50)</onclick>
-                        <onclick condition="Skin.HasSetting(fstrailer) | Control.IsVisible(57) | Control.IsVisible(510) | Control.IsVisible(52) | Control.IsVisible(50) | Control.IsVisible(500)">PlayMedia($ESCINFO[ListItem.Trailer])</onclick>
-                        <visible>!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)</visible>
-                    </control>
-                    <control type="button" id="1800">
-                        <include>Objects_MediaMenuButtonIcons</include>
-                        <label>[B]$LOCALIZE[208] $LOCALIZE[20391][/B]</label>
-                        <onclick>PlayMedia($ESCINFO[Window.Property(SongToMusicVideo.Path)])</onclick>
-                        <visible>!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)</visible>
-                    </control>
                     <control type="button" id="3">
                         <include>Objects_MediaMenuButtonIcons</include>
                         <onleft>ClearProperty(viewtypeselect,home)</onleft>
@@ -402,6 +386,13 @@
                     <include condition="Window.IsActive(videoplaylist)">VideoPlaylistButtons</include>
                     <include condition="Window.IsActive(pictures)">PicturesButtons</include>
                     <include condition="Window.IsActive(musicplaylisteditor)">PlaylistEditorButtons</include>
+                    <control type="button" id="1800">
+                        <include>Objects_MediaMenuButtonIcons</include>
+                        <label>31316</label>
+                        <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
+                        <onclick condition="Container.Content(TVShows) | Container.Content(seasons) | Container.Content(episodes)">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,landscape,clearlogo,clearart)</onclick>
+                        <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,landscape,clearlogo,clearart)</onclick>
+                    </control>
                     <include condition="!Skin.HasSetting(hideoptions)">ViewtypeSettingsButton</include>
                 </control>
                 <control type="grouplist">
@@ -413,12 +404,6 @@
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/Presentation.png</texture>
                         <visible>!Window.IsActive(musicplaylisteditor)</visible>
-                    </control>
-                    <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(1800) | Control.HasFocus(1801)]">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                        <texture>special://skin/extras/BigIcons/fim.png</texture>
-                        <visible>Control.IsVisible(1800) | Control.IsVisible(1801)</visible>
                     </control>
                     <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(3)">Conditional</animation>
@@ -601,6 +586,12 @@
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/so.png</texture>
                         <visible>Control.IsVisible(224) + Window.IsActive(addonbrowser)</visible>
+                    </control>
+                    <control type="image">
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(1800)">Conditional</animation>
+                        <include>MediaMenuIcons</include>
+                        <texture>special://skin/extras/BigIcons/Drivedownload.png</texture>
+                        <visible>Control.IsVisible(1800)</visible>
                     </control>
                     <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(1665)">Conditional</animation>

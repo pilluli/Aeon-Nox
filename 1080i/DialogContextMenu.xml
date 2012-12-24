@@ -116,12 +116,14 @@
                 <align>center</align>
                 <font>Font_Reg19</font>
                 <textoffsety>12</textoffsety>
-                <label>$LOCALIZE[31484]</label>
-                <visible>Container.Content(movies) + !IsEmpty(ListItem.Trailer) + Skin.HasSetting(trailerincontextmenu)</visible>
-                <onclick>Dialog.Close(106)</onclick>
-                <onclick>SetFocus(7566)</onclick>
+                <label>$VAR[ContextMenuTrailerButtonLabelVar]</label>
+                <visible>Container.Content(movies) | [!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)]</visible>
+                <onclick condition="Container.Content(movies) + !IsEmpty(ListItem.Trailer)">Dialog.Close(106)</onclick>
+                <onclick condition="Container.Content(movies) + !IsEmpty(ListItem.Trailer)">SetFocus(7566)</onclick>
+                <onclick condition="Container.Content(movies) + IsEmpty(ListItem.Trailer)">ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Label] Trailer,return)</onclick>                
+                <onclick condition="!IsEmpty(Window.Property(SongToMusicVideo.Path)) + Window.IsActive(musiclibrary)">PlayMedia($ESCINFO[Window.Property(SongToMusicVideo.Path)])</onclick>
             </control>
-            <control type="button" id="2018">
+            <control type="button" id="2010">
                 <height>58</height>
                 <width>462</width>
                 <textcolor>context</textcolor>
@@ -132,9 +134,10 @@
                 <align>center</align>
                 <font>Font_Reg19</font>
                 <textoffsety>12</textoffsety>
-                <label>$LOCALIZE[42286]</label>
-                <visible>Container.Content(movies) + IsEmpty(ListItem.Trailer) + Skin.HasSetting(trailerincontextmenu)</visible>
-                <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Label] Trailer,return)</onclick>
+                <label>518</label>
+                <visible>Window.IsActive(addonbrowser) + [Substring(ListItem.Property(Addon.ID),script.,left) | Substring(ListItem.Property(Addon.ID),plugin.,left)]</visible>
+                <onclick condition="Substring(ListItem.Property(Addon.ID),script.,left)">Runscript($INFO[ListItem.Property(Addon.ID)])</onclick>
+                <onclick condition="Substring(ListItem.Property(Addon.ID),plugin.,left)">RunAddon($INFO[ListItem.Property(Addon.ID)])</onclick>
             </control>
             <control type="button" id="2008">
                 <height>58</height>

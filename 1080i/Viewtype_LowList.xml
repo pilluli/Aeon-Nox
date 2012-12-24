@@ -695,11 +695,12 @@
                             <visible>!StringCompare(Control.GetLabel(2244),empty.png)</visible>
                         </control>
                         <control type="image">
-                            <posy>-165</posy>
-                            <width>390</width>
-                            <height>150</height>
-                            <fadetime>400</fadetime>
-                            <texture background="true">$VAR[TVShowLogoVar]</texture>
+                            <posy>-135</posy>
+                            <width>420</width>
+                            <height>90</height>
+                            <aspectratio scalediffuse="false">stretch</aspectratio>
+                            <fadetime>400</fadetime> 
+                            <texture diffuse="thumbs/banner_mask.png" background="true" fallback="empty.png">$VAR[BannerVar]</texture>
                             <visible>Container.Content(episodes) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(movies)</visible>
                             <visible>!Skin.HasSetting(lowlistbanner)</visible>
                         </control>
@@ -909,8 +910,7 @@
                 <visible>!Skin.HasSetting(nohighlist)</visible>
                 <animation effect="zoom" start="70" end="100" center="auto" tween="back" time="400" condition="Control.HasFocus(69)">Conditional</animation>
                 <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
-                <onleft condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onleft>
-                <onleft condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(trailerincontextmenu)">9000</onleft>
+                <onleft>9000</onleft>
                 <onright>511</onright>
                 <animation effect="fade" end="70" time="400">Focus</animation>
                 <enable>!Skin.HasSetting(nohighlist)</enable>
@@ -925,8 +925,7 @@
                 <visible>Control.IsVisible(511)</visible>
                 <visible>Skin.HasSetting(nohighlist)</visible>
                 <texturesliderbackground>views/scrollbarbacklist.png</texturesliderbackground>
-                <onleft condition="!IsEmpty(ListItem.Trailer) + !Skin.HasSetting(trailerincontextmenu)">SetFocus(1801)</onleft>
-                <onleft condition="IsEmpty(ListItem.Trailer) | Skin.HasSetting(trailerincontextmenu)">9000</onleft>
+                <onleft>9000</onleft>
                 <onright>511</onright>
                 <animation effect="fade" end="70" time="400">Focus</animation>
                 <enable>Skin.HasSetting(nohighlist)</enable>
