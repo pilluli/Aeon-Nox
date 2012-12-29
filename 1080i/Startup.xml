@@ -4,10 +4,7 @@
     <backgroundcolor>backgroundcolor</backgroundcolor>
     <allowoverlay>no</allowoverlay>
     <include condition="!Skin.HasSetting(firstrun4.0)">AutoConfig</include>
-    <onload condition="Stringcompare(Skin.String(startupcount),2)">Skin.SetString(startupcount,3)</onload>
-    <onload condition="Stringcompare(Skin.String(startupcount),1)">Skin.SetString(startupcount,2)</onload>
-    <onload condition="IsEmpty(Skin.String(startupcount))">Skin.SetString(startupcount,1)</onload>
-	<onload>RunScript(script.favourites)</onload>
+    <onload>RunScript(script.favourites)</onload>
     <onload condition="Substring(Skin.String(widgetlist),actors) | Substring(Skin.String(widget2list),actors) | Skin.HasSetting(ActorBirthdayRSS)">RunScript(script.metadata.actors,borntoday,10,random)</onload>
     <onload condition="Substring(Skin.String(backgroundlist),googleweather2) + System.HasAddon(script.widget.weatherworld)">RunScript(script.widget.weatherworld,time=10&amp;limit=9&amp;mapsize=1920x1080&amp;tilesize=360x60&amp;window=10000&amp;condition=StringCompare(Control.GetLabel(4322),googleweather2))</onload>
     <onload condition="Library.HasContent(tvshows)">RunScript(script.tv.show.next.aired,silent=True)</onload>
@@ -59,6 +56,12 @@
             </control>
         </control>
         <control type="image">
+            <include>Animation_WindowFade200</include>
+            <include>FullscreenDimensions</include>
+            <colordiffuse>black</colordiffuse>
+            <texture>common/white.png</texture>
+        </control>
+        <control type="image">
             <posx>923</posx>
             <posy>603</posy>
             <width>74</width>
@@ -75,17 +78,6 @@
             <aspectratio>keep</aspectratio>
             <colordiffuse>white</colordiffuse>
             <texture>XBMC_Logo.png</texture>
-        </control>
-        <control type="label">
-            <posx>160</posx>
-            <posy>900</posy>
-            <width>1600</width>
-            <height>50</height>
-            <align>center</align>
-            <font>Font_MainClassic4</font>
-            <label>42283</label>
-            <textoffsetx>15</textoffsetx>
-            <visible>![Stringcompare(Skin.String(startupcount),3) | Skin.HasTheme(White)]</visible>
         </control>
         <control type="videowindow">
             <include>FullscreenDimensions</include>

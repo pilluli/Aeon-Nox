@@ -129,14 +129,14 @@
             <orientation>horizontal</orientation>
             <itemgap>50</itemgap>
             <control type="button" id="3000">
-                <label>Play Game</label>
+                <label>$ADDON[script.games.rom.collection.browser 54006]</label>
                 <include>HiddenObject</include>
             </control>
             <control type="button" id="3001">
-                <label>Play video</label>
+                <label>31332</label>
                 <include>HiddenObject</include>
                 <onclick>PlayMedia($INFO[ListItem.Property(gameplayinfo)],1)</onclick>
-                <visible>!IsEmpty(ListItem.Property(autoplayvideoinfo)) + !IsEmpty(ListItem.Property(gameplayinfo))</visible>
+                <visible>!IsEmpty(ListItem.Property(gameplayinfo))</visible>
             </control>
         </control>
         <control type="group">
@@ -192,7 +192,7 @@
                     <height>312</height>
                     <font>Font_Reg19</font>
                     <pagecontrol>60</pagecontrol>
-                    <autoscroll delay="15000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                     <textcolor>grey2</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <label>$INFO[ListItem.Property(plot)]</label>
@@ -207,7 +207,7 @@
                         <control type="label">
                             <width min="50" max="400">auto</width>
                             <font>Font_Reg19</font>
-                            <label>Publisher:</label>
+                            <label>$ADDON[script.games.rom.collection.browser 50002]:</label>
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <aligny>bottom</aligny>
@@ -231,7 +231,7 @@
                         <control type="label">
                             <width min="50" max="400">auto</width>
                             <font>Font_Reg19</font>
-                            <label>Developer:</label>
+                            <label>$ADDON[script.games.rom.collection.browser 50003]:</label>
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <aligny>bottom</aligny>
@@ -255,7 +255,7 @@
                         <control type="label">
                             <width min="50" max="400">auto</width>
                             <font>Font_Reg19</font>
-                            <label>Players:</label>
+                            <label>$ADDON[script.games.rom.collection.browser 54004]:</label>
                             <textcolor>$VAR[SubTitleColorVar]</textcolor>
                             <shadowcolor>black</shadowcolor>
                             <aligny>bottom</aligny>

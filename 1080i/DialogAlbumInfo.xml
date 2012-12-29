@@ -222,7 +222,7 @@
                     <height>270</height>
                     <font>Font_Reg19</font>
                     <pagecontrol>60</pagecontrol>
-                    <autoscroll delay="15000" time="5000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <autoscroll delay="15000" time="2000" repeat="10000">Skin.HasSetting(AutoScroll)</autoscroll>
                     <textcolor>white3</textcolor>
                     <shadowcolor>black</shadowcolor>
                     <animation effect="fade" time="400">VisibleChange</animation>
@@ -580,7 +580,7 @@
         <control type="grouplist" id="5000">
             <onup>9000</onup>
             <onleft>5000</onleft>
-            <onright condition="Control.IsVisible(50)">50</onright>
+            <onright condition="!Control.IsVisible(5223)">50</onright>
             <onright condition="Control.IsVisible(5223)">5223</onright>
             <ondown condition="ControlGroup(5000).HasFocus(25)">5222</ondown>
             <ondown condition="ControlGroup(5000).HasFocus(13) | ControlGroup(5000).HasFocus(14)">60</ondown>
@@ -651,6 +651,8 @@
             <aspectratio>keep</aspectratio>
             <colordiffuse>white3</colordiffuse>
             <texture>$INFO[ListItem.Property(Album_Label),flags/music/recordlabel/,.png]</texture>
+            <visible>!ControlGroup(5000).HasFocus(25)</visible>
+            <include>Animation_VisibleChange200</include>
         </control>
         <!-- Tracks / Discography -->
         <control type="list" id="50">

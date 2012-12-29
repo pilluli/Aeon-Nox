@@ -92,28 +92,13 @@
         </control>
     </include>
     <include name="MusicLibraryButtons_Left">
-        <control type="radiobutton" id="16">
-            <label>589</label>
-            <include>Objects_MediaMenuButtonIcons</include>
-        </control>
-        <control type="edit" id="19">
-            <visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
-            <label>587</label>
-            <hinttext></hinttext>
-            <include>Objects_MediaMenuButtonIcons</include>
-        </control>
-        <control type="radiobutton" id="20">
-            <visible>Container.CanFilterAdvanced</visible>
-            <label>587</label>
-            <hinttext></hinttext>
-            <selected>Container.Filtered</selected>
-            <onclick>SetFocus(50)</onclick>
-            <onclick>Filter</onclick>
-            <include>Objects_MediaMenuButtonIcons</include>
-        </control>
         <control type="button" id="8">
             <include>Objects_MediaMenuButtonIcons</include>
             <label>137</label>
+        </control>
+        <control type="radiobutton" id="16">
+            <label>589</label>
+            <include>Objects_MediaMenuButtonIcons</include>
         </control>
         <control type="radiobutton" id="100">
             <include>Objects_MediaMenuButtonIcons</include>
@@ -121,6 +106,13 @@
             <onclick>ReplaceWindow(MusicFiles)</onclick>
             <selected>Window.IsVisible(MusicLibrary)</selected>
             <visible>Window.IsActive(MusicLibrary)</visible>
+        </control>
+        <control type="button" id="1666">
+            <include>Objects_MediaMenuButtonIcons</include>
+            <label>42315</label>
+            <onclick>SetFocus(50)</onclick>
+            <onclick>ActivateWindow(1148)</onclick>
+            <visible>SubString(Container.FolderPath,special://musicplaylists/,left)</visible>
         </control>
     </include>
     <include name="VideoLibraryAltButtons_Left">
@@ -134,24 +126,10 @@
             <label>20411</label>
             <visible>Container.Content()</visible>
         </control>
-        <control type="edit" id="19">
-            <visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
-            <label>587</label>
-            <hinttext></hinttext>
-            <include>Objects_MediaMenuButtonIcons</include>
-        </control>
-        <control type="radiobutton" id="20">
-            <visible>Container.CanFilterAdvanced</visible>
-            <label>587</label>
-            <hinttext></hinttext>
-            <selected>Container.Filtered</selected>
-            <onclick>SetFocus(50)</onclick>
-            <onclick>Filter</onclick>
-            <include>Objects_MediaMenuButtonIcons</include>
-        </control>
         <control type="button" id="10">
             <include>Objects_MediaMenuButtonIcons</include>
             <label>-</label>
+            <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
         </control>
         <control type="radiobutton" id="7">
             <label>-</label>
@@ -165,18 +143,27 @@
             <selected>system.ismaster</selected>
             <visible>system.haslocks</visible>
         </control>
+        <control type="button" id="1666">
+            <include>Objects_MediaMenuButtonIcons</include>
+            <label>42315</label>
+            <onclick>SetFocus(50)</onclick>
+            <onclick>ActivateWindow(1148)</onclick>
+            <visible>SubString(Container.FolderPath,special://videoplaylists/,left)</visible>
+        </control>
     </include>
     <include name="MusicFilesButtons">
         <!-- not integrated? -->
         <control type="button" id="7">
             <include>Objects_MediaMenuButtonIcons</include>
             <label>136</label>
+            <visible>!SubString(Container.FolderPath,special://musicplaylists/,left)</visible>
         </control>
         <control type="button" id="9">
             <include>Objects_MediaMenuButtonIcons</include>
         </control>
         <control type="button" id="10">
             <include>Objects_MediaMenuButtonIcons</include>
+            <visible>Control.IsEnabled(10)</visible>
         </control>
         <control type="radiobutton" id="102">
             <include>Objects_MediaMenuButtonIcons</include>
@@ -188,6 +175,13 @@
         <control type="button" id="17">
             <include>Objects_MediaMenuButtonIcons</include>
             <label>527</label>
+        </control>
+        <control type="button" id="1666">
+            <include>Objects_MediaMenuButtonIcons</include>
+            <label>42315</label>
+            <onclick>SetFocus(50)</onclick>
+            <onclick>ActivateWindow(1148)</onclick>
+            <visible>SubString(Container.FolderPath,special://musicplaylists/,left)</visible>
         </control>
     </include>
     <include name="PicturesButtons">
@@ -372,11 +366,30 @@
                         <onleft>ClearProperty(viewtypeselect,home)</onleft>
                         <onleft>ActivateWindow(1121)</onleft>
                         <label>103</label>
+                        <visible>Control.IsEnabled(3)</visible>
                     </control>
                     <control type="togglebutton" id="4">
                         <label>$LOCALIZE[31164]: $LOCALIZE[584]</label>
                         <altlabel>$LOCALIZE[31164]: $LOCALIZE[585]</altlabel>
                         <include>Objects_MediaMenuButtonIcons</include>
+                        <visible>Control.IsEnabled(4)</visible>
+                    </control>
+                    <control type="edit" id="19">
+                        <visible>Container.CanFilter + !Container.CanFilterAdvanced</visible>
+                        <label>587</label>
+                        <hinttext></hinttext>
+                        <visible>!Container.Content()</visible>
+                        <include>Objects_MediaMenuButtonIcons</include>
+                    </control>
+                    <control type="radiobutton" id="20">
+                        <visible>Container.CanFilterAdvanced</visible>
+                        <label>587</label>
+                        <hinttext></hinttext>
+                        <selected>Container.Filtered</selected>
+                        <onclick>SetFocus(50)</onclick>
+                        <onclick>Filter</onclick>
+                        <include>Objects_MediaMenuButtonIcons</include>
+                        <visible>!Container.Content()</visible>
                     </control>
                     <include condition="Window.IsActive(videolibrary)">VideoLibraryAltButtons_Left</include>
                     <include condition="Window.IsActive(AddonBrowser)">AddonBrowserButtons</include>
@@ -389,9 +402,10 @@
                     <control type="button" id="1800">
                         <include>Objects_MediaMenuButtonIcons</include>
                         <label>31316</label>
-                        <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)</visible>
-                        <onclick condition="Container.Content(TVShows) | Container.Content(seasons) | Container.Content(episodes)">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,landscape,clearlogo,clearart)</onclick>
-                        <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,landscape,clearlogo,clearart)</onclick>
+                        <visible>Container.Content(movies) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes) | Container.Content(musicvideos)</visible>
+                        <onclick condition="Container.Content(TVShows) | Container.Content(seasons) | Container.Content(episodes)">RunScript(script.artwork.downloader,mode=custom,mediatype=tvshow,silent=true,extrafanart,poster,fanart,banner,clearlogo,clearart,landscape,characterart,seasonbanner,seasonposter,seasonlandscape)</onclick>
+                        <onclick condition="Container.Content(musicvideos)">RunScript(script.artwork.downloader,mode=custom,mediatype=musicvideo,silent=true,poster,clearlogo,fanart,extrafanart)</onclick>
+                        <onclick condition="Container.Content(movies)">RunScript(script.artwork.downloader,mode=custom,mediatype=movie,silent=true,extrafanart,poster,fanart,banner,clearlogo,clearart,landscape,discart,extrathumbs)</onclick>
                     </control>
                     <include condition="!Skin.HasSetting(hideoptions)">ViewtypeSettingsButton</include>
                 </control>
@@ -418,6 +432,12 @@
                         <visible>Control.IsVisible(4)</visible>
                     </control>
                     <control type="image">
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(19) + !Control.HasFocus(20)">Conditional</animation>
+                        <include>MediaMenuIcons</include>
+                        <texture>special://skin/extras/BigIcons/Magicwand.png</texture>
+                        <visible>Control.IsVisible(19) | [Control.IsVisible(20) + !Window.IsActive(musicplaylist)]</visible>
+                    </control>
+                    <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(7)">Conditional</animation>
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/Format.png</texture>
@@ -434,6 +454,12 @@
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/Microphone.png</texture>
                         <visible>Control.IsVisible(10) + Window.IsActive(musicfiles)</visible>
+                    </control>
+                    <control type="image">
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(8)">Conditional</animation>
+                        <include>MediaMenuIcons</include>
+                        <texture>special://skin/extras/BigIcons/Search.png</texture>
+                        <visible>Control.IsVisible(8) + !Window.IsActive(musicplaylisteditor)</visible>
                     </control>
                     <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(16)">Conditional</animation>
@@ -464,18 +490,6 @@
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/ButtonShuffle.png</texture>
                         <visible>Control.IsVisible(9) + Window.IsActive(pictures)</visible>
-                    </control>
-                    <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(19) + !Control.HasFocus(20)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                        <texture>special://skin/extras/BigIcons/Magicwand.png</texture>
-                        <visible>Control.IsVisible(19) | [Control.IsVisible(20) + !Window.IsActive(musicplaylist)]</visible>
-                    </control>
-                    <control type="image">
-                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(8)">Conditional</animation>
-                        <include>MediaMenuIcons</include>
-                        <texture>special://skin/extras/BigIcons/Search.png</texture>
-                        <visible>Control.IsVisible(8) + !Window.IsActive(musicplaylisteditor)</visible>
                     </control>
                     <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="![Control.HasFocus(100) | Control.HasFocus(102)]">Conditional</animation>
@@ -555,7 +569,18 @@
                         <include>MediaMenuIcons</include>
                         <texture>special://skin/extras/BigIcons/QUICKPAR.png</texture>
                         <visible>Control.IsVisible(7) + Window.IsActive(videolibrary)</visible>
-                        <visible>!SubString(Container.FolderPath,videodb://,left)</visible>
+                    </control>
+                    <control type="image">
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(11)">Conditional</animation>
+                        <include>MediaMenuIcons</include>
+                        <texture>special://skin/extras/BigIcons/Key.png</texture>
+                        <visible>Control.IsVisible(11) + Window.IsActive(videolibrary)</visible>
+                    </control>
+                    <control type="image">
+                        <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(1666)">Conditional</animation>
+                        <include>MediaMenuIcons</include>
+                        <texture>special://skin/extras/BigIcons/Application.png</texture>
+                        <visible>Control.IsVisible(1666)</visible>
                     </control>
                     <control type="image">
                         <animation effect="fade" start="100" end="55" time="0" condition="!Control.HasFocus(5)">Conditional</animation>
@@ -690,13 +715,6 @@
                 <height>260</height>
                 <width>260</width>
                 <texture fallback="DefaultAlbumCover.png" diffuse="thumbs/cdcover_mask.png">$INFO[MusicPlayer.Cover]</texture>
-            </control>
-            <control type="image">
-                <posx>20</posx>
-                <height>260</height>
-                <width>260</width>
-                <texture diffuse="thumbs/cdcover_mask.png">$INFO[Player.FolderPath,,folder.jpg]</texture>
-                <visible>!Skin.HasSetting(NowPlayingFolderJPG)</visible>
             </control>
             <control type="image">
                 <posy>-20</posy>

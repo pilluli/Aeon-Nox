@@ -117,6 +117,12 @@
                         <visible>Library.HasContent(musicvideos)</visible>
                     </item>
                     <item>
+                        <label>31509</label>
+                        <onclick>Skin.SetString(ItemToEdit.InfoLine,favourites)</onclick>
+                        <onclick>Dialog.Close(1161)</onclick>
+                        <visible>System.HasAddon(script.favourites)</visible>
+                    </item>
+                    <item>
                         <label>31500</label>
                         <onclick>Skin.SetString(ItemToEdit.InfoLine,randompics)</onclick>
                         <onclick>Dialog.Close(1161)</onclick>
@@ -130,6 +136,17 @@
                     <item>
                         <label>31510</label>
                         <onclick>Skin.SetString(ItemToEdit.InfoLine,weather)</onclick>
+                        <onclick>Dialog.Close(1161)</onclick>
+                    </item>
+                    <item>
+                        <label>31357</label>
+                        <onclick>Skin.SetString(ItemToEdit.InfoLine,mixed)</onclick>
+                        <onclick>Dialog.Close(1161)</onclick>
+                        <visible>Skin.HasSetting(AlternateTimeStats)</visible>
+                    </item>
+                    <item>
+                        <label>31358</label>
+                        <onclick>Skin.SetString(ItemToEdit.InfoLine,system)</onclick>
                         <onclick>Dialog.Close(1161)</onclick>
                     </item>
                     <item>

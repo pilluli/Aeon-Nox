@@ -1447,7 +1447,6 @@
             <property name="Path">$INFO[Window(Home).Property(SmartPlaylist1.8.Play)]</property>
             <visible>Substring(Control.GetLabel(4321),tv1custom)</visible>
         </item>
-    
     </include>
     <include name="Custom2WidgetEpisodes">
         <item>
@@ -1636,7 +1635,6 @@
             <property name="Path">$INFO[Window(Home).Property(SmartPlaylist2.8.Play)]</property>
             <visible>Substring(Control.GetLabel(4321),tv2custom)</visible>
         </item>
-    
     </include>
     <include name="Custom3WidgetEpisodes">
         <item>
@@ -1731,7 +1729,7 @@
             <property name="Path">$INFO[Window(Home).Property(SmartPlaylist3.4.Play)]</property>
             <visible>Substring(Control.GetLabel(4321),tv3custom)</visible>
         </item>
-        </include>
+    </include>
     <include name="Custom3WidgetEpisodesHome">
         <item>
             <label>$INFO[Window(Home).Property(SmartPlaylist3.5.Title)]</label>
@@ -1825,7 +1823,6 @@
             <property name="Path">$INFO[Window(Home).Property(SmartPlaylist3.8.Play)]</property>
             <visible>Substring(Control.GetLabel(4321),tv3custom)</visible>
         </item>
-    
     </include>
     <include name="Custom4WidgetEpisodes">
         <item>
@@ -2014,7 +2011,6 @@
             <property name="Path">$INFO[Window(Home).Property(SmartPlaylist4.8.Play)]</property>
             <visible>Substring(Control.GetLabel(4321),tv4custom)</visible>
         </item>
-    
     </include>
     <include name="Custom5WidgetEpisodes">
         <item>
@@ -2203,7 +2199,6 @@
             <property name="Path">$INFO[Window(Home).Property(SmartPlaylist5.8.Play)]</property>
             <visible>Substring(Control.GetLabel(4321),tv5custom)</visible>
         </item>
-    
     </include>
     <include name="Custom6WidgetEpisodes">
         <item>
@@ -2392,7 +2387,6 @@
             <property name="Path">$INFO[Window(Home).Property(SmartPlaylist6.8.Play)]</property>
             <visible>Substring(Control.GetLabel(4321),tv6custom)</visible>
         </item>
-    
     </include>
     <include name="Custom1WidgetMusic">
         <item>
@@ -3601,7 +3595,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.1.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.1.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.1.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.2.Title)]</label>
@@ -3627,7 +3621,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.2.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.2.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.2.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.3.Title)]</label>
@@ -3653,7 +3647,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.3.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.3.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.3.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.4.Title)]</label>
@@ -3679,7 +3673,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.4.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.4.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.4.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.5.Title)]</label>
@@ -3705,7 +3699,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.5.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.5.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.5.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.6.Title)]</label>
@@ -3731,7 +3725,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.6.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.6.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.6.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.7.Title)]</label>
@@ -3757,7 +3751,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.7.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.7.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.7.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.8.Title)]</label>
@@ -3783,7 +3777,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomMovie.8.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomMovie.8.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomMovie.8.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randommovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randommovies,left)</visible>
         </item>
     </include>
     <include name="LatestMoviesItems">
@@ -3811,7 +3805,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.1.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.1.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.1.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.2.Title)]</label>
@@ -3837,7 +3831,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.2.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.2.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.2.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.3.Title)]</label>
@@ -3863,7 +3857,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.3.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.3.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.3.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.4.Title)]</label>
@@ -3889,7 +3883,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.4.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.4.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.4.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.5.Title)]</label>
@@ -3915,7 +3909,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.5.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.5.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.5.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.6.Title)]</label>
@@ -3941,7 +3935,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.6.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.6.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.6.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.7.Title)]</label>
@@ -3967,7 +3961,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.7.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.7.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.7.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.8.Title)]</label>
@@ -3993,7 +3987,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentMovie.8.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentMovie.8.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentMovie.8.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recentmovies,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentmovies,left)</visible>
         </item>
     </include>
     <include name="BornActorsItems">
@@ -4308,7 +4302,7 @@
             <property name="RecordLabel">$INFO[Window(Home).Property(RandomAlbum.1.RecordLabel)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RandomAlbum.1.Genre)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4323,7 +4317,7 @@
             <property name="RecordLabel">$INFO[Window(Home).Property(RandomAlbum.2.RecordLabel)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RandomAlbum.2.Genre)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4338,7 +4332,7 @@
             <property name="RecordLabel">$INFO[Window(Home).Property(RandomAlbum.3.RecordLabel)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RandomAlbum.3.Genre)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4353,7 +4347,7 @@
             <property name="RecordLabel">$INFO[Window(Home).Property(RandomAlbum.4.RecordLabel)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RandomAlbum.4.Genre)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4368,7 +4362,7 @@
             <property name="RecordLabel">$INFO[Window(Home).Property(RandomAlbum.5.RecordLabel)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RandomAlbum.5.Genre)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
         </item>
     </include>
     <include name="RandomAlbumsItemsHome">
@@ -4385,7 +4379,7 @@
             <property name="RecordLabel">$INFO[Window(Home).Property(RandomAlbum.6.RecordLabel)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RandomAlbum.6.Genre)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4400,7 +4394,7 @@
             <property name="RecordLabel">$INFO[Window(Home).Property(RandomAlbum.7.RecordLabel)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RandomAlbum.7.Genre)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4415,7 +4409,7 @@
             <property name="RecordLabel">$INFO[Window(Home).Property(RandomAlbum.8.RecordLabel)]</property>
             <property name="Genre">$INFO[Window(Home).Property(RandomAlbum.8.Genre)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),randomalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomalbums,left)</visible>
         </item>
     </include>
     <include name="RandomArtistsItems">
@@ -4525,7 +4519,7 @@
             <property name="Genre">$INFO[Window(Home).Property(RecentAlbum.1.Genre)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.1.Play)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4541,7 +4535,7 @@
             <property name="Genre">$INFO[Window(Home).Property(RecentAlbum.2.Genre)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.2.Play)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4557,7 +4551,7 @@
             <property name="Genre">$INFO[Window(Home).Property(RecentAlbum.3.Genre)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.3.Play)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4573,7 +4567,7 @@
             <property name="Genre">$INFO[Window(Home).Property(RecentAlbum.4.Genre)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.4.Play)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4589,7 +4583,7 @@
             <property name="Genre">$INFO[Window(Home).Property(RecentAlbum.5.Genre)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.5.Play)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
         </item>
     </include>
     <include name="LatestAlbumsItemsHome">
@@ -4607,7 +4601,7 @@
             <property name="Genre">$INFO[Window(Home).Property(RecentAlbum.6.Genre)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.6.Play)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4623,7 +4617,7 @@
             <property name="Genre">$INFO[Window(Home).Property(RecentAlbum.7.Genre)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.7.Play)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -4639,7 +4633,7 @@
             <property name="Genre">$INFO[Window(Home).Property(RecentAlbum.8.Genre)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.8.Play)]</property>
             <onclick>SetFocus(5014)</onclick>
-            <visible>Substring(Control.GetLabel(4321),recentalbums,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recentalbums,left)</visible>
         </item>
     </include>
     <include name="WatchListTVItems">
@@ -4974,7 +4968,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomEpisode.1.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomEpisode.1.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.1.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.2.Title)]</label>
@@ -4997,7 +4991,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomEpisode.2.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomEpisode.2.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.2.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.3.Title)]</label>
@@ -5020,7 +5014,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomEpisode.3.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomEpisode.3.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.3.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.4.Title)]</label>
@@ -5043,7 +5037,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomEpisode.4.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomEpisode.4.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.4.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
         </item>
     </include>
     <include name="RandomEpisodesItemsHome">
@@ -5068,7 +5062,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomEpisode.5.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomEpisode.5.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.5.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.6.Title)]</label>
@@ -5091,7 +5085,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomEpisode.6.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomEpisode.6.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.6.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.7.Title)]</label>
@@ -5114,7 +5108,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomEpisode.7.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomEpisode.7.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.7.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.8.Title)]</label>
@@ -5137,7 +5131,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RandomEpisode.8.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RandomEpisode.8.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomEpisode.8.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),randomtv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),randomtv,left)</visible>
         </item>
     </include>
     <include name="LatestEpisodesItems">
@@ -5162,7 +5156,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentEpisode.1.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentEpisode.1.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentEpisode.1.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.2.Title)]</label>
@@ -5185,7 +5179,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentEpisode.2.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentEpisode.2.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentEpisode.2.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.3.Title)]</label>
@@ -5208,7 +5202,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentEpisode.3.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentEpisode.3.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentEpisode.3.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.4.Title)]</label>
@@ -5231,7 +5225,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentEpisode.4.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentEpisode.4.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentEpisode.4.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
         </item>
     </include>
     <include name="LatestEpisodesItemsHome">
@@ -5256,7 +5250,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentEpisode.5.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentEpisode.5.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentEpisode.5.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.6.Title)]</label>
@@ -5279,7 +5273,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentEpisode.6.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentEpisode.6.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentEpisode.6.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.7.Title)]</label>
@@ -5302,7 +5296,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentEpisode.7.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentEpisode.7.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentEpisode.7.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.8.Title)]</label>
@@ -5325,7 +5319,7 @@
             <property name="AudioCodec">$INFO[Window(Home).Property(RecentEpisode.8.AudioCodec)]</property>
             <property name="AudioChannels">$INFO[Window(Home).Property(RecentEpisode.8.AudioChannels)]</property>
             <property name="Path">$INFO[Window(Home).Property(RecentEpisode.8.Play)]</property>
-            <visible>Substring(Control.GetLabel(4321),recenttv,left) + !SubString(Control.GetLabel(4321),custom)</visible>
+            <visible>Substring(Control.GetLabel(4321),recenttv,left)</visible>
         </item>
     </include>
     <include name="RandomPicturesItems">
@@ -5877,7 +5871,7 @@
             <label2>$INFO[Window(Home).Property(NextAired.1.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.1.ShortTime)]</label2>
             <property name="Status">$INFO[Window(Home).Property(NextAired.1.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.1.NextTitle)]</property>
-            <property name="Fanart">$INFO[Window(Home).Property(NextAired.1.Fanart)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(NextAired.1.Art(fanart))]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.1.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.1.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.1.LatestDate)]</property>
@@ -5898,7 +5892,7 @@
             <label2>$INFO[Window(Home).Property(NextAired.2.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.2.ShortTime)]</label2>
             <property name="Status">$INFO[Window(Home).Property(NextAired.2.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.2.NextTitle)]</property>
-            <property name="Fanart">$INFO[Window(Home).Property(NextAired.2.Fanart)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(NextAired.2.Art(fanart))]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.2.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.2.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.2.LatestDate)]</property>
@@ -5919,7 +5913,7 @@
             <label2>$INFO[Window(Home).Property(NextAired.3.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.3.ShortTime)]</label2>
             <property name="Status">$INFO[Window(Home).Property(NextAired.3.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.3.NextTitle)]</property>
-            <property name="Fanart">$INFO[Window(Home).Property(NextAired.3.Fanart)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(NextAired.3.Art(fanart))]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.3.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.3.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.3.LatestDate)]</property>
@@ -5942,7 +5936,7 @@
             <label2>$INFO[Window(Home).Property(NextAired.4.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.4.ShortTime)]</label2>
             <property name="Status">$INFO[Window(Home).Property(NextAired.4.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.4.NextTitle)]</property>
-            <property name="Fanart">$INFO[Window(Home).Property(NextAired.4.Fanart)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(NextAired.4.Art(fanart))]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.4.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.4.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.4.LatestDate)]</property>
@@ -5963,7 +5957,7 @@
             <label2>$INFO[Window(Home).Property(NextAired.5.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.5.ShortTime)]</label2>
             <property name="Status">$INFO[Window(Home).Property(NextAired.5.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.5.NextTitle)]</property>
-            <property name="Fanart">$INFO[Window(Home).Property(NextAired.5.Fanart)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(NextAired.5.Art(fanart))]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.5.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.5.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.5.LatestDate)]</property>
@@ -5984,7 +5978,7 @@
             <label2>$INFO[Window(Home).Property(NextAired.6.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.6.ShortTime)]</label2>
             <property name="Status">$INFO[Window(Home).Property(NextAired.6.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.6.NextTitle)]</property>
-            <property name="Fanart">$INFO[Window(Home).Property(NextAired.6.Fanart)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(NextAired.6.Art(fanart))]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.6.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.6.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.6.LatestDate)]</property>
@@ -6005,7 +5999,7 @@
             <label2>$INFO[Window(Home).Property(NextAired.7.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.7.ShortTime)]</label2>
             <property name="Status">$INFO[Window(Home).Property(NextAired.7.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.7.NextTitle)]</property>
-            <property name="Fanart">$INFO[Window(Home).Property(NextAired.7.Fanart)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(NextAired.7.Art(fanart))]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.7.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.7.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.7.LatestDate)]</property>
@@ -6026,7 +6020,7 @@
             <label2>$INFO[Window(Home).Property(NextAired.8.NextDate),, @ ]$INFO[Window(Home).Property(NextAired.8.ShortTime)]</label2>
             <property name="Status">$INFO[Window(Home).Property(NextAired.8.Status)]</property>
             <property name="NextTitle">$INFO[Window(Home).Property(NextAired.8.NextTitle)]</property>
-            <property name="Fanart">$INFO[Window(Home).Property(NextAired.8.Fanart)]</property>
+            <property name="Fanart">$INFO[Window(Home).Property(NextAired.8.Art(fanart))]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(NextAired.8.NextNumber)]</property>
             <property name="Network">$INFO[Window(Home).Property(NextAired.8.Network)]</property>
             <property name="LatestDate">$INFO[Window(Home).Property(NextAired.8.LatestDate)]</property>
@@ -6048,41 +6042,41 @@
             <thumb>http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <icon>http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2012.jpg</icon>
             <onclick>SetFocus(22222)</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <icon>http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2012.jpg</icon>
-            <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
             <onclick>SetFocus(22222)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <icon>http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2012.jpg</icon>
-            <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
             <onclick>SetFocus(22222)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <icon>http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2012.jpg</icon>
-            <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
             <onclick>SetFocus(22222)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <icon>http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2012.jpg</icon>
-            <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
             <onclick>SetFocus(22222)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <icon>http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2012.jpg</icon>
-            <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
             <onclick>SetFocus(22222)</onclick>
         </item>
         <item>
@@ -6096,7 +6090,7 @@
             <property name="Fanart">http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2012.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2012.jpg</thumb>
             <icon>http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2012.jpg</icon>
-            <visible>Stringcompare(Control.GetLabel(4321),babespanel)</visible>
+            <visible>Substring(Control.GetLabel(4321),babespanel)</visible>
             <onclick>SetFocus(22222)</onclick>
         </item>
     </include>
@@ -6108,7 +6102,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomMovie.1.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.1.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomMovie.1.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.2.Title)]</label>
@@ -6117,7 +6111,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomMovie.2.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.2.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomMovie.2.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.3.Title)]</label>
@@ -6126,7 +6120,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomMovie.3.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.3.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomMovie.3.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.4.Title)]</label>
@@ -6135,7 +6129,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomMovie.4.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.4.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomMovie.4.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.5.Title)]</label>
@@ -6144,7 +6138,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomMovie.5.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.5.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomMovie.5.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.6.Title)]</label>
@@ -6153,7 +6147,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomMovie.6.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.6.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomMovie.6.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.7.Title)]</label>
@@ -6162,7 +6156,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomMovie.7.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.7.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomMovie.7.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomMovie.8.Title)]</label>
@@ -6171,7 +6165,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomMovie.8.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomMovie.8.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomMovie.8.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
     </include>
     <include name="FeaturedWidgetLeftTV">
@@ -6182,7 +6176,7 @@
             <property name="NavItem">item1.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.1.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.1.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.2.Title)]</label>
@@ -6192,7 +6186,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.2.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.2.Play)]</onclick>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.2.Title))</visible>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.3.Title)]</label>
@@ -6202,7 +6196,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.3.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.3.Play)]</onclick>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.3.Title))</visible>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.4.Title)]</label>
@@ -6211,7 +6205,7 @@
             <property name="NavItem">item4.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.4.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.4.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.4.Title))</visible>
         </item>
         <item>
@@ -6222,7 +6216,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.5.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.5.Play)]</onclick>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.5.Title))</visible>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedEpisode.6.Title)]</label>
@@ -6231,7 +6225,7 @@
             <property name="NavItem">item6.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.6.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.6.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.6.Title))</visible>
         </item>
         <item>
@@ -6241,7 +6235,7 @@
             <property name="NavItem">item7.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.7.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.7.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.7.Title))</visible>
         </item>
         <item>
@@ -6251,7 +6245,7 @@
             <property name="NavItem">item8.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedEpisode.8.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedEpisode.8.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
             <visible>!IsEmpty(Window(Home).Property(RecommendedEpisode.8.Title))</visible>
         </item>
     </include>
@@ -6265,7 +6259,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.1.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.1.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -6276,7 +6270,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.2.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.2.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -6287,7 +6281,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.3.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.3.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -6298,7 +6292,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.4.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.4.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -6309,7 +6303,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.5.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.5.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -6320,7 +6314,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.6.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.6.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -6331,7 +6325,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.7.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.7.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon>DefaultAlbumCover.png</icon>
@@ -6342,7 +6336,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RandomAlbum.8.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RandomAlbum.8.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
     </include>
     <include name="FeaturedWidgetMiddleMovies">
@@ -6353,7 +6347,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.1.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.1.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedMovie.1.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.2.Title)]</label>
@@ -6362,7 +6356,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.2.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.2.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedMovie.2.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.3.Title)]</label>
@@ -6371,7 +6365,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.3.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.3.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedMovie.3.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.4.Title)]</label>
@@ -6380,7 +6374,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.4.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.4.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedMovie.4.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedMovie.5.Title)]</label>
@@ -6389,7 +6383,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecommendedMovie.5.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedMovie.5.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecommendedMovie.5.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
     </include>
     <include name="FeaturedWidgetMiddleTV">
@@ -6400,7 +6394,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomEpisode.1.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.1.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomEpisode.1.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.2.Title)]</label>
@@ -6409,7 +6403,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomEpisode.2.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.2.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomEpisode.2.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.3.Title)]</label>
@@ -6418,7 +6412,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomEpisode.3.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.3.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomEpisode.3.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.4.Title)]</label>
@@ -6427,7 +6421,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomEpisode.4.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.4.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomEpisode.4.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RandomEpisode.5.Title)]</label>
@@ -6436,7 +6430,7 @@
             <property name="Year">$INFO[Window(Home).Property(RandomEpisode.5.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomEpisode.5.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RandomEpisode.5.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
     </include>
     <include name="FeaturedWidgetMiddleMusic">
@@ -6449,7 +6443,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecommendedAlbum.1.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.1.Art(fanart))]</property>
             <onclick>-</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedAlbum.2.Title)]</label>
@@ -6460,7 +6454,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecommendedAlbum.2.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.2.Art(fanart))]</property>
             <onclick>-</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedAlbum.3.Title)]</label>
@@ -6471,7 +6465,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecommendedAlbum.3.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.3.Art(fanart))]</property>
             <onclick>-</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedAlbum.4.Title)]</label>
@@ -6482,7 +6476,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecommendedAlbum.4.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.4.Art(fanart))]</property>
             <onclick>-</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecommendedAlbum.5.Title)]</label>
@@ -6493,7 +6487,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecommendedAlbum.5.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecommendedAlbum.5.Art(fanart))]</property>
             <onclick>-</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
     </include>
     <include name="FeaturedWidgetRightMovies">
@@ -6504,7 +6498,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.1.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.1.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentMovie.1.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.2.Title)]</label>
@@ -6513,7 +6507,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.2.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.2.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentMovie.2.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.3.Title)]</label>
@@ -6522,7 +6516,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.3.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.3.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentMovie.3.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.4.Title)]</label>
@@ -6531,7 +6525,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.4.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.4.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentMovie.4.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.5.Title)]</label>
@@ -6540,7 +6534,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.5.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.5.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentMovie.5.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.6.Title)]</label>
@@ -6549,7 +6543,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.6.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.6.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentMovie.6.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.7.Title)]</label>
@@ -6558,7 +6552,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.7.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.7.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentMovie.7.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentMovie.8.Title)]</label>
@@ -6567,7 +6561,7 @@
             <property name="Year">$INFO[Window(Home).Property(RecentMovie.8.Year)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentMovie.8.Art(fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentMovie.8.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmovies)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmovies)</visible>
         </item>
     </include>
     <include name="FeaturedWidgetRightTV">
@@ -6578,7 +6572,7 @@
             <property name="NavItem">item1.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.1.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.2.Title)]</label>
@@ -6587,7 +6581,7 @@
             <property name="NavItem">item2.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.2.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.3.Title)]</label>
@@ -6596,7 +6590,7 @@
             <property name="NavItem">item3.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.3.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.4.Title)]</label>
@@ -6605,7 +6599,7 @@
             <property name="NavItem">item4.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.4.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.5.Title)]</label>
@@ -6614,7 +6608,7 @@
             <property name="NavItem">item5.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.5.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.5.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.6.Title)]</label>
@@ -6623,7 +6617,7 @@
             <property name="NavItem">item6.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.6.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.6.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.7.Title)]</label>
@@ -6632,7 +6626,7 @@
             <property name="NavItem">item7.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.7.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.7.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
         <item>
             <label>$INFO[Window(Home).Property(RecentEpisode.8.Title)]</label>
@@ -6641,7 +6635,7 @@
             <property name="NavItem">item8.png</property>
             <property name="Fanart">$INFO[Window(Home).Property(RecentEpisode.8.Art(tvshow.fanart))]</property>
             <onclick>$INFO[Window(Home).Property(RecentEpisode.8.Play)]</onclick>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredtv)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredtv)</visible>
         </item>
     </include>
     <include name="FeaturedWidgetRightMusic">
@@ -6654,7 +6648,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.1.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.1.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.2.Art(fanart))]</icon>
@@ -6665,7 +6659,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.2.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.2.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.3.Art(fanart))]</icon>
@@ -6676,7 +6670,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.3.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.3.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.4.Art(fanart))]</icon>
@@ -6687,7 +6681,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.4.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.4.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.5.Art(fanart))]</icon>
@@ -6698,7 +6692,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.5.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.5.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.6.Art(fanart))]</icon>
@@ -6709,7 +6703,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.6.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.6.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.7.Art(fanart))]</icon>
@@ -6720,7 +6714,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.7.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.7.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
         <item>
             <icon fallback="DefaultAlbumCover.png">$INFO[Window(Home).Property(RecentAlbum.8.Art(fanart))]</icon>
@@ -6731,7 +6725,7 @@
             <property name="Fanart">$INFO[Window(Home).Property(RecentAlbum.8.Art(fanart))]</property>
             <onclick>PlayList.Clear</onclick>
             <property name="Path">$INFO[Window(Home).Property(RecentAlbum.8.Play)]</property>
-            <visible>Stringcompare(Control.GetLabel(4321),featuredmusic)</visible>
+            <visible>Substring(Control.GetLabel(4321),featuredmusic)</visible>
         </item>
     </include>
     <include name="IconPanel1Items">

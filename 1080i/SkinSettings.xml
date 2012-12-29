@@ -194,8 +194,8 @@
                     <control type="button" id="455">
                         <label>$LOCALIZE[42100]</label>
                         <include>Default_SettingButton</include>
+                        <onclick>SetProperty(FeaturedSetup,true,home)</onclick>
                         <onclick>ActivateWindow(1147)</onclick>
-                        <onclick>ActivateWindow(1128)</onclick>
                     </control>
                     <control type="button" id="454">
                         <label>$LOCALIZE[42101]</label>
@@ -528,7 +528,7 @@
                         <selected>!Skin.HasSetting(DisableShowCaseVL)</selected>
                     </control>
                     <control type="radiobutton" id="481">
-                        <label>$LOCALIZE[31028] (Episodes,Addons)</label>
+                        <label>$LOCALIZE[31028] ($LOCALIZE[20360],$LOCALIZE[24001])</label>
                         <include>Default_SettingRadioButtonShort</include>
                         <onclick>Skin.ToggleSetting(DisableShowCaseSquareVL)</onclick>
                         <selected>!Skin.HasSetting(DisableShowCaseSquareVL)</selected>
