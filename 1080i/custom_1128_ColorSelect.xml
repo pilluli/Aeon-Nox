@@ -1,8 +1,8 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window id="1128" type="dialog">
     <defaultcontrol>10</defaultcontrol>
-    <include condition="!Skin.HasTheme(White)">ColorConfigDefaultTheme</include>
-    <include condition="Skin.HasTheme(White)">ColorConfigWhiteTheme</include>
+    <include condition="!Substring(Skin.CurrentTheme,whit)">ColorConfigDefaultTheme</include>
+    <include condition="Substring(Skin.CurrentTheme,whit)">ColorConfigWhiteTheme</include>
     <onunload condition="Window.IsActive(home) | Window.IsActive(1115)">ActivateWindow(skinsettings)</onunload>
     <zorder>1</zorder>
     <onunload condition="Window.IsActive(1115)">Dialog.Close(1115)</onunload>
@@ -24,7 +24,7 @@
                     <posx>-4</posx>
                     <posy>-24</posy>
                     <width>776</width>
-                    <height>640</height>
+                    <height>580</height>
                     <colordiffuse>$VAR[ColorDiffuseVar]</colordiffuse>
                     <include>PanelGlowFade</include>
                     <visible>!Skin.HasSetting(DisableGlowbar)</visible>
@@ -35,7 +35,7 @@
                     <posx>-4</posx>
                     <posy>-24</posy>
                     <width>776</width>
-                    <height>640</height>
+                    <height>580</height>
                     <texture border="22">dialogs/scan_backg.png</texture>
                     <colordiffuse>$VAR[DialogColorVar]</colordiffuse>
                 </control>
@@ -138,16 +138,6 @@
                     <label>$LOCALIZE[42308]</label>
                     <onclick>ActivateWindow(1127)</onclick>
                     <visible>Window.IsActive(skinsettings) | Window.IsActive(1115) | Window.IsActive(weather) | Window.IsActive(PVR)</visible>
-                </control>
-                <control type="button" id="20">
-                    <include>ColorChooserButton</include>
-                    <label>42009</label>
-                    <label2>[COLOR $VAR[FontColorVar]]$VAR[BarStyleLabelVar][/COLOR]</label2>
-                    <onclick condition="!Skin.HasSetting(shadowbars) + Skin.HasSetting(colorpanels)">Skin.SetBool(shadowbars)</onclick>
-                    <onclick condition="!Skin.HasSetting(shadowbars) + !Skin.HasSetting(colorpanels)">Skin.SetBool(colorpanels)</onclick>
-                    <onclick condition="Skin.HasSetting(shadowbars)">Skin.Reset(shadowbars)</onclick>
-                    <onclick condition="Skin.HasSetting(shadowbars)">Skin.Reset(colorpanels)</onclick>
-                    <visible>Window.IsActive(home)</visible>
                 </control>
             </control>
             <control type="image">

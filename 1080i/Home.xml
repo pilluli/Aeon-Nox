@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">9004</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
@@ -140,7 +140,7 @@
             <include condition="!IsEmpty(Skin.String(ArtistsLogosPath))">MusicExtraFanartHome</include>
             <include condition="Skin.HasSetting(artistslideshowhome)">MusicArtistSlideshowHome</include>
             <include>CommonMediaPlayingBackground</include>
-            <include condition="Substring(Skin.String(backgroundlist),googleweather2) + System.HasAddon(script.widget.weatherworld)">WorldWeatherIcons</include>
+            <include condition="Substring(Skin.String(backgroundlist),weatherworldbackground) + System.HasAddon(script.widget.weatherworld)">WorldWeatherIcons</include>
         </control>
         <!-- Home Fullscreen Video -->
         <control type="group">
@@ -179,45 +179,24 @@
         <include condition="Skin.HasSetting(effect_bg)">BG_Effect_Home</include>
         <!-- LiveTV Info -->
         <control type="group">
-            <visible>!Skin.HasSetting(lowermainmenu) + Skin.HasSetting(DisableGlowbar)</visible>
+            <visible>Skin.HasSetting(DisableGlowbar) + IsEmpty(Window(home).Property(DisableWidgets))</visible>
             <include>Animation_VisibleChangeDelayed</include>
             <include>Animation_WindowFade200</include>
             <control type="image">
-                <posy>360</posy>
+                <posy>480</posy>
                 <width>1920</width>
-                <height>945</height>
+                <height>600</height>
                 <texture>home/nowplaying_shadow.png</texture>
-                <visible>[Control.HasFocus(8000) | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)] + IsEmpty(Window(home).Property(DisableWidgets))</visible>
+                <visible>Control.HasFocus(8000) | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)</visible>
                 <include>Animation_VisibleChangeDelayed</include>
                 <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
             </control>
             <control type="image">
                 <width>1920</width>
-                <height>945</height>
+                <height>600</height>
                 <texture flipy="true">home/nowplaying_shadow.png</texture>
                 <include>Animation_VisibleChangeDelayed</include>
-                <visible>Control.IsVisible(8995) | [[Control.HasFocus(7000) | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)] + IsEmpty(Window(home).Property(DisableWidgets))]</visible>
-                <animation effect="slide" time="400" tween="cubic" easing="inout" end="0,-225" condition="Skin.HasSetting(lowermainmenu)">Conditional</animation>
-            </control>
-        </control>
-        <control type="group">
-            <visible>Skin.HasSetting(lowermainmenu) + Skin.HasSetting(DisableGlowbar)</visible>
-            <include>Animation_WindowFade200</include>
-            <include>Animation_VisibleChangeDelayed</include>
-            <control type="image">
-                <posy>160</posy>
-                <width>1920</width>
-                <height>694</height>
-                <texture>home/nowplaying_shadow.png</texture>
-                <visible>[Control.HasFocus(8000) | Control.IsVisible(5000) | Substring(Control.GetLabel(4321),weather)] + IsEmpty(Window(home).Property(DisableWidgets))</visible>
-                <include>Animation_VisibleChangeDelayed</include>
-            </control>
-            <control type="image">
-                <width>1920</width>
-                <height>545</height>
-                <texture flipy="true">home/nowplaying_shadow.png</texture>
-                <include>Animation_VisibleChangeDelayed</include>
-                <visible>Control.IsVisible(8995) | [[Control.HasFocus(7000) | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)] + IsEmpty(Window(home).Property(DisableWidgets))]</visible>
+                <visible>Control.IsVisible(8995) | Control.HasFocus(7000) | Control.IsVisible(6000) | Substring(Control.GetLabel(4325),weather)</visible>
             </control>
         </control>
         <include>VideoBookmarkWidget</include>
@@ -250,9 +229,7 @@
                         <texture>arrowdown.png</texture>
                         <!--                     <animation effect="slide" end="0,40" time="0" condition="[!Skin.HasSetting(rsshomelow) + !Skin.HasSetting(DisableRSS)]">Conditional</animation>
  -->
-                        <visible>Control.HasFocus(9000)</visible>
-                        <visible>!Skin.HasSetting(showsubmenu)</visible>
-                        <visible>!IsEmpty(Container(9000).ListItem.Property(SubMenu))</visible>
+                        <visible>Control.HasFocus(9000) + !Skin.HasSetting(showsubmenu) + IntegerGreaterThan(Container(9010).NumItems,0)</visible>
                         <animation effect="zoom" start="100,0" end="100,100" time="500" delay="200" tween="cubic" center="0,613" easing="inout">VisibleChange</animation>
                     </control>
                     <control type="group" id="9001">

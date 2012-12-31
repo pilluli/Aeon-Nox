@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">9000</defaultcontrol>
     <backgroundcolor>backgroundcolor</backgroundcolor>
@@ -153,7 +153,7 @@
                         <label>- $LOCALIZE[559]:</label>
                         <label2>[COLOR $VAR[FontColorVar]]$INFO[Skin.String(Startup_Playlist_Path)][/COLOR]</label2>
                         <include>Default_SettingRadioButton</include>
-                        <onclick>Skin.SetFile(Startup_Playlist_Path,.m3u|.xsp,t:\playlists\music\)</onclick>
+                        <onclick>Skin.SetFile(Startup_Playlist_Path,.m3u|.xsp,special://profile/playlists/music/)</onclick>
                         <enable>Skin.HasSetting(Use_Startup_Playlist)</enable>
                     </control>
                 </control>
@@ -318,20 +318,6 @@
                         <include>Default_SettingRadioButtonShort</include>
                         <onclick>Addon.OpenSettings(script.metadata.actors)</onclick>
                         <visible>System.HasAddon(script.metadata.actors)</visible>
-                    </control>
-                    <control type="button" id="430">
-                        <label>weather.google</label>
-                        <label2>[COLOR red]$LOCALIZE[106][/COLOR]</label2>
-                        <include>Default_SettingRadioButtonShort</include>
-                        <onclick>Notification($LOCALIZE[42002],$LOCALIZE[42271])</onclick>
-                        <visible>!System.HasAddon(weather.google)</visible>
-                    </control>
-                    <control type="button" id="431">
-                        <label>weather.google</label>
-                        <label2>[COLOR green]$LOCALIZE[107][/COLOR]</label2>
-                        <include>Default_SettingRadioButtonShort</include>
-                        <onclick>Addon.OpenSettings(weather.google)</onclick>
-                        <visible>System.HasAddon(weather.google)</visible>
                     </control>
                     <control type="button" id="432">
                         <label>script.artistslideshow</label>

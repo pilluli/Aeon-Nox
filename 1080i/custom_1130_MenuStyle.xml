@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window id="1130" type="dialog">
     <defaultcontrol always="true">450</defaultcontrol>
     <zorder>4</zorder>
@@ -182,6 +182,16 @@
                     <onclick>Skin.ToggleSetting(AlternateTimeStats)</onclick>
                     <selected>Skin.HasSetting(AlternateTimeStats)</selected>
                     <enable>!Skin.HasSetting(DisableLibraryStats) + !Skin.HasSetting(DisableTimePanel)</enable>
+                    <visible>Stringcompare(Window.Property(actualItem),LibraryStats) | Stringcompare(Window.Property(actualItem),TimePanel)</visible>
+                </control>
+                <control type="button" id="473">
+                    <include>Objects_CommonSettingsButton</include>
+                    <label>42009</label>
+                    <label2>[COLOR $VAR[FontColorVar]]$VAR[BarStyleLabelVar][/COLOR]</label2>
+                    <onclick condition="!Skin.HasSetting(shadowbars) + Skin.HasSetting(colorpanels)">Skin.SetBool(shadowbars)</onclick>
+                    <onclick condition="!Skin.HasSetting(shadowbars) + !Skin.HasSetting(colorpanels)">Skin.SetBool(colorpanels)</onclick>
+                    <onclick condition="Skin.HasSetting(shadowbars)">Skin.Reset(shadowbars)</onclick>
+                    <onclick condition="Skin.HasSetting(shadowbars)">Skin.Reset(colorpanels)</onclick>
                     <visible>Stringcompare(Window.Property(actualItem),LibraryStats) | Stringcompare(Window.Property(actualItem),TimePanel)</visible>
                 </control>
                 <control type="radiobutton" id="482">

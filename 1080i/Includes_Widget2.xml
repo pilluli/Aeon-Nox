@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="Custom1Widget2">
         <item>
@@ -4184,7 +4184,7 @@
             <label>$INFO[Window(Home).Property(RandomAddon.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.1.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.1.Version)]</property>
-            <property name="Summary">$INFO[Window(Home).Property(RandomAddon.1.Summary)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAddon.1.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.1.Art(fanart))]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAddon.1.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
@@ -4195,7 +4195,7 @@
             <label>$INFO[Window(Home).Property(RandomAddon.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.2.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.2.Version)]</property>
-            <property name="Summary">$INFO[Window(Home).Property(RandomAddon.2.Summary)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAddon.2.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.2.Art(fanart))]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAddon.2.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
@@ -4206,7 +4206,7 @@
             <label>$INFO[Window(Home).Property(RandomAddon.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.3.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.3.Version)]</property>
-            <property name="Summary">$INFO[Window(Home).Property(RandomAddon.3.Summary)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAddon.3.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.3.Art(fanart))]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAddon.3.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
@@ -4217,7 +4217,7 @@
             <label>$INFO[Window(Home).Property(RandomAddon.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.4.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.4.Version)]</property>
-            <property name="Summary">$INFO[Window(Home).Property(RandomAddon.4.Summary)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAddon.4.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.4.Art(fanart))]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAddon.4.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
@@ -4228,7 +4228,7 @@
             <label>$INFO[Window(Home).Property(RandomAddon.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.5.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.5.Version)]</property>
-            <property name="Summary">$INFO[Window(Home).Property(RandomAddon.5.Summary)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAddon.5.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.5.Art(fanart))]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAddon.5.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
@@ -4241,7 +4241,7 @@
             <label>$INFO[Window(Home).Property(RandomAddon.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.6.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.6.Version)]</property>
-            <property name="Summary">$INFO[Window(Home).Property(RandomAddon.6.Summary)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAddon.6.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.6.Art(fanart))]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAddon.6.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
@@ -4252,7 +4252,7 @@
             <label>$INFO[Window(Home).Property(RandomAddon.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.7.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.7.Version)]</property>
-            <property name="Summary">$INFO[Window(Home).Property(RandomAddon.7.Summary)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAddon.7.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.7.Art(fanart))]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAddon.7.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
@@ -4263,7 +4263,7 @@
             <label>$INFO[Window(Home).Property(RandomAddon.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RandomAddon.8.Author)]</label2>
             <property name="Version">$INFO[Window(Home).Property(RandomAddon.8.Version)]</property>
-            <property name="Summary">$INFO[Window(Home).Property(RandomAddon.8.Summary)]</property>
+            <property name="Description">$INFO[Window(Home).Property(RandomAddon.8.Summary)]</property>
             <property name="Fanart">$INFO[Window(Home).Property(RandomAddon.8.Art(fanart))]</property>
             <property name="Path">$INFO[Window(Home).Property(RandomAddon.8.Run)]</property>
             <onclick>SetFocus(6014)</onclick>
@@ -7228,56 +7228,48 @@
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2011.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2011.jpg</thumb>
-            <icon>http://dailybabenews.com/images/babe_01-$INFO[System.Date(dd)]-2011.jpg</icon>
             <onclick>SetFocus(22223)</onclick>
             <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
         </item>
         <item>
-            <property name="Fanart">http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2011.jpg</property>
-            <thumb>http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2011.jpg</thumb>
-            <icon>http://dailybabenews.com/images/babe_02-$INFO[System.Date(dd)]-2011.jpg</icon>
+            <property name="Fanart">http://dailybabenews.com/images/babe_09-$INFO[System.Date(dd)]-2011.jpg</property>
+            <thumb>http://dailybabenews.com/images/babe_09-$INFO[System.Date(dd)]-2011.jpg</thumb>
             <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
             <onclick>SetFocus(22223)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2011.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2011.jpg</thumb>
-            <icon>http://dailybabenews.com/images/babe_03-$INFO[System.Date(dd)]-2011.jpg</icon>
             <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
             <onclick>SetFocus(22223)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2011.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2011.jpg</thumb>
-            <icon>http://dailybabenews.com/images/babe_04-$INFO[System.Date(dd)]-2011.jpg</icon>
             <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
             <onclick>SetFocus(22223)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2011.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2011.jpg</thumb>
-            <icon>http://dailybabenews.com/images/babe_05-$INFO[System.Date(dd)]-2011.jpg</icon>
             <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
             <onclick>SetFocus(22223)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2011.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2011.jpg</thumb>
-            <icon>http://dailybabenews.com/images/babe_06-$INFO[System.Date(dd)]-2011.jpg</icon>
             <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
             <onclick>SetFocus(22223)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2011.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2011.jpg</thumb>
-            <icon>http://dailybabenews.com/images/babe_07-$INFO[System.Date(dd)]-2011.jpg</icon>
             <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
             <onclick>SetFocus(22223)</onclick>
         </item>
         <item>
             <property name="Fanart">http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2011.jpg</property>
             <thumb>http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2011.jpg</thumb>
-            <icon>http://dailybabenews.com/images/babe_08-$INFO[System.Date(dd)]-2011.jpg</icon>
             <visible>Substring(Control.GetLabel(4325),babespanel)</visible>
             <onclick>SetFocus(22223)</onclick>
         </item>

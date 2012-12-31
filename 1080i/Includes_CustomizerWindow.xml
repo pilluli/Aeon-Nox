@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="HomePanelWidget_1124">
         <control type="group" id="5000">
@@ -121,11 +121,6 @@
                         <include>ConcertsPanelContent1124</include>
                     </content>
                 </control>
-            </control>
-            <control type="group">
-                <visible>Substring(Control.GetLabel(4321),googlepanel)</visible>
-                <include>Animation_VisibleChange400</include>
-                <include condition="SubString(Weather.Plugin,google)">GooglePanelWidget</include>
             </control>
             <control type="group">
                 <visible>Substring(Control.GetLabel(4321),wunderground)</visible>
@@ -571,11 +566,6 @@
                 </control>
             </control>
             <control type="group">
-                <visible>Substring(Control.GetLabel(4325),googlepanel)</visible>
-                <include>Animation_VisibleChange400</include>
-                <include condition="SubString(Weather.Plugin,google)">GooglePanelWidget</include>
-            </control>
-            <control type="group">
                 <visible>Substring(Control.GetLabel(4325),wunderground)</visible>
                 <include>Animation_VisibleChange400</include>
                 <include condition="SubString(Weather.Plugin,weather.wunderground)">WundergroundWidget</include>
@@ -970,67 +960,6 @@
                 </control>
                 <control type="group">
                     <visible>!Stringcompare(Control.GetLabel(4321),systemclassicdefault)</visible>
-                    <control type="group" id="8030">
-                        <posx>10</posx>
-                        <visible>[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + StringCompare(Control.GetLabel(4322),widgetfanart)</visible>
-                        <control type="group">
-                            <posx>-16</posx>
-                            <posy>56</posy>
-                            <control type="image">
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$INFO[Container(8000).ListItem(-1).Thumb]</texture>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <posx>19</posx>
-                                <posy>19</posy>
-                                <width>110</width>
-                                <height>165</height>
-                            </control>
-                            <control type="image">
-                                <width>148</width>
-                                <height>203</height>
-                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
-                                <bordertexture border="19">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19</bordersize>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <posx>207</posx>
-                            <posy>56</posy>
-                            <control type="image">
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$INFO[Container(8000).ListItem(1).Thumb]</texture>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <posx>19</posx>
-                                <posy>19</posy>
-                                <width>110</width>
-                                <height>165</height>
-                            </control>
-                            <control type="image">
-                                <width>148</width>
-                                <height>203</height>
-                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
-                                <bordertexture border="19">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19</bordersize>
-                            </control>
-                        </control>
-                        <control type="group">
-                            <posx>82.5</posx>
-                            <posy>44</posy>
-                            <control type="image">
-                                <texture background="true" diffuse="thumbs/movieposter_mask.png" fallback="DefaultVideoBigPoster.png">$INFO[Container(8000).ListItem(0).Thumb]</texture>
-                                <aspectratio scalediffuse="false">stretch</aspectratio>
-                                <posx>19</posx>
-                                <posy>19</posy>
-                                <width>130</width>
-                                <height>195</height>
-                            </control>
-                            <control type="image">
-                                <width>168</width>
-                                <height>234</height>
-                                <texture diffuse="thumbs/movieposter_mask.png">thumbs/thumb_glass.png</texture>
-                                <bordertexture border="19">thumbs/poster_shadow.png</bordertexture>
-                                <bordersize>19</bordersize>
-                            </control>
-                        </control>
-                    </control>
                     <control type="image">
                         <texture background="true" fallback="DefaultAlbumCover.png">$INFO[Container(8000).ListItem.Icon]</texture>
                         <bordertexture border="7">thumbs/thumbshadow.png</bordertexture>
@@ -1068,7 +997,7 @@
                         <height>194</height>
                         <animation effect="fade" time="300">Visible</animation>
                         <animation effect="fade" time="50">Hidden</animation>
-                        <visible>[Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)] + !StringCompare(Control.GetLabel(4322),widgetfanart)</visible>
+                        <visible>Substring(Control.GetLabel(4321),movie) | Substring(Control.GetLabel(4321),musicvideo)</visible>
                     </control>
                 </control>
                 <control type="group">

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <window>
     <defaultcontrol always="true">9000</defaultcontrol>
     <allowoverlay>no</allowoverlay>
@@ -598,7 +598,7 @@
                         <control type="button" id="22">
                             <label>$LOCALIZE[31096]</label>
                             <onclick>ActivateWindow(videos,plugin://plugin.video.youtube/?path=/root/search&amp;feed=search&amp;search=$INFO[ListItem.Label],return)</onclick>
-                            <onclick>Dialog.Close(all,true)</onclick>
+                            <onclick>Dialog.Close(all)</onclick>
                             <include>DialogVideoInfoButton</include>
                         </control>
                     </control>

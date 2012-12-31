@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <includes>
     <include name="AddonWall">
         <control type="group">
@@ -36,7 +36,9 @@
                             <height>261</height>
                             <aspectratio>keep</aspectratio>
                             <colordiffuse>$VAR[FocusTextureColorVar]</colordiffuse>
-                            <texture border="5">views/addonwall_select.png</texture>
+                            <bordertexture border="6">views/addonwall_select.png</bordertexture>
+                            <bordersize>6</bordersize>
+                            <texture background="true">$VAR[ThumbnailVar]</texture>
                         </control>
                         <control type="image">
                             <width>261</width>
