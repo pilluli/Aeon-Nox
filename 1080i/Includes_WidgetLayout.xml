@@ -6212,7 +6212,9 @@
         <height>448</height>
         <onleft>9000</onleft>
         <onback>9000</onback>
-        <onup condition="Container(9000).Hasfocus(2)">SetFocus(6010)</onup>
+        <ondown>9000</ondown>
+        <!--<onup condition="Container(9000).Hasfocus(10) | Container(9000).Hasfocus(3)">SetFocus(6010)</onup>-->
+        <onup condition="Container(9000).Hasfocus(10) | Container(9000).Hasfocus(2) | Container(9000).Hasfocus(11)">SetFocus(6010)</onup>
         <onright condition="Control.isVisible(8997)">8003</onright>
         <onright condition="Control.IsVisible(8998)">8000</onright>
         <onright condition="!Control.IsVisible(8997) + !Control.IsVisible(8998)">9000</onright>
