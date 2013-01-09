@@ -9,13 +9,13 @@
     <onload condition="!Stringcompare(Window(home).Property(Type),Music)">RunScript(script.playlists,type=video)</onload>
     <onload condition="Stringcompare(Window(home).Property(Type),Music)">RunScript(script.playlists,type=music)</onload>
     <include>Animation_DialogPopup2</include>
-    <onunload condition="!IsEmpty(Window(home).Property(PlaylistSlot))">Skin.SetString($INFO[Window(home).Property(PlaylistSlot)].Call,RunScript(script.randomandlastitems, type=$INFO[Window(home).Property(Type)], playlist=$INFO[Window(home).Property(Playlist.Path)], method=$INFO[Window(home).Property(Method)], limit=10, unwatched=$INFO[Window(home).Property(Unwatched)], resume=$INFO[Window(home).Property(Resume)], PROPERTY=$INFO[Window(home).Property(PlaylistSlot)]))</onunload>
+    <onunload condition="!IsEmpty(Window(home).Property(PlaylistSlot))">Skin.SetString($INFO[Window(home).Property(PlaylistSlot)].Call,RunScript(script.randomandlastitems, type=$INFO[Window(home).Property(Type)], playlist=$INFO[Window(home).Property(Playlist.Path)], method=$INFO[Window(home).Property(Method)], limit=10, unwatched=$INFO[Window(home).Property(Unwatched)], resume=$INFO[Window(home).Property(Resume)], property=$INFO[Window(home).Property(PlaylistSlot)]))</onunload>
     <onunload condition="!IsEmpty(Window(home).Property(PlaylistSlot))">Skin.SetString($INFO[Window(home).Property(PlaylistSlot)].Type,$INFO[Window(home).Property(Type)] $INFO[Window(home).Property(Method)])</onunload>
     <onunload condition="!IsEmpty(Window(home).Property(PlaylistSlot))">Skin.SetString($INFO[Window(home).Property(PlaylistSlot)].Label,$INFO[Window(home).Property(Playlist.Label)])</onunload>
     <onunload condition="!IsEmpty(Window(home).Property(PlaylistSlot))">Skin.SetString($INFO[Window(home).Property(PlaylistSlot)].Path,$INFO[Window(home).Property(Playlist.Path)])</onunload>
     <onunload condition="IsEmpty(Window(home).Property(PlaylistSlot))">Skin.SetString(ItemToEdit.Label,$INFO[Window(home).Property(Playlist.Label)])</onunload>
     <onunload condition="IsEmpty(Window(home).Property(PlaylistSlot))">Skin.SetString(ItemToEdit.Path,$INFO[Window(home).Property(Playlist.Path)])</onunload>
-    <onunload>RunScript(script.randomandlastitems, type=$INFO[Window(home).Property(Type)], playlist=$INFO[Window(home).Property(Playlist.Path)], method=$INFO[Window(home).Property(Method)], limit=10, unwatched=$INFO[Window(home).Property(Unwatched)], resume=$INFO[Window(home).Property(Resume)], PROPERTY=$INFO[Window(home).Property(PlaylistSlot)])</onunload>
+    <onunload>RunScript(script.randomandlastitems, type=$INFO[Window(home).Property(Type)], playlist=$INFO[Window(home).Property(Playlist.Path)], method=$INFO[Window(home).Property(Method)], limit=10, unwatched=$INFO[Window(home).Property(Unwatched)], resume=$INFO[Window(home).Property(Resume)], property=$INFO[Window(home).Property(PlaylistSlot)])</onunload>
     <onunload>ClearProperty(Type,home)</onunload>
     <onunload>ClearProperty(PlaylistSlot,home)</onunload>
     <controls>
@@ -119,6 +119,16 @@
                     <onclick>ClearProperty(Playlist.Label,home)</onclick>
                     <onclick>Dialog.Close(1125)</onclick>
                     <onclick>SetFocus(9000)</onclick>
+                </item>
+                <item id="52">
+                    <label>42314</label>
+                    <onclick condition="Stringcompare(Window(home).Property(Type),Movie)">Skin.SetPath(ItemToEdit.TempPath,library://video/movies/)</onclick>
+                    <onclick condition="Stringcompare(Window(home).Property(Type),Episode)">Skin.SetPath(ItemToEdit.TempPath,library://video/tvshows/)</onclick>
+					<onclick>SetProperty(Playlist.Path,$INFO[Skin.String(ItemToEdit.TempPath)],home)</onclick>
+					<onclick>SetProperty(Playlist.Label,$INFO[Skin.String(ItemToEdit.TempPath)],home)</onclick>
+                    <onclick>Dialog.Close(1125)</onclick>
+                    <onclick>SetFocus(9000)</onclick>
+					<visible>!Stringcompare(Window(home).Property(Type),Music)</visible>
                 </item>
                 <item id="1">
                     <label>$INFO[Window(0).Property(ScriptPlaylist.1.name)]</label>

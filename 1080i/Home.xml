@@ -16,18 +16,18 @@
     <onload>AlarmClock(HomeTile2Left,Control.Move(6001,1),00:07,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Right,Control.Move(6003,1),00:10,silent,loop)</onload>
     <onload>AlarmClock(HomeTile2Mid,Control.Move(6002,1),00:15,silent,loop)</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist1.Call))">$INFO[Skin.String(SmartPlaylist1.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist2.Call))">$INFO[Skin.String(SmartPlaylist2.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist3.Call))">$INFO[Skin.String(SmartPlaylist3.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist4.Call))">$INFO[Skin.String(SmartPlaylist4.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist5.Call))">$INFO[Skin.String(SmartPlaylist5.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist6.Call))">$INFO[Skin.String(SmartPlaylist6.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist7.Call))">$INFO[Skin.String(SmartPlaylist7.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist8.Call))">$INFO[Skin.String(SmartPlaylist8.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist9.Call))">$INFO[Skin.String(SmartPlaylist9.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist10.Call))">$INFO[Skin.String(SmartPlaylist10.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist11.Call))">$INFO[Skin.String(SmartPlaylist11.Call)]</onload>
-    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + !IsEmpty(Skin.String(SmartPlaylist12.Call))">$INFO[Skin.String(SmartPlaylist12.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist1.Call),random)">$INFO[Skin.String(SmartPlaylist1.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist2.Call),random)">$INFO[Skin.String(SmartPlaylist2.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist3.Call),random)">$INFO[Skin.String(SmartPlaylist3.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist4.Call),random)">$INFO[Skin.String(SmartPlaylist4.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist5.Call),random)">$INFO[Skin.String(SmartPlaylist5.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist6.Call),random)">$INFO[Skin.String(SmartPlaylist6.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist7.Call),random)">$INFO[Skin.String(SmartPlaylist7.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist8.Call),random)">$INFO[Skin.String(SmartPlaylist8.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist9.Call),random)">$INFO[Skin.String(SmartPlaylist9.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist10.Call),random)">$INFO[Skin.String(SmartPlaylist10.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist11.Call),random)">$INFO[Skin.String(SmartPlaylist11.Call)]</onload>
+    <onload condition="!Window.Previous(startup) + Skin.HasSetting(randomizehome) + Substring(Skin.String(SmartPlaylist12.Call),random)">$INFO[Skin.String(SmartPlaylist12.Call)]</onload>
     <onunload>CancelAlarm(HomeTileLeft,true)</onunload>
     <onunload>CancelAlarm(HomeTileRight,true)</onunload>
     <onunload>CancelAlarm(HomeTileMid,true)</onunload>
@@ -64,23 +64,38 @@
         </control>
         <control type="button" id="9007">
             <include>HiddenObject</include>
-            <onfocus>SetFocus(5010)</onfocus>
-            <onfocus condition="Stringcompare(Container(5010).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(5010).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(5010).ListItem.Property(Path),videodb://1/)">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
-            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),0) | stringcompare(Container(5010).ListItem.Property(Type),1) | stringcompare(Container(5010).ListItem.Property(Type),2) | stringcompare(Container(5010).ListItem.Property(Type),3)">RunAddon($INFO[Container(5010).ListItem.Property(Path)])</onfocus>
-            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
-            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
-            <onfocus condition="stringcompare(Container(5010).ListItem.Property(Type),6) | Stringcompare(Container(5010).ListItem.Property(Type),7)  | Stringcompare(Container(5010).ListItem.Property(Type),custom)">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
-            <onfocus condition="IsEmpty(Container(5010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
+            <onfocus condition="Control.IsVisible(5000)">SetFocus(5010)</onfocus>
+            <onfocus condition="Control.IsVisible(5000) + [Stringcompare(Container(5010).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(5010).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(5010).ListItem.Property(Path),videodb://1/)]">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
+            <onfocus condition="Control.IsVisible(5000) + [stringcompare(Container(5010).ListItem.Property(Type),0) | stringcompare(Container(5010).ListItem.Property(Type),1) | stringcompare(Container(5010).ListItem.Property(Type),2) | stringcompare(Container(5010).ListItem.Property(Type),3)]">RunAddon($INFO[Container(5010).ListItem.Property(Path)])</onfocus>
+            <onfocus condition="Control.IsVisible(5000) + stringcompare(Container(5010).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(5000) + stringcompare(Container(5010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(5010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(5000) + [stringcompare(Container(5010).ListItem.Property(Type),6) | Stringcompare(Container(5010).ListItem.Property(Type),7)  | Stringcompare(Container(5010).ListItem.Property(Type),custom)]">$INFO[Container(5010).ListItem.Property(Path)]</onfocus>
+            <onfocus condition="Control.IsVisible(5000) + IsEmpty(Container(5010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
+            <onfocus condition="Control.IsVisible(8998)">SetFocus(8000)</onfocus>
+            <onfocus condition="Control.IsVisible(8998) + [Stringcompare(Container(8000).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(8000).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(8000).ListItem.Property(Path),videodb://1/)]">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
+            <onfocus condition="Control.IsVisible(8998) + [stringcompare(Container(8000).ListItem.Property(Type),0) | stringcompare(Container(8000).ListItem.Property(Type),1) | stringcompare(Container(8000).ListItem.Property(Type),2) | stringcompare(Container(8000).ListItem.Property(Type),3)]">RunAddon($INFO[Container(8000).ListItem.Property(Path)])</onfocus>
+            <onfocus condition="Control.IsVisible(8998) + stringcompare(Container(8000).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(8000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(8998) + stringcompare(Container(8000).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(8000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(8998) + [stringcompare(Container(8000).ListItem.Property(Type),6) | Stringcompare(Container(8000).ListItem.Property(Type),7)  | Stringcompare(Container(8000).ListItem.Property(Type),custom)]">$INFO[Container(8000).ListItem.Property(Path)]</onfocus>
+            <onfocus condition="Control.IsVisible(8998) + IsEmpty(Container(8000).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
         </control>
         <control type="button" id="9008">
             <include>HiddenObject</include>
             <onfocus>SetFocus(6010)</onfocus>
-            <onfocus condition="Stringcompare(Container(6010).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(6010).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(6010).ListItem.Property(Path),videodb://1/)">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
-            <onfocus condition="stringcompare(Container(6010).ListItem.Property(Type),0) | stringcompare(Container(6010).ListItem.Property(Type),1) | stringcompare(Container(6010).ListItem.Property(Type),2) | stringcompare(Container(6010).ListItem.Property(Type),3)">RunAddon($INFO[Container(6010).ListItem.Property(Path)])</onfocus>
-            <onfocus condition="stringcompare(Container(6010).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
-            <onfocus condition="stringcompare(Container(6010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
-            <onfocus condition="stringcompare(Container(6010).ListItem.Property(Type),6) | Stringcompare(Container(6010).ListItem.Property(Type),7)  | Stringcompare(Container(6010).ListItem.Property(Type),custom)">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
-            <onfocus condition="IsEmpty(Container(6010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
+            <onfocus condition="Control.IsVisible(6000)">SetFocus(6010)</onfocus>
+            <onfocus condition="Control.IsVisible(6000) + [Stringcompare(Container(6010).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(6010).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(6010).ListItem.Property(Path),videodb://1/)]">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
+            <onfocus condition="Control.IsVisible(6000) + [stringcompare(Container(6010).ListItem.Property(Type),0) | stringcompare(Container(6010).ListItem.Property(Type),1) | stringcompare(Container(6010).ListItem.Property(Type),2) | stringcompare(Container(6010).ListItem.Property(Type),3)]">RunAddon($INFO[Container(6010).ListItem.Property(Path)])</onfocus>
+            <onfocus condition="Control.IsVisible(6000) + stringcompare(Container(6010).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(6000) + stringcompare(Container(6010).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(6010).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(6000) + [stringcompare(Container(6010).ListItem.Property(Type),6) | Stringcompare(Container(6010).ListItem.Property(Type),7)  | Stringcompare(Container(6010).ListItem.Property(Type),custom)]">$INFO[Container(6010).ListItem.Property(Path)]</onfocus>
+            <onfocus condition="Control.IsVisible(6000) + IsEmpty(Container(6010).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
+            <onfocus condition="Control.IsVisible(7998)">SetFocus(7000)</onfocus>
+            <onfocus condition="Control.IsVisible(7998) + [Stringcompare(Container(7000).ListItem.Property(Path),ActivateWindow(Videos,MovieTitles,return)) | Stringcompare(Container(7000).ListItem.Property(Path),ActivateWindow(Videos,MusicVideoTitles,return)) | Substring(Container(7000).ListItem.Property(Path),videodb://1/)]">SetProperty(DontRunTVShowScripts,True,Home)</onfocus>
+            <onfocus condition="Control.IsVisible(7998) + [stringcompare(Container(7000).ListItem.Property(Type),0) | stringcompare(Container(7000).ListItem.Property(Type),1) | stringcompare(Container(7000).ListItem.Property(Type),2) | stringcompare(Container(7000).ListItem.Property(Type),3)]">RunAddon($INFO[Container(7000).ListItem.Property(Path)])</onfocus>
+            <onfocus condition="Control.IsVisible(7998) + stringcompare(Container(7000).ListItem.Property(Type),4)">ActivateWindow(Videos,$INFO[Container(7000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(7998) + stringcompare(Container(7000).ListItem.Property(Type),5)">ActivateWindow(MusicLibrary,$INFO[Container(7000).ListItem.Property(Path)],return)</onfocus>
+            <onfocus condition="Control.IsVisible(7998) + [stringcompare(Container(7000).ListItem.Property(Type),6) | Stringcompare(Container(7000).ListItem.Property(Type),7)  | Stringcompare(Container(7000).ListItem.Property(Type),custom)]">$INFO[Container(7000).ListItem.Property(Path)]</onfocus>
+            <onfocus condition="Control.IsVisible(7998) + IsEmpty(Container(7000).ListItem.Property(Type))">ActivateWindow(1135)</onfocus>
         </control>
         <control type="button" id="9009">
             <include>HiddenObject</include>
@@ -102,14 +117,13 @@
             <control type="multiimage">
                 <fadetime>600</fadetime>
                 <imagepath background="true">$VAR[HomeMainFanartVar]</imagepath>
-                <aspectratio align="center" aligny="top">scale</aspectratio>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <animation effect="fade" time="600">Visible</animation>
                 <animation effect="fade" time="600">Hidden</animation>
                 <animation effect="zoom" start="110" end="130" center="auto" time="15000" pulse="true" delay="600" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
                 <animation effect="slide" start="-15,-15" end="15,15" time="7500" pulse="true" delay="600" condition="Skin.HasSetting(animatedbghome)">Conditional</animation>
-                <visible>!Control.IsVisible(2355) + ![Substring(Control.GetLabel(4322),case) | Substring(Control.GetLabel(4322),dailybabe)]</visible>
+                <visible>!Substring(Control.GetLabel(4322),case)</visible>
             </control>
-            <include condition="SubString(Skin.String(backgroundlist),dailybabe)">DailyBabeBG</include>
             <control type="image">
                 <fadetime>600</fadetime>
                 <include>FullscreenDimensions</include>
@@ -118,7 +132,7 @@
                 <texture background="true" fallback="special://skin/backgrounds/speakergrill.jpg">$INFO[Skin.String(LiveBG)]</texture>
                 <animation effect="fade" time="500">Visible</animation>
                 <animation effect="fade" time="500">Hidden</animation>
-                <visible>!Control.IsVisible(2355) + Substring(Control.GetLabel(4322),case)</visible>
+                <visible>Substring(Control.GetLabel(4322),case)</visible>
             </control>
             <include condition="SubString(Skin.String(backgroundlist),dvdcase)">InteractiveCasesBackground</include>
             <include condition="SubString(Skin.String(backgroundlist), case)">LiveCDCasesbackground</include>
@@ -128,7 +142,7 @@
             <control type="image">
                 <fadetime>600</fadetime>
                 <include>FullscreenDimensions</include>
-                <aspectratio align="center" aligny="top">scale</aspectratio>
+                <aspectratio align="center" aligny="center">keep</aspectratio>
                 <texture background="true">$VAR[HomeWidgetFanartVar]</texture>
                 <visible>[Control.HasFocus(8000) | Control.HasFocus(7000) | ControlGroup(5000).HasFocus | ControlGroup(6000).HasFocus] | [Player.HasAudio + Skin.HasSetting(musicfanarthome)]</visible>
                 <animation effect="fade" time="600">Visible</animation>

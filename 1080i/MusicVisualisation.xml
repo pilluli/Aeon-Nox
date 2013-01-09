@@ -320,39 +320,41 @@
                     <control type="image">
                         <posy>-248</posy>
                         <posx>68</posx>
-                        <width>390</width>
+                        <width>398</width>
                         <height>398</height>
+                        <aspectratio>scale</aspectratio>
                         <texture diffuse="thumbs/boxes/cdcover_mask.png">$INFO[MusicPlayer.Cover]</texture>
                     </control>
                     <control type="image">
                         <posy>180</posy>
                         <posx>68</posx>
-                        <width>390</width>
+                        <width>398</width>
                         <height>398</height>
+                        <aspectratio>scale</aspectratio>
                         <texture flipy="true" diffuse="thumbs/boxes/cdcover_mask_reflect.png">$INFO[MusicPlayer.Cover]</texture>
                         <colordiffuse>52FFFFFF</colordiffuse>
                     </control>
                     <control type="image">
                         <posy>-270</posy>
-                        <width>480</width>
+                        <width>490</width>
                         <height>450</height>
                         <texture>thumbs/boxes/cd_shadow_light.png</texture>
                     </control>
                     <control type="image">
                         <posy>-270</posy>
-                        <width>480</width>
+                        <width>490</width>
                         <height>450</height>
                         <texture>thumbs/boxes/cd_glass.png</texture>
                     </control>
                     <control type="image">
                         <posy>150</posy>
-                        <width>480</width>
+                        <width>490</width>
                         <height>450</height>
                         <texture>thumbs/boxes/cd_glass_reflect.png</texture>
                     </control>
                     <control type="image">
                         <posy>150</posy>
-                        <width>480</width>
+                        <width>490</width>
                         <height>450</height>
                         <texture>thumbs/boxes/cd_shadow_reflect.png</texture>
                     </control>
@@ -770,7 +772,7 @@
                         <font>Font_Reg15</font>
                         <textcolor>$VAR[TitleColorVar]</textcolor>
                         <label>$VAR[NowPlayingTextBoxLabelVar]</label>
-                        <autoscroll delay="5000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                        <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                     </control>
                 </control>
             </control>
@@ -903,7 +905,7 @@
                     <font>Font_Reg15</font>
                     <textcolor>$VAR[TitleColorVar]</textcolor>
                     <label>$VAR[NowPlayingTextBoxLabelVar2]</label>
-                    <autoscroll delay="5000" time="2000" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
+                    <autoscroll delay="5000" time="AutoScrollTime" repeat="8000">Skin.HasSetting(AutoScroll)</autoscroll>
                 </control>
                 <control type="group">
                     <posx>1730</posx>
