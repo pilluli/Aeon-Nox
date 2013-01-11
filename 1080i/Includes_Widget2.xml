@@ -3595,7 +3595,7 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.1.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.1.TVshowTitle)]</label2>
             <onclick>SetFocus(6014)</onclick>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.1.Art(thumb))]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentEpisode.1.Art(tvshow.fanart))]</thumb>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.1.Plot)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.1.Rating)]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.1.EpisodeNo)]</property>
@@ -3618,7 +3618,7 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.2.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.2.TVshowTitle)]</label2>
             <onclick>SetFocus(6014)</onclick>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.2.Art(thumb))]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentEpisode.2.Art(tvshow.fanart))]</thumb>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.2.Plot)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.2.Rating)]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.2.EpisodeNo)]</property>
@@ -3641,7 +3641,7 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.3.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.3.TVshowTitle)]</label2>
             <onclick>SetFocus(6014)</onclick>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.3.Art(thumb))]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentEpisode.3.Art(tvshow.fanart))]</thumb>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.3.Plot)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.3.Rating)]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.3.EpisodeNo)]</property>
@@ -3664,7 +3664,7 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.4.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.4.TVshowTitle)]</label2>
             <onclick>SetFocus(6014)</onclick>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.4.Art(thumb))]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentEpisode.4.Art(tvshow.fanart))]</thumb>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.4.Plot)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.4.Rating)]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.4.EpisodeNo)]</property>
@@ -3689,7 +3689,7 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.5.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.5.TVshowTitle)]</label2>
             <onclick>SetFocus(6014)</onclick>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.5.Art(thumb))]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentEpisode.5.Art(tvshow.fanart))]</thumb>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.5.Plot)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.5.Rating)]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.5.EpisodeNo)]</property>
@@ -3712,7 +3712,7 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.6.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.6.TVshowTitle)]</label2>
             <onclick>SetFocus(6014)</onclick>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.6.Art(thumb))]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentEpisode.6.Art(tvshow.fanart))]</thumb>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.6.Plot)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.6.Rating)]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.6.EpisodeNo)]</property>
@@ -3735,7 +3735,7 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.7.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.7.TVshowTitle)]</label2>
             <onclick>SetFocus(6014)</onclick>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.7.Art(thumb))]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentEpisode.7.Art(tvshow.fanart))]</thumb>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.7.Plot)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.7.Rating)]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.7.EpisodeNo)]</property>
@@ -3758,7 +3758,7 @@
             <label>$INFO[Window(Home).Property(RecentEpisode.8.Title)]</label>
             <label2>$INFO[Window(Home).Property(RecentEpisode.8.TVshowTitle)]</label2>
             <onclick>SetFocus(6014)</onclick>
-            <thumb>$INFO[Window(Home).Property(RecentEpisode.8.Art(thumb))]</thumb>
+            <thumb>$INFO[Window(Home).Property(RecentEpisode.8.Art(tvshow.fanart))]</thumb>
             <property name="Plot">$INFO[Window(Home).Property(RecentEpisode.8.Plot)]</property>
             <property name="Rating">$INFO[Window(Home).Property(RecentEpisode.8.Rating)]</property>
             <property name="EpisodeNumber">$INFO[Window(Home).Property(RecentEpisode.8.EpisodeNo)]</property>
